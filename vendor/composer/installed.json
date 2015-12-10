@@ -48,5 +48,50 @@
             "rest",
             "sdk"
         ]
+    },
+    {
+        "name": "abbe98/simple-pdo",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Abbe98/Simple-PDO.git",
+            "reference": "8352243af60efd8f7d75adb55b739749a0b4d98b"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Abbe98/Simple-PDO/zipball/8352243af60efd8f7d75adb55b739749a0b4d98b",
+            "reference": "8352243af60efd8f7d75adb55b739749a0b4d98b",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "time": "2014-12-23 14:54:46",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "src/pdo.php"
+            ]
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Albin Larsson",
+                "homepage": "http://abbe98.github.io/"
+            }
+        ],
+        "description": "A simpe PDO class for MariaDB and MySQL",
+        "homepage": "https://github.com/Abbe98/Simple-PDO",
+        "keywords": [
+            "database",
+            "mariadb",
+            "mysql",
+            "pdo"
+        ]
     }
 ]

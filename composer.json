@@ -10,7 +10,8 @@
     }
   ],
   "require": {
-    "paypal/rest-api-sdk-php": "dev-master"
+    "paypal/rest-api-sdk-php": "dev-master",
+    "abbe98/simple-pdo": "dev-master"
   },
   "autoload":{
     "psr-4":{
