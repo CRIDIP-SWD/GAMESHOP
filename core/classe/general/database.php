@@ -13,7 +13,7 @@ class database
     const USERNAME      = "root";
     const PASSWORD      = "1992maxime";
 
-    public function __construct($host, $user, $pass, $base)
+    public function __construct($host = self::HOST, $user = self::USERNAME, $pass = self::PASSWORD, $base = self::DBNAME)
     {
         $this->host = $host;
         $this->user = $user;
