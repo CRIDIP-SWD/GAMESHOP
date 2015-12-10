@@ -1,4 +1,4 @@
-<?php include "core/header.php"; ?>
+<?php include "../core/header.php"; ?>
 <body>
 
 <!-- The Main Wrapper
