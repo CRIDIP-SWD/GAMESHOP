@@ -1,3 +1,4 @@
+<?php include "core/classe.php"; ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
