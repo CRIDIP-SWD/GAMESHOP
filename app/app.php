@@ -8,23 +8,45 @@
 
 namespace App;
 
-
+/**
+ * Class app
+ * @package App
+ *
+ * Définie la base du projet
+ *
+ */
 class app
 {
 
 }
 
+/**
+ * Class constante
+ * @package App
+ *
+ * Définie un ensemble de constante à modifié à chaque début de projet
+ *
+ */
 class constante extends app{
 
     const HTTP       = "http://";
     const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
 
+    /**
+     * @param $dos array Permet de parser sous forme string le tableau array=$dos
+     * @return string retourne un format standard de link HTML
+     */
     private static function parseArray($dos)
     {
         return implode("/", $dos);
     }
 
+    /**
+     * @param array $dos Il permet d'envoyer à la fonction la liste des dossiers à parcourir sous forme de tableau
+     * @param bool|true $assets Permet d'insérer de manière automatique le dossier 'assets'
+     * @return string Suivant le bool $assets, il retourne la redirection sous format de lien(string)
+     */
     public static function getUrl($dos = array(), $assets = true)
     {
         if($assets === true)
