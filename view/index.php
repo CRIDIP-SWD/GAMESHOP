@@ -8,5 +8,6 @@ use App\constante;
 
 $app = new app();
 $constante = new constante();
-
-var_dump($constante->getUrl(array("js", "plugins/"), true));
+?>
+<pre><?php var_dump($constante::getUrl(array("css", "stylesheet"), true)); ?></pre>
+<?php
