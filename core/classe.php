@@ -9,7 +9,7 @@
 
 require "vendor/autoload.php";
 require "classe/Autoloader.php";
-Autoloader::register("general");
+Autoloader::register();
 
 $database = new database();
 $connect = SimplePDO::getInstance();

@@ -8,13 +8,13 @@
  */
 class Autoloader
 {
-    static function register($categorie)
+    static function register()
     {
-        spl_autoload_register(array(__CLASS__, $categorie,'autoload'));
+        spl_autoload_register(array(__CLASS__, 'autoload'));
     }
 
-    static function autoload($categorie,$class)
+    static function autoload($class)
     {
-        require "classe/".$categorie."/".$class.".php";
+        require "classe/".$class.".php";
     }
 }
