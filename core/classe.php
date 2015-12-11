@@ -12,6 +12,9 @@ require "Autoloader.php";
 Autoloader::register();
 
 DEFINE("HOST", "localhost");
+DEFINE("DBNAME", "gameshop");
+DEFINE("USERNAME", "root");
+DEFINE("PASSWORD", "1992maxime");
 $connect = SimplePDO::getInstance();
 
 
