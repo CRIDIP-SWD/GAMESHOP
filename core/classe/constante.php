@@ -6,7 +6,7 @@ class constante
     /**
      * LISTING DES CONSTANTES DU PROJET
      */
-    const ENCRYPT       = "http";
+    const ENCRYPT       = "https";
     const ROOT          = self::ENCRYPT."://vps221243.ovh.net/gameshop/";
     const ASSETS        = self::ROOT."assets/";
     const CSS           = self::ASSETS."css/";
