@@ -23,18 +23,12 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul>
-                        <li><a href="#">USD</a>
+                        <li><a href="#">EUR</a></li>
+                        <li><a href="#">FR</a>
                             <ul>
-                                <li><a href="#">EUR</a></li>
-                                <li><a href="#">AUD</a></li>
-                                <li><a href="#">GBP</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">EN</a>
-                            <ul>
-                                <li><a href="#"><img src="images/icons/flags/french.png" alt="French"> FR</a></li>
-                                <li><a href="#"><img src="images/icons/flags/italian.png" alt="Italian"> IT</a></li>
-                                <li><a href="#"><img src="images/icons/flags/german.png" alt="German"> DE</a></li>
+                                <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/french.png" alt="French"> EN</a></li>
+                                <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/italian.png" alt="Italian"> IT</a></li>
+                                <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/german.png" alt="German"> DE</a></li>
                             </ul>
                         </li>
                         <li><a href="#">Login</a>
