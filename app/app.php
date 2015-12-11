@@ -17,7 +17,7 @@ class app
 class constante extends app{
 
     const HTTP       = "http://";
-    const URL        = "vps221243.ovh.net/";
+    const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
 
     public static function getUrl($dos = array(), $assets = true)
