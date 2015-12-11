@@ -8,7 +8,7 @@
  */
 
 require "vendor/autoload.php";
-require "classe/Autoloader.php";
+require "Autoloader.php";
 Autoloader::register();
 
 $database = new database();
