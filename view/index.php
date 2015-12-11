@@ -9,4 +9,4 @@ use App\constante;
 $app = new app();
 $constante = new constante();
 
-var_dump($constante->getUrl("css", true));
+var_dump($constante->getUrl("core", false));
