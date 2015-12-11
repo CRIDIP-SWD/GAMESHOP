@@ -11,9 +11,18 @@ namespace App;
 
 class app
 {
-    public static function getUrl($http_encode = "https://", $url, $params = array())
+
+}
+
+class constante extends app{
+
+    const HTTP       = "http://";
+    const URL        = "vps221243.ovh.net/";
+    const ASSETS     = "assets/";
+
+    public static function getUrl($dos = array())
     {
-        $params = explode("/", $params);
-        return $http_encode.$url."/".$params;
+        return $this->HTTP.$this->URL.$this->ASSETS.$dos;
     }
+
 }
