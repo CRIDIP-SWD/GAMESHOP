@@ -8,9 +8,9 @@
  */
 class Autoloader
 {
-    static function register()
+    static function register($categorie)
     {
-        spl_autoload_register(array(__CLASS__, 'autoload'));
+        spl_autoload_register(array(__CLASS__, $categorie,'autoload'));
     }
 
     static function autoload($categorie,$class)
