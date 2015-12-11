@@ -3,7 +3,7 @@ if(isset($_GET['view']))
 {
     switch($_GET['view'])
     {
-        case 0:
+        case 'index':
             include "view/index.php";
     }
 }
