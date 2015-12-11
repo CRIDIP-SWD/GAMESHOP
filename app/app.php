@@ -20,13 +20,18 @@ class constante extends app{
     const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
 
+    private static function parseArray($dos)
+    {
+        return implode("/", $dos);
+    }
+
     public static function getUrl($dos = array(), $assets = true)
     {
         if($assets === true)
         {
-            return static::HTTP.static::URL.static::ASSETS.$dos;
+            return static::HTTP.static::URL.static::ASSETS.static::parseArray($dos);
         }else{
-            return static::HTTP.static::URL.$dos;
+            return static::HTTP.static::URL.static::parseArray($dos);
         }
     }
 
