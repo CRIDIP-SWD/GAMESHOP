@@ -11,6 +11,8 @@ require "vendor/autoload.php";
 require "Autoloader.php";
 Autoloader::register();
 
-$database = new database();
+DEFINE("HOST", "localhost");
 $connect = SimplePDO::getInstance();
+
+
 $constante = new constante();
