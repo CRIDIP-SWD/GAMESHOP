@@ -23,8 +23,8 @@
                 ============================================= -->
                 <div class="top-links">
                     <ul>
-                        <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/french.png" alt="French"> EUR</a></li>
-                        <li><a href="#">FR</a>
+                        <li><a href="#">€ EUR</a></li>
+                        <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/french.png" alt="French"> FR</a>
                             <ul>
                                 <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/english.png" alt="French"> EN</a></li>
                                 <li><a href="#"><img src="<?= $constante::IMAGES; ?>icons/flags/italian.png" alt="Italian"> IT</a></li>
