@@ -20,9 +20,14 @@ class constante extends app{
     const URL        = "vps221243.ovh.net/";
     const ASSETS     = "assets/";
 
-    public static function getUrl($dos = array())
+    public static function getUrl($dos = array(), $assets = true)
     {
-        return $this->HTTP.$this->URL.$this->ASSETS.$dos;
+        if($assets === true)
+        {
+            return static::HTTP.static::URL.static::ASSETS.$dos;
+        }else{
+            return static::HTTP.static::URL.$dos;
+        }
     }
 
 }
