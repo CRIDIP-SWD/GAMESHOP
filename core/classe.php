@@ -7,7 +7,7 @@
  * IMPORTE LES CLASSES
  */
 
-require "../vendor/autoload.php";
+require "vendor/autoload.php";
 require "classe/Autoloader.php";
 Autoloader::register();
 
