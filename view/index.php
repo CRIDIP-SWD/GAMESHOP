@@ -1422,4 +1422,6 @@
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?= $constante::JS; ?>functions.js"></script>
+
+</body>
 </html>
