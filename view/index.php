@@ -1,5 +1,9 @@
 <div class="row">
-    <div class="col-md-3"></div>
+    <div class="col-md-3">
+        <button type="button" class="btn btn-block btn-success">Xbox</button>
+        <button type="button" class="btn btn-block btn-info">PS4</button>
+        <button type="button" class="btn btn-block btn-default">offre spécizl</button>
+    </div>
     <div class="col-md-9">
         <section id="slider" class="slider-parallax revslider-wrap ohidden clearfix">
 
