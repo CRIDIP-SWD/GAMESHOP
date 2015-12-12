@@ -371,7 +371,7 @@
         </div>
 
     </header><!-- #header end -->
-
+    <?= $content; ?>
     <!-- Footer
     ============================================= -->
     <footer id="footer" class="dark">
