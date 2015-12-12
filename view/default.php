@@ -35,7 +35,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title><?= $constante->NOM_SITE; ?></title>
+    <title><?= $contante::NOM_SITE; ?></title>
 
     <style>
 
