@@ -14,7 +14,7 @@
                     <a href="#"><img src="<?= $constante->getUrl(array('images')); ?>slider/boxed/2.jpg" alt="Slider"></a>
                     <a href="#"><img src="<?= $constante->getUrl(array('images')); ?>slider/boxed/3.jpg" alt="Slider"></a>
                     <a href="#"><img src="<?= $constante->getUrl(array('images')); ?>slider/boxed/4.jpg" alt="Slider"></a>
-                    <a href="#"><img src="<?= $constante->getUrl(array('images); ?>slider/boxed/5.jpg" alt="Slider"></a>
+                    <a href="#"><img src="<?= $constante->getUrl(array('images')); ?>slider/boxed/5.jpg" alt="Slider"></a>
 
                 </div>
 
