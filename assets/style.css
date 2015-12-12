@@ -2662,7 +2662,7 @@ body.side-panel-open:not(.device-xxs):not(.device-xs):not(.device-sm) .body-over
 /* Boxed Slider
 -----------------------------------------------------------------*/
 
-.boxed-slider { padding-top: 40px; }
+.boxed-slider { padding-top: 0; }
 
 
 /* Flex Slider - Thumbs
