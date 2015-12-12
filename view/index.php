@@ -8,9 +8,9 @@
     <div class="tp-banner-container fullscreen-container">
         <div class="tp-banner" >
             <ul>    <!-- SLIDE  -->
-                <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-thumb.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
+                <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-thumb.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
                     <!-- MAIN IMAGE -->
-                    <img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-bg.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-bg.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 2 -->
@@ -26,7 +26,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 3;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-1.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 3;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-1.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-7"
                          data-x="200"
@@ -40,7 +40,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-2.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-2.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-6"
                          data-x="200"
@@ -54,7 +54,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-3.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-3.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-5"
                          data-x="200"
@@ -68,7 +68,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-4.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-4.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-4"
                          data-x="200"
@@ -82,7 +82,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-5.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-5.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-3"
                          data-x="200"
