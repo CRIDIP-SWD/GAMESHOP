@@ -42,15 +42,15 @@
         </section>
     </div>
 </div>
-<div class="divider divider-center"><i class="icon-cloud"></i></div>
+
 <div class="row">
     <div class="col-md-12">
         <div class="tabs topmargin-lg clearfix" id="tab-3">
 
             <ul class="tab-nav clearfix">
-                <li><a href="#tabs-9">New Arrivals</a></li>
-                <li><a href="#tabs-10">Best sellers</a></li>
-                <li><a href="#tabs-11">You may like</a></li>
+                <li><a href="#tabs-9">Nouveauté</a></li>
+                <li><a href="#tabs-10">Prochaine Sortie</a></li>
+                <li><a href="#tabs-11">Promotion</a></li>
             </ul>
 
             <div class="tab-container">
@@ -61,12 +61,12 @@
 
                         <div class="product clearfix">
                             <div class="product-image">
-                                <a href="#"><img src="images/shop/dress/1.jpg" alt="Checked Short Dress"></a>
-                                <a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
+                                <a href="#"><img src="<?= $constante->getUrl(array('images/'));?>shop/dress/1.jpg" alt="Checked Short Dress"></a>
+                                <a href="#"><img src="<?= $constante->getUrl(array('images/'));?>shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
                                 <div class="sale-flash">50% Off*</div>
                                 <div class="product-overlay">
                                     <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                    <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                    <a href="<?= $constante->getUrl(array('include//'));?>include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
                                 </div>
                             </div>
                             <div class="product-desc">
