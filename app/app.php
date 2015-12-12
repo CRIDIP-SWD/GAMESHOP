@@ -29,7 +29,7 @@ class app
  */
 class constante extends app{
 
-    const HTTP       = "http://";
+    const HTTP       = "https://";
     const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
 
