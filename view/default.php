@@ -23,7 +23,7 @@
 
     <!-- External JavaScripts
     ============================================= -->
-    <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?><?= $constante->getUrl(array('css/')); ?>jquery.js"></script>
+    <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>jquery.js"></script>
     <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>plugins.js"></script>
 
     <!-- SLIDER REVOLUTION 4.x SCRIPTS  -->
