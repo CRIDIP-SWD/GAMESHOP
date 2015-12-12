@@ -1,11 +1,16 @@
 <?php
+require 'app/classe.php';
+App\autoloader::register();
+
 if(isset($_GET['view']))
 {
-    switch($_GET['view'])
-    {
-        case 'index':
-            include "view/index.php";
-    }
+    $view = $_GET['view'];
 }else{
-    include "view/index.php";
+    $view = "index";
 }
+
+ob_start();
+if($view === 'index'){require "view/index.php";}
+
+$content = ob_get_clean();
+require "view/default.php";
