@@ -8,95 +8,9 @@
     <div class="tp-banner-container fullscreen-container">
         <div class="tp-banner" >
             <ul>    <!-- SLIDE  -->
-                <li class="dark" data-transition="fade" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slider/rev/main/s1-thumb.jpg"  data-saveperformance="off"  data-title="Welcome to Canvas">
+                <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-thumb.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
                     <!-- MAIN IMAGE -->
-                    <img src="images/videos/explore.jpg"  alt="video_typing_cover"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-                    <!-- LAYERS -->
-
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption tp-fade fadeout fullscreenvideo"
-                         data-x="0"
-                         data-y="0"
-                         data-speed="1000"
-                         data-start="1100"
-                         data-easing="Power4.easeOut"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1500"
-                         data-endeasing="Power4.easeIn"
-                         data-autoplay="true"
-                         data-autoplayonlyfirsttime="false"
-                         data-nextslideatend="true"
-                         data-volume="mute" data-forceCover="1" data-aspectratio="16:9" data-forcerewind="on" style="z-index: 2;"><video class="" preload="none" width="100%" height="100%"
-                                                                                                                                         poster='images/videos/explore.jpg'>
-                            <source src='images/videos/explore.mp4' type='video/mp4' />
-                            <source src='images/videos/explore.webm' type='video/webm' />
-
-                        </video>
-
-                    </div>
-
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text uppercase"
-                         data-x="350"
-                         data-y="235"
-                         data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-start="1000"
-                         data-easing="easeOutQuad"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 3;">The Best Multipurpose HTML5 Template</div>
-
-                    <div class="tp-caption customin ltl tp-resizeme revo-slider-emphasis-text nopadding noborder"
-                         data-x="116"
-                         data-y="260"
-                         data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-start="1200"
-                         data-easing="easeOutQuad"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 3;">Welcome to the World of Canvas</div>
-
-                    <div class="tp-caption customin ltl tp-resizeme revo-slider-desc-text"
-                         data-x="195"
-                         data-y="370"
-                         data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-start="1400"
-                         data-easing="easeOutQuad"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 3; width: 750px; max-width: 750px; white-space: normal;">Create a website that you are gonna be proud of. Be it Business, Portfolio, Agency, Photography, e-Commerce &amp; much more..</div>
-
-                    <div class="tp-caption customin ltl tp-resizeme"
-                         data-x="496"
-                         data-y="478"
-                         data-customin="x:0;y:150;z:0;rotationZ:0;scaleX:1;scaleY:1;skewX:0;skewY:0;opacity:0;transformPerspective:200;transformOrigin:50% 0%;"
-                         data-speed="800"
-                         data-start="1550"
-                         data-easing="easeOutQuad"
-                         data-splitin="none"
-                         data-splitout="none"
-                         data-elementdelay="0.01"
-                         data-endelementdelay="0.1"
-                         data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 3;"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Start Tour</span> <i class="icon-angle-right"></i></a></div>
-
-                </li>
-                <li class="dark" data-transition="slideup" data-slotamount="1" data-masterspeed="1000" data-thumb="images/slider/rev/main/s2-thumb.jpg"  data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7" data-saveperformance="off"  data-title="Unlimited Homepages">
-                    <!-- MAIN IMAGE -->
-                    <img src="images/slider/rev/main/s2-bg.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-bg.jpg"  alt="video_woman_cover3"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 2 -->
@@ -112,7 +26,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 3;"><img src="images/slider/rev/main/s2-1.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 3;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-1.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-7"
                          data-x="200"
@@ -126,7 +40,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="images/slider/rev/main/s2-2.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 4;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-2.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-6"
                          data-x="200"
@@ -140,7 +54,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="images/slider/rev/main/s2-3.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 5;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-3.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-5"
                          data-x="200"
@@ -154,7 +68,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="images/slider/rev/main/s2-4.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 6;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-4.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-4"
                          data-x="200"
@@ -168,7 +82,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="images/slider/rev/main/s2-5.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 7;"><img src="<?= $constante->getUrl(array('<?= $constante->getUrl(array('images/')); ?>')); ?>slider/rev/main/s2-5.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-3"
                          data-x="200"
@@ -182,7 +96,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 8;"><img src="images/slider/rev/main/s2-6.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 8;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-6.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-2"
                          data-x="200"
@@ -196,7 +110,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 9;"><img src="images/slider/rev/main/s2-7.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 9;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-7.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme rs-parallaxlevel-1"
                          data-x="200"
@@ -210,7 +124,7 @@
                          data-elementdelay="0.01"
                          data-endelementdelay="0.1"
                          data-endspeed="1000"
-                         data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="images/slider/rev/main/s2-8.png" alt="Image"></div>
+                         data-endeasing="Power4.easeIn" style="z-index: 10;"><img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s2-8.png" alt="Image"></div>
 
                     <div class="tp-caption customin ltl tp-resizeme revo-slider-caps-text"
                          data-x="0"
@@ -269,9 +183,9 @@
                          data-endeasing="Power4.easeIn" style="z-index: 11;"><a href="#" class="button button-border button-white button-light button-large button-rounded tright nomargin"><span>Check Now</span> <i class="icon-angle-right"></i></a></div>
 
                 </li>
-                <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="images/slider/rev/main/s3-thumb.jpg" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
+                <li data-transition="slideup" data-slotamount="1" data-masterspeed="1500" data-thumb="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s3-thumb.jpg" data-delay="10000"  data-saveperformance="off"  data-title="Responsive &amp; Retina">
                     <!-- MAIN IMAGE -->
-                    <img src="images/slider/rev/main/s3.jpg"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right bottom">
+                    <img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/main/s3.jpg"  alt="kenburns6"  data-bgposition="left top" data-kenburns="on" data-duration="10000" data-ease="Linear.easeNone" data-bgfit="130" data-bgfitend="100" data-bgpositionend="right bottom">
                     <!-- LAYERS -->
 
                     <!-- LAYER NR. 2 -->
@@ -441,8 +355,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/dress/1.jpg" alt="Checked Short Dress"></a>
-                                    <a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/1.jpg" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
                                     <div class="sale-flash">50% Off*</div>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
@@ -464,8 +378,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/pants/1-1.jpg" alt="Slim Fit Chinos"></a>
-                                    <a href="#"><img src="images/shop/pants/1.jpg" alt="Slim Fit Chinos"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/1-1.jpg" alt="Slim Fit Chinos"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/1.jpg" alt="Slim Fit Chinos"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
@@ -489,9 +403,9 @@
                                     <div class="fslider" data-arrows="false">
                                         <div class="flexslider">
                                             <div class="slider-wrap">
-                                                <div class="slide"><a href="#"><img src="images/shop/shoes/1.jpg" alt="Dark Brown Boots"></a></div>
-                                                <div class="slide"><a href="#"><img src="images/shop/shoes/1-1.jpg" alt="Dark Brown Boots"></a></div>
-                                                <div class="slide"><a href="#"><img src="images/shop/shoes/1-2.jpg" alt="Dark Brown Boots"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/1.jpg" alt="Dark Brown Boots"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/1-1.jpg" alt="Dark Brown Boots"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/1-2.jpg" alt="Dark Brown Boots"></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -515,8 +429,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/dress/2.jpg" alt="Light Blue Denim Dress"></a>
-                                    <a href="#"><img src="images/shop/dress/2-2.jpg" alt="Light Blue Denim Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/2.jpg" alt="Light Blue Denim Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/2-2.jpg" alt="Light Blue Denim Dress"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
@@ -545,8 +459,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
-                                    <a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
                                     <div class="sale-flash">Sale!</div>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
@@ -568,8 +482,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/tshirts/1.jpg" alt="Blue Round-Neck Tshirt"></a>
-                                    <a href="#"><img src="images/shop/tshirts/1-1.jpg" alt="Blue Round-Neck Tshirt"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/tshirts/1.jpg" alt="Blue Round-Neck Tshirt"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/tshirts/1-1.jpg" alt="Blue Round-Neck Tshirt"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
@@ -590,8 +504,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/watches/1.jpg" alt="Silver Chrome Watch"></a>
-                                    <a href="#"><img src="images/shop/watches/1-1.jpg" alt="Silver Chrome Watch"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/watches/1.jpg" alt="Silver Chrome Watch"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/watches/1-1.jpg" alt="Silver Chrome Watch"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
@@ -612,8 +526,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/shoes/2.jpg" alt="Men Grey Casual Shoes"></a>
-                                    <a href="#"><img src="images/shop/shoes/2-1.jpg" alt="Men Grey Casual Shoes"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/2.jpg" alt="Men Grey Casual Shoes"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/2-1.jpg" alt="Men Grey Casual Shoes"></a>
                                     <div class="sale-flash">Sale!</div>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
@@ -645,9 +559,9 @@
                                     <div class="fslider" data-arrows="false">
                                         <div class="flexslider">
                                             <div class="slider-wrap">
-                                                <div class="slide"><a href="#"><img src="images/shop/dress/3.jpg" alt="Pink Printed Dress"></a></div>
-                                                <div class="slide"><a href="#"><img src="images/shop/dress/3-1.jpg" alt="Pink Printed Dress"></a></div>
-                                                <div class="slide"><a href="#"><img src="images/shop/dress/3-2.jpg" alt="Pink Printed Dress"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/3.jpg" alt="Pink Printed Dress"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/3-1.jpg" alt="Pink Printed Dress"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/3-2.jpg" alt="Pink Printed Dress"></a></div>
                                             </div>
                                         </div>
                                     </div>
@@ -671,8 +585,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/pants/5.jpg" alt="Green Trousers"></a>
-                                    <a href="#"><img src="images/shop/pants/5-1.jpg" alt="Green Trousers"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/5.jpg" alt="Green Trousers"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/5-1.jpg" alt="Green Trousers"></a>
                                     <div class="sale-flash">Sale!</div>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
@@ -694,8 +608,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/sunglasses/2.jpg" alt="Men Aviator Sunglasses"></a>
-                                    <a href="#"><img src="images/shop/sunglasses/2-1.jpg" alt="Men Aviator Sunglasses"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/sunglasses/2.jpg" alt="Men Aviator Sunglasses"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/sunglasses/2-1.jpg" alt="Men Aviator Sunglasses"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
@@ -716,8 +630,8 @@
 
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/tshirts/4.jpg" alt="Black Polo Tshirt"></a>
-                                    <a href="#"><img src="images/shop/tshirts/4-1.jpg" alt="Black Polo Tshirt"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/tshirts/4.jpg" alt="Black Polo Tshirt"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/tshirts/4-1.jpg" alt="Black Polo Tshirt"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
