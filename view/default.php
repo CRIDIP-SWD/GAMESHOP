@@ -35,7 +35,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title>Home - Shop | Canvas</title>
+    <title><?= NOM_SITE; ?></title>
 
     <style>
 

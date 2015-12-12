@@ -32,6 +32,7 @@ class constante extends app{
     const HTTP       = "https://";
     const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
+    const NOM_SITE   = "Gameshop";
 
     /**
      * @param $dos array Permet de parser sous forme string le tableau array=$dos
@@ -56,5 +57,6 @@ class constante extends app{
             return static::HTTP.static::URL.static::parseArray($dos);
         }
     }
+
 
 }
