@@ -35,7 +35,7 @@
 
     <!-- Document Title
     ============================================= -->
-    <title><?= $contante::NOM_SITE; ?></title>
+    <title><?= \App\constante::NOM_SITE; ?></title>
 
     <style>
 
