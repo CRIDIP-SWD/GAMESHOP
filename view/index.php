@@ -1,8 +1,6 @@
 <div class="row">
     <div class="col-md-3">
-        <button type="button" class="btn btn-block btn-success">Xbox</button>
-        <button type="button" class="btn btn-block btn-info">PS4</button>
-        <button type="button" class="btn btn-block btn-default">offre spécizl</button>
+        <a href=""><img src="<?= $constante->getUrl(array('images', 'shop', 'banners/')); ?>ps4-banner.png" class="img-responsive" alt="Univers PS4"></a>
     </div>
     <div class="col-md-9">
         <section id="slider" class="boxed-slider">
