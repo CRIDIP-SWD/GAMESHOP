@@ -339,22 +339,12 @@
 <section id="content">
     <div class="content-wrap">
         <div class="container clearfix">
-            <div class="col-md-12 nopadding">
-
-                <div class="col-md-6 noleftpadding bottommargin-sm">
-                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/2.jpg" alt="Image"></a>
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/ps4-banner.png" class="img-responsive" alt="PS4 Catégorie" />
+                    </div>
                 </div>
-
-                <div class="col-md-6 noleftpadding bottommargin-sm">
-                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/8.jpg" alt="Image"></a>
-                </div>
-
-                <div class="clear"></div>
-
-                <div class="col-md-12 noleftpadding">
-                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/4.jpg" alt="Image"></a>
-                </div>
-
             </div>
             <div class="tabs topmargin-lg clearfix" id="tab-3">
 
