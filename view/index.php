@@ -339,7 +339,7 @@
 <section id="content">
     <div class="content-wrap">
         <div class="container clearfix">
-            <div class="col-md-8 nopadding">
+            <div class="col-md-12 nopadding">
 
                 <div class="col-md-6 noleftpadding bottommargin-sm">
                     <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/2.jpg" alt="Image"></a>
