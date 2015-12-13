@@ -343,7 +343,9 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a href=""><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/ps4-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
-                        <a href=""><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/xbox-one-banner.png" class="img-responsive" alt="Xbox One Catégorie" /></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href=""><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/xbox-one-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
                     </div>
                 </div>
             </div>
