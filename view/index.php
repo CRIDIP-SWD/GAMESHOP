@@ -342,7 +342,7 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/ps4-banner.png" class="img-responsive" alt="PS4 Catégorie" />
+                        <a href=""><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/ps4-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
                     </div>
                 </div>
             </div>
