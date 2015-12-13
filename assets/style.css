@@ -13149,5 +13149,6 @@ body:not(.no-transition) #wrapper,
 /*
 PERSONALISATION
 */
-.banner-categorie{opacity: 0.2;}
+.banner-categorie{opacity: 0.8;}
+.banner-categorie:hover{opacity: 1;}
 
