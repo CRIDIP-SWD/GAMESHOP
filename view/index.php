@@ -361,9 +361,9 @@
             <div class="tabs topmargin-lg clearfix" id="tab-3">
 
                 <ul class="tab-nav clearfix">
-                    <li><a href="#tabs-9">New Arrivals</a></li>
-                    <li><a href="#tabs-10">Best sellers</a></li>
-                    <li><a href="#tabs-11">You may like</a></li>
+                    <li><a href="#tabs-9">Nouveauté</a></li>
+                    <li><a href="#tabs-10">Promotion</a></li>
+                    <li><a href="#tabs-11">Précommande</a></li>
                 </ul>
 
                 <div class="tab-container">
