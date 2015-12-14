@@ -9,7 +9,7 @@
         <div class="tp-banner" >
             <ul>    <!-- SLIDE  -->
                 <li data-transition="boxslide" data-slotamount="7" data-link="http://www.google.de">
-                    <img src="<?= $constante->getUrl(array('images/')); ?>slides/image1.jpg">
+                    <img src="<?= $constante->getUrl(array('images/')); ?>slider/rev/bg1.jpg">
                     <div class="caption sft big_white"  data-x="400" data-y="100" data-speed="700" data-start="1700" data-easing="easeOutBack">KICKSTART YOUR WEBSITE</div>
                     <div class="caption sfb big_orange"  data-x="400" data-y="142" data-speed="500" data-start="1900" data-easing="easeOutBack">WITH SLIDER REVOLUTION!</div>
                     <div class="caption lfr medium_grey"  data-x="510" data-y="210" data-speed="300" data-start="2000">UNLIMITED TRANSITIONS</div>
