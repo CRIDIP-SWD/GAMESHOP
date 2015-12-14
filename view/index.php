@@ -352,6 +352,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
             <div class="tabs topmargin-lg clearfix" id="tab-3">
 
                 <ul class="tab-nav clearfix">
