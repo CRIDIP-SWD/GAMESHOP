@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
 <head>
@@ -82,7 +85,7 @@
 
             <div class="col_half nobottommargin">
 
-                <p class="nobottommargin"><strong>Call:</strong> 1800-547-2145 | <strong>Email:</strong> info@canvas.com</p>
+                <p class="nobottommargin"><strong>Téléphone:</strong> 0633134330 | <strong>Email:</strong> contact@gameshop.com</p>
 
             </div>
 
@@ -90,32 +93,19 @@
 
                 <!-- Top Links
                 ============================================= -->
+                <?php if(isset($_SESSION)){ ?>
                 <div class="top-links">
                     <ul>
-                        <li><a href="#">USD</a>
-                            <ul>
-                                <li><a href="#">EUR</a></li>
-                                <li><a href="#">AUD</a></li>
-                                <li><a href="#">GBP</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">EN</a>
-                            <ul>
-                                <li><a href="#"><img src="images/icons/flags/french.png" alt="French"> FR</a></li>
-                                <li><a href="#"><img src="images/icons/flags/italian.png" alt="Italian"> IT</a></li>
-                                <li><a href="#"><img src="images/icons/flags/german.png" alt="German"> DE</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Login</a>
+                        <li><a href="#">MOCKELYN Maxime</a>
                             <div class="top-link-section">
                                 <form id="top-login" role="form">
                                     <div class="input-group" id="top-login-username">
                                         <span class="input-group-addon"><i class="icon-user"></i></span>
-                                        <input type="email" class="form-control" placeholder="Email address" required="">
+                                        <input type="email" class="form-control" placeholder="Adresse Mail" required="">
                                     </div>
                                     <div class="input-group" id="top-login-password">
                                         <span class="input-group-addon"><i class="icon-key"></i></span>
-                                        <input type="password" class="form-control" placeholder="Password" required="">
+                                        <input type="password" class="form-control" placeholder="Mot de Passe" required="">
                                     </div>
                                     <label class="checkbox">
                                         <input type="checkbox" value="remember-me"> Remember me
@@ -125,7 +115,32 @@
                             </div>
                         </li>
                     </ul>
-                </div><!-- .top-links end -->
+                </div>
+                <?php }else{ ?>
+                <div class="top-links">
+                    <ul>
+                        <li><a href="#">Login</a>
+                            <div class="top-link-section">
+                                <form id="top-login" role="form">
+                                    <div class="input-group" id="top-login-username">
+                                        <span class="input-group-addon"><i class="icon-user"></i></span>
+                                        <input type="email" class="form-control" placeholder="Adresse Mail" required="">
+                                    </div>
+                                    <div class="input-group" id="top-login-password">
+                                        <span class="input-group-addon"><i class="icon-key"></i></span>
+                                        <input type="password" class="form-control" placeholder="Mot de Passe" required="">
+                                    </div>
+                                    <label class="checkbox">
+                                        <input type="checkbox" value="remember-me"> Remember me
+                                    </label>
+                                    <button class="btn btn-danger btn-block" type="submit">Sign in</button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <?php } ?>
+                <!-- .top-links end -->
 
             </div>
 
