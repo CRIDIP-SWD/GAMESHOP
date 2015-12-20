@@ -93,7 +93,7 @@ session_start();
 
                 <!-- Top Links
                 ============================================= -->
-                <?php if(isset($_SESSION)){ ?>
+                <?php if(!empty($_SESSION)){ ?>
                 <div class="top-links">
                     <ul>
                         <li><a href="#">MOCKELYN Maxime</a>
