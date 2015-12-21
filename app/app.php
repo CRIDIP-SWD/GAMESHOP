@@ -17,7 +17,11 @@ namespace App;
  */
 class app
 {
-
+    public function __construct()
+    {
+        mysql_connect("locahost", "root", "1992maxime")or die(mysql_error());
+        mysql_select_db("gameshop")or die(mysql_error());
+    }
 }
 
 /**
