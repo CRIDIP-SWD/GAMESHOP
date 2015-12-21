@@ -315,11 +315,13 @@ session_start();
                                 </ul>
                             </div>
                         </li><!-- .mega-menu end -->
-                        <li><a href="#"><div>Accessories</div><span>Awesome Works</span></a></li>
-                        <li><a href="#"><div>Sale</div><span>Awesome Works</span></a></li>
-                        <li><a href="#"><div>Blog</div><span>Latest News</span></a></li>
-                        <li><a href="#"><div>Videos</div><span>Latest News</span></a></li>
-                        <li><a href="#"><div>Contact</div><span>Get In Touch</span></a></li>
+                        <?php
+                        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE categorie.designation != 'PRODUIT D&Eacute;RIV&Eacute;S'")or die(mysql_error());
+                        while($cat = mysql_fetch_array($sql_categorie))
+                        {
+                        ?>
+                            <li><a href="#"><div><?= $cat['designation']; ?></div><span>Awesome Works</span></a></li>
+                        <?php } ?>
                     </ul>
 
                     <!-- Top Cart
