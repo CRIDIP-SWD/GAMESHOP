@@ -320,7 +320,28 @@ session_start();
                         while($cat = mysql_fetch_array($sql_categorie))
                         {
                         ?>
+                            <?php
+                            if($head->count_subcategorie($cat['idcategorie']) == 0){
+                            ?>
                             <li><a href="#"><div><?= $cat['designation']; ?></div><span>Awesome Works</span></a></li>
+                            <?php }else{ ?>
+                            <li class="mega-menu"><a href="#"><div><?= $cat['designation']; ?></div><span>Out of the Box</span></a>
+                                    <div class="mega-menu-content style-2 col-4 clearfix">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#"><div><?= $cat['designation']; ?></div></a>
+                                                <ul>
+                                                    <?php
+                                                    $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['idcategorie'])or die(mysql_error());
+                                                    while($sub = mysql_fetch_array($sql_sub)):
+                                                    ?>
+                                                    <li><a href="<?= $constante->getUrl('categorie.php&idcategorie="'.$sub['id'].'"', false); ?>"><div><?= $sub['designation']; ?></div></a></li>
+                                                    <?php endwhile; ?>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            <?php } ?>
                         <?php } ?>
                     </ul>
 
