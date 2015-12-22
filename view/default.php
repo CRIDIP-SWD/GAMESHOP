@@ -328,13 +328,13 @@ session_start();
                             <li class="mega-menu"><a href="#"><div><?= $cat['designation']; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div><?= $cat['designation']; ?></div></a>
+                                            <li class="mega-menu-title"><a href="<?= $constante->getUrl('categorie.php?idcategorie="'.$cat['id'].'"', false); ?>"><div><?= $cat['designation']; ?></div></a>
                                                 <ul>
                                                     <?php
                                                     $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['idcategorie'])or die(mysql_error());
                                                     while($sub = mysql_fetch_array($sql_sub)):
                                                     ?>
-                                                    <li><a href="<?= $constante->getUrl('categorie.php&idcategorie="'.$sub['id'].'"', false); ?>"><div><?= $sub['designation']; ?></div></a></li>
+                                                    <li><a href="<?= $constante->getUrl('categorie.php&idsubcategorie="'.$sub['id'].'"', false); ?>"><div><?= $sub['designation']; ?></div></a></li>
                                                     <?php endwhile; ?>
                                                 </ul>
                                             </li>
