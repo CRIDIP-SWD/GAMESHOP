@@ -185,6 +185,24 @@ session_start();
                                             </li>
                                         </ul>
                                     </div>
+                                    <div class="mega-menu-content style-2 col-8 cleafix">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href=""><div>PR&Eacute;COMMANDE</div></a>
+                                                <ul>
+                                                    <li>TEST</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>TEST</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>TEST</li>
+                                                </ul>
+                                                <ul>
+                                                    <li>TEST</li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </li>
                             <?php } ?>
                         <?php } ?>
