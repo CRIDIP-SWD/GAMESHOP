@@ -195,8 +195,6 @@ session_start();
                                                             </tr>
                                                         </table>
                                                     </li>
-                                                </ul>
-                                                <ul>
                                                     <li>
                                                         <table>
                                                             <tr style="cursor: hand;">
@@ -206,6 +204,7 @@ session_start();
                                                         </table>
                                                     </li>
                                                 </ul>
+
                                             </li>
                                         </ul>
                                     </div>
