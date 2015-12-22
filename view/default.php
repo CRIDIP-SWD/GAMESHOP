@@ -184,21 +184,18 @@ session_start();
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </div>
-                                    <div class="mega-menu-content style-2 col-8 cleafix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href=""><div>PR&Eacute;COMMANDE</div></a>
+                                            <li class="mega-menu-title"><a href="">PR&Eacute;COMMANDE</div></a>
                                                 <ul>
-                                                    <li>TEST</li>
-                                                </ul>
-                                                <ul>
-                                                    <li>TEST</li>
-                                                </ul>
-                                                <ul>
-                                                    <li>TEST</li>
-                                                </ul>
-                                                <ul>
-                                                    <li>TEST</li>
+                                                    <li>
+                                                        <table>
+                                                            <tr style="cursor: hand;">
+                                                                <td><img src="<?= $constante->getUrl(array('produit', 'cards/'), false, true); ?>ps4.jpg" class="img-responsive" width="120" /></td>
+                                                                <td><strong>Call Of Duty: Black Ops III</strong><br><h6>DAYS ONE (NUKETOWN)</h6></td>
+                                                                <td><span class="label label-info">59,90 €</span></td>
+                                                            </tr>
+                                                        </table>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>

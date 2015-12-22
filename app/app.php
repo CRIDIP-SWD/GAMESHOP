@@ -37,6 +37,7 @@ class constante extends app{
     const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
     const NOM_SITE   = "Gameshop";
+    const SOURCES    = "ns342142.ip-5-196-76.eu/sources/gameshop/";
 
     /**
      * @param $dos array Permet de parser sous forme string le tableau array=$dos
@@ -50,16 +51,20 @@ class constante extends app{
     /**
      * @param array $dos Il permet d'envoyer à la fonction la liste des dossiers à parcourir sous forme de tableau
      * @param bool|true $assets Permet d'insérer de manière automatique le dossier 'assets'
+     * @param bool $sources Renvoie les informations vers le fichiers DataSources de CRIDIP
      * @return string Suivant le bool $assets, il retourne la redirection sous format de lien(string)
      */
-    public static function getUrl($dos = array(), $assets = true)
+    public static function getUrl($dos = array(), $assets = true, $sources = true)
     {
         if($assets === true)
         {
             return static::HTTP.static::URL.static::ASSETS.static::parseArray($dos);
+        }elseif($sources === true){
+            return static::HTTP.static::SOURCES.$dos;
         }else{
             return static::HTTP.static::URL.$dos;
         }
+
     }
 
 
