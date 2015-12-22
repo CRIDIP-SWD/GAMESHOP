@@ -58,7 +58,7 @@ class constante extends app{
         {
             return static::HTTP.static::URL.static::ASSETS.static::parseArray($dos);
         }else{
-            return static::HTTP.static::URL.static::parseArray($dos);
+            return static::HTTP.static::URL.$dos;
         }
     }
 
