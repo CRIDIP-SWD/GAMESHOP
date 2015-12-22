@@ -192,7 +192,6 @@ session_start();
                                                             <tr style="cursor: hand;">
                                                                 <td><img src="<?= $constante->getUrl('',false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
                                                                 <td><strong>Call Of Duty: Black Ops III</strong><br><h6>DAYS ONE (NUKETOWN)</h6><br><span class="label label-info">59,90 €</span></td>
-                                                                <td></td>
                                                             </tr>
                                                         </table>
                                                     </li>
