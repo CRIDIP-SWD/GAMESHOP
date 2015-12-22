@@ -331,7 +331,7 @@ session_start();
                                             <li class="mega-menu-title"><a href="<?= $constante->getUrl('categorie.php?idcategorie="'.$cat['id'].'"', false); ?>"><div><?= $cat['designation']; ?></div></a>
                                                 <ul>
                                                     <?php
-                                                    $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE subcategorie.idcategorie = ".$cat['idcategorie'])or die(mysql_error());
+                                                    $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE subcategorie.idcategorie = ".$cat['id'])or die(mysql_error());
                                                     while($sub = mysql_fetch_array($sql_sub)):
                                                     ?>
                                                     <li><a href="<?= $constante->getUrl('categorie.php&idsubcategorie="'.$sub['id'].'"', false); ?>"><div><?= $sub['designation']; ?></div></a></li>
