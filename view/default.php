@@ -195,6 +195,10 @@ session_start();
                                                             </tr>
                                                         </table>
                                                     </li>
+                                                </ul>
+                                            </li>
+                                            <li class="mega-menu-title"><a href="#"><div>NOUVEAUT&Eacute;</div></a>
+                                                <ul>
                                                     <li>
                                                         <table>
                                                             <tr style="cursor: hand;">
@@ -204,7 +208,18 @@ session_start();
                                                         </table>
                                                     </li>
                                                 </ul>
-
+                                            </li>
+                                            <li class="mega-menu-title"><a href="#"><div>PROMOTIONS</div></a>
+                                                <ul>
+                                                    <li>
+                                                        <table>
+                                                            <tr style="cursor: hand;">
+                                                                <td><img src="<?= $constante->getUrl('',false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
+                                                                <td><strong>Call Of Duty: Black Ops III</strong><br><h6>DAYS ONE (NUKETOWN)</h6><br>19,90 €</td>
+                                                            </tr>
+                                                        </table>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
