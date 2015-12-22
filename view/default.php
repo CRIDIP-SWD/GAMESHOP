@@ -328,7 +328,7 @@ session_start();
                             <li class="mega-menu"><a href="#"><div><?= $cat['designation']; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="<?= $constante->getUrl('categorie.php?idcategorie="'.$cat['id'].'"', false); ?>"><div><?= $cat['designation']; ?></div></a>
+                                            <li class="mega-menu-title"><a href="<?= $constante->getUrl("index.php?view=categorie&idcategorie=".$cat['id']."", false); ?>"><div><?= $cat['designation']; ?></div></a>
                                                 <ul>
                                                     <?php
                                                     $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE subcategorie.idcategorie = ".$cat['id'])or die(mysql_error());
