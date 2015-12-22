@@ -185,7 +185,7 @@ session_start();
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li class="mega-menu-title"><a href="">PR&Eacute;COMMANDE</div></a>
+                                            <li class="mega-menu-title"><a href="#"><div>PR&Eacute;COMMANDE</div></a>
                                                 <ul>
                                                     <li>
                                                         <table>
