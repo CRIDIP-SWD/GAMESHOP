@@ -321,7 +321,7 @@ session_start();
                         {
                         ?>
                             <?php
-                            if($head->count_subcategorie($cat['idcategorie']) == 0){
+                            if($head->count_subcategorie($cat['id']) == 0){
                             ?>
                             <li><a href="#"><div><?= $cat['designation']; ?></div><span>Awesome Works</span></a></li>
                             <?php }else{ ?>
