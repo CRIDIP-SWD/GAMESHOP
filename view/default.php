@@ -186,7 +186,7 @@ session_start();
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div>Clothing</div></a>
+                                            <li class="mega-menu-title"><a href="#"><div>Nouveauté</div></a>
                                                 <ul>
                                                     <li><a href="#"><div>Casual Shirts</div></a></li>
                                                     <li><a href="#"><div>T-Shirts</div></a></li>
@@ -199,7 +199,7 @@ session_start();
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div>Accessories</div></a>
+                                            <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
                                                 <ul>
                                                     <li><a href="#"><div>Bags &amp; Backpacks</div></a></li>
                                                     <li><a href="#"><div>Watches</div></a></li>
@@ -212,7 +212,7 @@ session_start();
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div>New Arrivals</div></a>
+                                            <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
                                                     <li><a href="#"><div>T-Shirts</div></a></li>
                                                     <li><a href="#"><div>Formal Shoes</div></a></li>
