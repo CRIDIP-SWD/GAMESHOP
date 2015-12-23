@@ -170,55 +170,57 @@ session_start();
                             ?>
                             <li><a href="#"><div><?= $cat['designation']; ?></div><span>Awesome Works</span></a></li>
                             <?php }else{ ?>
-                            <li class="mega-menu"><a href="#"><div><?= $cat['designation']; ?></div><span>Out of the Box</span></a>
+                                <li class="mega-menu"><a href="#"><div>Men</div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="<?= $constante->getUrl("index.php?view=categorie&idcategorie=".$cat['id']."", false); ?>"><div><?= $cat['designation']; ?></div></a>
+                                            <li class="mega-menu-title"><a href="#"><div>Footwear</div></a>
                                                 <ul>
-                                                    <?php
-                                                    $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE subcategorie.idcategorie = ".$cat['id'])or die(mysql_error());
-                                                    while($sub = mysql_fetch_array($sql_sub)):
-                                                    ?>
-                                                    <li><a href="<?= $constante->getUrl("index.php?view=categorie&idsubcategorie=".$sub['id']."", false); ?>"><div><?= $sub['designation']; ?></div></a></li>
-                                                    <?php endwhile; ?>
+                                                    <li><a href="#"><div>Casual Shoes</div></a></li>
+                                                    <li><a href="#"><div>Formal Shoes</div></a></li>
+                                                    <li><a href="#"><div>Sports shoes</div></a></li>
+                                                    <li><a href="#"><div>Flip Flops</div></a></li>
+                                                    <li><a href="#"><div>Slippers</div></a></li>
+                                                    <li><a href="#"><div>Sports Sandals</div></a></li>
+                                                    <li><a href="#"><div>Party Shoes</div></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div>PR&Eacute;COMMANDE</div></a>
+                                            <li class="mega-menu-title"><a href="#"><div>Clothing</div></a>
                                                 <ul>
-                                                    <li>
-                                                        <table>
-                                                            <tr style="cursor: hand;">
-                                                                <td><img src="<?= $constante->getUrl('',false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
-                                                                <td><strong>Call Of Duty: Black Ops III</strong><br><h6>DAYS ONE (NUKETOWN)</h6><br>19,90 €</td>
-                                                            </tr>
-                                                        </table>
-                                                    </li>
+                                                    <li><a href="#"><div>Casual Shirts</div></a></li>
+                                                    <li><a href="#"><div>T-Shirts</div></a></li>
+                                                    <li><a href="#"><div>Collared Tees</div></a></li>
+                                                    <li><a href="#"><div>Pants / Trousers</div></a></li>
+                                                    <li><a href="#"><div>Ethnic Wear</div></a></li>
+                                                    <li><a href="#"><div>Jeans</div></a></li>
+                                                    <li><a href="#"><div>Sweamwear</div></a></li>
                                                 </ul>
                                             </li>
-                                            <li class="mega-menu-title"><a href="#"><div>NOUVEAUT&Eacute;</div></a>
+                                        </ul>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#"><div>Accessories</div></a>
                                                 <ul>
-                                                    <li>
-                                                        <table>
-                                                            <tr style="cursor: hand;">
-                                                                <td><img src="<?= $constante->getUrl('',false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
-                                                                <td><strong>Call Of Duty: Black Ops III</strong><br><h6>DAYS ONE (NUKETOWN)</h6><br>19,90 €</td>
-                                                            </tr>
-                                                        </table>
-                                                    </li>
+                                                    <li><a href="#"><div>Bags &amp; Backpacks</div></a></li>
+                                                    <li><a href="#"><div>Watches</div></a></li>
+                                                    <li><a href="#"><div>Sunglasses</div></a></li>
+                                                    <li><a href="#"><div>Wallets</div></a></li>
+                                                    <li><a href="#"><div>Caps &amp; Hats</div></a></li>
+                                                    <li><a href="#"><div>Jewellery</div></a></li>
+                                                    <li><a href="#"><div>Belts, Ties</div></a></li>
                                                 </ul>
                                             </li>
-                                            <li class="mega-menu-title"><a href="#"><div>PROMOTIONS</div></a>
+                                        </ul>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#"><div>New Arrivals</div></a>
                                                 <ul>
-                                                    <li>
-                                                        <table>
-                                                            <tr style="cursor: hand;">
-                                                                <td><img src="<?= $constante->getUrl('',false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
-                                                                <td><strong>Call Of Duty: Black Ops III</strong><br><h6>DAYS ONE (NUKETOWN)</h6><br>19,90 €</td>
-                                                            </tr>
-                                                        </table>
-                                                    </li>
+                                                    <li><a href="#"><div>T-Shirts</div></a></li>
+                                                    <li><a href="#"><div>Formal Shoes</div></a></li>
+                                                    <li><a href="#"><div>Accessories</div></a></li>
+                                                    <li><a href="#"><div>Watches</div></a></li>
+                                                    <li><a href="#"><div>Perfumes</div></a></li>
+                                                    <li><a href="#"><div>Belts, Ties</div></a></li>
+                                                    <li><a href="#"><div>Formal Shirts</div></a></li>
                                                 </ul>
                                             </li>
                                         </ul>
