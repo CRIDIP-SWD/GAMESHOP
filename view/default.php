@@ -170,7 +170,7 @@ session_start();
                             ?>
                             <li><a href="#"><div><?= $cat['designation']; ?></div><span>Awesome Works</span></a></li>
                             <?php }else{ ?>
-                                <li class="mega-menu"><a href="#"><div>Men</div><span>Out of the Box</span></a>
+                                <li class="mega-menu"><a href="#"><div><?= $cat['designation']; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Footwear</div></a>
