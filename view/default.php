@@ -191,17 +191,17 @@ session_start();
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
-                                                                <a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
-                                                                <a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
-                                                                <div class="sale-flash">Sale!</div>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
-                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                                                    <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
                                                             <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#">Unisex Sunglasses</a></h3></div>
-                                                                <div class="product-price"><del>$19.99</del> <ins>$11.99</ins></div>
+                                                                <div class="product-title"><h3><a href="#">Jeux PS4</a></h3></div>
+                                                                <div class="product-price"><ins>69,90 €</ins></div>
                                                                 <div class="product-rating">
                                                                     <i class="icon-star3"></i>
                                                                     <i class="icon-star3"></i>
