@@ -10,7 +10,7 @@ $produit = mysql_fetch_array($sql_produit);
     <div class="container clearfix">
         <h1 <?php if(!empty($produit['banner'])){echo "style='color: white;'";} ?>><?= $produit['designation']; ?></h1>
         <ol class="breadcrumb">
-            <li <?php if(!empty($produit['banner'])){echo "style='color: white'";} ?>><a href="#"><?= $produit['designation_cat']; ?></a></li>
+            <li <?php if(!empty($produit['banner'])){echo "style='color: white'";} ?> style="font-size: 15px;"><?= $produit['designation_cat']; ?></li>
         </ol>
     </div>
 
