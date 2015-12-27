@@ -5994,6 +5994,9 @@ body:not(.device-touch):not(.device-xs):not(.device-xxs) .product-overlay a {
 }
 
 .sale-flash.out-of-stock { background-color: #777; }
+.sale-flash.precommande{ background-color: #0079ff; }
+.sale-flash.nouveaute{ background-color: #ff4a4d; }
+.sale-flash.promotion{ background-color: #ff7700; }
 
 
 /* Shop - 3 Columns
