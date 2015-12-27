@@ -70,8 +70,13 @@
 
                                 <h4><?= $categorie['designation_cat']; ?></h4>
                                 <ul>
-                                    <li class="active"><a href="#">Shirts</a></li>
-                                    <li class=""><a href="#">Shirts</a></li>
+                                    <?php
+                                    $sql_subcat = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'")or die(mysql_error());
+                                    while($subcat = mysql_fetch_array($sql_subcat))
+                                    {
+                                    ?>
+                                    <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="#">Shirts</a></li>
+                                    <?php } ?>
                                 </ul>
 
                             </div>
