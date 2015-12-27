@@ -147,13 +147,13 @@
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-4">
-                        <a href="" class="banner-categorie"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/ps4-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
+                        <a href="index.php?view=categorie&idcategorie=1" class="banner-categorie"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/ps4-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
                     </div>
                     <div class="col-md-4">
-                        <a href="" class="banner-categorie"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/xbox-one-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
+                        <a href="index.php?view=categorie&idcategorie=3" class="banner-categorie"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/xbox-one-banner.png" class="img-responsive" alt="PS4 Catégorie" /></a>
                     </div>
                     <div class="col-md-4">
-                        <a href="" class="banner-categorie"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/box-office-banner.png" class="img-responsive" alt="Meilleur Vente" /></a>
+                        <a href="index.php?view=categorie&idcategorie=9" class="banner-categorie"><img src="<?= $constante->getUrl(array('images/')); ?>shop/banners/box-office-banner.png" class="img-responsive" alt="Meilleur Vente" /></a>
                     </div>
                 </div>
             </div>
