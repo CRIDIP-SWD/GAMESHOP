@@ -164,6 +164,7 @@ session_start();
                         $sql_categorie = mysql_query("SELECT * FROM categorie WHERE categorie.designation != 'PRODUIT D&Eacute;RIV&Eacute;S'")or die(mysql_error());
                         while($cat = mysql_fetch_array($sql_categorie))
                         {
+                            $idcategorie = $cat['id'];
                         ?>
                             <?php
                             if($head->count_subcategorie($cat['id']) == 0){
@@ -191,7 +192,7 @@ session_start();
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_new = mysql_query("SELECT * FROM produits WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' LIMIT 1")or die(mysql_error());
+                                                    $sql_new = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1")or die(mysql_error());
                                                     while($new = mysql_fetch_array($sql_new))
                                                     {
                                                     ?>
@@ -259,7 +260,7 @@ session_start();
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_preco = mysql_query("SELECT * FROM produits WHERE date_sortie > '$date' LIMIT 1")or die(mysql_error());
+                                                    $sql_preco = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie > '$date' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1")or die(mysql_error());
                                                     while($preco = mysql_fetch_array($sql_preco))
                                                     {
                                                         ?>
