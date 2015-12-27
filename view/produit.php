@@ -2,6 +2,8 @@
 $ref_produit = $_GET['ref_produit'];
 $sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND produits_categorie.ref_produit = produits.ref_produit AND produits.ref_produit = '$ref_produit'")or die(mysql_error());
 $produit = mysql_fetch_array($sql_produit);
+$sql_caract = mysql_query("SELECt * FROM produits_caracteristique WHERE ref_produit = '$ref_produit'")or die(mysql_error());
+$caract = mysql_fetch_array($sql_caract);
 $verif = $produit_cls->verif_stat_product($ref_produit);
 if($verif === 3)
 {
@@ -89,21 +91,22 @@ if($verif === 3)
 
                         <!-- Product Single - Short Description
                         ============================================= -->
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero velit id eaque ex quae laboriosam nulla optio doloribus! Perspiciatis, libero, neque, perferendis at nisi optio dolor!</p>
-                        <p>Perspiciatis ad eveniet ea quasi debitis quos laborum eum reprehenderit eaque explicabo assumenda rem modi.</p>
-                        <ul class="iconlist">
-                            <li><i class="icon-caret-right"></i> Dynamic Color Options</li>
-                            <li><i class="icon-caret-right"></i> Lots of Size Options</li>
-                            <li><i class="icon-caret-right"></i> 30-Day Return Policy</li>
-                        </ul><!-- Product Single - Short Description End -->
+                        <?= html_entity_decode($produit['short_description']); ?>
+
+                        <!-- Product Single - Short Description End -->
 
                         <!-- Product Single - Meta
                         ============================================= -->
                         <div class="panel panel-default product-meta">
                             <div class="panel-body">
-                                <span itemprop="productID" class="sku_wrapper">SKU: <span class="sku">8465415</span></span>
-                                <span class="posted_in">Category: <a href="#" rel="tag">Dress</a>.</span>
-                                <span class="tagged_as">Tags: <a href="#" rel="tag">Pink</a>, <a href="#" rel="tag">Short</a>, <a href="#" rel="tag">Dress</a>, <a href="#" rel="tag">Printed</a>.</span>
+                                <table style="width: 50%;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 25%; font-weight: bold;">EDITEUR</td>
+                                            <td><?= $caract['editeur']; ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div><!-- Product Single - Meta End -->
 
