@@ -191,7 +191,7 @@ session_start();
                                                     <li>
                                                         <table>
                                                             <tr>
-                                                                <td><img src="<?= $constante->getUrl('', false, true); ?>" class="img-responsive" width="120" /></td>
+                                                                <td><img src="<?= $constante->getUrl('', false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
                                                                 <td>
                                                                     <strong> TEST</strong><br>
                                                                     <h6><i>Test</i></h6><br>
