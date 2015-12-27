@@ -372,7 +372,7 @@ session_start();
 
                             <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-                            <div style="background: url('<?= $constante->getUrl("images/", true, false); ?>world-map.png') no-repeat center center; background-size: 100%;">
+                            <div style="background: url('<?= $constante->getUrl("", true, false); ?>images/world-map.png') no-repeat center center; background-size: 100%;">
                                 <address>
                                     <strong>Siège Social:</strong><br>
                                     20 Avenue Jean jaures<br>
