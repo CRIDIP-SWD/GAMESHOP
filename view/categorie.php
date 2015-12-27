@@ -61,6 +61,7 @@
                                     <div class="product-price"><ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
                                 </div>
                             </div>
+                                <?php } ?>
                             <?php } ?>
                         </div><!-- #shop end -->
 
