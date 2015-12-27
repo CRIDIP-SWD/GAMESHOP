@@ -1,6 +1,6 @@
 <?php
 $ref_produit = $_GET['ref_produit'];
-$sql_produit = mysql_query("SELECT * FROM produits, produits_categorie WHERE produits.ref_produit = '$ref_produit' AND produits_categorie.ref_produit = '$ref_produit'")or die(mysql_error());
+$sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND produits_categorie.ref_produit = produits.ref_produit AND produits.ref_produit = '$ref_produit'")or die(mysql_error());
 $produit = mysql_fetch_array($sql_produit);
 ?>
 <!-- Page Title
@@ -8,9 +8,9 @@ $produit = mysql_fetch_array($sql_produit);
 <section id="page-title">
 
     <div class="container clearfix">
-        <h1>Pink Printed Dress</h1>
+        <h1><?= $produit['designation']; ?></h1>
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
+            <li><a href="#">GAMESHOP</a></li>
             <li><a href="#">Shop</a></li>
             <li class="active">Shop Single</li>
         </ol>
