@@ -226,7 +226,7 @@
                 </li>
                 <li data-transition="boxslide" data-slotamout="7" data-link="#">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
-                    <div class="caption sft" style="font-size: 56px ;color: white" data-x="0" data-y="100" data-speed="700" data-start="1700" data-easing="easeOutLeft">NARUTO ULTIMATE NINJA STORM 4</div>
+                    <div class="caption sft" style="font-size: 56px ;color: white" data-x="0" data-y="600" data-speed="700" data-start="1700" data-easing="easeOutLeft">NARUTO ULTIMATE NINJA STORM 4</div>
 
                 </li>
             </ul>
