@@ -53,7 +53,7 @@ if($verif === 3)
 
                     </div>
 
-                    <div class="col_two_third product-desc">
+                    <div class="col_two_fifth product-desc">
 
                         <!-- Product Single - Price
                         ============================================= -->
