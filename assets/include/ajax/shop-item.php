@@ -12,7 +12,9 @@ $produit = mysql_fetch_array($sql_produit);
                     <div class="ajax-modal-title">
                         <h2><?= $produit['designation']; ?></h2>
                         <span class="game-font">
-                            Z
+                            <?php if($produit['idcategorie']): ?>
+                                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/icon-<?= $produit['images_cat']; ?>.png" />
+                            <?php endif; ?>
                         </span>
                     </div>
 
