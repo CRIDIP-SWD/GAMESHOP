@@ -313,13 +313,8 @@
                             ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <div class="fslider" data-arrows="false">
-                                        <div class="flexslider">
-                                            <div class="slider-wrap">
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco['ref_produit']; ?>.jpg" alt="Pink Printed Dress"></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                         <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
