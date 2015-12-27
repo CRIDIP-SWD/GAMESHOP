@@ -368,11 +368,11 @@ session_start();
 
                         <div class="widget clearfix">
 
-                            <img src="<?= $constante->getUrl("", true, false); ?>images/logo.png" alt="" class="footer-logo">
+                            <img src="<?= $constante->getUrl(array("images/"), true, false); ?>logo.png" alt="" class="footer-logo">
 
                             <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-                            <div style="background: url('<?= $constante->getUrl("", true, false); ?>images/world-map.png') no-repeat center center; background-size: 100%;">
+                            <div style="background: url('<?= $constante->getUrl(array("images/"), true, false); ?>world-map.png') no-repeat center center; background-size: 100%;">
                                 <address>
                                     <strong>Siège Social:</strong><br>
                                     20 Avenue Jean jaures<br>
