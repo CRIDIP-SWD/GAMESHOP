@@ -131,7 +131,8 @@
                         ============================================= -->
                         <div id="shop" class="product-3 clearfix">
                             <?php
-                            $sql_produit = mysql_query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.idsubcategorie = subcategorie.id
+                            $sql_produit = mysql_query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
+                                                        AND produits_subcategorie.idsubcategorie = subcategorie.id
                                                         AND produits_subcategorie.idsubcategorie = '$idsubcategorie'")or die(mysql_error());
                             while($produit = mysql_fetch_array($sql_produit))
                             {
