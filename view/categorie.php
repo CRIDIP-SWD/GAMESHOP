@@ -48,7 +48,7 @@
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                        <a href="assets/include/ajax/shop-item.php" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                        <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc center">
