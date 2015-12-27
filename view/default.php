@@ -368,7 +368,7 @@ session_start();
 
                         <div class="widget clearfix">
 
-                            <img src="<?= $constante->getUrl("images/", true, false); ?>logo.png" alt="" class="footer-logo">
+                            <img src="<?= $constante->getUrl("", true, false); ?>images/logo.png" alt="" class="footer-logo">
 
                             <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
