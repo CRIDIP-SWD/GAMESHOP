@@ -2,6 +2,12 @@
 $ref_produit = $_GET['ref_produit'];
 $sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND produits_categorie.ref_produit = produits.ref_produit AND produits.ref_produit = '$ref_produit'")or die(mysql_error());
 $produit = mysql_fetch_array($sql_produit);
+$verif = $produit_cls->verif_stat_product($ref_produit);
+if($verif === 3)
+{
+    $sql_promo = mysql_query("SELECT * FROM produits_promotion WHERE ref_produit = '$ref_produit'")or die(mysql_error());
+    $produit .= mysql_fetch_array($sql_promo);
+}
 ?>
 <!-- Page Title
 		============================================= -->
@@ -34,9 +40,15 @@ $produit = mysql_fetch_array($sql_produit);
                         ============================================= -->
                         <div class="product-image">
                             <img src="<?= $constante->getUrl(array(), false,true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" />
-                            <?php
-                            if($)
-                            ?>
+                            <?php if($verif == 1): ?>
+                                <div class="sale-flash nouveaute">NOUVEAU !</div>
+                            <?php endif; ?>
+                            <?php if($verif == 2): ?>
+                                <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                            <?php endif; ?>
+                            <?php if($verif == 3): ?>
+                                <div class="sale-flash promotion">EN PROMOTION !</div>
+                            <?php endif; ?>
                         </div><!-- Product Single - Gallery End -->
 
                     </div>
@@ -45,7 +57,14 @@ $produit = mysql_fetch_array($sql_produit);
 
                         <!-- Product Single - Price
                         ============================================= -->
-                        <div class="product-price"><del>$39.99</del> <ins>$24.99</ins></div><!-- Product Single - Price End -->
+                        <div class="product-price">
+                            <?php if($verif === 3){ ?>
+                                <del><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></del>
+                                <ins><?= number_format($produit['new_price'], 2, ',', ' ')." €" ?></ins>
+                            <?php }else{ ?>
+                                <ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></ins>
+                            <?php } ?>
+                        </div><!-- Product Single - Price End -->
 
                         <!-- Product Single - Rating
                         ============================================= -->
