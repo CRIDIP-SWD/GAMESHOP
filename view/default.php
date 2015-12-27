@@ -370,7 +370,7 @@ session_start();
 
                             <img src="<?= $constante->getUrl(array("images/"), true, false); ?>logo.png" alt="" class="footer-logo">
 
-                            <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
+                            <p>Vendeur de Jeux vidéo <strong>Spécialiste</strong> de la <strong>Précommande</strong>.</p>
 
                             <div style="background: url('<?= $constante->getUrl(array("images/"), true, false); ?>world-map.png') no-repeat center center; background-size: 100%;">
                                 <address>
