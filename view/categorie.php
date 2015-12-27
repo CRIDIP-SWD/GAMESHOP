@@ -44,24 +44,16 @@
                             ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="images/shop/dress/1.jpg" alt="Checked Short Dress"></a>
-                                    <a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
-                                    <div class="sale-flash">50% Off*</div>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.png" alt="Checked Short Dress"></a>
+                                    <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                        <a href="assets/include/ajax/shop-item.php" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc center">
-                                    <div class="product-title"><h3><a href="#">Checked Short Dress</a></h3></div>
-                                    <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-half-full"></i>
-                                    </div>
+                                    <div class="product-title"><h3><a href="#"><?= $produit['designation']; ?></a></h3></div>
+                                    <div class="product-price"><ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
                                 </div>
                             </div>
                             <?php } ?>
