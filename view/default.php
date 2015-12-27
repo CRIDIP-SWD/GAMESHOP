@@ -174,7 +174,7 @@ session_start();
                                 <li class="mega-menu"><a href="#"><div><?= $cat['designation_cat']; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div><?= $cat['designation']; ?></div></a>
+                                            <li class="mega-menu-title"><a href="#"><div><?= $cat['designation_cat']; ?></div></a>
                                                 <ul>
                                                 <?php
                                                 $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['id'])or die(mysql_error());
