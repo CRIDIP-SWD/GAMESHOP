@@ -44,7 +44,7 @@
                             ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.png" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
