@@ -1,7 +1,15 @@
+<?php
+$ref_produit = $_GET['ref_produit'];
+$sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie, produits_caracteristique WHERE produits_categorie.ref_produit = produits.ref_produit
+                            AND produits_categorie.idcategorie = categorie.id
+                            AND produits_caracteristique.ref_produit = produits.ref_produit
+                            AND produits.ref_produit = '$ref_produit'")or die(mysql_error());
+$produit = mysql_fetch_array($sql_produit);
+?>
                 <div class="single-product shop-quick-view-ajax clearfix">
 
                     <div class="ajax-modal-title">
-                        <h2>Pink Printed Dress</h2>
+                        <h2><?= $produit['designation']; ?></h2>
                     </div>
 
                     <div class="product modal-padding clearfix">
