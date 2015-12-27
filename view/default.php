@@ -218,26 +218,60 @@ session_start();
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
                                                 <ul>
-                                                    <li><a href="#"><div>Bags &amp; Backpacks</div></a></li>
-                                                    <li><a href="#"><div>Watches</div></a></li>
-                                                    <li><a href="#"><div>Sunglasses</div></a></li>
-                                                    <li><a href="#"><div>Wallets</div></a></li>
-                                                    <li><a href="#"><div>Caps &amp; Hats</div></a></li>
-                                                    <li><a href="#"><div>Jewellery</div></a></li>
-                                                    <li><a href="#"><div>Belts, Ties</div></a></li>
+                                                    <li>
+                                                        <div class="product clearfix">
+                                                            <div class="product-image">
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <!--<div class="sale-flash">Sale!</div>-->
+                                                                <div class="product-overlay">
+                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-desc">
+                                                                <div class="product-title"><h3><a href="#">Call Of Duty: Black-Ops III NukeTown</a></h3></div>
+                                                                <div class="product-price"><ins>69,90 €</ins></div>
+                                                                <div class="product-rating">
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star-empty"></i>
+                                                                    <i class="icon-star-empty"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
-                                                    <li><a href="#"><div>T-Shirts</div></a></li>
-                                                    <li><a href="#"><div>Formal Shoes</div></a></li>
-                                                    <li><a href="#"><div>Accessories</div></a></li>
-                                                    <li><a href="#"><div>Watches</div></a></li>
-                                                    <li><a href="#"><div>Perfumes</div></a></li>
-                                                    <li><a href="#"><div>Belts, Ties</div></a></li>
-                                                    <li><a href="#"><div>Formal Shirts</div></a></li>
+                                                    <li>
+                                                        <div class="product clearfix">
+                                                            <div class="product-image">
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <!--<div class="sale-flash">Sale!</div>-->
+                                                                <div class="product-overlay">
+                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-desc">
+                                                                <div class="product-title"><h3><a href="#">Call Of Duty: Black-Ops III NukeTown</a></h3></div>
+                                                                <div class="product-price"><ins>69,90 €</ins></div>
+                                                                <div class="product-rating">
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star-empty"></i>
+                                                                    <i class="icon-star-empty"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
