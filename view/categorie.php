@@ -71,6 +71,7 @@
                                 <h4><?= $categorie['designation_cat']; ?></h4>
                                 <ul>
                                     <li class="active"><a href="#">Shirts</a></li>
+                                    <li class=""><a href="#">Shirts</a></li>
                                 </ul>
 
                             </div>
