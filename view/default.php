@@ -168,14 +168,14 @@ session_start();
                                 <li class="mega-menu"><a href="#"><div><?= $cat['designation_cat']; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#"><div><?= $cat['designation_cat']; ?></div></a>
+                                            <li class="mega-menu-title"><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>"><div><?= $cat['designation_cat']; ?></div></a>
                                                 <ul>
                                                 <?php
                                                 $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['id'])or die(mysql_error());
                                                 while($sub = mysql_fetch_array($sql_sub))
                                                 {
                                                     ?>
-                                                    <li><a href="#"><div><?= $sub['designation_subcat']; ?></div></a></li>
+                                                    <li><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $sub['id']; ?>"><div><?= $sub['designation_subcat']; ?></div></a></li>
                                                     <?php } ?>
                                                 </ul>
                                             </li>
