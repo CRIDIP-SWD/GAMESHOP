@@ -5861,7 +5861,7 @@ p.wp-caption-text {
 .product-image {
 	position: relative;
 	width: 100%;
-	height: 360px;
+	/*height: 360px;*/
 	overflow: hidden;
 }
 
