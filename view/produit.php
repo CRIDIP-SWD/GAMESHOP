@@ -34,7 +34,9 @@ $produit = mysql_fetch_array($sql_produit);
                         ============================================= -->
                         <div class="product-image">
                             <img src="<?= $constante->getUrl(array(), false,true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" />
-                            <div class="sale-flash precommande">En Précommande</div>
+                            <?php
+                            if($)
+                            ?>
                         </div><!-- Product Single - Gallery End -->
 
                     </div>
