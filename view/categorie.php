@@ -10,7 +10,7 @@
         <section id="page-title">
 
             <div class="container clearfix">
-                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie['images_cat']; ?>.png" class="img-responsive" />
+                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie['images_cat']; ?>.png" width="240" class="img-responsive" />
                 <!--<span>Start Buying your Favourite Theme</span>-->
                 <ol class="breadcrumb">
                     <li><a href="#">GAMESHOP</a></li>
