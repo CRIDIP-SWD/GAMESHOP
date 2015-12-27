@@ -191,7 +191,7 @@ session_start();
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_new = mysql_query("SELECT * FROM produits WHERE date_sortie >= '$date' AND date_sortie =< '$date_moin' LIMIT 1")or die(mysql_error());
+                                                    $sql_new = mysql_query("SELECT * FROM produits WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' LIMIT 1")or die(mysql_error());
                                                     while($new = mysql_fetch_array($sql_new))
                                                     {
                                                     ?>
