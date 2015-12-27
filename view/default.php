@@ -226,13 +226,13 @@ session_start();
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
                                                 <ul>
-                                                    <li>
+                                                    <!--<li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
                                                                 <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
                                                                 <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
-                                                                <div class="product-overlay">
+                                                                <!--<div class="product-overlay">
                                                                     <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
@@ -249,37 +249,45 @@ session_start();
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </li>
+                                                    </li>-->
                                                 </ul>
                                             </li>
                                         </ul>
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
-                                                    <li>
-                                                        <div class="product clearfix">
-                                                            <div class="product-image">
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
-                                                                <!--<div class="sale-flash">Sale!</div>-->
-                                                                <div class="product-overlay">
-                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                                                    <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                    <?php
+                                                    $date = $date_format->convert_strtotime(date("d-m-Y"));
+                                                    $date_moin = strtotime($date ."+ 30 days");
+                                                    $sql_preco = mysql_query("SELECT * FROM produits WHERE date_sortie < '$date' LIMIT 1")or die(mysql_error());
+                                                    while($preco = mysql_fetch_array($sql_preco))
+                                                    {
+                                                        ?>
+                                                        <li>
+                                                            <div class="product clearfix">
+                                                                <div class="product-image">
+                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                    <!--<div class="sale-flash">Sale!</div>-->
+                                                                    <div class="product-overlay">
+                                                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="product-desc">
+                                                                    <div class="product-title"><h3><a href="#"><?= $preco['designation']; ?></a></h3></div>
+                                                                    <div class="product-price"><ins><?= number_format($preco['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                                                                    <div class="product-rating">
+                                                                        <i class="icon-star3"></i>
+                                                                        <i class="icon-star3"></i>
+                                                                        <i class="icon-star3"></i>
+                                                                        <i class="icon-star-empty"></i>
+                                                                        <i class="icon-star-empty"></i>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                            <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#">Call Of Duty: Black-Ops III NukeTown</a></h3></div>
-                                                                <div class="product-price"><ins>69,90 €</ins></div>
-                                                                <div class="product-rating">
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star-empty"></i>
-                                                                    <i class="icon-star-empty"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
+                                                        </li>
+                                                    <?php } ?>
                                                 </ul>
                                             </li>
                                         </ul>
