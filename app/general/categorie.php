@@ -13,9 +13,7 @@ class categorie
 {
     public function count_categorie($idcategorie)
     {
-        $sql = mysql_query("SELECT COUNT(produits_categorie.ref_produit) FROM produits, produits_categorie, categorie WHERE produits_categorie.ref_produit = produits.ref_produit
-                                           AND produits_categorie.idcategorie = categorie.id
-                                           AND produits_categorie.idcategorie = '$idcategorie'")or die(mysql_error());
+        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_categorie WHERE idcategorie = '$idcategorie'")or die(mysql_error());
         $res = mysql_result($sql, 0);
         return $res;
     }
