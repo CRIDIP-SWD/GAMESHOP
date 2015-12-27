@@ -1,5 +1,5 @@
 <?php
-require dirname(__DIR__)."app/autoloader.php";
+require dirname(__DIR__)."/app/autoloader.php";
 \App\autoloader::register();
 
 use App\app;
