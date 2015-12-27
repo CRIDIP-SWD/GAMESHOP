@@ -75,7 +75,7 @@
                                     while($subcat = mysql_fetch_array($sql_subcat))
                                     {
                                     ?>
-                                    <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="#">Shirts</a></li>
+                                    <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $subcat['id']; ?>"><?= $subcat['designation_subcat']; ?></a></li>
                                     <?php } ?>
                                 </ul>
 
