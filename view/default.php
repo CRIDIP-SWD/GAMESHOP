@@ -161,7 +161,7 @@ session_start();
                     <ul>
                         <li class="current"><a href="#"><div>Home</div><span>Lets Start</span></a></li>
                         <?php
-                        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE categorie.designation != 'PRODUIT D&Eacute;RIV&Eacute;S'")or die(mysql_error());
+                        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE categorie.designation_cat != 'PRODUIT D&Eacute;RIV&Eacute;S'")or die(mysql_error());
                         while($cat = mysql_fetch_array($sql_categorie))
                         {
                             $idcategorie = $cat['id'];
