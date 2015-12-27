@@ -102,7 +102,7 @@ if($verif === 3)
                                 <table style="width: 50%;">
                                     <tbody>
                                         <tr>
-                                            <td style="width: 25%; font-weight: bold;">EDITEUR</td>
+                                            <td style="width: 25%; font-weight: bold;">EDITEUR:</td>
                                             <td><?= $caract['editeur']; ?></td>
                                         </tr>
                                     </tbody>
