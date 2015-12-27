@@ -3,7 +3,10 @@
 
     Replace your Fonts as necessary
 -----------------------------------------------------------------*/
-
+@font-face {
+    font-family: "Game Logo";
+    src: url("fonts/game_logo.ttf");
+}
 
 
 body,

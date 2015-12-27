@@ -8,7 +8,9 @@
 	Version: 3.0
 
 -----------------------------------------------------------------------------------*/
-
+.game-font{
+	font-family: "Game Logo", sans-serif;
+}
 
 dl, dt, dd, ol, ul, li {
 	margin: 0;
