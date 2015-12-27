@@ -224,6 +224,11 @@
                          data-endeasing="Power4.easeIn" style="z-index: 3; color: #222; line-height: 1.2; max-width: 450px; width: 450px; white-space: normal;">Responsive Retina Graphics</div>
 
                 </li>
+                <li data-transition="boxslide" data-slotamout="7" data-link="#">
+                    <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
+                    <div class="caption sft" style="font-size: 56px ;color: white" data-x="0" data-y="100" data-speed="700" data-start="1700" data-easing="easeOutLeft">NARUTO ULTIMATE NINJA STORM 4</div>
+
+                </li>
             </ul>
 
         </div>
