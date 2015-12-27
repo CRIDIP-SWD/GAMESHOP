@@ -94,17 +94,37 @@ if($verif === 3)
                         <?= html_entity_decode($produit['short_description']); ?>
 
                         <!-- Product Single - Short Description End -->
-
+                        <div class="clear"></div>
                         <!-- Product Single - Meta
                         ============================================= -->
                         <div class="panel panel-default product-meta">
                             <div class="panel-body">
                                 <table style="width: 50%;">
                                     <tbody>
+                                    <?php if(!empty($caract['editeur'])){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">EDITEUR:</td>
                                             <td style="width: 50%; font-style: italic;"><?= $caract['editeur']; ?></td>
                                         </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['genre'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">GENRE:</td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract['genre']; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['multijoueur'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">MULTI JOUEUR:</td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract['multijoueur'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['internet'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">INTERNET:</td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract['internet'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                        </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
