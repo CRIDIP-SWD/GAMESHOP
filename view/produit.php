@@ -5,7 +5,7 @@ $produit = mysql_fetch_array($sql_produit);
 ?>
 <!-- Page Title
 		============================================= -->
-<section id="page-title" <?php if(!empty($produit['banner'])){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit['banner'].".jpg) no-repeat'";} ?>>
+<section id="page-title" <?php if(!empty($produit['banner'])){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit['banner'].".jpg)'";} ?>>
 
     <div class="container clearfix">
         <h1><?= $produit['designation']; ?></h1>
