@@ -44,6 +44,7 @@ class produit
         $date_format = new date_format();
         $date = $date_format->convert_strtotime(date("d-m-Y"));
         $date_moin = strtotime($date ."+ 30 days");
+        $c_promo = $this->count_promo($ref_produit);
 
         $sql_produit = mysql_query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'")or die(mysql_error());
         $produit = mysql_fetch_array($sql_produit);
@@ -54,8 +55,10 @@ class produit
             return 1;
         }elseif($date_produit > $date){
             return 2;
-        }else{
+        }elseif($c_promo != 0){
             return 3;
+        }else{
+            return 0;
         }
     }
 
