@@ -227,7 +227,7 @@
                 <li data-transition="boxslide" data-slotamout="7" data-link="#">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
                     <div class="caption sft" style="font-size: 56px ;color: white" data-x="0" data-y="500" data-speed="700" data-start="1700" data-easing="easeOutLeft">NARUTO ULTIMATE<br> NINJA STORM 4</div>
-                    <div class="caption sft" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft"><a href="#" class="btn btn-warning btn-lg"><i class="icon-line2-basket-loaded"></i> <span>TEST</span></a></div>
+                    <div class="caption sft" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft"><a href="#" class="button button-border button-yellow button-large button-rounded tright nomargin"><i class="icon-line2-basket-loaded"></i> <span>TEST</span></a></div>
                 </li>
             </ul>
 
