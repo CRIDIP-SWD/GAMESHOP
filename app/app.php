@@ -37,7 +37,7 @@ class constante extends app{
     const URL        = "vps221243.ovh.net/gameshop/";
     const ASSETS     = "assets/";
     const NOM_SITE   = "Gameshop";
-    const SOURCES    = "ns342142.ip-5-196-76.eu/sources/gameshop/";
+    const SOURCES    = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
 
     /**
      * @param $dos array Permet de parser sous forme string le tableau array=$dos
@@ -60,7 +60,7 @@ class constante extends app{
         {
             return static::HTTP.static::URL.static::ASSETS.static::parseArray($dos);
         }elseif($sources === true){
-            return static::HTTP.static::SOURCES;
+            return static::SOURCES;
         }else{
             return static::HTTP.static::URL.$dos;
         }
