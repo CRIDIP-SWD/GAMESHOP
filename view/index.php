@@ -233,7 +233,7 @@
                             <button class="btn btn-default btn-lg">Précommander Maintenant sur PS4</button>
                         </div>
                     </div>
-                    <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="700" data-speed="700" data-start="2600" data-easing="easeOutLeft">
+                    <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="500" data-speed="700" data-start="2600" data-easing="easeOutLeft">
                         <div class="btn-group">
                             <button class="btn btn-primary btn-lg"><i class="icon-line2-basket-loaded"></i></button>
                             <button class="btn btn-primary btn-lg">Précommander Maintenant sur Xbox One</button>
