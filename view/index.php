@@ -196,7 +196,7 @@
                                 <div class="product-desc">
                                     <div class="product-title"><h3><a href="#"><?= $new['designation']; ?></a></h3></div>
                                     <div class="product-price"><ins><?= number_format($new['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
-                                    <div class="product-desc"><?= $new['produits_categorie.designation']; ?></div>
+                                    <div class="h5"><?= $new['produits_categorie.designation']; ?></div>
                                 </div>
                             </div>
                             <?php } ?>
@@ -304,100 +304,31 @@
                     <div class="tab-content clearfix" id="tabs-11">
 
                         <div id="shop" class="clearfix">
-
+                            <?php
+                            $date = $date_format->convert_strtotime(date("d-m-Y"));
+                            $date_moin = strtotime($date ."+ 30 days");
+                            $sql_preco = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie > '$date' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4")or die(mysql_error());
+                            while($preco = mysql_fetch_array($sql_preco))
+                            {
+                            ?>
                             <div class="product clearfix">
                                 <div class="product-image">
                                     <div class="fslider" data-arrows="false">
                                         <div class="flexslider">
                                             <div class="slider-wrap">
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/3.jpg" alt="Pink Printed Dress"></a></div>
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/3-1.jpg" alt="Pink Printed Dress"></a></div>
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/3-2.jpg" alt="Pink Printed Dress"></a></div>
+                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco['ref_produit']; ?>.jpg" alt="Pink Printed Dress"></a></div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Pink Printed Dress</a></h3></div>
-                                    <div class="product-price">$39.49</div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-empty"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/5.jpg" alt="Green Trousers"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/5-1.jpg" alt="Green Trousers"></a>
-                                    <div class="sale-flash">Sale!</div>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Green Trousers</a></h3></div>
-                                    <div class="product-price"><del>$24.99</del> <ins>$21.99</ins></div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-half-full"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/sunglasses/2.jpg" alt="Men Aviator Sunglasses"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/sunglasses/2-1.jpg" alt="Men Aviator Sunglasses"></a>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Men Aviator Sunglasses</a></h3></div>
-                                    <div class="product-price">$13.49</div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/tshirts/4.jpg" alt="Black Polo Tshirt"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/tshirts/4-1.jpg" alt="Black Polo Tshirt"></a>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Black Polo Tshirt</a></h3></div>
-                                    <div class="product-price">$11.49</div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                    </div>
+                                    <div class="product-title"><h3><a href="#"><?= $preco['designation']; ?></a></h3></div>
+                                    <div class="product-price"><ins><?= number_format($preco['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                                    <div class="h5"><?= $preco['produits_categorie.designation']; ?></div>
                                 </div>
                             </div>
 
