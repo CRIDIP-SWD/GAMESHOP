@@ -1,4 +1,5 @@
 <?php
+include "../../../app/classe.php";
 $ref_produit = $_GET['ref_produit'];
 $sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie, produits_caracteristique WHERE produits_categorie.ref_produit = produits.ref_produit
                             AND produits_categorie.idcategorie = categorie.id
