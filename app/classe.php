@@ -4,8 +4,10 @@ require "app/autoloader.php";
 
 use App\app;
 use App\constante;
+use App\date_format;
 use App\general\head;
 
 $app = new app();
 $constante = new constante();
+$date_format = new date_format();
 $head = new head();

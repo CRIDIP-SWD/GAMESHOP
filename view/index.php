@@ -10,7 +10,6 @@
             <ul>    <!-- SLIDE  -->
                 <li data-transition="boxslide" data-slotamout="7" data-link="#">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
-                    <div class="caption sft" style="font-size: 56px ;color: white" data-x="0" data-y="500" data-speed="700" data-start="1700" data-easing="easeOutLeft">49,90 <strong>€</strong></div>
                     <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <div class="btn-group">
                             <button class="btn btn-default btn-lg"><i class="icon-line2-basket-loaded"></i></button>

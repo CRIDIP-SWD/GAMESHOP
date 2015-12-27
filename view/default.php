@@ -188,6 +188,13 @@ session_start();
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Nouveauté</div></a>
                                                 <ul>
+                                                    <?php
+                                                    $date = $date_format->convert_strtotime(date("d-m-Y"));
+                                                    $date_moin = strtotime($date ."+ 30 days");
+                                                    var_dump($date_moin);
+                                                    die();
+                                                    $sql_new = mysql_query("SELECT * FROM produits WHERE date_sortie >= '$date'")
+                                                    ?>
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
