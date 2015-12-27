@@ -331,6 +331,7 @@
                                     <div class="h5"><?= $preco['produits_categorie.designation']; ?></div>
                                 </div>
                             </div>
+                            <?php } ?>
 
                         </div>
 
