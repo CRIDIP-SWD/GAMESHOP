@@ -189,16 +189,28 @@ session_start();
                                             <li class="mega-menu-title"><a href="#"><div>Nouveauté</div></a>
                                                 <ul>
                                                     <li>
-                                                        <table>
-                                                            <tr>
-                                                                <td><img src="<?= $constante->getUrl('', false, true); ?>produit/cards/ps4.jpg" class="img-responsive" width="120" /></td>
-                                                                <td>
-                                                                    <strong> TEST</strong><br>
-                                                                    <h6><i>Test</i></h6><br>
-                                                                    <span class="label label-danger">Test</span>
-                                                                </td>
-                                                            </tr>
-                                                        </table>
+                                                        <div class="product clearfix">
+                                                            <div class="product-image">
+                                                                <a href="#"><img src="images/shop/sunglasses/1.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="images/shop/sunglasses/1-1.jpg" alt="Unisex Sunglasses"></a>
+                                                                <div class="sale-flash">Sale!</div>
+                                                                <div class="product-overlay">
+                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                                                                    <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-desc">
+                                                                <div class="product-title"><h3><a href="#">Unisex Sunglasses</a></h3></div>
+                                                                <div class="product-price"><del>$19.99</del> <ins>$11.99</ins></div>
+                                                                <div class="product-rating">
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star3"></i>
+                                                                    <i class="icon-star-empty"></i>
+                                                                    <i class="icon-star-empty"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </li>
                                                 </ul>
                                             </li>
