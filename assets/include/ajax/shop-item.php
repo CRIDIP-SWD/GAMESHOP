@@ -20,7 +20,7 @@ $produit = mysql_fetch_array($sql_produit);
 
                         <div class="col_half nobottommargin">
                             <div class="product-image">
-                                <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
+                                <a href="index.php?view=produit&ref_produit=<?= $produit['ref_produit']; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                 <!--<div class="sale-flash">Sale!</div>-->
                             </div>
                         </div>
@@ -41,7 +41,6 @@ $produit = mysql_fetch_array($sql_produit);
                             </form><!-- Product Single - Quantity & Cart Button End -->
                             <button type="button" class="button button-3d button-desc button-yellow" onclick="window.location.href='index.php?view=produit&ref_produit=<?= $produit['ref_produit']; ?>'">
                                 Voir la fiche complete
-                                <span>TEST</span>
                             </button>
 
                             <div class="clear"></div>
