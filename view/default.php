@@ -198,8 +198,8 @@ session_start();
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
                                                                     <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
@@ -207,8 +207,8 @@ session_start();
                                                                 </div>
                                                             </div>
                                                             <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#">Call Of Duty: Black-Ops III NukeTown</a></h3></div>
-                                                                <div class="product-price"><ins>69,90 €</ins></div>
+                                                                <div class="product-title"><h3><a href="#"><?= $new['designation']; ?></a></h3></div>
+                                                                <div class="product-price"><ins><?= number_format($new['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
                                                                 <div class="product-rating">
                                                                     <i class="icon-star3"></i>
                                                                     <i class="icon-star3"></i>
