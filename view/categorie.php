@@ -141,7 +141,7 @@
                                     <div class="style-msg infomsg">
                                         <div class="sb-msg"><i class="icon-info-sign"></i> Aucun Produit disponible pour cette catégorie</div>
                                     </div>
-                                <?php } ?>
+                                <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
                                         <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
@@ -156,6 +156,7 @@
                                         <div class="product-price"><ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
                                     </div>
                                 </div>
+                                <?php } ?>
                             <?php } ?>
                         </div><!-- #shop end -->
 
