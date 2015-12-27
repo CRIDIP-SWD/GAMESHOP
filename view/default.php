@@ -368,19 +368,18 @@ session_start();
 
                         <div class="widget clearfix">
 
-                            <img src="images/footer-widget-logo.png" alt="" class="footer-logo">
+                            <img src="<?= $constante->getUrl('images/', true, false); ?>logo.png" alt="" class="footer-logo">
 
                             <p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>
 
-                            <div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">
+                            <div style="background: url('<?= $constante->getUrl('images/', true, false); ?>world-map.png') no-repeat center center; background-size: 100%;">
                                 <address>
-                                    <strong>Headquarters:</strong><br>
-                                    795 Folsom Ave, Suite 600<br>
-                                    San Francisco, CA 94107<br>
+                                    <strong>Siège Social:</strong><br>
+                                    20 Avenue Jean jaures<br>
+                                    85100 Les Sables d'Olonne<br>
                                 </address>
-                                <abbr title="Phone Number"><strong>Phone:</strong></abbr> (91) 8547 632521<br>
-                                <abbr title="Fax"><strong>Fax:</strong></abbr> (91) 11 4752 1433<br>
-                                <abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com
+                                <abbr title="Phone Number"><strong>Tel:</strong></abbr> 06 33 13 43 30<br>
+                                <abbr title="Email Address"><strong>Email:</strong></abbr> contact@gameshop.fr
                             </div>
 
                         </div>
@@ -538,8 +537,9 @@ session_start();
             <div class="container clearfix">
 
                 <div class="col_half">
-                    Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-                    <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                    Copyrights &copy; 2016 All Rights Reserved by Gameshop UI Designer.<br>
+                    <div class="copyright-links"><a href="#">Règle d'accès et d'utilisation</a> / <a href="#">Politique de confidentialité</a> /
+                        <a href="">Conditions Générales de Ventes</a></div>
                 </div>
 
                 <div class="col_half col_last tright">
@@ -587,7 +587,7 @@ session_start();
 
                     <div class="clear"></div>
 
-                    <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +91-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+                    <i class="icon-envelope2"></i> contact@gameshop.fr <span class="middot">&middot;</span> <i class="icon-headphones"></i> 0633134330 <span class="middot">&middot;</span> <i class="icon-skype2"></i> GameshopUI
                 </div>
 
             </div>
