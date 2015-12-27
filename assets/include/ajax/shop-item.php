@@ -39,6 +39,9 @@ $produit = mysql_fetch_array($sql_produit);
                                 </div>
                                 <button type="submit" class="add-to-cart button nomargin">Ajouter au Panier</button>
                             </form><!-- Product Single - Quantity & Cart Button End -->
+                            <button type="button" class="button button-3d button-desc button-yellow">
+                                Voir la fiche complete
+                            </button>
 
                             <div class="clear"></div>
                             <div class="line"></div>
