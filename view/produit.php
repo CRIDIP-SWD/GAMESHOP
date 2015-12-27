@@ -66,16 +66,6 @@ if($verif === 3)
                             <?php } ?>
                         </div><!-- Product Single - Price End -->
 
-                        <!-- Product Single - Rating
-                        ============================================= -->
-                        <div class="product-rating">
-                            <i class="icon-star3"></i>
-                            <i class="icon-star3"></i>
-                            <i class="icon-star3"></i>
-                            <i class="icon-star-half-full"></i>
-                            <i class="icon-star-empty"></i>
-                        </div><!-- Product Single - Rating End -->
-
                         <div class="clear"></div>
                         <div class="line"></div>
 
@@ -87,7 +77,11 @@ if($verif === 3)
                                 <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
                                 <input type="button" value="+" class="plus">
                             </div>
-                            <button type="submit" class="add-to-cart button nomargin">Add to cart</button>
+                            <?php if($verif === 2){ ?>
+                                <button type="submit" class="add-to-cart button nomargin">PRECOMMANDER</button>
+                            <?php }else{ ?>
+                                <button type="submit" class="add-to-cart button nomargin">Ajouter au Panier</button>
+                            <?php } ?>
                         </form><!-- Product Single - Quantity & Cart Button End -->
 
                         <div class="clear"></div>
