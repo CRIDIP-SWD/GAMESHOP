@@ -200,7 +200,7 @@ session_start();
                                                                 </div>
                                                             </div>
                                                             <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#">Jeux PS4</a></h3></div>
+                                                                <div class="product-title"><h3><a href="#">Call Of Duty: Black-Ops III NukeTown</a></h3></div>
                                                                 <div class="product-price"><ins>69,90 €</ins></div>
                                                                 <div class="product-rating">
                                                                     <i class="icon-star3"></i>
