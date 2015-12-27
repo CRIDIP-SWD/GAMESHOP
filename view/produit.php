@@ -131,6 +131,36 @@ if($verif === 3)
                                             <td style="width: 50%; font-style: italic;"><?= $caract['option']; ?></td>
                                         </tr>
                                     <?php } ?>
+                                    <?php if(!empty($caract['couleur'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">COULEUR:</td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract['couleur']; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['cap_hdd'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">DISQUE DUR:</td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract['cap_hdd']; ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['eth'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">ETHERNET:</td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract['eth'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['wifi'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">WI-FI:</td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract['wifi'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    <?php if(!empty($caract['nb_usb'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">PORT USB:</td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract['nb_usb']; ?></td>
+                                        </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
