@@ -176,103 +176,30 @@
                     <div class="tab-content clearfix" id="tabs-9">
 
                         <div id="shop" class="clearfix">
-
+                            <?php
+                            $date = $date_format->convert_strtotime(date("d-m-Y"));
+                            $date_moin = strtotime($date ."+ 30 days");
+                            $sql_new = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4")or die(mysql_error());
+                            while($new = mysql_fetch_array($sql_new))
+                            {
+                            ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/1.jpg" alt="Checked Short Dress"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/1-1.jpg" alt="Checked Short Dress"></a>
-                                    <div class="sale-flash">50% Off*</div>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
+                                    <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
+                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Checked Short Dress</a></h3></div>
-                                    <div class="product-price"><del>$24.99</del> <ins>$12.49</ins></div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-half-full"></i>
-                                    </div>
+                                    <div class="product-title"><h3><a href="#"><?= $new['designation']; ?></a></h3></div>
+                                    <div class="product-price"><ins><?= number_format($new['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                                    <div class="product-desc"><?= $new['produits_categorie.designation']; ?></div>
                                 </div>
                             </div>
-
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/1-1.jpg" alt="Slim Fit Chinos"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/pants/1.jpg" alt="Slim Fit Chinos"></a>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Slim Fit Chinos</a></h3></div>
-                                    <div class="product-price">$39.99</div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-half-full"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <div class="fslider" data-arrows="false">
-                                        <div class="flexslider">
-                                            <div class="slider-wrap">
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/1.jpg" alt="Dark Brown Boots"></a></div>
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/1-1.jpg" alt="Dark Brown Boots"></a></div>
-                                                <div class="slide"><a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/shoes/1-2.jpg" alt="Dark Brown Boots"></a></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Dark Brown Boots</a></h3></div>
-                                    <div class="product-price">$49</div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-empty"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/2.jpg" alt="Light Blue Denim Dress"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array('images/')); ?>shop/dress/2-2.jpg" alt="Light Blue Denim Dress"></a>
-                                    <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
-                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Quick View</span></a>
-                                    </div>
-                                </div>
-                                <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#">Light Blue Denim Dress</a></h3></div>
-                                    <div class="product-price">$19.95</div>
-                                    <div class="product-rating">
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star3"></i>
-                                        <i class="icon-star-empty"></i>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <?php } ?>
                         </div>
 
                     </div>
