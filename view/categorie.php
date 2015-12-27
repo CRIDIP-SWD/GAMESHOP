@@ -94,6 +94,10 @@
         <?php
         $idcategorie = $_GET['idcategorie'];
         $idsubcategorie = $_GET['idsubcategorie'];
+        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE id = '$idcategorie'")or die(mysql_error());
+        $categorie = mysql_fetch_array($sql_categorie);
+        $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE id = '$idsubcategorie'")or die(mysql_error());
+        $sub = mysql_fetch_array($sql_sub);
         ?>
         <!-- Page Title
 		============================================= -->
@@ -104,7 +108,8 @@
                 <!--<span>Start Buying your Favourite Theme</span>-->
                 <ol class="breadcrumb">
                     <li><a href="#">GAMESHOP</a></li>
-                    <li class="active"><?= $categorie['designation_cat']; ?></li>
+                    <li><a href=""><?= $categorie['designation_cat']; ?></a></li>
+                    <li class="active"><?= $sub['designation_subcat']; ?></li>
                 </ol>
             </div>
 
