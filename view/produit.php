@@ -125,6 +125,12 @@ if($verif === 3)
                                             <td style="width: 50%; font-style: italic;"><?php if($caract['internet'] == 0){echo "Non";}else{echo "Oui";} ?></td>
                                         </tr>
                                     <?php } ?>
+                                    <?php if(!empty($caract['option'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">OPTION:</td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract['option']; ?></td>
+                                        </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
