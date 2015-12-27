@@ -196,7 +196,7 @@
                                 <div class="product-desc">
                                     <div class="product-title"><h3><a href="#"><?= $new['designation']; ?></a></h3></div>
                                     <div class="product-price"><ins><?= number_format($new['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
-                                    <div class="h5"><?= $new['produits_categorie.designation']; ?></div>
+                                    <div class="h5 text-primary"><?= $new['designation_cat']; ?></div>
                                 </div>
                             </div>
                             <?php } ?>
@@ -328,7 +328,7 @@
                                 <div class="product-desc">
                                     <div class="product-title"><h3><a href="#"><?= $preco['designation']; ?></a></h3></div>
                                     <div class="product-price"><ins><?= number_format($preco['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
-                                    <div class="h5"><?= $preco['produits_categorie.designation']; ?></div>
+                                    <div class="h5 text-primary"><?= $preco['designation_cat']; ?></div>
                                 </div>
                             </div>
                             <?php } ?>

@@ -169,9 +169,9 @@ session_start();
                             <?php
                             if($head->count_subcategorie($cat['id']) == 0){
                             ?>
-                            <li><a href="#"><div><?= $cat['designation']; ?></div><span>Awesome Works</span></a></li>
+                            <li><a href="#"><div><?= $cat['designation_cat']; ?></div><span>Awesome Works</span></a></li>
                             <?php }else{ ?>
-                                <li class="mega-menu"><a href="#"><div><?= $cat['designation']; ?></div><span>Out of the Box</span></a>
+                                <li class="mega-menu"><a href="#"><div><?= $cat['designation_cat']; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div><?= $cat['designation']; ?></div></a>
@@ -181,7 +181,7 @@ session_start();
                                                 while($sub = mysql_fetch_array($sql_sub))
                                                 {
                                                     ?>
-                                                    <li><a href="#"><div><?= $sub['designation']; ?></div></a></li>
+                                                    <li><a href="#"><div><?= $sub['designation_subcat']; ?></div></a></li>
                                                     <?php } ?>
                                                 </ul>
                                             </li>
