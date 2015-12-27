@@ -307,7 +307,7 @@
                             <?php
                             $date = $date_format->convert_strtotime(date("d-m-Y"));
                             $date_moin = strtotime($date ."+ 30 days");
-                            $sql_preco = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie > '$date' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4")or die(mysql_error());
+                            $sql_preco = mysql_query("SELECT * FROM produits, produits_categorie, categorie WHERE date_sortie > '$date' AND produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = categorie.id LIMIT 4")or die(mysql_error());
                             while($preco = mysql_fetch_array($sql_preco))
                             {
                             ?>
