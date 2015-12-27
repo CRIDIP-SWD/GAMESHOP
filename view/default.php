@@ -191,9 +191,9 @@ session_start();
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    var_dump($date_moin);
-                                                    die();
-                                                    $sql_new = mysql_query("SELECT * FROM produits WHERE date_sortie >= '$date'")
+                                                    $sql_new = mysql_query("SELECT * FROM produits WHERE date_sortie >= '$date' AND date_sortie =< '$date_moin' LIMIT 1")or die(mysql_error());
+                                                    while($new = mysql_fetch_array($sql_new))
+                                                    {
                                                     ?>
                                                     <li>
                                                         <div class="product clearfix">
@@ -219,6 +219,7 @@ session_start();
                                                             </div>
                                                         </div>
                                                     </li>
+                                                        <?php } ?>
                                                 </ul>
                                             </li>
                                         </ul>
