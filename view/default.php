@@ -96,13 +96,7 @@ session_start();
                 <?php if(isset($_SESSION)){ ?>
                 <div class="top-links">
                     <ul>
-                        <li><a href="#">MOCKELYN Maxime</a>
-                            <ul>
-                                <li><a href="">TEST</a></li>
-                                <li><a href="">TEST</a></li>
-                                <li><a href="">TEST</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#">MOCKELYN Maxime</a></li>
                     </ul>
                 </div>
                 <?php }else{ ?>
