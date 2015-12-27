@@ -42,6 +42,7 @@
                             while($produit = mysql_fetch_array($sql_produit))
                             {
                             ?>
+
                             <div class="product clearfix">
                                 <div class="product-image">
                                     <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
@@ -137,7 +138,7 @@
                             while($produit = mysql_fetch_array($sql_produit))
                             {
                                 ?>
-                                <?php if(empty($produit)){ ?>
+                                <?php if($categorie_cls->count_sub($idsubcategorie) == 0){ ?>
                                     <div class="style-msg infomsg">
                                         <div class="sb-msg"><i class="icon-info-sign"></i> Aucun Produit disponible pour cette catégorie</div>
                                     </div>
