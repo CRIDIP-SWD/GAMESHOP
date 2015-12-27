@@ -20,9 +20,7 @@ class categorie
 
     public function count_sub($idsubcategorie)
     {
-        $sql = mysql_query("SELECT COUNT(produits_subcategorie.ref_produit) FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
-                                                        AND produits_subcategorie.idsubcategorie = subcategorie.id
-                                                        AND produits_subcategorie.idsubcategorie = '$idsubcategorie'")or die(mysql_error());
+        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_subcategorie WHERE idsubcategorie = '$idsubcategorie'")or die(mysql_error());
         $res = mysql_result($sql, 0);
         return $res;
     }
