@@ -5,14 +5,12 @@ $produit = mysql_fetch_array($sql_produit);
 ?>
 <!-- Page Title
 		============================================= -->
-<section id="page-title" <?php if(!empty($produit['banner'])){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit['banner'].".jpg); color: White;'";} ?>>
+<section id="page-title" <?php if(!empty($produit['banner'])){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit['banner'].".jpg);'";} ?>>
 
     <div class="container clearfix">
-        <h1><?= $produit['designation']; ?></h1>
+        <h1 <?php if(!empty($produit['banner'])){echo "style='color: white;'";} ?>><?= $produit['designation']; ?></h1>
         <ol class="breadcrumb">
-            <li><a href="#">GAMESHOP</a></li>
-            <li><a href="#"><?= $produit['designation_cat']; ?></a></li>
-            <li class="active">Fiche produit</li>
+            <li <?php if(!empty($produit['banner'])){echo "style='color: white'";} ?>><a href="#"><?= $produit['designation_cat']; ?></a></li>
         </ol>
     </div>
 
