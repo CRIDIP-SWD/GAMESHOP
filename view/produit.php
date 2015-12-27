@@ -6,7 +6,7 @@ $verif = $produit_cls->verif_stat_product($ref_produit);
 if($verif === 3)
 {
     $sql_promo = mysql_query("SELECT * FROM produits_promotion WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-    $produit .= mysql_fetch_array($sql_promo);
+    $promo = mysql_fetch_array($sql_promo);
 }
 ?>
 <!-- Page Title
@@ -60,7 +60,7 @@ if($verif === 3)
                         <div class="product-price">
                             <?php if($verif === 3){ ?>
                                 <del><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></del>
-                                <ins><?= number_format($produit['new_price'], 2, ',', ' ')." €" ?></ins>
+                                <ins><?= number_format($promo['new_price'], 2, ',', ' ')." €" ?></ins>
                             <?php }else{ ?>
                                 <ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></ins>
                             <?php } ?>
