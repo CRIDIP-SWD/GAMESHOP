@@ -9,5 +9,17 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="css3-mediaqueries" level="application" />
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
+          <root url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
+          <root url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
