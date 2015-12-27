@@ -188,13 +188,18 @@ session_start();
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Nouveauté</div></a>
                                                 <ul>
-                                                    <li><a href="#"><div>Casual Shirts</div></a></li>
-                                                    <li><a href="#"><div>T-Shirts</div></a></li>
-                                                    <li><a href="#"><div>Collared Tees</div></a></li>
-                                                    <li><a href="#"><div>Pants / Trousers</div></a></li>
-                                                    <li><a href="#"><div>Ethnic Wear</div></a></li>
-                                                    <li><a href="#"><div>Jeans</div></a></li>
-                                                    <li><a href="#"><div>Sweamwear</div></a></li>
+                                                    <li>
+                                                        <table>
+                                                            <tr>
+                                                                <td><img src="<?= $constante->getUrl('', false, true); ?>" class="img-responsive" width="120" /></td>
+                                                                <td>
+                                                                    <strong> TEST</strong><br>
+                                                                    <h6><i>Test</i></h6><br>
+                                                                    <span class="label label-danger">Test</span>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
