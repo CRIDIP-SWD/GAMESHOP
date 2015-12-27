@@ -11,7 +11,9 @@ $produit = mysql_fetch_array($sql_produit);
 
                     <div class="ajax-modal-title">
                         <h2><?= $produit['designation']; ?></h2>
-                        <span class="text-right">TEST</span>
+                        <span class="game-font">
+                            Z
+                        </span>
                     </div>
 
                     <div class="product modal-padding clearfix">
