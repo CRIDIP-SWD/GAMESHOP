@@ -11,8 +11,8 @@ $produit = mysql_fetch_array($sql_produit);
         <h1><?= $produit['designation']; ?></h1>
         <ol class="breadcrumb">
             <li><a href="#">GAMESHOP</a></li>
-            <li><a href="#">Shop</a></li>
-            <li class="active">Shop Single</li>
+            <li><a href="#"><?= $produit['designation_cat']; ?></a></li>
+            <li class="active">Fiche produit</li>
         </ol>
     </div>
 
