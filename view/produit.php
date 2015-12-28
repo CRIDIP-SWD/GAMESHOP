@@ -242,12 +242,7 @@ if($verif === 3)
                                         <div class="product-desc center">
                                             <div class="product-title"><h3><a href="#"><?= $bonus['designation']; ?></a></h3></div>
                                             <div class="product-price">
-                                                <?php if($verif === 3){ ?>
-                                                    <del><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></del>
-                                                    <ins><?= number_format($promo['new_price'], 2, ',', ' ')." €" ?></ins>
-                                                <?php }else{ ?>
-                                                    <ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></ins>
-                                                <?php } ?>
+                                                <ins>CADEAUX</ins>
                                             </div>
                                         </div>
                                     </div>
