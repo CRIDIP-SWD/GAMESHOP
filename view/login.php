@@ -1,5 +1,5 @@
 <?php
-if(isset($_SESSION['logged']))
+if($_SESSION['logged'] == true)
 {
     header("Location: index.php?view=profil");
 }
