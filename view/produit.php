@@ -218,7 +218,7 @@ if($verif === 3)
 
                             <div id="oc-product" class="owl-carousel product-carousel">
                                 <?php
-                                $sql_bonus = mysql_query("SELECT * FROM produits_bonus, produits WHERE produits_bonus.ref_produit_bonus = produits.ref_produit AND produits_bonus.ref_produit = '$ref_produit'")or die(mysql_error());
+                                $sql_bonus = mysql_query("SELECT * FROM produits_bonus, produits WHERE produits_bonus.ref_produit_bonus = produits.ref_produit")or die(mysql_error());
                                 while($bonus = mysql_fetch_array($sql_bonus))
                                 ?>
                                 <div class="oc-item">
