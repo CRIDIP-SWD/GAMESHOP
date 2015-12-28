@@ -6,6 +6,7 @@ use App\app;
 use App\constante;
 use App\date_format;
 use App\general\categorie;
+use App\general\client;
 use App\general\head;
 use App\general\produit;
 
@@ -17,5 +18,5 @@ $categorie_cls = new categorie();
 $produit_cls = new produit();
 if(isset($_SESSION['logged']))
 {
-    $client_cls = new \App\general\client($_SESSION['logged']['email']);
+    $client_cls = new client($_SESSION['logged']['email']);
 }
