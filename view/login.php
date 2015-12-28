@@ -31,7 +31,7 @@ if(isset($_SESSION['logged']))
 
                 <div class="acctitle"><i class="acc-closed icon-lock3"></i><i class="acc-open icon-unlock"></i>Connexion à votre compte</div>
                 <div class="acc_content clearfix">
-                    <form id="login-form" name="login-form" class="nobottommargin" action="<?= $constante->getUrl(array('core/')); ?>login.php" method="post">
+                    <form id="login-form" name="login-form" class="nobottommargin" action="<?= $constante->getUrl(array('core/'), false); ?>login.php" method="post">
                         <div class="col_full">
                             <label for="login-form-username">Adresse Mail:</label>
                             <input type="text" id="login-form-username" name="email" value="" class="form-control" />
