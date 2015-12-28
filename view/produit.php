@@ -161,6 +161,12 @@ if($verif === 3)
                                             <td style="width: 50%; font-style: italic;"><?= $caract['nb_usb']; ?></td>
                                         </tr>
                                     <?php } ?>
+                                    <?php if(!empty($caract['compatibilite'])){ ?>
+                                        <tr>
+                                            <td style="width: 50%; font-weight: bold;">COMPATIBLE:</td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract['compatibilite']; ?></td>
+                                        </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
