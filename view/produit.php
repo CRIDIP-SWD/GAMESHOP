@@ -312,10 +312,54 @@ if($verif === 3)
                                         while($images = mysql_fetch_array($sql_images))
                                         {
                                         ?>
-                                        <a href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" data-lightbox="<?= $images['images']; ?>">
-                                            <img class="image_fade" src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" alt="<?= $images['images']; ?>">
-                                        </a>
+                                            <div id="related-portfolio" class="owl-carousel owl-carousel-full portfolio-carousel portfolio-notitle portfolio-nomargin footer-stick">
+
+                                                <div class="oc-item">
+                                                    <div class="iportfolio">
+                                                        <div class="portfolio-image">
+                                                            <a href="portfolio-single.html">
+                                                                <img src="images/portfolio/4/1.jpg" alt="Open Imagination">
+                                                            </a>
+                                                            <div class="portfolio-overlay">
+                                                                <a href="images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                                                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="portfolio-desc">
+                                                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
+                                                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div><!-- .portfolio-carousel end -->
+
                                         <?php } ?>
+                                        <script type="text/javascript">
+
+                                            jQuery(document).ready(function($) {
+
+                                                var relatedPortfolio = $("#related-portfolio");
+
+                                                relatedPortfolio.owlCarousel({
+                                                    margin: 0,
+                                                    nav: true,
+                                                    navText: ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                                    autoplay: false,
+                                                    autoplayHoverPause: true,
+                                                    dots: false,
+                                                    responsive:{
+                                                        0:{ items:1 },
+                                                        600:{ items:2 },
+                                                        1000:{ items:3 },
+                                                        1200:{ items:4 },
+                                                        1400:{ items:5 }
+                                                    }
+                                                });
+
+                                            });
+
+                                        </script>
                                     </div>
 
                                 </div>
