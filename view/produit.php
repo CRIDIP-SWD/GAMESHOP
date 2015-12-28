@@ -297,17 +297,21 @@ if($verif === 3)
                             </ul>
 
                             <div class="tab-container">
-
+                                <?php if(!empty($produit['long_description'])): ?>
                                 <div class="tab-content clearfix" id="desc">
-                                    <p>Pink printed dress,  woven, round neck with a keyhole and buttoned closure at the back, sleeveless, concealed zip up at left side seam, belt loops along waist with slight gathers beneath, brand appliqu?? above left front hem, has an attached lining.</p>
-                                    Comes with a white, slim synthetic belt that has a tang clasp.
+                                    <?= html_entity_decode($produit['long_description']); ?>
                                 </div>
+                                <?php endif; ?>
+                                <?php if($produit_cls->count_images($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="images">
 
                                 </div>
+                                <?php endif; ?>
+                                <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
 
                                 </div>
+                                <?php endif; ?>
 
                             </div>
 
