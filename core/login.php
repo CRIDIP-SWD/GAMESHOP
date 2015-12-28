@@ -5,8 +5,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
     include "../app/classe.php";
     if((isset($_POST['email']) && !empty($_POST['email'])) && (isset($_POST['password']) && !empty($_POST['password'])))
     {
-        $email = $_GET['email'];
-        $password = $_GET['password'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
         $pass_crypt = sha1($email."_".$password);
 
         $sql = mysql_query("SELECT count(*) FROM client WHERE email = '$email' AND password = '$pass_crypt'")or die(mysql_error());
