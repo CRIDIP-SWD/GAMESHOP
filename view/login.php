@@ -98,6 +98,6 @@ if(isset($_SESSION['logged']))
 
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'champs'){ ?>
 <script type="text/javascript">
-    toastr.warning('Un ou plusieurs champs sont vides', 'ATTENTION');
+    toastr.warning('Un ou plusieurs champs sont vide', 'ATTENTION');
 </script>
 <?php } ?>
