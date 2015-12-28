@@ -19,5 +19,4 @@ $produit_cls = new produit();
 if(isset($_SESSION['logged']))
 {
     $client_cls = new client();
-    $info_client = $client_cls->info_client($_SESSION['logged']['email']);
 }
