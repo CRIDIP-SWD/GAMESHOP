@@ -375,7 +375,7 @@ if($verif === 3)
                                                     <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
                                                 </p>
                                             </video>
-                                            <div class="logo-video" style="position: relative; left:80%; top: 10%;">
+                                            <div class="logo-video" style="position: absolute; left:80%; top: 5%;">
                                                 <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" />
                                             </div>
                                         </div>
