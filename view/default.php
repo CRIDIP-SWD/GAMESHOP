@@ -1,6 +1,5 @@
 <?php
-var_dump($info_client);
-die();
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -99,7 +98,7 @@ die();
                 <div class="top-links">
                     <ul>
                         <li><a href="index.php?view=profil"><?= $info_client['nom_client']; ?></a></li>
-                        <li><a href=""><i class="icon-lock"></i></a></li>
+                        <li><a href="<?= $constante->getUrl(array('core/'), false, false); ?>login.php?action=logout"><i class="icon-lock"></i></a></li>
                     </ul>
                 </div>
                 <?php }else{ ?>
@@ -112,7 +111,6 @@ die();
                 <!-- .top-links end -->
 
             </div>
-
         </div>
 
     </div><!-- #top-bar end -->
