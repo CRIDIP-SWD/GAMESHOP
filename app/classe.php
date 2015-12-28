@@ -15,3 +15,7 @@ $date_format = new date_format();
 $head = new head();
 $categorie_cls = new categorie();
 $produit_cls = new produit();
+if(isset($_SESSION['logged']))
+{
+    $client_cls = new \App\general\client($_SESSION['logged']['email']);
+}
