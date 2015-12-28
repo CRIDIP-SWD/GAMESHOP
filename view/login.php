@@ -95,3 +95,11 @@ if(isset($_SESSION['logged']))
     </div>
 
 </section><!-- #content end -->
+
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'champs'){ ?>
+<script type="text/javascript">
+    setTimeout(function(){
+        $('#login-form').fadeIn
+    }, 1000)
+</script>
+<?php } ?>
