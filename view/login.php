@@ -114,3 +114,9 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
     toastr.warning('Un ou plusieurs champs sont vide', 'ATTENTION');
 </script>
 <?php } ?>
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'no-connect'){ ?>
+    <script type="text/javascript">
+        toastr.warning('Accès interdit en visiteur, veuillez vous connectez ou vous inscrire.','ATTENTION')
+    </script>
+<?php } ?>
+
