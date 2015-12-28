@@ -9,7 +9,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
         $password = $_GET['password'];
         $pass_crypt = sha1($email."_".$password);
 
-        $sql = mysql_query("SELECT * FROM client WHERE email = '$email' AND password = '$pass_crypt'")or die(mysql_error());
+        $sql = mysql_query("SELECT count(*) FROM client WHERE email = '$email' AND password = '$pass_crypt'")or die(mysql_error());
         $data = mysql_fetch_array($sql);
 
         if($data[0] == 1)
