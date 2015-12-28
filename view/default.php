@@ -97,7 +97,7 @@ session_start();
                 <?php if(isset($_SESSION['logged'])){ ?>
                 <div class="top-links">
                     <ul>
-                        <li><a href="index.php?view=profil"><?= $client_cls['nom_client']; ?></a></li>
+                        <li><a href="index.php?view=profil"><?= $info_client['nom_client']; ?></a></li>
                         <li><a href=""><i class="icon-sign-out"></i></a></li>
                     </ul>
                 </div>
