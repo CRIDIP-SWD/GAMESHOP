@@ -1,4 +1,5 @@
 <?php
+session_start();
 require 'app/classe.php';
 App\autoloader::register();
 
