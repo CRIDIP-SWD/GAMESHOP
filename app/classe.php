@@ -23,3 +23,4 @@ $client_cls = new client();
 
 
 $info_client = $client_cls->info_client($_SESSION['logged']['email']);
+

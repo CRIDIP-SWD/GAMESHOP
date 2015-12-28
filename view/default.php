@@ -1,5 +1,6 @@
 <?php
-
+var_dump($info_client);
+die();
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
