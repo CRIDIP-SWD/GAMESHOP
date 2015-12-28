@@ -98,7 +98,7 @@ session_start();
                 <div class="top-links">
                     <ul>
                         <li><a href="index.php?view=profil">MOCKELYN Maxime</a></li>
-                        <li><a href=""><i class="icon-logout"></i></a></li>
+                        <li><a href=""><i class="icon-sign-out"></i></a></li>
                     </ul>
                 </div>
                 <?php }else{ ?>
