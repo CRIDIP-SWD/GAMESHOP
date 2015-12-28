@@ -16,7 +16,10 @@ $date_format = new date_format();
 $head = new head();
 $categorie_cls = new categorie();
 $produit_cls = new produit();
-if(isset($_SESSION['logged']))
-{
-    $client_cls = new client();
-}
+$client_cls = new client();
+
+
+
+
+
+$info_client = $client_cls->info_client($_SESSION['logged']['email']);

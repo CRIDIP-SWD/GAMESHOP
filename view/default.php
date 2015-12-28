@@ -1,6 +1,5 @@
 <?php
 session_start();
-$info_client = $client_cls->info_client($_SESSION['logged']['email']);
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
