@@ -201,9 +201,81 @@ if($verif === 3)
                     </div>
 
 
-                    <div class="divider divider-rounded divider-center divider-gift">
-                        <i class="icon-gift " style="height: 80px;line-height: 80px;width: 80px; font-size: 40px !important;"></i>
-                    </div>
+                    <?php if($produit_cls->count_bonus($ref_produit) != 0): ?>
+                        <div class="divider divider-rounded divider-center divider-gift">
+                            <i class="icon-gift " style="height: 80px;line-height: 80px;width: 80px; font-size: 40px !important;"></i>
+                        </div>
+                        <div class="clear"></div><div class="line"></div>
+                        <div class="col_full nobottommargin">
+
+                            <h4>EN BONUS</h4>
+
+                            <div id="oc-product" class="owl-carousel product-carousel">
+                                <?php
+                                $sql_bonus = mysql_query("SELECT * FROM produits_bonus, produits WHERE produits_bonus.ref_produit = '$ref_produit' AND produits_bonus.ref_produit_bonus = produits.ref_produit")or die(mysql_error());
+                                while($bonus = mysql_fetch_array($sql_bonus))
+                                ?>
+                                <div class="oc-item">
+                                    <div class="product iproduct clearfix">
+                                        <div class="product-image">
+                                            <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $bonus['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
+                                            <?php if($verif == 1): ?>
+                                                <div class="sale-flash nouveaute">NOUVEAU !</div>
+                                            <?php endif; ?>
+                                            <?php if($verif == 2): ?>
+                                                <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                            <?php endif; ?>
+                                            <?php if($verif == 3): ?>
+                                                <div class="sale-flash promotion">EN PROMOTION !</div>
+                                            <?php endif; ?>
+                                            <div class="product-overlay">
+                                                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
+                                                <a href="assets/include/ajax/shop-item.php&ref_produit=<?= $bonus['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> VOIR</span></a>
+                                            </div>
+                                        </div>
+                                        <div class="product-desc center">
+                                            <div class="product-title"><h3><a href="#"><?= $bonus['designation']; ?></a></h3></div>
+                                            <div class="product-price">
+                                                <?php if($verif === 3){ ?>
+                                                    <del><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></del>
+                                                    <ins><?= number_format($promo['new_price'], 2, ',', ' ')." €" ?></ins>
+                                                <?php }else{ ?>
+                                                    <ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></ins>
+                                                <?php } ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <script type="text/javascript">
+
+                                jQuery(document).ready(function($) {
+
+                                    var ocProduct = $("#oc-product");
+
+                                    ocProduct.owlCarousel({
+                                        margin: 30,
+                                        nav: true,
+                                        navText : ['<i class="icon-angle-left"></i>','<i class="icon-angle-right"></i>'],
+                                        autoplayHoverPause: true,
+                                        dots: false,
+                                        responsive:{
+                                            0:{ items:1 },
+                                            480:{ items:2 },
+                                            768:{ items:3 },
+                                            992:{ items:4 }
+                                        }
+                                    });
+
+                                });
+
+                            </script>
+
+                        </div>
+                        <div class="clear"></div><div class="line"></div>
+                    <?php endif; ?>
 
 
                     <div class="col_full nobottommargin">
