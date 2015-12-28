@@ -318,16 +318,14 @@ if($verif === 3)
                                                     <div class="iportfolio">
                                                         <div class="portfolio-image">
                                                             <a href="portfolio-single.html">
-                                                                <img src="images/portfolio/4/1.jpg" alt="Open Imagination">
+                                                                <img src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="img-responsive" width="250" alt="Open Imagination">
                                                             </a>
                                                             <div class="portfolio-overlay">
-                                                                <a href="images/portfolio/full/1.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
-                                                                <a href="portfolio-single.html" class="right-icon"><i class="icon-line-ellipsis"></i></a>
+                                                                <a href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                                                             </div>
                                                         </div>
                                                         <div class="portfolio-desc">
-                                                            <h3><a href="portfolio-single.html">Open Imagination</a></h3>
-                                                            <span><a href="#">Media</a>, <a href="#">Icons</a></span>
+                                                            <h3><?= $produit['designation']; ?></h3>
                                                         </div>
                                                     </div>
                                                 </div>
