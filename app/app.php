@@ -197,7 +197,7 @@ class fonction extends app
 {
     public function gen_token()
     {
-        $ip_client = $_SERVER['REMOTE_ADDR'];
+        $ip_client = sha1($_SERVER['REMOTE_ADDR']);
         $heure = strtotime(date("H:i"));
         $salt = "_";
         $caractere = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
