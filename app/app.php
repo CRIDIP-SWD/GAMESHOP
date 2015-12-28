@@ -62,7 +62,7 @@ class constante extends app{
         }elseif($sources === true){
             return static::SOURCES;
         }else{
-            return static::HTTP.static::URL.$dos;
+            return static::HTTP.static::URL.static::parseArray($dos);
         }
 
     }
