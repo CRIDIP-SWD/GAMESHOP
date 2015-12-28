@@ -11098,6 +11098,11 @@ label.error { display: none !important; }
 	left: 40px;
 }
 
+.divider.divider-gift:before{
+	top: 40px;
+	left: 40px;
+}
+
 .divider.divider-rounded i,
 .divider.divider-border i {
 	width: 40px;
