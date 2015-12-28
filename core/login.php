@@ -45,8 +45,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
     $client = mysql_result($sql_client, 0);
     if($client != 0)
     {
-        var_dump($fonction->gen_token());
-        die();
+        $token = $fonction->gen_token();
+
     }else{
         header("Location: ../index.php?view=login&sub=reset-password&error=corresponsance");
     }
