@@ -41,9 +41,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
 {
     include "../app/classe.php";
     $email = $_POST['email'];
-    if($email == $info_user['email'])
+    $sql_client = mysql_query("SELECT count(email) FROM client")or die(mysql_error());
+    $client = mysql_result($sql_client, 0);
+    if($client != 0)
     {
-
+        var_dump($fonction->gen_token());
+        die();
     }else{
         header("Location: ../index.php?view=login&sub=reset-password&error=corresponsance");
     }
