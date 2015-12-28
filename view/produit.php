@@ -366,7 +366,14 @@ if($verif === 3)
                                     while($video = mysql_fetch_array($sql_video))
                                     {
                                     ?>
-                                    <?= $video['video']; ?>
+                                        <video id="my-video" class="video-js" controls preload="auto" width="1100" height="570"
+                                               poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
+                                            <source src="<?= $video['video']; ?>" type='video/mp4'>
+                                            <p class="vjs-no-js">
+                                                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                                                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+                                            </p>
+                                        </video>
                                     <?php } ?>
 
                                 </div>
