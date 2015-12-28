@@ -30,3 +30,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
         header("Location: ../index.php?view=login&warning=champs");
     }
 }
+if(isset($_GET['action']) && $_GET['action'] == 'logout')
+{
+    session_start();
+    session_unset();
+    session_destroy();
+    header("Location: ../index.php?view=index");
+}
