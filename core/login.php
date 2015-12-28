@@ -18,7 +18,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
             $sql_client = mysql_query("SELECT * FROM client WHERE email = '$email'")or die(mysql_error());
             $client = mysql_fetch_array($sql_client);
             $_SESSION['logged'] = true;
-            $_SESSION['logged']['email'] = $email;
+            $_SESSION['email'] = $email;
             header("Location: ../index.php?view=index");
         }elseif($data[0] == 0)
         {
