@@ -324,9 +324,6 @@ if($verif === 3)
                                                                 <a href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                                                             </div>
                                                         </div>
-                                                        <div class="portfolio-desc">
-                                                            <h3><?= $produit['designation']; ?></h3>
-                                                        </div>
                                                     </div>
                                                 </div>
                                             <!-- .portfolio-carousel end -->
