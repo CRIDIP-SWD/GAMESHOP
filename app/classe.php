@@ -21,6 +21,7 @@ $client_cls = new client();
 
 
 
-
-$info_client = $client_cls->info_client($_SESSION['email']);
+if(isset($_SESSION['logged'])){
+    $info_client = $client_cls->info_client($_SESSION['email']);
+}
 
