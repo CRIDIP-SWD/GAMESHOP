@@ -97,30 +97,13 @@ session_start();
                 <?php if(isset($_SESSION['logged'])){ ?>
                 <div class="top-links">
                     <ul>
-                        <li><a href="#">MOCKELYN Maxime</a></li>
+                        <li><a href="index.php?view=profil">MOCKELYN Maxime</a></li>
                     </ul>
                 </div>
                 <?php }else{ ?>
                 <div class="top-links">
                     <ul>
-                        <li><a href="#">Connexion</a>
-                            <div class="top-link-section">
-                                <form id="top-login" role="form">
-                                    <div class="input-group" id="top-login-username">
-                                        <span class="input-group-addon"><i class="icon-user"></i></span>
-                                        <input type="email" class="form-control" placeholder="Adresse Mail" required="">
-                                    </div>
-                                    <div class="input-group" id="top-login-password">
-                                        <span class="input-group-addon"><i class="icon-key"></i></span>
-                                        <input type="password" class="form-control" placeholder="Mot de Passe" required="">
-                                    </div>
-                                    <label class="checkbox">
-                                        <input type="checkbox" value="remember-me"> Remember me
-                                    </label>
-                                    <button class="btn btn-danger btn-block" type="submit">Sign in</button>
-                                </form>
-                            </div>
-                        </li>
+                        <li><a href="index.php?view=login">Connexion</a></li>
                     </ul>
                 </div>
                 <?php } ?>
