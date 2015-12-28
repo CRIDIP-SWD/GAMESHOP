@@ -306,13 +306,13 @@ if($verif === 3)
                                 <div class="tab-content clearfix" id="images">
                                     <h1>IMAGES</h1>
 
-                                    <div class="masonry-thumbs col-6" data-big="3" data-lightbox="gallery">
+                                    <div id="related-portfolio" class="owl-carousel owl-carousel-full portfolio-carousel portfolio-notitle portfolio-nomargin footer-stick">
                                         <?php
                                         $sql_images = mysql_query("SELECT * FROM produits_images WHERE ref_produit = '$ref_produit'")or die(mysql_error());
                                         while($images = mysql_fetch_array($sql_images))
                                         {
                                         ?>
-                                            <div id="related-portfolio" class="owl-carousel owl-carousel-full portfolio-carousel portfolio-notitle portfolio-nomargin footer-stick">
+
 
                                                 <div class="oc-item">
                                                     <div class="iportfolio">
@@ -331,8 +331,7 @@ if($verif === 3)
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                            </div><!-- .portfolio-carousel end -->
+                                            <!-- .portfolio-carousel end -->
 
                                         <?php } ?>
                                         <script type="text/javascript">
