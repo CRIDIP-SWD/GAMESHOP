@@ -318,7 +318,7 @@ if($verif === 3)
                                                     <div class="iportfolio">
                                                         <div class="portfolio-image">
                                                             <a href="portfolio-single.html">
-                                                                <img src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="img-responsive" width="250" alt="Open Imagination">
+                                                                <img src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="img-responsive" width="400" alt="Open Imagination">
                                                             </a>
                                                             <div class="portfolio-overlay">
                                                                 <a href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
