@@ -48,7 +48,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
         $token = $fonction->gen_token();
 
     }else{
-        header("Location: ../index.php?view=login&sub=reset-password&error=corresponsance");
+        header("Location: ../index.php?view=login&sub=reset-password&error=correspondance");
     }
 
 }
