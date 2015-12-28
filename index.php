@@ -13,6 +13,8 @@ ob_start();
 if($view === 'index'){require "view/index.php";}
 if($view === 'categorie'){require "view/categorie.php";}
 if($view === 'produit'){require "view/produit.php";}
+if($view === 'login'){require "view/login.php";}
+if($view === 'profil'){require "view/profil.php";}
 
 $content = ob_get_clean();
 require "view/default.php";
