@@ -37,3 +37,15 @@ if(isset($_GET['action']) && $_GET['action'] == 'logout')
     session_destroy();
     header("Location: ../index.php?view=index");
 }
+if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
+{
+    include "../app/classe.php";
+    $email = $_POST['email'];
+    if($email == $info_user['email'])
+    {
+
+    }else{
+        header("Location: ../index.php?view=login&sub=reset-password&error=corresponsance");
+    }
+
+}

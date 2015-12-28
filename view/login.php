@@ -157,6 +157,12 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
         toastr.error('Erreur BDD SYS: Plusieurs utilisateur ont la même adresse mail, impossible de se connecter, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
     </script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'correspondance'){ ?>
+    <script type="text/javascript">
+        toastr.error("Aucune correspondance avec l'adresse mail entrer dans la base de donnée",'ERREUR')
+    </script>
+<?php } ?>
+
 
 
 
