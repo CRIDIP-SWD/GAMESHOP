@@ -17,7 +17,7 @@ session_start();
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>magnific-popup.css" type="text/css" />
-    <link type="text/css" href="<?= $constante->getUrl(array('js', 'jplayer', 'css/')); ?>jplayer.pink.flag.css" rel="stylesheet" />
+    <link href="http://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet">
 
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -600,7 +600,7 @@ session_start();
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer', 'js/')); ?>jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="http://vjs.zencdn.net/5.4.4/video.js"></script>
 
 </body>
 </html>
