@@ -201,6 +201,10 @@ if($verif === 3)
                     </div>
 
 
+                    <div class="divider divider-rounded divider-center " style="top: 40px;">
+                        <i class="icon-gift " style="height: 80px;line-height: 80px;width: 80px; font-size: 40px !important;"></i>
+                    </div>
+
 
                     <div class="col_full nobottommargin">
 
@@ -208,7 +212,8 @@ if($verif === 3)
 
                             <ul class="tab-nav clearfix">
                                 <li><a href="#tabs-1"><i class="icon-align-justify2"></i><span class="hidden-xs"> Description</span></a></li>
-                                <li><a href="#tabs-2"><i class="icon-info-sign"></i><span class="hidden-xs"> Additional Information</span></a></li>
+                                <li><a href="#tabs-2"><i class="icon-info-sign"></i><span class="hidden-xs"> Bonus</span></a></li>
+                                <li><a href="#tabs-3"><i class="icon-star3"></i><span class="hidden-xs"> Images</span></a></li>
                                 <li><a href="#tabs-3"><i class="icon-star3"></i><span class="hidden-xs"> Reviews (2)</span></a></li>
                             </ul>
 
