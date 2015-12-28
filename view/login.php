@@ -43,7 +43,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
                         </div>
 
                         <div class="col_full nobottommargin">
-                            <button class="button button-3d button-black nomargin" type="submit" id="login-form-submit" name="action" value="login">Connexion</button>
+                            <button class="button button-3d button-black nomargin" type="submit" name="action" value="login">Connexion</button>
                             <a href="#" class="fright">Mot de passe Perdu ?</a>
                         </div>
                     </form>
