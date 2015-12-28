@@ -201,7 +201,7 @@ if($verif === 3)
                     </div>
 
 
-                    <div class="divider divider-rounded divider-center " style="top: 40px;">
+                    <div class="divider divider-rounded divider-center divider-gift">
                         <i class="icon-gift " style="height: 80px;line-height: 80px;width: 80px; font-size: 40px !important;"></i>
                     </div>
 
