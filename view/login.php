@@ -96,6 +96,19 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
 
 </section><!-- #content end -->
 
+<?php if(isset($_GET['error']) && $_GET['error'] == 'no-compte'){ ?>
+    <script type="text/javascript">
+        toastr.error("L'adresse mail ou le mot de passe est/sont incorrect !",'ERREUR')
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'bdd'){ ?>
+    <script type="text/javascript">
+        toastr.error('Erreur BDD SYS: Plusieurs utilisateur ont la même adresse mail, impossible de se connecter, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
+    </script>
+<?php } ?>
+
+
+
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'champs'){ ?>
 <script type="text/javascript">
     toastr.warning('Un ou plusieurs champs sont vide', 'ATTENTION');
