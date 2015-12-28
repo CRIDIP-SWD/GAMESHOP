@@ -237,7 +237,7 @@ if($verif === 3)
                                             <?php endif; ?>
                                             <div class="product-overlay">
                                                 <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
-                                                <a href="assets/include/ajax/shop-item.php&ref_produit=<?= $bonus['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> VOIR</span></a>
+                                                <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $bonus['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> VOIR</span></a>
                                             </div>
                                         </div>
                                         <div class="product-desc center">
