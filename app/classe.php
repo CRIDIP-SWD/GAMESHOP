@@ -22,5 +22,5 @@ $client_cls = new client();
 
 
 
-$info_client = $client_cls->info_client('syltheron@gmail.com');
+$info_client = $client_cls->info_client($_SESSION['email']);
 
