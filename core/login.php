@@ -3,7 +3,7 @@
 if(isset($_POST['action']) && $_POST['action'] == 'login')
 {
     include "../app/classe.php";
-    if(!empty($_GET['email']) && !empty($_GET['password']))
+    if((isset($_POST['email']) && !empty($_POST['email'])) && (isset($_POST['password']) && !empty($_POST['password'])))
     {
         $email = $_GET['email'];
         $password = $_GET['password'];

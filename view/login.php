@@ -34,12 +34,12 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
                     <form class="nobottommargin" action="<?= $constante->getUrl(array('core/'), false, false); ?>login.php" method="post">
                         <div class="col_full">
                             <label for="login-form-username">Adresse Mail:</label>
-                            <input type="text" id="login-form-username" name="email" value="" class="form-control" />
+                            <input type="text" id="login-form-username" name="email" class="form-control" />
                         </div>
 
                         <div class="col_full">
                             <label for="login-form-password">Password:</label>
-                            <input type="password" id="login-form-password" name="password" value="" class="form-control" />
+                            <input type="password" id="login-form-password" name="password" class="form-control" />
                         </div>
 
                         <div class="col_full nobottommargin">
