@@ -11098,8 +11098,9 @@ label.error { display: none !important; }
 	left: 40px;
 }
 
-.divider.divider-gift:before,
-.divider.divider-gift:after{
+.divider.divider-gift:after,
+.divider.divider-gift.divider-center:before,
+.divider.divider-gift.divider-short:before{
 	top: 40px;
 	left: 40px;
 }
