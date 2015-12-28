@@ -98,8 +98,6 @@ if(isset($_SESSION['logged']))
 
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'champs'){ ?>
 <script type="text/javascript">
-    setTimeout(function(){
-        $('#login-form').fadeIn
-    }, 1000)
+    toastr.warning('Ceci est un test');
 </script>
 <?php } ?>
