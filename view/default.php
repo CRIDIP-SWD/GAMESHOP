@@ -599,6 +599,7 @@ session_start();
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/')); ?>jquery.jplayer.min.js"></script>
 
 </body>
 </html>
