@@ -169,6 +169,11 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
         toastr.error("Aucune correspondance avec l'adresse mail entrer dans la base de donnée",'ERREUR')
     </script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'reset-password-1'){ ?>
+    <script type="text/javascript">
+        toastr.error("Erreur lors de l'envoie du mail de vérification !",'ERREUR')
+    </script>
+<?php } ?>
 
 
 
