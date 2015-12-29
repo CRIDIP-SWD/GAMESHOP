@@ -13200,6 +13200,14 @@ PERSONALISATION
 .gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap{padding: 17px 25px 20px 20px;}
 .gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level{float: left; width: 824px;}
 .gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-info{color: #fff; font-size: 14px; font-weight: bold; margin-bottom: 10px; overflow: hidden; text-transform: uppercase; width: 100%;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-info.current{float: left;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-info.next{float: right;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-gauge::before{background-color: #fff; bottom: 0; content: ""; display: block; left: 0; opacity: 0.1; position: absolute; right: 0; top: 0; z-index: -1;}
+
+
+
+
+
 
 
 /*TOASTR*/
