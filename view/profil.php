@@ -84,9 +84,9 @@ if($_SESSION['logged'] == false) {
                                     <div class="row">
                                         <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                         <div class="col-md-11" style="margin: 0;">
-                                            <h2><?= $profil['onlineId']; ?></h2>
-                                            <h4><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
-                                            <h6><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
+                                            <h2 style="margin: 0;"><?= $profil['onlineId']; ?></h2>
+                                            <h4 style="margin: 0;"><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
+                                            <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
                                         </div>
                                     </div>
                                 </div>
