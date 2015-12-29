@@ -147,6 +147,13 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
     </section><!-- #content end -->
 <?php endif; ?>
 
+<?php if(isset($_GET['success']) && $_GET['success'] == 'reset-password-1'){ ?>
+    <script type="text/javascript">
+        toastr.success('En attente de la validation par adresse mail !','Succès')
+    </script>
+<?php } ?>
+ 
+
 <?php if(isset($_GET['error']) && $_GET['error'] == 'no-compte'){ ?>
     <script type="text/javascript">
         toastr.error("L'adresse mail ou le mot de passe est/sont incorrect !",'ERREUR')
