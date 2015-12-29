@@ -246,3 +246,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
     }
 
 }
+if(isset($_GET['action']) && $_GET['action'] == 'reset-password-2')
+{
+    include "../app/classe.php";
+    $token = $_GET['token'];
+    $ex = explode("_", $token);
+    var_dump($ex);
+    die();
+}
