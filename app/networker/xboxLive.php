@@ -52,6 +52,10 @@ class xboxLive
                 break;
             case 'gold':
                 return '<small style="color: rgba(248, 201, 79, 1);">Gold</small>';
+                break;
+            default:
+                return '<small style="color: rgba(132, 132, 132, 0.9);">Silver</small>';
+                break;
         }
     }
 }
