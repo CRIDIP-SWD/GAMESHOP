@@ -265,7 +265,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'reset-password-2')
     $email = $client['email'];
 
     //Vérification heure
-    if($heure <= ($heure_actuel-900))
+    if($heure >= ($heure_actuel-900))
     {
         if($ip == $ip_actuel)
         {
