@@ -14,6 +14,8 @@ use App\general\client;
 use App\general\head;
 use App\general\produit;
 use App\networker\xboxLive;
+use SteamApi\Player;
+use SteamApi\User;
 
 $app = new app();
 $constante = new constante();
@@ -70,10 +72,11 @@ if(isset($_SESSION['logged'])){
     /*
      * STEAM CONNECTOR INIT
      */
-    $steam = new \SteamApi\User('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
-    var_dump($steam->getSteamId());
-    var_dump($steam->GetPlayerSummaries());
-    die();
+    $steam = new User('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
+    $steam_friendList = $steam->GetFriendList();
+    $steam_playerSummary = $steam->GetPlayerSummaries();
+
+    $steam_player = new Player('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
 }
 
 
