@@ -71,6 +71,9 @@ if(isset($_SESSION['logged'])){
     $xbox_profil = $xbox->profile();
     $xbox_gamercard = $xbox->gamercard();
     $xbox_presence = $xbox->presence();
+    $xbox_activity = $xbox->activity();
+    $xbox_r_activity = $xbox->recent_activity();
+    $xbox_friend = $xbox->friends();
     die();
 
     /*
