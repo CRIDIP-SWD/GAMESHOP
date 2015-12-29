@@ -28,8 +28,13 @@ if($_SESSION['logged'] == false) {
         <div class="container clearfix">
 
             <div class="col-md-4">
-                <div class="box" style="background: url(http://ns342142.ip-5-196-76.eu/sources/gameshop/autre/background/empty.jpg) no-repeat;">
-                    <div class="box-title">Playstation Network</div>
+                <div class="gamercard">
+                    <img src="" alt="" class="avatar">
+                    <h1><img src="" alt=""></h1>
+                    <h2>Pseudo</h2>
+                    <ul>
+                        <li></li>
+                    </ul>
                 </div>
             </div>
 
