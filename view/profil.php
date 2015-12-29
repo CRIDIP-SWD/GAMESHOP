@@ -8,6 +8,7 @@ if($_SESSION['logged'] == false) {
 <section id="page-title">
 
     <div class="container clearfix">
+        <img src="" />
         <h1>MON COMPTE</h1>
         <span>Bienvenue</span>
         <ol class="breadcrumb">
