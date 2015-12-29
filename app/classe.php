@@ -47,6 +47,7 @@ $info = json_decode($response_info->getBody(true), true);
 var_dump($info);
 
 $request_profil = new \Gumer\PSN\Requests\ProfileRequest();
+$request_profil->setUserId($info['onlineId']);
 $response_profil = $connect_psn->call($request_profil);
 $profil = json_decode($response_profil->getBody(true), true);
 var_dump($profil);
