@@ -29,7 +29,7 @@ if($_SESSION['logged'] == false) {
 
             <div class="col-md-4">
                 <div class="gamercard">
-                    <h1><img src="<?= $xbox_profile->avatar; ?>"> <?= $xbox_profile->gamertag; ?> </h1>
+                    <h1><img src="<?= $xbox_profile->avatar; ?>"> <?= $xbox_profile->gamertag; ?> <small></small></h1>
                 </div>
             </div>
 
