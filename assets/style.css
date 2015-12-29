@@ -13163,8 +13163,8 @@ PERSONALISATION
 
 .gamercard-xbox{  background-color: #3b3b3b;  margin: 0 auto;  position: relative;  width: 100%;  }
 #leftArea{float: left;position: relative;}
-.gamerPicContainer{  background: rgba(0, 0, 0, 0) linear-gradient(#424242, #c6c6c6) repeat scroll 0 0;  float: left;  }
-#gamerInfo{background-color: #2a2a2a; float: left; height: 486px; padding: 20px 0 0 20px; position: relative; width: 198px;}
+.gamerPicContainer{  background: rgba(0, 0, 0, 0) linear-gradient(#424242, #c6c6c6) repeat scroll 0 0;  float: left; width: 33% }
+#gamerInfo{background-color: #2a2a2a; float: left; height: 300px; padding: 20px 0 0 20px; position: relative; width: 33%;}
 #gamerInfo.statusIcon{display: block; float: left; margin-left: -10px;}
 #mygamertagWrapper{width: 192px;}
 
