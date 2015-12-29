@@ -195,7 +195,7 @@ class date_format extends app
 
 class fonction extends app
 {
-    public function gen_token()
+    public function gen_token($idclient)
     {
         $ip_client = sha1($_SERVER['REMOTE_ADDR']);
         $heure = strtotime(date("H:i"));
@@ -203,8 +203,16 @@ class fonction extends app
         $caractere = "azertyuiopqsdfghjklmwxcvbnAZERTYUIOPQSDFGHJKLMWXCVBN0123456789";
         $shuffle = str_shuffle($caractere);
         $lenght = substr($shuffle, 0, 10);
-        $gen = $heure.$salt.sha1($lenght).$salt.$ip_client;
+        $gen = $heure.$salt.sha1($lenght).$salt.$ip_client.$salt.$idclient;
         return $gen;
 
+    }
+
+    public function gen_password()
+    {
+        $caractere = "AZERTUIOPQSDFGHJLMWXCVBNazertyuiopqsdfghjklmwxcvbn0123456789";
+        $shuffle = str_shuffle($caractere);
+        $lenght = substr($shuffle, 0, 6);
+        return $lenght;
     }
 }

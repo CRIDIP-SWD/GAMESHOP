@@ -152,6 +152,11 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
         toastr.success('En attente de la validation par adresse mail !','Succès')
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'reset-password-2'){ ?>
+    <script type="text/javascript">
+        toastr.success('Le mot de passe à été réinitialiser.<br>Veuillez utiliser le mot de passe inscrit dans votre boite mail.','Succès')
+    </script>
+<?php } ?>
  
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'no-compte'){ ?>
@@ -174,7 +179,16 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
         toastr.error("Erreur lors de l'envoie du mail de vérification !",'ERREUR')
     </script>
 <?php } ?>
-
+<?php if(isset($_GET['error']) && $_GET['error'] == 'reset-password-2'){ ?>
+    <script type="text/javascript">
+        toastr.error('Erreur lors de la réinitialisation du mot de passe, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'ip-correspondance'){ ?>
+    <script type="text/javascript">
+        toastr.error("L'adresse Ip à partir de la clé TOKEN est erronée, veuillez recommencer la procédure.",'ERREUR')
+    </script>
+<?php } ?>
 
 
 
@@ -188,4 +202,8 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
         toastr.warning('Accès interdit en visiteur, veuillez vous connectez ou vous inscrire.','ATTENTION')
     </script>
 <?php } ?>
-
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'timeout'){ ?>
+    <script type="text/javascript">
+        toastr.warning("Le temps de réinitialisation du mot de passe est dépasser, veuillez recommencer la procédure.",'ATTENTION')
+    </script>
+<?php } ?>
