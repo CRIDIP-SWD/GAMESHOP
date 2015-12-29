@@ -102,6 +102,23 @@ if($_SESSION['logged'] == false) {
                                                         <th>Platine</th>
                                                     </tr>
                                                 </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>2</td>
+                                                        <td>1860</td>
+                                                        <td>985</td>
+                                                        <td>325</td>
+                                                        <td>174</td>
+                                                        <td>81</td>
+                                                    </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <td colspan="6">
+                                                            Ceci est un test
+                                                        </td>
+                                                    </tr>
+                                                </tfoot>
                                             </table>
                                         </div>
                                     </div>
