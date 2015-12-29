@@ -30,6 +30,7 @@ if($_SESSION['logged'] == false) {
             <div class="col-md-4">
                 <div class="gamercard">
                     <h1><img src="<?= $xbox_profile->avatar; ?>"> <?= $xbox_profile->gamertag; ?> <?= $xbox->xboxlivestat($xbox_profile->status); ?></h1>
+                    <img src="<?= $constante->getUrl(array(), false, true); ?>autre/icone/gamerscorelighticon.png" /> <h2 style="color: #9d9d9d"><?= $xbox_profile->gamerscore; ?></h2>
                 </div>
             </div>
 
