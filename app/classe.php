@@ -48,6 +48,7 @@ if(isset($_SESSION['logged'])){
     $request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
     $response_info = $connect_psn->call($request_info);
     $info = json_decode($response_info->getBody(true), true);
+    var_dump($info);
 
 //Profil
     $request_profil = new \Gumer\PSN\Requests\ProfileRequest();
@@ -68,7 +69,6 @@ if(isset($_SESSION['logged'])){
 
     $xbox = new xboxLive('syltheron');
     $xbox_profile = $xbox->call('profile');
-    var_dump($xbox_profile);
 
     /*
      * STEAM CONNECTOR INIT

@@ -34,6 +34,12 @@ if($_SESSION['logged'] == false) {
                 </div>
             </div>
 
+            <div class="col-md-4">
+                <div class="gamercard">
+
+                </div>
+            </div>
+
             <div class="clear"></div>
 
         </div>
