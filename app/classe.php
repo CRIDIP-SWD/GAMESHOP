@@ -60,4 +60,11 @@ $request_friend->setUserId($info['onlineId']);
 $response_friend = $connect_psn->call($request_friend);
 $friend = json_decode($response_friend->getBody(true), true);
 var_dump($friend);
+
+//Trophy PSN
+$requestTrophy = new \Gumer\PSN\Requests\TrophyDataRequest();
+$requestTrophy->setUserId($info['onlineId']);
+$responseTrophy = $connect_psn->call($requestTrophy);
+$trophy = json_decode($responseTrophy->getBody(true), true);
+var_dump($trophy);
 die();
