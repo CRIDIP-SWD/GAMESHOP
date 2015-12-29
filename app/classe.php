@@ -72,7 +72,7 @@ if(isset($_SESSION['logged'])){
      */
     $steam = new \App\networker\steam('76561198000911095');
     $steam_info = $steam->playerInfo();
-    var_dump($steam_info->personaname);
+    var_dump($steam_info['personaname']);
     die();
 }
 
