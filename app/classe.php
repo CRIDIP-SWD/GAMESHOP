@@ -55,7 +55,7 @@ if(isset($_SESSION['logged'])){
     $request_profil->setUserId($info['onlineId']);
     $response_profil = $connect_psn->call($request_profil);
     $profil = json_decode($response_profil->getBody(true), true);
-
+    var_dump($profil);
 //FriendList
     $request_friend = new \Gumer\PSN\Requests\FriendsListRequest();
     $request_friend->setUserId($info['onlineId']);
