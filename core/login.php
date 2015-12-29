@@ -234,8 +234,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
         </html>
         <?php
         $message = ob_get_contents();
-        $mail = mail($to, $sujet, $message, $headers);
-        var_dump($mail);
+        var_dump(mail($to, $sujet, $message, $headers));
         die();
         if($mail === TRUE)
         {
