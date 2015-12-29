@@ -77,10 +77,17 @@ if($_SESSION['logged'] == false) {
                             </ul>
 
                             <div class="tab-container">
-
+                                <?php
+                                $convert_date_psn = $date_format->convert_strtotime($profil['presence']['primaryInfo']['lastOnlineDate']);
+                                ?>
                                 <div class="tab-content clearfix" id="profil">
                                     <div class="row">
                                         <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
+                                        <div class="col-md-11">
+                                            <h2><?= $profil['onlineId']; ?></h2>
+                                            <h4><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
+                                            <h6><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
+                                        </div>
                                     </div>
                                 </div>
 
