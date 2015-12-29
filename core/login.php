@@ -234,8 +234,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
         </html>
         <?php
         $message = ob_get_contents();
-        var_dump(mail($to, $sujet, $message, $headers));
-        die();
+        $mail = mail($to, $sujet, $message, $headers);
         if($mail === TRUE)
         {
             header("Location: ../index.php?view=login&sub=reset-password&success=reset-password-1");
