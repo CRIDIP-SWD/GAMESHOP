@@ -27,3 +27,21 @@ if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
 }
 
+
+//VENDOR COMPOSER
+include dirname(__DIR__)."/vendor/autoload.php";
+/*
+ * PSN NETWORK API INIT
+ */
+$client_psn = new \Guzzle\Http\Client('', ['redirect.disable' => true]);
+$connect_psn = new \Gumer\PSN\Http\Connection('FR', 'FR');
+$connect_psn->setGuzzle($client_psn);
+$provider_psn = new \Gumer\PSN\Authentication\UserProvider($connect_psn);
+$auth_psn = \Gumer\PSN\Authentication\Manager::instance($provider_psn);
+
+$auth_psn->attempt('syltheron@gmail.com', '1992maxime');
+$request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
+$response_info = $connect_psn->call($request_info);
+$info = json_decode($response_info->getBody(true), true);
+var_dump($info);
+die();
