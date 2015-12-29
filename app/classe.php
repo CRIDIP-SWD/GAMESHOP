@@ -66,6 +66,14 @@ if(isset($_SESSION['logged'])){
 
     $xbox = new xboxLive('syltheron');
     $xbox_profile = $xbox->call('profile');
+
+    /*
+     * STEAM CONNECTOR INIT
+     */
+    $steam = new \App\networker\steam('syltheron');
+    $steam_info = $steam->playerInfo();
+    var_dump($steam_info);
+    die();
 }
 
 
