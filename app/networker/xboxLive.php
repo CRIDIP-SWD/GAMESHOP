@@ -57,19 +57,19 @@ class xboxLive
     }
     public function presence()
     {
-        $this->call($this->xuid.'/presence', $this->key);
+        return $this->call($this->xuid.'/presence', $this->key);
     }
     public function activity()
     {
-        $this->call($this->xuid.'/activity', $this->key);
+        return $this->call($this->xuid.'/activity', $this->key);
     }
     public function recent_activity()
     {
-        $this->call($this->xuid.'/activity/recent', $this->key);
+        return $this->call($this->xuid.'/activity/recent', $this->key);
     }
     public function friends()
     {
-        $this->call($this->xuid.'/friends', $this->key);
+        return $this->call($this->xuid.'/friends', $this->key);
     }
 
 

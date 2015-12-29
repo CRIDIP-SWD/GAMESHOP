@@ -69,9 +69,8 @@ if(isset($_SESSION['logged'])){
 
     $xbox = new xboxLive($info_client['pseudo_xbox']);
     $xbox_profil = $xbox->profile();
-    var_dump($xbox_profil);
     $xbox_gamercard = $xbox->gamercard();
-    var_dump($xbox_gamercard);
+    $xbox_presence = $xbox->presence();
     die();
 
     /*
