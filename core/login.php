@@ -251,6 +251,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'reset-password-2')
     include "../app/classe.php";
     $token = $_GET['token'];
     $ex = explode("_", $token);
-    var_dump($ex);
+    var_dump($ex[0]);
     die();
 }
