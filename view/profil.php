@@ -19,4 +19,22 @@ if($_SESSION['logged'] == false) {
 
 </section><!-- #page-title end -->
 
+<!-- Content
+		============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+
+
+            <div class="clear"></div>
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->
+
 
