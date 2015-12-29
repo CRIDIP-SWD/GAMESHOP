@@ -82,8 +82,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
                             </tr>
                             <tr>
                                 <td align="center" style="text-align: center;">
-                                    <a href="http://gestcom.cridip.com">
-                                        <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="240" border="0" alt="Logo GAMESHOP" />
+                                    <a href="http://vps221243.ovh.net/gameshop/">
+                                        <img src="http://vps221243.ovh.net/gameshop/assets/images/logo.png" width="240" border="0" alt="Logo GAMESHOP" />
                                     </a>
                                 </td>
                             </tr>
@@ -161,7 +161,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
                             <center style="color:#ffffff;font-family:sans-serif;font-size:13px;font-weight:bold;">Réinitialiser votre mot de passe</center>
                         </v:roundrect>
                         <![endif]-->
-                        <a href="<?= $constante->getUrl(array('core/'), false, false); ?>login.php?action=reset-password-2&token=<?= $token; ?>" style="background-color:#32f143;border:1px solid #32f143;border-radius:100px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:80px;text-align:center;text-decoration:none;width:300px;-webkit-text-size-adjust:none;mso-hide:all;">Réinitialiser votre mot de passe</a>
+                        <a href="http://vps221243.ovh.net/gameshop/core/login.php?action=reset-password-2&token=<?= $token; ?>" style="background-color:#32f143;border:1px solid #32f143;border-radius:100px;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:80px;text-align:center;text-decoration:none;width:300px;-webkit-text-size-adjust:none;mso-hide:all;">Réinitialiser votre mot de passe</a>
                     </div>
                 </td>
             </tr>
@@ -208,7 +208,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'reset-password-1')
                             </tr>
                             <tr>
                                 <td align="left" style="text-align: left; font-size: 15px; color: white; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
-                                    <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="240" border="0" alt="Logo GAMESHOP" />
+                                    <img src="http://vps221243.ovh.net/gameshop/assets/images/logo.png" width="240" border="0" alt="Logo GAMESHOP" />
                                 </td>
                             </tr>
                             <tr>
