@@ -13161,7 +13161,7 @@ PERSONALISATION
 .banner-categorie{opacity: 0.8;}
 .banner-categorie:hover{opacity: 1;}
 
-.gamercard-xbox{  background-color: #3b3b3b;  margin: 0 auto;  position: relative;  width: 100%; color: floralwhite; }
+.gamercard-xbox{  background-color: #3b3b3b;  margin: 0 auto;  position: relative;  width: 100%; color: floralwhite;font-size: 14px; }
 #leftArea{float: left;position: relative;}
 .gamerPicContainer{  background: rgba(0, 0, 0, 0) linear-gradient(#424242, #c6c6c6) repeat scroll 0 0;  float: left; width: 33% }
 #gamerInfo{background-color: #2a2a2a; float: left; height: 300px; padding: 20px 0 0 20px; position: relative; width: 33%;}
