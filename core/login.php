@@ -367,7 +367,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'reset-password-2')
                                     <p>Bonjour,</p>
                                     <p>Suite à la validation de votre demande de réinitialisation de votre mot de passe, le système à définie le mot de passe suivant:</p><br>
                                     <ul>
-                                        <li><strong>Mot de Passe:</strong> <?= $password; ?></li>
+                                        <li><strong>Mot de Passe:</strong> <?= $new_pass_clear; ?></li>
                                     </ul>
                                     <p>
                                         Afin de garantir une sécurité optimal:
