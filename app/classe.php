@@ -40,8 +40,15 @@ $provider_psn = new \Gumer\PSN\Authentication\UserProvider($connect_psn);
 $auth_psn = \Gumer\PSN\Authentication\Manager::instance($provider_psn);
 
 $auth_psn->attempt('syltheron@gmail.com', '1992maxime');
+
 $request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
 $response_info = $connect_psn->call($request_info);
 $info = json_decode($response_info->getBody(true), true);
 var_dump($info);
+
+$request_profil = new \Gumer\PSN\Requests\ProfileRequest();
+$response_profil = $connect_psn->call($request_profil);
+$profil = json_decode($response_profil->getBody(true), true);
+var_dump($profil);
+
 die();
