@@ -137,6 +137,14 @@ if($_SESSION['logged'] == false) {
                                                                     <div class="current">Niveau <?= $profil['trophySummary']['level']; ?></div>
                                                                     <div class="next">Niveau <?= $profil['trophySummary']['level']+1; ?></div>
                                                                 </div>
+                                                                <div class="level-gauge hide-text">
+                                                                    <?= $profil['trophySummary']['progress']; ?>
+                                                                    <div class="highlight" style="width: <?= $profil['trophySummary']['progress']; ?>%;"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="level-percentage">
+                                                                <?= $profil['trophySummary']['progress']; ?>
+                                                                <span>%</span>
                                                             </div>
                                                         </div>
                                                     </div>

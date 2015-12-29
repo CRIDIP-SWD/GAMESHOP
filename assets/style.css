@@ -13175,6 +13175,20 @@ PERSONALISATION
 
 
 .gamercard-psn{position: relative; width: 100%;}
+.gamercard-psn.image-wrap{overflow: visible; text-align: center; height: 575px; position: relative;}
+.gamercard-psn.image-wrap.content-wrap{height: 100%; margin: 0 auto; position: relative; text-align: left; width: 940px;}
+.gamercard-psn.image-wrap.content-wrap.copy.with-contextual-nav{top: 117px;}
+.gamercard-psn.image-wrap.content-wrap.copy{color: #fff; position: absolute; width: 100%;}
+.gamercard-psn.image-wrap.content-wrap.copy.avatar-block{float: left; height: 100%; position: relative; width: 111px;}
+.gamercard-psn.image-wrap.content-wrap.copy.avatar-block.avatar{height: 80px; left: 20px; position: relative; top: 0; width: 80px; z-index: 5;}
+.gamercard-psn.image-wrap.content-wrap.copy.user-info{float: left; margin-left: 15px;}
+.gamercard-psn.image-wrap.content-wrap.copy.user-info h2{font-size: 44px; font-weight: normal; margin: 0 0 10px; text-align: left;}
+.gamercard-psn.image-wrap.content-wrap.copy.user-info h3{font-size: 18px; font-weight: normal; text-align: left;}
+.gamercard-psn.image-wrap.content-wrap.info-bar{bottom: 127px; overflow: hidden; position: absolute; width: 100%; z-index: 1;}
+.gamercard-psn.image-wrap.content-wrap.info-bar ul{background-color: transparent;}
+.gamercard-psn.image-wrap.content-wrap.info-bar ul::after{background-color: #fff; content: ""; display: block; height: 2px; left: 0; opacity: 0.1; position: absolute; top: 114px; width: 155px; z-index: 1;}
+
+
 
 /*TOASTR*/
 
