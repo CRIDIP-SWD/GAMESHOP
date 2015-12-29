@@ -79,78 +79,8 @@ if($_SESSION['logged'] == false) {
                             <div class="tab-container">
 
                                 <div class="tab-content clearfix" id="profil">
-                                    <div class="gamercard-psn">
-                                        <div class="image-wrap">
-                                            <div class="content-wrap">
-                                                <div class="with-contextual-nav copy">
-                                                    <div class="avatar-block">
-                                                        <img class="avatar" src="<?= $profil['avatarUrl']; ?>" />
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <h2><?= $profil['onlineId']; ?></h2>
-                                                        <h3><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h3>
-                                                    </div>
-                                                </div>
-                                                <div class="info-bar">
-                                                    <ul>
-                                                        <li>
-                                                            <div class="wrap">
-                                                                <h4>Niveau</h4>
-                                                                <div class="quantity content">2</div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="wrap">
-                                                                <h4>Niveau</h4>
-                                                                <div class="quantity content">2</div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="wrap">
-                                                                <h4>Niveau</h4>
-                                                                <div class="quantity content">2</div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="wrap">
-                                                                <h4>Niveau</h4>
-                                                                <div class="quantity content">2</div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="wrap">
-                                                                <h4>Niveau</h4>
-                                                                <div class="quantity content">2</div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="wrap">
-                                                                <h4>Niveau</h4>
-                                                                <div class="quantity content">2</div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                    <div class="bottom">
-                                                        <div class="wrap">
-                                                            <div class="level">
-                                                                <div class="level-info">
-                                                                    <div class="current">Niveau <?= $profil['trophySummary']['level']; ?></div>
-                                                                    <div class="next">Niveau <?= $profil['trophySummary']['level']+1; ?></div>
-                                                                </div>
-                                                                <div class="level-gauge hide-text">
-                                                                    <?= $profil['trophySummary']['progress']; ?>
-                                                                    <div class="highlight" style="width: <?= $profil['trophySummary']['progress']; ?>%;"></div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="level-percentage">
-                                                                <?= $profil['trophySummary']['progress']; ?>
-                                                                <span>%</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="row">
+                                        <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                     </div>
                                 </div>
 
