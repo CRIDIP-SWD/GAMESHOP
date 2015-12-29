@@ -80,7 +80,15 @@ if($_SESSION['logged'] == false) {
 
                                 <div class="tab-content clearfix" id="profil">
                                     <div class="gamercard-psn">
-
+                                        <div class="image-wrap">
+                                            <div class="content-wrap">
+                                                <div class="with-contextual-nav copy">
+                                                    <div class="avatar-block">
+                                                        <img class="avatar" src="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

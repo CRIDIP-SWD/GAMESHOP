@@ -48,20 +48,20 @@ if(isset($_SESSION['logged'])){
     $request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
     $response_info = $connect_psn->call($request_info);
     $info = json_decode($response_info->getBody(true), true);
-
+    var_dump($info);
 
 //Profil
     $request_profil = new \Gumer\PSN\Requests\ProfileRequest();
     $request_profil->setUserId($info['onlineId']);
     $response_profil = $connect_psn->call($request_profil);
     $profil = json_decode($response_profil->getBody(true), true);
-
+    var_dump($profil);
 //FriendList
     $request_friend = new \Gumer\PSN\Requests\FriendsListRequest();
     $request_friend->setUserId($info['onlineId']);
     $response_friend = $connect_psn->call($request_friend);
     $friend = json_decode($response_friend->getBody(true), true);
-
+    var_dump($friend);
 
     /*
      * XBOX LIVE CONNECTOR INIT
@@ -86,9 +86,11 @@ if(isset($_SESSION['logged'])){
     $steam_friendList = $steam->GetFriendList();
     $steam_playerSummary = $steam->GetPlayerSummaries();
 
+
     $steam_player = new Player('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
     $steam_p_level = $steam_player->GetSteamLevel();
     $steam_p_level_detail = $steam_player->GetPlayerLevelDetails();
+
 }
 
 
