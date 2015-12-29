@@ -30,8 +30,7 @@ if($_SESSION['logged'] == false) {
             <div class="col-md-4">
                 <h1>XBOX LIVE</h1>
                 <div class="gamercard">
-                    <img src="<?= $xbox_profile['AvatarBody']; ?>" alt="" class="avatar">
-                    <h1><img src="<?= $xbox_profile['AvatarTile']; ?>" alt=""><?= $xbox_profile['Gamertag']; ?></h1>
+                    <h1><img src="<?= $xbox_profile->avatar; ?>" alt=""><?= $xbox_profile->gamertag; ?></h1>
                     <h2>Pseudo</h2>
                     <ul>
                         <li></li>
