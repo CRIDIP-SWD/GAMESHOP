@@ -11,51 +11,66 @@ namespace App\networker;
 
 class xboxLive
 {
+    protected $endpoint = 'https://xboxapi.com/v2/';
     protected $gamertag;
-    protected $endpoint = 'http://www.xboxleaders.com/api/';
-    protected $method;
-
-
-    private function getGamertag($gamertag)
-    {
-        return $this->gamertag;
-    }
-
-    private function getMethod($method)
-    {
-        return $this->method;
-    }
+    protected $key = '51f9c61a6752f9fd533c59773ca669caddf1629a';
+    protected $xuid;
 
     public function __construct($gamertag)
     {
         $this->gamertag = $gamertag;
+        $this->xuid = $this->xuid_declare($gamertag);
     }
 
-    public function call($method)
+    private function xuid_declare($gamertag)
     {
-        $arrContextOptions=array(
-            "ssl"=>array(
-                "verify_peer"=>false,
-                "verify_peer_name"=>false,
-            ),
-        );
-        $call = json_decode(file_get_contents($this->endpoint.$method.'.json?gamertag='.$this->gamertag, false, stream_context_create($arrContextOptions)));
-        return $call;
+        $curl = curl_init($this->endpoint.'xuid/'.$gamertag);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+            'Content-Type:application/json',
+            'X-AUTH:'.$this->key
+        ));
+        $result = json_decode(curl_exec($curl));
+        return $result;
+
     }
 
-    public function xboxlivestat($status)
+    private function call($method, $key)
     {
-        switch($status)
-        {
-            case 'silver':
-                return '<small style="color: rgba(132, 132, 132, 0.9);">Silver</small>';
-                break;
-            case 'gold':
-                return '<small style="color: rgba(248, 201, 79, 1);">Gold</small>';
-                break;
-            default:
-                return '<small style="color: rgba(132, 132, 132, 0.9);">Silver</small>';
-                break;
-        }
+        $curl = curl_init($this->endpoint.$method);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
+            'Content-Type:application/json',
+            'X-AUTH:'.$key
+        ));
+        $result = curl_exec($curl);
+        return json_decode($result, true);
     }
+
+    public function profile($xuid)
+    {
+        return $this->call($xuid.'/profile', $this->key);
+    }
+    public function gamercard($xuid)
+    {
+        return $this->call($xuid.'/gamercard', $this->key);
+    }
+    public function presence($xuid)
+    {
+        $this->call($xuid.'/presence', $this->key);
+    }
+    public function activity($xuid)
+    {
+        $this->call($xuid.'/activity', $this->key);
+    }
+    public function recent_activity($xuid)
+    {
+        $this->call($xuid.'/activity/recent', $this->key);
+    }
+    public function friends($xuid)
+    {
+        $this->call($xuid.'/friends', $this->key);
+    }
+
+
 }
