@@ -77,6 +77,8 @@ if(isset($_SESSION['logged'])){
     $steam_playerSummary = $steam->GetPlayerSummaries();
 
     $steam_player = new Player('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
+    $steam_p_level = $steam_player->GetSteamLevel();
+    $steam_p_level_detail = $steam_player->GetPlayerLevelDetails();
 }
 
 
