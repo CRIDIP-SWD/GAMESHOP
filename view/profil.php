@@ -28,7 +28,7 @@ if($_SESSION['logged'] == false) {
         <div class="container clearfix">
 
             <div class="col-md-4">
-                <div class="well-lg">
+                <div class="border-color">
                     &nbsp;d
                 </div>
             </div>
