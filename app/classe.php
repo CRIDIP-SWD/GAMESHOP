@@ -10,6 +10,7 @@ use App\general\categorie;
 use App\general\client;
 use App\general\head;
 use App\general\produit;
+use App\networker\xboxLive;
 
 $app = new app();
 $constante = new constante();
@@ -30,6 +31,7 @@ if(isset($_SESSION['logged'])){
 
 //VENDOR COMPOSER
 include dirname(__DIR__)."/vendor/autoload.php";
+
 /*
  * PSN NETWORK API INIT
  */
@@ -67,4 +69,13 @@ $requestTrophy->setUserId($info['onlineId']);
 $responseTrophy = $connect_psn->call($requestTrophy);
 $trophy = json_decode($responseTrophy->getBody(true), true);
 var_dump($trophy);
+
+/*
+ * XBOX LIVE CONNECTOR INIT
+ */
+
+$xbox = new xboxLive('syltheron');
+$xbox_profile = $xbox->call('profile');
+var_dump($xbox_profile);
+
 die();
