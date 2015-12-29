@@ -13203,6 +13203,13 @@ PERSONALISATION
 .gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-info.current{float: left;}
 .gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-info.next{float: right;}
 .gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-gauge::before{background-color: #fff; bottom: 0; content: ""; display: block; left: 0; opacity: 0.1; position: absolute; right: 0; top: 0; z-index: -1;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-gauge{background-color: transparent;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-gauge{height: 8px; position: relative; width: 100%;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level.level-gauge.highlight{background-color: #00a2ff; height: 8px; left: 0; position: absolute; top: 0; }
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level-percentage{color: #fff; float: right; font-size: 26px;}
+.gamercard-psn.image-wrap.content-wrap.info-bar.bottom.wrap.level-percentage span{font-size: 18px;}
+
+.hide-text{overflow: hidden; text-indent: 100%; white-space: nowrap;}
 
 
 
