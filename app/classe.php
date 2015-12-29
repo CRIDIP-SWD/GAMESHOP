@@ -41,8 +41,8 @@ $connect_psn->setGuzzle($client_psn);
 $provider_psn = new \Gumer\PSN\Authentication\UserProvider($connect_psn);
 $auth_psn = \Gumer\PSN\Authentication\Manager::instance($provider_psn);
 
-//$auth_psn->attempt($info_client['pseudo_psn'], $info_client['pass_psn']);
-$auth_psn->attempt('syltheron@gmail.com', '1992maxime');
+$auth_psn->attempt($info_client['pseudo_psn'], $info_client['pass_psn']);
+//$auth_psn->attempt('syltheron@gmail.com', '1992maxime');
 
 //Info PSN
 $request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
