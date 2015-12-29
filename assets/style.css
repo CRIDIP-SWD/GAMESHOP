@@ -13168,6 +13168,7 @@ PERSONALISATION
 #gamerInfo{background-color: #2a2a2a; float: left; height: 300px; padding: 20px 0 0 20px; position: relative; width: 33%;}
 #gamerInfo.statusIcon{display: block; float: left; margin-left: -10px;}
 #mygamertagWrapper{width: 192px;}
+#mygamertagWrapper#myGamerTag{font-size: 20px;}
 
 /*TOASTR*/
 
