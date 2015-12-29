@@ -74,6 +74,10 @@ if(isset($_SESSION['logged'])){
     $xbox_activity = $xbox->activity();
     $xbox_r_activity = $xbox->recent_activity();
     $xbox_friend = $xbox->friends();
+    var_dump($xbox_profil);
+    var_dump($xbox_gamercard);
+    var_dump($xbox_presence);
+    var_dump($xbox_r_activity);
 
     /*
      * STEAM CONNECTOR INIT
