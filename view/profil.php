@@ -89,6 +89,22 @@ if($_SESSION['logged'] == false) {
                                             <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <table style="" cellspacing="0" cellpadding="0">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Niveau</th>
+                                                        <th>Trophées</th>
+                                                        <th>Bronze</th>
+                                                        <th>Argent</th>
+                                                        <th>Or</th>
+                                                        <th>Platine</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
