@@ -74,7 +74,6 @@ if(isset($_SESSION['logged'])){
     $xbox_activity = $xbox->activity();
     $xbox_r_activity = $xbox->recent_activity();
     $xbox_friend = $xbox->friends();
-    die();
 
     /*
      * STEAM CONNECTOR INIT
