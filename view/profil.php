@@ -29,7 +29,7 @@ if($_SESSION['logged'] == false) {
 
             <div class="col-md-4">
                 <div class="feature-box">
-                    &nbsp;
+                    &nbsp;d
                 </div>
             </div>
 
