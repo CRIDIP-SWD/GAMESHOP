@@ -28,8 +28,10 @@ if($_SESSION['logged'] == false) {
         <div class="container clearfix">
 
             <div class="col-md-4">
-                <div class="fbox-large fbox-border fbox-dark">
-                    &nbsp;d
+                <div class="feature-box fbox-large fbox-rounded fbox-effect fbox-dark">
+                    <div class="fbox-desc">
+                        Ceci est un test
+                    </div>
                 </div>
             </div>
 
