@@ -48,14 +48,14 @@ if(isset($_SESSION['logged'])){
     $request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
     $response_info = $connect_psn->call($request_info);
     $info = json_decode($response_info->getBody(true), true);
-    var_dump($info);
+
 
 //Profil
     $request_profil = new \Gumer\PSN\Requests\ProfileRequest();
     $request_profil->setUserId($info['onlineId']);
     $response_profil = $connect_psn->call($request_profil);
     $profil = json_decode($response_profil->getBody(true), true);
-    var_dump($profil);
+
 //FriendList
     $request_friend = new \Gumer\PSN\Requests\FriendsListRequest();
     $request_friend->setUserId($info['onlineId']);
@@ -68,7 +68,9 @@ if(isset($_SESSION['logged'])){
      */
 
     $xbox = new xboxLive($info_client['pseudo_xbox']);
-    $xbox_profil = $xbox->
+    $xbox_profil = $xbox->profile();
+    var_dump($xbox_profil);
+    die();
 
     /*
      * STEAM CONNECTOR INIT
