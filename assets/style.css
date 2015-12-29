@@ -13168,7 +13168,7 @@ PERSONALISATION
 #gamerInfo{background-color: #2a2a2a; float: left; height: 300px; padding: 20px 0 0 20px; position: relative; width: 33%;}
 #gamerInfo.statusIcon{display: block; float: left; margin-left: -10px;}
 #gamerInfo.presence{margin-top: 10px;}
-#gamerInfo.presence p{margin: 0;}
+#gamerInfo.presence.primaryPresence,#gamerInfo.presence.secondaryPresence{margin: 0;}
 #mygamertagWrapper{width: 192px;}
 #myGamerTag{font-size: 20px;}
 

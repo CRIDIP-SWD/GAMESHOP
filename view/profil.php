@@ -54,7 +54,7 @@ if($_SESSION['logged'] == false) {
                                         <div id="myGamerTag" style="visibility: visible;"><?= $xbox_gamercard['gamertag']; ?></div>
                                     </div>
                                     <div class="presence" style="display: block;">
-                                        <p class="primaryPresence">Veu en dernier: <?= $xbox_presence['lastSeen']['titleName']; ?> (<?= $xbox_presence['lastSeen']['deviceType']; ?>)</p>
+                                        <p class="primaryPresence">Vue en dernier: <?= $xbox_presence['lastSeen']['titleName']; ?> (<?= $xbox_presence['lastSeen']['deviceType']; ?>)</p>
                                         <p class="secondaryPresence">
                                             <?php
                                             $convert_date = $date_format->convert_strtotime($xbox_presence['lastSeen']['timestamp']);
