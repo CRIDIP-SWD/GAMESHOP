@@ -47,29 +47,29 @@ class xboxLive
         return json_decode($result, true);
     }
 
-    public function profile($xuid)
+    public function profile()
     {
-        return $this->call($xuid.'/profile', $this->key);
+        return $this->call($this->xuid.'/profile', $this->key);
     }
-    public function gamercard($xuid)
+    public function gamercard()
     {
-        return $this->call($xuid.'/gamercard', $this->key);
+        return $this->call($this->xuid.'/gamercard', $this->key);
     }
-    public function presence($xuid)
+    public function presence()
     {
-        $this->call($xuid.'/presence', $this->key);
+        $this->call($this->xuid.'/presence', $this->key);
     }
-    public function activity($xuid)
+    public function activity()
     {
-        $this->call($xuid.'/activity', $this->key);
+        $this->call($this->xuid.'/activity', $this->key);
     }
-    public function recent_activity($xuid)
+    public function recent_activity()
     {
-        $this->call($xuid.'/activity/recent', $this->key);
+        $this->call($this->xuid.'/activity/recent', $this->key);
     }
-    public function friends($xuid)
+    public function friends()
     {
-        $this->call($xuid.'/friends', $this->key);
+        $this->call($this->xuid.'/friends', $this->key);
     }
 
 
