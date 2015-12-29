@@ -91,6 +91,56 @@ if($_SESSION['logged'] == false) {
                                                         <h3><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h3>
                                                     </div>
                                                 </div>
+                                                <div class="info-bar">
+                                                    <ul>
+                                                        <li>
+                                                            <div class="wrap">
+                                                                <h4>Niveau</h4>
+                                                                <div class="quantity content">2</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="wrap">
+                                                                <h4>Niveau</h4>
+                                                                <div class="quantity content">2</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="wrap">
+                                                                <h4>Niveau</h4>
+                                                                <div class="quantity content">2</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="wrap">
+                                                                <h4>Niveau</h4>
+                                                                <div class="quantity content">2</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="wrap">
+                                                                <h4>Niveau</h4>
+                                                                <div class="quantity content">2</div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="wrap">
+                                                                <h4>Niveau</h4>
+                                                                <div class="quantity content">2</div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <div class="bottom">
+                                                        <div class="wrap">
+                                                            <div class="level">
+                                                                <div class="level-info">
+                                                                    <div class="current">Niveau <?= $profil['trophySummary']['level']; ?></div>
+                                                                    <div class="next">Niveau <?= $profil['trophySummary']['level']+1; ?></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
