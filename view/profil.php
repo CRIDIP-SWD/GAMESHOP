@@ -38,7 +38,10 @@ if($_SESSION['logged'] == false) {
                 <div class="tab-container">
 
                     <div class="tab-content clearfix gamercard" id="xbox">
-                        <h1></h1>
+                        <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive" width="125" />
+                        <div class="gamerPicContainer">
+                            <img src="<?= $xbox_gamercard->avatarBodyImagePath; ?>" />
+                        </div>
                     </div>
 
                 </div>
