@@ -20,10 +20,7 @@ class steam
         return $this->steamId = $steamId;
     }
 
-    private function call($method)
-    {
 
-    }
 
     public function playerInfo()
     {
