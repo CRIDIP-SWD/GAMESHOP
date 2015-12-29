@@ -68,6 +68,8 @@ if(isset($_SESSION['logged'])){
 
     $xbox = new xboxLive('syltheron');
     $xbox_profile = $xbox->call('profile');
+    var_dump($xbox_profile);
+    die();
 
     /*
      * STEAM CONNECTOR INIT
