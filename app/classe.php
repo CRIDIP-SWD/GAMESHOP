@@ -71,6 +71,7 @@ if(isset($_SESSION['logged'])){
      * STEAM CONNECTOR INIT
      */
     $steam = new \SteamApi\User('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
+    var_dump($steam->getSteamId());
     var_dump($steam->GetPlayerSummaries());
     die();
 }
