@@ -70,10 +70,7 @@ if(isset($_SESSION['logged'])){
     /*
      * STEAM CONNECTOR INIT
      */
-    $steam = new \App\networker\steam('76561198000911095');
-    $steam_info = $steam->playerInfo();
-    var_dump($steam_info);
-    die();
+
 }
 
 

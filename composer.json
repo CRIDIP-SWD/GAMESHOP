@@ -11,6 +11,7 @@
   ],
   "require": {
     "gumer/gumer-psn-php": "dev-master",
-    "xboxleaders/xboxliveapi": "dev-master"
+    "xboxleaders/xboxliveapi": "dev-master",
+    "jocolopes/steamapi": "dev-master"
   }
 }
