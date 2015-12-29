@@ -33,7 +33,13 @@ class xboxLive
 
     public function call($method)
     {
-        $call = json_decode(file_get_contents($this->endpoint.$method.'.json?gamertag='.$this->gamertag));
+        $arrContextOptions=array(
+            "ssl"=>array(
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ),
+        );
+        $call = json_decode(file_get_contents($this->endpoint.$method.'.json?gamertag='.$this->gamertag, false, stream_context_create($arrContextOptions)));
         return $call;
     }
 
