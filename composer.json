@@ -10,6 +10,7 @@
     }
   ],
   "require": {
-    "gumer/gumer-psn-php": "dev-master"
+    "gumer/gumer-psn-php": "dev-master",
+    "xboxleaders/xboxliveapi": "dev-master"
   }
 }

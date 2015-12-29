@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "80db92247efb89eca2926342e57689b4",
-    "content-hash": "dc49d886dbbc30f5f59815178c647c50",
+    "hash": "fc61c14e7a96e3f0746416c764e7c2d7",
+    "content-hash": "34084e8f550ead2cdf9ab9015761e77a",
     "packages": [
         {
             "name": "gumer/gumer-psn-php",
@@ -249,13 +249,60 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
             "time": "2015-11-30 21:39:17"
+        },
+        {
+            "name": "xboxleaders/xboxliveapi",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/XboxLeaders/XboxLiveAPI.git",
+                "reference": "b8d6b8c643200beb006e3b579d13ee4644558ab5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/XboxLeaders/XboxLiveAPI/zipball/b8d6b8c643200beb006e3b579d13ee4644558ab5",
+                "reference": "b8d6b8c643200beb006e3b579d13ee4644558ab5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jason Clemons",
+                    "email": "jason@xboxleaders.com",
+                    "homepage": "http://about.me/jasonclemons",
+                    "role": "Creator/Developer"
+                },
+                {
+                    "name": "Alan Wynn",
+                    "email": "hello@alanwynn.me",
+                    "homepage": "https://alanwynn.me",
+                    "role": "Contributor/Developer"
+                }
+            ],
+            "description": "Simple & Powerful RESTful API for Xbox LIVE",
+            "homepage": "http://xboxleaders.github.io/",
+            "keywords": [
+                "api",
+                "rest",
+                "xbox",
+                "xboxlive"
+            ],
+            "time": "2015-09-11 21:23:08"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "gumer/gumer-psn-php": 20
+        "gumer/gumer-psn-php": 20,
+        "xboxleaders/xboxliveapi": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
