@@ -83,7 +83,7 @@ if($_SESSION['logged'] == false) {
                                 <div class="tab-content clearfix" id="profil">
                                     <div class="row">
                                         <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
-                                        <div class="col-md-11">
+                                        <div class="col-md-11" style="margin: 0;">
                                             <h2><?= $profil['onlineId']; ?></h2>
                                             <h4><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
                                             <h6><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
