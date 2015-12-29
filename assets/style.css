@@ -13173,6 +13173,9 @@ PERSONALISATION
 #mygamertagWrapper{width: 192px;}
 #myGamerTag{font-size: 20px;}
 
+
+.gamercard-psn{background-color: #3b3b3b;  margin: 0 auto;  position: relative;  width: 100%; color: floralwhite;font-size: 14px;}
+
 /*TOASTR*/
 
 .toast-title {
