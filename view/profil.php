@@ -28,13 +28,8 @@ if($_SESSION['logged'] == false) {
         <div class="container clearfix">
 
             <div class="col-md-4">
-                <h1>XBOX LIVE</h1>
                 <div class="gamercard">
-                    <h1><img src="<?= $xbox_profile->avatar; ?>" alt=""><?= $xbox_profile->gamertag; ?></h1>
-                    <h2>Pseudo</h2>
-                    <ul>
-                        <li></li>
-                    </ul>
+                    <h1><img src="<?= $xbox_profile->avatar; ?>"> <?= $xbox_profile->gamertag; ?> </h1>
                 </div>
             </div>
 
