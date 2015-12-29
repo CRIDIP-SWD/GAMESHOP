@@ -1,0 +1,253 @@
+[
+    {
+        "name": "illuminate/support",
+        "version": "4.2.x-dev",
+        "version_normalized": "4.2.9999999.9999999-dev",
+        "target-dir": "Illuminate/Support",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/illuminate/support.git",
+            "reference": "131741133aae79b085951b9382f42b088e479ef9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/illuminate/support/zipball/131741133aae79b085951b9382f42b088e479ef9",
+            "reference": "131741133aae79b085951b9382f42b088e479ef9",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "jeremeamia/superclosure": "~1.0.1",
+            "patchwork/utf8": "~1.1"
+        },
+        "time": "2015-01-27 20:51:43",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.2-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Illuminate\\Support": ""
+            },
+            "files": [
+                "Illuminate/Support/helpers.php"
+            ]
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Taylor Otwell",
+                "email": "taylorotwell@gmail.com"
+            }
+        ]
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/event-dispatcher.git",
+            "reference": "ae978c6a5289e42111b2fadd38fb0b53f772cd66"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/ae978c6a5289e42111b2fadd38fb0b53f772cd66",
+            "reference": "ae978c6a5289e42111b2fadd38fb0b53f772cd66",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.8|~3.0",
+            "symfony/dependency-injection": "~2.8|~3.0",
+            "symfony/expression-language": "~2.8|~3.0",
+            "symfony/stopwatch": "~2.8|~3.0"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2015-11-30 21:39:17",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "guzzle/guzzle",
+        "version": "v3.8.1",
+        "version_normalized": "3.8.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+            "reference": "4de0618a01b34aa1c8c33a3f13f396dcd3882eba",
+            "shasum": ""
+        },
+        "require": {
+            "ext-curl": "*",
+            "php": ">=5.3.3",
+            "symfony/event-dispatcher": ">=2.1"
+        },
+        "replace": {
+            "guzzle/batch": "self.version",
+            "guzzle/cache": "self.version",
+            "guzzle/common": "self.version",
+            "guzzle/http": "self.version",
+            "guzzle/inflection": "self.version",
+            "guzzle/iterator": "self.version",
+            "guzzle/log": "self.version",
+            "guzzle/parser": "self.version",
+            "guzzle/plugin": "self.version",
+            "guzzle/plugin-async": "self.version",
+            "guzzle/plugin-backoff": "self.version",
+            "guzzle/plugin-cache": "self.version",
+            "guzzle/plugin-cookie": "self.version",
+            "guzzle/plugin-curlauth": "self.version",
+            "guzzle/plugin-error-response": "self.version",
+            "guzzle/plugin-history": "self.version",
+            "guzzle/plugin-log": "self.version",
+            "guzzle/plugin-md5": "self.version",
+            "guzzle/plugin-mock": "self.version",
+            "guzzle/plugin-oauth": "self.version",
+            "guzzle/service": "self.version",
+            "guzzle/stream": "self.version"
+        },
+        "require-dev": {
+            "doctrine/cache": "*",
+            "monolog/monolog": "1.*",
+            "phpunit/phpunit": "3.7.*",
+            "psr/log": "1.0.*",
+            "symfony/class-loader": "*",
+            "zendframework/zend-cache": "<2.3",
+            "zendframework/zend-log": "<2.3"
+        },
+        "time": "2014-01-28 22:29:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.8-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Guzzle": "src/",
+                "Guzzle\\Tests": "tests/"
+            }
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            },
+            {
+                "name": "Guzzle Community",
+                "homepage": "https://github.com/guzzle/guzzle/contributors"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "gumer/gumer-psn-php",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ilendemli/gumer-psn-php.git",
+            "reference": "7716338916cdd666583bed89a3677a10ee85c47f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ilendemli/gumer-psn-php/zipball/7716338916cdd666583bed89a3677a10ee85c47f",
+            "reference": "7716338916cdd666583bed89a3677a10ee85c47f",
+            "shasum": ""
+        },
+        "require": {
+            "guzzle/guzzle": "3.8.*@dev",
+            "illuminate/support": "~4.1"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.9.*@dev",
+            "phpunit/phpunit": "4.3.*@dev"
+        },
+        "time": "2014-12-21 12:24:11",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-0": {
+                "Gumer": "./src"
+            }
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Bradley Weston",
+                "email": "b.weston@outlook.com",
+                "homepage": "http://bweston.me"
+            },
+            {
+                "name": "Muhammet Ilendemli",
+                "email": "ilendemli@live.at",
+                "homepage": "http://ilendemli.info"
+            }
+        ]
+    }
+]

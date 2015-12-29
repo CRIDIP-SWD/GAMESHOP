@@ -1,0 +1,15 @@
+{
+  "name": "SYLTHERON/GAMESHOP",
+  "description": "Site Ecommerce Gamer",
+  "minimum-stability": "dev",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "gumer/gumer-psn-php": "dev-master"
+  }
+}
