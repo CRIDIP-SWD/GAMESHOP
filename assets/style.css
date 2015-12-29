@@ -13162,6 +13162,7 @@ PERSONALISATION
 .banner-categorie:hover{opacity: 1;}
 
 .box{
+	background: url('http://ns342142.ip-5-196-76.eu/sources/gameshop/autre/background/empty.jpg') no-repeat;
 	width: 100%;
 	height: 15%;
 	border: solid 1px #00AFF0;

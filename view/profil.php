@@ -29,7 +29,7 @@ if($_SESSION['logged'] == false) {
 
             <div class="col-md-4">
                 <div class="box" style="background-image: url() no-repeat;">
-                    <div class="box-bg"></div>
+                    <div class="box-title">Playstation Network</div>
                 </div>
             </div>
 
