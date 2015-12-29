@@ -84,7 +84,11 @@ if($_SESSION['logged'] == false) {
                                             <div class="content-wrap">
                                                 <div class="with-contextual-nav copy">
                                                     <div class="avatar-block">
-                                                        <img class="avatar" src="">
+                                                        <img class="avatar" src="<?= $profil['avatarUrl']; ?>" />
+                                                    </div>
+                                                    <div class="user-info">
+                                                        <h2><?= $profil['onlineId']; ?></h2>
+                                                        <h3><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h3>
                                                     </div>
                                                 </div>
                                             </div>
