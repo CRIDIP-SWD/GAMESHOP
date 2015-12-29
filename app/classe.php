@@ -67,17 +67,17 @@ if(isset($_SESSION['logged'])){
      * XBOX LIVE CONNECTOR INIT
      */
 
-    $xbox = new xboxLive($info_client['pseudo_xbox']);
-    $xbox_profil = $xbox->profile();
-    $xbox_gamercard = $xbox->gamercard();
-    $xbox_presence = $xbox->presence();
-    $xbox_activity = $xbox->activity();
-    $xbox_r_activity = $xbox->recent_activity();
-    $xbox_friend = $xbox->friends();
-    var_dump($xbox_profil);
-    var_dump($xbox_gamercard);
-    var_dump($xbox_presence);
-    var_dump($xbox_r_activity);
+    //$xbox = new xboxLive($info_client['pseudo_xbox']);
+    //$xbox_profil = $xbox->profile();
+    //$xbox_gamercard = $xbox->gamercard();
+    //$xbox_presence = $xbox->presence();
+    //$xbox_activity = $xbox->activity();
+    //$xbox_r_activity = $xbox->recent_activity();
+    //$xbox_friend = $xbox->friends();
+    //var_dump($xbox_profil);
+    //var_dump($xbox_gamercard);
+    //var_dump($xbox_presence);
+    //var_dump($xbox_r_activity);
 
     /*
      * STEAM CONNECTOR INIT
