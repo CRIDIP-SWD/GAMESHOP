@@ -39,8 +39,22 @@ if($_SESSION['logged'] == false) {
 
                     <div class="tab-content clearfix gamercard" id="xbox">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive center" width="125" />
-                        <div class="gamerPicContainer">
-                            <img src="<?= $xbox_gamercard['avatarBodyImagePath']; ?>" />
+                        <div class="gamercard-xbox">
+                            <section id="leftArea">
+                                <div class="gamerPicContainer">
+                                    <img src="<?= $xbox_gamercard['avatarBodyImagePath']; ?>" alt="<?= $xbox_gamercard['gamertag']; ?>" />
+                                </div>
+                                <div id="gamerInfo">
+                                    <div class="statusIcon">
+                                        <?php if($xbox_presence['state'] == 'Online'): ?>
+                                            <img src="https://assets.xbox.com/xweb-1512-23008-rtm-rolling/social/images/icon_greendot.png" />
+                                        <?php endif; ?>
+                                    </div>
+                                    <div id="mygamertagWrapper">
+                                        <div id="myGamerTag" style="visibility: visible;"><?= $xbox_gamercard['gamertag']; ?></div>
+                                    </div>
+                                </div>
+                            </section>
                         </div>
                     </div>
 
