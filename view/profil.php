@@ -93,7 +93,7 @@ if($_SESSION['logged'] == false) {
                                                     </div>
                                                 </div>
                                                 <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
-                                                    <div class="col-md-12">
+                                                    <div class="col-md-12" style="position: relative; top: -15px;">
                                                     <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
                                                         <thead>
                                                         <tr>
