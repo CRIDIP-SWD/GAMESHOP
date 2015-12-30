@@ -94,7 +94,7 @@ while($client = mysql_fetch_array($sql_client)){
     {
         $error = array("GAMERCARD" => "ERREUR LORS DE L'IMPORT DE LA GAMERCARD");
     }else{
-        $error = array("PROFIL" => "OK");
+        $error = array("GAMERCARD" => "OK");
     }
 
     //PRESENCE
@@ -109,17 +109,17 @@ while($client = mysql_fetch_array($sql_client)){
     {
         $error = array("PRESENCE" => "ERREUR LORS DE L'IMPORT DE LA PRESENCE");
     }else{
-        $error = array("PROFIL" => "OK");
+        $error = array("PRESENCE" => "OK");
     }
 
     //PRESENCE LASTSEEN
 
         $sql_del = mysql_query("DELETE FROM xbox_presence_lastseen WHERE xuid = '$xuid'")or die(mysql_error());
 
-        $deviceType = $xbox_presence['lastseen']['deviceType'];
-        $titleId = $xbox_presence['lastseen']['titleId'];
-        $titleName = $xbox_presence['lastseen']['titleName'];
-        $timestamp = $xbox_presence['lastseen']['timestamp'];
+        $deviceType = $xbox_presence['lastSeen']['deviceType'];
+        $titleId = $xbox_presence['lastSeen']['titleId'];
+        $titleName = $xbox_presence['lastSeen']['titleName'];
+        $timestamp = $xbox_presence['lastSeen']['timestamp'];
 
         $sqllastseen = mysql_query("INSERT INTO xbox_presence_lastseen(xuid, deviceType, titleId, titleName, timestamp)
                                     VALUES ('$xuid', '$deviceType', '$titleId', '$titleName', '$timestamp')")or die(mysql_error());
@@ -128,7 +128,7 @@ while($client = mysql_fetch_array($sql_client)){
     {
         $error = array("DERNIER VU" => "ERREUR LORS DE L'IMPORT DU DERNIER VU");
     }else{
-        $error = array("PROFIL" => "OK");
+        $error = array("DERNIER VU" => "OK");
     }
 
     //ACTIVITY
@@ -154,7 +154,7 @@ while($client = mysql_fetch_array($sql_client)){
     {
         $error = array("ACTIVITE" => "ERREUR LORS DE L'IMPORT DE L'ACTIVITE");
     }else{
-        $error = array("PROFIL" => "OK");
+        $error = array("ACTIVITE" => "OK");
     }
 
     var_dump($error);
