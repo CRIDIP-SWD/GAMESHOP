@@ -74,8 +74,8 @@ while($client = mysql_fetch_array($sql_client)){
         
         $gamertag = $xbox_gamercard['gamertag'];
         $name = $xbox_gamercard['name'];
-        $location = $xbox_gamercard['location'];
-        $bio = $xbox_gamercard['bio'];
+        $location = htmlentities(addslashes($xbox_gamercard['location']));
+        $bio = htmlentities(addslashes($xbox_gamercard['bio']));
         $gamerscore = $xbox_gamercard['gamerscore'];
         $tier = $xbox_gamercard['tier'];
         $motto = $xbox_gamercard['motto'];
@@ -156,5 +156,7 @@ while($client = mysql_fetch_array($sql_client)){
     }else{
         $error = array("PROFIL" => "OK");
     }
+
+    var_dump($error);
 }
 
