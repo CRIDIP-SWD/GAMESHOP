@@ -73,7 +73,7 @@ if($_SESSION['logged'] == false) {
                             <?php if(empty($info_client['pseudo_psn'])){ ?>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <a class="button button-desc button-3d button-rounded button-blue center" data-toggle="modal" data-target="#add-psn">Lié votre compte Playstation Network<span>Bénéficier de 100 Points de fidélités</span></a>
+                                        <button class="button button-desc button-3d button-rounded button-blue center" data-toggle="modal" data-target="#add-psn">Lié votre compte Playstation Network<span>Bénéficier de 100 Points de fidélités</span></button>
                                     </div>
                                 </div>
                                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
