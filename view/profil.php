@@ -84,7 +84,7 @@ if($_SESSION['logged'] == false) {
                                     <div class="row">
                                         <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat;">
                                             <div class="panel-body">
-                                                <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
+                                                <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                                     <div class="col-md-11" style="margin: 0;">
                                                         <h2 style="margin: 0; color: white;"><?= $profil['onlineId']; ?></h2>
@@ -92,7 +92,7 @@ if($_SESSION['logged'] == false) {
                                                         <h6 style="margin: 0; color: white;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
                                                     </div>
                                                 </div>
-                                                <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
+                                                <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-12">
                                                     <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
                                                         <thead>
