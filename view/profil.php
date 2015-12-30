@@ -129,9 +129,9 @@ if($_SESSION['logged'] == false) {
                                                                 <div class="row">
                                                                     <div class="col-md-12">
                                                                         <ul class="skills">
-                                                                            <li data-percent="80">
+                                                                            <li data-percent="<?= $profil['trophySummary']['progress']; ?>">
                                                                                 <div class="progress">
-                                                                                    <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="80" data-refresh-interval="30" data-speed="1100"></span>%</div></div>
+                                                                                    <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="<?= $profil['trophySummary']['progress']; ?>" data-refresh-interval="30" data-speed="1100"></span>%</div></div>
                                                                                 </div>
                                                                             </li>
                                                                         </ul>
