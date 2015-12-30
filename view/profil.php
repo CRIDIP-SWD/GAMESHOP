@@ -626,9 +626,29 @@ if($_SESSION['logged'] == false) {
         toastr.success('Votre compte Playstation Network est Maintenant lié à notre Boutique.','Succès')
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-xbox-live'){ ?>
+    <script type="text/javascript">
+        toastr.success('Votre compte XBOX LIVE est Maintenant lié à notre Boutique.','Succès')
+    </script>
+<?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-steam'){ ?>
+    <script type="text/javascript">
+        toastr.success('Votre compte Steam est Maintenant lié à notre Boutique.','Succès')
+    </script>
+<?php } ?>
  
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-psn'){ ?>
     <script type="text/javascript">
         toastr.error('Une erreur à eu lieu lors de la liaison de votre compte playstation Network avec la boutique, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-xbox-live'){ ?>
+    <script type="text/javascript">
+        toastr.error('Une erreur à eu lieu lors de la liaison de votre compte XBOX LIVE avec la boutique, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-steam'){ ?>
+    <script type="text/javascript">
+        toastr.error('Une erreur à eu lieu lors de la liaison de votre compte Steam avec la boutique, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
     </script>
 <?php } ?>
