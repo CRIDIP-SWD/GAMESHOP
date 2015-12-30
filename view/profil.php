@@ -83,10 +83,25 @@ if($_SESSION['logged'] == false) {
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-log.png" />
+                                                            <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-logo.png" />
                                                         </div>
                                                         <div class="col-md-6">
                                                             <h2>Connexion au Playstation Network</h2>
+                                                            <form class="form-horizontal" action="" method="post">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Adresse Mail</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="text" class="form-control" name="email" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-3">Mot de Passe</label>
+                                                                    <div class="col-md-9">
+                                                                        <input type="password" class="form-control" name="password" />
+                                                                    </div>
+                                                                </div>
+                                                                <button type="submit" class="button button-3d button-green" name="action" value="add-psn">Connexion</button>
+                                                            </form>
                                                         </div>
                                                     </div>
                                                 </div>
