@@ -91,7 +91,7 @@ if($_SESSION['logged'] == false) {
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <table style="" cellspacing="0" cellpadding="0">
+                                            <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
                                                 <thead>
                                                     <tr>
                                                         <th style="text-align: center;">Niveau</th>
