@@ -63,7 +63,7 @@ if(isset($_SESSION['logged'])){
                 $request_friend->setUserId($info['onlineId']);
                 $response_friend = $connect_psn->call($request_friend);
                 $friend = json_decode($response_friend->getBody(true), true);
-                var_dump($friend);
+
     }
 
     /*
