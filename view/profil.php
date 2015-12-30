@@ -84,7 +84,7 @@ if($_SESSION['logged'] == false) {
                                     <div class="row">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <div class="row" style="">
+                                                <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                                     <div class="col-md-11" style="margin: 0;">
                                                         <h2 style="margin: 0;"><?= $profil['onlineId']; ?></h2>
@@ -109,10 +109,10 @@ if($_SESSION['logged'] == false) {
                                                         <tr>
                                                             <td>2</td>
                                                             <td>1860</td>
-                                                            <td>985</td>
-                                                            <td>325</td>
-                                                            <td>174</td>
-                                                            <td>81</td>
+                                                            <td>985 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
+                                                            <td>325 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
+                                                            <td>174 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
+                                                            <td>81 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
                                                         </tr>
                                                         </tbody>
                                                         <tfoot>
