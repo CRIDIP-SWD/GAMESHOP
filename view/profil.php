@@ -94,12 +94,12 @@ if($_SESSION['logged'] == false) {
                                             <table style="" cellspacing="0" cellpadding="0">
                                                 <thead>
                                                     <tr>
-                                                        <th>Niveau</th>
-                                                        <th>Trophées</th>
-                                                        <th>Bronze</th>
-                                                        <th>Argent</th>
-                                                        <th>Or</th>
-                                                        <th>Platine</th>
+                                                        <th style="text-align: center;">Niveau</th>
+                                                        <th style="text-align: center;">Trophées</th>
+                                                        <th style="text-align: center;">Bronze</th>
+                                                        <th style="text-align: center;">Argent</th>
+                                                        <th style="text-align: center;">Or</th>
+                                                        <th style="text-align: center;">Platine</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
