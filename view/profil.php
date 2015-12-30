@@ -68,7 +68,7 @@ if($_SESSION['logged'] == false) {
                     </div>
                     <div class="tab-content clearfix gamercard" id="psn">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-logo.png" class="img-responsive center" width="125" />
-                        <div class="tabs side-tabs clearfix" id="tab-4" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat;">
+                        <div class="tabs side-tabs clearfix" id="tab-4" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat; color: whitesmoke;">
 
                             <ul class="tab-nav clearfix">
                                 <li><a href="#profil">Mon profil</a></li>
