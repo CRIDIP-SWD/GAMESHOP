@@ -118,7 +118,11 @@ if($_SESSION['logged'] == false) {
                                                         <tfoot>
                                                         <tr>
                                                             <td colspan="6">
-                                                                Ceci est un test
+                                                                <div class="row">
+                                                                    <div class="col-md-2">Niveau 2</div>
+                                                                    <div class="col-md-8">&nbsp;</div>
+                                                                    <div class="col-md-2">Niveau 3</div>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                         </tfoot>
