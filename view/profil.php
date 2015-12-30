@@ -86,6 +86,7 @@ if($_SESSION['logged'] == false) {
                                                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-logo.png" style="position: relative; top: 120px;" />
                                                         </div>
                                                         <div class="col-md-6">
+                                                            <h2>Connexion au Playstation Network</h2>
                                                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3" for="email">Adresse Mail</label>
