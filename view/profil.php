@@ -84,7 +84,7 @@ if($_SESSION['logged'] == false) {
                                     <div class="row">
                                         <div class="panel panel-default">
                                             <div class="panel-body">
-                                                <div class="row">
+                                                <div class="row" style="">
                                                     <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                                     <div class="col-md-11" style="margin: 0;">
                                                         <h2 style="margin: 0;"><?= $profil['onlineId']; ?></h2>
