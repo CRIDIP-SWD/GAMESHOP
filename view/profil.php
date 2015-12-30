@@ -106,22 +106,25 @@ if($_SESSION['logged'] == false) {
                                                         </tr>
                                                         </thead>
                                                         <tbody>
+                                                        <?php
+                                                        $total_trophy = $profil['trophySummary']['earnedTrophies']['platinum'] + $profil['trophySummary']['earnedTrophies']['gold'] + $profil['trophySummary']['earnedTrophies']['silver'] + $profil['trophySummary']['earnedTrophies']['bronze'];
+                                                        ?>
                                                         <tr style="font-size: 25px; font-weight: bold;">
-                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">2</td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">1860</td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">985 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">325 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">174 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">81 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;"><?= $profil['trophySummary']['level']; ?></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;"><div class="counter center"><span data-from="100" data-to="<?= $total_trophy; ?>" data-refresh-interval="100" data-speed="2000"></span></div></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;"><div class="counter center"><span data-from="100" data-to="<?= $profil['trophySummary']['earnedTrophies']['bronze'];?>" data-refresh-interval="100" data-speed="2000"></span></div> <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;"><div class="counter center"><span data-from="100" data-to="<?= $profil['trophySummary']['earnedTrophies']['silver'];?>" data-refresh-interval="100" data-speed="2000"></span></div> <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;"><div class="counter center"><span data-from="100" data-to="<?= $profil['trophySummary']['earnedTrophies']['gold'];?>" data-refresh-interval="100" data-speed="2000"></span></div> <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;"><div class="counter center"><span data-from="100" data-to="<?= $profil['trophySummary']['earnedTrophies']['platinum'];?>" data-refresh-interval="100" data-speed="2000"></span></div> <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
                                                         </tr>
                                                         </tbody>
                                                         <tfoot>
                                                         <tr>
                                                             <td colspan="6">
                                                                 <div class="row">
-                                                                    <div class="col-md-2" style="color: white;">Niveau 2</div>
+                                                                    <div class="col-md-2" style="color: white;">Niveau <?= $profil['trophySummary']['level']; ?></div>
                                                                     <div class="col-md-8" style="color: white;">&nbsp;</div>
-                                                                    <div class="col-md-2" style="color: white;">Niveau 3</div>
+                                                                    <div class="col-md-2" style="color: white;">Niveau <?= $profil['trophySummary']['level']+1; ?></div>
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-md-12">
