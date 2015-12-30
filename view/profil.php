@@ -82,14 +82,14 @@ if($_SESSION['logged'] == false) {
                                 ?>
                                 <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                     <div class="row">
-                                        <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat; color: white;">
+                                        <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat;">
                                             <div class="panel-body">
                                                 <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                                     <div class="col-md-11" style="margin: 0;">
-                                                        <h2 style="margin: 0;"><?= $profil['onlineId']; ?></h2>
-                                                        <h4 style="margin: 0;"><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
-                                                        <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
+                                                        <h2 style="margin: 0; color: white;"><?= $profil['onlineId']; ?></h2>
+                                                        <h4 style="margin: 0; color: white;"><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
+                                                        <h6 style="margin: 0; color: white;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
                                                     </div>
                                                 </div>
                                                 <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
@@ -97,31 +97,31 @@ if($_SESSION['logged'] == false) {
                                                     <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
                                                         <thead>
                                                         <tr>
-                                                            <th style="text-align: center;">Niveau</th>
-                                                            <th style="text-align: center;">Trophées</th>
-                                                            <th style="text-align: center;">Bronze</th>
-                                                            <th style="text-align: center;">Argent</th>
-                                                            <th style="text-align: center;">Or</th>
-                                                            <th style="text-align: center;">Platine</th>
+                                                            <th style="text-align: center; color: white;">Niveau</th>
+                                                            <th style="text-align: center; color: white;">Trophées</th>
+                                                            <th style="text-align: center; color: white;">Bronze</th>
+                                                            <th style="text-align: center; color: white;">Argent</th>
+                                                            <th style="text-align: center; color: white;">Or</th>
+                                                            <th style="text-align: center; color: white;">Platine</th>
                                                         </tr>
                                                         </thead>
                                                         <tbody>
                                                         <tr style="font-size: 25px; font-weight: bold;">
-                                                            <td style="padding-top: 15px; padding-bottom: 30px;">2</td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px;">1860</td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px;">985 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px;">325 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px;">174 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
-                                                            <td style="padding-top: 15px; padding-bottom: 30px;">81 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">2</td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">1860</td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">985 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">325 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">174 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px; color: white;">81 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
                                                         </tr>
                                                         </tbody>
                                                         <tfoot>
                                                         <tr>
                                                             <td colspan="6">
                                                                 <div class="row">
-                                                                    <div class="col-md-2">Niveau 2</div>
-                                                                    <div class="col-md-8">&nbsp;</div>
-                                                                    <div class="col-md-2">Niveau 3</div>
+                                                                    <div class="col-md-2" style="color: white;">Niveau 2</div>
+                                                                    <div class="col-md-8" style="color: white;">&nbsp;</div>
+                                                                    <div class="col-md-2" style="color: white;">Niveau 3</div>
                                                                 </div>
                                                             </td>
                                                         </tr>
