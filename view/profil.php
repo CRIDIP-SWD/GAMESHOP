@@ -120,19 +120,15 @@ if($_SESSION['logged'] == false) {
                                                             <td colspan="6">
                                                                 <div class="row">
                                                                     <div class="col-md-2" style="color: white;">Niveau 2</div>
-                                                                    <div class="col-md-7" style="color: white;">&nbsp;</div>
+                                                                    <div class="col-md-8" style="color: white;">&nbsp;</div>
                                                                     <div class="col-md-2" style="color: white;">Niveau 3</div>
-                                                                    <div class="col-md-1" style="color: white; text-align: left;">
-                                                                        <span style="font-size: 26px;">40</span>
-                                                                        <span style="font-size: 18px;">%</span>
-                                                                    </div>
                                                                 </div>
                                                                 <div class="row">
-                                                                    <div class="col-md-11">
+                                                                    <div class="col-md-12">
                                                                         <ul class="skills">
                                                                             <li data-percent="80">
                                                                                 <div class="progress">
-                                                                                    <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="80" data-refresh-interval="30" data-speed="1100"></span>%</div>
+                                                                                    <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="80" data-refresh-interval="30" data-speed="1100"></span>%</div></div>
                                                                                 </div>
                                                                             </li>
                                                                         </ul>
