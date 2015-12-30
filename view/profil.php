@@ -92,9 +92,9 @@ if($_SESSION['logged'] == false) {
                                                         <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
                                                     </div>
                                                 </div>
-                                                <div class="row">
+                                                <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-12">
-                                                    <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
+                                                    <table style="width: 100%; text-align: center; margin-top: 70px;" cellspacing="0" cellpadding="0">
                                                         <thead>
                                                         <tr>
                                                             <th style="text-align: center;">Niveau</th>
