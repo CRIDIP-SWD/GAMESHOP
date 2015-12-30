@@ -59,6 +59,7 @@ if($_SESSION['logged'] == false) {
                                                         <div class="col-md-6">
                                                             <h2>Connexion au Xbox Live</h2>
                                                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
+                                                                <input type="hidden" name="idclient" value="<?= $info_client['idclient']; ?>">
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3" for="email">GamerTag</label>
                                                                     <div class="col-md-8">
@@ -246,6 +247,7 @@ if($_SESSION['logged'] == false) {
                                                         <div class="col-md-6">
                                                             <h2>Connexion au Playstation Network</h2>
                                                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
+                                                                <input type="hidden" name="idclient" value="<?= $info_client['idclient']; ?>">
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3" for="email">Adresse Mail</label>
                                                                     <div class="col-md-8">
@@ -439,6 +441,7 @@ if($_SESSION['logged'] == false) {
                                                         <div class="col-md-6">
                                                             <h2>Connexion à STEAM</h2>
                                                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
+                                                                <input type="hidden" name="idclient" value="<?= $info_client['idclient']; ?>">
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3" for="email">Id Steam*</label>
                                                                     <div class="col-md-8">
@@ -446,7 +449,7 @@ if($_SESSION['logged'] == false) {
                                                                     </div>
                                                                 </div>
                                                                 <button type="submit" class="button button-3d button-green" name="action" value="add-steam">Connexion</button><br>
-                                                                <h5>*: Pour trouvez votre identifiant connecteur de steam cliquer <a href="https://steamid.io/lookup">ICI</a>.</h5>
+                                                                <h5>*: Pour trouvez votre identifiant connecteur de steam cliquer <a href="https://steamid.io/lookup" target="_blank">ICI</a>.</h5>
                                                             </form>
                                                         </div>
                                                     </div>
@@ -618,3 +621,14 @@ if($_SESSION['logged'] == false) {
 </section><!-- #content end -->
 
 
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-psn'){ ?>
+    <script type="text/javascript">
+        toastr.success('Votre compte Playstation Network est Maintenant lié à notre Boutique.','Succès')
+    </script>
+<?php } ?>
+ 
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-psn'){ ?>
+    <script type="text/javascript">
+        toastr.error('Une erreur à eu lieu lors de la liaison de votre compte playstation Network avec la boutique, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
+    </script>
+<?php } ?>
