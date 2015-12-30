@@ -72,6 +72,7 @@ if(isset($_SESSION['logged'])){
 
     $xbox = new xboxLive($info_client['pseudo_xbox']);
     $xuid = $xbox->xuid_declare($info_client['pseudo_xbox']);
+    var_dump($xuid);
     $gameTag = $info_client['pseudo_xbox'];
 
     $sql_xbox_profil = mysql_query("SELECT * FROM xbox_profile WHERE xuid = '$xuid'")or die(mysql_error());
