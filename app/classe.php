@@ -48,36 +48,38 @@ if(isset($_SESSION['logged'])){
     $request_info = new \Gumer\PSN\Requests\GetMyInfoRequest();
     $response_info = $connect_psn->call($request_info);
     $info = json_decode($response_info->getBody(true), true);
-    var_dump($info);
+    //
 
 //Profil
     $request_profil = new \Gumer\PSN\Requests\ProfileRequest();
     $request_profil->setUserId($info['onlineId']);
     $response_profil = $connect_psn->call($request_profil);
     $profil = json_decode($response_profil->getBody(true), true);
-    var_dump($profil);
+    //var_dump($profil);
 //FriendList
     $request_friend = new \Gumer\PSN\Requests\FriendsListRequest();
     $request_friend->setUserId($info['onlineId']);
     $response_friend = $connect_psn->call($request_friend);
     $friend = json_decode($response_friend->getBody(true), true);
-    var_dump($friend);
+    //var_dump($friend);
 
     /*
      * XBOX LIVE CONNECTOR INIT
      */
 
-    //$xbox = new xboxLive($info_client['pseudo_xbox']);
-    //$xbox_profil = $xbox->profile();
-    //$xbox_gamercard = $xbox->gamercard();
-    //$xbox_presence = $xbox->presence();
-    //$xbox_activity = $xbox->activity();
-    //$xbox_r_activity = $xbox->recent_activity();
-    //$xbox_friend = $xbox->friends();
-    //var_dump($xbox_profil);
-    //var_dump($xbox_gamercard);
-    //var_dump($xbox_presence);
-    //var_dump($xbox_r_activity);
+    $xbox = new xboxLive($info_client['pseudo_xbox']);
+    $xbox_profil = $xbox->profile();
+    $xbox_gamercard = $xbox->gamercard();
+    $xbox_presence = $xbox->presence();
+    $xbox_activity = $xbox->activity();
+    $xbox_r_activity = $xbox->recent_activity();
+    $xbox_friend = $xbox->friends();
+    var_dump($xbox_profil);
+    var_dump($xbox_gamercard);
+    var_dump($xbox_presence);
+    var_dump($xbox_r_activity);
+    var_dump($xbox_activity);
+    var_dump($xbox_friend);
 
     /*
      * STEAM CONNECTOR INIT
