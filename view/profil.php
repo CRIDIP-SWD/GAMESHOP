@@ -83,16 +83,17 @@ if($_SESSION['logged'] == false) {
                                 <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                     <div class="row">
                                         <div class="panel panel-default">
-                                            <div class="panel-heading">
-                                                <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
-                                                <div class="col-md-11" style="margin: 0;">
-                                                    <h2 style="margin: 0;"><?= $profil['onlineId']; ?></h2>
-                                                    <h4 style="margin: 0;"><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
-                                                    <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
-                                                </div>
-                                            </div>
                                             <div class="panel-body">
-                                                <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
+                                                    <div class="col-md-11" style="margin: 0;">
+                                                        <h2 style="margin: 0;"><?= $profil['onlineId']; ?></h2>
+                                                        <h4 style="margin: 0;"><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
+                                                        <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_psn); ?></i></h6>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
                                                     <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
                                                         <thead>
                                                         <tr>
@@ -122,6 +123,7 @@ if($_SESSION['logged'] == false) {
                                                         </tr>
                                                         </tfoot>
                                                     </table>
+                                                </div>
                                                 </div>
                                             </div>
                                         </div>
