@@ -82,7 +82,7 @@ if($_SESSION['logged'] == false) {
                                 ?>
                                 <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                     <div class="row">
-                                        <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat;">
+                                        <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat; color: white;">
                                             <div class="panel-body">
                                                 <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
@@ -94,7 +94,7 @@ if($_SESSION['logged'] == false) {
                                                 </div>
                                                 <div class="row" style="background-color: #CCCCCC; margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                     <div class="col-md-12">
-                                                    <table style="width: 100%; text-align: center; margin-top: 70px;" cellspacing="0" cellpadding="0">
+                                                    <table style="width: 100%; text-align: center; margin-top: 70px; background-color: transparent;" cellspacing="0" cellpadding="0">
                                                         <thead>
                                                         <tr>
                                                             <th style="text-align: center;">Niveau</th>
