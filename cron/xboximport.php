@@ -2,10 +2,7 @@
 
 include "../app/classe.php";
 $sql_client = mysql_query("SELECT * FROM client")or die(mysql_error());
-$client = mysql_fetch_array($sql_client);
-
-foreach($client as $clients)
-{
+while($client = mysql_fetch_array($sql_client)){
     var_dump($email = $clients['email']);
     var_dump($nom_client = $clients['nom_client']);
     var_dump($prenom_client = $clients['prenom_client']);
