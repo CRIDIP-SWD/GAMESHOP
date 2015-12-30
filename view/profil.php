@@ -434,7 +434,7 @@ if($_SESSION['logged'] == false) {
                                                 <div class="modal-body">
                                                     <div class="row">
                                                         <div class="col-md-6">
-                                                            <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/steam-logo.png" />
+                                                            <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/steam-logo.png" style="position: relative; top: 60px;"/>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <h2>Connexion à STEAM</h2>
@@ -445,8 +445,8 @@ if($_SESSION['logged'] == false) {
                                                                         <input type="text" id="email" class="form-control" name="idsteam" />
                                                                     </div>
                                                                 </div>
-                                                                <button type="submit" class="button button-3d button-green" name="action" value="add-xbox-live">Connexion</button>
-                                                                *: Pour trouvez votre identifiant connecteur de steam cliquer <a href="https://steamid.io/lookup">ICI</a>.
+                                                                <button type="submit" class="button button-3d button-green" name="action" value="add-xbox-live">Connexion</button><br>
+                                                                <h5>*: Pour trouvez votre identifiant connecteur de steam cliquer <a href="https://steamid.io/lookup">ICI</a>.</h5>
                                                             </form>
                                                         </div>
                                                     </div>
