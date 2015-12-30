@@ -445,7 +445,7 @@ if($_SESSION['logged'] == false) {
                                                                         <input type="text" id="email" class="form-control" name="idsteam" />
                                                                     </div>
                                                                 </div>
-                                                                <button type="submit" class="button button-3d button-green" name="action" value="add-xbox-live">Connexion</button><br>
+                                                                <button type="submit" class="button button-3d button-green" name="action" value="add-steam">Connexion</button><br>
                                                                 <h5>*: Pour trouvez votre identifiant connecteur de steam cliquer <a href="https://steamid.io/lookup">ICI</a>.</h5>
                                                             </form>
                                                         </div>
