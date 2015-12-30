@@ -412,91 +412,103 @@
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="115" parent="15" name="xuid">
+      <column id="115" parent="15" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="116" parent="15" name="state">
+      <column id="116" parent="15" name="xuid">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="117" parent="15" name="state">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="117" parent="15" name="PRIMARY">
-        <columns>xuid</columns>
+      <key id="118" parent="15" name="PRIMARY">
+        <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="118" parent="16" name="xuid">
+      <column id="119" parent="16" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="119" parent="16" name="deviceType">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="120" parent="16" name="titleId">
+      <column id="120" parent="16" name="xuid">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="121" parent="16" name="titleName">
+      <column id="121" parent="16" name="deviceType">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="122" parent="16" name="timestamp">
+      <column id="122" parent="16" name="titleId">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="123" parent="16" name="titleName">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="123" parent="16" name="PRIMARY">
-        <columns>xuid</columns>
+      <column id="124" parent="16" name="timestamp">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="125" parent="16" name="PRIMARY">
+        <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="124" parent="17" name="id">
+      <column id="126" parent="17" name="id">
         <mandatory>1</mandatory>
         <data-type>int(64)</data-type>
       </column>
-      <column id="125" parent="17" name="hostId">
+      <column id="127" parent="17" name="xuid">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="128" parent="17" name="hostId">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="126" parent="17" name="GameDisplayName">
+      <column id="129" parent="17" name="GameDisplayName">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="127" parent="17" name="AppDisplayName">
+      <column id="130" parent="17" name="AppDisplayName">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="128" parent="17" name="Gamerscore">
+      <column id="131" parent="17" name="Gamerscore">
         <mandatory>1</mandatory>
         <data-type>int(9)</data-type>
       </column>
-      <column id="129" parent="17" name="GameDisplayPicRaw">
+      <column id="132" parent="17" name="GameDisplayPicRaw">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="130" parent="17" name="AppDisplayPicRaw">
+      <column id="133" parent="17" name="AppDisplayPicRaw">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="131" parent="17" name="AccountTier">
+      <column id="134" parent="17" name="AccountTier">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="132" parent="17" name="XboxOneRep">
+      <column id="135" parent="17" name="XboxOneRep">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="133" parent="17" name="PreferredColor">
+      <column id="136" parent="17" name="PreferredColor">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="134" parent="17" name="TenureLevel">
+      <column id="137" parent="17" name="TenureLevel">
         <mandatory>1</mandatory>
         <data-type>int(9)</data-type>
       </column>
-      <column id="135" parent="17" name="isSponsoredUser">
+      <column id="138" parent="17" name="isSponsoredUser">
         <mandatory>1</mandatory>
         <data-type>varchar(10)</data-type>
       </column>
-      <key id="136" parent="17" name="PRIMARY">
+      <key id="139" parent="17" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

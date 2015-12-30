@@ -42,22 +42,22 @@ if($_SESSION['logged'] == false) {
                         <div class="gamercard-xbox">
                             <section id="leftArea">
                                 <div class="gamerPicContainer">
-                                    <img src="<?= $xbox_gamercard['avatarBodyImagePath']; ?>" alt="<?= $xbox_gamercard['gamertag']; ?>" />
+                                    <img src="<?= $gamercard['avatarBodyImagePath']; ?>" alt="<?= $gamercard['gamertag']; ?>" />
                                 </div>
                                 <div id="gamerInfo">
                                     <div class="statusIcon">
-                                        <?php if($xbox_presence['state'] == 'Online'): ?>
+                                        <?php if($presence['state'] == 'Online'): ?>
                                             <img src="https://assets.xbox.com/xweb-1512-23008-rtm-rolling/social/images/icon_greendot.png" />
                                         <?php endif; ?>
                                     </div>
                                     <div id="mygamertagWrapper">
-                                        <div id="myGamerTag" style="visibility: visible;"><?= $xbox_gamercard['gamertag']; ?></div>
+                                        <div id="myGamerTag" style="visibility: visible;"><?= $gamercard['gamertag']; ?></div>
                                     </div>
                                     <div class="presence" style="display: block;">
-                                        <p class="primaryPresence" style="margin: 0;">Vue en dernier: <?= $xbox_presence['lastSeen']['titleName']; ?> (<?= $xbox_presence['lastSeen']['deviceType']; ?>)</p>
+                                        <p class="primaryPresence" style="margin: 0;">Vue en dernier: <?= $lastseen['titleName']; ?> (<?= $lastseen['deviceType']; ?>)</p>
                                         <p class="secondaryPresence" style="margin: 0;">
                                             <?php
-                                            $convert_date = $date_format->convert_strtotime($xbox_presence['lastSeen']['timestamp']);
+                                            $convert_date = $date_format->convert_strtotime($lastseen['timestamp']);
                                             echo $date_format->format($convert_date);
                                             ?>
                                         </p>
