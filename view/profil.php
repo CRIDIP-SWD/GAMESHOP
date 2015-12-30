@@ -63,7 +63,7 @@ if($_SESSION['logged'] == false) {
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3" for="email">GamerTag</label>
                                                                     <div class="col-md-8">
-                                                                        <input type="text" id="email" class="form-control" name="gamertag" />
+                                                                        <input type="text" id="email" class="form-control" name="gamerTag" />
                                                                     </div>
                                                                 </div>
                                                                 <button type="submit" class="button button-3d button-green" name="action" value="add-xbox-live">Connexion</button>
