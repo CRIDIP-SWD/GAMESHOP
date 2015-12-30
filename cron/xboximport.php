@@ -62,8 +62,8 @@ while($client = mysql_fetch_array($sql_client)){
         $TenureLevel = $xbox_profil['TenureLevel'];
         $isSponsoredUser = $xbox_profil['isSponsoredUser'];
         
-        $sqlprofile = mysql_query("INSERT INTO xbox_profile(id, hostId, GameDisplayName, AppDisplayName, Gamerscore, GameDisplayPicRaw, AppDisplayPicRaw, AccountTier, XboxOneRep, PreferredColor, TenureLevel, isSponsoredUser) 
-                                  VALUES ('$id', '$hostId', '$GameDisplayName', '$AppDisplayName', '$Gamerscore', '$GameDisplayPicRaw', '$AppDisplayPicRaw', '$AccountTier', '$XboxOneRep', '$PreferredColor', '$TenureLevel', '$isSponsoredUser')")or die(mysql_error());
+        $sqlprofile = mysql_query("INSERT INTO xbox_profile(id, xuid, hostId, GameDisplayName, AppDisplayName, Gamerscore, GameDisplayPicRaw, AppDisplayPicRaw, AccountTier, XboxOneRep, PreferredColor, TenureLevel, isSponsoredUser)
+                                  VALUES (NULL, '$id','$hostId', '$GameDisplayName', '$AppDisplayName', '$Gamerscore', '$GameDisplayPicRaw', '$AppDisplayPicRaw', '$AccountTier', '$XboxOneRep', '$PreferredColor', '$TenureLevel', '$isSponsoredUser')")or die(mysql_error());
         
         if($sqlprofile === FALSE)
         {
@@ -107,7 +107,7 @@ while($client = mysql_fetch_array($sql_client)){
 
         $state = $xbox_presence['state'];
 
-        $sqlpresence = mysql_query("INSERT INTO xbox_presence(xuid, state) VALUES ('$xuid', '$state')")or die(mysql_error());
+        $sqlpresence = mysql_query("INSERT INTO xbox_presence(id, xuid, state) VALUES (NULL, '$xuid', '$state')")or die(mysql_error());
 
     if($sqlpresence === FALSE)
     {
@@ -125,8 +125,8 @@ while($client = mysql_fetch_array($sql_client)){
         $titleName = $xbox_presence['lastSeen']['titleName'];
         $timestamp = $xbox_presence['lastSeen']['timestamp'];
 
-        $sqllastseen = mysql_query("INSERT INTO xbox_presence_lastseen(xuid, deviceType, titleId, titleName, timestamp)
-                                    VALUES ('$xuid', '$deviceType', '$titleId', '$titleName', '$timestamp')")or die(mysql_error());
+        $sqllastseen = mysql_query("INSERT INTO xbox_presence_lastseen(id, xuid, deviceType, titleId, titleName, timestamp)
+                                    VALUES (NULL, '$xuid', '$deviceType', '$titleId', '$titleName', '$timestamp')")or die(mysql_error());
 
     if($sqllastseen === FALSE)
     {
