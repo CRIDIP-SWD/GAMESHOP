@@ -122,7 +122,7 @@ if($_SESSION['logged'] == false) {
                                                                     <div class="col-md-2" style="color: white;">Niveau 2</div>
                                                                     <div class="col-md-7" style="color: white;">&nbsp;</div>
                                                                     <div class="col-md-2" style="color: white;">Niveau 3</div>
-                                                                    <div class="col-md-1">
+                                                                    <div class="col-md-1" style="color: white; text-align: left;">
                                                                         <span style="font-size: 26px;">40</span>
                                                                         <span style="font-size: 18px;">%</span>
                                                                     </div>
