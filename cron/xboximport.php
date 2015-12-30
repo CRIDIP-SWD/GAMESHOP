@@ -139,15 +139,15 @@ while($client = mysql_fetch_array($sql_client)){
 
         $sql_del = mysql_query("DELETE FROM xbox_activity WHERE xuid = '$xuid'")or die(mysql_error());
 
-    $startTime = $xbox_activity[0]['startTime'];
-    $endTime = $xbox_activity[0]['endTime'];
-    $sessionDurationInMinutes = $xbox_activity[0]['sessionDurationInMinutes'];
-    $contentImageUri = $xbox_activity[0]['contentImageUri'];
-    $bingId = $xbox_activity[0]['bingId'];
-    $contentTitle = $xbox_activity[0]['contentTitle'];
-    $vuiDisplayName = $xbox_activity[0]['vuiDisplayName'];
-    $platform = $xbox_activity[0]['platform'];
-    $description = $xbox_activity[0]['description'];
+    $startTime = $xbox_activity['startTime'];
+    $endTime = $xbox_activity['endTime'];
+    $sessionDurationInMinutes = $xbox_activity['sessionDurationInMinutes'];
+    $contentImageUri = $xbox_activity['contentImageUri'];
+    $bingId = $xbox_activity['bingId'];
+    $contentTitle = $xbox_activity['contentTitle'];
+    $vuiDisplayName = $xbox_activity['vuiDisplayName'];
+    $platform = $xbox_activity['platform'];
+    $description = $xbox_activity['description'];
 
 
     $sqlactivity = mysql_query("INSERT INTO xbox_activity(idactivity, xuid, startTime, endTime, sessionDurationInMinutes, contentImageUri, bingId, contentTitle, vuiDisplayName, platform, description)
