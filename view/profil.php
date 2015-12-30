@@ -131,9 +131,8 @@ if($_SESSION['logged'] == false) {
                                                                     <div class="col-md-11">
                                                                         <ul class="skills">
                                                                             <li data-percent="80">
-                                                                                <span>Wordpress</span>
                                                                                 <div class="progress">
-                                                                                    <div class="progress-percent"><div class="counter counter-inherit counter-instant"><span data-from="0" data-to="80" data-refresh-interval="30" data-speed="1100"></span>%</div></div>
+                                                                                    <div class="counter counter-inherit counter-instant"><span data-from="0" data-to="80" data-refresh-interval="30" data-speed="1100"></span>%</div>
                                                                                 </div>
                                                                             </li>
                                                                         </ul>
