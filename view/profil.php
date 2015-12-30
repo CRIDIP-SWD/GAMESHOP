@@ -76,7 +76,7 @@ if($_SESSION['logged'] == false) {
                                         <button class="button button-desc button-3d button-rounded button-blue center" data-toggle="modal" data-target="#add-psn">Lié votre compte Playstation Network<span>Bénéficier de 100 Points de fidélités</span></button>
                                     </div>
                                 </div>
-                                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="add-psn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-body">
                                             <div class="modal-content">
