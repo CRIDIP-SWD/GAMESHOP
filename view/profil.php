@@ -106,13 +106,13 @@ if($_SESSION['logged'] == false) {
                                                         </tr>
                                                         </thead>
                                                         <tbody>
-                                                        <tr>
-                                                            <td>2</td>
-                                                            <td>1860</td>
-                                                            <td>985 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
-                                                            <td>325 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
-                                                            <td>174 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
-                                                            <td>81 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
+                                                        <tr style="font-size: 25px; font-weight: bold;">
+                                                            <td style="padding-top: 15px; padding-bottom: 30px;">2</td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px;">1860</td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px;">985 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_bronze.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px;">325 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_silver.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px;">174 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_gold.png"></td>
+                                                            <td style="padding-top: 15px; padding-bottom: 30px;">81 <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/trophy_platinum.png"></td>
                                                         </tr>
                                                         </tbody>
                                                         <tfoot>
