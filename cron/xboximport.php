@@ -3,6 +3,9 @@
 use App\networker\xboxLive;
 
 include "../app/classe.php";
+
+include "../app/networker/xboxLive.php";
+
 $sql_client = mysql_query("SELECT * FROM client")or die(mysql_error());
 while($client = mysql_fetch_array($sql_client)){
     $error = array();
@@ -15,7 +18,6 @@ while($client = mysql_fetch_array($sql_client)){
     $pseudo_steam = $client['pseudo_steam'];
     $point = $client['point'];
 
-    include "../app/networker/xboxLive.php";
     $xbox = new xboxLive($pseudo_xbox);
     $xbox_profil = $xbox->profile();
     $xbox_gamercard = $xbox->gamercard();
@@ -25,6 +27,8 @@ while($client = mysql_fetch_array($sql_client)){
     $xbox_friend = $xbox->friends();
 
     $xuid = $xbox_profil['id'];
+
+
 
     $sql_check_profil = mysql_query("SELECT count(id) FROM xbox_profile WHERE id = '$xuid'")or die(mysql_error());
     $check_profil = mysql_result($sql_check_profil, 0);

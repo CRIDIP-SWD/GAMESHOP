@@ -22,7 +22,7 @@ class xboxLive
         $this->xuid = $this->xuid_declare($gamertag);
     }
 
-    private function xuid_declare($gamertag)
+    public function xuid_declare($gamertag)
     {
         $curl = curl_init($this->endpoint.'xuid/'.$gamertag);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
