@@ -77,37 +77,26 @@ if($_SESSION['logged'] == false) {
                                     </div>
                                 </div>
                                 <div class="modal fade" id="add-psn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-body">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                    <h4 class="modal-title" id="myModalLabel">Modal Heading</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <h4>Text in a modal</h4>
-                                                    <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
-
-                                                    <h4>Popover in a modal</h4>
-                                                    <p>This <a href="#" role="button" class="btn btn-default popover-test" title="" data-content="And here's some amazing content. It's very engaging. right?" data-original-title="A Title">button</a> should trigger a popover on click.</p>
-
-                                                    <h4>Tooltips in a modal</h4>
-                                                    <p><a href="#" class="tooltip-test" title="" data-original-title="Tooltip">This link</a> and <a href="#" class="tooltip-test" title="" data-original-title="Tooltip">that link</a> should have tooltips on hover.</p>
-                                                    <hr>
-                                                    <h4>Overflowing text to show scroll behavior</h4>
-                                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                                    <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                                    <p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-                                                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-                                                    <p class="nobottommargin">Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                    <div class="block divcenter" style="background-color: #FFF; max-width: 700px;">
+                                        <div class="row nomargin clearfix">
+                                            <div class="col-sm-6" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="0" data-height-xxs="0" style="background-image: url(one-page/images/page/4.jpg); background-size: cover;"></div>
+                                            <div class="col-sm-6 col-padding" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="456" data-height-xxs="456">
+                                                <div>
+                                                    <h4 class="uppercase ls1">Sign Up for Offers</h4>
+                                                    <form action="#" class="clearfix" style="max-width: 300px;">
+                                                        <div class="col_full">
+                                                            <label for="" class="capitalize t600">Username or Email:</label>
+                                                            <input type="email" id="template-op-form-email" name="template-op-form-email" value="" class="sm-form-control" />
+                                                        </div>
+                                                        <div class="col_full">
+                                                            <label for="" class="capitalize t600">Choose Password:</label>
+                                                            <input type="password" id="template-op-form-password" name="template-op-form-password" value="" class="sm-form-control" />
+                                                        </div>
+                                                        <div class="col_full nobottommargin">
+                                                            <button type="submit" class="button button-rounded button-small button-dark nomargin" value="submit">Register Now</button>
+                                                        </div>
+                                                    </form>
+                                                    <p class="nobottommargin"><small class="t300"><em>* No Credit Card Required</em></small></p>
                                                 </div>
                                             </div>
                                         </div>
