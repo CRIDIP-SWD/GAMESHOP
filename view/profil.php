@@ -76,7 +76,7 @@ if($_SESSION['logged'] == false) {
                                         <button class="button button-desc button-3d button-rounded button-blue center" data-toggle="modal" data-target="#add-psn">Lié votre compte Playstation Network<span>Bénéficier de 100 Points de fidélités</span></button>
                                     </div>
                                 </div>
-                                <div class="modal1 mfp-hide" id="add-psn">
+                                <div class="modal mfp-hide" id="add-psn">
                                     <div class="block divcenter" style="background-color: #FFF; max-width: 700px;">
                                         <div class="row nomargin clearfix">
                                             <div class="col-sm-6" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="0" data-height-xxs="0" style="background-image: url(one-page/images/page/4.jpg); background-size: cover;"></div>
