@@ -81,7 +81,7 @@ if($_SESSION['logged'] == false) {
                                         <div class="modal-body">
                                             <div class="modal-content">
                                                 <div class="modal-body">
-                                                    <div class="block divcenter" style="background-color: #FFF; max-width: 700px;">
+                                                    <div class="block divcenter" style="background-color: #FFF;">
                                                         <div class="row nomargin clearfix">
                                                             <div class="col-sm-6" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="0" data-height-xxs="0" style="background-image: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn_title.png); background-size: cover;"></div>
                                                             <div class="col-sm-6 col-padding" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="456" data-height-xxs="456">
