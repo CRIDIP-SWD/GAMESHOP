@@ -68,7 +68,7 @@ if($_SESSION['logged'] == false) {
                     </div>
                     <div class="tab-content clearfix gamercard" id="psn">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-logo.png" class="img-responsive center" width="125" />
-                        <div class="tabs side-tabs clearfix" id="tab-4" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat; color: whitesmoke;">
+                        <div class="tabs side-tabs clearfix" id="tab-4" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat;">
 
                             <ul class="tab-nav clearfix">
                                 <li><a href="#profil">Mon profil</a></li>
@@ -80,7 +80,7 @@ if($_SESSION['logged'] == false) {
                                 <?php
                                 $convert_date_psn = $date_format->convert_strtotime($profil['presence']['primaryInfo']['lastOnlineDate']);
                                 ?>
-                                <div class="tab-content clearfix" id="profil">
+                                <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                     <div class="row">
                                         <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
                                         <div class="col-md-11" style="margin: 0;">
