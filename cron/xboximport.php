@@ -28,6 +28,7 @@ while($client = mysql_fetch_array($sql_client)){
 
     $xuid = $xbox_profil['id'];
 
+    var_dump($xuid);
 
 
     $sql_check_profil = mysql_query("SELECT count(id) FROM xbox_profile WHERE id = '$xuid'")or die(mysql_error());
