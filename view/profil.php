@@ -78,26 +78,32 @@ if($_SESSION['logged'] == false) {
                                 </div>
                                 <div class="modal fade" id="add-psn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
-                                        <div class="block divcenter" style="background-color: #FFF; max-width: 700px;">
-                                            <div class="row nomargin clearfix">
-                                                <div class="col-sm-6" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="0" data-height-xxs="0" style="background-image: url(one-page/images/page/4.jpg); background-size: cover;"></div>
-                                                <div class="col-sm-6 col-padding" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="456" data-height-xxs="456">
-                                                    <div>
-                                                        <h4 class="uppercase ls1">Sign Up for Offers</h4>
-                                                        <form action="#" class="clearfix" style="max-width: 300px;">
-                                                            <div class="col_full">
-                                                                <label for="" class="capitalize t600">Username or Email:</label>
-                                                                <input type="email" id="template-op-form-email" name="template-op-form-email" value="" class="sm-form-control" />
+                                        <div class="modal-body">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <div class="block divcenter" style="background-color: #FFF; max-width: 700px;">
+                                                        <div class="row nomargin clearfix">
+                                                            <div class="col-sm-6" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="0" data-height-xxs="0" style="background-image: url(one-page/images/page/4.jpg); background-size: cover;"></div>
+                                                            <div class="col-sm-6 col-padding" data-height-lg="456" data-height-md="456" data-height-sm="456" data-height-xs="456" data-height-xxs="456">
+                                                                <div>
+                                                                    <h4 class="uppercase ls1">Sign Up for Offers</h4>
+                                                                    <form action="#" class="clearfix" style="max-width: 300px;">
+                                                                        <div class="col_full">
+                                                                            <label for="" class="capitalize t600">Username or Email:</label>
+                                                                            <input type="email" id="template-op-form-email" name="template-op-form-email" value="" class="sm-form-control" />
+                                                                        </div>
+                                                                        <div class="col_full">
+                                                                            <label for="" class="capitalize t600">Choose Password:</label>
+                                                                            <input type="password" id="template-op-form-password" name="template-op-form-password" value="" class="sm-form-control" />
+                                                                        </div>
+                                                                        <div class="col_full nobottommargin">
+                                                                            <button type="submit" class="button button-rounded button-small button-dark nomargin" value="submit">Register Now</button>
+                                                                        </div>
+                                                                    </form>
+                                                                    <p class="nobottommargin"><small class="t300"><em>* No Credit Card Required</em></small></p>
+                                                                </div>
                                                             </div>
-                                                            <div class="col_full">
-                                                                <label for="" class="capitalize t600">Choose Password:</label>
-                                                                <input type="password" id="template-op-form-password" name="template-op-form-password" value="" class="sm-form-control" />
-                                                            </div>
-                                                            <div class="col_full nobottommargin">
-                                                                <button type="submit" class="button button-rounded button-small button-dark nomargin" value="submit">Register Now</button>
-                                                            </div>
-                                                        </form>
-                                                        <p class="nobottommargin"><small class="t300"><em>* No Credit Card Required</em></small></p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
