@@ -120,8 +120,12 @@ if($_SESSION['logged'] == false) {
                                                             <td colspan="6">
                                                                 <div class="row">
                                                                     <div class="col-md-2" style="color: white;">Niveau 2</div>
-                                                                    <div class="col-md-8" style="color: white;">&nbsp;</div>
+                                                                    <div class="col-md-7" style="color: white;">&nbsp;</div>
                                                                     <div class="col-md-2" style="color: white;">Niveau 3</div>
+                                                                    <div class="col-md-1">
+                                                                        <span style="font-size: 26px;">40</span>
+                                                                        <span style="font-size: 18px;">%</span>
+                                                                    </div>
                                                                 </div>
                                                             </td>
                                                         </tr>
