@@ -3,7 +3,7 @@ require dirname(__DIR__)."/app/autoloader.php";
 \App\autoloader::register();
 
 //VENDOR COMPOSER
-include dirname(__DIR__)."/vendor/autoload.php";
+//include dirname(__DIR__)."/vendor/autoload.php";
 
 use App\app;
 use App\constante;
