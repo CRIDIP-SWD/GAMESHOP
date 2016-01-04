@@ -388,11 +388,11 @@ if($_SESSION['logged'] == false) {
 
             <div class="row">
                 <div class="col-md-4" style="">
-                    <div class="feature-box fbox-center fbox-effect" style="">
+                    <div class="feature-box fbox-center fbox-effect" style="background-color: rgb(233, 233, 233); border: 1px none; box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1) inset; border-radius: 5px; padding: 25px;">
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-screen i-alt"></i></a>
                         </div>
-                        <h2 style="color: #0000E6;">Mes Informations Personnelles</h2>
+                        <h3 style="color: #0000E6;">Mes Informations Personnelles</h3>
                     </div>
                 </div>
             </div>
