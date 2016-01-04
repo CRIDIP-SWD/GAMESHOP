@@ -417,7 +417,7 @@ if($_SESSION['logged'] == false) {
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-book i-alt"></i></a>
                         </div>
-                        <h3 style="color: #0000E6;">Mes Informations Personnelles</h3>
+                        <h3 style="color: #0000E6;">Mon Carnet d'Adresse</h3>
                         <table style="width: 100%; text-align: left;">
                             <tbody>
                             <tr>
