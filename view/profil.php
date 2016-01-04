@@ -388,8 +388,12 @@ if($_SESSION['logged'] == false) {
 
             <div class="row">
                 <div class="col-md-4" style="">
-                    <div class="text-center"><i class="i-circled icon-line2-info i-light"></i></div>
-                    <div class="text-center"><h3 style="color: #00A8FF;">MES INFORMATIONS PERSONNELLES</h3></div>
+                    <div class="feature-box fbox-center fbox-effect">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-screen i-alt"></i></a>
+                        </div>
+                        <h2 style="color: #0000E6;">Responsive Layout</h2>
+                    </div>
                 </div>
             </div>
 
