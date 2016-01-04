@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - gameshop@vps221243.ovh.net" uuid="2999ed03-73cf-47f9-b5c1-f4f67262e9be">
+  <data-source name="MySQL - gameshop@vps221243.ovh.net" uuid="735ae4ae-3196-47bd-855f-e883d46a704d">
     <database-info product="MySQL" version="5.5.46-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -9,506 +9,523 @@
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="gameshop"/>
       <table id="2" parent="1" name="categorie"/>
-      <table id="3" parent="1" name="produits"/>
-      <table id="4" parent="1" name="produits_bonus"/>
-      <table id="5" parent="1" name="produits_caracteristique"/>
-      <table id="6" parent="1" name="produits_categorie"/>
-      <table id="7" parent="1" name="produits_images"/>
-      <table id="8" parent="1" name="produits_promotion"/>
-      <table id="9" parent="1" name="produits_subcategorie"/>
-      <table id="10" parent="1" name="produits_videos"/>
-      <table id="11" parent="1" name="subcategorie"/>
-      <table id="12" parent="1" name="client"/>
-      <table id="13" parent="1" name="xbox_activity"/>
-      <table id="14" parent="1" name="xbox_gamercard"/>
-      <table id="15" parent="1" name="xbox_presence"/>
-      <table id="16" parent="1" name="xbox_presence_lastseen"/>
-      <table id="17" parent="1" name="xbox_profile"/>
-      <column id="18" parent="2" name="id">
+      <table id="3" parent="1" name="client"/>
+      <table id="4" parent="1" name="produits"/>
+      <table id="5" parent="1" name="produits_bonus"/>
+      <table id="6" parent="1" name="produits_caracteristique"/>
+      <table id="7" parent="1" name="produits_categorie"/>
+      <table id="8" parent="1" name="produits_images"/>
+      <table id="9" parent="1" name="produits_promotion"/>
+      <table id="10" parent="1" name="produits_subcategorie"/>
+      <table id="11" parent="1" name="produits_videos"/>
+      <table id="12" parent="1" name="site_maintenance"/>
+      <table id="13" parent="1" name="subcategorie"/>
+      <table id="14" parent="1" name="xbox_activity"/>
+      <table id="15" parent="1" name="xbox_gamercard"/>
+      <table id="16" parent="1" name="xbox_presence"/>
+      <table id="17" parent="1" name="xbox_presence_lastseen"/>
+      <table id="18" parent="1" name="xbox_profile"/>
+      <column id="19" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="19" parent="2" name="designation_cat">
+      <column id="20" parent="2" name="designation_cat">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="20" parent="2" name="images_cat">
+      <column id="21" parent="2" name="images_cat">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="21" parent="2" name="PRIMARY">
+      <key id="22" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="22" parent="3" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="23" parent="3" name="ref_produit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="24" parent="3" name="designation">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="25" parent="3" name="short_description">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="26" parent="3" name="long_description">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <column id="27" parent="3" name="tag_produit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="28" parent="3" name="date_sortie">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="29" parent="3" name="prix_vente">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="30" parent="3" name="revenue_point">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="31" parent="3" name="cout_point">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="32" parent="3" name="banner">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="33" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="34" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="35" parent="4" name="ref_produit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="36" parent="4" name="ref_produit_bonus">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="37" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="38" parent="5" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="39" parent="5" name="ref_produit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="40" parent="5" name="editeur">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="41" parent="5" name="genre">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="42" parent="5" name="multijoueur">
-        <mandatory>1</mandatory>
-        <data-type>varchar(1)</data-type>
-      </column>
-      <column id="43" parent="5" name="internet">
-        <mandatory>1</mandatory>
-        <data-type>varchar(1)</data-type>
-      </column>
-      <column id="44" parent="5" name="option">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="45" parent="5" name="couleur">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="46" parent="5" name="cap_hdd">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="47" parent="5" name="eth">
-        <mandatory>1</mandatory>
-        <data-type>varchar(1)</data-type>
-      </column>
-      <column id="48" parent="5" name="wifi">
-        <mandatory>1</mandatory>
-        <data-type>varchar(1)</data-type>
-      </column>
-      <column id="49" parent="5" name="nb_usb">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="50" parent="5" name="compatibilite">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="51" parent="5" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="52" parent="6" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="53" parent="6" name="ref_produit">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="54" parent="6" name="idcategorie">
+      <column id="23" parent="3" name="idclient">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <key id="55" parent="6" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="56" parent="7" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="57" parent="7" name="ref_produit">
+      <column id="24" parent="3" name="email">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="58" parent="7" name="images">
+      <column id="25" parent="3" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="59" parent="7" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="60" parent="8" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="61" parent="8" name="ref_produit">
+      <column id="26" parent="3" name="nom_client">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="62" parent="8" name="new_price">
+      <column id="27" parent="3" name="prenom_client">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="63" parent="8" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="64" parent="9" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="65" parent="9" name="ref_produit">
+      <column id="28" parent="3" name="pseudo_psn">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="66" parent="9" name="idsubcategorie">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <key id="67" parent="9" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="68" parent="10" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="69" parent="10" name="ref_produit">
+      <column id="29" parent="3" name="pass_psn">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="70" parent="10" name="video">
-        <mandatory>1</mandatory>
-        <data-type>longtext</data-type>
-      </column>
-      <key id="71" parent="10" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="72" parent="11" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="73" parent="11" name="idcategorie">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="74" parent="11" name="designation_subcat">
+      <column id="30" parent="3" name="pseudo_xbox">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="75" parent="11" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="76" parent="12" name="idclient">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="77" parent="12" name="email">
+      <column id="31" parent="3" name="pseudo_nintendo">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="78" parent="12" name="password">
+      <column id="32" parent="3" name="pseudo_steam">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="79" parent="12" name="nom_client">
+      <column id="33" parent="3" name="point">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="80" parent="12" name="prenom_client">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="81" parent="12" name="pseudo_psn">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="82" parent="12" name="pass_psn">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="83" parent="12" name="pseudo_xbox">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="84" parent="12" name="pseudo_nintendo">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="85" parent="12" name="pseudo_steam">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="86" parent="12" name="point">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="87" parent="12" name="PRIMARY">
+      <key id="34" parent="3" name="PRIMARY">
         <columns>idclient</columns>
         <primary>1</primary>
       </key>
-      <column id="88" parent="13" name="idactivity">
+      <column id="35" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="36" parent="4" name="ref_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="37" parent="4" name="designation">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="38" parent="4" name="short_description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="39" parent="4" name="long_description">
+        <mandatory>1</mandatory>
+        <data-type>longtext</data-type>
+      </column>
+      <column id="40" parent="4" name="tag_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="41" parent="4" name="date_sortie">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="42" parent="4" name="prix_vente">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="43" parent="4" name="revenue_point">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="44" parent="4" name="cout_point">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="45" parent="4" name="banner">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="46" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="47" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="48" parent="5" name="ref_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="5" name="ref_produit_bonus">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="50" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="51" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="52" parent="6" name="ref_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="53" parent="6" name="editeur">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="54" parent="6" name="genre">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="55" parent="6" name="multijoueur">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="56" parent="6" name="internet">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="57" parent="6" name="option">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="58" parent="6" name="couleur">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="59" parent="6" name="cap_hdd">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="60" parent="6" name="eth">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="61" parent="6" name="wifi">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1)</data-type>
+      </column>
+      <column id="62" parent="6" name="nb_usb">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="63" parent="6" name="compatibilite">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="64" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="65" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="66" parent="7" name="ref_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="67" parent="7" name="idcategorie">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="89" parent="13" name="xuid">
+      <key id="68" parent="7" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="69" parent="8" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="70" parent="8" name="ref_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="71" parent="8" name="images">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="72" parent="8" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="73" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="90" parent="13" name="startTime">
+      <column id="74" parent="9" name="ref_produit">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="91" parent="13" name="endTime">
+      <column id="75" parent="9" name="new_price">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="92" parent="13" name="sessionDurationInMinutes">
+      <key id="76" parent="9" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="77" parent="10" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="78" parent="10" name="ref_produit">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="79" parent="10" name="idsubcategorie">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="93" parent="13" name="contentImageUri">
+      <key id="80" parent="10" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="81" parent="11" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="82" parent="11" name="ref_produit">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="94" parent="13" name="bingId">
+      <column id="83" parent="11" name="video">
+        <mandatory>1</mandatory>
+        <data-type>longtext</data-type>
+      </column>
+      <key id="84" parent="11" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="85" parent="12" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="86" parent="12" name="pourquoi">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="95" parent="13" name="contentTitle">
+      <column id="87" parent="12" name="temps">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="96" parent="13" name="vuiDisplayName">
+      <key id="88" parent="12" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="89" parent="13" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="90" parent="13" name="idcategorie">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="91" parent="13" name="designation_subcat">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="97" parent="13" name="platform">
+      <key id="92" parent="13" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="93" parent="14" name="idactivity">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="94" parent="14" name="xuid">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="98" parent="13" name="description">
+      <column id="95" parent="14" name="startTime">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="99" parent="13" name="PRIMARY">
+      <column id="96" parent="14" name="endTime">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="97" parent="14" name="sessionDurationInMinutes">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="98" parent="14" name="contentImageUri">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="99" parent="14" name="bingId">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="100" parent="14" name="contentTitle">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="101" parent="14" name="vuiDisplayName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="102" parent="14" name="platform">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="103" parent="14" name="description">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="104" parent="14" name="PRIMARY">
         <columns>idactivity</columns>
         <primary>1</primary>
       </key>
-      <column id="100" parent="14" name="id">
+      <column id="105" parent="15" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="101" parent="14" name="gamertag">
+      <column id="106" parent="15" name="gamertag">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="102" parent="14" name="name">
+      <column id="107" parent="15" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="103" parent="14" name="location">
+      <column id="108" parent="15" name="location">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="104" parent="14" name="bio">
+      <column id="109" parent="15" name="bio">
         <mandatory>1</mandatory>
         <data-type>longtext</data-type>
       </column>
-      <column id="105" parent="14" name="gamerscore">
+      <column id="110" parent="15" name="gamerscore">
         <mandatory>1</mandatory>
         <data-type>int(9)</data-type>
       </column>
-      <column id="106" parent="14" name="tier">
+      <column id="111" parent="15" name="tier">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="107" parent="14" name="motto">
+      <column id="112" parent="15" name="motto">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="108" parent="14" name="avatarBodyImagePath">
+      <column id="113" parent="15" name="avatarBodyImagePath">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="109" parent="14" name="gamerpicSmallImagePath">
+      <column id="114" parent="15" name="gamerpicSmallImagePath">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="110" parent="14" name="gamerpicLargeImagePath">
+      <column id="115" parent="15" name="gamerpicLargeImagePath">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="111" parent="14" name="gamerpicSmallSslImagePath">
+      <column id="116" parent="15" name="gamerpicSmallSslImagePath">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="112" parent="14" name="gamerpicLargeSslImagePath">
+      <column id="117" parent="15" name="gamerpicLargeSslImagePath">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="113" parent="14" name="avatarManifest">
+      <column id="118" parent="15" name="avatarManifest">
         <mandatory>1</mandatory>
         <data-type>longtext</data-type>
       </column>
-      <key id="114" parent="14" name="PRIMARY">
+      <key id="119" parent="15" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="115" parent="15" name="id">
+      <column id="120" parent="16" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="116" parent="15" name="xuid">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="117" parent="15" name="state">
+      <column id="121" parent="16" name="xuid">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="118" parent="15" name="PRIMARY">
+      <column id="122" parent="16" name="state">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="123" parent="16" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="119" parent="16" name="id">
+      <column id="124" parent="17" name="id">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="120" parent="16" name="xuid">
+      <column id="125" parent="17" name="xuid">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="126" parent="17" name="deviceType">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="127" parent="17" name="titleId">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="121" parent="16" name="deviceType">
+      <column id="128" parent="17" name="titleName">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="122" parent="16" name="titleId">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="123" parent="16" name="titleName">
+      <column id="129" parent="17" name="timestamp">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="124" parent="16" name="timestamp">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="125" parent="16" name="PRIMARY">
+      <key id="130" parent="17" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="126" parent="17" name="id">
+      <column id="131" parent="18" name="id">
         <mandatory>1</mandatory>
         <data-type>int(64)</data-type>
       </column>
-      <column id="127" parent="17" name="xuid">
-        <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
-      </column>
-      <column id="128" parent="17" name="hostId">
+      <column id="132" parent="18" name="xuid">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="129" parent="17" name="GameDisplayName">
+      <column id="133" parent="18" name="hostId">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="130" parent="17" name="AppDisplayName">
+      <column id="134" parent="18" name="GameDisplayName">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="131" parent="17" name="Gamerscore">
+      <column id="135" parent="18" name="AppDisplayName">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="136" parent="18" name="Gamerscore">
         <mandatory>1</mandatory>
         <data-type>int(9)</data-type>
       </column>
-      <column id="132" parent="17" name="GameDisplayPicRaw">
+      <column id="137" parent="18" name="GameDisplayPicRaw">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="133" parent="17" name="AppDisplayPicRaw">
+      <column id="138" parent="18" name="AppDisplayPicRaw">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="134" parent="17" name="AccountTier">
+      <column id="139" parent="18" name="AccountTier">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="135" parent="17" name="XboxOneRep">
+      <column id="140" parent="18" name="XboxOneRep">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="136" parent="17" name="PreferredColor">
+      <column id="141" parent="18" name="PreferredColor">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="137" parent="17" name="TenureLevel">
+      <column id="142" parent="18" name="TenureLevel">
         <mandatory>1</mandatory>
         <data-type>int(9)</data-type>
       </column>
-      <column id="138" parent="17" name="isSponsoredUser">
+      <column id="143" parent="18" name="isSponsoredUser">
         <mandatory>1</mandatory>
         <data-type>varchar(10)</data-type>
       </column>
-      <key id="139" parent="17" name="PRIMARY">
+      <key id="144" parent="18" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

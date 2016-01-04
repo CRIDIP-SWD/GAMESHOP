@@ -1,8 +1,6 @@
 <?php
-header('HTTP/1.1 503 Service Temporarily Unavailable');
-header('Status: 503 Service Temporarily Unavailable');
-header('Retry-After: 3600');
-header('X-Powered-By:');
+$sql_maintenance = mysql_query("SELECT * FROM site_maintenance WHERE id = '1'")or die(mysql_error());
+$maintenance = mysql_fetch_array($sql_maintenance);
 ?>
 <section id="content">
 
@@ -11,8 +9,8 @@ header('X-Powered-By:');
         <div class="container clearfix">
 
             <div class="heading-block center nobottomborder">
-                <h1>Site is Under Maintenance</h1>
-                <span>Please check back in sometime.</span>
+                <h1>Le site est actuellement en maintenance</h1>
+                <span>Revenez plus tard.</span>
             </div>
 
             <div class="col_one_third topmargin">
@@ -20,8 +18,8 @@ header('X-Powered-By:');
                     <div class="fbox-icon">
                         <a href="#"><i class="icon-warning-sign"></i></a>
                     </div>
-                    <h3>Why is the Site Down?</h3>
-                    <p>The site is under maintenance probably because we are working to improve this website drastically.</p>
+                    <h3>Pourquoi?</h3>
+                    <p><?= html_entity_decode($maintenance['pourquoi']); ?></p>
                 </div>
             </div>
 
@@ -30,8 +28,8 @@ header('X-Powered-By:');
                     <div class="fbox-icon">
                         <a href="#"><i class="icon-time"></i></a>
                     </div>
-                    <h3>What is the Downtime?</h3>
-                    <p>We are usually back within 10-15 minutes but it definitely depends on the issue.</p>
+                    <h3>Temps restant:</h3>
+                    <div id="countdown-ex4" class="countdown countdown-inline"></div>
                 </div>
             </div>
 
@@ -50,3 +48,12 @@ header('X-Powered-By:');
     </div>
 
 </section>
+<script>
+    jQuery(document).ready( function($){
+
+        var newDate4 = new Date(<?= date("Y", $maintenance['temps']); ?>, <?= date("m", $maintenance['temps']); ?>, <?= date("d", $maintenance['temps']); ?>);
+        $('#countdown-ex4').countdown({until: newDate4});
+
+
+    });
+</script>

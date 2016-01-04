@@ -1,6 +1,0 @@
-Options +FollowSymLinks
-RewriteEngine On
-RewriteBase /
-RewriteCond %{REMOTE_ADDR} !^109\.190\.224\.160
-RewriteCond %{REQUEST_URI} !^/index.php&view=maintenance [NC]
-RewriteRule .* /index.php&view=maintenance [L]
