@@ -4,7 +4,17 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/gumer/gumer-psn-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/jocolopes/steamapi" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/react/promise" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/xboxleaders/xboxliveapi" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -16,6 +26,40 @@
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/composer.phar/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/gumer/gumer-psn-php" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+          <root url="file://$MODULE_DIR$/vendor/illuminate/support" />
+          <root url="file://$MODULE_DIR$/vendor/jocolopes/steamapi" />
+          <root url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+          <root url="file://$MODULE_DIR$/vendor/react/promise" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+          <root url="file://$MODULE_DIR$/vendor/xboxleaders/xboxliveapi" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/gumer/gumer-psn-php" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+          <root url="file://$MODULE_DIR$/vendor/illuminate/support" />
+          <root url="file://$MODULE_DIR$/vendor/jocolopes/steamapi" />
+          <root url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+          <root url="file://$MODULE_DIR$/vendor/react/promise" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+          <root url="file://$MODULE_DIR$/vendor/xboxleaders/xboxliveapi" />
         </SOURCES>
       </library>
     </orderEntry>
