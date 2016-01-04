@@ -9,7 +9,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="container clearfix">
             <h1>MON COMPTE</h1>
-            <span>Bienvenue</span>
+            <span>Bienvenue <?= $info_client['prenom_client']; ?> <?= $info_client['nom_client']; ?></span>
             <ol class="breadcrumb">
                 <li><a href="#">GAMESHOP</a></li>
                 <li><a href="#">MON COMPTE</a></li>
