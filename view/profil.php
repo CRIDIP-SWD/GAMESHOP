@@ -388,7 +388,7 @@ if($_SESSION['logged'] == false) {
 
             <div class="row">
                 <div class="col-md-4" style="">
-                    <div class="feature-box fbox-center fbox-effect">
+                    <div class="feature-box fbox-center fbox-effect" style="">
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-screen i-alt"></i></a>
                         </div>
