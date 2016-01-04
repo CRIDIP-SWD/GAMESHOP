@@ -64,9 +64,7 @@ if(isset($_SESSION['logged'])){
 
     }
 */
-    /*
-     * XBOX LIVE CONNECTOR INIT
-     */
+/*
 
     $xbox = new xboxLive($info_client['pseudo_xbox']);
     $xuid = $xbox->xuid_declare($info_client['pseudo_xbox']);
@@ -85,9 +83,7 @@ if(isset($_SESSION['logged'])){
 
     if(!empty($info_client['pseudo_steam']))
     {
-        /*
-     * STEAM CONNECTOR INIT
-     */
+
         $steam = new User('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
         $steam_friendList = $steam->GetFriendList();
         $steam_playerSummary = $steam->GetPlayerSummaries();
@@ -103,7 +99,7 @@ if(isset($_SESSION['logged'])){
         //var_dump($steam_p_level_detail);
         //die();
     }
-
+*/
 }
 
 
