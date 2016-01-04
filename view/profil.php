@@ -409,6 +409,7 @@ if($_SESSION['logged'] == false) {
                                 </tr>
                             </tbody>
                         </table>
+                        <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
                     </div>
                 </div>
             </div>
