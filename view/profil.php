@@ -5,7 +5,7 @@ if($_SESSION['logged'] == false) {
 ?>
 <!-- Page Title
 		============================================= -->
-<section id="page-title" class="page-title-parallax page-title-dark" style="background url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
+<section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
 
     <div class="container clearfix">
         <h1>MON COMPTE</h1>
@@ -423,20 +423,15 @@ if($_SESSION['logged'] == false) {
                             </div>
                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
                                 <div class="modal-body">
-                                    <div class="block dark divcenter" style="background: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg') no-repeat; background-size: cover; max-width: 700px;" data-height-lg="400">
-                                        <div style="padding: 50px;">
-                                            <div class="heading-block nobottomborder bottommargin-sm" style="max-width:500px;">
-                                                <h3>Newsletter Subscribe</h3>
-                                                <span>Get Latest Fashion Updates &amp; Offers</span>
-                                            </div>
-                                            <form id="widget-subscribe-form2" action="include/subscribe.php" role="form" method="post" style="max-width: 350px;">
-                                                <input type="email" id="widget-subscribe-form2-email" name="widget-subscribe-form-email" class="form-control input-lg not-dark required email" placeholder="Enter your Email">
-                                                <button class="button button-rounded button-border button-light noleftmargin" type="submit" style="margin-top:15px;">Subscribe</button>
-                                            </form>
-                                            <p class="nobottommargin"><small><em>*We hate Spam &amp; Junk Emails.</em></small></p>
+                                    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
+
+                                        <div class="container clearfix">
+                                            <h1>MON COMPTE</h1>
+                                            <span>Bienvenue</span>
                                         </div>
-                                    </div>
-                                    <div class="clear"></div>
+
+                                    </section>
+                                    <br>
                                     <div class="form-group">
                                         <label class="control-label col-md-3" for="r">Nom:</label>
                                         <div class="col-md-9">
