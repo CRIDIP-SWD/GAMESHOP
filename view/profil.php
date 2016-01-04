@@ -393,6 +393,22 @@ if($_SESSION['logged'] == false) {
                             <a href="#"><i class="icon-screen i-alt"></i></a>
                         </div>
                         <h3 style="color: #0000E6;">Mes Informations Personnelles</h3>
+                        <table style="width: 100%;">
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight: bold; width: 25%;">Nom :</td>
+                                    <td style="width: 75%;"><?= $info_user['nom_client']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; width: 25%;">Prénom :</td>
+                                    <td style="width: 75%;"><?= $info_user['prenom_client']; ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight: bold; width: 25%;">Email :</td>
+                                    <td style="width: 75%;"><?= $info_user['email']; ?></td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
