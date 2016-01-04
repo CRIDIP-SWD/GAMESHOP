@@ -2,9 +2,9 @@
 
 use App\networker\xboxLive;
 
-include "../app/classe.php";
+include dirname(__DIR__)."/app/classe.php";
 
-include "../app/networker/xboxLive.php";
+include dirname(__DIR__)."/app/networker/xboxLive.php";
 
 $sql_client = mysql_query("SELECT * FROM client")or die(mysql_error());
 while($client = mysql_fetch_array($sql_client)){
