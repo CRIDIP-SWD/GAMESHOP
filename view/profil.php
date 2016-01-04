@@ -388,8 +388,8 @@ if($_SESSION['logged'] == false) {
 
             <div class="row">
                 <div class="col-md-4" style="">
-                    <div class="center"><i class="i-circled icon-line2-info i-light"></i></div>
-                    <div class="center"><h2 data-color="#034EA6">MES INFORMATIONS PERSONNELLES</h2></div>
+                    <div class="text-center"><i class="i-circled icon-line2-info i-light"></i></div>
+                    <div class="text-center"><h3 style="color: #00A8FF;">MES INFORMATIONS PERSONNELLES</h3></div>
                 </div>
             </div>
 
