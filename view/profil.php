@@ -386,6 +386,8 @@ if($_SESSION['logged'] == false) {
 
             <div class="clear"></div>
 
+            <?= $_SERVER['REMOTE_ADDR']; ?>
+
         </div>
 
     </div>
