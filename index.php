@@ -11,6 +11,8 @@ if($constante->maintenance($_SERVER['REMOTE_ADDR']) != true)
 if(isset($_GET['view']))
 {
     $view = $_GET['view'];
+}elseif($constante->maintenance($_SERVER['REMOTE_ADDR']) != true){
+    $view = "maintenance";
 }else{
     $view = "index";
 }
