@@ -39,7 +39,7 @@ class constante extends app{
     const NOM_SITE          = "Gameshop";
     const SOURCES           = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
     const IP_MAINTENANCE    = array("109.190.224.160");
-    const MAINTENANCE       = 1;
+    const MAINTENANCE       = 0;
 
     /**
      * @param $dos array Permet de parser sous forme string le tableau array=$dos
