@@ -38,8 +38,6 @@ class constante extends app{
     const ASSETS            = "assets/";
     const NOM_SITE          = "Gameshop";
     const SOURCES           = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
-    const IP_MAINTENANCE    = array("109.190.224.160");
-    const MAINTENANCE       = 0;
 
     /**
      * @param $dos array Permet de parser sous forme string le tableau array=$dos
@@ -69,17 +67,6 @@ class constante extends app{
 
     }
 
-    public function maintenance($ip)
-    {
-        if(static::MAINTENANCE == 1){
-            if(static::IP_MAINTENANCE == $ip)
-            {
-                return true;
-            }else{
-                return false;
-            }
-        }
-    }
 
 
 
