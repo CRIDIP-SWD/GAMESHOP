@@ -3,6 +3,11 @@ session_start();
 require 'app/classe.php';
 App\autoloader::register();
 
+if($constante->maintenance($_SERVER['REMOTE_ADDR']) != true)
+{
+    header("location: index.php?view=maintenance");
+}
+
 if(isset($_GET['view']))
 {
     $view = $_GET['view'];
