@@ -397,15 +397,15 @@ if($_SESSION['logged'] == false) {
                             <tbody>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Nom :</td>
-                                    <td style="width: 75%;"><?= $info_user['nom_client']; ?></td>
+                                    <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Prénom :</td>
-                                    <td style="width: 75%;"><?= $info_user['prenom_client']; ?></td>
+                                    <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Email :</td>
-                                    <td style="width: 75%;"><?= $info_user['email']; ?></td>
+                                    <td style="width: 75%;"><?= $info_client['email']; ?></td>
                                 </tr>
                             </tbody>
                         </table>
