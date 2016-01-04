@@ -72,7 +72,7 @@ class constante extends app{
     public function maintenance($ip)
     {
         if(static::MAINTENANCE == 1){
-            if(static::IP_MAINTENANCE == $_SERVER['REMOTE_ADDR'])
+            if(static::IP_MAINTENANCE == $ip)
             {
                 return true;
             }else{
