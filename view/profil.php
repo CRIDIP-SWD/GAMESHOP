@@ -393,7 +393,7 @@ if($_SESSION['logged'] == false) {
                             <a href="#"><i class="icon-screen i-alt"></i></a>
                         </div>
                         <h3 style="color: #0000E6;">Mes Informations Personnelles</h3>
-                        <table style="width: 100%;">
+                        <table style="width: 100%; text-align: left;">
                             <tbody>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Nom :</td>
