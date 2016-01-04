@@ -31,7 +31,7 @@ $client_cls = new client();
 
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
-    /*
+
     if(!empty($info_client['pseudo_psn']))
     {
 
@@ -63,8 +63,8 @@ if(isset($_SESSION['logged'])){
                 $friend = json_decode($response_friend->getBody(true), true);
 
     }
-*/
-/*
+
+
 
     $xbox = new xboxLive($info_client['pseudo_xbox']);
     $xuid = $xbox->xuid_declare($info_client['pseudo_xbox']);
@@ -99,7 +99,6 @@ if(isset($_SESSION['logged'])){
         //var_dump($steam_p_level_detail);
         //die();
     }
-*/
 }
 
 
