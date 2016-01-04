@@ -423,6 +423,13 @@ if($_SESSION['logged'] == false) {
                             </div>
                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
                                 <div class="modal-body">
+                                    <div class="container clearfix">
+                                        <h1>MON COMPTE</h1>
+                                        <span>Bienvenue</span>
+                                        <ol class="breadcrumb">
+                                            <li>MODIFIER MES INFORMATIONS</li>
+                                        </ol>
+                                    </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3" for="r">Nom:</label>
                                         <div class="col-md-9">
