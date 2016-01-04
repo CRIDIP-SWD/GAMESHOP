@@ -425,10 +425,6 @@ if($_SESSION['logged'] == false) {
                                 <div class="modal-body">
                                     <div class="container clearfix">
                                         <h1>MON COMPTE</h1>
-                                        <span>MODIFICATION</span>
-                                        <ol class="breadcrumb">
-                                            <li>MES INFORMATIONS</li>
-                                        </ol>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-3" for="r">Nom:</label>
