@@ -348,17 +348,17 @@ if($_SESSION['logged'] == false) {
 
                                 <div class="tab-container">
                                     <?php
-                                    $convert_date_steam = $date_format->convert_strtotime($steam_playerSummary['lastLogoff']);
+                                    $convert_date_steam = $date_format->convert_strtotime($steam_playerSummary->lastLogoff);
                                     ?>
                                     <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                         <div class="row">
                                             <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_steam.jpg) no-repeat;">
                                                 <div class="panel-body">
                                                     <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
-                                                        <div class="col-md-1"><img src="<?= $steam_playerSummary['avatarFull']; ?>" class="img-responsive" width="80"/></div>
+                                                        <div class="col-md-1"><img src="<?= $steam_playerSummary->avatarFull; ?>" class="img-responsive" width="80"/></div>
                                                         <div class="col-md-11" style="margin: 0;">
-                                                            <h2 style="margin: 0; color: white;"><?= $steam_playerSummary['personaName']; ?></h2>
-                                                            <h4 style="margin: 0; color: white;"><strong>Statut:</strong> <?= $steam_playerSummary['personaState']; ?></h4>
+                                                            <h2 style="margin: 0; color: white;"><?= $steam_playerSummary->personaName; ?></h2>
+                                                            <h4 style="margin: 0; color: white;"><strong>Statut:</strong> <?= $steam_playerSummary->personaState; ?></h4>
                                                             <h6 style="margin: 0; color: white;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_steam); ?></i></h6>
                                                         </div>
                                                     </div>
