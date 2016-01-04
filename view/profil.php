@@ -31,7 +31,7 @@ if($_SESSION['logged'] == false) {
 
                 <ul class="tab-nav clearfix">
                     <li><a href="#xbox"><img src="<?= $constante->getUrl(array(), false, true); ?>autre/icone/xbox.png" /> Xbox Live</a></li>
-                    <li><a href="#psn"><img src="<?= $constante->getUrl(array(), false, true); ?>autre/icone/psn.png" /> PSN</a></li>
+                    <!--<li><a href="#psn"><img src="<?= $constante->getUrl(array(), false, true); ?>autre/icone/psn.png" /> PSN</a></li>-->
                     <li><a href="#steam"><img src="<?= $constante->getUrl(array(), false, true); ?>autre/icone/steam.png" /> Steam</a></li>
                 </ul>
 
@@ -107,7 +107,7 @@ if($_SESSION['logged'] == false) {
 
                         </div>
                     </div>
-                    <div class="tab-content clearfix gamercard" id="psn">
+                    <!--<div class="tab-content clearfix gamercard" id="psn">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-logo.png" class="img-responsive center" width="125" />
                         <div class="tabs side-tabs clearfix" id="tab-4">
 
@@ -300,7 +300,7 @@ if($_SESSION['logged'] == false) {
                             <?php } ?>
 
                         </div>
-                    </div>
+                    </div>-->
                     <div class="tab-content clearfix gamercard" id="steam">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/steam-logo.png" class="img-responsive center" width="125" />
                         <div class="tabs side-tabs clearfix" id="tab-4">
