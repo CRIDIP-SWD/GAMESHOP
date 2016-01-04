@@ -356,10 +356,19 @@ if($_SESSION['logged'] == false) {
                                                 <div class="panel-body">
                                                     <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                         <div class="col-md-2"><img src="<?= $steam_playerSummary->avatarFull; ?>" class="img-responsive" width="120"/></div>
-                                                        <div class="col-md-10" style="margin: 0;">
+                                                        <div class="col-md-5" style="margin: 0;">
                                                             <h2 style="margin: 0; color: white;"><?= $steam_playerSummary->personaName; ?></h2>
                                                             <h4 style="margin: 0; color: white;"><strong>Statut:</strong> <?= $steam_playerSummary->personaState; ?></h4>
                                                             <h6 style="margin: 0; color: white;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_steam); ?></i></h6>
+                                                        </div>
+                                                        <div class="col-md-5">
+                                                            <?php
+                                                            $level = $steam_p_level;
+
+                                                            ?>
+                                                            <div class="col_half center nobottommargin">
+                                                                <div class="rounded-skill nobottommargin" data-color="#DD4B39" data-size="200" data-percent="<?= $steam_p_level_detail->percentThroughLevel; ?>" data-width="3" data-animate="2500"><?= $level; ?></div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
