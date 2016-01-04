@@ -104,7 +104,7 @@ if($_SESSION['logged'] == false) {
                                     </div>
                                     <div class="tab-content clearfix" id="trophy" style="color: whitesmoke;">
                                         <div class="row">
-                                            <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_psn.jpg) no-repeat;">
+                                            <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_xbox_live.jpg) no-repeat;">
                                                 <div class="panel-body">
                                                     <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                         <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
