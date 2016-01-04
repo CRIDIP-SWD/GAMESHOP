@@ -95,7 +95,9 @@ if($_SESSION['logged'] == false) {
                                                         <div class="col-md-11" style="margin: 0;">
                                                             <h2 style="margin: 0;"><?= $gamercard['gamertag']; ?></h2>
                                                             <h4 style="margin: 0;"><strong>Statut:</strong> <?= $presence['state']; ?></h4>
-                                                            <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
+                                                            <?php if($presence['state'] == 'Offline'): ?>
+                                                                <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -107,11 +109,13 @@ if($_SESSION['logged'] == false) {
                                             <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_xbox_live.jpg) no-repeat;">
                                                 <div class="panel-body">
                                                     <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
-                                                        <div class="col-md-1"><img src="<?= $profil['avatarUrl']; ?>" class="img-responsive" width="80"/></div>
+                                                        <div class="col-md-1"><img src="<?= $gamercard['gamerpicLargeImagePath']; ?>" class="img-responsive" width="80"/></div>
                                                         <div class="col-md-11" style="margin: 0;">
-                                                            <h2 style="margin: 0; color: white;"><?= $profil['onlineId']; ?></h2>
-                                                            <h4 style="margin: 0; color: white;"><strong>Statut:</strong> <?= $profil['presence']['primaryInfo']['onlineStatus']; ?></h4>
-                                                            <h6 style="margin: 0; color: white;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
+                                                            <h2 style="margin: 0; color: white;"><?= $gamercard['gamertag']; ?></h2>
+                                                            <h4 style="margin: 0; color: white;"><strong>Statut:</strong> <?= $presence['state']; ?></h4>
+                                                            <?php if($presence['state'] == 'Offline'): ?>
+                                                                <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
+                                                            <?php endif; ?>
                                                         </div>
                                                     </div>
                                                     <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
