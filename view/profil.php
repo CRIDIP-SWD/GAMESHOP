@@ -386,7 +386,11 @@ if($_SESSION['logged'] == false) {
 
             <div class="clear"></div>
 
-            <?= $_SERVER['REMOTE_ADDR']; ?>
+            <div class="row">
+                <div class="col-md-4" style="">
+                    <div class="center"><i class="i-circled icon-line2-info i-light"></i></div>
+                </div>
+            </div>
 
         </div>
 
