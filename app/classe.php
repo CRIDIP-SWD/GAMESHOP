@@ -31,12 +31,10 @@ $client_cls = new client();
 
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
-
+    /*
     if(!empty($info_client['pseudo_psn']))
     {
-                /*
-         * PSN NETWORK API INIT
-         */
+
                 $client_psn = new \Guzzle\Http\Client('', ['redirect.disable' => true]);
                 $connect_psn = new \Gumer\PSN\Http\Connection('FR', 'FR');
                 $connect_psn->setGuzzle($client_psn);
@@ -65,7 +63,7 @@ if(isset($_SESSION['logged'])){
                 $friend = json_decode($response_friend->getBody(true), true);
 
     }
-
+*/
     /*
      * XBOX LIVE CONNECTOR INIT
      */
