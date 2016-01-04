@@ -93,17 +93,17 @@ if(isset($_SESSION['logged'])){
         $steam = new User('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
         $steam_friendList = $steam->GetFriendList();
         $steam_playerSummary = $steam->GetPlayerSummaries();
-        var_dump($steam_friendList);
-        var_dump($steam_playerSummary);
+        //var_dump($steam_friendList);
+        //var_dump($steam_playerSummary);
 
 
         $steam_player = new Player('444446B16CB7611E5E74F4752A35EB5C', $info_client['pseudo_steam']);
         $steam_p_level = $steam_player->GetSteamLevel();
         $steam_p_level_detail = $steam_player->GetPlayerLevelDetails();
 
-        var_dump($steam_p_level);
-        var_dump($steam_p_level_detail);
-        die();
+        //var_dump($steam_p_level);
+        //var_dump($steam_p_level_detail);
+        //die();
     }
 
 }
