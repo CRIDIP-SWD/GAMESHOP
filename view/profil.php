@@ -392,7 +392,7 @@ if($_SESSION['logged'] == false) {
                         <div class="fbox-icon">
                             <a href="#"><i class="icon-screen i-alt"></i></a>
                         </div>
-                        <h2 style="color: #0000E6;">Responsive Layout</h2>
+                        <h2 style="color: #0000E6;">Mes Informations Personnelles</h2>
                     </div>
                 </div>
             </div>
