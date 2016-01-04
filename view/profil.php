@@ -423,12 +423,19 @@ if($_SESSION['logged'] == false) {
                             </div>
                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
                                 <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-md-12" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
+                                    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
+
+                                        <div class="container clearfix">
                                             <h1>MON COMPTE</h1>
-                                            <span>Modification</span>
+                                            <span>Bienvenue</span>
+                                            <ol class="breadcrumb">
+                                                <li><a href="#">GAMESHOP</a></li>
+                                                <li><a href="#">MON COMPTE</a></li>
+                                                <li class="active">Bienvenue</li>
+                                            </ol>
                                         </div>
-                                    </div>
+
+                                    </section>
                                     <div class="form-group">
                                         <label class="control-label col-md-3" for="r">Nom:</label>
                                         <div class="col-md-9">
