@@ -390,7 +390,7 @@ if($_SESSION['logged'] == false) {
                 <div class="col-md-4" style="">
                     <div class="feature-box fbox-center fbox-effect" style="background-color: rgb(233, 233, 233); border: 1px none; box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1) inset; border-radius: 5px; padding: 25px;">
                         <div class="fbox-icon">
-                            <a href="#"><i class="icon-screen i-alt"></i></a>
+                            <a href="#"><i class="icon-line2-info i-alt"></i></a>
                         </div>
                         <h3 style="color: #0000E6;">Mes Informations Personnelles</h3>
                         <table style="width: 100%; text-align: left;">
@@ -412,7 +412,33 @@ if($_SESSION['logged'] == false) {
                         <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
                     </div>
                 </div>
+                <div class="col-md-4" style="">
+                    <div class="feature-box fbox-center fbox-effect" style="background-color: rgb(233, 233, 233); border: 1px none; box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1) inset; border-radius: 5px; padding: 25px;">
+                        <div class="fbox-icon">
+                            <a href="#"><i class="icon-screen i-alt"></i></a>
+                        </div>
+                        <h3 style="color: #0000E6;">Mes Informations Personnelles</h3>
+                        <table style="width: 100%; text-align: left;">
+                            <tbody>
+                            <tr>
+                                <td style="font-weight: bold; width: 25%;">Nom :</td>
+                                <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; width: 25%;">Prénom :</td>
+                                <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold; width: 25%;">Email :</td>
+                                <td style="width: 75%;"><?= $info_client['email']; ?></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
+                    </div>
+                </div>
             </div>
+
             <div class="modal fade" id="edit-client" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                     <div class="modal-body">
