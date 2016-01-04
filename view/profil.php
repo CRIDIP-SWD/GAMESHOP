@@ -367,7 +367,7 @@ if($_SESSION['logged'] == false) {
 
                                                             ?>
                                                             <div class="col_half center nobottommargin">
-                                                                <div class="rounded-skill nobottommargin" data-color="#DD4B39" data-size="200" data-percent="<?= $steam_p_level_detail->percentThroughLevel; ?>" data-width="3" data-animate="2500"><?= $level; ?></div>
+                                                                <div class="rounded-skill nobottommargin" data-color="#DD4B39" data-size="100" data-percent="<?= $steam_p_level_detail->percentThroughLevel; ?>" data-width="1" data-animate="2500"><?= $level; ?></div>
                                                             </div>
                                                         </div>
                                                     </div>
