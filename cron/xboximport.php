@@ -249,7 +249,7 @@ while($client = mysql_fetch_array($sql_client)){
                     <tbody>
                     <tr>
                         <td align="left" style="text-align: left; font-size: 13px; color: #989bb9; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
-                           <?= var_dump($error); ?>
+                           <?php var_dump($error); ?>
                         </td>
                     </tr>
                     </tbody>
