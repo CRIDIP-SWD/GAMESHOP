@@ -415,9 +415,15 @@ if($_SESSION['logged'] == false) {
                             </div>
                             <h3 style="color: #0000E6;">Mon Carnet d'Adresse</h3>
                             <table style="width: 100%; text-align: left;">
+                                <?php
+                                $adresse = $client_cls->fact_default($info_client['idclient']);
+                                ?>
                                 <tbody>
                                     <tr>
                                         <td>MON ADRESSE</td>
+                                    </tr>
+                                    <tr>
+                                        <?= $adresse['nom']; ?> <?= $adresse['prenom']; ?>
                                     </tr>
                                 </tbody>
                             </table>

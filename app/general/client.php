@@ -26,6 +26,12 @@ class client
         return $data;
     }
 
+    public function fact_default($idclient)
+    {
+        $sql = mysql_query("SELECT * FROM client_adresse_fact WHERE idclient = '$idclient' AND `default` = '1'")or die(mysql_error());
+        $data = mysql_fetch_array($sql);
+        return $data;
+    }
 
 
 
