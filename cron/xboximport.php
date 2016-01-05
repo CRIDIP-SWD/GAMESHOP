@@ -249,26 +249,7 @@ while($client = mysql_fetch_array($sql_client)){
                     <tbody>
                     <tr>
                         <td align="left" style="text-align: left; font-size: 13px; color: #989bb9; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
-                           <table style="width: 100%;">
-                               <tbody>
-                                    <tr>
-                                        <td style="width: 50%;">PROFIL</td>
-                                        <td style="width: 50%;"><?= $error['PROFIL']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%;">GAMERCARD</td>
-                                        <td style="width: 50%;"><?= $error['GAMERCARD']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%;">PRESENCE</td>
-                                        <td style="width: 50%;"><?= $error['PRESENCE']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 50%;">ACTIVITE</td>
-                                        <td style="width: 50%;"><?= $error['ACTIVITE']; ?></td>
-                                    </tr>
-                               </tbody>
-                           </table>
+                           <?= var_dump($error); ?>
                         </td>
                     </tr>
                     </tbody>
