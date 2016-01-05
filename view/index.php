@@ -31,6 +31,9 @@
                     <div class="caption sft" data-x="-300" data-y="300" data-speed="700" data-start="3000" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/nathan.png" />
                     </div>
+                    <div class="caption sft" data-x="1000" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
+                        <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/link.png" />
+                    </div>
                 </li>
             </ul>
 
