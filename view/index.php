@@ -8,21 +8,6 @@
     <div class="tp-banner-container fullscreen-container">
         <div class="tp-banner" >
             <ul>    <!-- SLIDE  -->
-                <!--<li data-transition="boxslide" data-slotamout="7" data-link="#">
-                    <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
-                    <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft">
-                        <div class="btn-group">
-                            <button class="btn btn-default btn-lg"><i class="icon-line2-basket-loaded"></i></button>
-                            <button class="btn btn-default btn-lg">Précommander Maintenant sur PS4</button>
-                        </div>
-                    </div>
-                    <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="560" data-speed="700" data-start="2600" data-easing="easeOutLeft">
-                        <div class="btn-group">
-                            <button class="btn btn-primary btn-lg"><i class="icon-line2-basket-loaded"></i></button>
-                            <button class="btn btn-primary btn-lg">Précommander Maintenant sur Xbox One</button>
-                        </div>
-                    </div>
-                </li>-->
                 <li data-transition="boxslide" data-slotamout="7" data-link="#">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/sky.png">
                     <div class="caption sft" data-x="-300" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
@@ -39,6 +24,21 @@
                     </div>
                     <div class="caption sft" data-x="420" data-y="500" data-speed="700" data-start="4000" data-easing="easeOutLeft">
                         <h2 style="color: white; text-align: center; font-size: 50px">Vous souhaite <br> Bonne Année 2016</h2>
+                    </div>
+                </li>
+                <li data-transition="boxslide" data-slotamout="7" data-link="#">
+                    <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
+                    <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft">
+                        <div class="btn-group">
+                            <button class="btn btn-default btn-lg"><i class="icon-line2-basket-loaded"></i></button>
+                            <button class="btn btn-default btn-lg">Précommander Maintenant sur PS4</button>
+                        </div>
+                    </div>
+                    <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="560" data-speed="700" data-start="2600" data-easing="easeOutLeft">
+                        <div class="btn-group">
+                            <button class="btn btn-primary btn-lg"><i class="icon-line2-basket-loaded"></i></button>
+                            <button class="btn btn-primary btn-lg">Précommander Maintenant sur Xbox One</button>
+                        </div>
                     </div>
                 </li>
             </ul>
