@@ -67,9 +67,9 @@ while($client = mysql_fetch_array($sql_client)){
         
         if($sqlprofile === FALSE)
         {
-            $error = array("PROFIL" => "ERREUR LORS DE L'IMPORT DU PROFIL");
+            $error .= array("PROFIL" => "ERREUR LORS DE L'IMPORT DU PROFIL");
         }else{
-            $error = array("PROFIL" => "OK");
+            $error .= array("PROFIL" => "OK");
         }
     
     //GAMERCARD
@@ -96,9 +96,9 @@ while($client = mysql_fetch_array($sql_client)){
 
     if($sqlgamercard === FALSE)
     {
-        $error = array("GAMERCARD" => "ERREUR LORS DE L'IMPORT DE LA GAMERCARD");
+        $error .= array("GAMERCARD" => "ERREUR LORS DE L'IMPORT DE LA GAMERCARD");
     }else{
-        $error = array("GAMERCARD" => "OK");
+        $error .= array("GAMERCARD" => "OK");
     }
 
     //PRESENCE
@@ -111,9 +111,9 @@ while($client = mysql_fetch_array($sql_client)){
 
     if($sqlpresence === FALSE)
     {
-        $error = array("PRESENCE" => "ERREUR LORS DE L'IMPORT DE LA PRESENCE");
+        $error .= array("PRESENCE" => "ERREUR LORS DE L'IMPORT DE LA PRESENCE");
     }else{
-        $error = array("PRESENCE" => "OK");
+        $error .= array("PRESENCE" => "OK");
     }
 
     //PRESENCE LASTSEEN
@@ -130,9 +130,9 @@ while($client = mysql_fetch_array($sql_client)){
 
     if($sqllastseen === FALSE)
     {
-        $error = array("DERNIER VU" => "ERREUR LORS DE L'IMPORT DU DERNIER VU");
+        $error .= array("DERNIER VU" => "ERREUR LORS DE L'IMPORT DU DERNIER VU");
     }else{
-        $error = array("DERNIER VU" => "OK");
+        $error .= array("DERNIER VU" => "OK");
     }
 
     //ACTIVITY
@@ -156,11 +156,176 @@ while($client = mysql_fetch_array($sql_client)){
 
     if($sqlactivity === FALSE)
     {
-        $error = array("ACTIVITE" => "ERREUR LORS DE L'IMPORT DE L'ACTIVITE");
+        $error .= array("ACTIVITE" => "ERREUR LORS DE L'IMPORT DE L'ACTIVITE");
     }else{
-        $error = array("ACTIVITE" => "OK");
+        $error .= array("ACTIVITE" => "OK");
     }
 
-    var_dump($error);
+    $to = "gamedistri@gmail.com";
+    $sujet = "TACHE CRON - IMPORT XBOX LIVE";
+    $headers = 'Mime-Version: 1.0'."\r\n";
+    $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
+    $headers .= "\r\n";
+    ob_start();
+    ?>
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+    <html xmlns:v="urn:shemas-microsoft-com:vml">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0">
+        <title><?= $sujet; ?></title>
+        <link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    </head>
+    <body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+    <!--TABLE HEAD-->
+    <table bgcolor="#131448" width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td background="http://imgur.com/kBStm0X" bgcolor="#373e80" valign="top">
+                <!--[if gte mso 9]>
+                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+                    <v:fill type="tile" src="http://imgur.com/kBStm0X" color="#373e80" />
+                    <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+                <![endif]-->
+                <div>
+                    <table align="center" width="590" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td height="70" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="text-align: center;">
+                                <a href="http://gestcom.cridip.com">
+                                    <img src="http://vps221243.ovh.net/gameshop/assets/images/logo.png" width="240" border="0" alt="Logo GAMESHOP" />
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center" style="text-align: center; font-size: 25px; color: white; mso-line-height-rule: exactly; line-height: 30px; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
+                                <?= $sujet; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="center">
+                                <table align="center" width="45" border="0" cellpadding="0" cellspacing="0" bgcolor="#1eff83">
+                                    <tbody>
+                                    <tr>
+                                        <td height="4" style="font-size: 4px; line-height: 4px;"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--[if gte mso 9]>
+                </v:textbox>
+                </v:rect>
+                <![endif]-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- / TABLE HEAD -->
+
+    <!-- TABLE CORPS -->
+    <table bgcolor="#2c3164" width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <table align="center" width="590" border="0" cellpadding="0" cellspacing="0">
+                    <tbody>
+                    <tr>
+                        <td align="left" style="text-align: left; font-size: 13px; color: #989bb9; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
+                           <table style="width: 100%;">
+                               <tbody>
+                                    <tr>
+                                        <td style="width: 50%;">PROFIL</td>
+                                        <td style="width: 50%;"><?= $error['PROFIL']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">GAMERCARD</td>
+                                        <td style="width: 50%;"><?= $error['GAMERCARD']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">PRESENCE</td>
+                                        <td style="width: 50%;"><?= $error['PRESENCE']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 50%;">ACTIVITE</td>
+                                        <td style="width: 50%;"><?= $error['ACTIVITE']; ?></td>
+                                    </tr>
+                               </tbody>
+                           </table>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- /TABLE CORPS -->
+
+    <!-- TABLE FOOTER -->
+    <table bgcolor="#131448" width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td background="http://imgur.com/kBStm0X" bgcolor="#373e80" valign="top">
+                <!--[if gte mso 9]>
+                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+                    <v:fill type="tile" src="http://imgur.com/kBStm0X" color="#373e80" />
+                    <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+                <![endif]-->
+                <div>
+                    <table align="center" width="590" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="left" style="text-align: left; font-size: 15px; color: white; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
+                                <img src="http://gestcom.cridip.com/assets/img/logo2x_white.png" width="240" border="0" alt="Logo CRIDIP" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right" style="text-align: right; font-size: 15px; color: white; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
+                                <a href="" style="color: white; padding-right: 5px;"><i class="fa fa-globe"></i></a>
+                                <a href="" style="color: white; padding-right: 5px;"><i class="fa fa-facebook"></i></a>
+                                <a href="" style="color: white; padding-right: 5px;"><i class="fa fa-twitter"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" style="font-size: 30px; line-height: 30px;">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <!-- /TABLE FOOTER -->
+
+    </body>
+    </html>
+    <?php
+    $message = ob_get_contents();
+    mail($to, $sujet, $message, $headers);
 }
 
