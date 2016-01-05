@@ -34,7 +34,7 @@
                     <div class="caption sft" data-x="850" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/link.png" />
                     </div>
-                    <div class="caption sft" data-x="500" data-y="100" data-speed="700" data-start="2500" data-easing="easeOutLeft">
+                    <div class="caption sft" data-x="400" data-y="-100" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/gameshop-logo-400.png" />
                     </div>
                 </li>
