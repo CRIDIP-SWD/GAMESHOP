@@ -30,6 +30,7 @@ $produit_cls = new produit();
 
 if(isset($_SESSION['logged'])){
     $client_cls = new client($_SESSION['email']);
+    $info_client = $client_cls->call('info_client');
 /*
     if(!empty($info_client['pseudo_psn']))
     {
