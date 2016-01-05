@@ -423,7 +423,11 @@ if($_SESSION['logged'] == false) {
                                         <td style="font-weight: 700;">MON ADRESSE</td>
                                     </tr>
                                     <tr>
-                                        <td><?= $adresse['nom']; ?> <?= $adresse['prenom']; ?></td>
+                                        <td>
+                                            <?= $adresse['nom']; ?> <?= $adresse['prenom']; ?><br>
+                                            <?= html_entity_decode($adresse['adresse']); ?><br>
+                                            <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?>
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
