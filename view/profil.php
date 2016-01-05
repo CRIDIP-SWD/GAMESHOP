@@ -431,7 +431,7 @@ if($_SESSION['logged'] == false) {
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
+                            <button type="button" class="button button-3d button-rounded button-green" onclick="window.location.href='index.php?view=profil&sub=adresse'">Modifier mes adresses</button>
                         </div>
                     </div>
                     <div class="col-md-4" style="">
