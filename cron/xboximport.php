@@ -300,7 +300,7 @@ while($client = mysql_fetch_array($sql_client)){
                         </tr>
                         <tr>
                             <td align="left" style="text-align: left; font-size: 15px; color: white; font-family: 'Product Sans',Helvetica, Arial, sans-serif">
-                                <img src="http://gestcom.cridip.com/assets/img/logo2x_white.png" width="240" border="0" alt="Logo CRIDIP" />
+                                <img src="http://vps221243.ovh.net/gameshop/assets/images/logo.png" width="240" border="0" alt="Logo CRIDIP" />
                             </td>
                         </tr>
                         <tr>
