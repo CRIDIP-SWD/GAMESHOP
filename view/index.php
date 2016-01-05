@@ -25,7 +25,7 @@
                 </li>-->
                 <li data-transition="boxslide" data-slotamout="7" data-link="#">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/sky.png">
-                    <div class="caption sft" data-x="0" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
+                    <div class="caption sft" data-x="-300" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/naruto.png" />
                     </div>
                 </li>
