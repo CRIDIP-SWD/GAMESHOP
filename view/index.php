@@ -34,6 +34,9 @@
                     <div class="caption sft" data-x="850" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/link.png" />
                     </div>
+                    <div class="caption sft" data-x="400" data-y="100" data-speed="700" data-start="2500" data-easing="easeOutLeft">
+                        <h2>BONNE ANNEE 2016</h2>
+                    </div>
                 </li>
             </ul>
 
