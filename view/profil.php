@@ -416,18 +416,9 @@ if($_SESSION['logged'] == false) {
                             <h3 style="color: #0000E6;">Mon Carnet d'Adresse</h3>
                             <table style="width: 100%; text-align: left;">
                                 <tbody>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Nom :</td>
-                                    <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Prénom :</td>
-                                    <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Email :</td>
-                                    <td style="width: 75%;"><?= $info_client['email']; ?></td>
-                                </tr>
+                                    <tr>
+                                        <td>MON ADRESSE</td>
+                                    </tr>
                                 </tbody>
                             </table>
                             <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>

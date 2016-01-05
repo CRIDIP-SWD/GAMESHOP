@@ -24,13 +24,12 @@ $fonction = new fonction();
 $head = new head();
 $categorie_cls = new categorie();
 $produit_cls = new produit();
-$client_cls = new client();
 
 
 
 
 if(isset($_SESSION['logged'])){
-    $info_client = $client_cls->info_client($_SESSION['email']);
+    $client_cls = new client($_SESSION['email']);
 /*
     if(!empty($info_client['pseudo_psn']))
     {
