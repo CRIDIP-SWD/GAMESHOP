@@ -420,10 +420,10 @@ if($_SESSION['logged'] == false) {
                                 ?>
                                 <tbody>
                                     <tr>
-                                        <td>MON ADRESSE</td>
+                                        <td style="font-weight: 700;">MON ADRESSE</td>
                                     </tr>
                                     <tr>
-                                        <?= $adresse['nom']; ?> <?= $adresse['prenom']; ?>
+                                        <td><?= $adresse['nom']; ?> <?= $adresse['prenom']; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
