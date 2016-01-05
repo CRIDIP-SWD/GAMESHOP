@@ -37,6 +37,9 @@
                     <div class="caption sft" data-x="400" data-y="-100" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/gameshop-logo-400.png" />
                     </div>
+                    <div class="caption sft" data-x="400" data-y="500" data-speed="700" data-start="4000" data-easing="easeOutLeft">
+                        <h2 style="color: white;">Vous souhaite <br> Bonne Année 2016</h2>
+                    </div>
                 </li>
             </ul>
 
