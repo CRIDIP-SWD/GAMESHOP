@@ -749,7 +749,7 @@ if($_SESSION['logged'] == false) {
                                         <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
                                     </td>
                                     <td>
-                                        <button type="button" class="btn"><i class="icon-remove-sign text-danger icon-2x" onclick="window.location.href='<?= $constante->getUrl(array("core/"), false, false);?>account.php?action=supp-adresse&type=livraison&idadresse=<?= $adresse['idadresse']; ?>'"></i></button>
+                                        <a class="btn" href="<?= $constante->getUrl(array("core/"), false, false);?>account.php?action=supp-adresse&type=livraison&idadresse=<?= $adresse['idadresse']; ?>"><i class="icon-remove-sign text-danger icon-2x"></i></a>
                                     </td>
                                 </tr>
                             <?php } ?>
