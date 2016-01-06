@@ -706,6 +706,53 @@ if($_SESSION['logged'] == false) {
                         </table>
                     </div>
                 </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <caption>
+                                <div class="fancy-title title-dotted-border title-center">
+                                    <h2>Adresse de <span>Livraison</span></h2>
+                                </div>
+                            </caption>
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Alias</th>
+                                <th>Identité</th>
+                                <th>Adresse</th>
+                                <th>Téléphone</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $sql_adresse_liv = mysql_query("SELECT * FROM client_adresse_liv WHERE idclient = '$idclient'")or die(mysql_error());
+                            while($adresse = mysql_fetch_array($sql_adresse_liv)){
+                                ?>
+                                <tr>
+                                    <td style="text-align: center;">
+                                        <?php if($adresse['default'] == 1): ?>
+                                            <i class="icon-star3 icon-2x text-center text-warning" data-toggle="tooltip" data-original-title="Par Default"></i>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td><?= $adresse['alias']; ?></td>
+                                    <td>
+                                        <?php if(!empty($adresse['societe'])){echo "<strong>".$adresse['societe']."</strong><br><i>".$adresse['nom']." ".$adresse['prenom']."</i>";}else{echo "<strong>".$adresse['nom']." ".$adresse['prenom']."</strong>";} ?>
+                                    </td>
+                                    <td>
+                                        <?= html_entity_decode($adresse['adresse']); ?><br>
+                                        <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?><br>
+                                        FRANCE
+                                    </td>
+                                    <td>
+                                        <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
