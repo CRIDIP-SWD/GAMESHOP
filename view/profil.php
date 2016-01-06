@@ -884,6 +884,21 @@ if($_SESSION['logged'] == false) {
         toastr.success('Votre compte Steam est Maintenant lié à notre Boutique.','Succès')
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-adresse-fact'){ ?>
+    <script type="text/javascript">
+        setTimeout(function () {
+            $.notific8("L'adresse postal de facturation à bien été ajouter.",{ sticky:true, horizontalEdge:"top", theme:"success" ,heading:"SUCCES"})
+        }, 1000);
+    </script>
+<?php } ?>
+ <?php if(isset($_GET['success']) && $_GET['success'] == 'add-adresse-liv'){ ?>
+     <script type="text/javascript">
+         setTimeout(function () {
+             $.notific8("L'adresse postal de Livraison à bien été ajouter.",{ sticky:true, horizontalEdge:"top", theme:"success" ,heading:"SUCCES"})
+         }, 1000);
+     </script>
+ <?php } ?>
+  
  
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-psn'){ ?>
     <script type="text/javascript">
@@ -898,6 +913,20 @@ if($_SESSION['logged'] == false) {
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-steam'){ ?>
     <script type="text/javascript">
         toastr.error('Une erreur à eu lieu lors de la liaison de votre compte Steam avec la boutique, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-adresse-fact'){ ?>
+    <script type="text/javascript">
+        setTimeout(function () {
+            $.notific8("Une erreur à eu lieu lors de l'ajout de l'adresse de facturation",{ sticky:true, horizontalEdge:"top", theme:"danger" ,heading:"ERREUR"})
+        }, 1000);
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-adresse-liv'){ ?>
+    <script type="text/javascript">
+        setTimeout(function () {
+            $.notific8("Une erreur à eu lieu lors de l'ajout de l'adresse de livraison",{ sticky:true, horizontalEdge:"top", theme:"danger" ,heading:"ERREUR"})
+        }, 1000);
     </script>
 <?php } ?>
 

@@ -57,5 +57,35 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-steam')
 if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
 {
     include "../app/classe.php";
-
+    $idclient = $_POST['idclient'];
+    $alias = $_POST['alias'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $societe = $_POST['societe'];
+    $telephone = $_POST['telephone'];
+    $adresse = $_POST['adresse'];
+    $code_postal = $_POST['code_postal'];
+    $ville = $_POST['ville'];
+    if(isset($_POST['default'])) {$default = 1;}else{$default = 0;}
+    
+    if($_POST['type_adresse'] == 'facturation')
+    {
+        $adresse = mysql_query("INSERT INTO client_adresse_fact(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$telephone', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
+        if($adresse === TRUE)
+        {
+            header("Location: ../index.php?view=profil&sub=adresse&success=add-adresse-fact");
+        }else{
+            header("Location: ../index.php?view=profil&sub=adresse&error=add-adresse-fact");
+        }
+    }
+    if($_POST['type_adresse'] == 'livraison')
+    {
+        $adresse = mysql_query("INSERT INTO client_adresse_liv(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$telephone', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
+        if($adresse === TRUE)
+        {
+            header("Location: ../index.php?view=profil&sub=adresse&success=add-adresse-liv");
+        }else{
+            header("Location: ../index.php?view=profil&sub=adresse&error=add-adresse-liv");
+        }
+    }
 }
