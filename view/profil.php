@@ -685,7 +685,7 @@ if($_SESSION['logged'] == false) {
                                 <tr>
                                     <td style="text-align: center;">
                                         <?php if($adresse['default'] == 1): ?>
-                                            <i class="icon-star3 text-center text-warning"></i>
+                                            <i class="icon-star3 icon-2x text-center text-warning"></i>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
