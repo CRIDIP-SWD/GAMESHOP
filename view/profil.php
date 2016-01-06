@@ -663,7 +663,11 @@ if($_SESSION['logged'] == false) {
                 <div class="row">
                     <div class="col-md-12">
                         <table class="table table-bordered">
-                            <caption>Adresse de Facturation</caption>
+                            <caption>
+                                <div class="fancy-title title-dotted-border title-center">
+                                    <h2>Adresse de <span>Facturation</span></h2>
+                                </div>
+                            </caption>
                             <thead>
                                 <tr>
                                     <th></th>
