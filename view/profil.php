@@ -677,6 +677,20 @@ if($_SESSION['logged'] == false) {
                                     <th>Téléphone</th>
                                 </tr>
                             </thead>
+                            <tbody>
+                            <?php
+                            $sql_adresse_facture = mysql_query("SELECT * FROM client_adresse_fact WHERE idclient = '$idclient'")or die(mysql_error());
+                            while($adresse = mysql_fetch_array($sql_adresse_facture)){
+                            ?>
+                                <tr>
+                                    <th>
+                                        <?php if($adresse['default'] == 1): ?>
+                                            <i class="icon-star3"></i>
+                                        <?php endif; ?>
+                                    </th>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
