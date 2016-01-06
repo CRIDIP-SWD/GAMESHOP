@@ -756,6 +756,43 @@ if($_SESSION['logged'] == false) {
             </div>
         </div>
     </section>
+    <div class="modal fade" id="add-adresse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-body">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel"><i class="icon-plus"></i> Ajouter une adresse</h4>
+                    </div>
+                    <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Type d'adresse</label>
+                                <div class="col-md-9">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="type_adresse" id="type_adresse" value="facturation" checked>
+                                            Facturation
+                                        </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="type_adresse" id="type_adresse" value="livraison" checked>
+                                            Livraison
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-primary" name="action" value="edit-client">Valider</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>
 
 
