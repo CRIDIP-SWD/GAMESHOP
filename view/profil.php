@@ -485,7 +485,7 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    while($vourcher = $vourcher_cls->last_vourcher_clt($info_client['idclient'])){
+                                    while($vourcher = array($vourcher_cls->last_vourcher_clt($info_client['idclient']))){
                                         var_dump($vourcher);
                                         die();
                                     ?>
