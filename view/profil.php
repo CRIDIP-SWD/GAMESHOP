@@ -446,7 +446,8 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    while($cmd = $cmd_cls->last_cmd($info_client['idclient'])){
+                                    $sql_cmd = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4")or die(mysql_error());
+                                    while($cmd = mysql_fetch_array($sql_cmd)){
                                         ?>
                                         <tr>
                                             <td><a href=""><?= date("d/m/Y", $cmd['date_commande']); ?> - <?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></a></td>
@@ -503,7 +504,7 @@ if($_SESSION['logged'] == false) {
                                     </tbody>
                                 </table>
                             <?php } ?>
-                            <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
+                            <button type="button" class="button button-3d button-rounded button-green" onclick="window.location.href='index.php?view=profil&sub=vourcher'">Voir mes bons d'achats</button>
                         </div>
                     </div>
                     <div class="col-md-4" style="">
