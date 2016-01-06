@@ -31,13 +31,13 @@
                     <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <div class="btn-group">
                             <button class="btn btn-default btn-lg"><i class="icon-line2-basket-loaded"></i></button>
-                            <button class="btn btn-default btn-lg">Précommander Maintenant sur PS4</button>
+                            <button class="btn btn-default btn-lg" onclick="window.location.href='index.php?view=produit&ref_produit=1'">Précommander Maintenant sur PS4</button>
                         </div>
                     </div>
                     <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="560" data-speed="700" data-start="2600" data-easing="easeOutLeft">
                         <div class="btn-group">
                             <button class="btn btn-primary btn-lg"><i class="icon-line2-basket-loaded"></i></button>
-                            <button class="btn btn-primary btn-lg">Précommander Maintenant sur Xbox One</button>
+                            <button class="btn btn-primary btn-lg" onclick="window.location.href='index.php?view=produit&ref_produit=2'">Précommander Maintenant sur Xbox One</button>
                         </div>
                     </div>
                 </li>
