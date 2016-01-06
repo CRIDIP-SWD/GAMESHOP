@@ -90,3 +90,32 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
         }
     }
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-adresse')
+{
+    include "../app/classe.php";
+    $type = $_GET['type'];
+    $idadresse = $_GET['idadresse'];
+
+    if($type = 'facturation')
+    {
+        $sql = mysql_query("DELETE FROM client_adresse_fact WHERE idadresse = '$idadresse'")or die(mysql_error());
+
+        if($sql === TRUE)
+        {
+            header("Location: ../index.php?view=profil&sub=adresse&success=supp-adresse-fact");
+        }else{
+            header("Location: ../index.php?view=profil&sub=adresse&error=supp-adresse-fact");
+        }
+    }
+    if($type = 'livraison')
+    {
+        $sql = mysql_query("DELETE FROM client_adresse_liv WHERE idadresse = '$idadresse'")or die(mysql_error());
+
+        if($sql === TRUE)
+        {
+            header("Location: ../index.php?view=profil&sub=adresse&success=supp-adresse-liv");
+        }else{
+            header("Location: ../index.php?view=profil&sub=adresse&error=supp-adresse-liv");
+        }
+    }
+}
