@@ -11,6 +11,14 @@ namespace App\commande;
 
 class commande
 {
+
+    public function count_cmd($idclient)
+    {
+        $sql = mysql_query("SELECT COUNT(idcommande) FROM commande WHERE idclient = '$idclient' LIMIT 4")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
+
     public function last_cmd($idclient)
     {
         $sql = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4")or die(mysql_error());

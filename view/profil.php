@@ -440,17 +440,27 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-line2-basket i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Achats</h3>
-                            <table style="width: 100%; text-align: left;">
-                                <tbody>
-                                <?php
-                                while($cmd = $cmd_cls->last_cmd($info_client['idclient'])){
-                                ?>
-                                    <tr>
-                                        <td><a href=""><?= date("d/m/Y", $cmd['date_commande']); ?> - <?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></a></td>
-                                    </tr>
-                                <?php } ?>
-                                </tbody>
-                            </table>
+                            <?php if($cmd_cls->count_cmd($info_client['idclient']) != 0){ ?>
+                                <table style="width: 100%; text-align: left;">
+                                    <tbody>
+                                    <?php
+                                    while($cmd = $cmd_cls->last_cmd($info_client['idclient'])){
+                                        ?>
+                                        <tr>
+                                            <td><a href=""><?= date("d/m/Y", $cmd['date_commande']); ?> - <?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></a></td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            <?php }else{ ?>
+                                <table style="width: 100%; text-align: left;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="w100%">Vous n'avez pas effectuer d'achat récemment !</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            <?php } ?>
                             <button type="button" class="button button-3d button-rounded button-green" onclick="window.location.href='index.php?view=profil&sub=achat'">Voir mes achat</button>
                         </div>
                     </div>
