@@ -1,6 +1,8 @@
 <?php
 if($_SESSION['logged'] == false) {
     header("Location: index.php?view=login&warning=no-connect");
+}else{
+    $idclient = $info_client['idclient'];
 }
 ?>
 
@@ -485,9 +487,8 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    while($vourcher = array($vourcher_cls->last_vourcher_clt($info_client['idclient']))){
-                                        var_dump($vourcher);
-                                        die();
+                                    $sql_vourcher = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' LIMIT 4")or die(mysql_error());
+                                    while($vourcher = mysql_fetch_array($sql_vourcher)){
                                     ?>
                                         <tr>
                                             <td style="width: 100%;">
