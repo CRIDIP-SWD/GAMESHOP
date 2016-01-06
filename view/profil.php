@@ -749,7 +749,7 @@ if($_SESSION['logged'] == false) {
                                         <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
                                     </td>
                                     <td>
-                                        <button type="button"><i class="icon-remove-sign text-danger icon-2x"></i></button>
+                                        <button type="button" class="btn"><i class="icon-remove-sign text-danger icon-2x"></i></button>
                                     </td>
                                 </tr>
                             <?php } ?>
