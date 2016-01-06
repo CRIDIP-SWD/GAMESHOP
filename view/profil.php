@@ -642,8 +642,8 @@ if($_SESSION['logged'] == false) {
             <h1>MON COMPTE</h1>
             <span>Bienvenue <?= $info_client['prenom_client']; ?> <?= $info_client['nom_client']; ?></span>
             <ol class="breadcrumb">
-                <li><a href="#">GAMESHOP</a></li>
-                <li><a href="#">MON COMPTE</a></li>
+                <li><a href="index.php?view=index">GAMESHOP</a></li>
+                <li><a href="index.php?view=profil">MON COMPTE</a></li>
                 <li class="active">Mon carnet d'adresse</li>
             </ol>
         </div>
