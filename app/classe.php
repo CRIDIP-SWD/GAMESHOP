@@ -15,6 +15,7 @@ use App\fonction;
 use App\general\categorie;
 use App\general\client;
 use App\general\head;
+use App\general\newsletter;
 use App\general\produit;
 use App\networker\xboxLive;
 use SteamApi\Player;
@@ -28,6 +29,7 @@ $head = new head();
 $categorie_cls = new categorie();
 $produit_cls = new produit();
 $client_cls = new client();
+$newsletter_cls = new newsletter();
 
 $cmd_cls = new commande();
 $vourcher_cls = new vourcher();

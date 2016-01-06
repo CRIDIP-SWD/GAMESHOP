@@ -544,23 +544,14 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-envelope2 i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Newsletter</h3>
-                            <table style="width: 100%; text-align: left;">
-                                <tbody>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Nom :</td>
-                                    <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Prénom :</td>
-                                    <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Email :</td>
-                                    <td style="width: 75%;"><?= $info_client['email']; ?></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Gérer mon abonnement</button>
+                            <?php if($newsletter_cls->count_newsletter($idclient) != 0){ ?>
+                                <span class="text-center"><i class="icon-check icon-3x text-success"></i></span><br>
+                                <span class="text-center">Inscrit à la newsletter</span>
+                            <?php }else{ ?>
+                                <span class="text-center"><i class="icon-remove-sign icon-3x text-danger"></i></span><br>
+                                <span class="text-center">Non inscrit à la newsletter</span>
+                            <?php } ?>
+                            <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client-newsletter">Gérer mon abonnement</button>
                         </div>
                     </div>
                 </div>
