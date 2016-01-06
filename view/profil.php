@@ -493,9 +493,9 @@ if($_SESSION['logged'] == false) {
                                         <tr>
                                             <td style="width: 100%;">
                                                 <?php if($vourcher['perempsion'] <= time()){ ?>
-                                                    <p class="text-danger">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></p>
+                                                    <span class="text-danger">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></span>
                                                 <?php }else{ ?>
-                                                    <p class="text-info">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></p>
+                                                    <span class="text-info">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></span>
                                                 <?php } ?>
                                             </td>
                                         </tr>
