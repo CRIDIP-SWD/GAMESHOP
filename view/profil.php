@@ -649,6 +649,11 @@ if($_SESSION['logged'] == false) {
         </div>
 
     </section><!-- #page-title end -->
+    <section id="content">
+        <div class="content-wrap">
+
+        </div>
+    </section>
 <?php endif; ?>
 
 
