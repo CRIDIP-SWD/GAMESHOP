@@ -786,8 +786,48 @@ if($_SESSION['logged'] == false) {
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3">Alias <span class="required">*</span></label>
+                                <label class="control-label col-md-3" for="r">Alias <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" id="r" name="alias" class="form-control" required/>
+                                </div>
                             </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="r">Nom <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" id="r" name="nom" class="form-control" required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="r">Prénom <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" id="r" name="prenom" class="form-control" required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="r">Société</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="r" name="societe" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="r">Téléphone</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="r telephone" name="telephone" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="r">Alias <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <textarea name="adresse" id="r" cols="30" rows="10"></textarea>
+                                </div>
+                            </div>
+
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
@@ -833,3 +873,8 @@ if($_SESSION['logged'] == false) {
         toastr.error('Une erreur à eu lieu lors de la liaison de votre compte Steam avec la boutique, <a href="mailto: webmaster@gameshop.com">contacter l\'administrateur du site</a>.','ERREUR')
     </script>
 <?php } ?>
+
+<!-- AUTRE JS -->
+<script type="text/javascript">
+    $("#telephone").maskInput('0033999999999');
+</script>
