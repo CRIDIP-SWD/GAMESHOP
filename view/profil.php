@@ -692,6 +692,11 @@ if($_SESSION['logged'] == false) {
                                     <td>
                                         <?php if(!empty($adresse['societe'])){echo "<strong>".$adresse['societe']."</strong><br><i>".$adresse['nom']." ".$adresse['prenom']."</i>";}else{echo "<strong>".$adresse['nom']." ".$adresse['prenom']."</strong>";} ?>
                                     </td>
+                                    <td>
+                                        <?= html_entity_decode($adresse['adresse']); ?><br>
+                                        <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?><br>
+                                        FRANCE
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
