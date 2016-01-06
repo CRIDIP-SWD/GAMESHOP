@@ -970,7 +970,7 @@ if($_SESSION['logged'] == false) {
                                     while($cmd = mysql_fetch_array($sql_cmd)){
                                     ?>
                                         <tr>
-                                            <td><?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("m", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                            <td class="text-center"><?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("m", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
