@@ -971,6 +971,8 @@ if($_SESSION['logged'] == false) {
                                     ?>
                                         <tr>
                                             <td class="text-center"><?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("m", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                            <td class="text-center"><?= $cmd['num_commande']; ?></td>
+                                            <td class="text-center" style="font-weight: 700; color: #0E76A8;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
