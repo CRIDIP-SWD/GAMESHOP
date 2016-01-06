@@ -446,7 +446,7 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    $sql_cmd = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4 ASC")or die(mysql_error());
+                                    $sql_cmd = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande ASC LIMIT 4 ")or die(mysql_error());
                                     while($cmd = mysql_fetch_array($sql_cmd)){
                                         ?>
                                         <tr>
