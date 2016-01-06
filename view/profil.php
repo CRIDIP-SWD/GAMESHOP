@@ -814,16 +814,41 @@ if($_SESSION['logged'] == false) {
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3" for="r">Téléphone</label>
+                                <label class="control-label col-md-3" for="telephone">Téléphone <span class="required">*</span></label>
                                 <div class="col-md-9">
-                                    <input type="text" id="telephone" name="telephone" class="form-control" mask="9999999999"/>
+                                    <input type="text" id="telephone" name="telephone" class="form-control" required mask="9999999999"/>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-md-3" for="r">Alias <span class="required">*</span></label>
+                                <label class="control-label col-md-3" for="r">Adresse <span class="required">*</span></label>
                                 <div class="col-md-9">
                                     <textarea name="adresse" id="r" cols="10"  class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="code_postal">Code Postal <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" id="code_postal" name="code_postal" class="form-control" required mask="99999"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="r">Ville <span class="required">*</span></label>
+                                <div class="col-md-9">
+                                    <input type="text" id="r" name="ville" class="form-control" required/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="default" value="" />
+                                            Adresse par Default
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
 
@@ -831,7 +856,7 @@ if($_SESSION['logged'] == false) {
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                            <button type="submit" class="btn btn-primary" name="action" value="edit-client">Valider</button>
+                            <button type="submit" class="btn btn-primary" name="action" value="add-adresse">Valider</button>
                         </div>
                     </form>
                 </div>
@@ -877,4 +902,5 @@ if($_SESSION['logged'] == false) {
 <!-- AUTRE JS -->
 <script type="text/javascript">
     $("#telephone").maskInput();
+    $("#code_postal").maskInput();
 </script>
