@@ -816,7 +816,7 @@ if($_SESSION['logged'] == false) {
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="r">Téléphone</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="telephone" name="telephone" class="form-control" />
+                                    <input type="text" id="telephone" name="telephone" class="form-control" mask="9999999999"/>
                                 </div>
                             </div>
 
@@ -876,5 +876,5 @@ if($_SESSION['logged'] == false) {
 
 <!-- AUTRE JS -->
 <script type="text/javascript">
-    $("#telephone").maskInput('(+33)9 99 99 99 99');
+    $("#telephone").maskInput();
 </script>
