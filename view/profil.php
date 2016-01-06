@@ -697,6 +697,9 @@ if($_SESSION['logged'] == false) {
                                         <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?><br>
                                         FRANCE
                                     </td>
+                                    <td>
+                                        <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
