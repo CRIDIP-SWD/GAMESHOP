@@ -450,7 +450,7 @@ if($_SESSION['logged'] == false) {
                                     while($cmd = mysql_fetch_array($sql_cmd)){
                                         ?>
                                         <tr>
-                                            <td><a href="">Commande N° <?= $cmd['num_commande']; ?></a></td>
+                                            <td>Commande N° <?= $cmd['num_commande']; ?></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
