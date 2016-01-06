@@ -443,11 +443,12 @@ if($_SESSION['logged'] == false) {
                             <table style="width: 100%; text-align: left;">
                                 <tbody>
                                 <?php
-                                $cmd = $cmd_cls->last_cmd($info_client['idclient']);
+                                while($cmd = $cmd_cls->last_cmd($info_client['idclient'])){
                                 ?>
                                     <tr>
                                         <td><a href=""><?= date("d/m/Y", $cmd['date_commande']); ?> - <?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></a></td>
                                     </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
                             <button type="button" class="button button-3d button-rounded button-green" onclick="window.location.href='index.php?view=profil&sub=achat'">Voir mes achat</button>
