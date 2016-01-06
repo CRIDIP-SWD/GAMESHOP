@@ -486,6 +486,8 @@ if($_SESSION['logged'] == false) {
                                     <tbody>
                                     <?php
                                     while($vourcher = $vourcher_cls->last_vourcher_clt($info_client['idclient'])){
+                                        var_dump($vourcher);
+                                        die();
                                     ?>
                                         <tr>
                                             <td style="width: 100%;">
