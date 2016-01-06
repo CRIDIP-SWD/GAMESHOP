@@ -883,7 +883,7 @@ if($_SESSION['logged'] == false) {
             <ol class="breadcrumb">
                 <li><a href="index.php?view=index">GAMESHOP</a></li>
                 <li><a href="index.php?view=profil">MON COMPTE</a></li>
-                <li class="active">Mon carnet d'adresse</li>
+                <li class="active">Mes Achats</li>
             </ol>
         </div>
 
