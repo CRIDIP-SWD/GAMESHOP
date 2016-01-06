@@ -874,6 +874,21 @@ if($_SESSION['logged'] == false) {
         </div>
     </div>
 <?php endif; ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'achat'): ?>
+    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
+
+        <div class="container clearfix">
+            <h1>MON COMPTE</h1>
+            <span>Bienvenue <?= $info_client['prenom_client']; ?> <?= $info_client['nom_client']; ?></span>
+            <ol class="breadcrumb">
+                <li><a href="index.php?view=index">GAMESHOP</a></li>
+                <li><a href="index.php?view=profil">MON COMPTE</a></li>
+                <li class="active">Mon carnet d'adresse</li>
+            </ol>
+        </div>
+
+    </section><!-- #page-title end -->
+<?php endif; ?>
 
 
 
