@@ -722,6 +722,7 @@ if($_SESSION['logged'] == false) {
                                 <th>Identité</th>
                                 <th>Adresse</th>
                                 <th>Téléphone</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -746,6 +747,9 @@ if($_SESSION['logged'] == false) {
                                     </td>
                                     <td>
                                         <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
+                                    </td>
+                                    <td>
+                                        <button type="button" class="button"><i class="icon-remove-sign text-danger"></i></button>
                                     </td>
                                 </tr>
                             <?php } ?>
