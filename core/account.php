@@ -63,6 +63,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
     $prenom = $_POST['prenom'];
     $societe = htmlentities(addslashes($_POST['societe']));
     $telephone = $_POST['telephone'];
+    $new_tel = "0033".substr($telephone, 1);
     $adresse = htmlentities(addslashes($_POST['adresse']));
     $code_postal = $_POST['code_postal'];
     $ville = htmlentities(addslashes($_POST['ville']));
