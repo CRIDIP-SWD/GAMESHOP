@@ -7,6 +7,7 @@ include dirname(__DIR__)."/vendor/autoload.php";
 
 use App\app;
 use App\commande\commande;
+use App\commande\reservation;
 use App\commande\vourcher;
 use App\constante;
 use App\date_format;
@@ -30,6 +31,7 @@ $client_cls = new client();
 
 $cmd_cls = new commande();
 $vourcher_cls = new vourcher();
+$resa_cls = new reservation();
 
 
 

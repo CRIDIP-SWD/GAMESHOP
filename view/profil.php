@@ -513,22 +513,28 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-calendar3 i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Reservations</h3>
-                            <table style="width: 100%; text-align: left;">
-                                <tbody>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Nom :</td>
-                                    <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Prénom :</td>
-                                    <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Email :</td>
-                                    <td style="width: 75%;"><?= $info_client['email']; ?></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <?php if($resa_cls->count_resa($idclient) != 0){ ?>
+                                <table style="width: 100%; text-align: left;">
+                                    <tbody>
+                                    <?php
+                                    $sql_resa = mysql_query("SELECT * FROM client_reservation WHERE idclient = '$idclient' ORDER BY num_reservation ASC LIMIT 4")or die(mysql_error());
+                                    while($resa = mysql_fetch_array($sql_resa)){
+                                    ?>
+                                        <tr>
+                                            <td><span class="text-info">Réservation N° <?= $resa['num_reservation']; ?></span></td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            <?php }else{ ?>
+                                <table style="width: 100%; text-align: left;">
+                                    <tbody>
+                                        <tr>
+                                            <td style="width: 100%;">Aucune réservation</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            <?php } ?>
                             <button type="button" class="button button-3d button-rounded button-green" onclick="window.location.href='index.php?view=profil&sub=reservation'">Voir mes reservations</button>
                         </div>
                     </div>
