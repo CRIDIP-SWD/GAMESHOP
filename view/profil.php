@@ -892,10 +892,10 @@ if($_SESSION['logged'] == false) {
         <div class="content-wrap">
             <div class="container-fullwidth clearfix bottommargin-lg">
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
 
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-md-9">
                         <div class="container clearfix bottommargin">
                             <div class="fancy-title title-dotted-border title-center">
                                 <h1>Listing de vos <span>Achats</span></h1>
