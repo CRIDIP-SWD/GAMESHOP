@@ -6,6 +6,7 @@ require dirname(__DIR__)."/app/autoloader.php";
 include dirname(__DIR__)."/vendor/autoload.php";
 
 use App\app;
+use App\commande\commande;
 use App\constante;
 use App\date_format;
 use App\fonction;
@@ -25,6 +26,8 @@ $head = new head();
 $categorie_cls = new categorie();
 $produit_cls = new produit();
 $client_cls = new client();
+
+$cmd_cls = new commande();
 
 
 
