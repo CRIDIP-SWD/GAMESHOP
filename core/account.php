@@ -71,7 +71,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
     
     if($_POST['type_adresse'] == 'facturation')
     {
-        $adresse = mysql_query("INSERT INTO client_adresse_fact(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$telephone', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
+        $adresse = mysql_query("INSERT INTO client_adresse_fact(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$new_tel', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
         if($adresse === TRUE)
         {
             header("Location: ../index.php?view=profil&sub=adresse&success=add-adresse-fact");
@@ -81,7 +81,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
     }
     if($_POST['type_adresse'] == 'livraison')
     {
-        $adresse = mysql_query("INSERT INTO client_adresse_liv(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$telephone', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
+        $adresse = mysql_query("INSERT INTO client_adresse_liv(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$new_tel', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
         if($adresse === TRUE)
         {
             header("Location: ../index.php?view=profil&sub=adresse&success=add-adresse-liv");
