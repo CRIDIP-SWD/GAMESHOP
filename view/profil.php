@@ -651,11 +651,29 @@ if($_SESSION['logged'] == false) {
     </section><!-- #page-title end -->
     <section id="content">
         <div class="content-wrap">
-            <div class="container clearfix bottommargin-lg">
+            <div class="container clearfix">
                 <div class="promo promo-border promo-full bottommargin header-stick">
                     <div class="container clearfix">
                         <h3>MON CARNET D'ADRESSE</h3>
                         <a class="button button-xlarge button-rounded" data-toggle="modal" href="#add-adresse"><i class="icon-plus"></i> Ajouter une adresse</a>
+                    </div>
+                </div>
+            </div>
+            <div class="container clearfix bottommargin-lg">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-bordered">
+                            <caption>Adresse de Facturation</caption>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Alias</th>
+                                    <th>Identité</th>
+                                    <th>Adresse</th>
+                                    <th>Téléphone</th>
+                                </tr>
+                            </thead>
+                        </table>
                     </div>
                 </div>
             </div>
