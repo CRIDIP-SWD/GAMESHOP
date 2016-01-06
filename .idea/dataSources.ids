@@ -727,7 +727,11 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="198" parent="23" name="PRIMARY">
+      <column id="198" parent="23" name="perempsion">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="199" parent="23" name="PRIMARY">
         <columns>idvourcher</columns>
         <primary>1</primary>
       </key>
