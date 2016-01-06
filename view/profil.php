@@ -842,7 +842,8 @@ if($_SESSION['logged'] == false) {
                             </div>
 
                             <div class="form-group">
-                                <div class="col-md-12">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-9">
                                     <div class="checkbox">
                                         <label>
                                             <input type="checkbox" name="default" value="" />
