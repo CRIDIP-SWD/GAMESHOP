@@ -688,6 +688,10 @@ if($_SESSION['logged'] == false) {
                                             <i class="icon-star3 icon-2x text-center text-warning" data-toggle="tooltip" data-original-title="Par Default"></i>
                                         <?php endif; ?>
                                     </td>
+                                    <td><?= $adresse['alias']; ?></td>
+                                    <td>
+                                        <?php if(!empty($adresse['societe'])){echo "<strong>".$adresse['societe']."</strong><br><i>".$adresse['nom']." ".$adresse['prenom']."</i>";}else{echo "<strong>".$adresse['nom']." ".$adresse['prenom']."</strong>";} ?>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
