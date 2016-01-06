@@ -7,6 +7,7 @@ include dirname(__DIR__)."/vendor/autoload.php";
 
 use App\app;
 use App\commande\commande;
+use App\commande\vourcher;
 use App\constante;
 use App\date_format;
 use App\fonction;
@@ -28,6 +29,7 @@ $produit_cls = new produit();
 $client_cls = new client();
 
 $cmd_cls = new commande();
+$vourcher_cls = new vourcher();
 
 
 

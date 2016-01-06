@@ -13,7 +13,7 @@ class commande
 {
     public function last_cmd($idclient)
     {
-        $sql = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 1")or die(mysql_error());
+        $sql = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4")or die(mysql_error());
         $data = mysql_fetch_array($sql);
         return $data;
     }

@@ -450,7 +450,7 @@ if($_SESSION['logged'] == false) {
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
+                            <button type="button" class="button button-3d button-rounded button-green" onclick="window.location.href='index.php?view=profil&sub=achat'">Voir mes achat</button>
                         </div>
                     </div>
                 </div>
@@ -462,22 +462,33 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-euro i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Bon d'Achat</h3>
-                            <table style="width: 100%; text-align: left;">
-                                <tbody>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Nom :</td>
-                                    <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Prénom :</td>
-                                    <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td style="font-weight: bold; width: 25%;">Email :</td>
-                                    <td style="width: 75%;"><?= $info_client['email']; ?></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <?php if($vourcher_cls->count_vourcher_clt($info_client['idclient']) == 0){ ?>
+                                <table style="width: 100%; text-align: left;">
+                                    <tbody>
+                                    <tr>
+                                        <td style="width: 100%;">Vous n'avez pas de bon d'achat de disponible</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            <?php }else{ ?>
+                                <table style="width: 100%; text-align: left;">
+                                    <tbody>
+                                    <?php
+                                    while($vourcher = $vourcher_cls->last_vourcher_clt($info_client['idclient'])){
+                                    ?>
+                                        <tr>
+                                            <td style="width: 100%;">
+                                                <?php if($vourcher['perempsion'] <= time()){ ?>
+                                                    <p class="text-danger">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></p>
+                                                <?php }else{ ?>
+                                                    <p class="text-info">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></p>
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            <?php } ?>
                             <button type="button" class="button button-3d button-rounded button-green" data-toggle="modal" href="#edit-client">Modifier mes informations</button>
                         </div>
                     </div>
