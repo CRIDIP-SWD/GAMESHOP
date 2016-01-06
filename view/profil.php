@@ -766,6 +766,7 @@ if($_SESSION['logged'] == false) {
                     </div>
                     <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
                         <div class="modal-body">
+
                             <div class="form-group">
                                 <label class="control-label col-md-3">Type d'adresse</label>
                                 <div class="col-md-9">
@@ -782,6 +783,10 @@ if($_SESSION['logged'] == false) {
                                         </label>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Alias <span class="required">*</span></label>
                             </div>
                         </div>
                         <div class="modal-footer">
