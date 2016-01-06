@@ -488,7 +488,7 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    $sql_vourcher = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' LIMIT 4 ASC")or die(mysql_error());
+                                    $sql_vourcher = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' ORDER BY perempsion ASC LIMIT 4")or die(mysql_error());
                                     while($vourcher = mysql_fetch_array($sql_vourcher)){
                                     ?>
                                         <tr>
