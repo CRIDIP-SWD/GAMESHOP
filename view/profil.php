@@ -876,5 +876,5 @@ if($_SESSION['logged'] == false) {
 
 <!-- AUTRE JS -->
 <script type="text/javascript">
-    $("#telephone").maskInput('0033999999999');
+    $("#telephone").maskInput('0033.999999999');
 </script>
