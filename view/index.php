@@ -26,7 +26,7 @@
                         <h2 style="color: white; text-align: center; font-size: 50px">Vous souhaite <br> Bonne Année 2016</h2>
                     </div>
                 </li>
-                <li data-transition="boxslide" data-slotamout="7" data-link="#">
+                <li data-transition="boxslide" data-slotamout="7">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/nuns4.jpg">
                     <div class="caption sft" style="font-size: 56px; color: #fff;" data-x="800" data-y="500" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <div class="btn-group">
