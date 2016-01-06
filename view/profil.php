@@ -890,7 +890,7 @@ if($_SESSION['logged'] == false) {
     </section><!-- #page-title end -->
     <section id="content">
         <div class="content-wrap">
-            <div class="container-fullwidth clearfix bottommargin-lg">
+            <div class="container clearfix bottommargin-lg">
                 <div class="row">
                     <div class="col-md-3">
                         <div class="widget clearfix">
