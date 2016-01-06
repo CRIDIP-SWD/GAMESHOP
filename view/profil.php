@@ -823,7 +823,7 @@ if($_SESSION['logged'] == false) {
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="r">Alias <span class="required">*</span></label>
                                 <div class="col-md-9">
-                                    <textarea name="adresse" id="r" cols="30" rows="10"></textarea>
+                                    <textarea name="adresse" id="r" cols="10"  class="form-control"></textarea>
                                 </div>
                             </div>
 
