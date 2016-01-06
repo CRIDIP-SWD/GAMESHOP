@@ -816,7 +816,7 @@ if($_SESSION['logged'] == false) {
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="r">Téléphone</label>
                                 <div class="col-md-9">
-                                    <input type="text" id="r telephone" name="telephone" class="form-control" />
+                                    <input type="text" id="telephone" name="telephone" class="form-control" />
                                 </div>
                             </div>
 
