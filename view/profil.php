@@ -450,7 +450,7 @@ if($_SESSION['logged'] == false) {
                                     while($cmd = mysql_fetch_array($sql_cmd)){
                                         ?>
                                         <tr>
-                                            <td><a href=""><?= date("d/m/Y", $cmd['date_commande']); ?> - <?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></a></td>
+                                            <td><a href="">Commande N° <?= $cmd['num_commande']; ?> d'un montant de <?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></a></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
