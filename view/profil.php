@@ -890,8 +890,10 @@ if($_SESSION['logged'] == false) {
     </section><!-- #page-title end -->
     <section id="content">
         <div class="content-wrap">
-            <div class="container-fluid clearfix bottommargin">
-                TEST
+            <div class="container clearfix bottommargin">
+                <div class="fancy-title title-dotted-border title-center">
+                    <h1>Listing de vos <span>Achats</span></h1>
+                </div>
             </div>
         </div>
     </section>
