@@ -952,6 +952,30 @@ if($_SESSION['logged'] == false) {
                             <div class="fancy-title title-dotted-border title-center">
                                 <h1>Listing de vos <span>Achats</span></h1>
                             </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>N° de la commande</th>
+                                            <th>Montant TTC</th>
+                                            <th>Statut</th>
+                                            <th>Facture</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $sql_cmd = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande DESC")or die(mysql_error());
+                                    while($cmd = mysql_fetch_array($sql_cmd)){
+                                    ?>
+                                        <tr>
+                                            <td><?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("m", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                        </tr>
+                                    <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
