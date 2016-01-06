@@ -918,14 +918,14 @@ if($_SESSION['logged'] == false) {
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-adresse-fact'){ ?>
     <script type="text/javascript">
         setTimeout(function () {
-            $.notific8("Une erreur à eu lieu lors de l'ajout de l'adresse de facturation",{ sticky:true, horizontalEdge:"top", theme:"danger" ,heading:"ERREUR"})
+            $.notific8("Une erreur à eu lieu lors de l'ajout de l'adresse de facturation, <a href='mailto: webmaster@gameshop.com'>contacter l\'administrateur du site</a>.",{ sticky:true, horizontalEdge:"top", theme:"danger" ,heading:"ERREUR"})
         }, 1000);
     </script>
 <?php } ?>
 <?php if(isset($_GET['error']) && $_GET['error'] == 'add-adresse-liv'){ ?>
     <script type="text/javascript">
         setTimeout(function () {
-            $.notific8("Une erreur à eu lieu lors de l'ajout de l'adresse de livraison",{ sticky:true, horizontalEdge:"top", theme:"danger" ,heading:"ERREUR"})
+            $.notific8("Une erreur à eu lieu lors de l'ajout de l'adresse de livraison, <a href='mailto: webmaster@gameshop.com'>contacter l\'administrateur du site</a>.",{ sticky:true, horizontalEdge:"top", theme:"danger" ,heading:"ERREUR"})
         }, 1000);
     </script>
 <?php } ?>
