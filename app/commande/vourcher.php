@@ -20,7 +20,7 @@ class vourcher
 
     public function last_vourcher_clt($idclient)
     {
-        $sql = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient'")or die(mysql_error());
+        $sql = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' LIMIT 4")or die(mysql_error());
         $data = mysql_fetch_array($sql);
         return $data;
     }
