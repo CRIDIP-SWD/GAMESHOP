@@ -54,3 +54,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-steam')
         header("Location: ../index.php?view=profil&error=add-steam");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
+{
+    include "../app/classe.php";
+
+}

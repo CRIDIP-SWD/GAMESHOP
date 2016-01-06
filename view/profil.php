@@ -765,6 +765,7 @@ if($_SESSION['logged'] == false) {
                         <h4 class="modal-title" id="myModalLabel"><i class="icon-plus"></i> Ajouter une adresse</h4>
                     </div>
                     <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
+                        <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
                         <div class="modal-body">
 
                             <div class="form-group">
