@@ -683,11 +683,11 @@ if($_SESSION['logged'] == false) {
                             while($adresse = mysql_fetch_array($sql_adresse_facture)){
                             ?>
                                 <tr>
-                                    <th>
+                                    <td style="text-align: center;">
                                         <?php if($adresse['default'] == 1): ?>
                                             <i class="icon-star3 text-center text-warning"></i>
                                         <?php endif; ?>
-                                    </th>
+                                    </td>
                                 </tr>
                             <?php } ?>
                             </tbody>
