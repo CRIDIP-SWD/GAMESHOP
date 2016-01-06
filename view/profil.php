@@ -888,6 +888,13 @@ if($_SESSION['logged'] == false) {
         </div>
 
     </section><!-- #page-title end -->
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container-fluid clearfix bottommargin">
+                TEST
+            </div>
+        </div>
+    </section>
 <?php endif; ?>
 
 
