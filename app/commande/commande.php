@@ -52,7 +52,7 @@ class commande
 
     public function verif_article_cmd_stock($num_commande)
     {
-        $sql_stock = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock > '0' AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
+        $sql_stock = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < '0' AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
         $stock = mysql_result($sql_stock, 0);
 
         return $stock;
