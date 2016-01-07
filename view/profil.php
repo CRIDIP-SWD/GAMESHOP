@@ -1014,6 +1014,14 @@ if($_SESSION['logged'] == false) {
                                                 }
                                                 ?>
                                             </td>
+                                            <td>
+                                                <?php if($cmd['statut'] == 4 OR $cmd['statut'] == 5 OR $cmd['statut'] == 6): ?>
+                                                    <i class="icon-file-text icon-2x text-info" data-toggle="tooltip" data-original-title="Votre facture"></i>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td>
+                                                <a href="" class="button button-mini button-rounded button-blue">Détail</a>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
