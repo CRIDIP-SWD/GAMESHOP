@@ -1177,7 +1177,7 @@ if($_SESSION['logged'] == false) {
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td style="width: 100%;" colspan="2">
+                                                    <td colspan="2">
                                                         <a href="" class="button button-3d button-amber btn-block">Voir la facture</a>
                                                     </td>
                                                 </tr>
