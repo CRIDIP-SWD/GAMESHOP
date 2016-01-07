@@ -973,6 +973,20 @@ if($_SESSION['logged'] == false) {
                                             <td class="text-center"><?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("m", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
                                             <td class="text-center"><?= $cmd['num_commande']; ?></td>
                                             <td class="text-center" style="font-weight: 700; color: #0E76A8;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
+                                            <td class="text-center">
+                                                <?php
+                                                switch($cmd['status'])
+                                                {
+                                                    case 0:
+                                                        echo "<span class='label label-danger'>Annulée</span>";
+                                                        break;
+
+                                                    case 1:
+                                                        echo "<span class='label'>Valider - En attente du Paiement (Chèque)</span>";
+                                                        break;
+                                                }
+                                                ?>
+                                            </td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
