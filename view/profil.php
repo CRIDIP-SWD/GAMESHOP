@@ -1037,7 +1037,13 @@ if($_SESSION['logged'] == false) {
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'achat-detail'): ?>
     <?php
     $num_commande = $_GET['num_commande'];
-    $sql_cmd = mysql_query("SELECT * FROM commande, client, client_adresse_liv, client_adresse_fact WHERE commande.idadresseliv = client_adresse_liv.idadresse AND commande.idadressefact = client_adresse_fact.idadresse AND commande.idclient = client.idclient AND num_commande = '$num_commande'")or die(mysql_error());
+    $sql_cmd = mysql_query("SELECT * FROM commande, client, client_adresse_liv, client_adresse_fact
+                            WHERE commande.idclient = client.idclient
+                            AND client_adresse_fact.idclient = client.idclient
+                            AND client_adresse_liv.idclient = client.idclient
+                            AND commande.idadressefact = client_adresse_fact.idadresse
+                            AND commande.idadresseliv = client_adresse_liv.idadresse
+                            AND commande.num_commande = '$num_commande'")or die(mysql_error());
     $cmd = mysql_fetch_array($sql_cmd);
     ?>
     <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
