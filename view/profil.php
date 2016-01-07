@@ -984,6 +984,33 @@ if($_SESSION['logged'] == false) {
                                                     case 1:
                                                         echo "<span class='label label-default'>Valider - En attente du Paiement (Chèque)</span>";
                                                         break;
+                                                    case 2:
+                                                        echo "<span class='label label-default'>Valider - En attente du Paiement (Mandat Cash)</span>";
+                                                        break;
+                                                    case 3:
+                                                        echo "<span class='label label-default'>Valider - En attente du Paiement (Virement)</span>";
+                                                        break;
+
+                                                    case 4:
+                                                        echo "<span class='label label-info'>Valider - Paiement Acceptée</span>";
+                                                        break;
+                                                    case 5:
+                                                        echo "<span class='label label-warning'>Préparation en cours...</span>";
+                                                        break;
+                                                    case 6:
+                                                        echo "<span class='label label-success'>Expédié</span>";
+                                                        break;
+
+                                                    case 7:
+                                                        echo "<span class='label label-danger'>Refuser - Paiement refuser par l'établissement bancaire</span>";
+                                                        break;
+
+                                                    case 8:
+                                                        echo "<span class='label label-default'>En attente (Rupture)</span>";
+                                                        break;
+                                                    case 9:
+                                                        echo "<span class='label label-default'>En attente (Précommande)</span>";
+                                                        break;
                                                 }
                                                 ?>
                                             </td>
