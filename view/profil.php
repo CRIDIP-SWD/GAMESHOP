@@ -1090,7 +1090,7 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Nb d'article</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?=  ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd_cls->count_article($num_commande); ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
