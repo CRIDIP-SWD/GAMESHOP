@@ -1084,6 +1084,10 @@ if($_SESSION['logged'] == false) {
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Client</td>
                                                         <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['nom_client']; ?> <?= $cmd['prenom_client']; ?></td>
                                                     </tr>
+                                                    <tr>
+                                                        <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Total de la commande</td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                    </tr>
                                                 </tbody>
                                             </table>
                                         </div>
