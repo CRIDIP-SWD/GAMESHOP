@@ -9,8 +9,17 @@
 namespace App\commande;
 
 
+use App\app;
+
 class commande
 {
+
+    public $date_jour = "";
+
+    public function __construct()
+    {
+        return $this->date_jour = strtotime(date("d-m-Y"));
+    }
 
     public function count_cmd($idclient)
     {
@@ -32,4 +41,10 @@ class commande
         $data = mysql_result($sql, 0);
         return $data;
     }
+
+    public function verif_article_cmd($num_commande)
+    {
+        $sql_sortie = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= ")
+    }
+
 }

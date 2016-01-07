@@ -1165,6 +1165,12 @@ if($_SESSION['logged'] == false) {
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Methode de paiement</td>
                                                     <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['methode_paiement']; ?></td>
                                                 </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Etat des Articles</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;">
+                                                        <?php if()
+                                                    </td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
