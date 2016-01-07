@@ -1147,6 +1147,85 @@ if($_SESSION['logged'] == false) {
                                                 </tbody>
                                             </table>
                                         </div>
+                                        <div class="col-md-6">
+                                            <h2>Autres Informations</h2>
+                                            <table style="width: 100%;">
+                                                <tbody>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Numéro de la commande</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $num_commande; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Client</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['nom_client']; ?> <?= $cmd['prenom_client']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Total de la commande</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Nb d'article</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd_cls->count_article($num_commande); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date de Livraison:</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_livraison'])); ?> <?= date("d", $cmd['date_livraison']); ?> <?= $date_format->mois(date("n", $cmd['date_livraison'])); ?> <?= date("Y", $cmd['date_livraison']); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Destination</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['destination']; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Statut de la commande</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;">
+                                                        <?php
+                                                        switch($cmd['statut'])
+                                                        {
+                                                            case 0:
+                                                                echo "<span class='label label-danger'>Annulée</span>";
+                                                                break;
+
+                                                            case 1:
+                                                                echo "<span class='label label-default'>Valider - En attente du Paiement (Chèque)</span>";
+                                                                break;
+                                                            case 2:
+                                                                echo "<span class='label label-default'>Valider - En attente du Paiement (Mandat Cash)</span>";
+                                                                break;
+                                                            case 3:
+                                                                echo "<span class='label label-default'>Valider - En attente du Paiement (Virement)</span>";
+                                                                break;
+
+                                                            case 4:
+                                                                echo "<span class='label label-info'>Valider - Paiement Acceptée</span>";
+                                                                break;
+                                                            case 5:
+                                                                echo "<span class='label label-warning'>Préparation en cours...</span>";
+                                                                break;
+                                                            case 6:
+                                                                echo "<span class='label label-success'>Expédié</span>";
+                                                                break;
+
+                                                            case 7:
+                                                                echo "<span class='label label-danger'>Refuser - Paiement refuser par l'établissement bancaire</span>";
+                                                                break;
+
+                                                            case 8:
+                                                                echo "<span class='label label-default'>En attente (Rupture)</span>";
+                                                                break;
+                                                            case 9:
+                                                                echo "<span class='label label-default'>En attente (Précommande)</span>";
+                                                                break;
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="tab-content clearfix" id="item">
