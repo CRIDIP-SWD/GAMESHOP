@@ -1157,6 +1157,10 @@ if($_SESSION['logged'] == false) {
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Adresse de Livraison</td>
                                                     <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['adresse_liv']; ?></td>
                                                 </tr>
+                                                <tr>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Methode de Livraison</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['methode_livraison']; ?></td>
+                                                </tr>
                                                 </tbody>
                                             </table>
                                         </div>
