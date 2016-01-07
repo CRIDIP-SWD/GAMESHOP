@@ -1082,7 +1082,7 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%;">Client</td>
-                                                        <td style="width: 75%; font-weight: 700;"><?= $num_commande; ?></td>
+                                                        <td style="width: 75%; font-weight: 700;"><?= $cmd['nom_client']; ?> <?= $cmd['prenom_client']; ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
