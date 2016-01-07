@@ -982,7 +982,7 @@ if($_SESSION['logged'] == false) {
                                                         break;
 
                                                     case 1:
-                                                        echo "<span class='label'>Valider - En attente du Paiement (Chèque)</span>";
+                                                        echo "<span class='label label-default'>Valider - En attente du Paiement (Chèque)</span>";
                                                         break;
                                                 }
                                                 ?>
