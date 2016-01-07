@@ -1152,8 +1152,8 @@ if($_SESSION['logged'] == false) {
                                             <table style="width: 100%;">
                                                 <tbody>
                                                 <tr>
-                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Numéro de la commande</td>
-                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $num_commande; ?></td>
+                                                    <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Adresse de Livraison</td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['adresse']." ".$cmd['code_postal']." ".$cmd['ville']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>

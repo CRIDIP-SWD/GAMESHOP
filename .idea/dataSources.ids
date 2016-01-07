@@ -673,124 +673,128 @@
         <mandatory>1</mandatory>
         <data-type>int(1)</data-type>
       </column>
-      <column id="187" parent="21" name="adresse_livraison">
+      <column id="187" parent="21" name="idadressefact">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>int(13)</data-type>
       </column>
-      <column id="188" parent="21" name="methode_livraison">
+      <column id="188" parent="21" name="idadresseliv">
+        <mandatory>1</mandatory>
+        <data-type>int(13)</data-type>
+      </column>
+      <column id="189" parent="21" name="methode_livraison">
         <comment>liaison: config_livraison</comment>
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <key id="189" parent="21" name="PRIMARY">
+      <key id="190" parent="21" name="PRIMARY">
         <columns>idcommande</columns>
         <primary>1</primary>
       </key>
-      <column id="190" parent="22" name="idcommandearticle">
+      <column id="191" parent="22" name="idcommandearticle">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="191" parent="22" name="num_commande">
+      <column id="192" parent="22" name="num_commande">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="192" parent="22" name="idarticle">
+      <column id="193" parent="22" name="idarticle">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="193" parent="22" name="qte">
+      <column id="194" parent="22" name="qte">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="194" parent="22" name="total_article_commande">
+      <column id="195" parent="22" name="total_article_commande">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="195" parent="22" name="PRIMARY">
+      <key id="196" parent="22" name="PRIMARY">
         <columns>idcommandearticle</columns>
         <primary>1</primary>
       </key>
-      <column id="196" parent="23" name="idvourcher">
+      <column id="197" parent="23" name="idvourcher">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="197" parent="23" name="code">
+      <column id="198" parent="23" name="code">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="198" parent="23" name="client">
+      <column id="199" parent="23" name="client">
         <mandatory>1</mandatory>
         <data-type>int(1)</data-type>
       </column>
-      <column id="199" parent="23" name="idclient">
+      <column id="200" parent="23" name="idclient">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="200" parent="23" name="percent_rem">
+      <column id="201" parent="23" name="percent_rem">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="201" parent="23" name="perempsion">
+      <column id="202" parent="23" name="perempsion">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="202" parent="23" name="PRIMARY">
+      <key id="203" parent="23" name="PRIMARY">
         <columns>idvourcher</columns>
         <primary>1</primary>
       </key>
-      <column id="203" parent="24" name="idreservation">
+      <column id="204" parent="24" name="idreservation">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="204" parent="24" name="num_reservation">
+      <column id="205" parent="24" name="num_reservation">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="205" parent="24" name="idclient">
+      <column id="206" parent="24" name="idclient">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="206" parent="24" name="etat_reservation">
+      <column id="207" parent="24" name="etat_reservation">
         <mandatory>1</mandatory>
         <data-type>int(1)</data-type>
       </column>
-      <key id="207" parent="24" name="PRIMARY">
+      <key id="208" parent="24" name="PRIMARY">
         <columns>idreservation</columns>
         <primary>1</primary>
       </key>
-      <column id="208" parent="25" name="idreservationarticle">
+      <column id="209" parent="25" name="idreservationarticle">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="209" parent="25" name="num_reservation">
+      <column id="210" parent="25" name="num_reservation">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="210" parent="25" name="idarticle">
+      <column id="211" parent="25" name="idarticle">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="211" parent="25" name="date_disponible">
+      <column id="212" parent="25" name="date_disponible">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="212" parent="25" name="PRIMARY">
+      <key id="213" parent="25" name="PRIMARY">
         <columns>idreservationarticle</columns>
         <primary>1</primary>
       </key>
-      <column id="213" parent="26" name="idcltnewsletter">
+      <column id="214" parent="26" name="idcltnewsletter">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="214" parent="26" name="idclient">
+      <column id="215" parent="26" name="idclient">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="215" parent="26" name="newsletter">
+      <column id="216" parent="26" name="newsletter">
         <mandatory>1</mandatory>
         <data-type>int(1)</data-type>
       </column>
-      <key id="216" parent="26" name="PRIMARY">
+      <key id="217" parent="26" name="PRIMARY">
         <columns>idcltnewsletter</columns>
         <primary>1</primary>
       </key>
