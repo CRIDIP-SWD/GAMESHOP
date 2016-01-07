@@ -1014,12 +1014,12 @@ if($_SESSION['logged'] == false) {
                                                 }
                                                 ?>
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 <?php if($cmd['statut'] == 4 OR $cmd['statut'] == 5 OR $cmd['statut'] == 6): ?>
                                                     <i class="icon-file-text icon-2x text-info" data-toggle="tooltip" data-original-title="Votre facture"></i>
                                                 <?php endif; ?>
                                             </td>
-                                            <td>
+                                            <td class="text-center">
                                                 <a href="" class="button button-mini button-rounded button-blue">Détail</a>
                                             </td>
                                         </tr>
