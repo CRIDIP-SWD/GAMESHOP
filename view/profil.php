@@ -1153,7 +1153,7 @@ if($_SESSION['logged'] == false) {
                                                 <tbody>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Adresse de Livraison</td>
-                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['adresse']." ".$cmd['code_postal']." ".$cmd['ville']; ?></td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['adresse'].", ".$cmd['ville']; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>
