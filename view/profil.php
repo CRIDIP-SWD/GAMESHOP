@@ -1073,16 +1073,16 @@ if($_SESSION['logged'] == false) {
                                             <table style="width: 100%;">
                                                 <tbody>
                                                     <tr>
-                                                        <td style="width: 25%;">Numéro de la commande</td>
-                                                        <td style="width: 75%; font-weight: 700;"><?= $num_commande; ?></td>
+                                                        <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Numéro de la commande</td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $num_commande; ?></td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 25%;">Date</td>
-                                                        <td style="width: 75%; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                                        <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 25%;">Client</td>
-                                                        <td style="width: 75%; font-weight: 700;"><?= $cmd['nom_client']; ?> <?= $cmd['prenom_client']; ?></td>
+                                                        <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Client</td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['nom_client']; ?> <?= $cmd['prenom_client']; ?></td>
                                                     </tr>
                                                 </tbody>
                                             </table>
