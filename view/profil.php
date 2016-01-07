@@ -975,7 +975,7 @@ if($_SESSION['logged'] == false) {
                                             <td class="text-center" style="font-weight: 700; color: #0E76A8;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
                                             <td class="text-center">
                                                 <?php
-                                                switch($cmd['status'])
+                                                switch($cmd['statut'])
                                                 {
                                                     case 0:
                                                         echo "<span class='label label-danger'>Annulée</span>";
