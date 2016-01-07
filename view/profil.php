@@ -1020,7 +1020,7 @@ if($_SESSION['logged'] == false) {
                                                 <?php endif; ?>
                                             </td>
                                             <td class="text-center">
-                                                <a href="" class="button button-mini button-rounded button-blue">Détail</a>
+                                                <a href="index.php?view=profil&sub=achat-detail&num_commande=<?= $cmd['num_commande']; ?>" class="button button-mini button-rounded button-blue">Détail</a>
                                             </td>
                                         </tr>
                                     <?php } ?>
@@ -1033,6 +1033,26 @@ if($_SESSION['logged'] == false) {
             </div>
         </div>
     </section>
+<?php endif; ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'achat-detail'): ?>
+    <?php
+    $num_commande = $_GET['num_commande'];
+    $sql_cmd = mysql_query("SELECT * FROM commande WHERE num_commande = '$num_commande'")or die(mysql_error());
+    $cmd = mysql_fetch_array($sql_cmd);
+    ?>
+    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
+
+        <div class="container clearfix">
+            <h1>COMMANDE N° <strong><?= $num_commande; ?></strong></h1>
+            <span><?= $date_format->jour_semaine(date("n", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("N", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?> </span>
+            <ol class="breadcrumb">
+                <li><a href="index.php?view=index">GAMESHOP</a></li>
+                <li><a href="index.php?view=profil">MON COMPTE</a></li>
+                <li class="active">Mes Achats</li>
+            </ol>
+        </div>
+
+    </section><!-- #page-title end -->
 <?php endif; ?>
 
 
