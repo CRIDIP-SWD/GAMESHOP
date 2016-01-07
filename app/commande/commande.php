@@ -25,4 +25,11 @@ class commande
         $data = mysql_fetch_array($sql);
         return $data;
     }
+
+    public function count_article($num_commande)
+    {
+        $sql = mysql_query("SELECT COUNT(idarticle) FROM commande_article WHERE num_commande = '$num_commande'")or die(mysql_error());
+        $data = mysql_result($sql, 0);
+        return $data;
+    }
 }
