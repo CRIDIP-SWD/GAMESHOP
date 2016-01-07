@@ -1044,7 +1044,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="container clearfix">
             <h1>COMMANDE N° <strong><?= $num_commande; ?></strong></h1>
-            <span><?= $date_format->jour_semaine(date("n", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("N", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?> </span>
+            <span><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?> </span>
             <ol class="breadcrumb">
                 <li><a href="index.php?view=index">GAMESHOP</a></li>
                 <li><a href="index.php?view=profil">MON COMPTE</a></li>
