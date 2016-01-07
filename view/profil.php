@@ -1168,7 +1168,12 @@ if($_SESSION['logged'] == false) {
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Etat des Articles</td>
                                                     <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;">
-                                                        <?php if()
+                                                        <?php if($cmd_cls->verif_article_cmd_sortie($num_commande) != 0 AND $cmd_cls->verif_article_cmd_stock($num_commande) != 0){ ?>
+                                                            <i class="icon-check text-success"></i> OK
+                                                        <?php }else{ ?>
+                                                            <i class="icon-remove text-danger"></i> <?= $cmd_cls->verif_article_cmd_stock($num_commande); ?> articles en rupture de stock.<br>
+                                                            <i class="icon-remove text-danger"></i> <?= $cmd_cls->verif_article_cmd_sortie($num_commande); ?> articles ne sont pas sortie.
+                                                        <?php } ?>
                                                     </td>
                                                 </tr>
                                                 </tbody>

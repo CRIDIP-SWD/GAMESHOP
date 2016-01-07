@@ -42,9 +42,20 @@ class commande
         return $data;
     }
 
-    public function verif_article_cmd($num_commande)
+    public function verif_article_cmd_sortie($num_commande)
     {
-        $sql_sortie = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= ")
+        $sql_sortie = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= '$this->date_jour' AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
+        $sortie = mysql_result($sql_sortie, 0);
+
+        return $sortie;
+    }
+
+    public function verif_article_cmd_stock($num_commande)
+    {
+        $sql_stock = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock > '0' AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
+        $stock = mysql_result($sql_stock, 0);
+
+        return $stock;
     }
 
 }
