@@ -1037,7 +1037,7 @@ if($_SESSION['logged'] == false) {
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'achat-detail'): ?>
     <?php
     $num_commande = $_GET['num_commande'];
-    $sql_cmd = mysql_query("SELECT * FROM commande WHERE num_commande = '$num_commande'")or die(mysql_error());
+    $sql_cmd = mysql_query("SELECT * FROM commande, client WHERE commande.idclient = client.idclient AND num_commande = '$num_commande'")or die(mysql_error());
     $cmd = mysql_fetch_array($sql_cmd);
     ?>
     <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
@@ -1067,7 +1067,6 @@ if($_SESSION['logged'] == false) {
                             <div class="tab-container">
 
                                 <div class="tab-content clearfix" id="general">
-                                    <h1>Vue d'ensemble</h1>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <h2>Informations Globales</h2>
@@ -1075,6 +1074,14 @@ if($_SESSION['logged'] == false) {
                                                 <tbody>
                                                     <tr>
                                                         <td style="width: 25%;">Numéro de la commande</td>
+                                                        <td style="width: 75%; font-weight: 700;"><?= $num_commande; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 25%;">Date</td>
+                                                        <td style="width: 75%; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 25%;">Client</td>
                                                         <td style="width: 75%; font-weight: 700;"><?= $num_commande; ?></td>
                                                     </tr>
                                                 </tbody>
