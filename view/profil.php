@@ -1046,9 +1046,7 @@ if($_SESSION['logged'] == false) {
             <h1>COMMANDE N° <strong><?= $num_commande; ?></strong></h1>
             <span><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?> </span>
             <ol class="breadcrumb">
-                <li><a href="index.php?view=index">GAMESHOP</a></li>
-                <li><a href="index.php?view=profil">MON COMPTE</a></li>
-                <li class="active">Mes Achats</li>
+                <li><h1 class="text-info"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></h1></li>
             </ol>
         </div>
 
