@@ -1053,7 +1053,7 @@ if($_SESSION['logged'] == false) {
     </section><!-- #page-title end -->
     <section id="content">
         <div class="content-wrap">
-            <div class="container clearfix bottommargin">
+            <div class="container-fluid clearfix bottommargin header-stick">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="tabs tabs-bordered clearfix" id="tab-2">
