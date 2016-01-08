@@ -38,7 +38,7 @@
                         if($nbArticles <= 0){
                     ?>
                         <tr class="cart_item">
-                            <td class="text-center text-info" colspan="6"><i>Votre Panier est vide</i></td>
+                            <td class="text-center text-info" colspan="6" style=""><i>Votre Panier est vide</i></td>
                         </tr>
                             <?php }else{ ?>
                             <?php for($i=0;$i<$nbArticles;$i++): ?>
