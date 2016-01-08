@@ -8,35 +8,28 @@
 
 namespace App\general;
 use App\date_format;
+use App\DB;
 
-class produit
+class produit extends DB
 {
     public function count_images($ref_produit)
     {
-        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_images WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-        $res = mysql_result($sql,0);
-        return $res;
+        return $this->query("SELECT COUNT(ref_produit) FROM produits_images WHERE ref_produit = '$ref_produit'");
     }
 
     public function count_bonus($ref_produit)
     {
-        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_bonus WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-        $res = mysql_result($sql,0);
-        return $res;
+        return $this->query("SELECT COUNT(ref_produit) FROM produits_bonus WHERE ref_produit = '$ref_produit'");
     }
 
     public function count_videos($ref_produit)
     {
-        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_videos WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-        $res = mysql_result($sql,0);
-        return $res;
+        return $this->query("SELECT COUNT(ref_produit) FROM produits_videos WHERE ref_produit = '$ref_produit'");
     }
 
     public function count_promo($ref_produit)
     {
-        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_promotion WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-        $res = mysql_result($sql,0);
-        return $res;
+        return $this->query("SELECT COUNT(ref_produit) FROM produits_promotion WHERE ref_produit = '$ref_produit'");
     }
 
     public function verif_stat_product($ref_produit)
@@ -46,9 +39,9 @@ class produit
         $date_moin = strtotime($date ."+ 30 days");
         $c_promo = $this->count_promo($ref_produit);
 
-        $sql_produit = mysql_query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-        $produit = mysql_fetch_array($sql_produit);
-        $date_produit = $produit['date_sortie'];
+
+        $produit = $this->query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'");
+        $date_produit = $produit[0]->date_sortie;
 
         if($date_produit >= $date AND $date_produit <= $date_moin)
         {
@@ -64,13 +57,12 @@ class produit
 
     public function statut_produit($ref_produit)
     {
-        $sql_produit = mysql_query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-        $produit = mysql_fetch_array($sql_produit);
+        $produit = $this->query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'");
 
-        if($produit['stock'] == 0)
+        if($produit[0]->stock == 0)
         {
             return 0;
-        }elseif($produit['date_sortie'] > strtotime(date("d-m-Y")))
+        }elseif($produit[0]->date_sortie > strtotime(date("d-m-Y")))
         {
             return 1;
         }else{
