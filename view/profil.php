@@ -1229,6 +1229,16 @@ if($_SESSION['logged'] == false) {
                                                             <td class="text-center"><?= number_format($article['prix_vente'], 2, ',', ' ')." €"; ?></td>
                                                             <td class="text-center"><?= $article['qte']; ?></td>
                                                             <td class="text-center"><?= number_format($article['total_article_commande'], 2, ',', ' ')." €"; ?></td>
+                                                            <td class="text-center">
+                                                                <?php
+                                                                if($produit_cls->statut_produit($ref_produit) == 0)
+                                                                {
+                                                                    echo "<span class='label label-danger'>Non disponible</span>";
+                                                                }else{
+                                                                    echo "<span class='label label-success'>Disponible</span>";
+                                                                }
+                                                                ?>
+                                                            </td>
                                                         </tr>
                                                     <?php } ?>
                                                     </tbody>

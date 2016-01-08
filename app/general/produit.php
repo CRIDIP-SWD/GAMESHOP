@@ -62,4 +62,20 @@ class produit
         }
     }
 
+    public function statut_produit($ref_produit)
+    {
+        $sql_produit = mysql_query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'")or die(mysql_error());
+        $produit = mysql_fetch_array($sql_produit);
+
+        if($produit['stock'] == 0)
+        {
+            return 0;
+        }elseif($produit['date_sortie'] < strtotime(date("d-m-Y")))
+        {
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+
 }
