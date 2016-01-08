@@ -284,10 +284,10 @@ if($verif === 3)
                                 <?php if(!empty($produit[0]->long_description)): ?>
                                 <li><a href="#desc"><i class="icon-align-justify2"></i><span class="hidden-xs"> Description</span></a></li>
                                 <?php endif; ?>
-                                <?php if($produit_cls->count_images($ref_produit)[0] != 0): ?>
+                                <?php if($produit_cls->count_images($ref_produit) != 0): ?>
                                 <li><a href="#images"><i class="icon-star3"></i><span class="hidden-xs"> Images</span></a></li>
                                 <?php endif; ?>
-                                <?php if($produit_cls->count_videos($ref_produit)[0] != 0): ?>
+                                <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <li><a href="#videos"><i class="icon-star3"></i><span class="hidden-xs"> Vidéos</span></a></li>
                                 <?php endif; ?>
                             </ul>
@@ -298,7 +298,7 @@ if($verif === 3)
                                     <?= html_entity_decode($produit[0]->long_description); ?>
                                 </div>
                                 <?php endif; ?>
-                                <?php if($produit_cls->count_images($ref_produit)[0] != 0): ?>
+                                <?php if($produit_cls->count_images($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="images">
                                     <h1>IMAGES</h1>
 
@@ -353,7 +353,7 @@ if($verif === 3)
 
                                 </div>
                                 <?php endif; ?>
-                                <?php if($produit_cls->count_videos($ref_produit)[0] != 0): ?>
+                                <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
 
                                     <?php
