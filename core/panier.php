@@ -2,6 +2,32 @@
 include "../app/classe.php";
 $erreur = false;
 
+if(isset($_GET['action']) && $_GET['action'] == 'ajout')
+{
+    $l = $_GET['l'];
+    $p = $_GET['p'];
+    $q = $_GET['q'];
+
+    $panier_cls->ajouterArticle($l,$q, $p);
+}
+
+if(isset($_GET['action']) && $_GET['action'] == 'suppression')
+{
+
+    $l = $_GET['l'];
+
+    $panier_cls->supprimerArticle($l);
+
+}
+
+if(isset($_GET['action']) && $_GET['action'] == 'refresh')
+{
+    $l = $_GET['l'];
+    $q = $_GET['q'];
+    $panier_cls->modifierQTeArticle($l, $q);
+
+}
+/*
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
 {
@@ -53,3 +79,4 @@ if (!$erreur){
             break;
     }
 }
+*/
