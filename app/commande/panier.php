@@ -13,7 +13,7 @@ class panier
 {
     public function __construct()
     {
-        if($_SESSION)
+        if(!isset($_SESSION))
         {
             session_start();
         }
