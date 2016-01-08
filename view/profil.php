@@ -1187,6 +1187,28 @@ if($_SESSION['logged'] == false) {
                                     </div>
                                 </div>
                                 <div class="tab-content clearfix" id="item">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2>ARTICLES</h2>
+                                            <br>
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>ID</th>
+                                                            <th>Produit</th>
+                                                            <th>Référence</th>
+                                                            <th>Catégorie</th>
+                                                            <th>Prix Unitaire</th>
+                                                            <th>Quantité</th>
+                                                            <th>Total</th>
+                                                            <th>Statut</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="tab-content clearfix" id="customers">
                                 </div>
