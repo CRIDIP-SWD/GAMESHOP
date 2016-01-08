@@ -9,13 +9,13 @@
 namespace App\general;
 
 
-class head
+use App\DB;
+
+class head extends DB
 {
     public function count_subcategorie($idcategorie)
     {
-        $sql = mysql_query("SELECT COUNT(id) FROM subcategorie WHERE subcategorie.idcategorie = '$idcategorie'")or die(mysql_error());
-        $count = mysql_result($sql, 0);
-        return $count;
+        return $sql = $this->query("SELECT COUNT(id) FROM subcategorie WHERE subcategorie.idcategorie = '$idcategorie'");
     }
 
 }
