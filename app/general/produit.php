@@ -72,9 +72,9 @@ class produit
             return 0;
         }elseif($produit['date_sortie'] < strtotime(date("d-m-Y")))
         {
-            return 0;
-        }else{
             return 1;
+        }else{
+            return 2;
         }
     }
 

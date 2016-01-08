@@ -1233,7 +1233,9 @@ if($_SESSION['logged'] == false) {
                                                                 <?php
                                                                 if($produit_cls->statut_produit($ref_produit) == 0)
                                                                 {
-                                                                    echo "<span class='label label-danger'>Non disponible</span>";
+                                                                    echo "<span class='label label-danger'>Non disponible (Rupture)</span>";
+                                                                }elseif($produit_cls->statut_produit($ref_produit) == 1){
+                                                                    echo "<span class='label label-warning'>Non Disponible (Précommande)</span>";
                                                                 }else{
                                                                     echo "<span class='label label-success'>Disponible</span>";
                                                                 }
