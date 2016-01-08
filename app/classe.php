@@ -43,8 +43,6 @@ $resa_cls = new reservation();
 
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
-    var_dump($info_client[0]->idclient);
-    die();
 /*
     if(!empty($info_client['pseudo_psn']))
     {
@@ -80,9 +78,9 @@ if(isset($_SESSION['logged'])){
 */
 
 
-    $xbox = new xboxLive($info_client->pseudo_xbox);
-    $xuid = $xbox->xuid_declare($info_client['pseudo_xbox']);
-    $gameTag = $info_client['pseudo_xbox'];
+    $xbox = new xboxLive($info_client[0]->pseudo_xbox);
+    $xuid = $xbox->xuid_declare($info_client[0]->pseudo_xbox);
+    $gameTag = $info_client[0]->pseudo_xbox;
 
     $sql_xbox_profil = mysql_query("SELECT * FROM xbox_profile WHERE xuid = '$xuid'")or die(mysql_error());
     $xbox_profil = mysql_fetch_array($sql_xbox_profil);
