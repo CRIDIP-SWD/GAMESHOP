@@ -82,16 +82,19 @@ if(isset($_SESSION['logged'])){
     $xuid = $xbox->xuid_declare($info_client[0]->pseudo_xbox);
     $gameTag = $info_client[0]->pseudo_xbox;
 
-    $sql_xbox_profil = mysql_query("SELECT * FROM xbox_profile WHERE xuid = '$xuid'")or die(mysql_error());
-    $xbox_profil = mysql_fetch_array($sql_xbox_profil);
+    $xbox_profil = $DB->query("SELECT * FROM xbox_profile WHERE xuid = '$xuid'");
 
-    $sql_gamercard = mysql_query("SELECT * FROM xbox_gamercard WHERE gamertag = '$gameTag'")or die(mysql_error());
-    $gamercard = mysql_fetch_array($sql_gamercard);
+    $gamercard = $DB->query("SELECT * FROM xbox_gamercard WHERE gamertag = '$gameTag'");
 
-    $sql_presence = mysql_query("SELECT * FROM xbox_presence WHERE xuid = '$xuid'")or die(mysql_error());
-    $presence = mysql_fetch_array($sql_presence);
-    $sql_lastseen = mysql_query("SELECT * FROM xbox_presence_lastseen WHERE xuid = '$xuid'")or die(mysql_error());
-    $lastseen = mysql_fetch_array($sql_lastseen);
+    $presence = $DB->query("SELECT * FROM xbox_presence WHERE xuid = '$xuid'");
+
+    $lastseen = $DB->query("SELECT * FROM xbox_presence_lastseen WHERE xuid = '$xuid'");
+
+    var_dump($xbox_profil);
+    var_dump($gamercard);
+    var_dump($presence);
+    var_dump($lastseen);
+
 
     if(!empty($info_client['pseudo_steam']))
     {
