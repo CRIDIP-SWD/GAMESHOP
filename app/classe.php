@@ -39,7 +39,6 @@ $cmd_cls = new commande();
 $vourcher_cls = new vourcher();
 $resa_cls = new reservation();
 $panier_cls = new panier();
-$panier_cls->
 
 
 if(isset($_SESSION['logged'])){
