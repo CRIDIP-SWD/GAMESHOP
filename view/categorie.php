@@ -97,22 +97,20 @@
         <?php
         $idcategorie = $_GET['idcategorie'];
         $idsubcategorie = $_GET['idsubcategorie'];
-        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE id = '$idcategorie'")or die(mysql_error());
-        $categorie = mysql_fetch_array($sql_categorie);
-        $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE id = '$idsubcategorie'")or die(mysql_error());
-        $sub = mysql_fetch_array($sql_sub);
+        $categorie = $DB->query("SELECT * FROM categorie WHERE id = '$idcategorie'");
+        $sub = $DB->query("SELECT * FROM subcategorie WHERE id = '$idsubcategorie'");
         ?>
         <!-- Page Title
 		============================================= -->
         <section id="page-title">
 
             <div class="container clearfix">
-                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie['images_cat']; ?>.png" width="240" class="img-responsive" />
+                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie[0]->images_cat; ?>.png" width="240" class="img-responsive" />
                 <!--<span>Start Buying your Favourite Theme</span>-->
                 <ol class="breadcrumb">
                     <li><a href="#">GAMESHOP</a></li>
-                    <li><a href=""><?= $categorie['designation_cat']; ?></a></li>
-                    <li class="active"><?= $sub['designation_subcat']; ?></li>
+                    <li><a href=""><?= $categorie[0]->designation_cat; ?></a></li>
+                    <li class="active"><?= $sub[0]->designation_subcat; ?></li>
                 </ol>
             </div>
 
@@ -134,11 +132,10 @@
                         ============================================= -->
                         <div id="shop" class="product-3 clearfix">
                             <?php
-                            $sql_produit = mysql_query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
+                            $sql_produit = $DB->query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
                                                         AND produits_subcategorie.idsubcategorie = subcategorie.id
-                                                        AND produits_subcategorie.idsubcategorie = '$idsubcategorie'")or die(mysql_error());
-                            while($produit = mysql_fetch_array($sql_produit))
-                            {
+                                                        AND produits_subcategorie.idsubcategorie = '$idsubcategorie'");
+                            foreach($sql_produit as $produit):
                                 ?>
                                 <?php if($categorie_cls->count_sub($idsubcategorie) == 0){ ?>
                                     <div class="style-msg infomsg">
@@ -147,20 +144,20 @@
                                 <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
-                                        <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
+                                        <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress"></a>
                                         <!--<div class="sale-flash">50% Off*</div>-->
                                         <div class="product-overlay">
                                             <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                            <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                            <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                         </div>
                                     </div>
                                     <div class="product-desc center">
-                                        <div class="product-title"><h3><a href="#"><?= $produit['designation']; ?></a></h3></div>
-                                        <div class="product-price"><ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                                        <div class="product-title"><h3><a href="#"><?= $produit->designation; ?></a></h3></div>
+                                        <div class="product-price"><ins><?= number_format($produit->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
                                     </div>
                                 </div>
                                 <?php } ?>
-                            <?php } ?>
+                            <?php endforeach; ?>
                         </div><!-- #shop end -->
 
                     </div><!-- .postcontent end -->
@@ -172,15 +169,14 @@
 
                             <div class="widget widget_links clearfix">
 
-                                <h4><?= $categorie['designation_cat']; ?></h4>
+                                <h4><?= $categorie[0]->designation_cat; ?></h4>
                                 <ul>
                                     <?php
-                                    $sql_subcat = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'")or die(mysql_error());
-                                    while($subcat = mysql_fetch_array($sql_subcat))
-                                    {
+                                    $sql_subcat = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'");
+                                    foreach($sql_subcat as $subcat):
                                         ?>
-                                        <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $subcat['id']; ?>"><?= $subcat['designation_subcat']; ?></a></li>
-                                    <?php } ?>
+                                        <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $subcat->id; ?>"><?= $subcat->designation_subcat; ?></a></li>
+                                    <?php endforeach; ?>
                                 </ul>
 
                             </div>
