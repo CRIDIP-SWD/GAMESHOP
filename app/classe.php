@@ -78,7 +78,7 @@ if(isset($_SESSION['logged'])){
 */
 
 
-    $xbox = new xboxLive($info_client['pseudo_xbox']);
+    $xbox = new xboxLive($info_client->pseudo_xbox);
     $xuid = $xbox->xuid_declare($info_client['pseudo_xbox']);
     $gameTag = $info_client['pseudo_xbox'];
 
