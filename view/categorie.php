@@ -50,7 +50,7 @@
                                     <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress"></a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
-                                        <a href="panier.php?action=ajout&l=<?= $produit->designation; ?>&q=1&p=<?= $produit->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                        <a href="core/panier.php?action=ajout&l=<?= $produit->designation; ?>&q=1&p=<?= $produit->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
@@ -147,7 +147,7 @@
                                         <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress"></a>
                                         <!--<div class="sale-flash">50% Off*</div>-->
                                         <div class="product-overlay">
-                                            <a href="panier.php?action=ajout&l=<?= $produit->designation; ?>&q=1&p=<?= $produit->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                            <a href="core/panier.php?action=ajout&l=<?= $produit->designation; ?>&q=1&p=<?= $produit->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                             <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                         </div>
                                     </div>

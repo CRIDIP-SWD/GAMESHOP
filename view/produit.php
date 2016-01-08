@@ -74,7 +74,7 @@ if($verif === 3)
                             <?php if($verif === 2){ ?>
                                 <button type="submit" class="add-to-cart button nomargin">PRECOMMANDER</button>
                             <?php }else{ ?>
-                                <button type="submit" class="add-to-cart button nomargin" onclick="window.location.href='panier.php?action=ajout&l=<?= $produit[0]->designation; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">Ajouter au Panier</button>
+                                <button type="submit" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->designation; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">Ajouter au Panier</button>
                             <?php } ?>
                         </form><!-- Product Single - Quantity & Cart Button End -->
 
