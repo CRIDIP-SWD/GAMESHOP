@@ -92,7 +92,7 @@ if(isset($_SESSION['logged'])){
 
 
 
-    if(!empty($info_client['pseudo_steam']))
+    if(!empty($info_client[0]->pseudo_steam))
     {
 
         $steam = new User('444446B16CB7611E5E74F4752A35EB5C', $info_client[0]->pseudo_steam);
