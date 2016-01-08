@@ -215,14 +215,13 @@ if($verif === 3)
 
                             <div id="oc-product" class="owl-carousel product-carousel">
                                 <?php
-                                $sql_bonus = mysql_query("SELECT * FROM produits_bonus, produits WHERE produits_bonus.ref_produit_bonus = produits.ref_produit AND produits_bonus.ref_produit = '$ref_produit'")or die(mysql_error());
-                                while($bonus = mysql_fetch_array($sql_bonus))
-                                {
+                                $sql_bonus = $DB->query("SELECT * FROM produits_bonus, produits WHERE produits_bonus.ref_produit_bonus = produits.ref_produit AND produits_bonus.ref_produit = '$ref_produit'");
+                                foreach($sql_bonus as $bonus):
                                 ?>
                                 <div class="oc-item">
                                     <div class="product iproduct clearfix">
                                         <div class="product-image">
-                                            <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $bonus['ref_produit']; ?>.jpg" alt="Checked Short Dress"></a>
+                                            <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $bonus->ref_produit; ?>.jpg" alt="Checked Short Dress"></a>
                                             <?php if($verif == 1): ?>
                                                 <div class="sale-flash nouveaute">NOUVEAU !</div>
                                             <?php endif; ?>
@@ -234,18 +233,18 @@ if($verif === 3)
                                             <?php endif; ?>
                                             <div class="product-overlay">
                                                 <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
-                                                <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $bonus['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> VOIR</span></a>
+                                                <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $bonus->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> VOIR</span></a>
                                             </div>
                                         </div>
                                         <div class="product-desc center">
-                                            <div class="product-title"><h3><a href="#"><?= $bonus['designation']; ?></a></h3></div>
+                                            <div class="product-title"><h3><a href="#"><?= $bonus->designation; ?></a></h3></div>
                                             <div class="product-price">
                                                 <ins>CADEAUX</ins>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <?php } ?>
+                                <?php endforeach; ?>
                             </div>
 
                             <script type="text/javascript">
@@ -282,7 +281,7 @@ if($verif === 3)
                         <div class="tabs clearfix nobottommargin" id="tab-1">
 
                             <ul class="tab-nav clearfix">
-                                <?php if(!empty($produit['long_description'])): ?>
+                                <?php if(!empty($produit[0]->long_description)): ?>
                                 <li><a href="#desc"><i class="icon-align-justify2"></i><span class="hidden-xs"> Description</span></a></li>
                                 <?php endif; ?>
                                 <?php if($produit_cls->count_images($ref_produit) != 0): ?>
@@ -294,9 +293,9 @@ if($verif === 3)
                             </ul>
 
                             <div class="tab-container">
-                                <?php if(!empty($produit['long_description'])): ?>
+                                <?php if(!empty($produit[0]->long_description)): ?>
                                 <div class="tab-content clearfix" id="desc">
-                                    <?= html_entity_decode($produit['long_description']); ?>
+                                    <?= html_entity_decode($produit[0]->long_description); ?>
                                 </div>
                                 <?php endif; ?>
                                 <?php if($produit_cls->count_images($ref_produit) != 0): ?>
@@ -305,9 +304,8 @@ if($verif === 3)
 
                                     <div id="related-portfolio" class="owl-carousel owl-carousel-full portfolio-carousel portfolio-notitle portfolio-nomargin footer-stick">
                                         <?php
-                                        $sql_images = mysql_query("SELECT * FROM produits_images WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-                                        while($images = mysql_fetch_array($sql_images))
-                                        {
+                                        $sql_images = $DB->query("SELECT * FROM produits_images WHERE ref_produit = '$ref_produit'");
+                                        foreach($sql_images as $images):
                                         ?>
 
 
@@ -315,17 +313,17 @@ if($verif === 3)
                                                     <div class="iportfolio">
                                                         <div class="portfolio-image">
                                                             <a href="portfolio-single.html">
-                                                                <img src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="img-responsive" width="400" alt="Open Imagination">
+                                                                <img src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images->images; ?>.jpg" class="img-responsive" width="400" alt="Open Imagination">
                                                             </a>
                                                             <div class="portfolio-overlay">
-                                                                <a href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images['images']; ?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
+                                                                <a href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $ref_produit; ?>/<?= $images->images; ?>.jpg" class="left-icon" data-lightbox="image"><i class="icon-line-plus"></i></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             <!-- .portfolio-carousel end -->
 
-                                        <?php } ?>
+                                        <?php endforeach; ?>
                                         <script type="text/javascript">
 
                                             jQuery(document).ready(function($) {
@@ -359,14 +357,13 @@ if($verif === 3)
                                 <div class="tab-content clearfix" id="videos">
 
                                     <?php
-                                    $sql_video = mysql_query("SELECT * FROM produits_videos WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-                                    while($video = mysql_fetch_array($sql_video))
-                                    {
+                                    $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = '$ref_produit'");
+                                    foreach($sql_video as $video):
                                     ?>
                                         <div>
                                             <video id="my-video" class="video-js" controls preload="auto" width="1100" height="570"
                                                    poster="MY_VIDEO_POSTER.jpg" data-setup="{}">
-                                                <source src="<?= $video['video']; ?>" type='video/mp4'>
+                                                <source src="<?= $video->video; ?>" type='video/mp4'>
                                                 <p class="vjs-no-js">
                                                     To view this video please enable JavaScript, and consider upgrading to a web browser that
                                                     <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
@@ -376,7 +373,7 @@ if($verif === 3)
                                                 <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" />
                                             </div>
                                         </div>
-                                    <?php } ?>
+                                    <?php endforeach; ?>
 
                                 </div>
                                 <?php endif; ?>
