@@ -9,14 +9,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
         $password = $_POST['password'];
         $pass_crypt = sha1($email."_".$password);
 
-        $sql = mysql_query("SELECT count(*) FROM client WHERE email = '$email' AND password = '$pass_crypt'")or die(mysql_error());
-        $data = mysql_fetch_array($sql);
+        $data = $DB->count("SELECT count(*) FROM client WHERE email = '$email' AND password = '$pass_crypt'");
 
         if($data[0] == 1)
         {
             session_start();
-            $sql_client = mysql_query("SELECT * FROM client WHERE email = '$email'")or die(mysql_error());
-            $client = mysql_fetch_array($sql_client);
+            $client = $DB->query("SELECT * FROM client WHERE email = '$email'");
             $_SESSION['logged'] = true;
             $_SESSION['email'] = $email;
             header("Location: ../index.php?view=index");
