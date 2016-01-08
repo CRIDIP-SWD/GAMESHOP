@@ -90,11 +90,6 @@ if(isset($_SESSION['logged'])){
 
     $lastseen = $DB->query("SELECT * FROM xbox_presence_lastseen WHERE xuid = '$xuid'");
 
-    var_dump($xbox_profil);
-    var_dump($gamercard);
-    var_dump($presence);
-    var_dump($lastseen);
-    die();
 
 
     if(!empty($info_client['pseudo_steam']))
