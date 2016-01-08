@@ -264,4 +264,11 @@ class DB extends app{
             echo $e->getCode().": ".$e->getMessage();
         }
     }
+
+    public function query($sql)
+    {
+        $req = $this->db->prepare($sql);
+        $req->execute();
+        return $req->fetchAll(PDO::FETCH_OBJ);
+    }
 }

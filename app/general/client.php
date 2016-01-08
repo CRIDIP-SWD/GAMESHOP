@@ -7,9 +7,9 @@
  */
 
 namespace App\general;
+use App\DB;
 
-
-class client
+class client extends DB
 {
 
     protected $idclient = '';
@@ -18,12 +18,7 @@ class client
 
     public function info_client($email)
     {
-        $sql = mysql_query("SELECT * FROM client WHERE email = '$email'")or die(mysql_error());
-        $data = mysql_fetch_array($sql);
-
-        $this->idclient = $data['idclient'];
-
-        return $data;
+        return $this->query("SELECT * FROM client WHERE email = '$email'");
     }
 
     public function fact_default($idclient)
