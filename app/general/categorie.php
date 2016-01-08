@@ -15,13 +15,13 @@ class categorie extends DB
 {
     public function count_categorie($idcategorie)
     {
-        $res = $this->query("SELECT COUNT(ref_produit) FROM produits_categorie WHERE idcategorie = '$idcategorie'");
+        $res = $this->count("SELECT COUNT(ref_produit) FROM produits_categorie WHERE idcategorie = '$idcategorie'");
         return $res;
     }
 
     public function count_sub($idsubcategorie)
     {
-        $res = $this->query("SELECT COUNT(ref_produit) FROM produits_subcategorie WHERE idsubcategorie = '$idsubcategorie'");
+        $res = $this->count("SELECT COUNT(ref_produit) FROM produits_subcategorie WHERE idsubcategorie = '$idsubcategorie'");
         return $res;
     }
 }

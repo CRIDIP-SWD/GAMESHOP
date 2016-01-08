@@ -15,7 +15,7 @@ class head extends DB
 {
     public function count_subcategorie($idcategorie)
     {
-        return $sql = $this->query("SELECT COUNT(id) FROM subcategorie WHERE subcategorie.idcategorie = '$idcategorie'");
+        return $sql = $this->count("SELECT COUNT(id) FROM subcategorie WHERE subcategorie.idcategorie = '$idcategorie'");
     }
 
 }
