@@ -310,7 +310,7 @@ ini_set('display_errors', 1);
                                                 <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= $produit[0]->designation; ?>" /></a>
                                             </div>
                                             <div class="top-cart-item-desc">
-                                                <a href="#"><?= html_entity_decode($produit[0]->ref_produit); ?></a>
+                                                <a href="#"><?= html_entity_decode($produit[0]->designation); ?></a>
                                                 <span class="top-cart-item-price"><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €"; ?></span>
                                                 <span class="top-cart-item-quantity">x <?= htmlspecialchars($_SESSION['panier']['qteProduit'][$i]); ?></span>
                                             </div>
