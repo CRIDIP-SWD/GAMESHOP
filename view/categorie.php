@@ -2,19 +2,18 @@
     <?php if(!isset($_GET['idsubcategorie'])){ ?>
         <?php
         $idcategorie = $_GET['idcategorie'];
-        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE id = '$idcategorie'")or die(mysql_error());
-        $categorie = mysql_fetch_array($sql_categorie);
+        $categorie = $DB->query("SELECT * FROM categorie WHERE id = '$idcategorie'");
         ?>
         <!-- Page Title
 		============================================= -->
         <section id="page-title">
 
             <div class="container clearfix">
-                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie['images_cat']; ?>.png" width="240" class="img-responsive" />
+                <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie[0]->images_cat; ?>.png" width="240" class="img-responsive" />
                 <!--<span>Start Buying your Favourite Theme</span>-->
                 <ol class="breadcrumb">
                     <li><a href="#">GAMESHOP</a></li>
-                    <li class="active"><?= $categorie['designation_cat']; ?></li>
+                    <li class="active"><?= $categorie[0]->designation_cat; ?></li>
                 </ol>
             </div>
 
