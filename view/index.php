@@ -325,21 +325,21 @@
                             $date = $date_format->convert_strtotime(date("d-m-Y"));
                             $date_moin = strtotime($date ."+ 30 days");
                             $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE date_sortie > '$date' AND produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = categorie.id LIMIT 4");
-                            foreach($sql_preco as $preco):
+                            foreach($sql_preco as $k => $preco):
                             ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco[$k]->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco[$k]->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                        <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                        <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco[$k]->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
                                 <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#"><?= $preco->designation; ?></a></h3></div>
-                                    <div class="product-price"><ins><?= number_format($preco->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
-                                    <div class="h5 text-primary"><?= $preco->designation_cat; ?></div>
+                                    <div class="product-title"><h3><a href="#"><?= $preco[$k]->designation; ?></a></h3></div>
+                                    <div class="product-price"><ins><?= number_format($preco[$k]->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
+                                    <div class="h5 text-primary"><?= $preco[$k]->designation_cat; ?></div>
                                 </div>
                             </div>
                             <?php endforeach; ?>
