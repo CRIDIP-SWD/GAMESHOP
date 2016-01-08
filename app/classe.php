@@ -7,6 +7,7 @@ include dirname(__DIR__)."/vendor/autoload.php";
 
 use App\app;
 use App\commande\commande;
+use App\commande\panier;
 use App\commande\reservation;
 use App\commande\vourcher;
 use App\constante;
@@ -37,7 +38,7 @@ $newsletter_cls = new newsletter();
 $cmd_cls = new commande();
 $vourcher_cls = new vourcher();
 $resa_cls = new reservation();
-
+$panier_cls = new panier();
 
 
 if(isset($_SESSION['logged'])){
