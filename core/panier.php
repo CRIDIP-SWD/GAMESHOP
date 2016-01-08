@@ -35,17 +35,17 @@ if($action !== null)
 if (!$erreur){
     switch($action){
         Case "ajout":
-            ajouterArticle($l,$q,$p);
+            $panier_cls->ajouterArticle($l,$q,$p);
             break;
 
         Case "suppression":
-            supprimerArticle($l);
+            $panier_cls->supprimerArticle($l);
             break;
 
         Case "refresh" :
             for ($i = 0 ; $i < count($QteArticle) ; $i++)
             {
-                modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
+                $panier_cls->modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
             }
             break;
 

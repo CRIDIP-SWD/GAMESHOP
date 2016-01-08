@@ -42,6 +42,7 @@ class panier
                 array_push( $_SESSION['panier']['qteProduit'],$qteProduit);
                 array_push( $_SESSION['panier']['prixProduit'],$prixProduit);
             }
+            header("Location: ../index.php?view=panier&success=add-article-panier");
         }
         else {
             header("Location: ../index.php?view=index?error=critical");
@@ -73,6 +74,7 @@ class panier
             $_SESSION['panier'] =  $tmp;
             //On efface notre panier temporaire
             unset($tmp);
+            header("Location: ../index.php?view=panier&success=supp-article-panier");
         }
         else {
             header("Location: ../index.php?view=index?error=critical");
@@ -97,6 +99,7 @@ class panier
             else {
                 $this->supprimerArticle($libelleProduit);
             }
+            header("Location: ../index.php?view=panier&success=modif-article-panier");
         }
         else {
             echo "Un problème est survenu veuillez contacter l'administrateur du site.";
@@ -130,6 +133,7 @@ class panier
 
     public function supprimePanier(){
         unset($_SESSION['panier']);
+        header("Location: ../index.php?view=index&success=panier-vide");
     }
 
 
