@@ -279,7 +279,10 @@ if($verif === 3)
                     <div class="col_full nobottommargin">
 
                         <div class="tabs clearfix nobottommargin" id="tab-1">
-
+                            <?php
+                            var_dump($produit_cls->count_images($ref_produit));
+                            die();
+                            ?>
                             <ul class="tab-nav clearfix">
                                 <?php if(!empty($produit[0]->long_description)): ?>
                                 <li><a href="#desc"><i class="icon-align-justify2"></i><span class="hidden-xs"> Description</span></a></li>
