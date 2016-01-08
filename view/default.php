@@ -274,6 +274,9 @@ ini_set('display_errors', 1);
 
                     <!-- Top Cart
                     ============================================= -->
+                    <?php
+                    if($panier_cls->creationPanier()){
+                    ?>
                     <div id="top-cart">
                         <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span><?= $panier_cls->compterArticles(); ?></span></a>
                         <div class="top-cart-content">
@@ -298,6 +301,7 @@ ini_set('display_errors', 1);
                             </div>
                         </div>
                     </div><!-- #top-cart end -->
+                    <?php } ?>
 
                     <!-- Top Search
                     ============================================= -->
