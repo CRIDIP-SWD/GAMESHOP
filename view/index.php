@@ -206,7 +206,7 @@
                                     <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au paniers</span></a>
                                         <a href="assets/include/ajax/shop-item.php" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>

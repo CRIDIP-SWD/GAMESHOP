@@ -139,28 +139,26 @@ ini_set('display_errors', 1);
                     <ul>
                         <li class="current"><a href="#"><div>Home</div><span>Lets Start</span></a></li>
                         <?php
-                        $sql_categorie = mysql_query("SELECT * FROM categorie WHERE categorie.designation_cat != 'PRODUIT D&Eacute;RIV&Eacute;S'")or die(mysql_error());
-                        while($cat = mysql_fetch_array($sql_categorie))
-                        {
-                            $idcategorie = $cat['id'];
+                        $sql_categorie = $DB->query("SELECT * FROM categorie WHERE categorie.designation_cat != 'PRODUIT D&Eacute;RIV&Eacute;S'");
+                        foreach($sql_categorie as $cat):
+                            $idcategorie = $cat->id;
                         ?>
                             <?php
-                            if($head->count_subcategorie($cat['id']) == 0){
+                            if($head->count_subcategorie($idcategorie) == 0){
                             ?>
-                            <li><a href="#"><div><?= $cat['designation_cat']; ?></div><span>Awesome Works</span></a></li>
+                            <li><a href="#"><div><?= $cat->designation_cat; ?></div><span>Awesome Works</span></a></li>
                             <?php }else{ ?>
-                                <li class="mega-menu"><a href="#"><div><?= $cat['designation_cat']; ?></div><span>Out of the Box</span></a>
+                                <li class="mega-menu"><a href="#"><div><?= $cat->designation_cat; ?></div><span>Out of the Box</span></a>
                                     <div class="mega-menu-content style-2 col-4 clearfix">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>"><div><?= $cat['designation_cat']; ?></div></a>
+                                            <li class="mega-menu-title"><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>"><div><?= $cat->designation_cat; ?></div></a>
                                                 <ul>
                                                 <?php
-                                                $sql_sub = mysql_query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['id'])or die(mysql_error());
-                                                while($sub = mysql_fetch_array($sql_sub))
-                                                {
+                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['id']);
+                                                foreach($sql_sub as $sub):
                                                     ?>
-                                                    <li><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $sub['id']; ?>"><div><?= $sub['designation_subcat']; ?></div></a></li>
-                                                    <?php } ?>
+                                                    <li><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $sub->id; ?>"><div><?= $sub->designation_subcat; ?></div></a></li>
+                                                <?php endforeach; ?>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -170,24 +168,23 @@ ini_set('display_errors', 1);
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_new = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1")or die(mysql_error());
-                                                    while($new = mysql_fetch_array($sql_new))
-                                                    {
+                                                    $sql_new = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1");
+                                                    foreach($sql_new as $new):
                                                     ?>
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
                                                                     <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                                                    <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $new['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                                    <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $new->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
                                                             <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#"><?= $new['designation']; ?></a></h3></div>
-                                                                <div class="product-price"><ins><?= number_format($new['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                                                                <div class="product-title"><h3><a href="#"><?= $new->designation; ?></a></h3></div>
+                                                                <div class="product-price"><ins><?= number_format($new->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
                                                                 <div class="product-rating">
                                                                     <i class="icon-star3"></i>
                                                                     <i class="icon-star3"></i>
@@ -198,7 +195,7 @@ ini_set('display_errors', 1);
                                                             </div>
                                                         </div>
                                                     </li>
-                                                        <?php } ?>
+                                                    <?php endforeach; ?>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -238,24 +235,23 @@ ini_set('display_errors', 1);
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_preco = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie > '$date' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1")or die(mysql_error());
-                                                    while($preco = mysql_fetch_array($sql_preco))
-                                                    {
+                                                    $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie > '$date' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1");
+                                                    foreach($sql_preco as $preco):
                                                         ?>
                                                         <li>
                                                             <div class="product clearfix">
                                                                 <div class="product-image">
-                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
-                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco['ref_produit']; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->
                                                                     <div class="product-overlay">
                                                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                                                        <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco['ref_produit']; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                                        <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-desc">
-                                                                    <div class="product-title"><h3><a href="#"><?= $preco['designation']; ?></a></h3></div>
-                                                                    <div class="product-price"><ins><?= number_format($preco['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                                                                    <div class="product-title"><h3><a href="#"><?= $preco->designation; ?></a></h3></div>
+                                                                    <div class="product-price"><ins><?= number_format($preco->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
                                                                     <div class="product-rating">
                                                                         <i class="icon-star3"></i>
                                                                         <i class="icon-star3"></i>
@@ -266,14 +262,14 @@ ini_set('display_errors', 1);
                                                                 </div>
                                                             </div>
                                                         </li>
-                                                    <?php } ?>
+                                                    <?php endforeach; ?>
                                                 </ul>
                                             </li>
                                         </ul>
                                     </div>
                                 </li>
                             <?php } ?>
-                        <?php } ?>
+                        <?php endforeach; ?>
                     </ul>
 
                     <!-- Top Cart
