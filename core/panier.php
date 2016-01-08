@@ -73,7 +73,7 @@ if (!$erreur){
         Case "refresh" :
             for ($i = 0 ; $i < count($QteArticle) ; $i++)
             {
-                $panier_cls->modifierQTeArticle($_SESSION['panier']['libelleProduit'][$i],round($QteArticle[$i]));
+                $panier_cls->modifierQTeArticle($_SESSION['panier']['idProduit'][$i],round($QteArticle[$i]));
             }
             break;
 
