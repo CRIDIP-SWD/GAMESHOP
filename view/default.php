@@ -276,9 +276,10 @@ ini_set('display_errors', 1);
                     ============================================= -->
                     <?php
                     if($panier_cls->creationPanier()){
+                        $nbArticle = count($_SESSION['panier']['libelleProduit']);
                     ?>
                     <div id="top-cart">
-                        <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span><?= $panier_cls->compterArticles(); ?></span></a>
+                        <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span><?= $nbArticle; ?></span></a>
                         <div class="top-cart-content">
                             <div class="top-cart-title">
                                 <h4>Votre Panier</h4>
