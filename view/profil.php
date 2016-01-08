@@ -1063,7 +1063,7 @@ if($_SESSION['logged'] == false) {
                             <ul class="tab-nav clearfix">
                                 <li><a href="#general">GENERAL</a></li>
                                 <li><a href="#item">ARTICLES</a></li>
-                                <li><a href="#customers">CLIENT</a></li>
+                                <li><a href="#reglement">REGLEMENT</a></li>
                             </ul>
 
                             <div class="tab-container">
@@ -1306,7 +1306,48 @@ if($_SESSION['logged'] == false) {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab-content clearfix" id="customers">
+                                <div class="tab-content clearfix" id="reglement">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <h2>MES REGLEMENTS</h2>
+                                            <div class="table-responsive">
+                                                <table>
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Date de Réglement</th>
+                                                            <th>Référence</th>
+                                                            <th>Mode de Réglement</th>
+                                                            <th>Montant du Réglement</th>
+                                                            <th>Etat</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    <?php
+                                                    $sql_reglement = mysql_query("SELECT * FROM commande_reglement WHERE num_commande = '$num_commande'")or die(mysql_error());
+                                                    while($reglement = mysql_fetch_array($sql_reglement)){
+                                                    ?>
+                                                        <tr>
+                                                            <td class="text-center"><?= date("d-m-Y", $reglement['date_reglement']); ?></td>
+                                                            <td class="text-center"><?= $reglement['ref_reglement']; ?></td>
+                                                            <td class="text-center"><?= html_entity_decode($reglement['mode_reglement']); ?></td>
+                                                            <td class="text-center"><?= number_format($reglement['montant_reglement'], 2, ',', ' ')." €"; ?></td>
+                                                            <td class="text-center">
+                                                                <?php
+                                                                if($reglement['etat_reglement'] == 0)
+                                                                {
+                                                                    echo "<span class='label label-danger'>Refuser</span>";
+                                                                }else{
+                                                                    echo "<span class='label label-success'>Accepter</span>";
+                                                                }
+                                                                ?>
+                                                            </td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
 
                             </div>
