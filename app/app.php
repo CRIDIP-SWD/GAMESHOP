@@ -261,7 +261,7 @@ class DB extends app{
             ));
         }catch(PDOException $e)
         {
-            echo $e->errorInfo();
+            echo $e->getCode().": ".$e->getMessage();
         }
     }
 }
