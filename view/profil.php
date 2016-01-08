@@ -1249,26 +1249,40 @@ if($_SESSION['logged'] == false) {
                                                     <div class="col-md-6"></div>
                                                     <div class="col-md-6">
                                                         <div class="table-responsive">
-                                                            <h4>Cart Totals</h4>
+                                                            <?php
+                                                            $total_commande = $cmd['total_commande'];
+                                                            $port = $cmd['prix_envoie'];
+                                                            $total = $total_commande =+ $port;
+                                                            ?>
+                                                            <h4>Total de la Commande</h4>
 
                                                             <table class="table cart">
                                                                 <tbody>
                                                                 <tr class="cart_item">
                                                                     <td class="cart-product-name">
-                                                                        <strong>Cart Subtotal</strong>
+                                                                        <strong>Sous-Total</strong>
                                                                     </td>
 
                                                                     <td class="cart-product-name">
-                                                                        <span class="amount">$106.94</span>
+                                                                        <span class="amount"><?= number_format($total_commande, 2, ',', ' ')." €"; ?></span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr class="cart_item">
                                                                     <td class="cart-product-name">
-                                                                        <strong>Shipping</strong>
+                                                                        <strong>Frais de Port</strong>
                                                                     </td>
 
                                                                     <td class="cart-product-name">
-                                                                        <span class="amount">Free Delivery</span>
+                                                                        <span class="amount">
+                                                                            <?php
+                                                                            if($port == 0)
+                                                                            {
+                                                                                echo "Gratuit";
+                                                                            }else{
+                                                                                echo $port;
+                                                                            }
+                                                                            ?>
+                                                                        </span>
                                                                     </td>
                                                                 </tr>
                                                                 <tr class="cart_item">
@@ -1277,7 +1291,7 @@ if($_SESSION['logged'] == false) {
                                                                     </td>
 
                                                                     <td class="cart-product-name">
-                                                                        <span class="amount color lead"><strong>$106.94</strong></span>
+                                                                        <span class="amount color lead"><strong><?= number_format($total, 2, ',', ' ')." €"; ?></strong></span>
                                                                     </td>
                                                                 </tr>
                                                                 </tbody>
