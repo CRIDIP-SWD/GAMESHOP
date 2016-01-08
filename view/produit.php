@@ -280,7 +280,7 @@ if($verif === 3)
 
                         <div class="tabs clearfix nobottommargin" id="tab-1">
                             <?php
-                            var_dump($produit_cls->count_images($ref_produit));
+                            var_dump($produit_cls->count_images($ref_produit)[0]);
                             die();
                             ?>
                             <ul class="tab-nav clearfix">
