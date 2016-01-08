@@ -1211,11 +1211,21 @@ if($_SESSION['logged'] == false) {
                                                                                 WHERE commande_article.idarticle = produits.id
                                                                                 AND num_commande = '$num_commande'")or die(mysql_error());
                                                     while($article = mysql_fetch_array($sql_article)){
+                                                        $ref_produit = $article['ref_produit'];
+                                                        $sql_categorie = mysql_query("SELECT * FROM produits_categorie, categorie
+                                                                                      WHERE produits_categorie.idcategorie = categorie.id
+                                                                                      AND produits_categorie.ref_produit = '$ref_produit'")or die(mysql_error());
+                                                        $categorie = mysql_fetch_array($sql_categorie);
+                                                        $sql_subcategorie = mysql_query("SELECT * FROM produits_subcategorie, subcategorie
+                                                                                        WHERE produits_subcategorie.idsubcategorie = subcategorie.id
+                                                                                        AND produits_subcategorie.ref_produit = '$ref_produit'")or die(mysql_error());
+                                                        $subcategorie = mysql_fetch_array($sql_subcategorie);
                                                     ?>
                                                         <tr>
                                                             <td class="text-center"><?= $article['id']; ?></td>
                                                             <td class="text-center"><a href="index.php?view=produit&ref_preoduit=<?= $article['ref_produit']; ?>"<?= $article['designation']; ?></td>
                                                             <td class="text-center"><?= $article['ref_produit']; ?></td>
+                                                            <td class="text-center"><?= $categorie['designation_cat']; ?> / <?= $subcategorie['designation_subcat']; ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                     </tbody>
