@@ -49,7 +49,7 @@
                                 ?>
                         <tr class="cart_item">
                             <td class="cart-product-remove">
-                                <a href="#" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                                <a href="<?= htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i])); ?>" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
                             </td>
 
                             <td class="cart-product-thumbnail">
