@@ -11,17 +11,6 @@ namespace App\commande;
 
 class panier
 {
-    public function __construct()
-    {
-        if(!isset($_SESSION)) {session_start();}
-        if(!isset($_SESSION['panier'])){
-            $_SESSION['panier'] = array();
-            $_SESSION['panier']['designation'] = array();
-            $_SESSION['panier']['qteProduit'] = array();
-            $_SESSION['panier']['prixProduit'] = array();
-            $_SESSION['panier']['verrou'] = false;
-        }
-    }
 
     public function creationPanier(){
         if (!isset($_SESSION['panier'])){
