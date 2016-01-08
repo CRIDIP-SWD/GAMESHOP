@@ -1,24 +1,21 @@
 <?php
 $ref_produit = $_GET['ref_produit'];
-$sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND produits_categorie.ref_produit = produits.ref_produit AND produits.ref_produit = '$ref_produit'")or die(mysql_error());
-$produit = mysql_fetch_array($sql_produit);
-$sql_caract = mysql_query("SELECt * FROM produits_caracteristique WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-$caract = mysql_fetch_array($sql_caract);
+$produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND produits_categorie.ref_produit = produits.ref_produit AND produits.ref_produit = '$ref_produit'");
+$caract = $DB->query("SELECt * FROM produits_caracteristique WHERE ref_produit = '$ref_produit'");
 $verif = $produit_cls->verif_stat_product($ref_produit);
 if($verif === 3)
 {
-    $sql_promo = mysql_query("SELECT * FROM produits_promotion WHERE ref_produit = '$ref_produit'")or die(mysql_error());
-    $promo = mysql_fetch_array($sql_promo);
+    $promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = '$ref_produit'");
 }
 ?>
 <!-- Page Title
 		============================================= -->
-<section id="page-title" <?php if(!empty($produit['banner'])){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit['banner'].".jpg);'";} ?>>
+<section id="page-title" <?php if(!empty($produit[0]->banner)){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit[0]->banner.".jpg);'";} ?>>
 
     <div class="container clearfix">
-        <h1 <?php if(!empty($produit['banner'])){echo "style='color: white;'";} ?>><?= $produit['designation']; ?></h1>
+        <h1 <?php if(!empty($produit[0]->banner)){echo "style='color: white;'";} ?>><?= $produit[0]->designation; ?></h1>
         <ol class="breadcrumb">
-            <li <?php if(!empty($produit['banner'])){echo "style='color: white; font-size: 30px; font-weight: bolder;'";} ?> style="font-size: 30px; font-weight: bolder;"><?= $produit['designation_cat']; ?></li>
+            <li <?php if(!empty($produit[0]->banner)){echo "style='color: white; font-size: 30px; font-weight: bolder;'";} ?> style="font-size: 30px; font-weight: bolder;"><?= $produit[0]->designation_cat; ?></li>
         </ol>
     </div>
 
@@ -41,7 +38,7 @@ if($verif === 3)
                         <!-- Product Single - Gallery
                         ============================================= -->
                         <div class="product-image">
-                            <img src="<?= $constante->getUrl(array(), false,true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" />
+                            <img src="<?= $constante->getUrl(array(), false,true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" />
                             <?php if($verif == 1): ?>
                                 <div class="sale-flash nouveaute">NOUVEAU !</div>
                             <?php endif; ?>
@@ -61,10 +58,10 @@ if($verif === 3)
                         ============================================= -->
                         <div class="product-price">
                             <?php if($verif === 3){ ?>
-                                <del><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></del>
-                                <ins><?= number_format($promo['new_price'], 2, ',', ' ')." €" ?></ins>
+                                <del><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></del>
+                                <ins><?= number_format($promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
                             <?php }else{ ?>
-                                <ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €" ?></ins>
+                                <ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></ins>
                             <?php } ?>
                         </div><!-- Product Single - Price End -->
 
@@ -91,7 +88,7 @@ if($verif === 3)
 
                         <!-- Product Single - Short Description
                         ============================================= -->
-                        <?= html_entity_decode($produit['short_description']); ?>
+                        <?= html_entity_decode($produit[0]->short_description); ?>
 
                         <!-- Product Single - Short Description End -->
                         <div class="clear"></div>
@@ -101,70 +98,70 @@ if($verif === 3)
                             <div class="panel-body">
                                 <table style="width: 50%;">
                                     <tbody>
-                                    <?php if(!empty($caract['editeur'])){ ?>
+                                    <?php if(!empty($caract[0]->editeur)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">EDITEUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['editeur']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->editeur; ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['genre'])){ ?>
+                                    <?php if(!empty($caract[0]->genre)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">GENRE:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['genre']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->genre; ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['multijoueur'])){ ?>
+                                    <?php if(!empty($caract[0]->multijoueur)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">MULTI JOUEUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract['multijoueur'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->multijoueur == 0){echo "Non";}else{echo "Oui";} ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['internet'])){ ?>
+                                    <?php if(!empty($caract[0]->internet)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">INTERNET:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract['internet'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->internet == 0){echo "Non";}else{echo "Oui";} ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['option'])){ ?>
+                                    <?php if(!empty($caract[0]->option)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">OPTION:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['option']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->option; ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['couleur'])){ ?>
+                                    <?php if(!empty($caract[0]->couleur)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">COULEUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['couleur']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->couleur; ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['cap_hdd'])){ ?>
+                                    <?php if(!empty($caract[0]->cap_hdd)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">DISQUE DUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['cap_hdd']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->cap_hdd; ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['eth'])){ ?>
+                                    <?php if(!empty($caract[0]->eth)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">ETHERNET:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract['eth'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->eth == 0){echo "Non";}else{echo "Oui";} ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['wifi'])){ ?>
+                                    <?php if(!empty($caract[0]->wifi)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">WI-FI:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract['wifi'] == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->wifi == 0){echo "Non";}else{echo "Oui";} ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['nb_usb'])){ ?>
+                                    <?php if(!empty($caract[0]->nb_usb)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">PORT USB:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['nb_usb']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->nb_usb; ?></td>
                                         </tr>
                                     <?php } ?>
-                                    <?php if(!empty($caract['compatibilite'])){ ?>
+                                    <?php if(!empty($caract[0]->compatibilite)){ ?>
                                         <tr>
                                             <td style="width: 50%; font-weight: bold;">COMPATIBLE:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract['compatibilite']; ?></td>
+                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->compatibilite; ?></td>
                                         </tr>
                                     <?php } ?>
                                     </tbody>
