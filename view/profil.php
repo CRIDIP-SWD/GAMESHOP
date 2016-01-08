@@ -1245,6 +1245,48 @@ if($_SESSION['logged'] == false) {
                                                     <?php } ?>
                                                     </tbody>
                                                 </table>
+                                                <div class="row">
+                                                    <div class="col-md-6"></div>
+                                                    <div class="col-md-6">
+                                                        <div class="table-responsive">
+                                                            <h4>Cart Totals</h4>
+
+                                                            <table class="table cart">
+                                                                <tbody>
+                                                                <tr class="cart_item">
+                                                                    <td class="cart-product-name">
+                                                                        <strong>Cart Subtotal</strong>
+                                                                    </td>
+
+                                                                    <td class="cart-product-name">
+                                                                        <span class="amount">$106.94</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="cart_item">
+                                                                    <td class="cart-product-name">
+                                                                        <strong>Shipping</strong>
+                                                                    </td>
+
+                                                                    <td class="cart-product-name">
+                                                                        <span class="amount">Free Delivery</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="cart_item">
+                                                                    <td class="cart-product-name">
+                                                                        <strong>Total</strong>
+                                                                    </td>
+
+                                                                    <td class="cart-product-name">
+                                                                        <span class="amount color lead"><strong>$106.94</strong></span>
+                                                                    </td>
+                                                                </tr>
+                                                                </tbody>
+
+                                                            </table>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
