@@ -154,7 +154,7 @@ ini_set('display_errors', 1);
                                             <li class="mega-menu-title"><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>"><div><?= $cat->designation_cat; ?></div></a>
                                                 <ul>
                                                 <?php
-                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = ".$cat['id']);
+                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'");
                                                 foreach($sql_sub as $sub):
                                                     ?>
                                                     <li><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $sub->id; ?>"><div><?= $sub->designation_subcat; ?></div></a></li>
