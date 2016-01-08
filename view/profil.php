@@ -1227,6 +1227,8 @@ if($_SESSION['logged'] == false) {
                                                             <td class="text-center"><?= $article['ref_produit']; ?></td>
                                                             <td class="text-center"><?= $categorie['designation_cat']; ?> / <?= $subcategorie['designation_subcat']; ?></td>
                                                             <td class="text-center"><?= number_format($article['prix_vente'], 2, ',', ' ')." €"; ?></td>
+                                                            <td class="text-center"><?= $article['qte']; ?></td>
+                                                            <td class="text-center"><?= number_format($article['total_article_commande'], 2, ',', ' ')." €"; ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                     </tbody>
