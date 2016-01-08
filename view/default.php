@@ -312,14 +312,7 @@ ini_set('display_errors', 1);
                                     </div>
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
-                                            <div class="top-cart-item-image">
-                                                <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
-                                            </div>
-                                            <div class="top-cart-item-desc">
-                                                <a href="#">Blue Round-Neck Tshirt</a>
-                                                <span class="top-cart-item-price">$19.99</span>
-                                                <span class="top-cart-item-quantity">x 2</span>
-                                            </div>
+                                            <h4>Panier Vide</h4>
                                         </div>
                                     </div>
                                     <div class="top-cart-action clearfix">
