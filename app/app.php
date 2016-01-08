@@ -7,6 +7,8 @@
  */
 
 namespace App;
+use PDO;
+use PDOException;
 
 /**
  * Class app
@@ -17,11 +19,7 @@ namespace App;
  */
 class app
 {
-    public function __construct()
-    {
-        mysql_connect("localhost", "root", "1992maxime")or die(mysql_error());
-        mysql_select_db("gameshop")or die(mysql_error());
-    }
+
 }
 
 /**
@@ -235,5 +233,35 @@ class fonction extends app
         $shuffle = str_shuffle($caractere);
         $lenght = substr($shuffle, 0, 6);
         return $lenght;
+    }
+}
+
+class DB extends app{
+
+    private $host = "localhost";
+    private $username = "roodt";
+    private $password = "1992maxime";
+    private $database = "gameshop";
+    private $db;
+
+    public function __construct($host = null, $username = null, $password = null, $database = null)
+    {
+        if($host != null)
+        {
+            $this->host = $host;
+            $this->username = $username;
+            $this->password = $password;
+            $this->database = $database;
+        }
+
+        try{
+            $this->db = new PDO('mysql:host='.$this->host.';dbname='.$this->database, $this->username, $this->password, array(
+                PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES UTF8',
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
+            ));
+        }catch(PDOException $e)
+        {
+            echo $e->getMessage();
+        }
     }
 }

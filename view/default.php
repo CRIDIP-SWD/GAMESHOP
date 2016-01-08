@@ -282,7 +282,7 @@
                         <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>5</span></a>
                         <div class="top-cart-content">
                             <div class="top-cart-title">
-                                <h4>Shopping Cart</h4>
+                                <h4>Votre Panier</h4>
                             </div>
                             <div class="top-cart-items">
                                 <div class="top-cart-item clearfix">

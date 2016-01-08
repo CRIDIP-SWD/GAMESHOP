@@ -11,6 +11,7 @@ use App\commande\reservation;
 use App\commande\vourcher;
 use App\constante;
 use App\date_format;
+use App\DB;
 use App\fonction;
 use App\general\categorie;
 use App\general\client;
@@ -25,6 +26,8 @@ $app = new app();
 $constante = new constante();
 $date_format = new date_format();
 $fonction = new fonction();
+$DB = new DB();
+
 $head = new head();
 $categorie_cls = new categorie();
 $produit_cls = new produit();
