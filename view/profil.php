@@ -1205,6 +1205,20 @@ if($_SESSION['logged'] == false) {
                                                             <th>Statut</th>
                                                         </tr>
                                                     </thead>
+                                                    <tbody>
+                                                    <?php
+                                                    $sql_article = mysql_query("SELECT * FROM commande_article, produits, produits_categorie, categorie, produits_subcategorie, subcategorie
+                                                                              WHERE commande_article.idarticle = produits.id
+                                                                              AND produits_categorie.idcategorie = categorie.id
+                                                                              AND produits_subcategorie.idsubcategorie = subcategorie.id
+                                                                              AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
+                                                    while($article = mysql_fetch_array($sql_article)){
+                                                    ?>
+                                                        <tr>
+                                                            <td class="text-center"><?= $article['idproduit']; ?></td>
+                                                        </tr>
+                                                    <?php } ?>
+                                                    </tbody>
                                                 </table>
                                             </div>
                                         </div>
