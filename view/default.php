@@ -307,7 +307,7 @@ ini_set('display_errors', 1);
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
                                             <div class="top-cart-item-image">
-                                                <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>" alt="<?= $produit[0]->designation; ?>.jpg" /></a>
+                                                <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= $produit[0]->designation; ?>" /></a>
                                             </div>
                                             <div class="top-cart-item-desc">
                                                 <a href="#"><?= html_entity_decode($produit[0]->ref_produit); ?></a>
