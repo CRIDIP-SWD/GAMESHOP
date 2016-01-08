@@ -23,6 +23,7 @@ if($view === 'produit'){require "view/produit.php";}
 if($view === 'login'){require "view/login.php";}
 if($view === 'profil'){require "view/profil.php";}
 if($view === 'maintenance'){require "view/maintenance.php";}
+if($view === 'panier'){require "view/panier.php";}
 
 $content = ob_get_clean();
 require "view/default.php";
