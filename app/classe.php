@@ -43,6 +43,8 @@ $resa_cls = new reservation();
 
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
+    var_dump($info_client);
+    die();
 /*
     if(!empty($info_client['pseudo_psn']))
     {
