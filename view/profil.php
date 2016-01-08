@@ -1223,7 +1223,7 @@ if($_SESSION['logged'] == false) {
                                                     ?>
                                                         <tr>
                                                             <td class="text-center"><?= $article['id']; ?></td>
-                                                            <td class="text-center"><a href="index.php?view=produit&ref_preoduit=<?= $article['ref_produit']; ?>"<?= $article['designation']; ?></td>
+                                                            <td class="text-center"><a href="index.php?view=produit&ref_preoduit=<?= $article['ref_produit']; ?>"><?= $article['designation']; ?></a></td>
                                                             <td class="text-center"><?= $article['ref_produit']; ?></td>
                                                             <td class="text-center"><?= $categorie['designation_cat']; ?> / <?= $subcategorie['designation_subcat']; ?></td>
                                                             <td class="text-center"><?= number_format($article['prix_vente'], 2, ',', ' ')." €"; ?></td>
