@@ -1,18 +1,17 @@
 <?php
 include "../../../app/classe.php";
 $ref_produit = $_GET['ref_produit'];
-$sql_produit = mysql_query("SELECT * FROM produits, produits_categorie, categorie, produits_caracteristique WHERE produits_categorie.ref_produit = produits.ref_produit
+$produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, produits_caracteristique WHERE produits_categorie.ref_produit = produits.ref_produit
                             AND produits_categorie.idcategorie = categorie.id
                             AND produits_caracteristique.ref_produit = produits.ref_produit
-                            AND produits.ref_produit = '$ref_produit'")or die(mysql_error());
-$produit = mysql_fetch_array($sql_produit);
+                            AND produits.ref_produit = '$ref_produit'");
 ?>
                 <div class="single-product shop-quick-view-ajax clearfix">
 
                     <div class="ajax-modal-title">
-                        <h2><?= $produit['designation']; ?></h2>
+                        <h2><?= $produit[0]->designation; ?></h2>
                         <span class="game-font">
-                            <img src="<?= $constante->getUrl(array(), false, true); ?>marque/icon-<?= $produit['images_cat']; ?>.png" />
+                            <img src="<?= $constante->getUrl(array(), false, true); ?>marque/icon-<?= $produit[0]->images_cat; ?>.png" />
                         </span>
                     </div>
 
@@ -20,12 +19,12 @@ $produit = mysql_fetch_array($sql_produit);
 
                         <div class="col_half nobottommargin">
                             <div class="product-image">
-                                <a href="index.php?view=produit&ref_produit=<?= $produit['ref_produit']; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit['ref_produit']; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
+                                <a href="index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                 <!--<div class="sale-flash">Sale!</div>-->
                             </div>
                         </div>
                         <div class="col_half nobottommargin col_last product-desc">
-                            <div class="product-price"><ins><?= number_format($produit['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
+                            <div class="product-price"><ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
                             <div class="clear"></div>
                             <div class="line"></div>
 
@@ -39,13 +38,13 @@ $produit = mysql_fetch_array($sql_produit);
                                 </div>
                                 <button type="submit" class="add-to-cart button nomargin">Ajouter au Panier</button>
                             </form><!-- Product Single - Quantity & Cart Button End -->
-                            <button type="button" class="button button-3d button-desc button-yellow" onclick="window.location.href='index.php?view=produit&ref_produit=<?= $produit['ref_produit']; ?>'">
+                            <button type="button" class="button button-3d button-desc button-yellow" onclick="window.location.href='index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>'">
                                 Voir la fiche complete
                             </button>
 
                             <div class="clear"></div>
                             <div class="line"></div>
-                            <p><?= html_entity_decode($produit['short_description']); ?></p>
+                            <p><?= html_entity_decode($produit[0]->short_description); ?></p>
                             <!--<ul class="iconlist">
                                 <li><i class="icon-caret-right"></i> Dynamic Color Options</li>
                                 <li><i class="icon-caret-right"></i> Lots of Size Options</li>
