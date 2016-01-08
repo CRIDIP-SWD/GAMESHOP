@@ -265,17 +265,17 @@ class DB extends app{
         }
     }
 
-    public function query($sql)
+    public function query($sql, $data = null)
     {
         $req = $this->db->prepare($sql);
-        $req->execute();
+        $req->execute($data);
         return $req->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function count($sql)
+    public function count($sql, $data = null)
     {
         $req = $this->db->prepare($sql);
-        $req->execute();
+        $req->execute($data);
         return $req->fetchColumn();
     }
 }
