@@ -299,20 +299,24 @@ ini_set('display_errors', 1);
                                     <div class="top-cart-title">
                                         <h4>Votre Panier</h4>
                                     </div>
+                                    <?php
+                                    for($i=0; $i < $nbArticle; $i++):
+                                    ?>
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
                                             <div class="top-cart-item-image">
                                                 <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
                                             </div>
                                             <div class="top-cart-item-desc">
-                                                <a href="#">Blue Round-Neck Tshirt</a>
-                                                <span class="top-cart-item-price">$19.99</span>
-                                                <span class="top-cart-item-quantity">x 2</span>
+                                                <a href="#"><?= htmlspecialchars($_SESSION['panier']['libelleProduit'][$i]); ?></a>
+                                                <span class="top-cart-item-price"><?= htmlspecialchars($_SESSION['panier']['prixProduit'][$i]); ?></span>
+                                                <span class="top-cart-item-quantity">x <?= htmlspecialchars($_SESSION['panier']['qteProduit'][$i]); ?></span>
                                             </div>
                                         </div>
                                     </div>
+                                    <?php endfor; ?>
                                     <div class="top-cart-action clearfix">
-                                        <span class="fleft top-checkout-price">$114.95</span>
+                                        <span class="fleft top-checkout-price"><?= number_format($panier_cls->MontantGlobal(), 2, ',', ' ')." €" ; ?></span>
                                         <button class="button button-3d button-small nomargin fright" onclick="window.location.href='index.php?view=panier'">Voir mon panier</button>
                                     </div>
                                 </div>
