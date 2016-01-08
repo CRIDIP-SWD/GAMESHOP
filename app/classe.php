@@ -94,6 +94,7 @@ if(isset($_SESSION['logged'])){
     var_dump($gamercard);
     var_dump($presence);
     var_dump($lastseen);
+    die();
 
 
     if(!empty($info_client['pseudo_steam']))
