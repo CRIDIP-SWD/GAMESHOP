@@ -1311,7 +1311,7 @@ if($_SESSION['logged'] == false) {
                                         <div class="col-md-12">
                                             <h2>MES REGLEMENTS</h2>
                                             <div class="table-responsive">
-                                                <table>
+                                                <table class="table table-bordered">
                                                     <thead>
                                                         <tr>
                                                             <th>Date de Réglement</th>
