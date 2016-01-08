@@ -178,7 +178,7 @@ ini_set('display_errors', 1);
                                                                 <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
-                                                                    <a href="core/panier.php?action=ajout&l=<?= $new->designation; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="core/panier.php?action=ajout&l=<?= $new->id; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $new->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
@@ -245,7 +245,7 @@ ini_set('display_errors', 1);
                                                                     <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->
                                                                     <div class="product-overlay">
-                                                                        <a href="core/panier.php?action=ajout&l=<?= $preco->designation; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $preco->id; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                     </div>
                                                                 </div>
@@ -276,7 +276,7 @@ ini_set('display_errors', 1);
                     ============================================= -->
                     <?php
                     if($panier_cls->creationPanier()){
-                        $nbArticle = count($_SESSION['panier']['libelleProduit']);
+                        $nbArticle = count($_SESSION['panier']['idProduit']);
                         if($nbArticle <= 0){
                     ?>
                     <div id="top-cart">
@@ -301,15 +301,17 @@ ini_set('display_errors', 1);
                                     </div>
                                     <?php
                                     for($i=0; $i < $nbArticle; $i++):
+                                        $idproduit = $_SESSION['panier']['idProduit'][$i];
+                                        $produit = $DB->query("SELECT * FROM produits WHERE id = :id", array("id" => $idproduit));
                                     ?>
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
                                             <div class="top-cart-item-image">
-                                                <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                                                <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>" alt="<?= $produit[0]->designation; ?>" /></a>
                                             </div>
                                             <div class="top-cart-item-desc">
-                                                <a href="#"><?= htmlspecialchars($_SESSION['panier']['libelleProduit'][$i]); ?></a>
-                                                <span class="top-cart-item-price"><?= htmlspecialchars($_SESSION['panier']['prixProduit'][$i]); ?></span>
+                                                <a href="#"><?= html_entity_decode($produit[0]->ref_produit); ?></a>
+                                                <span class="top-cart-item-price"><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €"; ?></span>
                                                 <span class="top-cart-item-quantity">x <?= htmlspecialchars($_SESSION['panier']['qteProduit'][$i]); ?></span>
                                             </div>
                                         </div>

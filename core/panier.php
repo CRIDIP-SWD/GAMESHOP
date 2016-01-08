@@ -8,7 +8,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'ajout')
     $p = $_GET['p'];
     $q = $_GET['q'];
 
-    var_dump($panier_cls->ajouterArticle($l,$q, $p));
+    $panier_cls->ajouterArticle($l,$q, $p);
 }
 
 if(isset($_GET['action']) && $_GET['action'] == 'suppression')

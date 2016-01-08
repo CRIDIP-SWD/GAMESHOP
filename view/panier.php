@@ -34,7 +34,7 @@
                     <tbody>
                     <?php
                     if($panier_cls->creationPanier()){
-                        $nbArticles = count($_SESSION['panier']['libelleProduit']);
+                        $nbArticles = count($_SESSION['panier']['idProduit']);
                         if($nbArticles <= 0){
                     ?>
                         <tr class="cart_item">
@@ -43,13 +43,13 @@
                             <?php }else{ ?>
                             <?php for($i=0;$i<$nbArticles;$i++): ?>
                                 <?php
-                                $libelle = htmlspecialchars($_SESSION['panier']['libelleProduit'][$i]);
-                                $article = $DB->query("SELECT * FROM produits WHERE designation = :designation", array("designation" => $libelle));
+                                $idproduit = $_SESSION['panier']['idProduit'][$i];
+                                $article = $DB->query("SELECT * FROM produits WHERE id = :id", array("id" => $idproduit));
                                 $subtotal = $article[0]->prix_vente * $_SESSION['panier']['qteProduit'][$i];
                                 ?>
                         <tr class="cart_item">
                             <td class="cart-product-remove">
-                                <a href="<?= htmlspecialchars("core/panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i])); ?>" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                                <a href="<?= htmlspecialchars("core/panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['idProduit'][$i])); ?>" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
                             </td>
 
                             <td class="cart-product-thumbnail">
