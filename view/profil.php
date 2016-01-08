@@ -1215,7 +1215,7 @@ if($_SESSION['logged'] == false) {
                                                     while($article = mysql_fetch_array($sql_article)){
                                                     ?>
                                                         <tr>
-                                                            <td class="text-center"><?= $article['idproduit']; ?></td>
+                                                            <td class="text-center"><?= $article['id']; ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                     </tbody>
