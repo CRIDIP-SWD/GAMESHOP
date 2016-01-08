@@ -1,8 +1,9 @@
 <?php
+session_start();
 include "../app/classe.php";
 $erreur = false;
 
-if(isset($_GET['action']) && $_GET['action'] == 'ajout')
+/*if(isset($_GET['action']) && $_GET['action'] == 'ajout')
 {
     $l = $_GET['l'];
     $p = $_GET['p'];
@@ -27,7 +28,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'refresh')
     $panier_cls->modifierQTeArticle($l, $q);
 
 }
-/*
+*/
+
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
 {
@@ -79,4 +81,4 @@ if (!$erreur){
             break;
     }
 }
-*/
+
