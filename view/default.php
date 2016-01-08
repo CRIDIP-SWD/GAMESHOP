@@ -290,9 +290,6 @@ ini_set('display_errors', 1);
                                     <h4>Panier Vide</h4>
                                 </div>
                             </div>
-                            <div class="top-cart-action clearfix">
-                                <button class="button button-3d button-small nomargin fright" onclick="window.location.href='index.php?view=panier'">Voir mon panier</button>
-                            </div>
                         </div>
                     </div><!-- #top-cart end -->
                             <?php }else{ ?>
