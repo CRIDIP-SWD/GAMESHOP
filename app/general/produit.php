@@ -14,22 +14,22 @@ class produit extends DB
 {
     public function count_images($ref_produit)
     {
-        return $this->query("SELECT COUNT(ref_produit) FROM produits_images WHERE ref_produit = '$ref_produit'");
+        return $this->count("SELECT COUNT(ref_produit) FROM produits_images WHERE ref_produit = '$ref_produit'");
     }
 
     public function count_bonus($ref_produit)
     {
-        return $this->query("SELECT COUNT(ref_produit) FROM produits_bonus WHERE ref_produit = '$ref_produit'");
+        return $this->count("SELECT COUNT(ref_produit) FROM produits_bonus WHERE ref_produit = '$ref_produit'");
     }
 
     public function count_videos($ref_produit)
     {
-        return $this->query("SELECT COUNT(ref_produit) FROM produits_videos WHERE ref_produit = '$ref_produit'");
+        return $this->count("SELECT COUNT(ref_produit) FROM produits_videos WHERE ref_produit = '$ref_produit'");
     }
 
     public function count_promo($ref_produit)
     {
-        return $this->query("SELECT COUNT(ref_produit) FROM produits_promotion WHERE ref_produit = '$ref_produit'");
+        return $this->count("SELECT COUNT(ref_produit) FROM produits_promotion WHERE ref_produit = '$ref_produit'");
     }
 
     public function verif_stat_product($ref_produit)

@@ -271,4 +271,11 @@ class DB extends app{
         $req->execute();
         return $req->fetchAll(PDO::FETCH_OBJ);
     }
+
+    public function count($sql)
+    {
+        $req = $this->db->prepare($sql);
+        $req->execute();
+        return $req->fetchColumn();
+    }
 }
