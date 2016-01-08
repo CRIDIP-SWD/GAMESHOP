@@ -2,7 +2,7 @@
 if($_SESSION['logged'] == false) {
     header("Location: index.php?view=login&warning=no-connect");
 }else{
-    $idclient = $info_client['idclient'];
+    $idclient = $info_client[0]->idclient;
 }
 ?>
 
@@ -11,7 +11,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="container clearfix">
             <h1>MON COMPTE</h1>
-            <span>Bienvenue <?= $info_client['prenom_client']; ?> <?= $info_client['nom_client']; ?></span>
+            <span>Bienvenue <?= $info_client[0]->prenom_client; ?> <?= $info_client[0]->nom_client; ?></span>
             <ol class="breadcrumb">
                 <li><a href="#">GAMESHOP</a></li>
                 <li><a href="#">MON COMPTE</a></li>
@@ -40,7 +40,7 @@ if($_SESSION['logged'] == false) {
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">
 
-                                <?php if(empty($info_client['pseudo_xbox'])){ ?>
+                                <?php if(empty($info_client[0]->pseudo_xbox)){ ?>
                                     <div class="row">
                                         <div class="col-md-12" style="position: relative; left: 350px; top: 50px">
                                             <button class="button button-desc button-3d button-rounded button-green" data-toggle="modal" data-target="#add-xbox-live">Lié votre compte Xbox Live<span>Bénéficier de 100 Points de fidélités</span></button>
@@ -58,7 +58,7 @@ if($_SESSION['logged'] == false) {
                                                             <div class="col-md-6">
                                                                 <h2>Connexion au Xbox Live</h2>
                                                                 <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
-                                                                    <input type="hidden" name="idclient" value="<?= $info_client['idclient']; ?>">
+                                                                    <input type="hidden" name="idclient" value="<?= $info_client[0]->idclient; ?>">
                                                                     <div class="form-group">
                                                                         <label class="control-label col-md-3" for="email">GamerTag</label>
                                                                         <div class="col-md-8">
@@ -81,18 +81,18 @@ if($_SESSION['logged'] == false) {
 
                                     <div class="tab-container">
                                         <?php
-                                        $convert_date_xbox = $date_format->convert_strtotime($lastseen['timestamp']);
+                                        $convert_date_xbox = $date_format->convert_strtotime($lastseen[0]->timestamp);
                                         ?>
                                         <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                             <div class="row">
                                                 <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_xbox_live.jpg) no-repeat; background-position: -300px -300px;">
                                                     <div class="panel-body">
                                                         <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
-                                                            <div class="col-md-1"><img src="<?= $gamercard['gamerpicLargeImagePath']; ?>" class="img-responsive" width="80"/></div>
+                                                            <div class="col-md-1"><img src="<?= $gamercard[0]->gamerpicLargeImagePath; ?>" class="img-responsive" width="80"/></div>
                                                             <div class="col-md-11" style="margin: 0;">
-                                                                <h2 style="margin: 0;"><?= $gamercard['gamertag']; ?></h2>
-                                                                <h4 style="margin: 0;"><strong>Statut:</strong> <?= $presence['state']; ?></h4>
-                                                                <?php if($presence['state'] == 'Offline'): ?>
+                                                                <h2 style="margin: 0;"><?= $gamercard[0]->gamertag; ?></h2>
+                                                                <h4 style="margin: 0;"><strong>Statut:</strong> <?= $presence[0]->state; ?></h4>
+                                                                <?php if($presence[0]->state == 'Offline'): ?>
                                                                     <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
                                                                 <?php endif; ?>
                                                             </div>
@@ -304,7 +304,7 @@ if($_SESSION['logged'] == false) {
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/steam-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">
 
-                                <?php if(empty($info_client['pseudo_steam'])){ ?>
+                                <?php if(empty($info_client[0]->pseudo_steam)){ ?>
                                     <div class="row">
                                         <div class="col-md-12" style="position: relative; left: 350px; top: 50px">
                                             <button class="button button-desc button-3d button-rounded button-black" data-toggle="modal" data-target="#add-steam">Lié votre compte Steam<span>Bénéficier de 100 Points de fidélités</span></button>
@@ -322,7 +322,7 @@ if($_SESSION['logged'] == false) {
                                                             <div class="col-md-6">
                                                                 <h2>Connexion à STEAM</h2>
                                                                 <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
-                                                                    <input type="hidden" name="idclient" value="<?= $info_client['idclient']; ?>">
+                                                                    <input type="hidden" name="idclient" value="<?= $info_client[0]->idclient; ?>">
                                                                     <div class="form-group">
                                                                         <label class="control-label col-md-3" for="email">Id Steam*</label>
                                                                         <div class="col-md-8">
@@ -395,15 +395,15 @@ if($_SESSION['logged'] == false) {
                                 <tbody>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Nom :</td>
-                                    <td style="width: 75%;"><?= $info_client['nom_client']; ?></td>
+                                    <td style="width: 75%;"><?= $info_client[0]->nom_client; ?></td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Prénom :</td>
-                                    <td style="width: 75%;"><?= $info_client['prenom_client']; ?></td>
+                                    <td style="width: 75%;"><?= $info_client[0]->prenom_client; ?></td>
                                 </tr>
                                 <tr>
                                     <td style="font-weight: bold; width: 25%;">Email :</td>
-                                    <td style="width: 75%;"><?= $info_client['email']; ?></td>
+                                    <td style="width: 75%;"><?= $info_client[0]->email; ?></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -418,7 +418,7 @@ if($_SESSION['logged'] == false) {
                             <h3 style="color: #0000E6;">Mon Carnet d'Adresse</h3>
                             <table style="width: 100%; text-align: left;">
                                 <?php
-                                $adresse = $client_cls->fact_default($info_client['idclient']);
+                                $adresse = $client_cls->fact_default($info_client[0]->idclient);
                                 ?>
                                 <tbody>
                                     <tr>
@@ -426,9 +426,9 @@ if($_SESSION['logged'] == false) {
                                     </tr>
                                     <tr>
                                         <td>
-                                            <?= $adresse['nom']; ?> <?= $adresse['prenom']; ?><br>
-                                            <?= html_entity_decode($adresse['adresse']); ?><br>
-                                            <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?>
+                                            <?= $adresse[0]->nom; ?> <?= $adresse[0]->prenom; ?><br>
+                                            <?= html_entity_decode($adresse[0]->adresse); ?><br>
+                                            <?= $adresse[0]->code_postal; ?> <?= html_entity_decode($adresse[0]->ville); ?>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -442,17 +442,17 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-line2-basket i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Achats</h3>
-                            <?php if($cmd_cls->count_cmd($info_client['idclient']) != 0){ ?>
+                            <?php if($cmd_cls->count_cmd($info_client[0]->idclient) != 0){ ?>
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    $sql_cmd = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande ASC LIMIT 4 ")or die(mysql_error());
-                                    while($cmd = mysql_fetch_array($sql_cmd)){
+                                    $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande ASC LIMIT 4 ");
+                                    foreach($sql_cmd as $cmd):
                                         ?>
                                         <tr>
-                                            <td><span class="text-info">Commande N° <?= $cmd['num_commande']; ?></span></td>
+                                            <td><span class="text-info">Commande N° <?= $cmd->num_commande; ?></span></td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             <?php }else{ ?>
@@ -476,7 +476,7 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-euro i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Bon d'Achat</h3>
-                            <?php if($vourcher_cls->count_vourcher_clt($info_client['idclient']) == 0){ ?>
+                            <?php if($vourcher_cls->count_vourcher_clt($info_client[0]->idclient) == 0){ ?>
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <tr>
@@ -488,19 +488,19 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    $sql_vourcher = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' ORDER BY perempsion ASC LIMIT 4")or die(mysql_error());
-                                    while($vourcher = mysql_fetch_array($sql_vourcher)){
+                                    $sql_vourcher = $DB->query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' ORDER BY perempsion ASC LIMIT 4");
+                                    foreach($sql_vourcher as $vourcher):
                                     ?>
                                         <tr>
                                             <td style="width: 100%;">
-                                                <?php if($vourcher['perempsion'] <= time()){ ?>
-                                                    <span class="text-danger">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></span>
+                                                <?php if($vourcher->perempsion <= time()){ ?>
+                                                    <span class="text-danger">Bon d'achat de <?= $vourcher->percent_rem; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher->perempsion); ?></span>
                                                 <?php }else{ ?>
-                                                    <span class="text-info">Bon d'achat de <?= $vourcher['percent_rem']; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher['perempsion']); ?></span>
+                                                    <span class="text-info">Bon d'achat de <?= $vourcher->percent_rem; ?>% valable jusqu'au <?= date("d/m/Y", $vourcher->perempsion); ?></span>
                                                 <?php } ?>
                                             </td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             <?php } ?>
@@ -517,13 +517,13 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    $sql_resa = mysql_query("SELECT * FROM client_reservation WHERE idclient = '$idclient' ORDER BY num_reservation ASC LIMIT 4")or die(mysql_error());
-                                    while($resa = mysql_fetch_array($sql_resa)){
+                                    $sql_resa = $DB->query("SELECT * FROM client_reservation WHERE idclient = '$idclient' ORDER BY num_reservation ASC LIMIT 4");
+                                    foreach($sql_resa as $resa):
                                     ?>
                                         <tr>
-                                            <td><span class="text-info">Réservation N° <?= $resa['num_reservation']; ?></span></td>
+                                            <td><span class="text-info">Réservation N° <?= $resa->num_reservation; ?></span></td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             <?php }else{ ?>
@@ -578,34 +578,34 @@ if($_SESSION['logged'] == false) {
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="r">Nom:</label>
                                             <div class="col-md-9">
-                                                <input id="r" type="text" name="nom_client" value="<?= $info_client['nom_client']; ?>" class="form-control" />
+                                                <input id="r" type="text" name="nom_client" value="<?= $info_client[0]->nom_client; ?>" class="form-control" />
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="r">Prénom:</label>
                                             <div class="col-md-9">
-                                                <input id="r" type="text" name="prenom_client" value="<?= $info_client['prenom_client']; ?>" class="form-control" />
+                                                <input id="r" type="text" name="prenom_client" value="<?= $info_client[0]->prenom_client; ?>" class="form-control" />
                                             </div>
                                         </div>
                                         <h2>Identification</h2>
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="r">ID Playstation Network:</label>
                                             <div class="col-md-9">
-                                                <input id="r" type="text" name="pseudo_psn" value="<?= $info_client['pseudo_psn']; ?>" class="form-control" />
+                                                <input id="r" type="text" name="pseudo_psn" value="<?= $info_client[0]->pseudo_psn; ?>" class="form-control" />
                                                 <span class="help-block">Adresse email de connexion au PSN</span>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="r">Mot de Passe PSN:</label>
                                             <div class="col-md-9">
-                                                <input id="r" type="password" name="pass_psn" value="<?= $info_client['pass_psn']; ?>" class="form-control" />
+                                                <input id="r" type="password" name="pass_psn" value="<?= $info_client[0]->pass_psn; ?>" class="form-control" />
                                             </div>
                                         </div>
                                         <hr>
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="r">XBOX LIVE Gamertag:</label>
                                             <div class="col-md-9">
-                                                <input id="r" type="text" name="pseudo_xbox" value="<?= $info_client['pseudo_xbox']; ?>" class="form-control" />
+                                                <input id="r" type="text" name="pseudo_xbox" value="<?= $info_client[0]->pseudo_xbox; ?>" class="form-control" />
                                                 <span class="help-block">Gamertag = Pseudo XBOX LIVE</span>
                                             </div>
                                         </div>
@@ -613,7 +613,7 @@ if($_SESSION['logged'] == false) {
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="r">ID STEAM:</label>
                                             <div class="col-md-9">
-                                                <input id="r" type="text" name="pseudo_steam" value="<?= $info_client['pseudo_steam']; ?>" class="form-control" />
+                                                <input id="r" type="text" name="pseudo_steam" value="<?= $info_client[0]->pseudo_steam; ?>" class="form-control" />
                                                 <span class="help-block">Identifiant 64 caractère</span>
                                             </div>
                                         </div>
@@ -640,7 +640,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="container clearfix">
             <h1>MON COMPTE</h1>
-            <span>Bienvenue <?= $info_client['prenom_client']; ?> <?= $info_client['nom_client']; ?></span>
+            <span>Bienvenue <?= $info_client[0]->prenom_client; ?> <?= $info_client[0]->nom_client; ?></span>
             <ol class="breadcrumb">
                 <li><a href="index.php?view=index">GAMESHOP</a></li>
                 <li><a href="index.php?view=profil">MON COMPTE</a></li>
@@ -680,32 +680,32 @@ if($_SESSION['logged'] == false) {
                             </thead>
                             <tbody>
                             <?php
-                            $sql_adresse_facture = mysql_query("SELECT * FROM client_adresse_fact WHERE idclient = '$idclient'")or die(mysql_error());
-                            while($adresse = mysql_fetch_array($sql_adresse_facture)){
+                            $sql_adresse_facture = $DB->query("SELECT * FROM client_adresse_fact WHERE idclient = '$idclient'");
+                            foreach($sql_adresse_facture as $adresse):
                             ?>
                                 <tr>
                                     <td style="text-align: center;">
-                                        <?php if($adresse['default'] == 1): ?>
+                                        <?php if($adresse->default == 1): ?>
                                             <i class="icon-star3 icon-2x text-center text-warning" data-toggle="tooltip" data-original-title="Par Default"></i>
                                         <?php endif; ?>
                                     </td>
-                                    <td><?= $adresse['alias']; ?></td>
+                                    <td><?= $adresse->alias; ?></td>
                                     <td>
-                                        <?php if(!empty($adresse['societe'])){echo "<strong>".$adresse['societe']."</strong><br><i>".$adresse['nom']." ".$adresse['prenom']."</i>";}else{echo "<strong>".$adresse['nom']." ".$adresse['prenom']."</strong>";} ?>
+                                        <?php if(!empty($adresse->societe)){echo "<strong>".$adresse->societe."</strong><br><i>".$adresse->nom." ".$adresse->prenom."</i>";}else{echo "<strong>".$adresse->nom." ".$adresse->prenom."</strong>";} ?>
                                     </td>
                                     <td>
-                                        <?= html_entity_decode($adresse['adresse']); ?><br>
-                                        <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?><br>
+                                        <?= html_entity_decode($adresse->adresse); ?><br>
+                                        <?= $adresse->code_postal; ?> <?= html_entity_decode($adresse->ville); ?><br>
                                         FRANCE
                                     </td>
                                     <td>
-                                        <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
+                                        <i class="icon-phone3"></i> 0<?= substr($adresse->telephone, 4, 12); ?>
                                     </td>
                                     <td>
-                                        <a class="btn" href="<?= $constante->getUrl(array("core/"), false, false);?>account.php?action=supp-adresse&type=livraison&idadresse=<?= $adresse['idadresse']; ?>"><i class="icon-remove-sign text-danger icon-2x"></i></a>
+                                        <a class="btn" href="<?= $constante->getUrl(array("core/"), false, false);?>account.php?action=supp-adresse&type=livraison&idadresse=<?= $adresse->idadresse; ?>"><i class="icon-remove-sign text-danger icon-2x"></i></a>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -731,32 +731,32 @@ if($_SESSION['logged'] == false) {
                             </thead>
                             <tbody>
                             <?php
-                            $sql_adresse_liv = mysql_query("SELECT * FROM client_adresse_liv WHERE idclient = '$idclient'")or die(mysql_error());
-                            while($adresse = mysql_fetch_array($sql_adresse_liv)){
+                            $sql_adresse_liv = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = '$idclient'");
+                            foreach($sql_adresse_liv as $adresse):
                                 ?>
                                 <tr>
                                     <td style="text-align: center;">
-                                        <?php if($adresse['default'] == 1): ?>
+                                        <?php if($adresse->default == 1): ?>
                                             <i class="icon-star3 icon-2x text-center text-warning" data-toggle="tooltip" data-original-title="Par Default"></i>
                                         <?php endif; ?>
                                     </td>
-                                    <td><?= $adresse['alias']; ?></td>
+                                    <td><?= $adresse->alias; ?></td>
                                     <td>
-                                        <?php if(!empty($adresse['societe'])){echo "<strong>".$adresse['societe']."</strong><br><i>".$adresse['nom']." ".$adresse['prenom']."</i>";}else{echo "<strong>".$adresse['nom']." ".$adresse['prenom']."</strong>";} ?>
+                                        <?php if(!empty($adresse->societe)){echo "<strong>".$adresse->societe."</strong><br><i>".$adresse->nom." ".$adresse->prenom."</i>";}else{echo "<strong>".$adresse->nom." ".$adresse->prenom."</strong>";} ?>
                                     </td>
                                     <td>
-                                        <?= html_entity_decode($adresse['adresse']); ?><br>
-                                        <?= $adresse['code_postal']; ?> <?= html_entity_decode($adresse['ville']); ?><br>
+                                        <?= html_entity_decode($adresse->adresse); ?><br>
+                                        <?= $adresse->code_postal; ?> <?= html_entity_decode($adresse->ville); ?><br>
                                         FRANCE
                                     </td>
                                     <td>
-                                        <i class="icon-phone3"></i> 0<?= substr($adresse['telephone'], 4, 12); ?>
+                                        <i class="icon-phone3"></i> 0<?= substr($adresse->telephone, 4, 12); ?>
                                     </td>
                                     <td>
-                                        <a class="btn" href="<?= $constante->getUrl(array("core/"), false, false);?>account.php?action=supp-adresse&type=livraison&idadresse=<?= $adresse['idadresse']; ?>"><i class="icon-remove-sign text-danger icon-2x"></i></a>
+                                        <a class="btn" href="<?= $constante->getUrl(array("core/"), false, false);?>account.php?action=supp-adresse&type=livraison&idadresse=<?= $adresse->idadresse; ?>"><i class="icon-remove-sign text-danger icon-2x"></i></a>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                            <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>
@@ -879,7 +879,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="container clearfix">
             <h1>MON COMPTE</h1>
-            <span>Bienvenue <?= $info_client['prenom_client']; ?> <?= $info_client['nom_client']; ?></span>
+            <span>Bienvenue <?= $info_client[0]->prenom_client; ?> <?= $info_client[0]->nom_client; ?></span>
             <ol class="breadcrumb">
                 <li><a href="index.php?view=index">GAMESHOP</a></li>
                 <li><a href="index.php?view=profil">MON COMPTE</a></li>
@@ -966,16 +966,16 @@ if($_SESSION['logged'] == false) {
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $sql_cmd = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande DESC")or die(mysql_error());
-                                    while($cmd = mysql_fetch_array($sql_cmd)){
+                                    $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande DESC");
+                                    foreach($sql_cmd as $cmd):
                                     ?>
                                         <tr>
-                                            <td class="text-center"><?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("m", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
-                                            <td class="text-center"><?= $cmd['num_commande']; ?></td>
-                                            <td class="text-center" style="font-weight: 700; color: #0E76A8;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
+                                            <td class="text-center"><?= date("d", $cmd->date_commande); ?> <?= $date_format->mois(date("m", $cmd->date_commande)); ?> <?= date("Y", $cmd->date_commande); ?></td>
+                                            <td class="text-center"><?= $cmd->num_commande; ?></td>
+                                            <td class="text-center" style="font-weight: 700; color: #0E76A8;"><?= number_format($cmd->total_commande, 2, ',', ' ')." €"; ?></td>
                                             <td class="text-center">
                                                 <?php
-                                                switch($cmd['statut'])
+                                                switch($cmd->statut)
                                                 {
                                                     case 0:
                                                         echo "<span class='label label-danger'>Annulée</span>";
@@ -1015,15 +1015,15 @@ if($_SESSION['logged'] == false) {
                                                 ?>
                                             </td>
                                             <td class="text-center">
-                                                <?php if($cmd['statut'] == 4 OR $cmd['statut'] == 5 OR $cmd['statut'] == 6): ?>
+                                                <?php if($cmd->statut == 4 OR $cmd->statut == 5 OR $cmd->statut == 6): ?>
                                                     <i class="icon-file-text icon-2x text-info" data-toggle="tooltip" data-original-title="Votre facture"></i>
                                                 <?php endif; ?>
                                             </td>
                                             <td class="text-center">
-                                                <a href="index.php?view=profil&sub=achat-detail&num_commande=<?= $cmd['num_commande']; ?>" class="button button-mini button-rounded button-blue">Détail</a>
+                                                <a href="index.php?view=profil&sub=achat-detail&num_commande=<?= $cmd->num_commande; ?>" class="button button-mini button-rounded button-blue">Détail</a>
                                             </td>
                                         </tr>
-                                    <?php } ?>
+                                    <?php endforeach; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -1037,18 +1037,17 @@ if($_SESSION['logged'] == false) {
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'achat-detail'): ?>
     <?php
     $num_commande = $_GET['num_commande'];
-    $sql_cmd = mysql_query("SELECT * FROM commande, client
+    $cmd = $DB->query("SELECT * FROM commande, client
                             WHERE commande.idclient = client.idclient
-                            AND commande.num_commande = '$num_commande'")or die(mysql_error());
-    $cmd = mysql_fetch_array($sql_cmd);
+                            AND commande.num_commande = '$num_commande'");
     ?>
     <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
 
         <div class="container clearfix">
             <h1>COMMANDE N° <strong><?= $num_commande; ?></strong></h1>
-            <span><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?> </span>
+            <span><?= $date_format->jour_semaine(date("N", $cmd[0]->date_commande)); ?> <?= date("d", $cmd[0]->date_commande); ?> <?= $date_format->mois(date("n", $cmd[0]->date_commande)); ?> <?= date("Y", $cmd[0]->date_commande); ?> </span>
             <ol class="breadcrumb">
-                <li><h1 class="text-info"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></h1></li>
+                <li><h1 class="text-info"><?= number_format($cmd[0]->total_commande, 2, ',', ' ')." €"; ?></h1></li>
             </ol>
         </div>
 
@@ -1080,15 +1079,15 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_commande'])); ?> <?= date("d", $cmd['date_commande']); ?> <?= $date_format->mois(date("n", $cmd['date_commande'])); ?> <?= date("Y", $cmd['date_commande']); ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd[0]->date_commande)); ?> <?= date("d", $cmd[0]->date_commande); ?> <?= $date_format->mois(date("n", $cmd[0]->date_commande)); ?> <?= date("Y", $cmd[0]->date_commande); ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Client</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['nom_client']; ?> <?= $cmd['prenom_client']; ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd[0]->nom_client; ?> <?= $cmd[0]->prenom_client; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Total de la commande</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= number_format($cmd['total_commande'], 2, ',', ' ')." €"; ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= number_format($cmd[0]->total_commande, 2, ',', ' ')." €"; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Nb d'article</td>
@@ -1096,17 +1095,17 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date de Livraison:</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd['date_livraison'])); ?> <?= date("d", $cmd['date_livraison']); ?> <?= $date_format->mois(date("n", $cmd['date_livraison'])); ?> <?= date("Y", $cmd['date_livraison']); ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd[0]->date_livraison)); ?> <?= date("d", $cmd[0]->date_livraison); ?> <?= $date_format->mois(date("n", $cmd[0]->date_livraison)); ?> <?= date("Y", $cmd[0]->date_livraison); ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Destination</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['destination']; ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd[0]->destination; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Statut de la commande</td>
                                                         <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;">
                                                             <?php
-                                                            switch($cmd['statut'])
+                                                            switch($cmd[0]->statut)
                                                             {
                                                                 case 0:
                                                                     echo "<span class='label label-danger'>Annulée</span>";
@@ -1155,15 +1154,15 @@ if($_SESSION['logged'] == false) {
                                                 <tbody>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Adresse de Livraison</td>
-                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['adresse_liv']; ?></td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd[0]->adresse_liv; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Methode de Livraison</td>
-                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['methode_livraison']; ?></td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd[0]->methode_livraison; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Methode de paiement</td>
-                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd['methode_paiement']; ?></td>
+                                                    <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd[0]->methode_paiement; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Etat des Articles</td>
@@ -1207,28 +1206,27 @@ if($_SESSION['logged'] == false) {
                                                     </thead>
                                                     <tbody>
                                                     <?php
-                                                    $sql_article = mysql_query("SELECT * FROM commande_article, produits
+                                                    $sql_article = $DB->query("SELECT * FROM commande_article, produits
                                                                                 WHERE commande_article.idarticle = produits.id
-                                                                                AND num_commande = '$num_commande'")or die(mysql_error());
-                                                    while($article = mysql_fetch_array($sql_article)){
-                                                        $ref_produit = $article['ref_produit'];
-                                                        $sql_categorie = mysql_query("SELECT * FROM produits_categorie, categorie
+                                                                                AND num_commande = '$num_commande'");
+                                                    foreach($sql_article as $article):
+                                                        $ref_produit = $article->ref_produit;
+                                                        $categorie = $DB->query("SELECT * FROM produits_categorie, categorie
                                                                                       WHERE produits_categorie.idcategorie = categorie.id
-                                                                                      AND produits_categorie.ref_produit = '$ref_produit'")or die(mysql_error());
-                                                        $categorie = mysql_fetch_array($sql_categorie);
-                                                        $sql_subcategorie = mysql_query("SELECT * FROM produits_subcategorie, subcategorie
+                                                                                      AND produits_categorie.ref_produit = '$ref_produit'");
+
+                                                        $subcategorie = $DB->query("SELECT * FROM produits_subcategorie, subcategorie
                                                                                         WHERE produits_subcategorie.idsubcategorie = subcategorie.id
-                                                                                        AND produits_subcategorie.ref_produit = '$ref_produit'")or die(mysql_error());
-                                                        $subcategorie = mysql_fetch_array($sql_subcategorie);
+                                                                                        AND produits_subcategorie.ref_produit = '$ref_produit'");
                                                     ?>
                                                         <tr>
-                                                            <td class="text-center"><?= $article['id']; ?></td>
-                                                            <td class="text-center"><a href="index.php?view=produit&ref_produit=<?= $article['ref_produit']; ?>"><?= $article['designation']; ?></a></td>
-                                                            <td class="text-center"><?= $article['ref_produit']; ?></td>
-                                                            <td class="text-center"><?= $categorie['designation_cat']; ?> / <?= $subcategorie['designation_subcat']; ?></td>
-                                                            <td class="text-center"><?= number_format($article['prix_vente'], 2, ',', ' ')." €"; ?></td>
-                                                            <td class="text-center"><?= $article['qte']; ?></td>
-                                                            <td class="text-center"><?= number_format($article['total_article_commande'], 2, ',', ' ')." €"; ?></td>
+                                                            <td class="text-center"><?= $article->id; ?></td>
+                                                            <td class="text-center"><a href="index.php?view=produit&ref_produit=<?= $article->ref_produit; ?>"><?= $article->designation; ?></a></td>
+                                                            <td class="text-center"><?= $article->ref_produit; ?></td>
+                                                            <td class="text-center"><?= $categorie[0]->designation_cat; ?> / <?= $subcategorie[0]->designation_subcat; ?></td>
+                                                            <td class="text-center"><?= number_format($article->prix_vente, 2, ',', ' ')." €"; ?></td>
+                                                            <td class="text-center"><?= $article->qte; ?></td>
+                                                            <td class="text-center"><?= number_format($article->total_article_commande, 2, ',', ' ')." €"; ?></td>
                                                             <td class="text-center">
                                                                 <?php
                                                                 if($produit_cls->statut_produit($ref_produit) == 0)
@@ -1242,7 +1240,7 @@ if($_SESSION['logged'] == false) {
                                                                 ?>
                                                             </td>
                                                         </tr>
-                                                    <?php } ?>
+                                                    <?php endforeach; ?>
                                                     </tbody>
                                                 </table>
                                                 <div class="row">
@@ -1250,8 +1248,8 @@ if($_SESSION['logged'] == false) {
                                                     <div class="col-md-6">
                                                         <div class="table-responsive">
                                                             <?php
-                                                            $total_commande = $cmd['total_commande'];
-                                                            $port = $cmd['prix_envoie'];
+                                                            $total_commande = $cmd[0]->total_commande;
+                                                            $port = $cmd[0]->prix_envoie;
                                                             $total = $total_commande;;
                                                             $total += $port;
                                                             ?>
@@ -1323,17 +1321,17 @@ if($_SESSION['logged'] == false) {
                                                     </thead>
                                                     <tbody>
                                                     <?php
-                                                    $sql_reglement = mysql_query("SELECT * FROM commande_reglement WHERE num_commande = '$num_commande'")or die(mysql_error());
-                                                    while($reglement = mysql_fetch_array($sql_reglement)){
+                                                    $sql_reglement = $DB->query("SELECT * FROM commande_reglement WHERE num_commande = '$num_commande'");
+                                                    foreach($sql_reglement as $reglement):
                                                     ?>
                                                         <tr>
-                                                            <td class="text-center"><?= date("d-m-Y", $reglement['date_reglement']); ?></td>
-                                                            <td class="text-center"><?= $reglement['ref_reglement']; ?></td>
-                                                            <td class="text-center"><?= html_entity_decode($reglement['mode_reglement']); ?></td>
-                                                            <td class="text-center"><?= number_format($reglement['montant_reglement'], 2, ',', ' ')." €"; ?></td>
+                                                            <td class="text-center"><?= date("d-m-Y", $reglement->date_reglement); ?></td>
+                                                            <td class="text-center"><?= $reglement->ref_reglement; ?></td>
+                                                            <td class="text-center"><?= html_entity_decode($reglement->mode_reglement); ?></td>
+                                                            <td class="text-center"><?= number_format($reglement->montant_reglement, 2, ',', ' ')." €"; ?></td>
                                                             <td class="text-center">
                                                                 <?php
-                                                                if($reglement['etat_reglement'] == 0)
+                                                                if($reglement->etat_reglement == 0)
                                                                 {
                                                                     echo "<span class='label label-danger'>Refuser</span>";
                                                                 }else{
@@ -1342,7 +1340,7 @@ if($_SESSION['logged'] == false) {
                                                                 ?>
                                                             </td>
                                                         </tr>
-                                                    <?php } ?>
+                                                    <?php endforeach; ?>
                                                     </tbody>
                                                 </table>
                                             </div>

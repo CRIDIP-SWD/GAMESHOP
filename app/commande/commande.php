@@ -24,38 +24,27 @@ class commande extends DB
 
     public function count_cmd($idclient)
     {
-        $data = $this->query("SELECT COUNT(idcommande) FROM commande WHERE idclient = '$idclient'");
-        return $data;
+        return $this->count("SELECT COUNT(idcommande) FROM commande WHERE idclient = '$idclient'");
     }
 
     public function last_cmd($idclient)
     {
-        $sql = mysql_query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4")or die(mysql_error());
-        $data = mysql_fetch_array($sql);
-        return $data;
+        return $this->query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4");
     }
 
     public function count_article($num_commande)
     {
-        $sql = mysql_query("SELECT COUNT(idarticle) FROM commande_article WHERE num_commande = '$num_commande'")or die(mysql_error());
-        $data = mysql_result($sql, 0);
-        return $data;
+        return $this->count("SELECT COUNT(idarticle) FROM commande_article WHERE num_commande = '$num_commande'");
     }
 
     public function verif_article_cmd_sortie($num_commande)
     {
-        $sql_sortie = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= '$this->date_jour' AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
-        $sortie = mysql_result($sql_sortie, 0);
-
-        return $sortie;
+        return $this->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= '$this->date_jour' AND commande_article.num_commande = '$num_commande'");
     }
 
     public function verif_article_cmd_stock($num_commande)
     {
-        $sql_stock = mysql_query("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < '0' AND commande_article.num_commande = '$num_commande'")or die(mysql_error());
-        $stock = mysql_result($sql_stock, 0);
-
-        return $stock;
+        return $this->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < '0' AND commande_article.num_commande = '$num_commande'");
     }
 
 }

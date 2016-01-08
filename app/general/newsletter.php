@@ -9,12 +9,12 @@
 namespace App\general;
 
 
-class newsletter
+use App\DB;
+
+class newsletter extends DB
 {
     public function count_newsletter($idclient)
     {
-        $sql = mysql_query("SELECT COUNT(idcltnewsletter) FROM client_newsletter WHERE idclient = '$idclient'")or die(mysql_error());
-        $data = mysql_result($sql, 0);
-        return $data;
+        return $this->count("SELECT COUNT(idcltnewsletter) FROM client_newsletter WHERE idclient = '$idclient'");
     }
 }

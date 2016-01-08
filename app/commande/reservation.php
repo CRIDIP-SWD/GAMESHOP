@@ -9,12 +9,12 @@
 namespace App\commande;
 
 
-class reservation
+use App\DB;
+
+class reservation extends DB
 {
     public function count_resa($idclient)
     {
-        $sql = mysql_query("SELECT COUNT(idreservation) FROM client_reservation WHERE idclient = '$idclient'")or die(mysql_error());
-        $data = mysql_result($sql, 0);
-        return $data;
+        return $this->count("SELECT COUNT(idreservation) FROM client_reservation WHERE idclient = '$idclient'");
     }
 }

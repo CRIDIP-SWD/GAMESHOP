@@ -9,19 +9,17 @@
 namespace App\commande;
 
 
-class vourcher
+use App\DB;
+
+class vourcher extends DB
 {
     public function count_vourcher_clt($idclient)
     {
-        $sql = mysql_query("SELECT COUNT(idvourcher) FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient'")or die(mysql_error());
-        $data = mysql_result($sql, 0);
-        return $data;
+        return $this->count("SELECT COUNT(idvourcher) FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient'");
     }
 
     public function last_vourcher_clt($idclient)
     {
-        $sql = mysql_query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' LIMIT 4")or die(mysql_error());
-        $data = mysql_fetch_array($sql);
-        return $data;
+        return $this->query("SELECT * FROM shop_vourcher WHERE client = '1' AND idclient = '$idclient' LIMIT 4");
     }
 }
