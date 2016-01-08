@@ -178,7 +178,7 @@ ini_set('display_errors', 1);
                                                                 <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
-                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="panier.php?action=ajout&l=<?= $new->designation; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $new->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
@@ -245,7 +245,7 @@ ini_set('display_errors', 1);
                                                                     <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->
                                                                     <div class="product-overlay">
-                                                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <a href="panier.php?action=ajout&l=<?= $preco->designation; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                     </div>
                                                                 </div>

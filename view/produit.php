@@ -71,15 +71,10 @@ if($verif === 3)
                         <!-- Product Single - Quantity & Cart Button
                         ============================================= -->
                         <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
-                            <div class="quantity clearfix">
-                                <input type="button" value="-" class="minus">
-                                <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
-                                <input type="button" value="+" class="plus">
-                            </div>
                             <?php if($verif === 2){ ?>
                                 <button type="submit" class="add-to-cart button nomargin">PRECOMMANDER</button>
                             <?php }else{ ?>
-                                <button type="submit" class="add-to-cart button nomargin">Ajouter au Panier</button>
+                                <button type="submit" class="add-to-cart button nomargin" onclick="window.location.href='panier.php?action=ajout&l=<?= $produit[0]->designation; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">Ajouter au Panier</button>
                             <?php } ?>
                         </form><!-- Product Single - Quantity & Cart Button End -->
 
