@@ -1252,7 +1252,8 @@ if($_SESSION['logged'] == false) {
                                                             <?php
                                                             $total_commande = $cmd['total_commande'];
                                                             $port = $cmd['prix_envoie'];
-                                                            $total = $total_commande =+ $port;
+                                                            $total = $total_commande;;
+                                                            $total += $port;
                                                             ?>
                                                             <h4>Total de la Commande</h4>
 
