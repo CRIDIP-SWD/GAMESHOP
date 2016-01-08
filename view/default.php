@@ -280,21 +280,14 @@ ini_set('display_errors', 1);
                         if($nbArticle <= 0){
                     ?>
                     <div id="top-cart">
-                        <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span><?= $nbArticle; ?></span></a>
+                        <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>0</span></a>
                         <div class="top-cart-content">
                             <div class="top-cart-title">
                                 <h4>Votre Panier</h4>
                             </div>
                             <div class="top-cart-items">
                                 <div class="top-cart-item clearfix">
-                                    <div class="top-cart-item-image">
-                                        <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
-                                    </div>
-                                    <div class="top-cart-item-desc">
-                                        <a href="#">Blue Round-Neck Tshirt</a>
-                                        <span class="top-cart-item-price">$19.99</span>
-                                        <span class="top-cart-item-quantity">x 2</span>
-                                    </div>
+                                    <h4>Panier Vide</h4>
                                 </div>
                             </div>
                             <div class="top-cart-action clearfix">
@@ -305,14 +298,21 @@ ini_set('display_errors', 1);
                     </div><!-- #top-cart end -->
                             <?php }else{ ?>
                             <div id="top-cart">
-                                <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span>0</span></a>
+                                <a href="#" id="top-cart-trigger"><i class="icon-shopping-cart"></i><span><?= $nbArticle; ?></span></a>
                                 <div class="top-cart-content">
                                     <div class="top-cart-title">
                                         <h4>Votre Panier</h4>
                                     </div>
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
-                                            <h4>Panier Vide</h4>
+                                            <div class="top-cart-item-image">
+                                                <a href="#"><img src="images/shop/small/1.jpg" alt="Blue Round-Neck Tshirt" /></a>
+                                            </div>
+                                            <div class="top-cart-item-desc">
+                                                <a href="#">Blue Round-Neck Tshirt</a>
+                                                <span class="top-cart-item-price">$19.99</span>
+                                                <span class="top-cart-item-quantity">x 2</span>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="top-cart-action clearfix">
