@@ -291,7 +291,6 @@ ini_set('display_errors', 1);
                                 </div>
                             </div>
                             <div class="top-cart-action clearfix">
-                                <span class="fleft top-checkout-price">$114.95</span>
                                 <button class="button button-3d button-small nomargin fright" onclick="window.location.href='index.php?view=panier'">Voir mon panier</button>
                             </div>
                         </div>
