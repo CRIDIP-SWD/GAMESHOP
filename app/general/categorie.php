@@ -9,19 +9,19 @@
 namespace App\general;
 
 
-class categorie
+use App\DB;
+
+class categorie extends DB
 {
     public function count_categorie($idcategorie)
     {
-        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_categorie WHERE idcategorie = '$idcategorie'")or die(mysql_error());
-        $res = mysql_result($sql, 0);
+        $res = $this->query("SELECT COUNT(ref_produit) FROM produits_categorie WHERE idcategorie = '$idcategorie'");
         return $res;
     }
 
     public function count_sub($idsubcategorie)
     {
-        $sql = mysql_query("SELECT COUNT(ref_produit) FROM produits_subcategorie WHERE idsubcategorie = '$idsubcategorie'")or die(mysql_error());
-        $res = mysql_result($sql, 0);
+        $res = $this->query("SELECT COUNT(ref_produit) FROM produits_subcategorie WHERE idsubcategorie = '$idsubcategorie'");
         return $res;
     }
 }
