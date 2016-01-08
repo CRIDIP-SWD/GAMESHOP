@@ -83,7 +83,7 @@ class panier
 
     public function modifierQTeArticle($libelleProduit,$qteProduit){
         //Si le panier éxiste
-        if ($this->creationPanier() && !isVerrouille())
+        if ($this->creationPanier() && !$this->isVerrouille())
         {
             //Si la quantité est positive on modifie sinon on supprime l'article
             if ($qteProduit > 0)
