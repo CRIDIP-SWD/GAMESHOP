@@ -198,14 +198,12 @@
                             $date = $date_format->convert_strtotime(date("d-m-Y"));
                             $date_moin = strtotime($date ."+ 30 days");
                             $sql_new = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4");
-                            var_dump($sql_new);
-                            die();
                             foreach($sql_new as $new):
                             ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
-                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new['ref_produit']; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
+                                    <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
                                         <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
@@ -213,9 +211,9 @@
                                     </div>
                                 </div>
                                 <div class="product-desc">
-                                    <div class="product-title"><h3><a href="#"><?= $new['designation']; ?></a></h3></div>
-                                    <div class="product-price"><ins><?= number_format($new['prix_vente'], 2, ',', ' ')." €"; ?></ins></div>
-                                    <div class="h5 text-primary"><?= $new['designation_cat']; ?></div>
+                                    <div class="product-title"><h3><a href="#"><?= $new->designation; ?></a></h3></div>
+                                    <div class="product-price"><ins><?= number_format($new->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
+                                    <div class="h5 text-primary"><?= $new->designation_cat; ?></div>
                                 </div>
                             </div>
                             <?php endforeach; ?>
