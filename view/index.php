@@ -197,9 +197,10 @@
                             <?php
                             $date = $date_format->convert_strtotime(date("d-m-Y"));
                             $date_moin = strtotime($date ."+ 30 days");
-                            $sql_new = mysql_query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4")or die(mysql_error());
-                            while($new = mysql_fetch_array($sql_new))
-                            {
+                            $sql_new = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4");
+                            var_dump($sql_new);
+                            die();
+                            foreach($sql_new as $new):
                             ?>
                             <div class="product clearfix">
                                 <div class="product-image">
@@ -217,7 +218,7 @@
                                     <div class="h5 text-primary"><?= $new['designation_cat']; ?></div>
                                 </div>
                             </div>
-                            <?php } ?>
+                            <?php endforeach; ?>
                         </div>
 
                     </div>

@@ -10,8 +10,9 @@ namespace App\commande;
 
 
 use App\app;
+use App\DB;
 
-class commande
+class commande extends DB
 {
 
     public $date_jour = "";
@@ -23,8 +24,7 @@ class commande
 
     public function count_cmd($idclient)
     {
-        $sql = mysql_query("SELECT COUNT(idcommande) FROM commande WHERE idclient = '$idclient'")or die(mysql_error());
-        $data = mysql_result($sql, 0);
+        $data = $this->query("SELECT COUNT(idcommande) FROM commande WHERE idclient = '$idclient'");
         return $data;
     }
 
