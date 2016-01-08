@@ -1214,6 +1214,8 @@ if($_SESSION['logged'] == false) {
                                                     ?>
                                                         <tr>
                                                             <td class="text-center"><?= $article['id']; ?></td>
+                                                            <td class="text-center"><a href="index.php?view=produit&ref_preoduit=<?= $article['ref_produit']; ?>"<?= $article['designation']; ?></td>
+                                                            <td class="text-center"><?= $article['ref_produit']; ?></td>
                                                         </tr>
                                                     <?php } ?>
                                                     </tbody>
