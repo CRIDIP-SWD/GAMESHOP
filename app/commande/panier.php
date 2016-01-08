@@ -26,7 +26,7 @@ class panier
 
     public function ajouterArticle($libelleProduit, $qteProduit, $prixProduit)
     {
-        if($this->creationPanier() != $this->isVerouille())
+        if($this->creationPanier() != $this->isVerrouille())
         {
             //Si le produit existe déjà on ajoute seulement la quantité
             $positionProduit = array_search($libelleProduit,  $_SESSION['panier']['libelleProduit']);
