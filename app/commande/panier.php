@@ -11,5 +11,11 @@ namespace App\commande;
 
 class panier
 {
-
+    public function __construct()
+    {
+        if($_SESSION)
+        {
+            session_start();
+        }
+    }
 }
