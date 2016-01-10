@@ -36,7 +36,7 @@ $produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, pr
                                     <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
                                     <input type="button" value="+" class="plus">
                                 </div>
-                                <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">Ajouter au Panier</a>
+                                <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">Ajouter au Panier</a>
                             </form><!-- Product Single - Quantity & Cart Button End -->
                             <button type="button" class="button button-3d button-desc button-yellow" onclick="window.location.href='index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>'">
                                 Voir la fiche complete
