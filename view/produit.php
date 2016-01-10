@@ -72,11 +72,11 @@ if($verif === 3)
                         ============================================= -->
                         <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
                             <?php if($verif === 2){ ?>
-                                <button type="submit" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">PRECOMMANDER</button>
+                                <button type="button" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">PRECOMMANDER</button>
                             <?php }elseif($verif === 3){ ?>
-                                <button type="submit" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $promo[0]->new_price; ?>'">Ajouter au Panier</button>
+                                <button type="button" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $promo[0]->new_price; ?>'">Ajouter au Panier</button>
                             <?php }else{ ?>
-                                <button type="submit" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">Ajouter au Panier</button>
+                                <button type="button" class="add-to-cart button nomargin" onclick="window.location.href='core/panier.php?action=ajout&l=<?= $produit[0]->id; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>'">Ajouter au Panier</button>
                             <?php } ?>
                         </form><!-- Product Single - Quantity & Cart Button End -->
 
