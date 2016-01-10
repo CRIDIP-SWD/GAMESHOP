@@ -185,7 +185,7 @@
 
                 <ul class="tab-nav clearfix">
                     <li><a href="#tabs-9">Nouveauté</a></li>
-                    <li><a href="#tabs-10">Promotion</a></li>
+                    <!--<li><a href="#tabs-10">Promotion</a></li>-->
                     <li><a href="#tabs-11">Précommande</a></li>
                 </ul>
 
@@ -206,7 +206,7 @@
                                     <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au paniers</span></a>
+                                        <a href="core/panier.php?action=ajout&l=<?= $new->id; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au paniers</span></a>
                                         <a href="assets/include/ajax/shop-item.php" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>
@@ -221,7 +221,7 @@
 
                     </div>
 
-                    <div class="tab-content clearfix" id="tabs-10">
+                    <!--<div class="tab-content clearfix" id="tabs-10">
 
                         <div id="shop" class="clearfix">
 
@@ -316,7 +316,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div>-->
 
                     <div class="tab-content clearfix" id="tabs-11">
 
@@ -332,7 +332,7 @@
                                     <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                     <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" class="img-responsive" height="360" alt="Checked Short Dress"></a>
                                     <div class="product-overlay">
-                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                        <a href="core/panier.php?action=ajout&l=<?= $preco->id; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                     </div>
                                 </div>

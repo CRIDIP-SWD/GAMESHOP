@@ -102,7 +102,7 @@
                                 </td>
 
                                 <td class="cart-product-name">
-                                    <span class="amount"><?= $panier_cls->MontantGlobal(); ?></span>
+                                    <span class="amount"><?= number_format($panier_cls->MontantGlobal(), 2, ',', ' ')." €"; ?></span>
                                 </td>
                             </tr>
                             </tbody>
