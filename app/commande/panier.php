@@ -15,7 +15,7 @@ class panier
     public function creationPanier(){
         if (!isset($_SESSION['panier'])){
             $_SESSION['panier']=array();
-            $_SESSION['panier']['idProduit'] = array();
+            $_SESSION['panier']['refProduit'] = array();
             $_SESSION['panier']['qteProduit'] = array();
             $_SESSION['panier']['prixProduit'] = array();
             $_SESSION['panier']['verrou'] = false;
@@ -24,12 +24,12 @@ class panier
     }
 
 
-    public function ajouterArticle($idProduit, $qteProduit, $prixProduit)
+    public function ajouterArticle($refProduit, $qteProduit, $prixProduit)
     {
         if($this->creationPanier() != $this->isVerrouille())
         {
             //Si le produit existe déjà on ajoute seulement la quantité
-            $positionProduit = array_search($idProduit,  $_SESSION['panier']['idProduit']);
+            $positionProduit = array_search($refProduit,  $_SESSION['panier']['refProduit']);
 
             if ($positionProduit !== false)
             {
@@ -38,7 +38,7 @@ class panier
             else
             {
                 //Sinon on ajoute le produit
-                array_push( $_SESSION['panier']['idProduit'],$idProduit);
+                array_push( $_SESSION['panier']['refProduit'],$idProduit);
                 array_push( $_SESSION['panier']['qteProduit'],$qteProduit);
                 array_push( $_SESSION['panier']['prixProduit'],$prixProduit);
             }
@@ -49,22 +49,22 @@ class panier
         }
     }
 
-    public function supprimerArticle($idProduit){
+    public function supprimerArticle($refProduit){
         //Si le panier existe
         if ($this->creationPanier() && !$this->isVerrouille())
         {
             //Nous allons passer par un panier temporaire
             $tmp=array();
-            $tmp['idProduit'] = array();
+            $tmp['refProduit'] = array();
             $tmp['qteProduit'] = array();
             $tmp['prixProduit'] = array();
             $tmp['verrou'] = $_SESSION['panier']['verrou'];
 
-            for($i = 0; $i < count($_SESSION['panier']['idProduit']); $i++)
+            for($i = 0; $i < count($_SESSION['panier']['refproduit']); $i++)
             {
-                if ($_SESSION['panier']['idProduit'][$i] !== $idProduit)
+                if ($_SESSION['panier']['refProduit'][$i] !== $refProduit)
                 {
-                    array_push( $tmp['idProduit'],$_SESSION['panier']['idProduit'][$i]);
+                    array_push( $tmp['refProduit'],$_SESSION['panier']['refProduit'][$i]);
                     array_push( $tmp['qteProduit'],$_SESSION['panier']['qteProduit'][$i]);
                     array_push( $tmp['prixProduit'],$_SESSION['panier']['prixProduit'][$i]);
                 }
@@ -81,7 +81,7 @@ class panier
         }
     }
 
-    public function modifierQTeArticle($idProduit,$qteProduit){
+    public function modifierQTeArticle($refProduit,$qteProduit){
         //Si le panier éxiste
         if ($this->creationPanier() && !$this->isVerrouille())
         {
@@ -89,7 +89,7 @@ class panier
             if ($qteProduit > 0)
             {
                 //Recharche du produit dans le panier
-                $positionProduit = array_search($idProduit,  $_SESSION['panier']['idProduit']);
+                $positionProduit = array_search($refProduit,  $_SESSION['panier']['refProduit']);
 
                 if ($positionProduit !== false)
                 {
@@ -97,7 +97,7 @@ class panier
                 }
             }
             else {
-                $this->supprimerArticle($idProduit);
+                $this->supprimerArticle($refProduit);
             }
             header("Location: ../index.php?view=panier&success=modif-article-panier");
         }
@@ -108,7 +108,7 @@ class panier
 
     public function MontantGlobal(){
         $total=0;
-        for($i = 0; $i < count($_SESSION['panier']['idProduit']); $i++)
+        for($i = 0; $i < count($_SESSION['panier']['refProduit']); $i++)
         {
             $total += $_SESSION['panier']['qteProduit'][$i] * $_SESSION['panier']['prixProduit'][$i];
         }
@@ -125,7 +125,7 @@ class panier
     public function compterArticles()
     {
         if (isset($_SESSION['panier']))
-            return count($_SESSION['panier']['idProduit']);
+            return count($_SESSION['panier']['refProduit']);
         else
             return 0;
 

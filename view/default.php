@@ -178,7 +178,7 @@ ini_set('display_errors', 1);
                                                                 <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
-                                                                    <a href="core/panier.php?action=ajout&l=<?= $new->id; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="core/panier.php?action=ajout&l=<?= $new->ref_produit; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $new->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
@@ -199,7 +199,7 @@ ini_set('display_errors', 1);
                                                 </ul>
                                             </li>
                                         </ul>
-                                        <ul>
+                                        <!--<ul>
                                             <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
                                                 <ul>
                                                     <!--<li>
@@ -226,9 +226,9 @@ ini_set('display_errors', 1);
                                                             </div>
                                                         </div>
                                                     </li>-->
-                                                </ul>
+                                                <!--</ul>
                                             </li>
-                                        </ul>
+                                        </ul>-->
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
@@ -245,7 +245,7 @@ ini_set('display_errors', 1);
                                                                     <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->
                                                                     <div class="product-overlay">
-                                                                        <a href="core/panier.php?action=ajout&l=<?= $preco->id; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                     </div>
                                                                 </div>
@@ -276,7 +276,7 @@ ini_set('display_errors', 1);
                     ============================================= -->
                     <?php
                     if($panier_cls->creationPanier()){
-                        $nbArticle = count($_SESSION['panier']['idProduit']);
+                        $nbArticle = count($_SESSION['panier']['refProduit']);
                         if($nbArticle <= 0){
                     ?>
                     <div id="top-cart">
@@ -301,7 +301,7 @@ ini_set('display_errors', 1);
                                     </div>
                                     <?php
                                     for($i=0; $i < $nbArticle; $i++):
-                                        $idproduit = $_SESSION['panier']['idProduit'][$i];
+                                        $idproduit = $_SESSION['panier']['refProduit'][$i];
                                         $produit = $DB->query("SELECT * FROM produits WHERE id = :id", array("id" => $idproduit));
                                     ?>
                                     <div class="top-cart-items">
