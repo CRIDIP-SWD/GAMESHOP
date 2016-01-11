@@ -32,42 +32,61 @@ class produit extends DB
         return $this->count("SELECT COUNT(ref_produit) FROM produits_promotion WHERE ref_produit = '$ref_produit'");
     }
 
-    public function verif_stat_product($ref_produit)
+    public function verif_stat_global($ref_produit)
     {
-        $date_format = new date_format();
-        $date = $date_format->convert_strtotime(date("d-m-Y"));
-        $date_moin = strtotime($date ."+ 30 days");
-        $c_promo = $this->count_promo($ref_produit);
+        $data = $this->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
 
-
-        $produit = $this->query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'");
-        $date_produit = $produit[0]->date_sortie;
-
-        if($date_produit <= $date AND $date_produit >= $date_moin)
+        switch($data[0]->statut_global)
         {
-            return 1;
-        }elseif($date_produit < $date){
-            return 2;
-        }elseif($c_promo != 0){
-            return 3;
-        }else{
-            return 0;
+            case 1:
+                return 1;
+                break;
+
+            case 2:
+                return 2;
+                break;
+
+            case 3:
+                return 3;
+                break;
+
+            case 4:
+                return 4;
+                break;
+
+            default:
+                return 1;
+                break;
         }
     }
 
-    public function statut_produit($ref_produit)
+    public function verif_stat_stock($ref_produit)
     {
-        $produit = $this->query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'");
+        $data = $this->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
 
-        if($produit[0]->stock == 0)
+        switch($data[0]->statut_stock)
         {
-            return 0;
-        }elseif($produit[0]->date_sortie < strtotime(date("d-m-Y")))
-        {
-            return 1;
-        }else{
-            return 2;
+            case 0:
+                return 0;
+                break;
+
+            case 1:
+                return 1;
+                break;
+
+            case 2:
+                return 2;
+                break;
+
+            case 3:
+                return 3;
+                break;
+
+            default:
+                return 2;
+                break;
         }
     }
+
 
 }

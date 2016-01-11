@@ -2,10 +2,11 @@
 $ref_produit = $_GET['ref_produit'];
 $produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND produits_categorie.ref_produit = produits.ref_produit AND produits.ref_produit = '$ref_produit'");
 $caract = $DB->query("SELECt * FROM produits_caracteristique WHERE ref_produit = '$ref_produit'");
-$verif = $produit_cls->verif_stat_product($ref_produit);
-if($verif === 3)
+$verif_global = $produit_cls->verif_stat_global($ref_produit);
+$verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+if($verif_global === 3)
 {
-    $promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = '$ref_produit'");
+    $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
 }
 ?>
 <!-- Page Title
@@ -39,15 +40,17 @@ if($verif === 3)
                         ============================================= -->
                         <div class="product-image">
                             <img src="<?= $constante->getUrl(array(), false,true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" />
-                            <?php if($verif == 1): ?>
-                                <div class="sale-flash nouveaute">NOUVEAU !</div>
-                            <?php endif; ?>
-                            <?php if($verif == 2): ?>
+                            <?php if($verif_global === 2): ?>
                                 <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                             <?php endif; ?>
-                            <?php if($verif == 3): ?>
-                                <div class="sale-flash promotion">EN PROMOTION !</div>
+                            <?php if($verif_global === 3): ?>
+                                <div class="sale-flash promotion">EN PROMOTION!</div>
                             <?php endif; ?>
+                            <?php if($verif_global === 4): ?>
+                                <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                            <?php endif; ?>
+
+
                         </div><!-- Product Single - Gallery End -->
 
                     </div>
@@ -57,9 +60,9 @@ if($verif === 3)
                         <!-- Product Single - Price
                         ============================================= -->
                         <div class="product-price">
-                            <?php if($verif === 3){ ?>
+                            <?php if($verif_global === 3){ ?>
                                 <del><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></del>
-                                <ins><?= number_format($promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
+                                <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
                             <?php }else{ ?>
                                 <ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></ins>
                             <?php } ?>
@@ -71,10 +74,10 @@ if($verif === 3)
                         <!-- Product Single - Quantity & Cart Button
                         ============================================= -->
                         <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
-                            <?php if($verif === 2){ ?>
+                            <?php if($verif_global === 2){ ?>
                                 <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">PRECOMMANDER</a>
-                            <?php }elseif($verif === 3){ ?>
-                                <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $promo[0]->new_price; ?>">Ajouter au Panier</a>
+                            <?php }elseif($verif_global === 3){ ?>
+                                <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $c_promo[0]->new_price; ?>">Ajouter au Panier</a>
                             <?php }else{ ?>
                                 <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">Ajouter au Panier</a>
                             <?php } ?>
@@ -89,82 +92,161 @@ if($verif === 3)
 
                         <!-- Product Single - Short Description End -->
                         <div class="clear"></div>
-                        <!-- Product Single - Meta
-                        ============================================= -->
-                        <div class="panel panel-default product-meta">
-                            <div class="panel-body">
-                                <table style="width: 50%;">
-                                    <tbody>
-                                    <?php if(!empty($caract[0]->editeur)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">EDITEUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->editeur; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->genre)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">GENRE:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->genre; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->multijoueur)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">MULTI JOUEUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->multijoueur == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->internet)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">INTERNET:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->internet == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->option)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">OPTION:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->option; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->couleur)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">COULEUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->couleur; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->cap_hdd)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">DISQUE DUR:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->cap_hdd; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->eth)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">ETHERNET:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->eth == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->wifi)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">WI-FI:</td>
-                                            <td style="width: 50%; font-style: italic;"><?php if($caract[0]->wifi == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->nb_usb)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">PORT USB:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->nb_usb; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    <?php if(!empty($caract[0]->compatibilite)){ ?>
-                                        <tr>
-                                            <td style="width: 50%; font-weight: bold;">COMPATIBLE:</td>
-                                            <td style="width: 50%; font-style: italic;"><?= $caract[0]->compatibilite; ?></td>
-                                        </tr>
-                                    <?php } ?>
-                                    </tbody>
-                                </table>
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="panel panel-default product-meta">
+                                    <div class="panel-body">
+                                        <table style="width: 50%;">
+                                            <tbody>
+                                            <?php if(!empty($caract[0]->editeur)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">EDITEUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->editeur; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->genre)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">GENRE:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->genre; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->multijoueur)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">MULTI JOUEUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->multijoueur == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->internet)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">INTERNET:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->internet == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->option)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">OPTION:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->option; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->couleur)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">COULEUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->couleur; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->cap_hdd)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">DISQUE DUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->cap_hdd; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->eth)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">ETHERNET:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->eth == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->wifi)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">WI-FI:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->wifi == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->nb_usb)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">PORT USB:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->nb_usb; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->compatibilite)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">COMPATIBLE:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->compatibilite; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
-                        </div><!-- Product Single - Meta End -->
+                            <div class="col-md-6">
+                                <div class="panel panel-default product-meta">
+                                    <div class="panel-body">
+                                        <table style="width: 50%;">
+                                            <tbody>
+                                            <?php if(!empty($caract[0]->editeur)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">EDITEUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->editeur; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->genre)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">GENRE:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->genre; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->multijoueur)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">MULTI JOUEUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->multijoueur == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->internet)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">INTERNET:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->internet == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->option)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">OPTION:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->option; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->couleur)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">COULEUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->couleur; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->cap_hdd)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">DISQUE DUR:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->cap_hdd; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->eth)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">ETHERNET:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->eth == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->wifi)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">WI-FI:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->wifi == 0){echo "Non";}else{echo "Oui";} ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->nb_usb)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">PORT USB:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->nb_usb; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            <?php if(!empty($caract[0]->compatibilite)){ ?>
+                                                <tr>
+                                                    <td style="width: 50%; font-weight: bold;">COMPATIBLE:</td>
+                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->compatibilite; ?></td>
+                                                </tr>
+                                            <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- Product Single - Share
                         ============================================= -->
