@@ -23,7 +23,6 @@ class panier
         return true;
     }
 
-
     public function ajouterArticle($refProduit, $qteProduit, $prixProduit)
     {
         if($this->creationPanier() != $this->isVerrouille())

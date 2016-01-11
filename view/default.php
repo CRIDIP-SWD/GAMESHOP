@@ -189,17 +189,24 @@ ini_set('display_errors', 1);
                                                                     <?php if($verif_global === 4): ?>
                                                                         <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                                                     <?php endif; ?>
-                                                                    <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="<?= $new->designation; ?>">
+                                                                    <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="<?= html_entity_decode($new->designation); ?>">
                                                                 </a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
-                                                                    <a href="core/panier.php?action=ajout&l=<?= $new->ref_produit; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="core/panier.php?action=ajout&l=<?= $new->ref_produit; ?>&q=1&p=<?= $new->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $new->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
                                                             <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#"><?= $new->designation; ?></a></h3></div>
-                                                                <div class="product-price"><ins><?= number_format($new->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
+                                                                <div class="product-title"><h3><a href="#"><?= html_entity_decode($new->designation); ?></a></h3></div>
+                                                                <div class="product-price">
+                                                                    <?php if($verif_global === 3){ ?>
+                                                                        <del><?= number_format($new->prix_vente, 2, ',', ' ')." €" ?></del>
+                                                                        <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
+                                                                    <?php }else{ ?>
+                                                                        <ins><?= number_format($new->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                                                    <?php } ?>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </li>
@@ -237,7 +244,13 @@ ini_set('display_errors', 1);
                                                                     <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $promo->ref_produit; ?>.jpg" alt="<?= $promo->designation; ?>">
                                                                 </a>
                                                                 <div class="product-overlay">
-                                                                    <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $promo->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <?php if($verif_global === 2){ ?>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $promo->prix_vente; ?>" class="Précommander l'article"><i class="icon-shopping-cart"></i><span> Précommander</span></a>
+                                                                    <?php }elseif($verif_global === 3){ ?>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $c_promo->new_price; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <?php }else{ ?>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $promo->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <?php } ?>
                                                                     <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $promo->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                 </div>
                                                             </div>
@@ -264,29 +277,52 @@ ini_set('display_errors', 1);
                                                     <?php
                                                     $date = $date_format->convert_strtotime(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie > '$date' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1");
+                                                    $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.idcategorie = '$idcategorie' AND statut_global = :stat LIMIT 1", array("stat" => '2'));
                                                     foreach($sql_preco as $preco):
+                                                        $ref_produit = $preco->ref_produit;
+                                                        $verif_global = $produit_cls->verif_stat_global($ref_produit);
+                                                        $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+                                                        if($verif_global === 3)
+                                                        {
+                                                            $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                                        }
                                                         ?>
                                                         <li>
                                                             <div class="product clearfix">
                                                                 <div class="product-image">
-                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
-                                                                    <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                    <a href="#">
+                                                                        <?php if($verif_global === 2): ?>
+                                                                            <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                                                        <?php endif; ?>
+                                                                        <?php if($verif_global === 3): ?>
+                                                                            <div class="sale-flash promotion">EN PROMOTION!</div>
+                                                                        <?php endif; ?>
+                                                                        <?php if($verif_global === 4): ?>
+                                                                            <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                                                                        <?php endif; ?>
+                                                                        <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="<?= $preco->designation; ?>">
+                                                                    </a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->
                                                                     <div class="product-overlay">
-                                                                        <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <?php if($verif_global === 2){ ?>
+                                                                            <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="Précommander l'article"><i class="icon-shopping-cart"></i><span> Précommander</span></a>
+                                                                        <?php }elseif($verif_global === 3){ ?>
+                                                                            <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $c_promo->new_price; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <?php }else{ ?>
+                                                                            <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <?php } ?>
                                                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-desc">
-                                                                    <div class="product-title"><h3><a href="#"><?= $preco->designation; ?></a></h3></div>
-                                                                    <div class="product-price"><ins><?= number_format($preco->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
-                                                                    <div class="product-rating">
-                                                                        <i class="icon-star3"></i>
-                                                                        <i class="icon-star3"></i>
-                                                                        <i class="icon-star3"></i>
-                                                                        <i class="icon-star-empty"></i>
-                                                                        <i class="icon-star-empty"></i>
+                                                                    <div class="product-title"><h3><a href="index.php?view=produit&ref_produit=<?= $preco->ref_produit; ?>"><?= html_entity_decode($preco->designation); ?></a></h3></div>
+                                                                    <div class="product-price">
+                                                                        <?php if($verif_global === 3){ ?>
+                                                                            <del><?= number_format($preco->prix_vente, 2, ',', ' ')." €" ?></del>
+                                                                            <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
+                                                                        <?php }else{ ?>
+                                                                            <ins><?= number_format($preco->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                                                        <?php } ?>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -332,15 +368,33 @@ ini_set('display_errors', 1);
                                     for($i=0; $i < $nbArticle; $i++):
                                         $idproduit = $_SESSION['panier']['refProduit'][$i];
                                         $produit = $DB->query("SELECT * FROM produits WHERE id = :id", array("id" => $idproduit));
+                                        $ref_produit = $produit[0]->ref_produit;
+                                        $verif_global = $produit_cls->verif_stat_global($ref_produit);
+                                        $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+                                        if($verif_global === 3)
+                                        {
+                                            $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                        }
                                     ?>
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
                                             <div class="top-cart-item-image">
-                                                <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= $produit[0]->designation; ?>" /></a>
+                                                <a href="index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>">
+                                                    <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= html_entity_decode($produit[0]->designation); ?>" />
+                                                </a>
                                             </div>
+                                            <?php if($verif_global === 2): ?>
+                                                <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                            <?php endif; ?>
+                                            <?php if($verif_global === 3): ?>
+                                                <div class="sale-flash promotion">EN PROMOTION!</div>
+                                            <?php endif; ?>
+                                            <?php if($verif_global === 4): ?>
+                                                <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                                            <?php endif; ?>
                                             <div class="top-cart-item-desc">
                                                 <a href="#"><?= html_entity_decode($produit[0]->designation); ?></a>
-                                                <span class="top-cart-item-price"><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €"; ?></span>
+                                                <span class="top-cart-item-price"><?= number_format($_SESSION['panier']['prixProduit'][$i], 2, ',', ' ')." €"; ?></span>
                                                 <span class="top-cart-item-quantity">x <?= htmlspecialchars($_SESSION['panier']['qteProduit'][$i]); ?></span>
                                             </div>
                                         </div>
@@ -359,8 +413,8 @@ ini_set('display_errors', 1);
                     ============================================= -->
                     <div id="top-search">
                         <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
-                        <form action="search.html" method="get">
-                            <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter..">
+                        <form action="<?= $constante->getUrl(array('core/'), false, false); ?>search.php?action=search" method="get">
+                            <input type="text" name="q" class="form-control" value="" placeholder="Recherchez des produits, accessoires et consoles...">
                         </form>
                     </div><!-- #top-search end -->
 
