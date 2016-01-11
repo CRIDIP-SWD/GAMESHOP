@@ -46,6 +46,7 @@
                                 $ref_produit = $_SESSION['panier']['refProduit'][$i];
                                 $article = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
                                 $subtotal = $article[0]->prix_vente * $_SESSION['panier']['qteProduit'][$i];
+                                $qte = $_SESSION['panier']['qteproduit'][$i];
                                 ?>
                         <tr class="cart_item">
                             <td class="cart-product-remove">
@@ -67,7 +68,7 @@
                             <td class="cart-product-quantity">
                                 <div class="quantity clearfix">
                                     <input type="button" value="-" class="minus">
-                                    <input type="text" name="q" value="<?= $_SESSION['panier']['qteProduit']; ?>" class="qty" />
+                                    <input type="text" name="q" value="<?= $qte; ?>" class="qty" />
                                     <input type="button" value="+" class="plus">
                                 </div>
                             </td>

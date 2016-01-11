@@ -65,6 +65,7 @@
                                         $ref_produit = $_SESSION['panier']['refProduit'][$i];
                                         $article = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
                                         $subtotal = $article[0]->prix_vente * $_SESSION['panier']['qteProduit'][$i];
+                                        $qte = $_SESSION['panier']['qteProduit'][$i];
                                         ?>
                                         <tr class="cart_item">
                                             <td class="cart-product-remove">
