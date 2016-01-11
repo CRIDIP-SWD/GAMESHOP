@@ -180,28 +180,25 @@ if($verif_global === 3)
                                             </span>
                                         <?php endif; ?>
                                         <?php if($verif_stock === 1): ?>
-                                            <tr>
-                                                <td style="width: 100%; font-weight: 500"><i class="icon-download2 text-warning"></i> Réassort en cours</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 100%; font-weight: 500;"><i class="icon-calendar"></i> <?= date("d/m/Y", $produit[0]->date_reassort); ?></td>
-                                            </tr>
+                                            <span class="text-center">
+                                                <i class="icon-download-alt text-warning icon-3x"></i><br>
+                                                <h2 class="text-warning" style="font-weight: bold;">R&Eacute;ASSORT EN COURS...</h2>
+                                                <h3 class="text-warning"><?= date("d/m/Y", $produit[0]->date_reassort);?></h3>
+                                            </span>
                                         <?php endif; ?>
                                         <?php if($verif_stock === 2): ?>
-                                            <tr>
-                                                <td style="width: 100%; font-weight: 500;"><i class="icon-check-sign"></i> EN STOCK</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 100%; font-weight: 500;">Qte en Stock: <div class="counter"><?= $produit[0]->stock; ?></div></td>
-                                            </tr>
+                                            <span class="text-center">
+                                                <i class="icon-check text-success icon-3x"></i><br>
+                                                <h2 class="text-success" style="font-weight: bold;">EN STOCK</h2>
+                                                <h3 class="text-success counter"><?= $produit[0]->stock; ?></h3>
+                                            </span>
                                         <?php endif; ?>
                                         <?php if($verif_stock === 3): ?>
-                                            <tr>
-                                                <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> En Précommande</td>
-                                            </tr>
-                                            <tr>
-                                                <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> <?= date("d/m/Y", $produit[0]->date_sortie); ?></td>
-                                            </tr>
+                                            <span class="text-center">
+                                                <i class="icon-circle-arrow-right text-info icon-3x"></i><br>
+                                                <h2 class="text-info" style="font-weight: bold;">PRECOMMANDE</h2>
+                                                <h3 class="text-info"><?= date("d/m/Y", $produit[0]->date_sortie); ?></h3>
+                                            </span>
                                         <?php endif; ?>
                                     </div>
                                 </div>
