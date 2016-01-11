@@ -39,6 +39,13 @@
                                            AND produits_categorie.idcategorie = categorie.id
                                            AND produits_categorie.idcategorie = '$idcategorie'");
                             foreach($sql_produit as $produit):
+                                $ref_produit = $produit->ref_produit;
+                                $verif_global = $produit_cls->verif_stat_global($ref_produit);
+                                $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+                                if($verif_global === 3)
+                                {
+                                    $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                }
                             ?>
                                 <?php if($categorie_cls->count_categorie($idcategorie) == 0){ ?>
                                 <div class="style-msg infomsg">
@@ -67,7 +74,14 @@
                                 </div>
                                 <div class="product-desc center">
                                     <div class="product-title"><h3><a href="#"><?= $produit->designation; ?></a></h3></div>
-                                    <div class="product-price"><ins><?= number_format($produit->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
+                                    <div class="product-price">
+                                        <?php if($verif_global === 3){ ?>
+                                            <del><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></del>
+                                            <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
+                                        <?php }else{ ?>
+                                            <ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                        <?php } ?>
+                                    </div>
                                 </div>
                             </div>
                                 <?php } ?>
@@ -147,6 +161,14 @@
                                                         AND produits_subcategorie.idsubcategorie = subcategorie.id
                                                         AND produits_subcategorie.idsubcategorie = '$idsubcategorie'");
                             foreach($sql_produit as $produit):
+                                $ref_produit = $produit->ref_produit;
+                                $verif_global = $produit_cls->verif_stat_global($ref_produit);
+                                $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+                                if($verif_global === 3)
+                                {
+                                    $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                }
+
                                 ?>
                                 <?php if($categorie_cls->count_sub($idsubcategorie) == 0){ ?>
                                     <div class="style-msg infomsg">
@@ -175,7 +197,14 @@
                                     </div>
                                     <div class="product-desc center">
                                         <div class="product-title"><h3><a href="#"><?= $produit->designation; ?></a></h3></div>
-                                        <div class="product-price"><ins><?= number_format($produit->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
+                                        <div class="product-price">
+                                            <?php if($verif_global === 3){ ?>
+                                                <del><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></del>
+                                                <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
+                                            <?php }else{ ?>
+                                                <ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                            <?php } ?>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php } ?>
