@@ -43,10 +43,10 @@ class produit extends DB
         $produit = $this->query("SELECT * FROM produits WHERE ref_produit = '$ref_produit'");
         $date_produit = $produit[0]->date_sortie;
 
-        if($date_produit >= $date AND $date_produit <= $date_moin)
+        if($date_produit <= $date AND $date_produit >= $date_moin)
         {
             return 1;
-        }elseif($date_produit > $date){
+        }elseif($date_produit < $date){
             return 2;
         }elseif($c_promo != 0){
             return 3;
