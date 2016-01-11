@@ -1237,7 +1237,7 @@ $(document).ready(function(){
 		var recherche = $(this).val();
 		var data = 'motclef=' + recherche;
 
-		if(recherche.length < 2){
+		if(recherche.length > 2){
 			$.ajax({
 				type: "GET",
 				url: "assets/include/ajax/searching-ajax.php",
