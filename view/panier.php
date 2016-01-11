@@ -58,7 +58,12 @@
                             </td>
 
                             <td class="cart-product-name">
-                                <a href="#"><?= $article[0]->designation; ?></a>
+                                <a href="#"><?= $article[0]->designation; ?></a><br>
+                                <?php
+                                $verif = $produit_cls->verif_stat_product($ref_produit);
+                                if($verif === 1){echo "<span class=\"text-danger\"><i class=\"icon-remove-circle\"></i> En rupture</span>" ;}
+                                if($verif === 2){echo "<span class=\"text-warning\"><i class=\"icon-arrow-right\"></i> Précommande: sortie le ".date('d/m/Y', $article[0]->date_sortie)."</span>";}
+                                ?>
                             </td>
 
                             <td class="cart-product-price">
