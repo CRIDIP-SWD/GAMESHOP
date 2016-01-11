@@ -89,7 +89,7 @@
         </section>
     <?php endif; ?>
 <?php }else{ ?>
-
+    <div class="modal-on-load" data-target="#myModal1"></div>
     <div class="modal1 mfp-hide" id="myModal1">
         <div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
             <div class="center" style="padding: 50px;">
