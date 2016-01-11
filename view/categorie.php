@@ -64,7 +64,7 @@
                                         <?php if($verif_global === 4): ?>
                                             <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                         <?php endif; ?>
-                                        <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress">
+                                        <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>">
                                     </a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
@@ -187,7 +187,7 @@
                                             <?php if($verif_global === 4): ?>
                                                 <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                             <?php endif; ?>
-                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress">
+                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>">
                                         </a>
                                         <!--<div class="sale-flash">50% Off*</div>-->
                                         <div class="product-overlay">
