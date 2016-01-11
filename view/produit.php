@@ -180,6 +180,24 @@ if($verif_global === 3)
                                                         <td style="width: 100%; font-weight: 500;"><i class="icon-remove-circle text-danger"></i> Produit en Rupture de Stock</td>
                                                     </tr>
                                                 <?php endif; ?>
+                                                <?php if($verif_stock === 1): ?>
+                                                    <tr>
+                                                        <td style="width: 100%; font-weight: 500"><i class="icon-download2 text-warning"></i> Réassort en cours</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 50%; font-weight: 500;"><i class="icon-calendar"></i></td>
+                                                        <td style="width: 50%;"><?= date("d/m/Y", $produit[0]->date_reassort); ?></td>
+                                                    </tr>
+                                                <?php endif; ?>
+                                                <?php if($verif_stock === 2): ?>
+                                                    <tr>
+                                                        <td style="width: 100%; font-weight: 500;"><i class="icon-check-sign"></i> EN STOCK</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 50%; font-weight: 500;">Qte en Stock:</td>
+                                                        <td style="width: 50%;"><div class="counter"><?= $produit[0]->stock; ?></div></td>
+                                                    </tr>
+                                                <?php endif; ?>
                                             </tbody>
                                         </table>
                                     </div>
