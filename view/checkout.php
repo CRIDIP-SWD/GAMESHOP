@@ -1,16 +1,4 @@
 <?php if(!isset($_SESSION['panier'])){ ?>
-    <div class="modal1 mfp-hide" id="myModal1">
-        <div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
-            <div class="center" style="padding: 50px;">
-                <h3>A Simple Example of a Text Modal</h3>
-                <p class="nobottommargin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum delectus, tenetur obcaecati porro! Expedita nostrum tempora quia provident perspiciatis inventore, autem eaque, quod explicabo, ipsum, facilis aliquid! Sapiente, possimus quo!</p>
-            </div>
-            <div class="section center nomargin" style="padding: 30px;">
-                <a href="#" class="button" onClick="$.magnificPopup.close();return false;">Close this Modal</a>
-            </div>
-        </div>
-    </div>
-<?php }else{ ?>
     <?php if(isset($_SESSION['logged'])): ?>
         TEST
     <?php endif; ?>
@@ -100,4 +88,17 @@
 
         </section>
     <?php endif; ?>
+<?php }else{ ?>
+
+    <div class="modal1 mfp-hide" id="myModal1">
+        <div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
+            <div class="center" style="padding: 50px;">
+                <h3>A Simple Example of a Text Modal</h3>
+                <p class="nobottommargin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum delectus, tenetur obcaecati porro! Expedita nostrum tempora quia provident perspiciatis inventore, autem eaque, quod explicabo, ipsum, facilis aliquid! Sapiente, possimus quo!</p>
+            </div>
+            <div class="section center nomargin" style="padding: 30px;">
+                <a href="#" class="button" onClick="$.magnificPopup.close();return false;">Close this Modal</a>
+            </div>
+        </div>
+    </div>
 <?php } ?>
