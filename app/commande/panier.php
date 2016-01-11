@@ -38,7 +38,7 @@ class panier
             else
             {
                 //Sinon on ajoute le produit
-                array_push( $_SESSION['panier']['refProduit'],$idProduit);
+                array_push( $_SESSION['panier']['refProduit'],$refProduit);
                 array_push( $_SESSION['panier']['qteProduit'],$qteProduit);
                 array_push( $_SESSION['panier']['prixProduit'],$prixProduit);
             }
