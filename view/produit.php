@@ -176,7 +176,7 @@ if($verif_global === 3)
                                         <?php if($verif_stock === 0): ?>
                                             <span class="text-center">
                                                 <i class="icon-remove-circle text-danger icon-3x"></i><br>
-                                                <h2>RUPTURE DE STOCK</h2>
+                                                <h2 class="text-danger" style="font-weight: bold;">RUPTURE DE STOCK</h2>
                                             </span>
                                         <?php endif; ?>
                                         <?php if($verif_stock === 1): ?>
