@@ -94,7 +94,7 @@ if($verif_global === 3)
                         <div class="clear"></div>
 
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="panel panel-default product-meta">
                                     <div class="panel-body">
                                         <table style="width: 50%;">
@@ -170,77 +170,16 @@ if($verif_global === 3)
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <div class="panel panel-default product-meta">
                                     <div class="panel-body">
                                         <table style="width: 50%;">
                                             <tbody>
-                                            <?php if(!empty($caract[0]->editeur)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">EDITEUR:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->editeur; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->genre)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">GENRE:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->genre; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->multijoueur)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">MULTI JOUEUR:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->multijoueur == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->internet)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">INTERNET:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->internet == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->option)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">OPTION:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->option; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->couleur)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">COULEUR:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->couleur; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->cap_hdd)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">DISQUE DUR:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->cap_hdd; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->eth)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">ETHERNET:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->eth == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->wifi)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">WI-FI:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?php if($caract[0]->wifi == 0){echo "Non";}else{echo "Oui";} ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->nb_usb)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">PORT USB:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->nb_usb; ?></td>
-                                                </tr>
-                                            <?php } ?>
-                                            <?php if(!empty($caract[0]->compatibilite)){ ?>
-                                                <tr>
-                                                    <td style="width: 50%; font-weight: bold;">COMPATIBLE:</td>
-                                                    <td style="width: 50%; font-style: italic;"><?= $caract[0]->compatibilite; ?></td>
-                                                </tr>
-                                            <?php } ?>
+                                                <?php if($verif_stock === 0): ?>
+                                                    <tr>
+                                                        <td style="width: 100%; font-weight: 500;"><i class="icon-remove-circle text-danger"></i> Produit en Rupture de Stock</td>
+                                                    </tr>
+                                                <?php endif; ?>
                                             </tbody>
                                         </table>
                                     </div>
