@@ -1231,3 +1231,22 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 			return (document.selection.createRange().text.length);
 	}
 })(jQuery, window, document);
+
+$(document).ready(function(){
+	$("#recherche").keyup(function(){
+		var recherche = $(this).val();
+		var data = 'motclef=' + recherche;
+
+		if(recherche.length < 2){
+			$.ajax({
+				type: "GET",
+				url: "../include/ajax/searching-ajax.php",
+				data : data,
+				success: function(server_response) {
+					$("#resultat").html(server_response).show()
+				}
+				});
+		}
+
+	});
+});

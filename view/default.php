@@ -415,7 +415,8 @@ ini_set('display_errors', 1);
                         <a href="#" id="top-search-trigger"><i class="icon-search3"></i><i class="icon-line-cross"></i></a>
                         <form action="<?= $constante->getUrl(array('core/'), false, false); ?>search.php" method="get">
                             <input type="hidden" name="action" value="searching" />
-                            <input type="text" name="q" class="form-control" value="" placeholder="Recherchez des produits, accessoires et consoles...">
+                            <input type="text" name="q" class="form-control" id="recherche" value="" placeholder="Recherchez des produits, accessoires et consoles...">
+                            <div class="resultat" id="resultat"></div>
                         </form>
                     </div><!-- #top-search end -->
 
