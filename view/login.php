@@ -53,7 +53,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
 
                     <div class="acctitle"><i class="acc-closed icon-user4"></i><i class="acc-open icon-ok-sign"></i>Inscrivez-vous !</div>
                     <div class="acc_content clearfix">
-                        <form id="register-form" name="register-form" class="nobottommargin" action="#" method="post">
+                        <form id="register-form" name="register-form" class="nobottommargin" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
                             <div class="col_full">
                                 <label for="register-form-name">Nom:</label>
                                 <input type="text" id="register-form-name" name="nom_client" value="" class="form-control" />
