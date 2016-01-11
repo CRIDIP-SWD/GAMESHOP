@@ -93,11 +93,11 @@
     <div class="modal1 mfp-hide" id="myModal1">
         <div class="block divcenter" style="background-color: #FFF; max-width: 500px;">
             <div class="center" style="padding: 50px;">
-                <h3>A Simple Example of a Text Modal</h3>
-                <p class="nobottommargin">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum delectus, tenetur obcaecati porro! Expedita nostrum tempora quia provident perspiciatis inventore, autem eaque, quod explicabo, ipsum, facilis aliquid! Sapiente, possimus quo!</p>
+                <h3><i class="icon-line2-basket text-center"></i><br>Aucun article dans le Panier</h3>
+                <p class="nobottommargin">Veuillez inscrire des articles dans le panier avant de passer à la commande.</p>
             </div>
             <div class="section center nomargin" style="padding: 30px;">
-                <a href="#" class="button" onClick="$.magnificPopup.close();return false;">Close this Modal</a>
+                <a href="#" class="button" onClick="history.back()">Retour au panier</a>
             </div>
         </div>
     </div>
