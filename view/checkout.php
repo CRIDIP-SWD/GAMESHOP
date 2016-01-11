@@ -37,7 +37,72 @@
                 </div>
 
                 <div class="container clearfix bottommargin">
+                    <div class="table-responsive bottommargin">
 
+                        <table class="table cart">
+                            <thead>
+                            <tr>
+                                <th class="cart-product-remove">&nbsp;</th>
+                                <th class="cart-product-thumbnail">&nbsp;</th>
+                                <th class="cart-product-name">Produit</th>
+                                <th class="cart-product-price">Prix Unitaire</th>
+                                <th class="cart-product-quantity">Quantité</th>
+                                <th class="cart-product-subtotal">Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            if($panier_cls->creationPanier()){
+                                $nbArticles = count($_SESSION['panier']['refProduit']);
+                                if($nbArticles <= 0){
+                                    ?>
+                                    <tr class="cart_item">
+                                        <td class="text-center text-info" colspan="6" style=""><i>Votre Panier est vide</i></td>
+                                    </tr>
+                                <?php }else{ ?>
+                                    <?php for($i=0;$i<$nbArticles;$i++): ?>
+                                        <?php
+                                        $ref_produit = $_SESSION['panier']['refProduit'][$i];
+                                        $article = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                        $subtotal = $article[0]->prix_vente * $_SESSION['panier']['qteProduit'][$i];
+                                        ?>
+                                        <tr class="cart_item">
+                                            <td class="cart-product-remove">
+                                                <a href="<?= htmlspecialchars("core/panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['refProduit'][$i])); ?>" class="remove" title="Remove this item"><i class="icon-trash2"></i></a>
+                                            </td>
+
+                                            <td class="cart-product-thumbnail">
+                                                <a href="#"><img width="64" height="64" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $article[0]->ref_produit; ?>.jpg" alt="<?= $article[0]->designation; ?>"></a>
+                                            </td>
+
+                                            <td class="cart-product-name">
+                                                <a href="#"><?= $article[0]->designation; ?></a>
+                                            </td>
+
+                                            <td class="cart-product-price">
+                                                <span class="amount"><?= number_format($article[0]->prix_vente, 2, ',', ' ')." €"; ?></span>
+                                            </td>
+
+                                            <td class="cart-product-quantity">
+                                                <div class="quantity clearfix">
+                                                    <input type="button" value="-" class="minus">
+                                                    <input type="text" name="q" value="<?= $_SESSION['panier']['qteProduit']; ?>" class="qty" />
+                                                    <input type="button" value="+" class="plus">
+                                                </div>
+                                            </td>
+
+                                            <td class="cart-product-subtotal">
+                                                <span class="amount"><?= number_format($subtotal, 2, ',', ' ')." €"; ?></span>
+                                            </td>
+                                        </tr>
+                                    <?php endfor; ?>
+                                <?php }?>
+                            <?php } ?>
+                            </tbody>
+
+                        </table>
+
+                    </div>
                 </div>
             </div>
         </section>

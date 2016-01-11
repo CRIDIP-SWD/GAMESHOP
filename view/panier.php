@@ -25,9 +25,9 @@
                     <tr>
                         <th class="cart-product-remove">&nbsp;</th>
                         <th class="cart-product-thumbnail">&nbsp;</th>
-                        <th class="cart-product-name">Product</th>
-                        <th class="cart-product-price">Unit Price</th>
-                        <th class="cart-product-quantity">Quantity</th>
+                        <th class="cart-product-name">Produit</th>
+                        <th class="cart-product-price">Prix unitaire</th>
+                        <th class="cart-product-quantity">Quantité</th>
                         <th class="cart-product-subtotal">Total</th>
                     </tr>
                     </thead>
@@ -67,7 +67,7 @@
                             <td class="cart-product-quantity">
                                 <div class="quantity clearfix">
                                     <input type="button" value="-" class="minus">
-                                    <input type="text" name="quantity" value="2" class="qty" />
+                                    <input type="text" name="quantity" value="<?= $_SESSION['panier']['qteProduit']; ?>" class="qty" />
                                     <input type="button" value="+" class="plus">
                                 </div>
                             </td>
