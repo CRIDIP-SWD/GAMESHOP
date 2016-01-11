@@ -190,7 +190,7 @@ if($verif_global === 3)
                                             <span class="text-center">
                                                 <i class="icon-check text-success icon-3x"></i><br>
                                                 <h2 class="text-success" style="font-weight: bold;">EN STOCK</h2>
-                                                <h3 class="text-success counter"><?= $produit[0]->stock; ?></h3>
+                                                <h3 class="text-success counter center"><span data-from="100" data-to="<?= $produit[0]->stock; ?>" data-refresh-interval="100" data-speed="3000"></span></h3>
                                             </span>
                                         <?php endif; ?>
                                         <?php if($verif_stock === 3): ?>
