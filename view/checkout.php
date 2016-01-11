@@ -12,7 +12,7 @@
         </div>
     </div>
 <?php }else{ ?>
-
+    <?php var_dump($_SESSION['panier']); ?>
     <?php if(isset($_SESSION['logged'])): ?>
         TEST
     <?php endif; ?>
