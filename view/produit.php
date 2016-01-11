@@ -173,39 +173,36 @@ if($verif_global === 3)
                             <div class="col-md-12">
                                 <div class="panel panel-default product-meta">
                                     <div class="panel-body">
-                                        <table style="width: 100%;">
-                                            <tbody>
-                                                <?php if($verif_stock === 0): ?>
-                                                    <tr>
-                                                        <td style="width: 100%; font-weight: 500;"><i class="icon-remove-circle text-danger"></i> Produit en Rupture de Stock</td>
-                                                    </tr>
-                                                <?php endif; ?>
-                                                <?php if($verif_stock === 1): ?>
-                                                    <tr>
-                                                        <td style="width: 100%; font-weight: 500"><i class="icon-download2 text-warning"></i> Réassort en cours</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 100%; font-weight: 500;"><i class="icon-calendar"></i> <?= date("d/m/Y", $produit[0]->date_reassort); ?></td>
-                                                    </tr>
-                                                <?php endif; ?>
-                                                <?php if($verif_stock === 2): ?>
-                                                    <tr>
-                                                        <td style="width: 100%; font-weight: 500;"><i class="icon-check-sign"></i> EN STOCK</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 100%; font-weight: 500;">Qte en Stock: <div class="counter"><?= $produit[0]->stock; ?></div></td>
-                                                    </tr>
-                                                <?php endif; ?>
-                                                <?php if($verif_stock === 3): ?>
-                                                    <tr>
-                                                        <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> En Précommande</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> <?= date("d/m/Y", $produit[0]->date_sortie); ?></td>
-                                                    </tr>
-                                                <?php endif; ?>
-                                            </tbody>
-                                        </table>
+                                        <?php if($verif_stock === 0): ?>
+                                            <span class="text-center">
+                                                <i class="icon-remove-circle text-danger icon-3x"></i><br>
+                                                <h2>RUPTURE DE STOCK</h2>
+                                            </span>
+                                        <?php endif; ?>
+                                        <?php if($verif_stock === 1): ?>
+                                            <tr>
+                                                <td style="width: 100%; font-weight: 500"><i class="icon-download2 text-warning"></i> Réassort en cours</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 100%; font-weight: 500;"><i class="icon-calendar"></i> <?= date("d/m/Y", $produit[0]->date_reassort); ?></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($verif_stock === 2): ?>
+                                            <tr>
+                                                <td style="width: 100%; font-weight: 500;"><i class="icon-check-sign"></i> EN STOCK</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 100%; font-weight: 500;">Qte en Stock: <div class="counter"><?= $produit[0]->stock; ?></div></td>
+                                            </tr>
+                                        <?php endif; ?>
+                                        <?php if($verif_stock === 3): ?>
+                                            <tr>
+                                                <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> En Précommande</td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> <?= date("d/m/Y", $produit[0]->date_sortie); ?></td>
+                                            </tr>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </div>
