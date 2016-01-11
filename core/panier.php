@@ -77,6 +77,10 @@ if (!$erreur){
             }
             break;
 
+        case "blank":
+            $panier_cls->supprimePanier();
+            break;
+
         Default:
             break;
     }

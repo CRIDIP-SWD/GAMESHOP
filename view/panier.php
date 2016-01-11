@@ -87,7 +87,9 @@
 
             <div class="row clearfix">
                 <div class="col-md-6 clearfix">
-
+                    <a href="javascript: history.back();'" class="button button-3d button-aqua"><i class="icon-arrow-left2"></i> Retour</a>
+                    <a href="core/panier.php?action=blank" class="button button-3d button-blue"><i class="icon-trashcan"></i> Vider le panier</a>
+                    <a href="index.php?view=checkout" class="button button-3d button-green"><i class="icon-check"></i> Valider le Panier</a>
                 </div>
 
                 <div class="col-md-6 clearfix">
