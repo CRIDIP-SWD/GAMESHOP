@@ -87,7 +87,7 @@
                                             <td class="cart-product-quantity">
                                                 <div class="quantity clearfix">
                                                     <input type="button" value="-" class="minus">
-                                                    <input type="text" name="q" value="<?= $_SESSION['panier']['qteProduit']; ?>" class="qty" />
+                                                    <input type="text" name="q" value="<?= $qte; ?>" class="qty" />
                                                     <input type="button" value="+" class="plus">
                                                 </div>
                                             </td>
