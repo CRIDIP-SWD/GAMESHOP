@@ -199,10 +199,10 @@
                                         <div class="product-title"><h3><a href="#"><?= $produit->designation; ?></a></h3></div>
                                         <div class="product-price">
                                             <?php if($verif_global === 3){ ?>
-                                                <del><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></del>
-                                                <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
+                                                <del><?= number_format($produit->prix_vente, 2, ',', ' ')." €" ?></del>
+                                                <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
                                             <?php }else{ ?>
-                                                <ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                                <ins><?= number_format($produit->prix_vente, 2, ',', ' ')." €" ?></ins>
                                             <?php } ?>
                                         </div>
                                     </div>
