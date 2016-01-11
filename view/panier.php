@@ -19,7 +19,7 @@
         <div class="container clearfix">
 
             <div class="table-responsive bottommargin">
-
+                <?php var_dump($_SESSION['panier']); ?>
                 <table class="table cart">
                     <thead>
                     <tr>
@@ -67,7 +67,7 @@
                             <td class="cart-product-quantity">
                                 <div class="quantity clearfix">
                                     <input type="button" value="-" class="minus">
-                                    <input type="text" name="quantity" value="<?= $_SESSION['panier']['qteProduit']; ?>" class="qty" />
+                                    <input type="text" name="q" value="<?= $_SESSION['panier']['qteProduit']; ?>" class="qty" />
                                     <input type="button" value="+" class="plus">
                                 </div>
                             </td>
