@@ -185,8 +185,7 @@ if($verif_global === 3)
                                                         <td style="width: 100%; font-weight: 500"><i class="icon-download2 text-warning"></i> Réassort en cours</td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 50%; font-weight: 500;"><i class="icon-calendar"></i></td>
-                                                        <td style="width: 50%; text-align: left;"><?= date("d/m/Y", $produit[0]->date_reassort); ?></td>
+                                                        <td style="width: 100%; font-weight: 500;"><i class="icon-calendar"></i> <?= date("d/m/Y", $produit[0]->date_reassort); ?></td>
                                                     </tr>
                                                 <?php endif; ?>
                                                 <?php if($verif_stock === 2): ?>
@@ -194,8 +193,7 @@ if($verif_global === 3)
                                                         <td style="width: 100%; font-weight: 500;"><i class="icon-check-sign"></i> EN STOCK</td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 50%; font-weight: 500;">Qte en Stock:</td>
-                                                        <td style="width: 50%; text-align: left;"><div class="counter"><?= $produit[0]->stock; ?></div></td>
+                                                        <td style="width: 100%; font-weight: 500;">Qte en Stock: <div class="counter"><?= $produit[0]->stock; ?></div></td>
                                                     </tr>
                                                 <?php endif; ?>
                                                 <?php if($verif_stock === 3): ?>
@@ -203,8 +201,7 @@ if($verif_global === 3)
                                                         <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> En Précommande</td>
                                                     </tr>
                                                     <tr>
-                                                        <td style="width: 50%;font-weight: 500;"><i class="icon-calendar2"></i></td>
-                                                        <td style="width: 50%; text-align: left;"><?= date("d/m/Y", $produit[0]->date_sortie); ?></td>
+                                                        <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> <?= date("d/m/Y", $produit[0]->date_sortie); ?></td>
                                                     </tr>
                                                 <?php endif; ?>
                                             </tbody>
