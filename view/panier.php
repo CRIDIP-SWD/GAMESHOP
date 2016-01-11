@@ -51,7 +51,6 @@
                         <tr class="cart_item">
                             <td class="cart-product-remove">
                                 <a href="<?= htmlspecialchars("core/panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['refProduit'][$i])); ?>" class="remove" title="Supprimer l'article"><i class="icon-trash2"></i></a>
-                                <a href="core/panier.php?action=refresh" title="Réactualiser l'article"><i class="icon-refresh2"></i></a>
                             </td>
 
                             <td class="cart-product-thumbnail">
@@ -68,9 +67,7 @@
 
                             <td class="cart-product-quantity">
                                 <div class="quantity clearfix">
-                                    <input type="button" value="-" class="minus">
                                     <input type="text" name="q[]" value="<?= $qte; ?>" class="qty" />
-                                    <input type="button" value="+" class="plus">
                                 </div>
                             </td>
 
