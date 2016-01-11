@@ -33,7 +33,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'refresh')
 $action = (isset($_POST['action'])? $_POST['action']:  (isset($_GET['action'])? $_GET['action']:null )) ;
 if($action !== null)
 {
-    if(!in_array($action,array('ajout', 'suppression', 'refresh')))
+    if(!in_array($action,array('ajout', 'suppression', 'refresh', 'blank')))
         $erreur=true;
 
     //récuperation des variables en POST ou GET
@@ -49,10 +49,10 @@ if($action !== null)
     //On traite $q qui peut etre un entier simple ou un tableau d'entier
 
     if (is_array($q)){
-        $QteArticle = array();
+        $qteProduit = array();
         $i=0;
         foreach ($q as $contenu){
-            $QteArticle[$i++] = intval($contenu);
+            $qteProduit[$i++] = intval($contenu);
         }
     }
     else
@@ -71,9 +71,9 @@ if (!$erreur){
             break;
 
         Case "refresh" :
-            for ($i = 0 ; $i < count($QteArticle) ; $i++)
+            for ($i = 0 ; $i < count($qteProduit) ; $i++)
             {
-                $panier_cls->modifierQTeArticle($_SESSION['panier']['refProduit'][$i],round($QteArticle[$i]));
+                $panier_cls->modifierQTeArticle($_SESSION['panier']['refProduit'][$i],round($qteProduit[$i]));
             }
             break;
 
