@@ -8,7 +8,7 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
 <?php if(!isset($_GET['sub'])){ ?>
     <!-- Page Title
             ============================================= -->
-    <section id="page-title" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
+    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
 
         <div class="container clearfix">
             <h1>MON COMPTE</h1>
