@@ -198,6 +198,15 @@ if($verif_global === 3)
                                                         <td style="width: 50%;"><div class="counter"><?= $produit[0]->stock; ?></div></td>
                                                     </tr>
                                                 <?php endif; ?>
+                                                <?php if($verif_stock === 3): ?>
+                                                    <tr>
+                                                        <td style="width: 100%;font-weight: 500;"><i class="icon-calendar2"></i> En Précommande</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td style="width: 50%;font-weight: 500;"><i class="icon-calendar2"></i></td>
+                                                        <td style="width: 50%;"><?= date("d/m/Y", $produit[0]->date_sortie); ?></td>
+                                                    </tr>
+                                                <?php endif; ?>
                                             </tbody>
                                         </table>
                                     </div>
