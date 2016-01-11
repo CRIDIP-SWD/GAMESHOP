@@ -139,7 +139,7 @@ ini_set('display_errors', 1);
                     <ul>
                         <li class="current"><a href="#"><div>Home</div><span>Lets Start</span></a></li>
                         <?php
-                        $sql_categorie = $DB->query("SELECT * FROM categorie WHERE categorie.designation_cat != 'PRODUIT D&Eacute;RIV&Eacute;S'");
+                        $sql_categorie = $DB->query("SELECT * FROM categorie");
                         foreach($sql_categorie as $cat):
                             $idcategorie = $cat->id;
                         ?>
@@ -154,7 +154,7 @@ ini_set('display_errors', 1);
                                             <li class="mega-menu-title"><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>"><div><?= $cat->designation_cat; ?></div></a>
                                                 <ul>
                                                 <?php
-                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'");
+                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array("idcategorie" => $idcategorie));
                                                 foreach($sql_sub as $sub):
                                                     ?>
                                                     <li><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $sub->id; ?>"><div><?= $sub->designation_subcat; ?></div></a></li>
@@ -166,16 +166,31 @@ ini_set('display_errors', 1);
                                             <li class="mega-menu-title"><a href="#"><div>Nouveauté</div></a>
                                                 <ul>
                                                     <?php
-                                                    $date = $date_format->convert_strtotime(date("d-m-Y"));
-                                                    $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_new = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.idcategorie = '$idcategorie' LIMIT 1");
+                                                    $sql_new = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.idcategorie = '$idcategorie' AND produits.statut_global = :stat LIMIT 1", array("stat" => '4'));
                                                     foreach($sql_new as $new):
+                                                        $ref_produit = $new->ref_produit;
+                                                        $verif_global = $produit_cls->verif_stat_global($ref_produit);
+                                                        $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+                                                        if($verif_global === 3)
+                                                        {
+                                                            $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                                        }
                                                     ?>
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="Unisex Sunglasses"></a>
+                                                                <a href="#">
+                                                                    <?php if($verif_global === 2): ?>
+                                                                        <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                                                    <?php endif; ?>
+                                                                    <?php if($verif_global === 3): ?>
+                                                                        <div class="sale-flash promotion">EN PROMOTION!</div>
+                                                                    <?php endif; ?>
+                                                                    <?php if($verif_global === 4): ?>
+                                                                        <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                                                                    <?php endif; ?>
+                                                                    <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="<?= $new->designation; ?>">
+                                                                </a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
                                                                 <div class="product-overlay">
                                                                     <a href="core/panier.php?action=ajout&l=<?= $new->ref_produit; ?>&q=1&p=<?= $new->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
@@ -185,12 +200,56 @@ ini_set('display_errors', 1);
                                                             <div class="product-desc">
                                                                 <div class="product-title"><h3><a href="#"><?= $new->designation; ?></a></h3></div>
                                                                 <div class="product-price"><ins><?= number_format($new->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
-                                                                <div class="product-rating">
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star-empty"></i>
-                                                                    <i class="icon-star-empty"></i>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <?php endforeach; ?>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
+                                                <ul>
+                                                <?php
+                                                $sql_promo = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.idcategorie = '$idcategorie' AND produits.statut_global = :stat LIMIT 1", array("stat" => '3'));
+                                                foreach($sql_promo as $promo):
+                                                    $ref_produit = $promo->ref_produit;
+                                                    $verif_global = $produit_cls->verif_stat_global($ref_produit);
+                                                    $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
+                                                    if($verif_global === 3)
+                                                    {
+                                                        $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                                    }
+                                                    ?>
+                                                    <li>
+                                                        <div class="product clearfix">
+                                                            <div class="product-image">
+                                                                <a href="#">
+                                                                    <?php if($verif_global === 2): ?>
+                                                                        <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                                                    <?php endif; ?>
+                                                                    <?php if($verif_global === 3): ?>
+                                                                        <div class="sale-flash promotion">EN PROMOTION!</div>
+                                                                    <?php endif; ?>
+                                                                    <?php if($verif_global === 4): ?>
+                                                                        <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                                                                    <?php endif; ?>
+                                                                    <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $promo->ref_produit; ?>.jpg" alt="<?= $promo->designation; ?>">
+                                                                </a>
+                                                                <div class="product-overlay">
+                                                                    <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $promo->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                    <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $promo->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="product-desc">
+                                                                <div class="product-title"><h3><a href="index.php?view=produit&ref_produit=<?= $promo->ref_produit; ?>"><?= html_entity_decode($promo->designation); ?></a></h3></div>
+                                                                <div class="product-price">
+                                                                    <?php if($verif_global === 3){ ?>
+                                                                        <del><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></del>
+                                                                        <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
+                                                                    <?php }else{ ?>
+                                                                        <ins><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                                                    <?php } ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -199,36 +258,6 @@ ini_set('display_errors', 1);
                                                 </ul>
                                             </li>
                                         </ul>
-                                        <!--<ul>
-                                            <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
-                                                <ul>
-                                                    <!--<li>
-                                                        <div class="product clearfix">
-                                                            <div class="product-image">
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
-                                                                <a href="#"><img src="<?= $constante->getUrl('', false,true); ?>produit/cards/ps4.jpg" alt="Unisex Sunglasses"></a>
-                                                                <!--<div class="sale-flash">Sale!</div>-->
-                                                                <!--<div class="product-overlay">
-                                                                    <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                                                    <a href="assets/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-desc">
-                                                                <div class="product-title"><h3><a href="#">Call Of Duty: Black-Ops III NukeTown</a></h3></div>
-                                                                <div class="product-price"><ins>69,90 €</ins></div>
-                                                                <div class="product-rating">
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star3"></i>
-                                                                    <i class="icon-star-empty"></i>
-                                                                    <i class="icon-star-empty"></i>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>-->
-                                                <!--</ul>
-                                            </li>
-                                        </ul>-->
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
