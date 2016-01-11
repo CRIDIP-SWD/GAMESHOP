@@ -1240,7 +1240,7 @@ $(document).ready(function(){
 		if(recherche.length < 2){
 			$.ajax({
 				type: "GET",
-				url: "include/ajax/searching-ajax.php",
+				url: "assets/include/ajax/searching-ajax.php",
 				data : data,
 				success: function(server_response) {
 					$("#resultat").html(server_response).show()
