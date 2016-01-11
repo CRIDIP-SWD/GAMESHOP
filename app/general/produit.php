@@ -62,7 +62,7 @@ class produit extends DB
         if($produit[0]->stock == 0)
         {
             return 0;
-        }elseif($produit[0]->date_sortie > strtotime(date("d-m-Y")))
+        }elseif($produit[0]->date_sortie < strtotime(date("d-m-Y")))
         {
             return 1;
         }else{
