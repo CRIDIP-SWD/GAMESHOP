@@ -55,7 +55,6 @@
                             <div class="product clearfix">
                                 <div class="product-image">
                                     <a href="#">
-                                        <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress">
                                         <?php if($verif_global === 2): ?>
                                             <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                                         <?php endif; ?>
@@ -65,6 +64,7 @@
                                         <?php if($verif_global === 4): ?>
                                             <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                         <?php endif; ?>
+                                        <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress">
                                     </a>
                                     <!--<div class="sale-flash">50% Off*</div>-->
                                     <div class="product-overlay">
@@ -178,7 +178,6 @@
                                 <div class="product clearfix">
                                     <div class="product-image">
                                         <a href="#">
-                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress">
                                             <?php if($verif_global === 2): ?>
                                                 <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                                             <?php endif; ?>
@@ -188,6 +187,7 @@
                                             <?php if($verif_global === 4): ?>
                                                 <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                             <?php endif; ?>
+                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="Checked Short Dress">
                                         </a>
                                         <!--<div class="sale-flash">50% Off*</div>-->
                                         <div class="product-overlay">
