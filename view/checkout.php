@@ -13,7 +13,34 @@
     </div>
 <?php }else{ ?>
     <?php if(isset($_SESSION['logged'])): ?>
-        TEST
+        <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
+
+            <div class="container clearfix">
+                <h1>COMMANDE</h1>
+                <ol class="breadcrumb">
+                    <li><a href="#">GAMESHOP</a></li>
+                    <li><a href="#">COMMANDE</a></li>
+                    <li class="active">Panier</li>
+                </ol>
+            </div>
+
+        </section>
+
+        <section id="content">
+            <div class="content-wrap">
+                <div class="container clearfix">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
+                            <span class="sr-only">45% Complete</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container clearfix bottommargin">
+
+                </div>
+            </div>
+        </section>
     <?php endif; ?>
 
     <?php if(!isset($_SESSION['logged'])): ?>
