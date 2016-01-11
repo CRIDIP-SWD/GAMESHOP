@@ -173,7 +173,7 @@ if($verif_global === 3)
                             <div class="col-md-12">
                                 <div class="panel panel-default product-meta">
                                     <div class="panel-body">
-                                        <table style="width: 50%;">
+                                        <table style="width: 100%;">
                                             <tbody>
                                                 <?php if($verif_stock === 0): ?>
                                                     <tr>
