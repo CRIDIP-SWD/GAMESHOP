@@ -31,8 +31,8 @@ class app
  */
 class constante extends app{
 
-    const HTTP              = "https://";
-    const URL               = "vps221243.ovh.net/gameshop/";
+    const HTTP              = "http://";
+    const URL               = "gameshop.vps221243.ovh.net/";
     const ASSETS            = "assets/";
     const NOM_SITE          = "Gameshop";
     const SOURCES           = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
@@ -239,7 +239,7 @@ class fonction extends app
 class DB extends app{
 
     private $host = "localhost";
-    private $username = "root";
+    private $username = "gameshop";
     private $password = "1992maxime";
     private $database = "gameshop";
     private $db;
