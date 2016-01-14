@@ -35,7 +35,7 @@ class constante extends app{
     const URL               = "vps221243.ovh.net/";
     const ASSETS            = "assets/";
     const NOM_SITE          = "Gameshop";
-    const SOURCES           = "http://ns342142.ip-5-196-76.cdeu/sources/gameshop/";
+    const SOURCES           = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
     const MAINTENANCE       = 0;
     const IP_MAIN           = "109.190.224.161";
     /*
