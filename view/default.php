@@ -17,7 +17,7 @@ ini_set('display_errors', 1);
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>magnific-popup.css" type="text/css" />
-    <link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('js/')); ?>jplayer/css/jplayer.pink.flag.css" type="text/css" />
 
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -681,7 +681,7 @@ ini_set('display_errors', 1);
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
-<script src="http://vjs.zencdn.net/4.3.0/video.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jquery.jplayer.js"></script>
 <script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jplayer.plugins.js"></script>
 <script type="text/javascript">
     var videos = [
