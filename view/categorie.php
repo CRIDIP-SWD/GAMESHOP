@@ -58,7 +58,7 @@
                                 <?php }else{ ?>
                             <div class="product clearfix">
                                 <div class="product-image">
-                                    <a href="#">
+                                    <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>">
                                         <?php if($verif_global === 2): ?>
                                             <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                                         <?php endif; ?>
@@ -181,7 +181,7 @@
                                 <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
-                                        <a href="#">
+                                        <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>">
                                             <?php if($verif_global === 2): ?>
                                                 <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                                             <?php endif; ?>
