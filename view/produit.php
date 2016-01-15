@@ -251,31 +251,20 @@ if($verif_global === 3)
 
                             <div id="oc-product" class="owl-carousel product-carousel">
                                 <?php
-                                $sql_bonus = $DB->query("SELECT * FROM produits_bonus, produits WHERE produits_bonus.ref_produit_bonus = produits.ref_produit AND produits_bonus.ref_produit = '$ref_produit'");
+                                $sql_bonus = $DB->query("SELECT * FROM produits_bonus WHERE ref_produit = :ref_produit", array(
+                                    "ref_produit" => $ref_produit
+                                ));
                                 foreach($sql_bonus as $bonus):
                                 ?>
                                 <div class="oc-item">
                                     <div class="product iproduct clearfix">
                                         <div class="product-image">
-                                            <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $bonus->ref_produit; ?>.jpg" alt="Checked Short Dress"></a>
-                                            <?php if($verif == 1): ?>
-                                                <div class="sale-flash nouveaute">NOUVEAU !</div>
-                                            <?php endif; ?>
-                                            <?php if($verif == 2): ?>
-                                                <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
-                                            <?php endif; ?>
-                                            <?php if($verif == 3): ?>
-                                                <div class="sale-flash promotion">EN PROMOTION !</div>
-                                            <?php endif; ?>
-                                            <div class="product-overlay">
-                                                <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
-                                                <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $bonus->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> VOIR</span></a>
-                                            </div>
+                                            <a href="#"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/bonus/<?= $bonus->images_bonus; ?>.jpg" alt="Checked Short Dress"></a>
                                         </div>
                                         <div class="product-desc center">
-                                            <div class="product-title"><h3><a href="#"><?= $bonus->designation; ?></a></h3></div>
+                                            <div class="product-title"><h3><a href="#"><?= $bonus->designation_bonus; ?></a></h3></div>
                                             <div class="product-price">
-                                                <ins>CADEAUX</ins>
+                                                <ins>OFFERT !!!</ins>
                                             </div>
                                         </div>
                                     </div>
