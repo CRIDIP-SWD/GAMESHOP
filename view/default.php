@@ -682,6 +682,7 @@ ini_set('display_errors', 1);
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
 <script type="text/javascript" src="http://vjs.zencdn.net/5.4.4/video.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jplayer.plugins.js"></script>
 
 </body>
 </html>

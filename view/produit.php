@@ -398,6 +398,35 @@ if($verif_global === 3)
                                                 <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" />
                                             </div>
                                         </div>
+                                        <div>
+                                            <video id="video" class="video-js vjs-default-skin" controls preload="auto" width="1100" height="570" poster="<?= $constante->getUrl(array(''), false, true); ?>autre/background/back_psn_title.png" data-setup="{}"></video>
+                                            <script>
+                                                var videos = [
+                                                    <?php
+                                                    $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                                    foreach($sql_video as $videos):
+                                                    ?>
+                                                    {
+                                                        src: '<?= $videos->video; ?>',
+                                                        poster: '<?= $constante->getUrl(array(), false, true); ?>videos/poster/<?= $videos->images_video; ?>.jpg',
+                                                        title: '<?= $videos->title_video; ?>'
+                                                    },
+                                                    <?php endforeach; ?>
+                                                ];
+                                                var player = videojs('video');
+                                                player.playList(videos, {
+                                                    getVideoSource: function(vid, cb) {
+                                                        cb(vid.src, vid.poster);
+                                                    }
+                                                });
+                                                $('[data-action=prev]').on('click', function(e) {
+                                                    player.prev();
+                                                });
+                                                $('[data-action=next]').on('click', function(e) {
+                                                    player.next();
+                                                });
+                                            </script>
+                                        </div>
                                     <?php endforeach; ?>
 
                                 </div>
