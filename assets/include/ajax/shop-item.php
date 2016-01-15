@@ -4,7 +4,7 @@ $ref_produit = $_GET['ref_produit'];
 $produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, produits_caracteristique WHERE produits_categorie.ref_produit = produits.ref_produit
                             AND produits_categorie.idcategorie = categorie.id
                             AND produits_caracteristique.ref_produit = produits.ref_produit
-                            AND produits.ref_produit = '$ref_produit'");
+                            AND produits.ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
 ?>
                 <div class="single-product shop-quick-view-ajax clearfix">
 

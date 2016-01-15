@@ -2,7 +2,9 @@
     <?php if(!isset($_GET['idsubcategorie'])){ ?>
         <?php
         $idcategorie = $_GET['idcategorie'];
-        $categorie = $DB->query("SELECT * FROM categorie WHERE id = '$idcategorie'");
+        $categorie = $DB->query("SELECT * FROM categorie WHERE id = :id", array(
+            "id" => $idcategorie
+        ));
         ?>
         <!-- Page Title
 		============================================= -->
@@ -37,7 +39,9 @@
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.ref_produit = produits.ref_produit
                                            AND produits_categorie.idcategorie = categorie.id
-                                           AND produits_categorie.idcategorie = '$idcategorie'");
+                                           AND produits_categorie.idcategorie = :idcategorie", array(
+                                "idcategorie" => $idcategorie
+                            ));
                             foreach($sql_produit as $produit):
                                 $ref_produit = $produit->ref_produit;
                                 $verif_global = $produit_cls->verif_stat_global($ref_produit);
@@ -100,7 +104,7 @@
                                 <h4><?= $categorie[0]->designation_cat; ?></h4>
                                 <ul>
                                     <?php
-                                    $sql_subcat = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'");
+                                    $sql_subcat = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array("idcategorie" => $idcategorie));
                                     foreach($sql_subcat as $subcat):
                                     ?>
                                     <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $subcat->id; ?>"><?= $subcat->designation_subcat; ?></a></li>
@@ -122,8 +126,8 @@
         <?php
         $idcategorie = $_GET['idcategorie'];
         $idsubcategorie = $_GET['idsubcategorie'];
-        $categorie = $DB->query("SELECT * FROM categorie WHERE id = '$idcategorie'");
-        $sub = $DB->query("SELECT * FROM subcategorie WHERE id = '$idsubcategorie'");
+        $categorie = $DB->query("SELECT * FROM categorie WHERE id = :idcategorie", array("idcategorie" => $idcategorie));
+        $sub = $DB->query("SELECT * FROM subcategorie WHERE id = :idsubcategorie", array("idsubcategorie" => $idsubcategorie));
         ?>
         <!-- Page Title
 		============================================= -->
@@ -159,7 +163,7 @@
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
                                                         AND produits_subcategorie.idsubcategorie = subcategorie.id
-                                                        AND produits_subcategorie.idsubcategorie = '$idsubcategorie'");
+                                                        AND produits_subcategorie.idsubcategorie = :idsubcategorie", array("idsubcategorie" => $idsubcategorie));
                             foreach($sql_produit as $produit):
                                 $ref_produit = $produit->ref_produit;
                                 $verif_global = $produit_cls->verif_stat_global($ref_produit);
@@ -223,7 +227,7 @@
                                 <h4><?= $categorie[0]->designation_cat; ?></h4>
                                 <ul>
                                     <?php
-                                    $sql_subcat = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = '$idcategorie'");
+                                    $sql_subcat = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array("idcategorie" => $idcategorie));
                                     foreach($sql_subcat as $subcat):
                                         ?>
                                         <li <?php if(isset($_GET['idsubcategorie'])){echo "style='font-weight: bold;'";} ?>><a href="index.php?view=categorie&idcategorie=<?= $idcategorie; ?>&idsubcategorie=<?= $subcat->id; ?>"><?= $subcat->designation_subcat; ?></a></li>
