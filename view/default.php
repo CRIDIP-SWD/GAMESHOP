@@ -17,7 +17,7 @@ ini_set('display_errors', 1);
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>font-icons.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>magnific-popup.css" type="text/css" />
-    <link href="http://vjs.zencdn.net/5.4.4/video-js.css" rel="stylesheet">
+    <link href="http://vjs.zencdn.net/4.0/video-js.css" rel="stylesheet">
 
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>responsive.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -683,6 +683,32 @@ ini_set('display_errors', 1);
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
 <script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jquery.jplayer.js"></script>
 <script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jplayer.plugins.js"></script>
+<script type="text/javascript">
+    var videos = [
+        <?php
+        $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+        foreach($sql_video as $videos):
+        ?>
+        {
+            src: '<?= $videos->video; ?>',
+            poster: '<?= $constante->getUrl(array(), false, true); ?>videos/poster/<?= $videos->images_video; ?>.jpg',
+            title: '<?= $videos->title_video; ?>'
+        },
+        <?php endforeach; ?>
+    ];
+    var player = videojs('video');
+    player.playList(videos, {
+        getVideoSource: function(vid, cb) {
+            cb(vid.src, vid.poster);
+        }
+    });
+    $('[data-action=prev]').on('click', function(e) {
+        player.prev();
+    });
+    $('[data-action=next]').on('click', function(e) {
+        player.next();
+    });
+</script>
 
 </body>
 </html>
