@@ -697,7 +697,7 @@ ini_set('display_errors', 1);
         <?php endforeach; ?>
     ];
     var player = videojs('video');
-    player.playList(videos, {
+    player.playList(videos, {d
         getVideoSource: function(vid, cb) {
             cb(vid.src, vid.poster);
         }
