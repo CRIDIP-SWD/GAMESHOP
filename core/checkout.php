@@ -30,6 +30,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
 }
 if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 {
+    session_start();
     require "../app/classe.php";
     $data = array(
         "num_commande"          => "CMD".rand(1000000,9999999),
