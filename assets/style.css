@@ -13198,7 +13198,7 @@ PERSONALISATION
 
 /*Changement des CheckBox et Radio*/
 
-.checkbox-gameshop{display: none;}
+.checkbox-gameshop input{display: none;}
 
 /*--------------------*/
 
