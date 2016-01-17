@@ -271,7 +271,7 @@
                     </div>
                     <div class="block-address radio-gameshop">
                         <div class="col-md-11">
-                            <label for="adresse" class="radio-gameshop">
+                            <label for="adresse1" class="radio-gameshop">
                                 <strong>MON ADRESSE DE LIVRAISON</strong><br>
                                 M. MOCKELYN Maxime<br>
                                 20 Avenue Jean Jaures<br>
@@ -280,7 +280,7 @@
                             </label>
                         </div>
                         <div class="col-md-1">
-                            <input id="adresse" class="radio-gameshop" type="radio" />
+                            <input id="adresse1" class="radio-gameshop" type="radio" />
                             <span class="round"></span>
                         </div>
                     </div>
