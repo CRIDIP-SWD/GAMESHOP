@@ -267,6 +267,10 @@
                             </div>
                         </div>
                     </div>
+                    <label for="test" class="checkbox">
+                        <input type="checkbox" id="test" class="checkbox">
+                        Hey Salut coche cette case !
+                    </label>
                 </form>
             </div>
         </div>
