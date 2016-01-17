@@ -267,8 +267,8 @@
                             </div>
                         </div>
                     </div>
-                    <label for="test" class="checkbox">
-                        <input type="checkbox" id="test" class="checkbox">
+                    <label for="test" class="checkbox-gameshop">
+                        <input type="checkbox" id="test" class="checkbox-gameshop">
                         Hey Salut coche cette case !
                     </label>
                 </form>

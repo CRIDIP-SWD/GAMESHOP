@@ -13196,10 +13196,12 @@ PERSONALISATION
 	padding: 10px;
 }
 
-.radio-gameshop{
-	width: 19px;
-	height: 19px;
-}
+/*Changement des CheckBox et Radio*/
+
+.checkbox-gameshop{display: none;}
+
+/*--------------------*/
+
 
 
 
