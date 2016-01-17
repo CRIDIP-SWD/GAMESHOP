@@ -269,6 +269,21 @@
                             <span class="round"></span>
                         </div>
                     </div>
+                    <div class="block-address radio-gameshop">
+                        <div class="col-md-11">
+                            <label for="adresse" class="radio-gameshop">
+                                <strong>MON ADRESSE DE LIVRAISON</strong><br>
+                                M. MOCKELYN Maxime<br>
+                                20 Avenue Jean Jaures<br>
+                                Résidence "Les IRIS"<br>
+                                85100 Les Sables d'Olonne
+                            </label>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="adresse" class="radio-gameshop" type="radio" />
+                            <span class="round"></span>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
