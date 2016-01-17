@@ -13210,7 +13210,7 @@ PERSONALISATION
 	position: relative;
 }
 input:checked + .round{
-	background-color: #27ae60;
+	border-color: #27ae60;
 }
 input:checked + .round:after{
 	content: '';
