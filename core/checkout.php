@@ -55,8 +55,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     foreach($_SESSION['panier'] as $key => $article)
     {
-        $panier = array($article['refProduit']);
-        var_dump($panier);
+        var_dump($_SESSION['panier']);
     }
 
     /*$error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
