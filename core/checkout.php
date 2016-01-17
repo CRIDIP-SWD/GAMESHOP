@@ -53,12 +53,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
     $sql = $DB->execute("INSERT INTO commande(idcommande, num_commande, date_commande, idclient, total_commande, date_livraison, destination, statut, adresse_fact, adresse_liv, methode_livraison, methode_paiement, prix_envoie)
                           VALUES (NULL, :num_commande, :date_commande, :idclient, :total_commande, :date_livraison, :destination, :statut, :adresse_fact, :adresse_liv, :methode_livraison, :methode_paiement, :prix_envoie)", $data);
 
-    foreach($sql as $article)
+    foreach($sql as $k => $article)
     {
         echo $ref_produit = $_SESSION['panier']['refProduit'];
         echo $qte = $_SESSION['panier']['qteProduit'];
         echo $prix_produit = $_SESSION['panier']['prix_produit'];
-
 
     }
 
