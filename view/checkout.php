@@ -213,7 +213,7 @@
         <?php endif; ?>
     <?php } ?>
 <?php endif; ?>
-<?php if(isset($_GET['view']) && $_GET['view'] == 'adresse'): ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'adresse'): ?>
     <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
 
         <div class="container clearfix">
