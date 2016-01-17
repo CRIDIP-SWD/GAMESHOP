@@ -13189,10 +13189,7 @@ PERSONALISATION
 }
 
 
-.radio-gameshop{
-	border: 1px solid #000;
-	border-radius: 15px;
-}
+
 .radio-gameshop input{display: none;}
 .radio-gameshop .round{
 	background-color: #fff;
