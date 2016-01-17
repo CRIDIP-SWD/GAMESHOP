@@ -254,9 +254,23 @@
             <div id="show-error"></div>
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
-                    <label for="adresse" class="radio-gameshop tabler">
-                        <input type="radio" id="adresse" class="radio-gameshop" />
-                        CECI EST UN TEST
+                    <label for="adresse" class="radio-gameshop">
+                        <div class="col-md-11">
+                            <strong>MON ADRESSE DE LIVRAISON</strong><br>
+                            M. MOCKELYN Maxime<br>
+                            20 Avenue Jean Jaures<br>
+                            Résidence "Les IRIS"<br>
+                            85100 Les Sables d'Olonne
+                        </div>
+                        <div class="col-md-1">
+                            <input type="radio" id="adresse" class="radio-gameshop">
+                            <span class="round"></span>
+                        </div>
+                    </label>
+                    <label for="test" class="checkbox-gameshop">
+                        <input type="checkbox" id="test" class="checkbox-gameshop">
+                        <span class="round"></span>
+                        Hey Salut coche cette case !
                     </label>
                 </form>
             </div>
