@@ -53,9 +53,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
     $sql = $DB->execute("INSERT INTO commande(idcommande, num_commande, date_commande, idclient, total_commande, date_livraison, destination, statut, adresse_fact, adresse_liv, methode_livraison, methode_paiement, prix_envoie)
                           VALUES (NULL, :num_commande, :date_commande, :idclient, :total_commande, :date_livraison, :destination, :statut, :adresse_fact, :adresse_liv, :methode_livraison, :methode_paiement, :prix_envoie)", $data);
 
-    foreach($_SESSION['panier'] as $article)
+    foreach($_SESSION['panier'] as $k => $article)
     {
-        var_dump($article->refProduit);
+        var_dump($article[$k]->refProduit);
 
     }
 
