@@ -31,29 +31,26 @@
                 <div class="content-wrap">
                     <ul class="process-steps bottommargin clearfix">
                         <li>
-                            <a class="i-circled i-alt divcenter" href="#">1</a>
-                            <h5>Review Cart</h5>
+                            <a class="i-circled i-alt divcenter bgcolor" href="#">1</a>
+                            <h5>Mon Panier</h5>
                         </li>
                         <li>
                             <a class="i-circled i-alt divcenter" href="#">2</a>
-                            <h5>Enter Shipping Info</h5>
+                            <h5>Adresse</h5>
                         </li>
                         <li class="active">
-                            <a class="i-circled i-alt divcenter bgcolor" href="#">3</a>
-                            <h5>Complete Payment</h5>
+                            <a class="i-circled i-alt divcenter" href="#">3</a>
+                            <h5>Livraison</h5>
                         </li>
                         <li>
                             <a class="i-circled i-alt divcenter" href="#">4</a>
-                            <h5>Order Complete</h5>
+                            <h5>Paiement</h5>
+                        </li>
+                        <li>
+                            <a class="i-circled i-alt divcenter" href="#">5</a>
+                            <h5>Récapitulatif de la commande</h5>
                         </li>
                     </ul>
-                    <div class="container clearfix">
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
-                                <span class="sr-only">45% Complete</span>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="container clearfix bottommargin">
                         <div class="table-responsive bottommargin">
