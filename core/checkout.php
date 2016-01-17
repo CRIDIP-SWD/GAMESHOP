@@ -46,9 +46,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
         "methode_paiement"       => "",
         "prix_envoie"           => ""
     );
-    var_dump($data['num_commande']);
-    die();
-    $num_commande = $data->num_commande;
+
+    $num_commande = $data['num_commande'];
     $nbArticles = count($_SESSION['panier']['refProduit']);
 
     $sql = $DB->execute("INSERT INTO commande(idcommande, num_commande, date_commande, idclient, total_commande, date_livraison, destination, statut, adresse_fact, adresse_liv, methode_livraison, methode_paiement, prix_envoie)
