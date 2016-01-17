@@ -31,11 +31,11 @@ class app
  */
 class constante extends app{
 
-    const HTTP              = "http://";
+    const HTTP              = "https://";
     const URL               = "vps221243.ovh.net/";
     const ASSETS            = "assets/";
     const NOM_SITE          = "Gameshop";
-    const SOURCES           = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
+    const SOURCES           = "https://ns342142.ip-5-196-76.eu/sources/gameshop/";
     const MAINTENANCE       = 0;
     const IP_MAIN           = "109.190.224.161";
     /*
