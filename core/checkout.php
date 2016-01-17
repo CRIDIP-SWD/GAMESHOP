@@ -55,7 +55,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     foreach($_SESSION['panier'] as $key => $article)
     {
-        var_dump($article);
+        var_dump($article[''.$key.'']);
         die();
     }
 
