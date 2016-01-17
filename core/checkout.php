@@ -55,15 +55,14 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     foreach($_SESSION['panier'] as $key => $article)
     {
-        var_dump($article[''.$key.'']);
-        die();
+        var_dump($article[0]);
     }
 
-    $error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
+    /*$error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
     if($sql == 1 AND $sql_article >= 1)
     {
         header("Location: ../index.php?view=checkout&sub=adresse&num_commande=$num_commande");
     }else{
         header("Location: ../index.php?view=checkout&error=critical&data=$error");
-    }
+    }*/
 }
