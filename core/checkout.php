@@ -55,14 +55,19 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     for($i=0;$i<$nbArticles;$i++)
     {
-        var_dump($_SESSION['panier']['refProduit']);
+        $sql_article = $DB->execute("INSERT INTO commande_article(idcommandearticle, num_commande, ref_produit, qte, total_article_commande) VALUES (NULL, :num_commande, :ref_produit, :qte, :total_article_commande)",array(
+            "num_commande" => $num_commande,
+            "ref_produit" => $_SESSION['panier']['refProduit'],
+            "qte" => $_SESSION['panier']['qteProduit'],
+            "total_article_commande" => $_SESSION['panier']['prixProduit']
+        ));
     }
 
-    /*$error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
+    $error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
     if($sql == 1 AND $sql_article >= 1)
     {
         header("Location: ../index.php?view=checkout&sub=adresse&num_commande=$num_commande");
     }else{
         header("Location: ../index.php?view=checkout&error=critical&data=$error");
-    }*/
+    }
 }
