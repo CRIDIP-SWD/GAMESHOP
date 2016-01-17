@@ -263,10 +263,12 @@
                             85100 Les Sables d'Olonne
                         </div>
                         <div class="col-md-1">
-                            <input type="radio" id="adresse" class="radio-gameshop">
-                            <span class="round"></span>
+
                         </div>
+
                     </label>
+                    <input type="radio" id="adresse" class="radio-gameshop">
+                    <span class="round"></span>
                 </form>
             </div>
         </div>
