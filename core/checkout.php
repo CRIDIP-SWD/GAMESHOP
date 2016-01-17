@@ -61,6 +61,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
             "qte" => $_SESSION['panier']['qteProduit'],
             "total_article_commande" => $_SESSION['panier']['prixProduit']
         ));
+        print_r($sql_article);
+        die();
     }
 
     $error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
