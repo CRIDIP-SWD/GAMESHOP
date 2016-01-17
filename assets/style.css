@@ -13219,7 +13219,7 @@ input:checked + .round:after{
 	height: 5px;
 	background-color: #27ae60;
 	position: absolute;
-	top: 1px; left: 1px;
+	top: 2px; left: 2px;
 }
 /*--------------------*/
 
