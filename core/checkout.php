@@ -28,3 +28,35 @@ if(isset($_POST['action']) && $_POST['action'] == 'login')
         header("Location: ../index.php?view=checkout&warning=champs");
     }
 }
+if(isset($_GET['action']) && $_GET['action'] == 'adresse')
+{
+    session_start();
+    require "../app/classe.php";
+    $data = array(
+        "num_commande"          => "CMD".rand(1000000,9999999),
+        "date_commande"         => strtotime(date("d-m-Y h:i")),
+        "idclient"              => $info_client[0]->idclient,
+        "total_commande"        => $panier_cls->MontantGlobal(),
+        "date_livraison"        => "",
+        "destination"           => "",
+        "statut"                => 0,
+        "adresse_fact"          => "",
+        "adresse_liv"           => "",
+        "methode_livraison"      => "",
+        "methode_paiement"       => "",
+        "prix_envoie"           => ""
+    );
+
+    $num_commande = $data[0]->num_commande;
+
+    $sql = $DB->execute("INSERT INTO commande(idcommande, num_commande, date_commande, idclient, total_commande, date_livraison, destination, statut, adresse_fact, adresse_liv, methode_livraison, methode_paiement, prix_envoie)
+                          VALUES (NULL, :num_commande, :date_commande, :idclient, :total_commande, :date_livraison, :destination, :statut, :adresse_fact, :adresse_liv, :methode_livraison, :methode_paiement, :prix_envoie)", $data);
+
+    $error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
+    if($sql == 1)
+    {
+        header("Location: ../index.php?view=checkout&sub=adresse&num_commande=$num_commande");
+    }else{
+        header("Location: ../index.php?view=checkout&error=critical&data=$error");
+    }
+}

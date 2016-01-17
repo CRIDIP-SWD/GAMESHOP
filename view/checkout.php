@@ -51,7 +51,7 @@
                             <h5>Récapitulatif de la commande</h5>
                         </li>
                     </ul>
-
+                    <div id="show-error"></div>
                     <div class="container clearfix bottommargin">
                         <div class="table-responsive bottommargin">
 
@@ -120,7 +120,7 @@
                             </table>
 
                         </div>
-                        <button type="button" class="button button-green button-3d pull-right">Suivant <i class="icon-arrow-right"></i></button>
+                        <button type="button" class="button button-green button-3d pull-right" onclick="window.location.href='core/checkout.php?action=adresse'">Suivant <i class="icon-arrow-right"></i></button>
                     </div>
                 </div>
             </section>
@@ -212,4 +212,17 @@
             </section>
         <?php endif; ?>
     <?php } ?>
+<?php endif; ?>
+
+<?php if(isset($_GET['error']) && $_GET['error'] == 'critical'): ?>
+    <script type="text/javascript">
+        $("show-error").html("" +
+            "<div class='style-msg errormsg'>" +
+            "   <div class='sb-msg'>" +
+            "       <i class='icon-remove'></i>" +
+            "       <strong>ERREUR</strong>" +
+            "       <?= $_GET['data']; ?>"+
+            "   </div>" +
+            "</div>").fadeIn("slow");
+    </script>
 <?php endif; ?>
