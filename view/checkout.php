@@ -216,7 +216,7 @@
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'critical'): ?>
     <script type="text/javascript">
-        $("show-error").html("" +
+        $("#show-error").html("" +
             "<div class='style-msg errormsg'>" +
             "   <div class='sb-msg'>" +
             "       <i class='icon-remove'></i>" +
