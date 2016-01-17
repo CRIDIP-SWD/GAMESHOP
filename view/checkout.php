@@ -29,7 +29,7 @@
 
             <section id="content">
                 <div class="content-wrap">
-                    <ul class="process-steps bottommargin clearfix">
+                    <ul class="process-steps process-5 bottommargin clearfix">
                         <li>
                             <a class="i-circled i-alt divcenter bgcolor" href="#">1</a>
                             <h5>Mon Panier</h5>
