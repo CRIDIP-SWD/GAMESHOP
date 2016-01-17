@@ -254,7 +254,7 @@
             <div id="show-error"></div>
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
-                    <label for="adresse" class="radio-gameshop">
+                    <label for="adresse" class="radio-gameshop tabler">
                         <input type="radio" id="adresse" class="radio-gameshop" />
                         CECI EST UN TEST
                     </label>
