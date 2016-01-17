@@ -13196,17 +13196,7 @@ PERSONALISATION
 	padding: 10px;
 }
 .radio-gameshop input{display: none;}
-.checkbox-gameshop{
-	background-color: #fff;
-	border: 3px solid #95a5a6;
-	width: 100%;
-	display: inline-block;
-	border-radius: 15px;
-	position: relative;
-}
-input:checked + .checkbox-gameshop{
-	background-color: #3498db;
-}
+
 
 /*Changement des CheckBox et Radio*/
 
