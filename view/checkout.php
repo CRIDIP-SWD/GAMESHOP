@@ -24,8 +24,8 @@
                         <li class="active">Panier</li>
                     </ol>
                 </div>
-                <div style=""></div>
             </section>
+            <div class="container clearfix header-stick progress-checkout-1"></div>
 
             <section id="content">
                 <div class="content-wrap">

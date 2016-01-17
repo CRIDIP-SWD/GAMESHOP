@@ -13179,6 +13179,11 @@ PERSONALISATION
 
 .required{color: #ff2020; font-weight: bold; font-size: 12px;}
 
+.progress-checkout-1{
+	background-color: rgba(173, 173, 174, 1);
+	height: 1px;
+}
+
 
 
 
