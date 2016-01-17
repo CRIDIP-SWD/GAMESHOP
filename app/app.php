@@ -32,7 +32,7 @@ class app
 class constante extends app{
 
     const HTTP              = "https://";
-    const URL               = "vps221243.ovh.net/";
+    const URL               = "vps221243.ovh.net/gameshop/";
     const ASSETS            = "assets/";
     const NOM_SITE          = "Gameshop";
     const SOURCES           = "https://ns342142.ip-5-196-76.eu/sources/gameshop/";
