@@ -269,6 +269,7 @@
                     </div>
                     <label for="test" class="checkbox-gameshop">
                         <input type="checkbox" id="test" class="checkbox-gameshop">
+                        <span class="round"></span>
                         Hey Salut coche cette case !
                     </label>
                 </form>
