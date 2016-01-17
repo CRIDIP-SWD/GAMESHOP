@@ -19,7 +19,6 @@
         <div class="container clearfix">
 
             <div class="table-responsive bottommargin">
-                <?php var_dump($_SESSION['panier']); ?>
                 <table class="table cart">
                     <thead>
                     <tr>
