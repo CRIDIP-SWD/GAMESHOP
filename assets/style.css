@@ -13218,6 +13218,8 @@ input:checked + .round:after{
 	width: 5px;
 	height: 5px;
 	background-color: #27ae60;
+	position: absolute;
+	top: 1px; left: 1px;
 }
 /*--------------------*/
 
