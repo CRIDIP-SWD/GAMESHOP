@@ -254,7 +254,7 @@
             <div id="show-error"></div>
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
-                    <div class="block-address">
+                    <div class="block-address radio-gameshop">
                         <div class="col-md-11">
                             <label for="adresse" class="radio-gameshop">
                                 <strong>MON ADRESSE DE LIVRAISON</strong><br>
