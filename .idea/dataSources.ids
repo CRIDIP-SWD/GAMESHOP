@@ -324,9 +324,9 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="101" parent="10" name="idarticle">
+      <column id="101" parent="10" name="ref_produit">
         <mandatory>1</mandatory>
-        <data-type>int(13)</data-type>
+        <data-type>varchar(255)</data-type>
       </column>
       <column id="102" parent="10" name="qte">
         <mandatory>1</mandatory>

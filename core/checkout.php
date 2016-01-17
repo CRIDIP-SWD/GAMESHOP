@@ -46,7 +46,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
         "methode_paiement"       => "",
         "prix_envoie"           => ""
     );
-
+    var_dump($data);
+    die();
     $num_commande = $data[0]->num_commande;
     $nbArticles = count($_SESSION['panier']['refProduit']);
 
