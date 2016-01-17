@@ -78,18 +78,6 @@ if(isset($_SESSION['logged'])){
 */
 
 
-    $xbox = new xboxLive($info_client[0]->pseudo_xbox);
-    $xuid = $xbox->xuid_declare($info_client[0]->pseudo_xbox);
-    $gameTag = $info_client[0]->pseudo_xbox;
-
-    $xbox_profil = $DB->query("SELECT * FROM xbox_profile WHERE xuid = '$xuid'");
-
-    $gamercard = $DB->query("SELECT * FROM xbox_gamercard WHERE gamertag = '$gameTag'");
-
-    $presence = $DB->query("SELECT * FROM xbox_presence WHERE xuid = '$xuid'");
-
-    $lastseen = $DB->query("SELECT * FROM xbox_presence_lastseen WHERE xuid = '$xuid'");
-
 
 
     if(!empty($info_client[0]->pseudo_steam))
