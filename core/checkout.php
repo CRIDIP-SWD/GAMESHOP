@@ -55,7 +55,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     foreach($_SESSION['panier'] as $article)
     {
-        var_dump($article['refProduit']);
+        var_dump($article->refProduit);
 
     }
 
