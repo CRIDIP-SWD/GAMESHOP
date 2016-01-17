@@ -254,20 +254,9 @@
             <div id="show-error"></div>
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
-                    <label class="radio-gameshop">
-                        <div class="block-address">
-                            <div class="row">
-                                <div class="col-md-11">
-                                    <strong>MON ADRESSE</strong>
-                                    M. MOCKELYN Maxime<br>
-                                    20 Avenue Jean Jaures<br>
-                                    85100 Les Sables d'Olonne
-                                </div>
-                                <div class="col-md-1">
-                                    <input type="radio" class="radio radio-gameshop" name="adresse" value="1" />
-                                </div>
-                            </div>
-                        </div>
+                    <label for="adresse" class="radio-gameshop">
+                        <input type="radio" id="adresse" class="radio-gameshop" />
+                        CECI EST UN TEST
                     </label>
                     <label for="test" class="checkbox-gameshop">
                         <input type="checkbox" id="test" class="checkbox-gameshop">
