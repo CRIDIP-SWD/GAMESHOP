@@ -61,7 +61,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
             "qte" => $_SESSION['panier']['qteProduit'],
             "total_article_commande" => $_SESSION['panier']['prixProduit']
         ));
-        print_r($sql_article);
+        var_dump($sql_article);
         die();
     }
 
