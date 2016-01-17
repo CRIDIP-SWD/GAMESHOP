@@ -13204,6 +13204,9 @@ PERSONALISATION
 	border-radius: 15px;
 	position: relative;
 }
+input:checked + .checkbox-gameshop{
+	background-color: #3498db;
+}
 
 /*Changement des CheckBox et Radio*/
 
