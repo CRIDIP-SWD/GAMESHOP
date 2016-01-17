@@ -13206,7 +13206,7 @@ PERSONALISATION
 	width: 10px;
 	display: inline-block;
 	vertical-align: middle;
-	border-radius: 8px;
+	border-radius: 10px;
 	position: relative;
 }
 input:checked + .round{
