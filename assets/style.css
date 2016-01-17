@@ -13195,7 +13195,7 @@ PERSONALISATION
 	border-radius: 10px;
 	padding: 10px;
 }
-.radio-gameshop{display: none;}
+.radio-gameshop input{display: none;}
 
 /*Changement des CheckBox et Radio*/
 
