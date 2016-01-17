@@ -94,7 +94,7 @@
                     </tbody>
 
                 </table>
-                <p style="font-style: italic; font-size: 12px;"><span class="text-danger">Attention:</span> Si certains articles sont en rupture ou en précommande, ils vous seront livrés en différer mais la validation de la commande vau réservation</p>
+                <p style="font-style: italic; font-size: 12px;"><span class="text-danger">Attention:</span> Si certains articles sont en rupture ou en précommande, ils vous seront livrés en différer mais la validation de la commande vaut réservation</p>
             </div>
 
             <div class="row clearfix">
