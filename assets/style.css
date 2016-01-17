@@ -13204,7 +13204,7 @@ PERSONALISATION
 	border-radius: 15px;
 	position: relative;
 }
-input:checked + .radio-gameshop{
+.radio-gameshop input:checked{
 	background-color: #3498db;
 }
 
