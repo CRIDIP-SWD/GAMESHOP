@@ -253,10 +253,16 @@
             </ul>
             <div id="show-error"></div>
             <div class="container clearfix bottommargin">
-                <div class="block-address">
-
-                </div>
-                <button type="button" class="button button-green button-3d pull-right" onclick="window.location.href='core/checkout.php?action=adresse'">Suivant <i class="icon-arrow-right"></i></button>
+                <form class="form-horizontal" action="core/checkout.php" method="post">
+                    <div class="block-address">
+                        <div class="row">
+                            <div class="col-md-11"></div>
+                            <div class="col-md-1">
+                                <input type="radio" class="radio form-control" name="adresse" value="1" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
