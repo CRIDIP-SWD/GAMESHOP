@@ -62,7 +62,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
         $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array(
             "ref_produit"           => $ref_produit
         ));
-
+        var_dump($produit);
+        die();
         $total_article_commande = $produit[0]->prix_vente * $qte;
 
         $sql_article = $DB->execute("INSERT INTO commande_article(idcommandearticle, num_commande, ref_produit, qte, total_article_commande)
