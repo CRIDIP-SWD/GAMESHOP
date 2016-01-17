@@ -53,9 +53,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
     $sql = $DB->execute("INSERT INTO commande(idcommande, num_commande, date_commande, idclient, total_commande, date_livraison, destination, statut, adresse_fact, adresse_liv, methode_livraison, methode_paiement, prix_envoie)
                           VALUES (NULL, :num_commande, :date_commande, :idclient, :total_commande, :date_livraison, :destination, :statut, :adresse_fact, :adresse_liv, :methode_livraison, :methode_paiement, :prix_envoie)", $data);
 
-    for($i=0;$i<$nbArticles;$i++)
+    foreach($_SESSION['panier'][0] as $article)
     {
-        var_dump(array($_SESSION['panier']['refProduit'][0]));
+        var_dump($article);
     }
 
     /*$error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
