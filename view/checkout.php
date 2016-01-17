@@ -120,6 +120,7 @@
                             </table>
 
                         </div>
+                        <button type="button" class="button button-green button-3d">Suivant <i class="icon-arrow-right"></i></button>
                     </div>
                 </div>
             </section>
