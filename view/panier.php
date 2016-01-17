@@ -94,7 +94,7 @@
                     </tbody>
 
                 </table>
-
+                <p>Attention: Certains articles sont soit en rupture ou la date de précommande est actuellement effective, votre ou vos articles vous seront livrer en différer.</p>
             </div>
 
             <div class="row clearfix">
