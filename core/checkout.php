@@ -55,7 +55,17 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     for($i=0;$i<$nbArticles;$i++)
     {
-        var_dump($_SESSION['panier']['refProduit'][$i]);
+        $ref_produit = $_SESSION['panier']['refproduit'][$i];
+        $qte = $_SESSION['panier']['qteProduit'][$i];
+        $prix_article = $_SESSION['panier']['prixProduit'][$i];
+        $total_article_commande = $prix_article * $qte;
+
+        $sql_article = $DB->execute("INSERT INTO commande_article(idcommandearticle, num_commande, ref_produit, qte, total_article_commande) VALUES (NULL, :num_commande, :ref_produit, :qte, :total_article_commande)", array(
+            "num_commande"              => $num_commande,
+            "ref_produit"               => $ref_produit,
+            "qte"                       => $qte,
+            "total_article_commande"    => $total_article_commande
+        ));
     }
 
     /*$error = "Impossible de Créer votre commande.<br>Veuillez contactez un administrateur.";
