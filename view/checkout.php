@@ -25,10 +25,11 @@
                     </ol>
                 </div>
             </section>
-            <div class="container clearfix header-stick progress-checkout-1"></div>
+
 
             <section id="content">
                 <div class="content-wrap">
+                    <div class="container-fluid clearfix header-stick progress-checkout-1"></div>
                     <div class="container clearfix">
                         <div class="progress">
                             <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%">
