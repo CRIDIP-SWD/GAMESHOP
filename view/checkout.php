@@ -30,7 +30,7 @@
             <section id="content">
                 <div class="content-wrap">
                     <ul class="process-steps process-5 bottommargin clearfix">
-                        <li>
+                        <li  class="active">
                             <a class="i-circled i-alt divcenter bgcolor" href="#">1</a>
                             <h5>Mon Panier</h5>
                         </li>
@@ -38,7 +38,7 @@
                             <a class="i-circled i-alt divcenter" href="#">2</a>
                             <h5>Adresse</h5>
                         </li>
-                        <li class="active">
+                        <li>
                             <a class="i-circled i-alt divcenter" href="#">3</a>
                             <h5>Livraison</h5>
                         </li>
