@@ -23,8 +23,8 @@
                         <li><a href="#">COMMANDE</a></li>
                         <li class="active">Panier</li>
                     </ol>
-                    <div style=""></div>
                 </div>
+                <div style=""></div>
             </section>
 
             <section id="content">
