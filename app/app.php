@@ -281,7 +281,14 @@ class DB extends app{
 
     public function execute($sql, $data = null)
     {
-           return $this->db->exec($sql);
+        try {
+            $req = $this->db->prepare($sql);
+            $req->execute($data);
+            return $req->rowCount();
+        }catch(PDOException $e)
+        {
+            return $e->getCode().": ".$e->getMessage();
+        }
 
     }
 }
