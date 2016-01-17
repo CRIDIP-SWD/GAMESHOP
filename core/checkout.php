@@ -55,7 +55,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     for($i=0;$i<$nbArticles;$i++)
     {
-        $ref_produit = $_SESSION['panier']['refproduit'][$i];
+        $ref_produit = $_SESSION['panier']['refProduit'][$i];
         $qte = $_SESSION['panier']['qteProduit'][$i];
         $prix_article = $_SESSION['panier']['prixProduit'][$i];
         $total_article_commande = $prix_article * $qte;
