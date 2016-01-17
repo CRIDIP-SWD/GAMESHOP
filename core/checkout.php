@@ -59,12 +59,11 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
         $qte = $_SESSION['panier']['qteProduit'];
         $prix_article = $_SESSION['panier']['prixProduit'];
 
-        $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array(
+        /*$produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array(
             "ref_produit"           => $ref_produit
-        ));
-        var_dump($produit);
-        die();
-        $total_article_commande = $produit[0]->prix_vente * $qte;
+        ));*/
+
+        $total_article_commande = $prix_article;
 
         $sql_article = $DB->execute("INSERT INTO commande_article(idcommandearticle, num_commande, ref_produit, qte, total_article_commande)
                                         VALUES (NULL, :num_commande, :ref_produit, :qte, :total_article_commande)", array(
