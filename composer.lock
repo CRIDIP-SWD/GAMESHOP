@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "81b32a4881aa6f89b207446e6950a327",
-    "content-hash": "5a2a46e1f1ff1a533f524da0486e25b9",
+    "hash": "ae2a87f39514cda904b68138135c9faf",
+    "content-hash": "f6df01f610228e2bd126cade7982b9a9",
     "packages": [
         {
             "name": "gumer/gumer-psn-php",
@@ -302,6 +302,48 @@
             "time": "2015-01-22 00:01:34"
         },
         {
+            "name": "hedii/colissimo-api",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hedii/colissimo-api.git",
+                "reference": "8987366f6a4f40f7fdfd492f443feab14fdbb966"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hedii/colissimo-api/zipball/8987366f6a4f40f7fdfd492f443feab14fdbb966",
+                "reference": "8987366f6a4f40f7fdfd492f443feab14fdbb966",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ColissimoApi\\": "ColissimoApi/"
+                }
+            },
+            "notification-url": "http://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "hedii",
+                    "email": "hedi.chaibs@gmail.com"
+                }
+            ],
+            "description": "A php API to track Colissimo (La Poste) parcels",
+            "homepage": "https://github.com/hedii/colissimo-api",
+            "keywords": [
+                "api",
+                "colissimo",
+                "colissimoapi"
+            ],
+            "time": "2015-07-06 09:15:21"
+        },
+        {
             "name": "illuminate/support",
             "version": "4.2.x-dev",
             "target-dir": "Illuminate/Support",
@@ -451,7 +493,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/ae978c6a5289e42111b2fadd38fb0b53f772cd66",
+                "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c021a1c4f1d0a7594542c3d1f231d71677ab4ea5",
                 "reference": "ae978c6a5289e42111b2fadd38fb0b53f772cd66",
                 "shasum": ""
             },

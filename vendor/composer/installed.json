@@ -60,7 +60,7 @@
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/ae978c6a5289e42111b2fadd38fb0b53f772cd66",
+            "url": "https://api.github.com/repos/symfony/event-dispatcher/zipball/c021a1c4f1d0a7594542c3d1f231d71677ab4ea5",
             "reference": "ae978c6a5289e42111b2fadd38fb0b53f772cd66",
             "shasum": ""
         },
@@ -557,6 +557,50 @@
             "steamapi",
             "steamwebapi",
             "webapi"
+        ]
+    },
+    {
+        "name": "hedii/colissimo-api",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/hedii/colissimo-api.git",
+            "reference": "8987366f6a4f40f7fdfd492f443feab14fdbb966"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/hedii/colissimo-api/zipball/8987366f6a4f40f7fdfd492f443feab14fdbb966",
+            "reference": "8987366f6a4f40f7fdfd492f443feab14fdbb966",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.9"
+        },
+        "time": "2015-07-06 09:15:21",
+        "type": "library",
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "ColissimoApi\\": "ColissimoApi/"
+            }
+        },
+        "notification-url": "http://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0"
+        ],
+        "authors": [
+            {
+                "name": "hedii",
+                "email": "hedi.chaibs@gmail.com"
+            }
+        ],
+        "description": "A php API to track Colissimo (La Poste) parcels",
+        "homepage": "https://github.com/hedii/colissimo-api",
+        "keywords": [
+            "api",
+            "colissimo",
+            "colissimoapi"
         ]
     }
 ]

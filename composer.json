@@ -12,6 +12,7 @@
   "require": {
     "gumer/gumer-psn-php": "dev-master",
     "xboxleaders/xboxliveapi": "dev-master",
-    "jocolopes/steamapi": "dev-master"
+    "jocolopes/steamapi": "dev-master",
+    "hedii/colissimo-api": "1.0.6"
   }
 }

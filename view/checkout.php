@@ -213,6 +213,54 @@
         <?php endif; ?>
     <?php } ?>
 <?php endif; ?>
+<?php if(isset($_GET['view']) && $_GET['view'] == 'adresse'): ?>
+    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
+
+        <div class="container clearfix">
+            <h1>COMMANDE</h1>
+            <ol class="breadcrumb">
+                <li><a href="#">GAMESHOP</a></li>
+                <li><a href="#">COMMANDE</a></li>
+                <li class="active">Choix de L'adresse</li>
+            </ol>
+        </div>
+    </section>
+
+
+    <section id="content">
+        <div class="content-wrap">
+            <ul class="process-steps process-5 bottommargin clearfix">
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">1</a>
+                    <h5>Mon Panier</h5>
+                </li>
+                <li class="active">
+                    <a class="i-circled i-alt divcenter bgcolor" href="#">2</a>
+                    <h5>Adresse</h5>
+                </li>
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">3</a>
+                    <h5>Livraison</h5>
+                </li>
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">4</a>
+                    <h5>Paiement</h5>
+                </li>
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">5</a>
+                    <h5>Récapitulatif de la commande</h5>
+                </li>
+            </ul>
+            <div id="show-error"></div>
+            <div class="container clearfix bottommargin">
+                <div class="block-address">
+
+                </div>
+                <button type="button" class="button button-green button-3d pull-right" onclick="window.location.href='core/checkout.php?action=adresse'">Suivant <i class="icon-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'critical'): ?>
     <script type="text/javascript">
