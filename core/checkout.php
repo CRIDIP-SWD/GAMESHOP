@@ -55,9 +55,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
 
     foreach($_SESSION['panier'] as $article)
     {
-        echo $ref_produit = $_SESSION['panier']['refProduit'];
-        echo $qte = $_SESSION['panier']['qteProduit'];
-        echo $prix_produit = $_SESSION['panier']['prix_produit'];
+        echo $_SESSION['panier']['refProduit'];
+        echo $_SESSION['panier']['qteProduit'];
+        echo $_SESSION['panier']['prix_produit'];
 
     }
 
