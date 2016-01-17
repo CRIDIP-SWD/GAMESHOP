@@ -255,11 +255,8 @@
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
                     <div class="block-address">
-                        <div class="row">
-                            <div class="col-md-11"></div>
-                            <div class="col-md-1">
-                                <input type="radio" class="radio form-control" name="adresse" value="1" />
-                            </div>
+                        <div class="form-group">
+                            <label><input type="radio" class="radio"> Ceci est un test</label>
                         </div>
                     </div>
                 </form>
