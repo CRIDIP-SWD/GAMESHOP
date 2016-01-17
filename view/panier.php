@@ -58,6 +58,20 @@
 
                             <td class="cart-product-name">
                                 <a href="#"><?= $article[0]->designation; ?></a><br>
+                                <?php
+                                if($article[0]->statut_global == 2)
+                                {
+                                    echo "Article en Précommande, Livraison prévue le <strong>".date("d/m/Y", $article[0]->date_sortie)."</strong>.";
+                                }else{
+                                    if($article[0]->statut_stock == 0)
+                                    {
+                                        echo "Rupture de Stock, Réassort Inconnue";
+                                    }elseif($article[0]->statut_stock == 1)
+                                    {
+                                        echo "Réassort demander, date prévue de réassort le <strong>".date("d/m/Y", $article[0]->date_reassort)."</strong>.";
+                                    }
+                                }
+                                ?>
                             </td>
 
                             <td class="cart-product-price">
