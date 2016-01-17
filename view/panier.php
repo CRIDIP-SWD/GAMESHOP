@@ -65,7 +65,7 @@
                                 }else{
                                     if($article[0]->statut_stock == 0)
                                     {
-                                        echo "Rupture de Stock, Réassort Inconnue";
+                                        echo "<div class='text-danger'>Rupture de Stock, Réassort Inconnue</div>";
                                     }elseif($article[0]->statut_stock == 1)
                                     {
                                         echo "Réassort demander, date prévue de réassort le <strong>".date("d/m/Y", $article[0]->date_reassort)."</strong>.";
