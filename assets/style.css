@@ -13210,31 +13210,6 @@ input:checked + .checkbox-gameshop{
 
 /*Changement des CheckBox et Radio*/
 
-.checkbox-gameshop input{display: none;}
-.checkbox-gameshop .round{
-	background-color: #fff;
-	border: 3px solid #95a5a6;
-	height: 15px;
-	width: 15px;
-	display: inline-block;
-	vertical-align: middle;
-	border-radius: 15px;
-	position: relative;
-}
-input:checked + .round{
-	border-color: #27ae60;
-}
-input:checked + .round:after{
-	content: '';
-	display: block;
-	width: 5px;
-	height: 5px;
-	background-color: #27ae60;
-	position: absolute;
-	top: 2px; left: 2px;
-	border-radius: 2px;
-}
-/*--------------------*/
 
 
 
