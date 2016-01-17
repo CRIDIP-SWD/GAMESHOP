@@ -13205,6 +13205,8 @@ PERSONALISATION
 	height: 10px;
 	width: 10px;
 	display: inline-block;
+	vertical-align: middle;
+	border-radius: 8px;
 }
 
 /*--------------------*/
