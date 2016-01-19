@@ -265,7 +265,7 @@
                             </label>
                         </div>
                         <div class="col-md-1">
-                            <input id="adresse" class="radio-gameshop" type="radio" />
+                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="idadresse"/>
                             <span class="round"></span>
                         </div>
                     </div>
@@ -280,7 +280,7 @@
                             </label>
                         </div>
                         <div class="col-md-1">
-                            <input id="adresse1" class="radio-gameshop" type="radio" />
+                            <input id="adresse1" class="radio-gameshop" type="radio" name="adresse" value="idadresse"/>
                             <span class="round"></span>
                         </div>
                     </div>
