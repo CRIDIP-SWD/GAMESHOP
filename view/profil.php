@@ -137,11 +137,11 @@ if($_SESSION['logged'] == false) {
 
                             </div>
                         </div>
-                        <!--<div class="tab-content clearfix gamercard" id="psn">
+                        <div class="tab-content clearfix gamercard" id="psn">
                         <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/psn-logo.png" class="img-responsive center" width="125" />
                         <div class="tabs side-tabs clearfix" id="tab-4">
 
-                            <?php if(empty($info_client['pseudo_psn'])){ ?>
+                            <?php if(empty($info_client[0]->pseudo_psn)){ ?>
                                 <div class="row">
                                     <div class="col-md-12" style="position: relative; left: 350px; top: 50px">
                                         <button class="button button-desc button-3d button-rounded button-blue" data-toggle="modal" data-target="#add-psn">Lié votre compte Playstation Network<span>Bénéficier de 100 Points de fidélités</span></button>
@@ -159,7 +159,7 @@ if($_SESSION['logged'] == false) {
                                                         <div class="col-md-6">
                                                             <h2>Connexion au Playstation Network</h2>
                                                             <form class="form-horizontal" action="<?= $constante->getUrl(array('core/'), false, false); ?>account.php" method="post">
-                                                                <input type="hidden" name="idclient" value="<?= $info_client['idclient']; ?>">
+                                                                <input type="hidden" name="idclient" value="<?= $idclient; ?>">
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3" for="email">Adresse Mail</label>
                                                                     <div class="col-md-8">
@@ -330,7 +330,7 @@ if($_SESSION['logged'] == false) {
                             <?php } ?>
 
                         </div>
-                    </div>-->
+                    </div>
                         <div class="tab-content clearfix gamercard" id="steam">
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/steam-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">

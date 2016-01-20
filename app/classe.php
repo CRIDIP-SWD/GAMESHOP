@@ -46,7 +46,7 @@ $panier_cls = new panier();
 
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
-/*
+
     if(!empty($info_client['pseudo_psn']))
     {
 
@@ -78,7 +78,7 @@ if(isset($_SESSION['logged'])){
                 $friend = json_decode($response_friend->getBody(true), true);
 
     }
-*/
+
 
 
 
