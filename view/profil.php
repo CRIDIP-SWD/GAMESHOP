@@ -448,10 +448,8 @@ if($_SESSION['logged'] == false) {
                             $sql = $DB->count("SELECT COUNT(idcommande) FROM commande WHERE idclient = :idclient", array(
                                 "idclient" => $idclient
                             ));
-                            var_dump($sql);
-                            die();
                             ?>
-                            <?php if($cmd_cls->count_cmd($info_client[0]->idclient) != 0){ ?>
+                            <?php if($sql != 0){ ?>
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
