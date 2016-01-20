@@ -40,7 +40,13 @@ class xbox
             "Content-Type: application/json"
         ));
         $response = curl_exec($curl);
-        $return = json_decode($response);
+        if($response == false)
+        {
+            echo "Erreur Curl:".curl_error($curl);
+        }else{
+            curl_close($curl);
+            $return = json_decode($response);
+        }
         return $return;
     }
 
