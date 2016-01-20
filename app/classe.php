@@ -47,7 +47,7 @@ $panier_cls = new panier();
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
 
-    if(!empty($info_client['pseudo_psn']))
+    if(!empty($info_client[0]->pseudo_psn))
     {
 
                 $client_psn = new \Guzzle\Http\Client('', ['redirect.disable' => true]);
@@ -56,7 +56,7 @@ if(isset($_SESSION['logged'])){
                 $provider_psn = new \Gumer\PSN\Authentication\UserProvider($connect_psn);
                 $auth_psn = \Gumer\PSN\Authentication\Manager::instance($provider_psn);
 
-                $auth_psn->attempt($info_client['pseudo_psn'], $info_client['pass_psn']);
+                $auth_psn->attempt($info_client[0]->pseudo_psn, $info_client[0]->pass_psn);
         //$auth_psn->attempt('syltheron@gmail.com', '1992maxime');
 
         //Info PSN
@@ -70,7 +70,8 @@ if(isset($_SESSION['logged'])){
                 $request_profil->setUserId($info['onlineId']);
                 $response_profil = $connect_psn->call($request_profil);
                 $profil = json_decode($response_profil->getBody(true), true);
-                //var_dump($profil);
+                var_dump($profil);
+                die();
         //FriendList
                 $request_friend = new \Gumer\PSN\Requests\FriendsListRequest();
                 $request_friend->setUserId($info['onlineId']);
