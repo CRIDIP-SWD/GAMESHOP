@@ -107,6 +107,7 @@ if(isset($_SESSION['logged'])){
         $xbox_statut = $xbox->xboxStatut();
         var_dump($xbox_statut);
         var_dump($xbox);
+        echo file_get_contents("https://account.xbox.com/fr-FR/XboxLiveUser/GetOnlineStatus?gamertag=syltheron");
         die();
     }
 }
