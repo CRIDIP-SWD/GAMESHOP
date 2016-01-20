@@ -42,6 +42,7 @@ if($_SESSION['logged'] == false) {
                             $xboxGamerCard = $xbox->call('gamercard');
                             $xboxPresence = $xbox->call('presence');
                             $xboxRecent = $xbox->call('activity/recent');
+                            var_dump($xboxProfil, $xboxGamerCard, $xboxPresence, $xboxRecent);
                             ?>
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">
