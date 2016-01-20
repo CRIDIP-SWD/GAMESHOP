@@ -107,6 +107,22 @@ if($_SESSION['logged'] == false) {
                                                                 <?php endif; ?>
                                                             </div>
                                                         </div>
+                                                        <h2>ACTIVITES RECENTES</h2>
+                                                        <div class="row">
+                                                            <?php
+                                                            foreach($xboxRecent as $recent):
+                                                            ?>
+                                                            <div class="col-md-6">
+                                                                <div class="well semi-transparent">
+                                                                    <div class="row">
+                                                                        <div class="col-md-2">
+                                                                            <img src="<?= $recent->contentImageUri; ?>" class="img-responsive img-rounded" width="115" height="138" />
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <?php endforeach; ?>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
