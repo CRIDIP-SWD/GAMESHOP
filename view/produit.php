@@ -11,7 +11,7 @@ if($verif_global === 3)
 ?>
 <!-- Page Title
 		============================================= -->
-<section id="page-title" <?php if(!empty($produit[0]->banner)){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit[0]->banner.".jpg); background-position: center center;'";} ?>>
+<section id="page-title" <?php if(!empty($produit[0]->banner)){echo "style='background-image: url(".$constante->getUrl(array(), false, true)."produit/banner/banner_".$produit[0]->banner.".jpg); background-position: 0 -200px;;'";} ?>>
 
     <div class="container clearfix">
         <h1 <?php if(!empty($produit[0]->banner)){echo "style='color: white;'";} ?>><?= $produit[0]->designation; ?></h1>
