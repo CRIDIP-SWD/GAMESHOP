@@ -88,7 +88,7 @@ if($_SESSION['logged'] == false) {
 
                                     <div class="tab-container">
                                         <?php
-                                        $convert_date_xbox = $date_format->convert_strtotime($xboxPresence->endTime);
+                                        $convert_date_xbox = $date_format->convert_strtotime($xboxPresence->lastSeen->timestamp);
                                         ?>
                                         <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                             <div class="row">
