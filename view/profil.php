@@ -444,7 +444,13 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-line2-basket i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Achats</h3>
-                            <?php var_dump($cmd_cls->count_cmd($idclient)); die(); ?>
+                            <?php
+                            $sql = $DB->count("SELECT COUNT(idcommande) FROM commande WHERE idclient = :idclient", array(
+                                "idclient" => $idclient
+                            ));
+                            var_dump($sql);
+                            die();
+                            ?>
                             <?php if($cmd_cls->count_cmd($info_client[0]->idclient) != 0){ ?>
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
