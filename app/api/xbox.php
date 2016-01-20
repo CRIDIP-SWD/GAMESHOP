@@ -20,8 +20,8 @@ class xbox
 
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $this->endpoint."xuid/".$gamerTag);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HEADER, array(
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
             "X-Auth:".$this->apiKey,
             "Content-Type: application/json"
         ));
@@ -34,8 +34,8 @@ class xbox
     {
         $curl = curl_init();
         curl_setopt($curl, CURLOPT_URL, $this->endpoint.$this->xuid."/".$method);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HEADER, array(
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, array(
             "X-Auth:".$this->apiKey,
             "Content-Type: application/json"
         ));
