@@ -111,12 +111,18 @@ if($_SESSION['logged'] == false) {
                                                         <div class="row">
                                                             <?php
                                                             foreach($xboxRecent as $recent):
+                                                                $date_end_strt = $date_format->convert_strtotime($recent->endTime);
                                                             ?>
                                                             <div class="col-md-6">
-                                                                <div class="well semi-transparent">
+                                                                <div class="well semi-transparent" style="opacity: 0.7">
                                                                     <div class="row">
                                                                         <div class="col-md-2">
                                                                             <img src="<?= $recent->contentImageUri; ?>" class="img-responsive img-rounded" width="115" height="138" />
+                                                                        </div>
+                                                                        <div class="col-md-10">
+                                                                            <h3><strong><?= $recent->vuiDisplayName; ?></strong></h3>
+                                                                            <span class="label label-success"><?= $recent->platform; ?></span>
+                                                                            <h5><i>Terminé il y à <?= $date_format->format($date_end_strt); ?></i></h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
