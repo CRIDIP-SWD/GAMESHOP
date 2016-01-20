@@ -418,9 +418,10 @@ if($_SESSION['logged'] == false) {
                             <h3 style="color: #0000E6;">Mon Carnet d'Adresse</h3>
                             <table style="width: 100%; text-align: left;">
                                 <?php
-                                $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient AND `default` = 1", array(
+                                $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient AND `default` = 1 LIMIT 1", array(
                                     "idclient" => $idclient
                                 ));
+                                var_dump($adresse);
                                 ?>
                                 <tbody>
                                     <tr>
