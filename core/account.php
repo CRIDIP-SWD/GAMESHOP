@@ -6,10 +6,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-psn')
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $point = $info_client['point'];
+    $point = $info_client[0]->point;
     $new_point = $point + 100;
 
-    $client = mysql_query("UPDATE client SET pseudo_psn = '$email', pass_psn = '$password', point = '$new_point' WHERE idclient = '$idclient'")or die(mysql_error());
+    $client = $DB->execute("UPDATE client SET pseudo_psn = :pseudo_psn, pass_psn = :pass_psn, point = :new_point WHERE idclient = :idclient", array(
+        "pseudo_psn" => $email,
+        "pass_psn" => $password,
+        "new_point" => $new_point,
+        "idclient" => $idclient
+    ));
 
     if($client === TRUE)
     {
@@ -24,10 +29,14 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-xbox-live')
     $idclient = $_POST['idclient'];
     $gamerTag = $_POST['gamerTag'];
 
-    $point = $info_client['point'];
+    $point = $info_client[0]->point;
     $new_point = $point + 100;
 
-    $client = mysql_query("UPDATE client SET pseudo_xbox = '$gamerTag', point = '$new_point' WHERE idclient = '$idclient'")or die(mysql_error());
+    $client = $DB->execute("UPDATE client SET pseudo_xbox = :gamertag, point = :new_point WHERE idclient = :idclient", array(
+        "gamertag" => $gamerTag,
+        "new_point" => $new_point,
+        "idclient" => $idclient
+    ));
 
     if($client === TRUE)
     {
@@ -42,10 +51,14 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-steam')
     $idclient = $_POST['idclient'];
     $idsteam = $_POST['idsteam'];
 
-    $point = $info_client['point'];
+    $point = $info_client[0]->point;
     $new_point = $point + 100;
 
-    $client = mysql_query("UPDATE client SET pseudo_steam = '$idsteam', point = '$new_point' WHERE idclient = '$idclient'")or die(mysql_error());
+    $client = $DB->execute("UPDATE client SET pseudo_steam = :pseudo_steam, point = :new_point WHERE idclient = :idclient", array(
+        "pseudo_steam" => $idsteam,
+        "new_point" => $new_point,
+        "idclient" => $idclient
+    ));
 
     if($client === TRUE)
     {
@@ -71,7 +84,19 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
     
     if($_POST['type_adresse'] == 'facturation')
     {
-        $adresse = mysql_query("INSERT INTO client_adresse_fact(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$new_tel', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
+        $adresse = $DB->execute("INSERT INTO client_adresse_fact(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, :idclient, :alias, :nom, :prenom, :societe, :telephone, :adresse, :code_postal, :ville, :pays, :default_value)", array(
+            "idclient" => $idclient,
+            "alias" => $alias,
+            "nom" => $nom,
+            "prenom" => $prenom,
+            "societe" => $societe,
+            "telephone" => $new_tel,
+            "adresse" => htmlentities(addslashes($adresse)),
+            "code_postal" => $code_postal,
+            "ville" => $ville,
+            "pays" => 1,
+            "default" => $default
+        ));
         if($adresse === TRUE)
         {
             header("Location: ../index.php?view=profil&sub=adresse&success=add-adresse-fact");
@@ -81,7 +106,19 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
     }
     if($_POST['type_adresse'] == 'livraison')
     {
-        $adresse = mysql_query("INSERT INTO client_adresse_liv(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, '$idclient', '$alias', '$nom', '$prenom', '$societe', '$new_tel', '$adresse', '$code_postal', '$ville', '1', '$default')")or die(mysql_error());
+        $adresse = $DB->execute("INSERT INTO client_adresse_liv(idadresse, idclient, alias, nom, prenom, societe, telephone, adresse, code_postal, ville, pays, `default`) VALUES (NULL, :idclient, :alias, :nom, :prenom, :societe, :telephone, :adresse, :code_postal, :ville, :pays, :default_value)", array(
+            "idclient" => $idclient,
+            "alias" => $alias,
+            "nom" => $nom,
+            "prenom" => $prenom,
+            "societe" => $societe,
+            "telephone" => $new_tel,
+            "adresse" => htmlentities(addslashes($adresse)),
+            "code_postal" => $code_postal,
+            "ville" => $ville,
+            "pays" => 1,
+            "default" => $default
+        ));
         if($adresse === TRUE)
         {
             header("Location: ../index.php?view=profil&sub=adresse&success=add-adresse-liv");
@@ -98,7 +135,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-adresse')
 
     if($type = 'facturation')
     {
-        $sql = mysql_query("DELETE FROM client_adresse_fact WHERE idadresse = '$idadresse'")or die(mysql_error());
+        $sql = $DB->execute("DELETE FROM client_adresse_fact WHERE idadresse = :idadresse", array(
+            "idadresse" => $idadresse
+        ));
 
         if($sql === TRUE)
         {
@@ -109,7 +148,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-adresse')
     }
     if($type = 'livraison')
     {
-        $sql = mysql_query("DELETE FROM client_adresse_liv WHERE idadresse = '$idadresse'")or die(mysql_error());
+        $sql = $DB->execute("DELETE FROM client_adresse_liv WHERE idadresse = :idadresse", array(
+            "idadresse" => $idadresse
+        ));
 
         if($sql === TRUE)
         {
