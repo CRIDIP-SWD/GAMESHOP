@@ -104,7 +104,7 @@ if(isset($_SESSION['logged'])){
     if(!empty($info_client[0]->pseudo_xbox))
     {
         $xbox = new xbox($info_client[0]->pseudo_xbox, 'fr-FR');
-        $xbox_statut = $xbox->call('statut');
+        $xbox_statut = $xbox->call();
         var_dump($xbox_statut);
     }
 }
