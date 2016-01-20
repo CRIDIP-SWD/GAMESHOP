@@ -39,8 +39,9 @@ if($_SESSION['logged'] == false) {
                         <div class="tab-content clearfix gamercard" id="xbox">
                             <?php
                             $xboxProfil = $xbox->call('profile');
-                            var_dump($xboxProfil);
-                            die();
+                            $xboxGamerCard = $xbox->call('gamercard');
+                            $xboxPresence = $xbox->call('presence');
+                            $xboxRecent = $xbox->call('activity/recent');
                             ?>
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">
@@ -86,7 +87,7 @@ if($_SESSION['logged'] == false) {
 
                                     <div class="tab-container">
                                         <?php
-                                        $convert_date_xbox = $date_format->convert_strtotime($lastseen[0]->timestamp);
+                                        $convert_date_xbox = $date_format->convert_strtotime($xboxPresence->endTime);
                                         ?>
                                         <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                             <div class="row">
@@ -95,9 +96,9 @@ if($_SESSION['logged'] == false) {
                                                         <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
                                                             <div class="col-md-1"><img src="<?= $gamercard[0]->gamerpicLargeImagePath; ?>" class="img-responsive" width="80"/></div>
                                                             <div class="col-md-11" style="margin: 0;">
-                                                                <h2 style="margin: 0;"><?= $gamercard[0]->gamertag; ?></h2>
-                                                                <h4 style="margin: 0;"><strong>Statut:</strong> <?= $presence[0]->state; ?></h4>
-                                                                <?php if($presence[0]->state == 'Offline'): ?>
+                                                                <h2 style="margin: 0;"><?= $xboxGamerCard->gamertag; ?></h2>
+                                                                <h4 style="margin: 0;"><strong>Statut:</strong> <?= $xboxPresence->state; ?></h4>
+                                                                <?php if($xboxPresence->state == 'Offline'): ?>
                                                                     <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
                                                                 <?php endif; ?>
                                                             </div>
