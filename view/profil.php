@@ -444,7 +444,7 @@ if($_SESSION['logged'] == false) {
                                 <a href="#"><i class="icon-line2-basket i-alt"></i></a>
                             </div>
                             <h3 style="color: #0000E6;">Mes Achats</h3>
-                            <?php var_dump($cmd_cls->count_cmd($info_client[0]->idclient)); die(); ?>
+                            <?php var_dump($cmd_cls->count_cmd($idclient)); die(); ?>
                             <?php if($cmd_cls->count_cmd($info_client[0]->idclient) != 0){ ?>
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
