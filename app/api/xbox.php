@@ -19,22 +19,7 @@ class xbox
     }
 
 
-    public function call($method)
-    {
-        $this->method = $method;
-        switch($this->method)
-        {
-            case 'statut':
-                return $this->xboxStatut();
-                break;
-
-            default:
-                return "error";
-                break;
-        }
-    }
-
-    private function xboxStatut()
+    public function xboxStatut()
     {
         $curl = curl_init("https://account.xbox.com/fr-FR/XboxLiveUser/GetOnlineStatus?gamertag=".$this->gamertag);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
