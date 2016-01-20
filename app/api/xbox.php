@@ -39,6 +39,8 @@ class xbox
         $curl = curl_init("https://account.xbox.com/fr-FR/XboxLiveUser/GetOnlineStatus?gamertag=".$this->gamertag);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         $response = curl_exec($curl);
-        return json_decode($response);
+        $retour = json_decode($response);
+        curl_close($curl);
+        return $retour;
     }
 }
