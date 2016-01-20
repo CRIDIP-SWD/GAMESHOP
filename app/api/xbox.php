@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Api;
 /**
  * Created by PhpStorm.
  * User: SWD

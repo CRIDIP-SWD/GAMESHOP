@@ -5,6 +5,7 @@ require dirname(__DIR__)."/app/autoloader.php";
 //VENDOR COMPOSER
 include dirname(__DIR__)."/vendor/autoload.php";
 
+use App\Api\xbox;
 use App\app;
 use App\commande\commande;
 use App\commande\panier;
@@ -39,6 +40,7 @@ $cmd_cls = new commande();
 $vourcher_cls = new vourcher();
 $resa_cls = new reservation();
 $panier_cls = new panier();
+
 
 
 if(isset($_SESSION['logged'])){
@@ -97,6 +99,13 @@ if(isset($_SESSION['logged'])){
         //var_dump($steam_p_level);
         //var_dump($steam_p_level_detail);
         //die();
+    }
+
+    if(!empty($info_client[0]->pseudo_xbox))
+    {
+        $xbox = new xbox($info_client[0]->pseudo_xbox, 'fr-FR');
+        $xbox_statut = $xbox->call('statut');
+        var_dump($xbox_statut);
     }
 }
 
