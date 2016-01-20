@@ -418,7 +418,9 @@ if($_SESSION['logged'] == false) {
                             <h3 style="color: #0000E6;">Mon Carnet d'Adresse</h3>
                             <table style="width: 100%; text-align: left;">
                                 <?php
-                                $adresse = $client_cls->fact_default($info_client[0]->idclient);
+                                $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient AND `default` = 1", array(
+                                    "idclient" => $idclient
+                                ));
                                 ?>
                                 <tbody>
                                     <tr>

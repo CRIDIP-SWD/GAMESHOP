@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - gameshop@vps221243.ovh.net" uuid="cd3887be-6871-4dfc-bb63-f66358dcf66b">
-    <database-info product="MySQL" version="5.5.46-0+deb8u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+  <data-source name="MySQL - gameshop@vps221243.ovh.net" uuid="8a5b62bb-7c9a-40d0-b9bd-a5e46777e443">
+    <database-info product="MySQL" version="5.5.46-0+deb7u1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
     </database-info>
@@ -324,9 +324,9 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="101" parent="10" name="ref_produit">
+      <column id="101" parent="10" name="idarticle">
         <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
+        <data-type>int(13)</data-type>
       </column>
       <column id="102" parent="10" name="qte">
         <mandatory>1</mandatory>
