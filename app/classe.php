@@ -104,8 +104,6 @@ if(isset($_SESSION['logged'])){
     if(!empty($info_client[0]->pseudo_xbox))
     {
         $xbox = new xbox($info_client[0]->pseudo_xbox);
-        var_dump($xbox);
-        die();
     }
 }
 

@@ -37,6 +37,11 @@ if($_SESSION['logged'] == false) {
                     <div class="tab-container">
 
                         <div class="tab-content clearfix gamercard" id="xbox">
+                            <?php
+                            $xboxProfil = $xbox->call('profile');
+                            var_dump($xboxProfil);
+                            die();
+                            ?>
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">
 
