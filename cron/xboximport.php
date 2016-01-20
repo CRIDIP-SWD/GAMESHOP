@@ -1,6 +1,6 @@
 <?php
 
-use App\networker\xboxLive;
+use x;
 
 include dirname(__DIR__)."/app/classe.php";
 
