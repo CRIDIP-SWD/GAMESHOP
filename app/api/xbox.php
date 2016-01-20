@@ -19,7 +19,7 @@ class xbox
         $this->gamerTag = $gamerTag;
 
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $this->endpoint."xuid/".$this->gamerTag);
+        curl_setopt($curl, CURLOPT_URL, $this->endpoint."xuid/".$gamerTag);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($curl, CURLOPT_HEADER, array(
             "X-Auth:".$this->apiKey,
