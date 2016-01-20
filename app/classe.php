@@ -6,6 +6,7 @@ require dirname(__DIR__)."/app/autoloader.php";
 include dirname(__DIR__)."/vendor/autoload.php";
 
 use App\api\xbox;
+use App\api\xbox\xboxConfig;
 use App\app;
 use App\commande\commande;
 use App\commande\panier;
@@ -103,7 +104,7 @@ if(isset($_SESSION['logged'])){
 
     if(!empty($info_client[0]->pseudo_xbox))
     {
-        $xbox = new xbox($info_client[0]->pseudo_xbox);
+        $xbox = new xboxConfig($info_client[0]->pseudo_xbox);
     }
 }
 

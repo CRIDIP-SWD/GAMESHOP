@@ -1,4 +1,6 @@
 <?php
+use App\api\xbox\xbox;
+
 if($_SESSION['logged'] == false) {
     header("Location: index.php?view=login&warning=no-connect");
 }else{
@@ -38,10 +40,12 @@ if($_SESSION['logged'] == false) {
 
                         <div class="tab-content clearfix gamercard" id="xbox">
                             <?php
-                            $xboxProfil = $xbox->call('profile');
-                            $xboxGamerCard = $xbox->call('gamercard');
-                            $xboxPresence = $xbox->call('presence');
-                            $xboxRecent = $xbox->call('activity/recent');
+                            $xboxClass = new xbox($info_client[0]->pseudo_xbox);
+                            $xboxProfil = $xboxClass->call('profile');
+                            $xboxGamerCard = $xboxClass->call('gamercard');
+                            $xboxPresence = $xboxClass->call('presence');
+                            $xboxRecent = $xboxClass->call('activity/recent');
+                            var_dump($xboxClass, $xboxProfil, $xboxGamerCard, $xboxPresence, $xboxRecent);
                             ?>
                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/logo/xbox-live-logo.png" class="img-responsive center" width="125" />
                             <div class="tabs side-tabs clearfix" id="tab-4">

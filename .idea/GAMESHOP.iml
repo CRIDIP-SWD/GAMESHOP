@@ -29,5 +29,41 @@
         </SOURCES>
       </library>
     </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHP">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/gumer/gumer-psn-php" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+          <root url="file://$MODULE_DIR$/vendor/hedii/colissimo-api" />
+          <root url="file://$MODULE_DIR$/vendor/illuminate/support" />
+          <root url="file://$MODULE_DIR$/vendor/jocolopes/steamapi" />
+          <root url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+          <root url="file://$MODULE_DIR$/vendor/react/promise" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+          <root url="file://$MODULE_DIR$/vendor/xboxleaders/xboxliveapi" />
+        </CLASSES>
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/vendor/abbe98/simple-pdo" />
+          <root url="file://$MODULE_DIR$/vendor/composer" />
+          <root url="file://$MODULE_DIR$/vendor/gumer/gumer-psn-php" />
+          <root url="file://$MODULE_DIR$/vendor/guzzle/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/ringphp" />
+          <root url="file://$MODULE_DIR$/vendor/guzzlehttp/streams" />
+          <root url="file://$MODULE_DIR$/vendor/hedii/colissimo-api" />
+          <root url="file://$MODULE_DIR$/vendor/illuminate/support" />
+          <root url="file://$MODULE_DIR$/vendor/jocolopes/steamapi" />
+          <root url="file://$MODULE_DIR$/vendor/paypal/rest-api-sdk-php" />
+          <root url="file://$MODULE_DIR$/vendor/react/promise" />
+          <root url="file://$MODULE_DIR$/vendor/symfony/event-dispatcher" />
+          <root url="file://$MODULE_DIR$/vendor/xboxleaders/xboxliveapi" />
+        </SOURCES>
+      </library>
+    </orderEntry>
   </component>
 </module>
