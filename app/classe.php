@@ -5,7 +5,7 @@ require dirname(__DIR__)."/app/autoloader.php";
 //VENDOR COMPOSER
 include dirname(__DIR__)."/vendor/autoload.php";
 
-use App\Api\xbox;
+use App\api\xbox;
 use App\app;
 use App\commande\commande;
 use App\commande\panier;
