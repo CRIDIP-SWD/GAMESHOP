@@ -276,7 +276,7 @@ class DB extends app{
     {
         $req = $this->db->prepare($sql);
         $req->execute($data);
-        return $req->fetchColumn();
+        return $req->rowCount();
     }
 
     public function execute($sql, $data = null)

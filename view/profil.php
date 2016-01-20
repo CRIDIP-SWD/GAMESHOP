@@ -421,7 +421,6 @@ if($_SESSION['logged'] == false) {
                                 $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient AND `default` = 1 LIMIT 1", array(
                                     "idclient" => $idclient
                                 ));
-                                var_dump($adresse);
                                 ?>
                                 <tbody>
                                     <tr>
@@ -449,7 +448,9 @@ if($_SESSION['logged'] == false) {
                                 <table style="width: 100%; text-align: left;">
                                     <tbody>
                                     <?php
-                                    $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = '$idclient' ORDER BY date_commande ASC LIMIT 4 ");
+                                    $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = :idclient ORDER BY date_commande ASC LIMIT 4", array(
+                                        "idclient" => $idclient
+                                    ));
                                     foreach($sql_cmd as $cmd):
                                         ?>
                                         <tr>
