@@ -95,11 +95,11 @@ if($_SESSION['logged'] == false) {
                                                 <div class="panel panel-default" style="background: url(<?= $constante->getUrl(array(), false, true); ?>autre/background/back_xbox_live.jpg) no-repeat; background-position: -300px -300px;">
                                                     <div class="panel-body">
                                                         <div class="row" style="margin-top: -15px; padding-top: 10px; padding-bottom: 15px">
-                                                            <div class="col-md-1"><img src="<?= $xboxGamerCard[0]->gamerpicLargeImagePath; ?>" class="img-responsive" width="80"/></div>
+                                                            <div class="col-md-1"><img src="<?= $xboxGamerCard->gamerpicLargeImagePath; ?>" class="img-responsive" width="80"/></div>
                                                             <div class="col-md-11" style="margin: 0;">
-                                                                <h2 style="margin: 0;"><?= $xboxGamerCard[0]->gamertag; ?></h2>
-                                                                <h4 style="margin: 0;"><strong>Statut:</strong> <?= $xboxPresence[0]->state; ?></h4>
-                                                                <?php if($xboxPresence[0]->state == 'Offline'): ?>
+                                                                <h2 style="margin: 0;"><?= $xboxGamerCard->gamertag; ?></h2>
+                                                                <h4 style="margin: 0;"><strong>Statut:</strong> <?= $xboxPresence->state; ?></h4>
+                                                                <?php if($xboxPresence->state == 'Offline'): ?>
                                                                     <h6 style="margin: 0;"><i>Dernière connexion il y a <?= $date_format->format($convert_date_xbox); ?></i></h6>
                                                                 <?php endif; ?>
                                                             </div>
