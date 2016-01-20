@@ -8,24 +8,40 @@ namespace App\api;
  */
 class xbox
 {
-    private $gamertag = "";
-    private $region = "";
-    private $method = "";
+    private $gamerTag = "";
+    private $xuid = "";
+    private $endpoint = "https://xboxapi.com/v2/";
+    private $apiKey = "51f9c61a6752f9fd533c59773ca669caddf1629a";
+    private $resort = "json";
 
-    public function __construct($gamerTag, $region)
+    public function __construct($gamerTag)
     {
-        $this->gamertag = $gamerTag;
-        $this->region = $region;
-    }
+        $this->gamerTag = $gamerTag;
 
-
-    public function xboxStatut()
-    {
-        $curl = curl_init("https://account.xbox.com/fr-FR/XboxLiveUser/GetOnlineStatus?gamertag=".$this->gamertag);
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $this->endpoint."xuid/".$this->gamerTag);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, array(
+            "X-Auth:".$this->apiKey,
+            "Content-Type: application/json"
+        ));
         $response = curl_exec($curl);
-        $retour = json_decode($response);
-        curl_close($curl);
-        return $retour;
+        $return = json_decode($response);
+        return $this->xuid = $return;
     }
+
+    public function call($method)
+    {
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $this->endpoint.$this->xuid."/".$method);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_HEADER, array(
+            "X-Auth:".$this->apiKey,
+            "Content-Type: application/json"
+        ));
+        $response = curl_exec($curl);
+        $return = json_decode($response);
+        return $return;
+    }
+
 }
