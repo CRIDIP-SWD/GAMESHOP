@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 include "../app/classe.php";
 $date_jour = $date_format->format_strt(date("d-m-Y"));
 $date_30 = $date_format->format_strt(date("d-m-Y")) - 2505600;
