@@ -89,51 +89,70 @@ class constante extends app{
 
 class date_format extends app
 {
-    public function jour_semaine($jour)
-    {
-        switch($jour)
-        {
-            case 1: return "Lundi"; break;
-            case 2: return "Mardi"; break;
-            case 3: return "Mercredi"; break;
-            case 4: return "Jeudi"; break;
-            case 5: return "Vendredi"; break;
-            case 6: return "Samedi"; break;
-            case 7: return "Dimanche"; break;
-        }
-    }
-    public function mois($mois)
-    {
-        switch($mois)
-        {
-            case 1: return "Janvier"; break;
-            case 2: return "Février"; break;
-            case 3: return "Mars"; break;
-            case 4: return "Avril"; break;
-            case 5: return "Mai"; break;
-            case 6: return "Juin"; break;
-            case 7: return "Juillet"; break;
-            case 8: return "Aout"; break;
-            case 9: return "Septembre"; break;
-            case 10: return "Octobre"; break;
-            case 11: return "Novembre"; break;
-            case 12: return "Décembre"; break;
-        }
-    }
-    public function formatage($date_format)
-    {
-        $jour = date("d", $date_format);
-        $mois = date("m", $date_format);
-        $year = date("Y", $date_format);
 
-        $formatage = $jour." ".$this->mois($mois)." ".$year;
-        return $formatage;
-    }
-    public function convert_strtotime($date)
+    /**
+     * @param $date // Prend en Parametre la date au format d-m-Y
+     * @return int // retourne le resultat en format entier time()
+     */
+    public function format_strt($date)
     {
-        $formatage = strtotime($date);
-        return $formatage;
+        return strtotime($date);
     }
+
+    /**
+     * @param $format // Prend en paramêtre la date au format choisie |ex: d-m-Y H:i ou d/m/Y
+     * @param $strtotime // Prend en paramêtre la date au format strtotime entier time()
+     * @return bool|string // Retourne la date au format choisie en paramêtre
+     */
+    public function formatage($format, $strtotime)
+    {
+        return date($format, $strtotime);
+    }
+
+    /**
+     * @param $jour // Prend le jour au format time()
+     * @param $mois // Prend le mois au format time()
+     * @param $annee // Prend l'année au format time()
+     * @return string // Retourne la date au format j d m y | ex: Lundi 04 Janvier 2016
+     */
+    public function formatage_long($jour, $mois, $annee)
+    {
+        $j = date("N", $jour);
+        $m = date("n", $mois);
+        $y = date("Y", $annee);
+
+        $dj = date("d", $jour);
+
+        switch($j)
+        {
+            case 1: $data_jour = "Lundi"; break;
+            case 2: $data_jour = "Mardi"; break;
+            case 3: $data_jour = "Mercredi"; break;
+            case 4: $data_jour = "Jeudi"; break;
+            case 5: $data_jour = "Vendredi"; break;
+            case 6: $data_jour = "Samedi"; break;
+            case 7: $data_jour = "Dimanche"; break;
+        }
+
+        switch($m)
+        {
+            case 1: $data_mois = "Janvier"; break;
+            case 2: $data_mois = "Février"; break;
+            case 3: $data_mois = "Mars"; break;
+            case 4: $data_mois = "Avril"; break;
+            case 5: $data_mois = "Mai"; break;
+            case 6: $data_mois = "Juin"; break;
+            case 7: $data_mois = "Juillet"; break;
+            case 8: $data_mois = "Aout"; break;
+            case 9: $data_mois = "Septembre"; break;
+            case 10: $data_mois = "Octobre"; break;
+            case 11: $data_mois = "Novembre"; break;
+            case 12: $data_mois = "Décembre"; break;
+        }
+
+        return $data_jour." ".$dj." ".$data_mois." ".$y;
+    }
+
     public function format($datetime)
     {
         $now = time();
