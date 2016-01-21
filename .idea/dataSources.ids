@@ -891,31 +891,35 @@
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="243" parent="28" name="PRIMARY">
+      <column id="243" parent="28" name="poids_max">
+        <mandatory>1</mandatory>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="244" parent="28" name="PRIMARY">
         <columns>idtransporteur</columns>
         <primary>1</primary>
       </key>
-      <column id="244" parent="29" name="idtranche">
+      <column id="245" parent="29" name="idtranche">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="245" parent="29" name="idtransporteur">
+      <column id="246" parent="29" name="idtransporteur">
         <mandatory>1</mandatory>
         <data-type>int(13)</data-type>
       </column>
-      <column id="246" parent="29" name="poids_debut">
+      <column id="247" parent="29" name="poids_debut">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="247" parent="29" name="poids_fin">
+      <column id="248" parent="29" name="poids_fin">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="248" parent="29" name="montant">
+      <column id="249" parent="29" name="montant">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="249" parent="29" name="PRIMARY">
+      <key id="250" parent="29" name="PRIMARY">
         <columns>idtranche</columns>
         <primary>1</primary>
       </key>
