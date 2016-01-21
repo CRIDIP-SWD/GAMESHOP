@@ -111,24 +111,27 @@ if(isset($_POST['action']) && $_POST['action'] == 'paiement')
     session_start();
     include "../app/classe.php";
     $num_commande = $_POST['num_commande'];
-    $idtransporteur = $_POST['livraison'];
-    $produit_poids = $DB->query("SELECT SUM(produits.poids) as sum_poids FROM produits, commande_article WHERE commande_article.ref_produit = produits.ref_produit AND commande_article.num_commande = :num_commande", array(
-        "num_commande" => $num_commande
-    ));
-    $poids_commande = $produit_poids[0]->sum_poids;
+    $poids_commande = $_POST['poids_commande'];
+    $type_livraison = $_POST['livraison'];
 
-    $transporteur = $DB->query("SELECT * FROM shop_transporteur WHERE idtransporteur = :idtransporteur", array(
-        "idtransporteur" => $idtransporteur
-    ));
+    if($type_livraison == 1) {$methode_livraison = "LA POSTE";$tarif = $transport_cls->calc_transport_laposte($poids_commande);}
+    if($type_livraison == 2) {$methode_livraison = "CHRONOPOST 10H";$tarif = $transport_cls->calc_transport_chrono10($poids_commande);}
+    if($type_livraison == 3) {$methode_livraison = "CHRONOPOST 13H";$tarif = $transport_cls->calc_transport_chrono13($poids_commande);}
+    if($type_livraison == 4) {$methode_livraison = "UPS STANDARD PROTECTED+";$tarif = $transport_cls->calc_transport_ups($poids_commande);}
 
-    $tranche = $DB->query("SELECT * FROM shop_transporteur_tranche WHERE idtransporteur = :idtransporteur AND shop_transporteur_tranche.poids_debut >= :poids_commande AND shop_transporteur_tranche.poids_fin <= :poids_commande", array(
-        "poids_commande" => $produit_poids,
-        "idtransporteur" => $idtransporteur
+    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie WHERE num_commande = :num_commande", array(
+        "methode_livraison" => $methode_livraison,
+        "prix_envoie"       => $tarif,
+        "num_commande"      => $num_commande
     ));
+    $error = "Impossible de Définir le moyen de livraison.<br>Veuillez contactez un administrateur.";
 
-    $nomTransporteur = $transporteur[0]->nom_transporteur;
-    var_dump($tranche);
-    die();
+    if($sql === 1)
+    {
+        header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande");
+    }else{
+        header("Location: ../index.php?view=checkout&sub=livraison&num_commande=$num_commande&error=critical&data=$error");
+    }
 
 
 }
