@@ -195,7 +195,7 @@
 
                         <div id="shop" class="clearfix">
                             <?php
-                            $date = $date_format->convert_strtotime(date("d-m-Y"));
+                            $date = $date_format->format_strt(date("d-m-Y"));
                             $date_moin = strtotime($date ."+ 30 days");
                             $sql_new = $DB->query("SELECT * FROM produits, produits_categorie WHERE date_sortie >= '$date' AND date_sortie <= '$date_moin' AND produits_categorie.ref_produit = produits.ref_produit LIMIT 4");
                             foreach($sql_new as $new):
