@@ -90,7 +90,7 @@ if($_SESSION['logged'] == false) {
 
                                     <div class="tab-container">
                                         <?php
-                                        $convert_date_xbox = $date_format->convert_strtotime($xboxPresence->lastSeen->timestamp);
+                                        $convert_date_xbox = $date_format->format_strt($xboxPresence->lastSeen->timestamp);
                                         ?>
                                         <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                             <div class="row">
@@ -110,7 +110,7 @@ if($_SESSION['logged'] == false) {
                                                         <div class="row">
                                                             <?php
                                                             foreach($xboxRecent as $recent):
-                                                                $date_end_strt = $date_format->convert_strtotime($recent->endTime);
+                                                                $date_end_strt = $date_format->format_strt($recent->endTime);
                                                             ?>
                                                             <div class="col-md-6">
                                                                 <div class="well semi-transparent" style="opacity: 0.7">
@@ -190,7 +190,7 @@ if($_SESSION['logged'] == false) {
 
                                 <div class="tab-container">
                                     <?php
-                            $convert_date_psn = $date_format->convert_strtotime($profil['presence']['primaryInfo']['lastOnlineDate']);
+                            $convert_date_psn = $date_format->format_strt($profil['presence']['primaryInfo']['lastOnlineDate']);
                             ?>
                                     <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                         <div class="row">
@@ -378,7 +378,7 @@ if($_SESSION['logged'] == false) {
 
                                     <div class="tab-container">
                                         <?php
-                                        $convert_date_steam = $date_format->convert_strtotime($steam_playerSummary->lastLogoff);
+                                        $convert_date_steam = $date_format->format_strt($steam_playerSummary->lastLogoff);
                                         ?>
                                         <div class="tab-content clearfix" id="profil" style="color: whitesmoke;">
                                             <div class="row">
