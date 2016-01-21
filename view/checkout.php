@@ -515,7 +515,7 @@
                                     <td><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
                                 </tr>
                                 <tr>
-                                    <td style="border-bottom: solid 1px #95A5A6"></td>
+                                    <td colspan="2" style="border-bottom: solid 1px #95A5A6"></td>
                                 </tr>
                                 <tr>
                                     <td>TOTAL (à Payer)</td>
