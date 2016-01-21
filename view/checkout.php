@@ -254,21 +254,6 @@
             <div id="show-error"></div>
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
-                    <!--<div class="radio-gameshop well">
-                        <div class="col-md-11">
-                            <label for="adresse" class="radio-gameshop">
-                                <strong>MON ADRESSE DE LIVRAISON</strong><br>
-                                M. MOCKELYN Maxime<br>
-                                20 Avenue Jean Jaures<br>
-                                Résidence "Les IRIS"<br>
-                                85100 Les Sables d'Olonne
-                            </label>
-                        </div>
-                        <div class="col-md-1">
-                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="idadresse"/>
-                            <span class="round"></span>
-                        </div>
-                    </div>-->
                     <div class="row">
                         <div class="col-md-12">
                             <?php
@@ -301,6 +286,8 @@
                             <?php endforeach; ?>
                         </div>
                     </div>
+                    <button type="button" class="button button-black button-3d pull-left" onclick="window.location.href='index.php?view=panier'"><i class="icon-arrow-left"></i> Retour au panier</button>
+                    <button type="submit" class="button button-green button-3d pull-right" name="action" value="livraison">Suivant <i class="icon-arrow-right"></i></button>
                 </form>
             </div>
         </div>
