@@ -81,7 +81,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
 
     session_start();
     require "../app/classe.php";
-    $idaddresse = $_POST['idaddresse'];
+    $idaddresse = $_POST['adresse'];
 
     $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idadresse = :idadresse", array(
         "idadresse" => $idaddresse
