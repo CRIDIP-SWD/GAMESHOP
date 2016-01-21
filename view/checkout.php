@@ -281,7 +281,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-11">
-                                            <label for="adresse" class="radio-gameshop">
+                                            <label for="adresse<?= $adresse->idadresse; ?>" class="radio-gameshop">
                                                 <strong><?= $adresse->alias; ?></strong><br>
                                                 <?php if(!empty($adresse->societe)){echo $adresse->societe."<br>";} ?>
                                                 <?= $adresse->nom; ?> <?= $adresse->prenom; ?><br>
@@ -292,7 +292,7 @@
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="<?= $adresse->idadresse; ?>"/>
+                                            <input id="adresse<?= $adresse->idadresse; ?>" class="radio-gameshop" type="radio" name="adresse" value="<?= $adresse->idadresse; ?>"/>
                                             <span class="round"></span>
                                         </div>
                                     </div>
