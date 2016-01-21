@@ -510,6 +510,17 @@
                                     <td>Sous-Total:</td>
                                     <td><?= $fonction->number_decimal($cmd[0]->total_commande - $cmd[0]->prix_envoie); ?></td>
                                 </tr>
+                                <tr>
+                                    <td>Transport</td>
+                                    <td><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="border-bottom: solid 1px #95A5A6"></td>
+                                </tr>
+                                <tr>
+                                    <td>TOTAL (à Payer)</td>
+                                    <td><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
+                                </tr>
                             </table>
                         </div>
                     </div>
