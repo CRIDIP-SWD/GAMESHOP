@@ -273,7 +273,7 @@
                         <div class="col-md-12">
                             <?php
                             $sql_adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
-                                "idclient" => $idclient
+                                "idclient" => $info_client[0]->idclient
                             ));
                             foreach($sql_adresse as $adresse):
                             ?>
