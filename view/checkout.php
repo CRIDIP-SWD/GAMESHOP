@@ -524,6 +524,27 @@
                             </table>
                         </div>
                     </div>
+                    <div class="col-md-7">
+                        <div class="well">
+                            <div class="radio-gameshop">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/PayPal_2014_logo.svg/2000px-PayPal_2014_logo.svg.png" class="img-responsive" width="80" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="paypal" class="radio-gameshop">
+                                            PAYPAL<br>
+                                            Paiement Sécurisé par carte Bancaire
+                                        </label>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="paypal" class="radio-gameshop" type="radio" name="paiement" value="1"/>
+                                        <span class="round"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
