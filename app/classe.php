@@ -12,6 +12,7 @@ use App\commande\checkout;
 use App\commande\commande;
 use App\commande\panier;
 use App\commande\reservation;
+use App\commande\transporteur;
 use App\commande\vourcher;
 use App\constante;
 use App\date_format;
@@ -43,6 +44,9 @@ $vourcher_cls = new vourcher();
 $resa_cls = new reservation();
 $panier_cls = new panier();
 $checkout_cls = new checkout();
+$transport_cls = new transporteur();
+var_dump($transport_cls->calc_transport(6.50, "laPoste"));
+die();
 
 
 
