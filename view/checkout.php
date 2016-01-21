@@ -364,7 +364,7 @@
                                                 </label>
                                             </div>
                                             <div class="col-md-1">
-                                                <input id="laposte" class="radio-gameshop" type="radio" name="livraison" value="La Poste"/>
+                                                <input id="laposte" class="radio-gameshop" type="radio" name="livraison" value="1/>
                                                 <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_laposte($produit_poids[0]->sum_poids); ?>" />
                                                 <span class="round"></span>
                                             </div>
@@ -389,7 +389,7 @@
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="chrono10" class="radio-gameshop" type="radio" name="livraison" value="CHRONOPOST 10H"/>
+                                            <input id="chrono10" class="radio-gameshop" type="radio" name="livraison" value="2"/>
                                             <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono10($produit_poids[0]->sum_poids); ?>" />
                                             <span class="round"></span>
                                         </div>
@@ -414,7 +414,7 @@
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="chrono13" class="radio-gameshop" type="radio" name="livraison" value="CHRONOPOST 13H"/>
+                                            <input id="chrono13" class="radio-gameshop" type="radio" name="livraison" value="3"/>
                                             <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono13($produit_poids[0]->sum_poids); ?>" />
                                             <span class="round"></span>
                                         </div>
@@ -439,7 +439,7 @@
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="ups" class="radio-gameshop" type="radio" name="livraison" value="UPS STANDARD PROTECTED+"/>
+                                            <input id="ups" class="radio-gameshop" type="radio" name="livraison" value="4"/>
                                             <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_ups($produit_poids[0]->sum_poids); ?>" />
                                             <span class="round"></span>
                                         </div>
