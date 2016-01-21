@@ -253,6 +253,11 @@ class fonction extends app
         $lenght = substr($shuffle, 0, 6);
         return $lenght;
     }
+
+    public function number_decimal($chiffre)
+    {
+        return number_format($chiffre, 2, ',', ' ')." €";
+    }
 }
 
 class DB extends app{
