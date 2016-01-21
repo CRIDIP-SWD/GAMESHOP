@@ -13,4 +13,4 @@ $data = array(
     )
 );
 
-var_dump($data['laPoste']);
+var_dump($data['laPoste']['0.5']);
