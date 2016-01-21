@@ -507,18 +507,18 @@
                             <h2>Total de la Commande</h2>
                             <table style="width: 100%;">
                                 <tr>
-                                    <td style=" font-size: 15px; font-weight: 700;">Sous-Total:</td>
-                                    <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande - $cmd[0]->prix_envoie); ?></td>
+                                    <td style=" font-size: 15px; font-weight: 700; padding-bottom: 10px;">Sous-Total:</td>
+                                    <td style="text-align: right; padding-right: 5px; padding-bottom: 10px;"><?= $fonction->number_decimal($cmd[0]->total_commande - $cmd[0]->prix_envoie); ?></td>
                                 </tr>
                                 <tr>
-                                    <td style=" font-size: 15px; font-weight: 700;">Transport</td>
-                                    <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
+                                    <td style=" font-size: 15px; font-weight: 700; padding-bottom: 10px;">Transport:</td>
+                                    <td style="text-align: right; padding-right: 5px; padding-bottom: 10px;"><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" style="border-bottom: solid 1px #95A5A6"></td>
                                 </tr>
                                 <tr>
-                                    <td style="font-size: 20px; font-weight: 700;">TOTAL (à Payer)</td>
+                                    <td style="font-size: 20px; font-weight: 700;">TOTAL (à Payer):</td>
                                     <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
                                 </tr>
                             </table>
