@@ -115,13 +115,13 @@ class date_format extends app
      * @param $annee // Prend l'année au format time()
      * @return string // Retourne la date au format j d m y | ex: Lundi 04 Janvier 2016
      */
-    public function formatage_long($jour, $mois, $annee)
+    public function formatage_long($strtotime)
     {
-        $j = date("N", $jour);
-        $m = date("n", $mois);
-        $y = date("Y", $annee);
+        $j = date("N", $strtotime);
+        $m = date("n", $strtotime);
+        $y = date("Y", $strtotime);
 
-        $dj = date("d", $jour);
+        $dj = date("d", $strtotime);
 
         switch($j)
         {
