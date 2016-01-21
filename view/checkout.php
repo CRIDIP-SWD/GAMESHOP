@@ -390,7 +390,7 @@
                                         </div>
                                         <div class="col-md-1">
                                             <input id="chrono10" class="radio-gameshop" type="radio" name="livraison" value="2"/>
-                                            <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono10($produit_poids[0]->sum_poids); ?>" />
+                                            <!--<input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono10($produit_poids[0]->sum_poids); ?>" />-->
                                             <span class="round"></span>
                                         </div>
                                     </div>
@@ -415,7 +415,7 @@
                                         </div>
                                         <div class="col-md-1">
                                             <input id="chrono13" class="radio-gameshop" type="radio" name="livraison" value="3"/>
-                                            <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono13($produit_poids[0]->sum_poids); ?>" />
+                                            <!--<input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono13($produit_poids[0]->sum_poids); ?>" />-->
                                             <span class="round"></span>
                                         </div>
                                     </div>
@@ -440,7 +440,7 @@
                                         </div>
                                         <div class="col-md-1">
                                             <input id="ups" class="radio-gameshop" type="radio" name="livraison" value="4"/>
-                                            <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_ups($produit_poids[0]->sum_poids); ?>" />
+                                            <!--<input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_ups($produit_poids[0]->sum_poids); ?>" />-->
                                             <span class="round"></span>
                                         </div>
                                     </div>
