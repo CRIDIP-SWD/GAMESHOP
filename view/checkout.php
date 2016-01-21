@@ -296,9 +296,11 @@
 <?php endif; ?>
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'livraison'): ?>
     <?php
-    $produit_poids = $DB->query("SELECT SUM(produits.poids) FROM produits, commande_article WHERE commande_article.ref_produit = produits.ref_produit AND commande_article.num_commande = :num_commande", array(
+    $produit_poids = $DB->query("SELECT SUM(produits.poids) as sum_poids FROM produits, commande_article WHERE commande_article.ref_produit = produits.ref_produit AND commande_article.num_commande = :num_commande", array(
         "num_commande" => $_GET['num_commande']
     ));
+    var_dump($produit_poids);
+    die();
     $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
         "num_commande" => $_GET['num_commande']
     ));
