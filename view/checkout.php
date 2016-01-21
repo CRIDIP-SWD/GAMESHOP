@@ -344,6 +344,7 @@
             <div class="container clearfix bottommargin">
                 <form class="form-horizontal" action="core/checkout.php" method="post">
                     <input type="hidden" name="num_commande" value="<?= $_GET['num_commande']; ?>" />
+                    <input type="hidden" name="poids_commande" value="<?= $produit_poids[0]->sum_poids; ?>" />
                     <div class="row">
                         <div class="col-md-12">
                             <div class="well">
