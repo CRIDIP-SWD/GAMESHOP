@@ -350,7 +350,7 @@
                         <div class="col-md-12">
                             <?php
                             $sql_transporteur = $DB->query("SELECT * FROM shop_transporteur WHERE poids_max <= :produit_poids", array(
-                                "produit_poids" => $produit_poids
+                                "produit_poids" => $produit_poids[0]->sum_poids
                             ));
                             foreach($sql_transporteur as $transporteur):
                                 ?>
@@ -364,7 +364,7 @@
                                                 <label for="adresse<?= $transporteur->idtransporteur; ?>" class="radio-gameshop">
                                                     <?= $transporteur->nom_transporteur; ?><br>
                                                     <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, $transporteur->jour_livraison)); ?></strong></h6>
-                                                    <h6>Poids: <?= $produit_poids; ?> Kg</h6>
+                                                    <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
                                                 </label>
                                             </div>
                                             <div class="col-md-1">
