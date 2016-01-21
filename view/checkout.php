@@ -292,7 +292,7 @@
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="<?= $adresse->idadresse; ?>" <?php if($adresse->default == 1){echo "checked";} ?>/>
+                                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="<?= $adresse->idadresse; ?>"/>
                                             <span class="round"></span>
                                         </div>
                                     </div>
