@@ -376,7 +376,7 @@
                         </div>
                     </div>
                     <button type="button" class="button button-black button-3d pull-left" onclick="window.location.href='index.php?view=panier'"><i class="icon-arrow-left"></i> Retour au panier</button>
-                    <button type="submit" class="button button-green button-3d pull-right" name="action" value="livraison">Suivant <i class="icon-arrow-right"></i></button>
+                    <button type="submit" class="button button-green button-3d pull-right" name="action" value="paiement">Suivant <i class="icon-arrow-right"></i></button>
                 </form>
             </div>
         </div>

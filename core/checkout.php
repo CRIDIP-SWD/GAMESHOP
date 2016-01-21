@@ -105,3 +105,30 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
 
 
 }
+if(isset($_POST['action']) && $_POST['action'] == 'paiement')
+{
+
+    session_start();
+    include "../app/classe.php";
+    $num_commande = $_POST['num_commande'];
+    $idtransporteur = $_POST['livraison'];
+    $produit_poids = $DB->query("SELECT SUM(produits.poids) as sum_poids FROM produits, commande_article WHERE commande_article.ref_produit = produits.ref_produit AND commande_article.num_commande = :num_commande", array(
+        "num_commande" => $num_commande
+    ));
+    $poids_commande = $produit_poids[0]->sum_poids;
+
+    $transporteur = $DB->query("SELECT * FROM shop_transporteur WHERE idtransporteur = :idtransporteur", array(
+        "idtransporteur" => $idtransporteur
+    ));
+
+    $tranche = $DB->query("SELECT * FROM shop_transporteur_tranche WHERE idtransporteur = :idtransporteur AND poids_debut >= :poids_commande AND shop_transporteur_tranche.poids_fin <= :poids_commande", array(
+        "poids_commande" => $produit_poids,
+        "idtransporteur" => $idtransporteur
+    ));
+
+    $nomTransporteur = $transporteur[0]->nom_transporteur;
+    var_dump($tranche);
+    die();
+
+
+}
