@@ -383,15 +383,6 @@ ini_set('display_errors', 1);
                                                     <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= html_entity_decode($produit[0]->designation); ?>" />
                                                 </a>
                                             </div>
-                                            <?php if($verif_global === 2): ?>
-                                                <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
-                                            <?php endif; ?>
-                                            <?php if($verif_global === 3): ?>
-                                                <div class="sale-flash promotion">EN PROMOTION!</div>
-                                            <?php endif; ?>
-                                            <?php if($verif_global === 4): ?>
-                                                <div class="sale-flash nouveaute">NOUVEAUTE !</div>
-                                            <?php endif; ?>
                                             <div class="top-cart-item-desc">
                                                 <a href="#"><?= html_entity_decode($produit[0]->designation); ?></a>
                                                 <span class="top-cart-item-price"><?= number_format($_SESSION['panier']['prixProduit'][$i], 2, ',', ' ')." €"; ?></span>
