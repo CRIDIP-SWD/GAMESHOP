@@ -3,7 +3,7 @@
  * TABLEAU DES TARIFS DE LIVRAISON
  */
 $data = array(
-    "La Poste" => array(
+    "laPoste" => array(
         "0"         => 0,
         "0.5"       => 2.30,
         "1.00"      => 3.25,
@@ -13,4 +13,4 @@ $data = array(
     )
 );
 
-var_dump($data);
+var_dump($data[0]->laPoste);
