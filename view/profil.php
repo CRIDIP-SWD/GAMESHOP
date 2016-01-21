@@ -1131,7 +1131,12 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Nb d'article</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $cmd_cls->count_article($cmd[0]->num_commande); ?></td>
+                                                        <?php
+                                                        $nb_article = $DB->count("SELECT COUNT(idarticle) FROM commande_article WHERE num_commande = :num_commande", array(
+                                                            "num_commande" => $num_commande
+                                                        ));
+                                                        ?>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $nb_article; ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date de Livraison:</td>
