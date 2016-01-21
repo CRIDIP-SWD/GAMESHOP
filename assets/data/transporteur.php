@@ -13,4 +13,4 @@ $data = array(
     )
 );
 
-var_dump($data[0]->laPoste);
+var_dump($data['laPoste']);
