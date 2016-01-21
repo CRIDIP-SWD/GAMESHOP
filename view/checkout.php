@@ -365,7 +365,7 @@
                                             </div>
                                             <div class="col-md-1">
                                                 <input id="laposte" class="radio-gameshop" type="radio" name="livraison" value="1"/>
-                                                <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_laposte($produit_poids[0]->sum_poids); ?>" />
+                                                <!--<input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_laposte($produit_poids[0]->sum_poids); ?>" />-->
                                                 <span class="round"></span>
                                             </div>
                                         </div>
