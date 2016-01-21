@@ -1119,7 +1119,7 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->jour_semaine(date("N", $cmd[0]->date_commande)); ?> <?= date("d", $cmd[0]->date_commande); ?> <?= $date_format->mois(date("n", $cmd[0]->date_commande)); ?> <?= date("Y", $cmd[0]->date_commande); ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->formatage_long(date("d", $cmd[0]->date_livraison), date("m", $cmd[0]->date_livraison), date("Y", $cmd[0]->date_livraison)); ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Client</td>
