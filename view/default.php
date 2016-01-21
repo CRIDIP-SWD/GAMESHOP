@@ -368,7 +368,7 @@ ini_set('display_errors', 1);
                                     for($i=0; $i < $nbArticle; $i++):
                                         $idproduit = $_SESSION['panier']['refProduit'][$i];
                                         $produit = $DB->query("SELECT * FROM produits WHERE id = :id", array("id" => $idproduit));
-                                        $ref_produit = $produit[0]->ref_produit;
+                                        $ref_produit = $produit->ref_produit;
                                         $verif_global = $produit_cls->verif_stat_global($ref_produit);
                                         $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
                                         if($verif_global === 3)
