@@ -121,7 +121,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'paiement')
         "idtransporteur" => $idtransporteur
     ));
 
-    $tranche = $DB->query("SELECT * FROM shop_transporteur_tranche WHERE idtransporteur = :idtransporteur AND poids_debut >= :poids_commande AND shop_transporteur_tranche.poids_fin <= :poids_commande", array(
+    $tranche = $DB->query("SELECT * FROM shop_transporteur_tranche WHERE idtransporteur = :idtransporteur AND shop_transporteur_tranche.poids_debut >= :poids_commande AND shop_transporteur_tranche.poids_fin <= :poids_commande", array(
         "poids_commande" => $produit_poids,
         "idtransporteur" => $idtransporteur
     ));
