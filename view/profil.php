@@ -1212,11 +1212,21 @@ if($_SESSION['logged'] == false) {
                                                 <tr>
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Etat des Articles</td>
                                                     <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;">
-                                                        <?php if($cmd_cls->verif_article_cmd_sortie($num_commande) != 0 AND $cmd_cls->verif_article_cmd_stock($num_commande) != 0){ ?>
+                                                        <?php
+                                                        $cmd_sortie = $DB->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= :date_jour AND commande_article.num_commande = :num_commande", array(
+                                                            "date_jour" => strtotime(date("d-m-Y")),
+                                                            "num_commande" => $num_commande
+                                                        ));
+                                                        $cmd_stock = $DB->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < :stock AND commande_article.num_commande = :num_commande", array(
+                                                            "stock" => 0,
+                                                            "num_commande" => $num_commande
+                                                        ));
+                                                        ?>
+                                                        <?php if($cmd_sortie != 0 AND $cmd_stock != 0){ ?>
                                                             <i class="icon-check text-success"></i> OK
                                                         <?php }else{ ?>
-                                                            <i class="icon-remove text-danger"></i> <?= $cmd_cls->verif_article_cmd_stock($num_commande); ?> articles en rupture de stock.<br>
-                                                            <i class="icon-remove text-danger"></i> <?= $cmd_cls->verif_article_cmd_sortie($num_commande); ?> articles ne sont pas sortie.
+                                                            <i class="icon-remove text-danger"></i> <?= $cmd_stock; ?> articles en rupture de stock.<br>
+                                                            <i class="icon-remove text-danger"></i> <?= $cmd_sortie; ?> articles ne sont pas sortie.
                                                         <?php } ?>
                                                     </td>
                                                 </tr>
