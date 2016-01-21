@@ -114,15 +114,22 @@ if(isset($_POST['action']) && $_POST['action'] == 'paiement')
     $poids_commande = $_POST['poids_commande'];
     $type_livraison = $_POST['livraison'];
 
+    $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
+        "num_commande" => $num_commande
+    ));
+
     if($type_livraison == 1) {$methode_livraison = "LA POSTE";$tarif = $transport_cls->calc_transport_laposte($poids_commande);}
     if($type_livraison == 2) {$methode_livraison = "CHRONOPOST 10H";$tarif = $transport_cls->calc_transport_chrono10($poids_commande);}
     if($type_livraison == 3) {$methode_livraison = "CHRONOPOST 13H";$tarif = $transport_cls->calc_transport_chrono13($poids_commande);}
     if($type_livraison == 4) {$methode_livraison = "UPS STANDARD PROTECTED+";$tarif = $transport_cls->calc_transport_ups($poids_commande);}
 
-    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie WHERE num_commande = :num_commande", array(
+    $new_total = $cmd[0]->total_commande + $tarif;
+
+    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie, total_commande = :total_commande WHERE num_commande = :num_commande", array(
         "methode_livraison" => $methode_livraison,
         "prix_envoie"       => $tarif,
-        "num_commande"      => $num_commande
+        "num_commande"      => $num_commande,
+        "total_commande"    => $new_total
     ));
     $error = "Impossible de Définir le moyen de livraison.<br>Veuillez contactez un administrateur.";
 
