@@ -76,3 +76,33 @@ if(isset($_GET['action']) && $_GET['action'] == 'adresse')
         header("Location: ../index.php?view=checkout&error=critical&data=$error");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'livraison')
+{
+
+    session_start();
+    require "../app/classe.php";
+    $idaddresse = $_POST['idaddresse'];
+
+    $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idadresse = :idadresse", array(
+        "idadresse" => $idaddresse
+    ));
+
+
+    $data = array(
+        "num_commande" => $_POST['num_commande'],
+        "destination" => "FRANCE",
+        "adresse_liv" => $adresse[0]->adresse.", ".$adresse[0]->code_postal." ".$adresse[0]->ville
+    );
+
+    $cmd = $DB->execute("UPDATE commande SET destination = :destination, adresse_liv = :adresse_liv", $data);
+    $error = "Impossible de continuer.<br>Veuillez contactez un administrateur";
+    if($cmd == 1)
+    {
+        header("Location: ../index.php?view=checkout&sub=livraison&num_commande=".$data['num_commande']);
+    }else{
+        header("Location: ../index.php?view=checkout&sub=adresse&error=critical&data=$error");
+    }
+
+
+
+}
