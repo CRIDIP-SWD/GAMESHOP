@@ -379,8 +379,8 @@ ini_set('display_errors', 1);
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
                                             <div class="top-cart-item-image">
-                                                <a href="index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>">
-                                                    <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= html_entity_decode($produit[0]->designation); ?>" />
+                                                <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>">
+                                                    <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= html_entity_decode($produit[0]->designation); ?>" />
                                                 </a>
                                             </div>
                                             <?php if($verif_global === 2): ?>
@@ -393,7 +393,7 @@ ini_set('display_errors', 1);
                                                 <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                             <?php endif; ?>
                                             <div class="top-cart-item-desc">
-                                                <a href="#"><?= html_entity_decode($produit[0]->designation); ?></a>
+                                                <a href="#"><?= html_entity_decode($produit->designation); ?></a>
                                                 <span class="top-cart-item-price"><?= number_format($_SESSION['panier']['prixProduit'][$i], 2, ',', ' ')." €"; ?></span>
                                                 <span class="top-cart-item-quantity">x <?= htmlspecialchars($_SESSION['panier']['qteProduit'][$i]); ?></span>
                                             </div>

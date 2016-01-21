@@ -964,7 +964,7 @@ if($_SESSION['logged'] == false) {
                                             <?php if($produit->etat_global == 3){ ?>
                                             <li class="color"><?= $fonction->number_decimal($produit->prix_vente); ?> <span class="label label-danger">Promotion</span></li>
                                             <?php }else{ ?>
-                                            <li class="color">$29.99</li>
+                                            <li class="color"><?= $fonction->number_decimal($produit->prix_vente); ?></li>
                                             <?php } ?>
                                         </ul>
                                     </div>
