@@ -294,6 +294,91 @@
         </div>
     </section>
 <?php endif; ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'livraison'): ?>
+    <?php
+    $produit_poids = $DB->query("SELECT SUM(produits.poids) FROM produits, commande_article WHERE commande_article.ref_produit = produits.ref_produit AND commande_article.num_commande = :num_commande", array(
+        "num_commande" => $_GET['num_commande']
+    ));
+    $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
+        "num_commande" => $_GET['num_commande']
+    ));
+    ?>
+    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
+
+        <div class="container clearfix">
+            <h1>COMMANDE</h1>
+            <ol class="breadcrumb">
+                <li><a href="#">GAMESHOP</a></li>
+                <li><a href="#">COMMANDE</a></li>
+                <li class="active">Mode de Livraison</li>
+            </ol>
+        </div>
+    </section>
+
+
+    <section id="content">
+        <div class="content-wrap">
+            <ul class="process-steps process-5 bottommargin clearfix">
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">1</a>
+                    <h5>Mon Panier</h5>
+                </li>
+                <li class="active">
+                    <a class="i-circled i-alt divcenter bgcolor" href="#">2</a>
+                    <h5>Adresse</h5>
+                </li>
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">3</a>
+                    <h5>Livraison</h5>
+                </li>
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">4</a>
+                    <h5>Paiement</h5>
+                </li>
+                <li>
+                    <a class="i-circled i-alt divcenter" href="#">5</a>
+                    <h5>Récapitulatif de la commande</h5>
+                </li>
+            </ul>
+            <div id="show-error"></div>
+            <div class="container clearfix bottommargin">
+                <form class="form-horizontal" action="core/checkout.php" method="post">
+                    <input type="hidden" name="num_commande" value="<?= $_GET['num_commande']; ?>" />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <?php
+                            $sql_transporteur = $DB->query("SELECT * FROM shop_transporteur");
+                            foreach($sql_transporteur as $transporteur):
+                                ?>
+                                <div class="well">
+                                    <div class="radio-gameshop">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <img src="<?= $transporteur->logo_transporteur; ?>" class="img-responsive" width="80" />
+                                            </div>
+                                            <div class="col-md-9">
+                                                <label for="adresse<?= $transporteur->idtransporteur; ?>" class="radio-gameshop">
+                                                    <?= $transporteur->nom_transporteur; ?><br>
+                                                    <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, $transporteur->jour_livraison)); ?></strong></h6>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <input id="adresse<?= $transporteur->idtransporteur; ?>" class="radio-gameshop" type="radio" name="livraison" value="<?= $transporteur->idtransporteur; ?>"/>
+                                                <span class="round"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                    <button type="button" class="button button-black button-3d pull-left" onclick="window.location.href='index.php?view=panier'"><i class="icon-arrow-left"></i> Retour au panier</button>
+                    <button type="submit" class="button button-green button-3d pull-right" name="action" value="livraison">Suivant <i class="icon-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'critical'): ?>
     <script type="text/javascript">

@@ -8,6 +8,7 @@ include dirname(__DIR__)."/vendor/autoload.php";
 use App\api\xbox;
 use App\api\xbox\xboxConfig;
 use App\app;
+use App\commande\checkout;
 use App\commande\commande;
 use App\commande\panier;
 use App\commande\reservation;
@@ -41,6 +42,7 @@ $cmd_cls = new commande();
 $vourcher_cls = new vourcher();
 $resa_cls = new reservation();
 $panier_cls = new panier();
+$checkout_cls = new checkout();
 
 
 
