@@ -81,6 +81,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
 
     session_start();
     require "../app/classe.php";
+    $num_commande = $_POST['num_commande'];
     $idaddresse = $_POST['adresse'];
 
     $adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idadresse = :idadresse", array(
@@ -88,19 +89,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
     ));
 
 
-    $data = array(
-        "num_commande" => $_POST['num_commande'],
-        "destination" => "FRANCE",
-        "adresse_liv" => $adresse[0]->adresse.", ".$adresse[0]->code_postal." ".$adresse[0]->ville
-    );
-
-    $cmd = $DB->execute("UPDATE commande SET destination = :destination, adresse_liv = :adresse_liv", $data);
+    $cmd = $DB->execute("UPDATE commande SET destination = :destination, adresse_liv = :adresse_liv WHERE num_commande = :num_commande", array(
+        "destination" => "France",
+        "adresse_liv" => $adresse[0]->adresse.", ".$adresse[0]->code_postal." ".$adresse[0]->ville,
+        "num_commande" => $num_commande
+    ));
     $error = "Impossible de continuer.<br>Veuillez contactez un administrateur";
     if($cmd == 1)
     {
-        header("Location: ../index.php?view=checkout&sub=livraison&num_commande=".$data['num_commande']);
+        header("Location: ../index.php?view=checkout&sub=livraison&num_commande=$num_commande");
     }else{
-        header("Location: ../index.php?view=checkout&sub=adresse&error=critical&data=$error");
+        header("Location: ../index.php?view=checkout&sub=adresse&num_commande=$num_commande&error=critical&data=$error");
     }
 
 
