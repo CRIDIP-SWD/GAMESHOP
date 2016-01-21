@@ -380,7 +380,7 @@
                                         <div class="col-md-9">
                                             <label for="chrono10" class="radio-gameshop">
                                                 CHRONOPOST (Livrée le lendemain avant 10H)<br>
-                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 2)); ?></strong></h6>
+                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 1)); ?></strong></h6>
                                                 <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
                                                 <h6>
                                                     TARIF:
@@ -405,7 +405,7 @@
                                         <div class="col-md-9">
                                             <label for="chrono13" class="radio-gameshop">
                                                 CHRONOPOST (Livrée le lendemain avant 13h)<br>
-                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 2)); ?></strong></h6>
+                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 1)); ?></strong></h6>
                                                 <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
                                                 <h6>
                                                     TARIF:
