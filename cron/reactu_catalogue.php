@@ -36,7 +36,6 @@ foreach($sql_catalogue as $catalogue):
         ));
     }
     var_dump($sql_preco, $sql_new, $sql_promo);
-    die();
 
     mail("gamedistri@gmail.com", "TACHE JOURNALIERE", "Tache Effectuer");
 
