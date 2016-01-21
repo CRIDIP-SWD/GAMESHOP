@@ -271,24 +271,34 @@
                     </div>-->
                     <div class="row">
                         <div class="col-md-12">
+                            <?php
+                            $sql_adresse = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
+                                "idclient" => $info_client[0]->idclient
+                            ));
+                            foreach($sql_adresse as $adresse):
+                            ?>
                             <div class="well">
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-11">
                                             <label for="adresse" class="radio-gameshop">
-                                                M. MOCKELYN Maxime<br>
-                                                20 Avenue Jean Jaures<br>
-                                                Résidence "Les IRIS"<br>
-                                                85100 Les Sables d'Olonne
+                                                <strong><?= $adresse->alias; ?></strong><br>
+                                                <?php if(!empty($adresse->societe)){echo $adresse->societe."<br>";} ?>
+                                                <?= $adresse->nom; ?> <?= $adresse->prenom; ?><br>
+                                                <?= html_entity_decode($adresse->adresse); ?><br>
+                                                <?= $adresse->code_postal; ?> <?= html_entity_decode($adresse->ville); ?><br>
+                                                FRANCE<br>
+                                                Tel: <?= $adresse->telephone; ?>
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="idadresse"/>
+                                            <input id="adresse" class="radio-gameshop" type="radio" name="adresse" value="<?= $adresse->idadresse; ?>" <?php if($adresse->default == 1){echo "checked";} ?>/>
                                             <span class="round"></span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </form>
