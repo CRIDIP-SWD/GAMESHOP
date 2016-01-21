@@ -347,7 +347,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <?php
-                            $sql_transporteur = $DB->query("SELECT * FROM shop_transporteur WHERE poids_max <= $produit_poids");
+                            $sql_transporteur = $DB->query("SELECT * FROM shop_transporteur WHERE poids_max <= :produit_poids", array(
+                                "produit_poids" => $produit_poids
+                            ));
                             foreach($sql_transporteur as $transporteur):
                                 ?>
                                 <div class="well">
