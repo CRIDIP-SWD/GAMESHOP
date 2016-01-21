@@ -10,7 +10,7 @@ foreach($sql_catalogue as $catalogue):
 
     $ref_produit = $catalogue->ref_produit;
     //Verification de l'expiration des Précommandes
-    if($catalogue->date_sortie >= $date_jour)
+    if($catalogue->date_sortie <= $date_jour)
     {
         $sql_preco = $DB->execute("UPDATE produits SET statut_global = 4 WHERE ref_produit = :ref_produit", array(
             "ref_produit" => $ref_produit
@@ -18,7 +18,7 @@ foreach($sql_catalogue as $catalogue):
     }
 
     //Verification de la nouveaute
-    if($catalogue->date_sortie >= $date_30)
+    if($catalogue->date_sortie <= $date_30)
     {
         $sql_new = $DB->execute("UPDATE produits SET statut_global = 1 WHERE ref_produit = :ref_produit", array(
             "ref_produit" => $ref_produit
