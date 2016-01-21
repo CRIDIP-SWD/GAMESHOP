@@ -39,12 +39,14 @@ class commande extends DB
 
     public function verif_article_cmd_sortie($num_commande)
     {
-        return $this->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= '$this->date_jour' AND commande_article.num_commande = '$num_commande'");
+        $sql = $this->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= '$this->date_jour' AND commande_article.num_commande = '$num_commande'");
+        return $sql;
     }
 
     public function verif_article_cmd_stock($num_commande)
     {
-        return $this->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < '0' AND commande_article.num_commande = '$num_commande'");
+        $sql =  $this->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < '0' AND commande_article.num_commande = '$num_commande'");
+        return $sql;
     }
 
 }
