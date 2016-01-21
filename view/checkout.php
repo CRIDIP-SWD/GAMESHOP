@@ -519,7 +519,7 @@
                                 </tr>
                                 <tr>
                                     <td style="font-size: 20px; font-weight: 700;">TOTAL (à Payer):</td>
-                                    <td style="text-align: right; font-weight: 20px; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
+                                    <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
                                 </tr>
                             </table>
                         </div>
