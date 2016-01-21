@@ -322,7 +322,7 @@
 
                         <div id="shop" class="clearfix">
                             <?php
-                            $date = $date_format->convert_strtotime(date("d-m-Y"));
+                            $date = $date_format->format_strt(date("d-m-Y"));
                             $date_moin = strtotime($date ."+ 30 days");
                             $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE date_sortie > '$date' AND produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = categorie.id LIMIT 4");
                             foreach($sql_preco as $preco):
