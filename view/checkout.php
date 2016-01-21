@@ -375,7 +375,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="<?= $constante->getUrl(array('autre/misc/'), false, true) ;?>chrono10.png" class="img-responsive" width="80" />
+                                            <img src="<?= $constante->getUrl(array(), false, true) ;?>autre/misc/chrono10.png" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="chrono10" class="radio-gameshop">
@@ -400,7 +400,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="<?= $constante->getUrl(array('autre/misc/'), false, true) ;?>chrono10.png" class="img-responsive" width="80" />
+                                            <img src="<?= $constante->getUrl(array(), false, true) ;?>autre/misc/chrono13.png" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="chrono13" class="radio-gameshop">
