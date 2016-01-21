@@ -346,33 +346,106 @@
                     <input type="hidden" name="num_commande" value="<?= $_GET['num_commande']; ?>" />
                     <div class="row">
                         <div class="col-md-12">
-                            <?php
-                            $sql_transporteur = $DB->query("SELECT * FROM shop_transporteur WHERE poids_max <= :produit_poids", array(
-                                "produit_poids" => $produit_poids[0]->sum_poids
-                            ));
-                            foreach($sql_transporteur as $transporteur):
-                                ?>
-                                <div class="well">
+                            <div class="well">
                                     <div class="radio-gameshop">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <img src="<?= $transporteur->logo_transporteur; ?>" class="img-responsive" width="80" />
+                                                <img src="" class="img-responsive" width="80" />
                                             </div>
                                             <div class="col-md-9">
-                                                <label for="adresse<?= $transporteur->idtransporteur; ?>" class="radio-gameshop">
-                                                    <?= $transporteur->nom_transporteur; ?><br>
-                                                    <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, $transporteur->jour_livraison)); ?></strong></h6>
+                                                <label for="laposte" class="radio-gameshop">
+                                                    LA POSTE (COLISSIMO)<br>
+                                                    <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 4)); ?></strong></h6>
                                                     <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
+                                                    <h6>
+                                                        TARIF:
+                                                        <?= $fonction->number_decimal($transport_cls->calc_transport_laposte($produit_poids[0]->sum_poids)); ?>
+                                                    </h6>
                                                 </label>
                                             </div>
                                             <div class="col-md-1">
-                                                <input id="adresse<?= $transporteur->idtransporteur; ?>" class="radio-gameshop" type="radio" name="livraison" value="<?= $transporteur->idtransporteur; ?>"/>
+                                                <input id="laposte" class="radio-gameshop" type="radio" name="livraison" value="La Poste"/>
+                                                <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_laposte($produit_poids[0]->sum_poids); ?>" />
                                                 <span class="round"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            <?php endforeach; ?>
+                            <div class="well">
+                                <div class="radio-gameshop">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="" class="img-responsive" width="80" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <label for="chrono10" class="radio-gameshop">
+                                                CHRONOPOST (Livrée le lendemain avant 10H)<br>
+                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 2)); ?></strong></h6>
+                                                <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
+                                                <h6>
+                                                    TARIF:
+                                                    <?= $fonction->number_decimal($transport_cls->calc_transport_chrono10($produit_poids[0]->sum_poids)); ?>
+                                                </h6>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <input id="chrono10" class="radio-gameshop" type="radio" name="livraison" value="CHRONOPOST 10H"/>
+                                            <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono10($produit_poids[0]->sum_poids); ?>" />
+                                            <span class="round"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="well">
+                                <div class="radio-gameshop">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="" class="img-responsive" width="80" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <label for="chrono13" class="radio-gameshop">
+                                                CHRONOPOST (Livrée le lendemain avant 13h)<br>
+                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 2)); ?></strong></h6>
+                                                <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
+                                                <h6>
+                                                    TARIF:
+                                                    <?= $fonction->number_decimal($transport_cls->calc_transport_chrono13($produit_poids[0]->sum_poids)); ?>
+                                                </h6>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <input id="chrono13" class="radio-gameshop" type="radio" name="livraison" value="CHRONOPOST 13H"/>
+                                            <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_chrono13($produit_poids[0]->sum_poids); ?>" />
+                                            <span class="round"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="well">
+                                <div class="radio-gameshop">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="" class="img-responsive" width="80" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <label for="ups" class="radio-gameshop">
+                                                UPS Livraison Standard Protected+<br>
+                                                <h6>Date de Livraison Théorique: <strong><?= $date_format->formatage_long($checkout_cls->calc_liv_theo($cmd[0]->date_commande, 3)); ?></strong></h6>
+                                                <h6>Poids: <?= $produit_poids[0]->sum_poids; ?> Kg</h6>
+                                                <h6>
+                                                    TARIF:
+                                                    <?= $fonction->number_decimal($transport_cls->calc_transport_ups($produit_poids[0]->sum_poids)); ?>
+                                                </h6>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <input id="ups" class="radio-gameshop" type="radio" name="livraison" value="UPS STANDARD PROTECTED+"/>
+                                            <input type="hidden" name="prix_envoie" value="<?= $transport_cls->calc_transport_ups($produit_poids[0]->sum_poids); ?>" />
+                                            <span class="round"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <button type="button" class="button button-black button-3d pull-left" onclick="window.location.href='index.php?view=panier'"><i class="icon-arrow-left"></i> Retour au panier</button>

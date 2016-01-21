@@ -45,8 +45,6 @@ $resa_cls = new reservation();
 $panier_cls = new panier();
 $checkout_cls = new checkout();
 $transport_cls = new transporteur();
-var_dump($transport_cls->calc_transport(6.50, "laPoste"));
-die();
 
 
 
