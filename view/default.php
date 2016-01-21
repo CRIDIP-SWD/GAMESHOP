@@ -367,10 +367,8 @@ ini_set('display_errors', 1);
                                     <?php
                                     for($i=0; $i < $nbArticle; $i++):
                                         $idproduit = $_SESSION['panier']['refProduit'][$i];
-                                        $produit = $DB->query("SELECT * FROM produits WHERE id = :id", array("id" => $idproduit));
-                                        var_dump($produit);
-                                        die();
-                                        $ref_produit = $produit->ref_produit;
+                                        $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $idproduit));
+                                        $ref_produit = $produit[0]->ref_produit;
                                         $verif_global = $produit_cls->verif_stat_global($ref_produit);
                                         $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
                                         if($verif_global === 3)
@@ -381,8 +379,8 @@ ini_set('display_errors', 1);
                                     <div class="top-cart-items">
                                         <div class="top-cart-item clearfix">
                                             <div class="top-cart-item-image">
-                                                <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>">
-                                                    <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= html_entity_decode($produit[0]->designation); ?>" />
+                                                <a href="index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>">
+                                                    <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" alt="<?= html_entity_decode($produit[0]->designation); ?>" />
                                                 </a>
                                             </div>
                                             <?php if($verif_global === 2): ?>
@@ -395,7 +393,7 @@ ini_set('display_errors', 1);
                                                 <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                             <?php endif; ?>
                                             <div class="top-cart-item-desc">
-                                                <a href="#"><?= html_entity_decode($produit->designation); ?></a>
+                                                <a href="#"><?= html_entity_decode($produit[0]->designation); ?></a>
                                                 <span class="top-cart-item-price"><?= number_format($_SESSION['panier']['prixProduit'][$i], 2, ',', ' ')." €"; ?></span>
                                                 <span class="top-cart-item-quantity">x <?= htmlspecialchars($_SESSION['panier']['qteProduit'][$i]); ?></span>
                                             </div>
