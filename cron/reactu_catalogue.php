@@ -12,7 +12,7 @@ foreach($sql_catalogue as $catalogue):
     //Verification de l'expiration des Précommandes
     if($catalogue->date_sortie >= $date_jour)
     {
-        $sql = $DB->execute("UPDATE produits SET statut_global = 4 WHERE ref_produit = :ref_produit", array(
+        $sql_preco = $DB->execute("UPDATE produits SET statut_global = 4 WHERE ref_produit = :ref_produit", array(
             "ref_produit" => $ref_produit
         ));
     }
@@ -20,7 +20,7 @@ foreach($sql_catalogue as $catalogue):
     //Verification de la nouveaute
     if($catalogue->date_sortie >= $date_30)
     {
-        $sql = $DB->execute("UPDATE produits SET statut_global = 1 WHERE ref_produit = :ref_produit", array(
+        $sql_new = $DB->execute("UPDATE produits SET statut_global = 1 WHERE ref_produit = :ref_produit", array(
             "ref_produit" => $ref_produit
         ));
     }
@@ -31,10 +31,12 @@ foreach($sql_catalogue as $catalogue):
     ));
     if($promo_count >= 1)
     {
-        $sql = $DB->execute("UPDATE produits SET statut_global = 3 WHERE ref_produit = :ref_produit", array(
+        $sql_promo = $DB->execute("UPDATE produits SET statut_global = 3 WHERE ref_produit = :ref_produit", array(
             "ref_produit" => $ref_produit
         ));
     }
+    var_dump($sql_preco, $sql_new, $sql_promo);
+    die();
 
     mail("gamedistri@gmail.com", "TACHE JOURNALIERE", "Tache Effectuer");
 
