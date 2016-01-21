@@ -350,7 +350,7 @@
                                     <div class="radio-gameshop">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <img src="" class="img-responsive" width="80" />
+                                                <img src="http://www.stv1000.com/images/logo_colissimo.png" class="img-responsive" width="80" />
                                             </div>
                                             <div class="col-md-9">
                                                 <label for="laposte" class="radio-gameshop">
@@ -375,7 +375,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="" class="img-responsive" width="80" />
+                                            <img src="<?= $constante->getUrl(array('autre/misc/'), false, true) ;?>chrono10.png" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="chrono10" class="radio-gameshop">
@@ -400,7 +400,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="" class="img-responsive" width="80" />
+                                            <img src="<?= $constante->getUrl(array('autre/misc/'), false, true) ;?>chrono10.png" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="chrono13" class="radio-gameshop">
@@ -425,7 +425,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="" class="img-responsive" width="80" />
+                                            <img src="http://vignette3.wikia.nocookie.net/logopedia/images/0/0e/UPS_logo_2003.png/revision/latest?cb=20100615165603" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="ups" class="radio-gameshop">
