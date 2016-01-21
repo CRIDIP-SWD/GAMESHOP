@@ -275,7 +275,7 @@ ini_set('display_errors', 1);
                                             <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
                                                     <?php
-                                                    $date = $date_format->convert_strtotime(date("d-m-Y"));
+                                                    $date = $date_format->format_strt(date("d-m-Y"));
                                                     $date_moin = strtotime($date ."+ 30 days");
                                                     $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.idcategorie = '$idcategorie' AND statut_global = :stat LIMIT 1", array("stat" => '2'));
                                                     foreach($sql_preco as $preco):
