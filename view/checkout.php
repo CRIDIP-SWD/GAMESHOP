@@ -518,7 +518,7 @@
                                     <td colspan="2" style="border-bottom: solid 1px #95A5A6"></td>
                                 </tr>
                                 <tr>
-                                    <td style="">TOTAL (à Payer)</td>
+                                    <td style="font-size: 20px; font-weight: 700;">TOTAL (à Payer)</td>
                                     <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
                                 </tr>
                             </table>
