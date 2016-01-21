@@ -1085,7 +1085,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="container clearfix">
             <h1>COMMANDE N° <strong><?= $num_commande; ?></strong></h1>
-            <span><?= $date_format->formatage_long(date("d", $cmd[0]->date_commande), date("m", $cmd[0]->date_commande), date("Y", $cmd[0]->date_commande)); ?> </span>
+            <span><?= $date_format->formatage_long($cmd[0]->date_commande); ?> </span>
             <ol class="breadcrumb">
                 <li><h1 class="text-info"><?= number_format($cmd[0]->total_commande, 2, ',', ' ')." €"; ?></h1></li>
             </ol>
@@ -1119,7 +1119,7 @@ if($_SESSION['logged'] == false) {
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Date</td>
-                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->formatage_long(date("d", $cmd[0]->date_commande), date("m", $cmd[0]->date_commande), date("Y", $cmd[0]->date_commande)); ?></td>
+                                                        <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;"><?= $date_format->formatage_long($cmd[0]->date_commande); ?></td>
                                                     </tr>
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Client</td>
