@@ -544,6 +544,42 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="well">
+                            <div class="radio-gameshop">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="http://www.les-douceurs-du-bain.fr/Files/110407/Img/22/mi-ima-9a26b68e21.jpg" class="img-responsive" width="80" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="virement" class="radio-gameshop">
+                                            Virement bancaire
+                                        </label>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="virement" class="radio-gameshop" type="radio" name="paiement" value="2"/>
+                                        <span class="round"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="well">
+                            <div class="radio-gameshop">
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paiement-point.png" class="img-responsive" width="80" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label for="point" class="radio-gameshop">
+                                            Virement bancaire
+                                        </label>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <input id="point" class="radio-gameshop" type="radio" name="paiement" value="3"/>
+                                        <span class="round"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
