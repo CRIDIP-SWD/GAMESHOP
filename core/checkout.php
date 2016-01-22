@@ -218,7 +218,8 @@ if(isset($_GET['action']) && $_GET['action'] == 'DoCheckout')
                 "PAYERID"                               => $_GET['PayerID'],
                 "PAYMENTREQUEST_0_PAYMENTACTION"        => 'Sale',
                 "PAYMENTREQUEST_0_AMT"                  => $response['PAYMENTREQUEST_0_AMT'],
-                "PAYMENTREQUEST_0_CURRENCYCODE"         => "EUR"
+                "PAYMENTREQUEST_0_CURRENCYCODE"         => "EUR",
+                "PAYMENTREQUEST_0_DESC"                 => $response['PAYMENTREQUEST_0_DESC'],
             ));
             if($paiement)
             {
