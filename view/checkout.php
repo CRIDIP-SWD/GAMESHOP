@@ -570,7 +570,11 @@
                                     </div>
                                     <div class="col-md-9">
                                         <label for="point" class="radio-gameshop">
-                                            Virement bancaire
+                                            GAMESHOP POINT<br>
+                                            <h6>
+                                                Payer avec vos point Fidélité<br>
+                                                Point Actuel: <?= $info_client[0]->point; ?> Points
+                                            </h6>
                                         </label>
                                     </div>
                                     <div class="col-md-1">
