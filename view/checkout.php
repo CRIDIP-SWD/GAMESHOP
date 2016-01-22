@@ -510,7 +510,7 @@
                             <table style="width: 100%;">
                                 <tr>
                                     <td style=" font-size: 15px; font-weight: 700; padding-bottom: 10px;">Sous-Total:</td>
-                                    <td style="text-align: right; font-size: 15px; padding-right: 5px; padding-bottom: 10px;"><?= $fonction->number_decimal($cmd[0]->total_commande - $cmd[0]->prix_envoie); ?></td>
+                                    <td style="text-align: right; font-size: 15px; padding-right: 5px; padding-bottom: 10px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
                                 </tr>
                                 <tr>
                                     <td style=" font-size: 15px; font-weight: 700; padding-bottom: 10px;">Transport:</td>
@@ -521,7 +521,7 @@
                                 </tr>
                                 <tr>
                                     <td style="font-size: 20px; font-weight: 700;">TOTAL (à Payer):</td>
-                                    <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
+                                    <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande + $cmd[0]->prix_envoie); ?></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2"><div class="divider divider-rounded divider-center">OU</div></td>
