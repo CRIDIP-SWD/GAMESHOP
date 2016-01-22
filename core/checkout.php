@@ -1,6 +1,6 @@
 <?php
 
-use App\api\Paypal\paypal;
+use App\api\paypal\paypal;
 use App\constante;
 
 if(isset($_POST['action']) && $_POST['action'] == 'login')
