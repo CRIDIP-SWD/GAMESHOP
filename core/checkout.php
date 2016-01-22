@@ -152,9 +152,6 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
     $num_commande = $_POST['num_commande'];
     $type_paiement = $_POST['paiement'];
 
-    var_dump($num_commande, $type_paiement);
-    die();
-
 
     $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
         "num_commande" => $num_commande
