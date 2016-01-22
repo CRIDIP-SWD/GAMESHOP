@@ -50,7 +50,7 @@ $transport_cls = new transporteur();
 
 if(isset($_SESSION['logged'])){
     $info_client = $client_cls->info_client($_SESSION['email']);
-
+    /*
     if(!empty($info_client[0]->pseudo_psn))
     {
 
@@ -81,12 +81,12 @@ if(isset($_SESSION['logged'])){
                 $response_friend = $connect_psn->call($request_friend);
                 $friend = json_decode($response_friend->getBody(true), true);
 
-    }
+    }*/
 
 
 
 
-
+    /*
     if(!empty($info_client[0]->pseudo_steam))
     {
 
@@ -110,6 +110,7 @@ if(isset($_SESSION['logged'])){
     {
         $xbox = new xboxConfig($info_client[0]->pseudo_xbox);
     }
+    */
 }
 
 

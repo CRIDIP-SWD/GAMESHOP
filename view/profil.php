@@ -38,7 +38,7 @@ if($_SESSION['logged'] == false) {
 
                     <div class="tab-container">
 
-                        <div class="tab-content clearfix gamercard" id="xbox">
+                        <!--<div class="tab-content clearfix gamercard" id="xbox">
                             <?php
                             $xboxClass = new xbox($info_client[0]->pseudo_xbox);
                             $xboxProfil = $xboxClass->call('profile');
@@ -409,7 +409,7 @@ if($_SESSION['logged'] == false) {
                                 <?php } ?>
 
                             </div>
-                        </div>
+                        </div>-->
                     </div>
 
                 </div>
