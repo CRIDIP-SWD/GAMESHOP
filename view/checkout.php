@@ -529,7 +529,7 @@
                                 </tr>
                                 <tr>
                                     <td style="font-size: 20px; font-weight: 700;">TOTAL (en Point):</td>
-                                    <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $checkout_cls->calc_total_point_cmd($_GET['num_commande']); ?> Points</td>
+                                    <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $count_point[0]->cout_point; ?> Points</td>
                                 </tr>
                             </table>
                         </div>
@@ -572,7 +572,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php if($info_client[0]->point >= $checkout_cls->calc_total_point_cmd($_GET['num_commande'])): ?>
+                        <?php if($info_client[0]->point >= $count_point[0]->cout_point): ?>
                         <div class="well">
                             <div class="radio-gameshop">
                                 <div class="row">
