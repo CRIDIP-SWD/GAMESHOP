@@ -223,8 +223,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'DoCheckout')
             ));
             if($paiement)
             {
-                $num_commande = $paiement['PAYMENTREQUEST_0_DESC'];
-                var_dump($num_commande);
+                var_dump($paiement);
                 die();
             }
         }else{
