@@ -126,13 +126,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'paiement')
     if($type_livraison == 3) {$methode_livraison = "CHRONOPOST 13H";$tarif = $transport_cls->calc_transport_chrono13($poids_commande);}
     if($type_livraison == 4) {$methode_livraison = "UPS STANDARD PROTECTED+";$tarif = $transport_cls->calc_transport_ups($poids_commande);}
 
-    $new_total = $cmd[0]->total_commande + $tarif;
 
-    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie, total_commande = :total_commande WHERE num_commande = :num_commande", array(
+    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie WHERE num_commande = :num_commande", array(
         "methode_livraison" => $methode_livraison,
         "prix_envoie"       => $tarif,
         "num_commande"      => $num_commande,
-        "total_commande"    => $new_total
     ));
     $error = "Impossible de Définir le moyen de livraison.<br>Veuillez contactez un administrateur.";
 
@@ -169,7 +167,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             "RETURNURL" => constante::HTTP.constante::URL."core/checkout.php&action=DoCheckout",
             "CANCELURL" => constante::HTTP.constante::URL."index.php?view=checkout&sub=paiement&error=critical&data=$error",
 
-            "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande, // 445.40
+            "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande + $cmd[0]->prix_envoie, // 445.40
             "PAYMENTREQUEST_0_CURRENCYCODE" => "EUR",
             "PAYMENTREQUEST_0_SHIPPINGAMT" => $cmd[0]->prix_envoie, // 26.50
             "PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande, // 445.40
