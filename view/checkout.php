@@ -572,7 +572,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php if($info_client[0]->point >= $count_point[0]->cout_point): ?>
+                        <?php if($info_client[0]->point >= $count_point[0]->cout_point){ ?>
                         <div class="well">
                             <div class="radio-gameshop">
                                 <div class="row">
@@ -595,7 +595,7 @@
                                 </div>
                             </div>
                         </div>
-                        <?php endif; ?>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
