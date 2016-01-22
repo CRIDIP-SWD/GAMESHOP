@@ -184,8 +184,6 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
         $response = $paypal->request('SetExpressCheckout', $params);
         if($response)
         {
-            var_dump($response);
-            die();
             header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=".$response['TOKEN']);
         }else{
             var_dump($paypal->errors);
