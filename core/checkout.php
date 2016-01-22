@@ -150,7 +150,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
     session_start();
     include "../app/classe.php";
     $num_commande = $_POST['num_commande'];
-    $type_paiement = $_POST['paiement'];
+    $type_paiement = $_POST['paiements'];
 
 
     $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
