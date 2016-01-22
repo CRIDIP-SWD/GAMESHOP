@@ -88,5 +88,13 @@ class produit extends DB
         }
     }
 
+    public function revenue_point_total($num_commande)
+    {
+        $point = $this->query("SELECT SUM(revenue_point) as revenue_point FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+            "num_commande" => $num_commande
+        ));
+        return $point;
+    }
+
 
 }

@@ -142,3 +142,20 @@ if(isset($_POST['action']) && $_POST['action'] == 'paiement')
 
 
 }
+if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
+{
+    session_start();
+    include "../app/classe.php";
+    $num_commande = $_POST['num_commande'];
+    $type_paiement = $_POST['paiement'];
+
+    if($type_paiement === 1){
+
+    }
+
+    if($type_paiement === 2){
+        $new_point = $produit_cls->revenue_point_total($num_commande);
+        var_dump($new_point);
+        die();
+    }
+}

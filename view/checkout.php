@@ -535,6 +535,7 @@
                     </div>
                     <div class="col-md-7">
                         <form action="core/checkout.php" method="post">
+                            <input type="hidden" name="num_commande" value="<?= $_GET['num_commande']; ?>">
                             <div class="well bounceInRight animated" data-animation="bounceInRight">
                                 <div class="radio-gameshop">
                                     <div class="row">
