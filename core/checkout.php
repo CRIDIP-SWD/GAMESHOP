@@ -181,6 +181,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             $params["L_PAYMENTREQUEST_0_QTY$k"] = $article->qte;
             $params["L_PAYMENTREQUEST_0_ITEMURL$k"] = constante::HTTP.constante::URL."index.php?view=produit&ref_produit=".$article->ref_produit;
         }
+        var_dump($params);
         $response = $paypal->request('SetExpressCheckout', $params);
         if($response)
         {
