@@ -521,6 +521,13 @@
                                     <td style="font-size: 20px; font-weight: 700;">TOTAL (à Payer):</td>
                                     <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
                                 </tr>
+                                <tr>
+                                    <td colspan="2"><div class="divider divider-rounded divider-center">OU</div></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-size: 20px; font-weight: 700;">TOTAL (en Point):</td>
+                                    <td style="text-align: right; font-size: 20px; font-weight: bold; padding-right: 5px;"><?= $checkout_cls->calc_total_point_cmd($_GET['num_commande']); ?> Points</td>
+                                </tr>
                             </table>
                         </div>
                     </div>
