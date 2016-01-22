@@ -27,7 +27,7 @@ if($_SESSION['logged'] == false) {
 
         <div class="content-wrap">
 
-            <div class="container clearfix bottommargin">
+            <!--<div class="container clearfix bottommargin">
                 <div class="tabs tabs-alt tabs-justify clearfix" id="tab-10">
 
                     <ul class="tab-nav clearfix">
@@ -38,7 +38,7 @@ if($_SESSION['logged'] == false) {
 
                     <div class="tab-container">
 
-                        <!--<div class="tab-content clearfix gamercard" id="xbox">
+                        <div class="tab-content clearfix gamercard" id="xbox">
                             <?php
                             $xboxClass = new xbox($info_client[0]->pseudo_xbox);
                             $xboxProfil = $xboxClass->call('profile');
@@ -409,11 +409,11 @@ if($_SESSION['logged'] == false) {
                                 <?php } ?>
 
                             </div>
-                        </div>-->
+                        </div>
                     </div>
 
                 </div>
-            </div>
+            </div>-->
             <div class="container clearfix topmargin">
                 <div class="row bottommargin-sm">
                     <div class="col-md-4" style="">
