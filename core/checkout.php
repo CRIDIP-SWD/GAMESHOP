@@ -186,7 +186,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
         {
             $paypal = "https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=".$response['TOKEN'];
         }else{
-            var_dump($response);
+            var_dump($paypal->errors);
             die();
         }
     }
