@@ -534,70 +534,73 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <div class="well bounceInRight animated" data-animation="bounceInRight">
-                            <div class="radio-gameshop">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/PayPal_2014_logo.svg/2000px-PayPal_2014_logo.svg.png" class="img-responsive" width="80" />
-                                    </div>
-                                    <div class="col-md-9">
-                                        <label for="paypal" class="radio-gameshop">
-                                            PAYPAL<br>
-                                            Paiement Sécurisé par carte Bancaire
-                                            <h6><i>Préparation Immédiate</i></h6>
-                                        </label>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <input id="paypal" class="radio-gameshop" type="radio" name="paiement" value="1"/>
-                                        <span class="round"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="well bounceInRight animated" data-animation="bounceInRight">
-                            <div class="radio-gameshop">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="http://www.les-douceurs-du-bain.fr/Files/110407/Img/22/mi-ima-9a26b68e21.jpg" class="img-responsive" width="80" />
-                                    </div>
-                                    <div class="col-md-9">
-                                        <label for="virement" class="radio-gameshop">
-                                            Virement bancaire
-                                            <h6><i>Préparation à récéption de réglement</i></h6>
-                                        </label>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <input id="virement" class="radio-gameshop" type="radio" name="paiement" value="2"/>
-                                        <span class="round"></span>
+                        <form action="core/checkout.php" method="post">
+                            <div class="well bounceInRight animated" data-animation="bounceInRight">
+                                <div class="radio-gameshop">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/PayPal_2014_logo.svg/2000px-PayPal_2014_logo.svg.png" class="img-responsive" width="80" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <label for="paypal" class="radio-gameshop">
+                                                PAYPAL<br>
+                                                Paiement Sécurisé par carte Bancaire
+                                                <h6><i>Préparation Immédiate</i></h6>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <input id="paypal" class="radio-gameshop" type="radio" name="paiement" value="1"/>
+                                            <span class="round"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php if($info_client[0]->point >= $count_point[0]->cout_point){ ?>
-                        <div class="well bounceInRight animated" data-animation="bounceInRight">
-                            <div class="radio-gameshop">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paiement-point.png" class="img-responsive" width="80" />
-                                    </div>
-                                    <div class="col-md-9">
-                                        <label for="point" class="radio-gameshop">
-                                            GAMESHOP POINT<br>
-                                            <h6>
-                                                Payer avec vos point Fidélité<br>
-                                                Point Actuel: <?= $info_client[0]->point; ?> Points
-                                                <i>Préparation Immédiate</i>
-                                            </h6>
-                                        </label>
-                                    </div>
-                                    <div class="col-md-1">
-                                        <input id="point" class="radio-gameshop" type="radio" name="paiement" value="3"/>
-                                        <span class="round"></span>
+                            <div class="well bounceInRight animated" data-animation="bounceInRight">
+                                <div class="radio-gameshop">
+                                    <div class="row">
+                                        <div class="col-md-2">
+                                            <img src="http://www.les-douceurs-du-bain.fr/Files/110407/Img/22/mi-ima-9a26b68e21.jpg" class="img-responsive" width="80" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <label for="virement" class="radio-gameshop">
+                                                Virement bancaire
+                                                <h6><i>Préparation à récéption de réglement</i></h6>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <input id="virement" class="radio-gameshop" type="radio" name="paiement" value="2"/>
+                                            <span class="round"></span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php } ?>
+                            <?php if($info_client[0]->point >= $count_point[0]->cout_point){ ?>
+                                <div class="well bounceInRight animated" data-animation="bounceInRight">
+                                    <div class="radio-gameshop">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paiement-point.png" class="img-responsive" width="80" />
+                                            </div>
+                                            <div class="col-md-9">
+                                                <label for="point" class="radio-gameshop">
+                                                    GAMESHOP POINT<br>
+                                                    <h6>
+                                                        Payer avec vos point Fidélité<br>
+                                                        Point Actuel: <?= $info_client[0]->point; ?> Points
+                                                        <i>Préparation Immédiate</i>
+                                                    </h6>
+                                                </label>
+                                            </div>
+                                            <div class="col-md-1">
+                                                <input id="point" class="radio-gameshop" type="radio" name="paiement" value="3"/>
+                                                <span class="round"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <button type="submit" class="button button-3d button-green button-rounded" name="action" value="process-paiement"><i class="icon-credit-cards"></i> Procéder au Paiement</button>
+                        </form>
                     </div>
                 </div>
             </div>
