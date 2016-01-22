@@ -166,7 +166,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
 
     $error = "Impossible d'effectuer le paiement.<br>Veuillez contactez l'administrateur";
 
-    if($type_paiement === 1){
+    if($type_paiement == 1){
         $paypal = new paypal();
         $params = array(
             "RETURNURL" => constante::HTTP.constante::URL."core/checkout.php&action=DoCheckout",
@@ -193,7 +193,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
         }
     }
 
-    if($type_paiement === 2){
+    if($type_paiement == 2){
         $new_point = $produit_cls->revenue_point_total($num_commande);
         var_dump($new_point);
         die();
