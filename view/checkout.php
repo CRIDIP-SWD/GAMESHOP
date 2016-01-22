@@ -544,6 +544,7 @@
                                         <label for="paypal" class="radio-gameshop">
                                             PAYPAL<br>
                                             Paiement Sécurisé par carte Bancaire
+                                            <h6><i>Préparation Immédiate</i></h6>
                                         </label>
                                     </div>
                                     <div class="col-md-1">
@@ -562,6 +563,7 @@
                                     <div class="col-md-9">
                                         <label for="virement" class="radio-gameshop">
                                             Virement bancaire
+                                            <h6><i>Préparation à récéption de réglement</i></h6>
                                         </label>
                                     </div>
                                     <div class="col-md-1">
@@ -584,6 +586,7 @@
                                             <h6>
                                                 Payer avec vos point Fidélité<br>
                                                 Point Actuel: <?= $info_client[0]->point; ?> Points
+                                                <i>Préparation Immédiate</i>
                                             </h6>
                                         </label>
                                     </div>
