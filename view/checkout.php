@@ -461,6 +461,9 @@
     $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
         "num_commande" => $_GET['num_commande']
     ));
+    $count_point = $checkout_cls->calc_total_point_cmd($_GET['num_commande']);
+    var_dump($count_point);
+    die();
     ?>
     <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');">
 
