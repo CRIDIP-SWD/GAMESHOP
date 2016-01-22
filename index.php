@@ -25,6 +25,7 @@ if($view === 'profil'){require "view/profil.php";}
 if($view === 'maintenance'){require "view/maintenance.php";}
 if($view === 'panier'){require "view/panier.php";}
 if($view === 'checkout'){require "view/checkout.php";}
+if($view === 'error'){require "view/error.php";}
 
 $content = ob_get_clean();
 require "view/default.php";
