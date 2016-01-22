@@ -172,7 +172,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande - $cmd[0]->prix_envoie, // 445.40
             "PAYMENTREQUEST_0_CURRENCYCODE" => "EUR",
             "PAYMENTREQUEST_0_SHIPPINGAMT" => $cmd[0]->prix_envoie, // 26.50
-            "PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande, // 445.40
+            "PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande - $cmd[0]->prix_envoie, // 445.40
         );
         foreach($sql_article as $k => $article){
             $params["L_PAYMENTREQUEST_0_NAME$k"] = $article->designation;
