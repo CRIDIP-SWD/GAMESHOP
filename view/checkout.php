@@ -562,6 +562,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php if($info_client[0]->point >= $checkout_cls->calc_total_point_cmd($num_commande)): ?>
                         <div class="well">
                             <div class="radio-gameshop">
                                 <div class="row">
@@ -584,6 +585,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

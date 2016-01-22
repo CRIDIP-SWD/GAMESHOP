@@ -9,7 +9,9 @@
 namespace App\commande;
 
 
-class checkout
+use App\DB;
+
+class checkout extends DB
 {
     /**
      * @param $date_commande // INT envoyer (strtotime)
@@ -29,5 +31,13 @@ class checkout
             $date_liv_theo = $date_livraison;
             return $date_liv_theo;
         }
+    }
+
+    public function calc_total_point_cmd($num_commande)
+    {
+        $point = $this->query("SELECT SUM(cout_point) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+            "num_commande" => $num_commande
+        ));
+        return $point;
     }
 }
