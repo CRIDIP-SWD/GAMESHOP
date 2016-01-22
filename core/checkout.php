@@ -1,5 +1,8 @@
 <?php
 
+use App\api\Paypal\paypal;
+use App\constante;
+
 if(isset($_POST['action']) && $_POST['action'] == 'login')
 {
     include "../app/classe.php";
@@ -149,13 +152,83 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
     $num_commande = $_POST['num_commande'];
     $type_paiement = $_POST['paiement'];
 
-    if($type_paiement === 1){
 
+    $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
+        "num_commande" => $num_commande
+    ));
+    $sql_article = $DB->query("SELECT * FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+        "num_commande" => $num_commande
+    ));
+
+
+    $error = "Impossible d'effectuer le paiement.<br>Veuillez contactez l'administrateur";
+
+    if($type_paiement === 1){
+        $paypal = new paypal();
+        $params = array(
+            "RETURNURL" => constante::HTTP.constante::URL."core/checkout.php&action=DoCheckout",
+            "CANCELURL" => constante::HTTP.constante::URL."index.php?view=checkout&sub=paiement&error=critical&data=$error",
+
+            "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande,
+            "PAYMENTREQUEST_0_CURRENCYCODE" => "EUR",
+            "PAYMENTREQUEST_0_SHIPPINGAMT" => $cmd[0]->prix_envoie,
+            "PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande,
+        );
+        foreach($sql_article as $k => $article){
+            $params["L_PAYMENTREQUEST_0_NAME$k"] = $article->designation;
+            $params["L_PAYMENTREQUEST_0_DESC$k"] = $article->ref_produit;
+            $params["L_PAYMENTREQUEST_0_AMT$k"] = $article->prix_vente;
+            $params["L_PAYMENTREQUEST_0_QTY$k"] = $article->qte;
+            $params["L_PAYMENTREQUEST_0_ITEMURL$k"] = constante::HTTP.constante::URL."index.php?view=produit&ref_produit=".$article->ref_produit;
+        }
+        $response = $paypal->request('SetExpressCheckout', $params);
+        if($response)
+        {
+            $paypal = "https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=".$response['TOKEN'];
+        }else{
+            header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+        }
     }
 
     if($type_paiement === 2){
         $new_point = $produit_cls->revenue_point_total($num_commande);
         var_dump($new_point);
         die();
+    }
+}
+if(isset($_GET['action']) && $_GET['action'] == 'DoCheckout')
+{
+    session_start();
+    include "../app/classe.php";
+    $paypal = new paypal();
+    $response = $paypal->request('GetExpressCheckoutDetails', array(
+        "TOKEN" => $_GET['token']
+    ));
+    $paiement_recursive = "Paiement déja Effectuer";
+    $paiement_notfound = "La Procédure de Paiement à échoué";
+    if($response)
+    {
+        $num_commande = $response['PAYMENTREQUEST_0_DESC'];
+        if($response['CHECKOUTSTATUS'] == 'PaymentActionNotInitiated')
+        {
+            $num_commande = $response['PAYMENTREQUEST_0_DESC'];
+            $paiement = $paypal->request('DoExpressCheckoutPayment', array(
+                "TOKEN"                                 => $_GET['token'],
+                "PAYERID"                               => $_GET['PayerID'],
+                "PAYMENTREQUEST_0_PAYMENTACTION"        => 'Sale',
+                "PAYMENTREQUEST_0_AMT"                  => $response['PAYMENTREQUEST_0_AMT'],
+                "PAYMENTREQUEST_0_CURRENCYCODE"         => "EUR"
+            ));
+            if($paiement)
+            {
+                $num_commande = $paiement['PAYMENTREQUEST_0_DESC'];
+                var_dump($num_commande);
+                die();
+            }
+        }else{
+            header("Location: ../index.php?view=error&type=critical&data=$paiement_recursive");
+        }
+    }else{
+        header("Location: ../index.php?view=error&type=critical&data=$paiement_notfound");
     }
 }
