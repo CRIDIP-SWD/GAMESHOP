@@ -169,15 +169,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             "RETURNURL" => constante::HTTP.constante::URL."core/checkout.php&action=DoCheckout",
             "CANCELURL" => constante::HTTP.constante::URL."index.php?view=checkout&sub=paiement&error=critical&data=$error",
 
-            "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande,
+            "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande, // 445.40
             "PAYMENTREQUEST_0_CURRENCYCODE" => "EUR",
-            "PAYMENTREQUEST_0_SHIPPINGAMT" => $cmd[0]->prix_envoie,
-            "PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande,
+            "PAYMENTREQUEST_0_SHIPPINGAMT" => $cmd[0]->prix_envoie, // 26.50
+            //"PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande, // 445.40
         );
         foreach($sql_article as $k => $article){
             $params["L_PAYMENTREQUEST_0_NAME$k"] = $article->designation;
             $params["L_PAYMENTREQUEST_0_DESC$k"] = $article->ref_produit;
-            $params["L_PAYMENTREQUEST_0_AMT$k"] = $article->prix_vente;
+            $params["L_PAYMENTREQUEST_0_AMT$k"] = $article->prix_vente; //389 + 29.90
             $params["L_PAYMENTREQUEST_0_QTY$k"] = $article->qte;
             $params["L_PAYMENTREQUEST_0_ITEMURL$k"] = constante::HTTP.constante::URL."index.php?view=produit&ref_produit=".$article->ref_produit;
         }
