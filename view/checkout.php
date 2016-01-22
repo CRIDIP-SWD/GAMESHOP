@@ -505,7 +505,7 @@
             <div class="container clearfix bottommargin">
                 <div class="row">
                     <div class="col-md-5">
-                        <div class="well">
+                        <div class="well animated" data-animation="bounceInLeft">
                             <h2>Total de la Commande</h2>
                             <table style="width: 100%;">
                                 <tr>
@@ -534,7 +534,7 @@
                         </div>
                     </div>
                     <div class="col-md-7">
-                        <div class="well">
+                        <div class="well animated" data-animation="bounceInRight">
                             <div class="radio-gameshop">
                                 <div class="row">
                                     <div class="col-md-2">
@@ -553,7 +553,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="well">
+                        <div class="well animated" data-animation="bounceInRight">
                             <div class="radio-gameshop">
                                 <div class="row">
                                     <div class="col-md-2">
@@ -572,7 +572,7 @@
                             </div>
                         </div>
                         <?php if($info_client[0]->point >= $count_point[0]->cout_point){ ?>
-                        <div class="well">
+                        <div class="well animated" data-animation="bounceInRight">
                             <div class="radio-gameshop">
                                 <div class="row">
                                     <div class="col-md-2">
