@@ -599,7 +599,7 @@
                                     </div>
                                 </div>
                             <?php } ?>
-                            <button type="submit" class="button button-3d button-green button-rounded" name="action" value="process-paiement"><i class="icon-credit-cards"></i> Procéder au Paiement</button>
+                            <button type="submit" class="button button-3d button-green button-rounded pull-right" name="action" value="process-paiement"><i class="icon-credit-cards"></i> Procéder au Paiement</button>
                         </form>
                     </div>
                 </div>
