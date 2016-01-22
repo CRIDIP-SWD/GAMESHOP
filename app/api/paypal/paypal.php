@@ -6,7 +6,7 @@
  * Time: 10:19
  */
 
-namespace App\api\Paypal;
+namespace App\api\paypal;
 
 
 class paypal
