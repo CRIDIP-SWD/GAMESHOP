@@ -35,7 +35,7 @@ class checkout extends DB
 
     public function calc_total_point_cmd($num_commande)
     {
-        $point = $this->query("SELECT SUM(cout_point) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+        $point = $this->query("SELECT SUM(cout_point) as cout_point FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
             "num_commande" => $num_commande
         ));
         return $point;
