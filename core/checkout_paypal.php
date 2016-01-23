@@ -45,13 +45,8 @@ if($response)
 
             if($paiement)
             {
-                $num_commande = $_SESSION['payment'];
                 $transactionID = $paiement['PAYMENTINFO_0_TRANSACTIONID'];
 
-                //Import des Informations de Commande
-                $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
-                    "num_commande"  => $num_commande
-                ));
                 var_dump($cmd, $num_commande);
                 die();
 
