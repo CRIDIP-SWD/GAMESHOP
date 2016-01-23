@@ -540,7 +540,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <i class="flaticon-paypal10 flaticon-lg"></i>
+                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/PayPal_2014_logo.svg/2000px-PayPal_2014_logo.svg.png" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="paypal" class="radio-gameshop">
@@ -560,7 +560,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <i class="flaticon-wire1 flaticon-lg"></i>
+                                            <img src="http://www.les-douceurs-du-bain.fr/Files/110407/Img/22/mi-ima-9a26b68e21.jpg" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
                                             <label for="virement" class="radio-gameshop">
@@ -580,7 +580,7 @@
                                     <div class="radio-gameshop">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <i class="flaticon-queen10 flaticon-lg"></i>
+                                                <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paiement-point.png" class="img-responsive" width="80" />
                                             </div>
                                             <div class="col-md-9">
                                                 <label for="point" class="radio-gameshop">
