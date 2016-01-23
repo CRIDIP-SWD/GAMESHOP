@@ -626,7 +626,7 @@
         $("#show-error").html("" +
             "<div class='style-msg alertmsg'>" +
             "   <div class='sb-msg'>" +
-            "       <i class='icon-warning'></i>" +
+            "       <i class='icon-warning-sign'></i>" +
             "       <strong>ATTENTION</strong>" +
             "       <?= $_GET['data']; ?>"+
             "   </div>" +
