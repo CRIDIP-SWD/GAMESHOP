@@ -580,7 +580,7 @@
                                     <div class="radio-gameshop">
                                         <div class="row">
                                             <div class="col-md-2">
-                                                <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paiement-point.png" class="img-responsive" width="80" />
+                                                <i class="flaticon-queen10 flaticon-lg"></i>
                                             </div>
                                             <div class="col-md-9">
                                                 <label for="point" class="radio-gameshop">
