@@ -1,0 +1,82 @@
+@font-face {
+	font-family: "Flaticon";
+	src: url("fonts/flaticon.eot");
+	src: url("fonts/flaticon.eot#iefix") format("embedded-opentype"),
+	url("fonts/flaticon.woff") format("woff"),
+	url("fonts/flaticon.ttf") format("truetype"),
+	url("fonts/flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+	font-family: Flaticon;
+        font-size: 20px;
+font-style: normal;
+margin-left: 20px;
+}
+.flaticon-lg {
+	font-size: 1.3333333333333333em;
+	line-height: 0.75em;
+	vertical-align: -15%;
+}
+.flaticon-2x {
+	font-size: 2em;
+}
+.flaticon-3x {
+	font-size: 3em;
+}
+.flaticon-4x {
+	font-size: 4em;
+}
+.flaticon-5x {
+	font-size: 5em;
+}
+.flaticon-add187:before {
+	content: "\e000";
+}
+.flaticon-bank45:before {
+	content: "\e001";
+}
+.flaticon-closed66:before {
+	content: "\e002";
+}
+.flaticon-euro7:before {
+	content: "\e003";
+}
+.flaticon-free9:before {
+	content: "\e004";
+}
+.flaticon-message:before {
+	content: "\e005";
+}
+.flaticon-new105:before {
+	content: "\e006";
+}
+.flaticon-paypal10:before {
+	content: "\e007";
+}
+.flaticon-present19:before {
+	content: "\e008";
+}
+.flaticon-queen10:before {
+	content: "\e009";
+}
+.flaticon-receipt8:before {
+	content: "\e00a";
+}
+.flaticon-shopping235:before {
+	content: "\e00b";
+}
+.flaticon-tele-assistance:before {
+	content: "\e00c";
+}
+.flaticon-telemarketer1:before {
+	content: "\e00d";
+}
+.flaticon-website17:before {
+	content: "\e00e";
+}
+.flaticon-wire1:before {
+	content: "\e00f";
+}

@@ -15,6 +15,7 @@ ini_set('display_errors', 1);
     <link rel="stylesheet" href="<?= $constante->getUrl(array()); ?>style.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>dark.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>font-icons.css" type="text/css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>flaticon.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>animate.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>magnific-popup.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('js/')); ?>jplayer/css/jplayer.pink.flag.css" type="text/css" />

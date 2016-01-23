@@ -540,7 +540,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/PayPal_2014_logo.svg/2000px-PayPal_2014_logo.svg.png" class="img-responsive" width="80" />
+                                            <i class="flaticon-paypal10 flaticon-lg"></i>
                                         </div>
                                         <div class="col-md-9">
                                             <label for="paypal" class="radio-gameshop">
@@ -560,7 +560,7 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
-                                            <img src="http://www.les-douceurs-du-bain.fr/Files/110407/Img/22/mi-ima-9a26b68e21.jpg" class="img-responsive" width="80" />
+                                            <i class="flaticon-wire1 flaticon-lg"></i>
                                         </div>
                                         <div class="col-md-9">
                                             <label for="virement" class="radio-gameshop">
