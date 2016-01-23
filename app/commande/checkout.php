@@ -23,7 +23,7 @@ class checkout extends DB
         $nb_jour_int = 86400 * $nb_jour_liv;
         $date_livraison = $date_commande + $nb_jour_int;
 
-        if(date("N", $date_livraison) === 7)
+        if(date("N", $date_livraison) == 7)
         {
             $date_liv_theo = $date_livraison + 86400;
             return $date_liv_theo;
