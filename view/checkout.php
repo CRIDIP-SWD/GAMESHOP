@@ -31,23 +31,23 @@
                 <div class="content-wrap">
                     <ul class="process-steps process-5 bottommargin clearfix">
                         <li  class="active">
-                            <a class="i-circled i-alt divcenter bgcolor" href="#">1</a>
+                            <a class="i-circled i-alt divcenter bgcolor" href="#"><i class="flaticon-shopping235"></i></a>
                             <h5>Mon Panier</h5>
                         </li>
                         <li>
-                            <a class="i-circled i-alt divcenter" href="#">2</a>
+                            <a class="i-circled i-alt divcenter" href="#"><i class="icon-line-marquee-plus"></i></a>
                             <h5>Adresse</h5>
                         </li>
                         <li>
-                            <a class="i-circled i-alt divcenter" href="#">3</a>
+                            <a class="i-circled i-alt divcenter" href="#"><i class="icon-truck2"></i></a>
                             <h5>Livraison</h5>
                         </li>
                         <li>
-                            <a class="i-circled i-alt divcenter" href="#">4</a>
+                            <a class="i-circled i-alt divcenter" href="#"><i class="icon-line2-credit-card"></i></a>
                             <h5>Paiement</h5>
                         </li>
                         <li>
-                            <a class="i-circled i-alt divcenter" href="#">5</a>
+                            <a class="i-circled i-alt divcenter" href="#"><i class="flaticon-receipt8"></i></a>
                             <h5>Récapitulatif de la commande</h5>
                         </li>
                     </ul>
