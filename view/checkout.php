@@ -621,3 +621,15 @@
             "</div>").fadeIn("slow");
     </script>
 <?php endif; ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'warning'): ?>
+    <script type="text/javascript">
+        $("#show-error").html("" +
+            "<div class='style-msg alertmsg'>" +
+            "   <div class='sb-msg'>" +
+            "       <i class='icon-warning'></i>" +
+            "       <strong>ATTENTION</strong>" +
+            "       <?= $_GET['data']; ?>"+
+            "   </div>" +
+            "</div>").fadeIn("slow");
+    </script>
+<?php endif; ?>

@@ -12,7 +12,38 @@ $response = $paypal->request('GetExpressCheckoutDetails', array(
 
 if($response)
 {
-    var_dump($response);
+    if($response['CHECKOUTSTATUS'] === 'PaymentActionNotInitiated')
+    {
+        $num_commande = $response['PAYMENTREQUEST_0_CUSTOM'];
+        $timestamp = $date_format->format_strt($response['TIMESTAMP']);
+        $timestamp30 = $timestamp + 30;
+
+        $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
+            "num_commande" => $num_commande
+        ));
+
+        if($response['AMT'] != $cmd[0]->total_commande + $cmd[0]->prix_envoie)
+        {
+            $error = "Une Erreur est survenue lors de l'authorisation de paiement.<br>Veuillez contactez un administrateur.";
+            header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+        }
+
+        if($timestamp <= $timestamp30)
+        {
+            $error = "Le temps attribuer pour la transaction à expirée. Veuillez recommencer la procédure.";
+            header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=warning&data=$error");
+        }else{
+
+            $paiement = $paypal->request('DoExpressCheckoutPayment', array(
+                "TOKEN"                     => $_GET['token'],
+                "PAYERID"                   => $_GET['PayerID'],
+                "PAYMENTACTION"             => 'Sale',
+                "PAYMENTREQUEST_0_CUSTOM"   => $num_commande,
+                "PAYMENTREQUEST_0_AMT"      => $response['AMT']
+            ))
+
+        }
+    }
 }else{
     var_dump($paypal->errors);
     die();
