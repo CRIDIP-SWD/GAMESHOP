@@ -52,7 +52,7 @@ if($response)
                 $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
                     "num_commande"  => $num_commande
                 ));
-                var_dump($cmd);
+                var_dump($cmd, $num_commande);
                 die();
 
                 $preco = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
