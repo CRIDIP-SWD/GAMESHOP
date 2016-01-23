@@ -31,7 +31,7 @@
                 <div class="content-wrap">
                     <ul class="process-steps process-5 bottommargin clearfix">
                         <li  class="active">
-                            <a class="i-circled i-alt divcenter bgcolor" href="#"><i class="flaticon-shopping235"></i></a>
+                            <a class="i-circled i-alt divcenter bgcolor" href="#"><i class="icon-shopping-cart"></i></a>
                             <h5>Mon Panier</h5>
                         </li>
                         <li>
@@ -47,7 +47,7 @@
                             <h5>Paiement</h5>
                         </li>
                         <li>
-                            <a class="i-circled i-alt divcenter" href="#"><i class="flaticon-receipt8"></i></a>
+                            <a class="i-circled i-alt divcenter" href="#"><i class="icon-check-sign"></i></a>
                             <h5>Récapitulatif de la commande</h5>
                         </li>
                     </ul>
