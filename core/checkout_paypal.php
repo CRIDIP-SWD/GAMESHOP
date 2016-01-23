@@ -39,10 +39,23 @@ if($response)
                 "PAYERID"                   => $_GET['PayerID'],
                 "PAYMENTACTION"             => 'Sale',
                 "PAYMENTREQUEST_0_CUSTOM"   => $num_commande,
-                "PAYMENTREQUEST_0_AMT"      => $response['AMT']
-            ))
+                "PAYMENTREQUEST_0_AMT"      => $response['AMT'],
+                "PAYMENTREQUEST_0_CURRENCYCODE"  => "EUR"
+            ));
+
+            if($paiement)
+            {
+                var_dump($paiement);
+                die();
+            }else{
+                var_dump($paypal->errors);
+                die();
+            }
 
         }
+    }else{
+        $error = "Ce Paiement à déja été éxécuter !!!";
+        header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande&error=critical&data=$error");
     }
 }else{
     var_dump($paypal->errors);
