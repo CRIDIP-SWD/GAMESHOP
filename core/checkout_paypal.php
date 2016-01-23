@@ -54,11 +54,15 @@ if($response)
                     "num_commande"  => $num_commande
                 ));
 
-                $preco = $DB->count("SELECT COUNT(ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
+                $preco = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
                     "num_commande" => $num_commande
                 ));
 
-                $stock = $DB->count("SELECT COUNT(ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_stock != 2 AND commande_article.num_commande = :num_commande", array(
+                $stock = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_stock != 2 AND commande_article.num_commande = :num_commande", array(
+                    "num_commande"  => $num_commande
+                ));
+
+                $sql_article = $DB->query("SELECT * FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
                     "num_commande"  => $num_commande
                 ));
 
@@ -126,6 +130,21 @@ if($response)
                         "point"     => $new_point,
                         "idclient"  => $cmd[0]->idclient
                     ));
+                    foreach($sql_article as $article){
+                        $ref_produit = $article->ref_produit;
+                        $new_stock = $article->stock - $article->qte;
+                        $update = $DB->execute("UPDATE produits SET stock = :stock WHERE ref_produit = :ref_produit", array(
+                            "stock"     => $new_stock,
+                            "ref_produit"   => $ref_produit
+                        ));
+                        if($article->stock <= 0)
+                        {
+                            $update = $DB->execute("UPDATE produits SET statut_stock = :statut WHERE ref_produit = :ref_produit", array(
+                                "statut"        => 0,
+                                "ref_produit"   => $ref_produit
+                            ));
+                        }
+                    }
                     $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
                                               VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
                         "num_commande"      => $num_commande,
