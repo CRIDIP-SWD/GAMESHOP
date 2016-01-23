@@ -28,7 +28,7 @@ if($response)
             header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
         }
 
-        if($timestamp <= $timestamp30)
+        if($timestamp >= $timestamp30)
         {
             $error = "Le temps attribuer pour la transaction à expirée. Veuillez recommencer la procédure.";
             header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=warning&data=$error");
