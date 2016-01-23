@@ -1,5 +1,5 @@
 <?php
-require "../app/api/paypal/paypal.php";
+require "../app/classe.php";
 use App\api\paypal\paypal;
 
 session_start();
