@@ -51,8 +51,8 @@
                             <h5>Récapitulatif de la commande</h5>
                         </li>
                     </ul>
-                    <div id="show-error"></div>
                     <div class="container clearfix bottommargin">
+                        <div id="show-error"></div>
                         <div class="table-responsive bottommargin">
 
                             <table class="table cart">
@@ -251,8 +251,8 @@
                     <h5>Récapitulatif de la commande</h5>
                 </li>
             </ul>
-            <div id="show-error"></div>
             <div class="container clearfix bottommargin">
+                <div id="show-error"></div>
                 <form class="form-horizontal" action="core/checkout.php" method="post">
                     <input type="hidden" name="num_commande" value="<?= $_GET['num_commande']; ?>" />
                     <div class="row">
@@ -340,8 +340,8 @@
                     <h5>Récapitulatif de la commande</h5>
                 </li>
             </ul>
-            <div id="show-error"></div>
             <div class="container clearfix bottommargin">
+                <div id="show-error"></div>
                 <form class="form-horizontal" action="core/checkout.php" method="post">
                     <input type="hidden" name="num_commande" value="<?= $_GET['num_commande']; ?>" />
                     <input type="hidden" name="poids_commande" value="<?= $produit_poids[0]->sum_poids; ?>" />
@@ -501,8 +501,8 @@
                     <h5>Récapitulatif de la commande</h5>
                 </li>
             </ul>
-            <div id="show-error"></div>
             <div class="container clearfix bottommargin">
+                <div id="show-error"></div>
                 <div class="row">
                     <div class="col-md-5">
                         <div class="well bounceInLeft animated" data-animation="bounceInLeft">
