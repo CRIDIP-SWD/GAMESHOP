@@ -46,7 +46,104 @@ if($response)
             if($paiement)
             {
                 var_dump($paiement);
-                die();
+                $num_commande = $_SESSION['payment'];
+                $transactionID = $paiement['PAYMENTINFO_0_TRANSACTIONID'];
+
+                //Import des Informations de Commande
+                $cmd = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array(
+                    "num_commande"  => $num_commande
+                ));
+
+                $preco = $DB->count("SELECT COUNT(ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
+                    "num_commande" => $num_commande
+                ));
+
+                $stock = $DB->count("SELECT COUNT(ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_stock != 2 AND commande_article.num_commande = :num_commande", array(
+                    "num_commande"  => $num_commande
+                ));
+
+                if($preco != 0)
+                {
+                    $new_point = $produit_cls->revenue_point_total($num_commande);
+                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                        "methode_paiement"      => "PAYPAL EUROPE",
+                        "num_commande"          => $num_commande,
+                    ));
+                    $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                        "point"     => $new_point,
+                        "idclient"  => $cmd[0]->idclient
+                    ));
+                    $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                        "num_commande"      => $num_commande,
+                        "mode_reglement"    => "PAYPAL EUROPE",
+                        "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                        "ref_reglement"     => $transactionID,
+                        "montant_reglement" => $paiement['PAYMENTINFO_0_AMT'],
+                        "etat_reglement"    => 9
+                    ));
+                    $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+                    if($update >= 1 AND $reglement == 1)
+                    {
+                        header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+                    }else{
+                        header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+                    }
+                }elseif($stock != 0)
+                {
+                    $new_point = $produit_cls->revenue_point_total($num_commande);
+                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                        "methode_paiement"      => "PAYPAL EUROPE",
+                        "num_commande"          => $num_commande,
+                    ));
+                    $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                        "point"     => $new_point,
+                        "idclient"  => $cmd[0]->idclient
+                    ));
+                    $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                        "num_commande"      => $num_commande,
+                        "mode_reglement"    => "PAYPAL EUROPE",
+                        "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                        "ref_reglement"     => $transactionID,
+                        "montant_reglement" => $paiement['PAYMENTINFO_0_AMT'],
+                        "etat_reglement"    => 8
+                    ));
+                    $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+                    if($update >= 1 AND $reglement == 1)
+                    {
+                        header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+                    }else{
+                        header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+                    }
+                }else{
+                    $new_point = $produit_cls->revenue_point_total($num_commande);
+                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                        "methode_paiement"      => "PAYPAL EUROPE",
+                        "num_commande"          => $num_commande,
+                    ));
+                    $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                        "point"     => $new_point,
+                        "idclient"  => $cmd[0]->idclient
+                    ));
+                    $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                        "num_commande"      => $num_commande,
+                        "mode_reglement"    => "PAYPAL EUROPE",
+                        "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                        "ref_reglement"     => $transactionID,
+                        "montant_reglement" => $paiement['PAYMENTINFO_0_AMT'],
+                        "etat_reglement"    => 4
+                    ));
+                    $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+                    if($update >= 1 AND $reglement == 1)
+                    {
+                        header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+                    }else{
+                        header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+                    }
+
+                }
             }else{
                 var_dump($paypal->errors);
                 die();

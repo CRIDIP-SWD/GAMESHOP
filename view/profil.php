@@ -1038,6 +1038,7 @@ if($_SESSION['logged'] == false) {
                                                     case 9:
                                                         echo "<span class='label label-default'>En attente (Précommande)</span>";
                                                         break;
+
                                                 }
                                                 ?>
                                             </td>
