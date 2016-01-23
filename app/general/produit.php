@@ -96,5 +96,13 @@ class produit extends DB
         return $point;
     }
 
+    public function count_point_total($num_commande)
+    {
+        $point = $this->query("SELECT SUM(cout_point) as count_point FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+            "num_commande" => $num_commande
+        ));
+        return $point;
+    }
+
 
 }

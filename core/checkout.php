@@ -194,8 +194,229 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
     }
 
     if($type_paiement == 2){
-        $new_point = $produit_cls->revenue_point_total($num_commande);
-        var_dump($new_point);
-        die();
+        $transactionID = "VIRREF".rand(100,999999999);
+        $preco = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
+            "num_commande" => $num_commande
+        ));
+
+        $stock = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_stock != 2 AND commande_article.num_commande = :num_commande", array(
+            "num_commande"  => $num_commande
+        ));
+
+        $sql_article = $DB->query("SELECT * FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+            "num_commande"  => $num_commande
+        ));
+
+        if($preco != 0)
+        {
+            $new_point = $info_client[0]->point + $produit_cls->revenue_point_total($num_commande);
+            $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                "methode_paiement"      => "VIREMENT BANCAIRE",
+                "num_commande"          => $num_commande,
+            ));
+            $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                "point"     => $new_point,
+                "idclient"  => $cmd[0]->idclient
+            ));
+            $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                "num_commande"      => $num_commande,
+                "mode_reglement"    => "PAYPAL EUROPE",
+                "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                "ref_reglement"     => $transactionID,
+                "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
+                "etat_reglement"    => 9
+            ));
+            $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+            if($update >= 1 AND $reglement == 1)
+            {
+                header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+            }else{
+                header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+            }
+        }elseif($stock != 0)
+        {
+            $new_point = $info_client[0]->point + $produit_cls->revenue_point_total($num_commande);
+            $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                "methode_paiement"      => "VIREMENT BANCAIRE",
+                "num_commande"          => $num_commande,
+            ));
+            $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                "point"     => $new_point,
+                "idclient"  => $cmd[0]->idclient
+            ));
+            $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                "num_commande"      => $num_commande,
+                "mode_reglement"    => "VIREMENT BANCAIRE",
+                "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                "ref_reglement"     => $transactionID,
+                "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
+                "etat_reglement"    => 8
+            ));
+            $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+            if($update >= 1 AND $reglement == 1)
+            {
+                header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+            }else{
+                header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+            }
+        }else{
+            $new_point = $info_client[0]->point + $produit_cls->revenue_point_total($num_commande);
+            $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                "methode_paiement"      => "VIREMENT BANCAIRE",
+                "num_commande"          => $num_commande,
+            ));
+            $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                "point"     => $new_point,
+                "idclient"  => $cmd[0]->idclient
+            ));
+            foreach($sql_article as $article){
+                $ref_produit = $article->ref_produit;
+                $new_stock = $article->stock - $article->qte;
+                $update = $DB->execute("UPDATE produits SET stock = :stock WHERE ref_produit = :ref_produit", array(
+                    "stock"     => $new_stock,
+                    "ref_produit"   => $ref_produit
+                ));
+                if($article->stock <= 0)
+                {
+                    $update = $DB->execute("UPDATE produits SET statut_stock = :statut WHERE ref_produit = :ref_produit", array(
+                        "statut"        => 0,
+                        "ref_produit"   => $ref_produit
+                    ));
+                }
+            }
+            $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                "num_commande"      => $num_commande,
+                "mode_reglement"    => "VIREMENT BANCAIRE",
+                "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                "ref_reglement"     => $transactionID,
+                "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
+                "etat_reglement"    => 4
+            ));
+            $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+            if($update >= 1 AND $reglement == 1)
+            {
+                header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+            }else{
+                header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+            }
+
+        }
+    }
+
+    if($type_paiement == 3){
+        $transactionID = "REF".rand(100,99999999);
+
+        $preco = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
+            "num_commande" => $num_commande
+        ));
+
+        $stock = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_stock != 2 AND commande_article.num_commande = :num_commande", array(
+            "num_commande"  => $num_commande
+        ));
+
+        $sql_article = $DB->query("SELECT * FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+            "num_commande"  => $num_commande
+        ));
+
+        if($preco != 0)
+        {
+            $new_point = $info_client[0]->point - $produit_cls->count_point_total($num_commande);
+            $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                "methode_paiement"      => "POINT DE FIDELITE",
+                "num_commande"          => $num_commande,
+            ));
+            $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                "point"     => $new_point,
+                "idclient"  => $cmd[0]->idclient
+            ));
+            $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                "num_commande"      => $num_commande,
+                "mode_reglement"    => "POINT DE FIDELITE",
+                "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                "ref_reglement"     => $transactionID,
+                "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
+                "etat_reglement"    => 9
+            ));
+            $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+            if($update >= 1 AND $reglement == 1)
+            {
+                header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+            }else{
+                header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+            }
+        }elseif($stock != 0)
+        {
+            $new_point = $info_client[0]->point - $produit_cls->count_point_total($num_commande);
+            $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                "methode_paiement"      => "POINT DE FIDELITE",
+                "num_commande"          => $num_commande,
+            ));
+            $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                "point"     => $new_point,
+                "idclient"  => $cmd[0]->idclient
+            ));
+            $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                "num_commande"      => $num_commande,
+                "mode_reglement"    => "POINT DE FIDELITE",
+                "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                "ref_reglement"     => $transactionID,
+                "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
+                "etat_reglement"    => 8
+            ));
+            $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+            if($update >= 1 AND $reglement == 1)
+            {
+                header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+            }else{
+                header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+            }
+        }else{
+            $new_point = $info_client[0]->point - $produit_cls->count_point_total($num_commande);
+            $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                "methode_paiement"      => "POINT DE FIDELITE",
+                "num_commande"          => $num_commande,
+            ));
+            $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
+                "point"     => $new_point,
+                "idclient"  => $cmd[0]->idclient
+            ));
+            foreach($sql_article as $article){
+                $ref_produit = $article->ref_produit;
+                $new_stock = $article->stock - $article->qte;
+                $update = $DB->execute("UPDATE produits SET stock = :stock WHERE ref_produit = :ref_produit", array(
+                    "stock"     => $new_stock,
+                    "ref_produit"   => $ref_produit
+                ));
+                if($article->stock <= 0)
+                {
+                    $update = $DB->execute("UPDATE produits SET statut_stock = :statut WHERE ref_produit = :ref_produit", array(
+                        "statut"        => 0,
+                        "ref_produit"   => $ref_produit
+                    ));
+                }
+            }
+            $reglement = $DB->execute("INSERT INTO commande_reglement(idreglement, num_commande, mode_reglement, date_reglement, ref_reglement, montant_reglement, etat_reglement)
+                                              VALUES (NULL, :num_commande, :mode_reglement, :date_reglement, :ref_reglement, :montant_reglement, :etat_reglement)", array(
+                "num_commande"      => $num_commande,
+                "mode_reglement"    => "POINT DE FIDELITE",
+                "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
+                "ref_reglement"     => $transactionID,
+                "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
+                "etat_reglement"    => 4
+            ));
+            $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
+            if($update >= 1 AND $reglement == 1)
+            {
+                header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
+            }else{
+                header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
+            }
+
+        }
     }
 }
