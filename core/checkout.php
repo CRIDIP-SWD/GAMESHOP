@@ -121,16 +121,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'paiement')
         "num_commande" => $num_commande
     ));
 
-    if($type_livraison == 1) {$methode_livraison = "LA POSTE";$tarif = $transport_cls->calc_transport_laposte($poids_commande);}
-    if($type_livraison == 2) {$methode_livraison = "CHRONOPOST 10H";$tarif = $transport_cls->calc_transport_chrono10($poids_commande);}
-    if($type_livraison == 3) {$methode_livraison = "CHRONOPOST 13H";$tarif = $transport_cls->calc_transport_chrono13($poids_commande);}
-    if($type_livraison == 4) {$methode_livraison = "UPS STANDARD PROTECTED+";$tarif = $transport_cls->calc_transport_ups($poids_commande);}
+    if($type_livraison == 1) {$methode_livraison = "LA POSTE";$tarif = $transport_cls->calc_transport_laposte($poids_commande);$jour_liv = $checkout_cls->calc_liv_theo($cmd[0]->date_commande, 4);}
+    if($type_livraison == 2) {$methode_livraison = "CHRONOPOST 10H";$tarif = $transport_cls->calc_transport_chrono10($poids_commande);$jour_liv = $checkout_cls->calc_liv_theo($cmd[0]->date_commande, 1);}
+    if($type_livraison == 3) {$methode_livraison = "CHRONOPOST 13H";$tarif = $transport_cls->calc_transport_chrono13($poids_commande); $jour_liv = $checkout_cls->calc_liv_theo($cmd[0]->date_commande, 1);}
+    if($type_livraison == 4) {$methode_livraison = "UPS STANDARD PROTECTED+";$tarif = $transport_cls->calc_transport_ups($poids_commande); $jour_liv = $checkout_cls->calc_liv_theo($cmd[0]->date_commande, 3);}
 
 
-    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie WHERE num_commande = :num_commande", array(
+    $sql = $DB->execute("UPDATE commande SET methode_livraison = :methode_livraison, prix_envoie = :prix_envoie, date_livraison = :date_livraison WHERE num_commande = :num_commande", array(
         "methode_livraison" => $methode_livraison,
         "prix_envoie"       => $tarif,
         "num_commande"      => $num_commande,
+        "date_livraison"    => $jour_liv,
     ));
     $error = "Impossible de Définir le moyen de livraison.<br>Veuillez contactez un administrateur.";
 
