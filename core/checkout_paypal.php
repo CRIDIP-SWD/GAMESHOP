@@ -47,8 +47,6 @@ if($response)
             {
                 $transactionID = $paiement['PAYMENTINFO_0_TRANSACTIONID'];
 
-                var_dump($cmd, $num_commande);
-                die();
 
                 $preco = $DB->count("SELECT COUNT(commande_article.ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND produits.statut_global = 2 AND commande_article.num_commande = :num_commande", array(
                     "num_commande" => $num_commande
