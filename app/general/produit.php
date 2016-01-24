@@ -121,11 +121,11 @@ class produit extends DB
         $pointClient = $this->query("SELECT point FROM client WHERE idclient = :idclient", array(
             "idclient"  => $idclient
         ));
-
+        $point = $pointClient[0]->point;
         $cout = $this->revenue_point_total($num_commande);
 
-        $a = $cout += $pointClient;
-        return $a;
+        $cout += $point ;
+        return $cout;
     }
 
 
