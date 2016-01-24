@@ -1250,7 +1250,7 @@ if($_SESSION['logged'] == false) {
                                                     <tbody>
                                                     <?php
                                                     $sql_article = $DB->query("SELECT * FROM commande_article, produits
-                                                                                WHERE commande_article.idarticle = produits.id
+                                                                                WHERE commande_article.ref_produit = produits.ref_produit
                                                                                 AND num_commande = '$num_commande'");
                                                     foreach($sql_article as $article):
                                                         $ref_produit = $article->ref_produit;
