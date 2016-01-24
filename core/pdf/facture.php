@@ -18,5 +18,5 @@ $pdf = new Pdf(array(
     'disable-smart-shrinking',
     'user-style-sheet' => 'pdf.css',
 ));
-$pdf->addPage('facture_wrap.php');
+$pdf->addPage($content);
 $pdf->send();
