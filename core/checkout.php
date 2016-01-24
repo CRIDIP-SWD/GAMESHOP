@@ -265,6 +265,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             }
         }else{
             var_dump($produit_cls->calcRevenuePointClient($num_commande, $info_client[0]->idclient));
+            var_dump($info_client[0]);
             die();
             $new_point = $produit_cls->calcRevenuePointClient($num_commande, $info_client[0]->idclient);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
