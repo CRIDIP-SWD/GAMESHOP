@@ -1035,7 +1035,7 @@ if($_SESSION['logged'] == false) {
                                                 ?>
                                             </td>
                                             <td class="text-center">
-                                                <?php if($cmd->statut == 4 OR $cmd->statut == 5 OR $cmd->statut == 6): ?>
+                                                <?php if($cmd->statut == 3 OR $cmd->statut == 4 OR $cmd->statut == 5): ?>
                                                     <i class="icon-file-text icon-2x text-info" data-toggle="tooltip" data-original-title="Votre facture"></i>
                                                 <?php endif; ?>
                                             </td>
