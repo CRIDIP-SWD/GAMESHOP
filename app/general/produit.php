@@ -104,5 +104,29 @@ class produit extends DB
         return $point;
     }
 
+    public function calcCoutPointClient($num_commande, $idclient)
+    {
+        $pointClient = $this->query("SELECT point FROM client WHERE idclient = :idclient", array(
+            "idclient"  => $idclient
+        ));
+
+        $cout = $this->count_point_total($num_commande);
+
+        $a = $cout - $pointClient;
+        return $a;
+    }
+
+    public function calcRevenuePointClient($num_commande, $idclient)
+    {
+        $pointClient = $this->query("SELECT point FROM client WHERE idclient = :idclient", array(
+            "idclient"  => $idclient
+        ));
+
+        $cout = $this->revenue_point_total($num_commande);
+
+        $a = $cout + $pointClient;
+        return $a;
+    }
+
 
 }
