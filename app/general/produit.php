@@ -112,8 +112,8 @@ class produit extends DB
 
         $cout = $this->count_point_total($num_commande);
 
-        $a = $cout - $pointClient;
-        return $a;
+        $cout -= $pointClient;
+        return $cout;
     }
 
     public function calcRevenuePointClient($num_commande, $idclient)
@@ -124,8 +124,8 @@ class produit extends DB
 
         $cout = $this->revenue_point_total($num_commande);
 
-        $a = $cout + $pointClient;
-        return $a;
+        $cout += $pointClient;
+        return $cout;
     }
 
 
