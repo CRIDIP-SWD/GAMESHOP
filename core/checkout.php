@@ -209,7 +209,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
 
         if($preco != 0)
         {
-            $new_point = $info_client[0]->point + $produit_cls->revenue_point_total($num_commande);
+            $new_point = $info_client[0]->point;
+            $new_point += $produit_cls->revenue_point_total($num_commande);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                 "methode_paiement"      => "VIREMENT BANCAIRE",
                 "num_commande"          => $num_commande,
@@ -236,7 +237,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             }
         }elseif($stock != 0)
         {
-            $new_point = $info_client[0]->point + $produit_cls->revenue_point_total($num_commande);
+            $new_point = $info_client[0]->point;
+            $new_point += $produit_cls->revenue_point_total($num_commande);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                 "methode_paiement"      => "VIREMENT BANCAIRE",
                 "num_commande"          => $num_commande,
@@ -262,7 +264,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
             }
         }else{
-            $new_point = $info_client[0]->point =+ $produit_cls->revenue_point_total($num_commande);
+            $new_point = $info_client[0]->point;
+            $new_point += $produit_cls->revenue_point_total($num_commande);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                 "methode_paiement"      => "VIREMENT BANCAIRE",
                 "num_commande"          => $num_commande,
@@ -323,7 +326,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
 
         if($preco != 0)
         {
-            $new_point = $info_client[0]->point - $produit_cls->count_point_total($num_commande);
+            $new_point = $info_client[0]->point;
+            $new_point -= $produit_cls->count_point_total($num_commande);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                 "methode_paiement"      => "POINT DE FIDELITE",
                 "num_commande"          => $num_commande,
@@ -350,7 +354,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             }
         }elseif($stock != 0)
         {
-            $new_point = $info_client[0]->point - $produit_cls->count_point_total($num_commande);
+            $new_point = $info_client[0]->point;
+            $new_point -= $produit_cls->count_point_total($num_commande);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                 "methode_paiement"      => "POINT DE FIDELITE",
                 "num_commande"          => $num_commande,
@@ -376,7 +381,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
             }
         }else{
-            $new_point = $info_client[0]->point - $produit_cls->count_point_total($num_commande);
+            $new_point = $info_client[0]->point;
+            $new_point -= $produit_cls->count_point_total($num_commande);
             $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                 "methode_paiement"      => "POINT DE FIDELITE",
                 "num_commande"          => $num_commande,
