@@ -1120,7 +1120,7 @@ if($_SESSION['logged'] == false) {
                                                     <tr>
                                                         <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Nb d'article</td>
                                                         <?php
-                                                        $nb_article = $DB->count("SELECT COUNT(idarticle) FROM commande_article WHERE num_commande = :num_commande", array(
+                                                        $nb_article = $DB->count("SELECT COUNT(ref_produit) FROM commande_article WHERE num_commande = :num_commande", array(
                                                             "num_commande" => $num_commande
                                                         ));
                                                         ?>
@@ -1201,11 +1201,11 @@ if($_SESSION['logged'] == false) {
                                                     <td style="width: 25%; padding-bottom: 10px; padding-top: 10px;">Etat des Articles</td>
                                                     <td style="width: 75%; padding-bottom: 10px; padding-top: 10px; font-weight: 700;">
                                                         <?php
-                                                        $cmd_sortie = $DB->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.date_sortie >= :date_jour AND commande_article.num_commande = :num_commande", array(
+                                                        $cmd_sortie = $DB->count("SELECT COUNT(ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.id AND produits.date_sortie >= :date_jour AND commande_article.num_commande = :num_commande", array(
                                                             "date_jour" => strtotime(date("d-m-Y")),
                                                             "num_commande" => $num_commande
                                                         ));
-                                                        $cmd_stock = $DB->count("SELECT COUNT(idarticle) FROM commande_article, produits WHERE commande_article.idarticle = produits.id AND produits.stock < :stock AND commande_article.num_commande = :num_commande", array(
+                                                        $cmd_stock = $DB->count("SELECT COUNT(ref_produit) FROM commande_article, produits WHERE commande_article.ref_produit = produits.id AND produits.stock < :stock AND commande_article.num_commande = :num_commande", array(
                                                             "stock" => 0,
                                                             "num_commande" => $num_commande
                                                         ));
