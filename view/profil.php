@@ -1140,39 +1140,32 @@ if($_SESSION['logged'] == false) {
                                                             <?php
                                                             switch($cmd[0]->statut)
                                                             {
-                                                                case 0:
-                                                                    echo "<span class='label label-danger'>Annulée</span>";
+                                                                case 1:
+                                                                    echo "<span class='label label-default'>En Attente de Validation</span>";
                                                                     break;
 
-                                                                case 1:
-                                                                    echo "<span class='label label-default'>Valider - En attente du Paiement (Chèque)</span>";
-                                                                    break;
                                                                 case 2:
-                                                                    echo "<span class='label label-default'>Valider - En attente du Paiement (Mandat Cash)</span>";
+                                                                    echo "<span class='label label-primary'>En Attente de Paiement</span>";
                                                                     break;
+
                                                                 case 3:
-                                                                    echo "<span class='label label-default'>Valider - En attente du Paiement (Virement)</span>";
+                                                                    echo "<span class='label label-success'>Paiement Valider</span>";
                                                                     break;
 
                                                                 case 4:
-                                                                    echo "<span class='label label-info'>Valider - Paiement Acceptée</span>";
-                                                                    break;
-                                                                case 5:
                                                                     echo "<span class='label label-warning'>Préparation en cours...</span>";
                                                                     break;
-                                                                case 6:
+
+                                                                case 5:
                                                                     echo "<span class='label label-success'>Expédié</span>";
                                                                     break;
 
-                                                                case 7:
-                                                                    echo "<span class='label label-danger'>Refuser - Paiement refuser par l'établissement bancaire</span>";
+                                                                case 6:
+                                                                    echo "<span class='label label-danger'>Paiement Refuser</span>";
                                                                     break;
 
-                                                                case 8:
-                                                                    echo "<span class='label label-default'>En attente (Rupture)</span>";
-                                                                    break;
-                                                                case 9:
-                                                                    echo "<span class='label label-default'>En attente (Précommande)</span>";
+                                                                case 7:
+                                                                    echo "<span class='label label-default'>Commande Annulé</span>";
                                                                     break;
                                                             }
                                                             ?>
