@@ -1002,7 +1002,7 @@ if($_SESSION['logged'] == false) {
                                             <td class="text-center" style="font-weight: 700; color: #0E76A8;"><?= number_format($cmd->total_commande, 2, ',', ' ')." €"; ?></td>
                                             <td class="text-center">
                                                 <?php
-                                                switch($cmd[0]->statut)
+                                                switch($cmd->statut)
                                                 {
                                                     case 1:
                                                         echo "<span class='label label-default'>En Attente de Validation</span>";
