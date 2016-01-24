@@ -63,9 +63,10 @@ if($response)
                 if($preco != 0)
                 {
                     $new_point = $produit_cls->calcRevenuePointClient($num_commande, $cmd[0]->idclient);
-                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement, statut = :statut WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
+                        "statut"                => 2
                     ));
                     $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
                         "point"     => $new_point,
@@ -83,16 +84,25 @@ if($response)
                     $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
                     if($update >= 1 AND $reglement == 1)
                     {
+                        $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                            "statut" => 3,
+                            "num_commande" => $num_commande
+                        ));
                         header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
                     }else{
+                        $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                            "statut" => 6,
+                            "num_commande" => $num_commande
+                        ));
                         header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
                     }
                 }elseif($stock != 0)
                 {
                     $new_point = $produit_cls->calcRevenuePointClient($num_commande, $cmd[0]->idclient);
-                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement, statut = :statut WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
+                        "statut"                => 2
                     ));
                     $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
                         "point"     => $new_point,
@@ -110,15 +120,24 @@ if($response)
                     $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
                     if($update >= 1 AND $reglement == 1)
                     {
+                        $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                            "statut" => 3,
+                            "num_commande" => $num_commande
+                        ));
                         header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
                     }else{
+                        $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                            "statut" => 6,
+                            "num_commande" => $num_commande
+                        ));
                         header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
                     }
                 }else{
                     $new_point = $produit_cls->calcRevenuePointClient($num_commande, $cmd[0]->idclient);
-                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
+                    $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement, statut = :statut WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
+                        "statut"                => 2
                     ));
                     $update = $DB->execute("UPDATE client SET point = :point WHERE idclient = :idclient", array(
                         "point"     => $new_point,
@@ -151,8 +170,16 @@ if($response)
                     $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
                     if($update >= 1 AND $reglement == 1)
                     {
+                        $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                            "statut" => 3,
+                            "num_commande" => $num_commande
+                        ));
                         header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
                     }else{
+                        $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                            "statut" => 6,
+                            "num_commande" => $num_commande
+                        ));
                         header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
                     }
 
