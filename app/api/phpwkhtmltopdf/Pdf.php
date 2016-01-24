@@ -1,7 +1,7 @@
 <?php
 namespace App\api\phpwkhtmltopdf;
 
-use mikehaertl\tmp\File;
+use \App\api\phpwkhtmltopdf\File;
 
 /**
  * Pdf
