@@ -1,5 +1,6 @@
 <?php
-use mikehaertl\wkhtmlto\Pdf;
+use App\api\wkhtmltopdf\Pdf;
+
 require ('../../app/classe.php');
 
 ob_start();
