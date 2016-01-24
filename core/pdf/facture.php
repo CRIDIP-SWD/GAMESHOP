@@ -2,17 +2,9 @@
 use mikehaertl\wkhtmlto\Pdf;
 require ('../../app/classe.php');
 
+ob_start();
+require "facture_wrap.php";
+$content = ob_get_clean();
 
-$pdf = new Pdf(array(
-    'no-outline',
-    "margin-top"    => 0,
-    "margin-right"  => 0,
-    "margin-left"   => 0,
-    "margin-bottom" => 0,
-
-    'disable-smart-shrinking',
-    "user-style-sheet" => 'pdf.css'
-
-));
-$pdf->addPage('facture_wrap.php');
+$pdf = new Pdf($content);
 $pdf->send();
