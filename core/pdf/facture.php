@@ -4,6 +4,8 @@ require ('../../vendor/mikehaertl/phpwkhtmltopdf/src/Command.php');
 require ('../../vendor/mikehaertl/phpwkhtmltopdf/src/Image.php');
 require ('../../vendor/mikehaertl/phpwkhtmltopdf/src/Pdf.php');
 use \mikehaertl\wkhtmlto\Pdf;
+use \mikehaertl\wkhtmlto\Command;
+use \mikehaertl\wkhtmlto\Image;
 
 $pdf = new Pdf(array(
     'no-outline',
