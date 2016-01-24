@@ -1,7 +1,7 @@
 <?php
 namespace App\api\phpwkhtmltopdf;
 
-use mikehaertl\shellcommand\Command as BaseCommand;
+use App\api\phpwkhtmltopdf\ShellCommand as BaseCommand;
 
 /**
  * Command
