@@ -232,7 +232,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             if($update >= 1 AND $reglement == 1)
             {
                 $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
-                    "statut" => 3,
+                    "statut" => 2,
                     "num_commande" => $num_commande
                 ));
                 header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
@@ -268,7 +268,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             if($update >= 1 AND $reglement == 1)
             {
                 $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
-                    "statut" => 3,
+                    "statut" => 2,
                     "num_commande" => $num_commande
                 ));
                 header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
@@ -318,7 +318,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             if($update >= 1 AND $reglement == 1)
             {
                 $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
-                    "statut" => 3,
+                    "statut" => 2,
                     "num_commande" => $num_commande
                 ));
                 header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
@@ -371,8 +371,16 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
             {
+                $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                    "statut" => 3,
+                    "num_commande" => $num_commande
+                ));
                 header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
             }else{
+                $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                    "statut" => 6,
+                    "num_commande" => $num_commande
+                ));
                 header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
             }
         }elseif($stock != 0)
@@ -398,8 +406,16 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
             {
+                $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                    "statut" => 3,
+                    "num_commande" => $num_commande
+                ));
                 header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
             }else{
+                $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                    "statut" => 6,
+                    "num_commande" => $num_commande
+                ));
                 header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
             }
         }else{
@@ -439,8 +455,16 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
             {
+                $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                    "statut" => 3,
+                    "num_commande" => $num_commande
+                ));
                 header("Location: ../index.php?view=checkout&sub=recap&num_commande=$num_commande");
             }else{
+                $update = $DB->execute("UPDATE commande SET statut = :statut WHERE num_commande = :num_commande", array(
+                    "statut" => 6,
+                    "num_commande" => $num_commande
+                ));
                 header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
             }
 
