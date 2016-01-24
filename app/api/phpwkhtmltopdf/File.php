@@ -10,7 +10,7 @@ namespace App\api\phpwkhtmltopdf;
  * @version 1.0.0
  * @license http://www.opensource.org/licenses/MIT
  */
-class TmpFile
+class File
 {
     /**
      * @var string the name of this file

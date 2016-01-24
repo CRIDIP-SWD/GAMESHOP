@@ -1,7 +1,7 @@
 <?php
 namespace App\api\phpwkhtmltopdf;
 
-use \App\api\phpwkhtmltopdf\TmpFile;
+use \App\api\phpwkhtmltopdf\File;
 
 /**
  * Pdf
