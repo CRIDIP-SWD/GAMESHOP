@@ -1,6 +1,6 @@
 <?php
 require ('../../app/classe.php');
-
+use \mikehaertl\wkhtmlto\Pdf;
 
 $pdf = new Pdf(array(
     'no-outline',
