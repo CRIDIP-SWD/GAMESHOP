@@ -26,6 +26,7 @@ use App\general\produit;
 use App\networker\xboxLive;
 use SteamApi\Player;
 use SteamApi\User;
+use mikehaertl\wkhtmlto\Pdf;
 
 $app = new app();
 $constante = new constante();
@@ -45,6 +46,8 @@ $resa_cls = new reservation();
 $panier_cls = new panier();
 $checkout_cls = new checkout();
 $transport_cls = new transporteur();
+
+
 
 
 
