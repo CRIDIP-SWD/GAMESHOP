@@ -226,7 +226,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                 "ref_reglement"     => $transactionID,
                 "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
-                "etat_reglement"    => 9
+                "etat_reglement"    => 1
             ));
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
@@ -262,7 +262,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                 "ref_reglement"     => $transactionID,
                 "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
-                "etat_reglement"    => 8
+                "etat_reglement"    => 1
             ));
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
@@ -312,7 +312,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                 "ref_reglement"     => $transactionID,
                 "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
-                "etat_reglement"    => 4
+                "etat_reglement"    => 1
             ));
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
@@ -366,7 +366,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                 "ref_reglement"     => $transactionID,
                 "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
-                "etat_reglement"    => 9
+                "etat_reglement"    => 2
             ));
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
@@ -401,7 +401,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                 "ref_reglement"     => $transactionID,
                 "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
-                "etat_reglement"    => 8
+                "etat_reglement"    => 2
             ));
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)
@@ -450,7 +450,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
                 "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                 "ref_reglement"     => $transactionID,
                 "montant_reglement" => $cmd[0]->total_commande + $cmd[0]->prix_envoie,
-                "etat_reglement"    => 4
+                "etat_reglement"    => 2
             ));
             $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
             if($update >= 1 AND $reglement == 1)

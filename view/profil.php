@@ -1364,6 +1364,8 @@ if($_SESSION['logged'] == false) {
                                                                 if($reglement->etat_reglement == 0)
                                                                 {
                                                                     echo "<span class='label label-danger'>Refuser</span>";
+                                                                }elseif($reglement->etat_reglement == 2){
+                                                                    echo "<span class='label label-warning'>En Attente de récèption</span>";
                                                                 }else{
                                                                     echo "<span class='label label-success'>Accepter</span>";
                                                                 }

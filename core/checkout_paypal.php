@@ -79,7 +79,7 @@ if($response)
                         "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                         "ref_reglement"     => $transactionID,
                         "montant_reglement" => $paiement['PAYMENTINFO_0_AMT'],
-                        "etat_reglement"    => 9
+                        "etat_reglement"    => 1
                     ));
                     $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
                     if($update >= 1 AND $reglement == 1)
@@ -115,7 +115,7 @@ if($response)
                         "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                         "ref_reglement"     => $transactionID,
                         "montant_reglement" => $paiement['PAYMENTINFO_0_AMT'],
-                        "etat_reglement"    => 8
+                        "etat_reglement"    => 1
                     ));
                     $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
                     if($update >= 1 AND $reglement == 1)
@@ -165,7 +165,7 @@ if($response)
                         "date_reglement"    => $date_format->format_strt(date("d-m-Y H:i:s")),
                         "ref_reglement"     => $transactionID,
                         "montant_reglement" => $paiement['PAYMENTINFO_0_AMT'],
-                        "etat_reglement"    => 4
+                        "etat_reglement"    => 1
                     ));
                     $error = "Impossible de Définir le réglement en base de donnée.<br>Veuillez contactez l'administrateur système.";
                     if($update >= 1 AND $reglement == 1)
