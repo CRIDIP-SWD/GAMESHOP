@@ -111,7 +111,7 @@ class produit extends DB
         ));
         $point = $pointClient[0]->point;
         $coutPoint = $this->count_point_total($num_commande);
-        $count = $coutPoint[0]->count_point + $point;
+        $count = $coutPoint[0]->count_point - $point;
         return $count;
     }
 
