@@ -1,5 +1,6 @@
 <?php
 require ('../../app/classe.php');
+require ('../../vendor/mikehaertl/phpwkhtmltopdf/src/Pdf.php');
 use \mikehaertl\wkhtmlto\Pdf;
 
 $pdf = new Pdf(array(
