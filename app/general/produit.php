@@ -123,7 +123,7 @@ class produit extends DB
         ));
         $point = $pointClient[0]->point;
         $revenuePoint = $this->revenue_point_total($num_commande);
-        var_dump($revenuePoint, $point);
+        var_dump($point);
         $revenue = $revenuePoint + $point;
         return $revenue;
     }
