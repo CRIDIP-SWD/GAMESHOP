@@ -109,11 +109,10 @@ class produit extends DB
         $pointClient = $this->query("SELECT point FROM client WHERE idclient = :idclient", array(
             "idclient"  => $idclient
         ));
-
-        $cout = $this->count_point_total($num_commande);
-
-        $cout -= $pointClient;
-        return $cout;
+        $point = $pointClient[0]->point;
+        $coutPoint = $this->count_point_total($num_commande);
+        $count = $coutPoint[0]->count_point + $point;
+        return $count;
     }
 
     public function calcRevenuePointClient($num_commande, $idclient)
@@ -123,7 +122,6 @@ class produit extends DB
         ));
         $point = $pointClient[0]->point;
         $revenuePoint = $this->revenue_point_total($num_commande);
-        //var_dump($revenuePoint[0]->revenue_point, $point);
         $revenue = $revenuePoint[0]->revenue_point + $point;
         return $revenue;
     }

@@ -62,8 +62,7 @@ if($response)
 
                 if($preco != 0)
                 {
-                    $point_client = $info_client[0]->point;
-
+                    $new_point = $produit_cls->calcRevenuePointClient($num_commande, $info_client[0]->idclient);
                     $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
@@ -90,8 +89,7 @@ if($response)
                     }
                 }elseif($stock != 0)
                 {
-                    $new_point = $info_client[0]->point;
-                    $new_point += $produit_cls->revenue_point_total($num_commande);
+                    $new_point = $produit_cls->calcRevenuePointClient($num_commande, $info_client[0]->idclient);
                     $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
@@ -117,8 +115,7 @@ if($response)
                         header("Location: ../index.php?view=checkout&sub=paiement&num_commande=$num_commande&error=critical&data=$error");
                     }
                 }else{
-                    $new_point = $info_client[0]->point;
-                    $new_point += $produit_cls->revenue_point_total($num_commande);
+                    $new_point = $produit_cls->calcRevenuePointClient($num_commande, $info_client[0]->idclient);
                     $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
