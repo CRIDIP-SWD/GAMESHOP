@@ -62,8 +62,8 @@ if($response)
 
                 if($preco != 0)
                 {
-                    $new_point = $info_client[0]->point;
-                    $new_point += $produit_cls->revenue_point_total($num_commande);
+                    $point_client = $info_client[0]->point;
+
                     $update = $DB->execute("UPDATE commande SET methode_paiement = :methode_paiement WHERE num_commande = :num_commande", array(
                         "methode_paiement"      => "PAYPAL EUROPE",
                         "num_commande"          => $num_commande,
