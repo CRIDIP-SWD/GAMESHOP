@@ -26,7 +26,6 @@ use App\general\produit;
 use App\networker\xboxLive;
 use SteamApi\Player;
 use SteamApi\User;
-use mikehaertl\wkhtmlto\Pdf;
 
 $app = new app();
 $constante = new constante();
