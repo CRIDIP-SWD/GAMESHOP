@@ -124,8 +124,8 @@ class produit extends DB
 
         $cout = $this->revenue_point_total($num_commande);
 
-        $cout =+ $pointClient;
-        return $cout;
+        $a = $cout + $pointClient;
+        return $a;
     }
 
 
