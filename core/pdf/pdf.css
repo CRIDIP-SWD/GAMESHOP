@@ -1,0 +1,12 @@
+body{
+    font-size: 12px;
+}
+#header{
+    width: 100%;
+}
+.header_left{
+    float: left;
+}
+.header_right{
+    float: right;
+}
