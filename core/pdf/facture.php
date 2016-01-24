@@ -1,5 +1,5 @@
 <?php
-use App\api\wkhtmltopdf\Pdf;
+use App\api\phpwkhtmltopdf\Pdf;
 
 require ('../../app/classe.php');
 

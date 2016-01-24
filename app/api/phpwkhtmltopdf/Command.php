@@ -1,5 +1,5 @@
 <?php
-namespace App\api\wkhtmltopdf;
+namespace App\api\phpwkhtmltopdf;
 
 use mikehaertl\shellcommand\Command as BaseCommand;
 
