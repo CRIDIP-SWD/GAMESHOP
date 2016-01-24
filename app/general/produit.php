@@ -122,10 +122,10 @@ class produit extends DB
             "idclient"  => $idclient
         ));
         $point = $pointClient[0]->point;
-        $cout = $this->revenue_point_total($num_commande);
+        $revenuePoint = $this->revenue_point_total($num_commande);
 
-        $cout =+ $point && $cout;
-        return $cout;
+        $revenue = $revenuePoint + $point;
+        return $revenue;
     }
 
 
