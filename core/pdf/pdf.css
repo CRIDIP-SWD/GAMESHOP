@@ -7,7 +7,6 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 #header{
-    width: 90%;
 }
 #header .header_left{
     float: left;
