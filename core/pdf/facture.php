@@ -1,5 +1,5 @@
 <?php
-include ('../../app/classe.php');
+require ('../../app/classe.php');
 
 
 $pdf = new Pdf(array(
