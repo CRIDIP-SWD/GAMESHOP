@@ -138,6 +138,19 @@ ini_set("display_errors", 1);
                                     <span>Commandes</span>
                                 </a>
                             </li>
+                            <li class="nav-parent">
+                                <a>
+                                    <i class="fa fa-cogs" aria-hidden="true"></i>
+                                    <span>Configuration</span>
+                                </a>
+                                <ul class="nav nav-children">
+                                    <li>
+                                        <a href="index.php?view=admin_sha&sub=config_slide">
+                                            Slideshow
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                 </div>
