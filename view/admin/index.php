@@ -51,7 +51,7 @@
                                 <div class="widget-summary">
                                     <div class="widget-summary-col widget-summary-col-icon">
                                         <div class="summary-icon">
-                                            <i class="fa fa-users"></i>
+                                            <i class="fa fa-cubes"></i>
                                         </div>
                                     </div>
                                     <div class="widget-summary-col">
