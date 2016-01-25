@@ -27,6 +27,11 @@ class commande extends DB
         return $this->count("SELECT COUNT(idcommande) FROM commande WHERE idclient = '$idclient'");
     }
 
+    public function count_commande()
+    {
+        return $this->count("SELECT COUNT(idcommande) FROM commande");
+    }
+
     public function last_cmd($idclient)
     {
         return $this->query("SELECT * FROM commande WHERE idclient = '$idclient' LIMIT 4");
