@@ -5,6 +5,7 @@ body{
 #header{
     width: 100%;
     height: 20%;
+    display: inline-block;
 }
 .logo{
     font-size: 8px;
