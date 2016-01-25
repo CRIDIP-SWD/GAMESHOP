@@ -10,7 +10,9 @@
                     <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="80"/>
                     <h2>GAMESHOP</h2>
                     20 Avenue Jean Jaures<br>
-                    85100 Les Sables d'Olonne
+                    85100 Les Sables d'Olonne<br>
+                    Tel: 06 33 13 43 30<br>
+                    Mail: gamedistri@gmail.com
                 </div>
             </div>
             <div class="header_right">
