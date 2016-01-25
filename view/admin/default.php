@@ -255,7 +255,11 @@ ini_set("display_errors", 1);
 <!-- Theme Initialization Files -->
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>theme.init.js"></script>
 
-
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot-tooltip/jquery.flot.tooltip.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.pie.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.categories.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.resize.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>morris/morris.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.charts.js"></script>
 </body>
