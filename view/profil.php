@@ -1403,6 +1403,41 @@ if($_SESSION['logged'] == false) {
         </div>
 
     </section><!-- #page-title end -->
+    <section id="content">
+        <div class="content-wrap">
+            <div class="container clearfix">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Remise</th>
+                                        <th>Date de Peremption</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $sql_vourcher = $DB->query("SELECT * FROM shop_vourcher WHERE idclient = :idclient ORDER BY perempsion ASC", array(
+                                    "idclient"  => $idclient
+                                ));
+                                foreach($sql_vourcher as $vourcher):
+                                ?>
+                                    <tr>
+                                        <td><?= $vourcher->code; ?></td>
+                                        <td><?= $vourcher->percent_rem; ?> %</td>
+                                        <td><?= $date_format->formatage("d/m/Y", $vourcher->perempsion); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php endif; ?>
 
 
