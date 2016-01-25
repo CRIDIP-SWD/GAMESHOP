@@ -61,5 +61,32 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                 </td>
             </tr>
         </table>
+        <table style="padding-top: 5em;">
+            <thead>
+                <tr>
+                    <th>Référence</th>
+                    <th>Description</th>
+                    <th>Prix Unitaire</th>
+                    <th>Qte</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+            $sql_article = $DB->query("SELECT * FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
+                "num_commande"  => $num_commande
+            ));
+            foreach($sql_article as $article):
+            ?>
+                <tr>
+                    <td><?= $article->ref_article; ?></td>
+                    <td><?= html_entity_decode($article['designation']); ?></td>
+                    <td><?= $fonction->number_decimal($article->prix_vente); ?></td>
+                    <td><?= $article->qte; ?></td>
+                    <td><?= $fonction->number_decimal($article->total_article_commande); ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
     </body>
 </html>
