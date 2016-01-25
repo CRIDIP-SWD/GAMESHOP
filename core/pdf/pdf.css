@@ -26,6 +26,7 @@ body{
     height: 15%;
 }
 .adresse_societe{
+    font-size: 8px;
 }
 .adresse_client{
     float: right;
