@@ -1389,6 +1389,21 @@ if($_SESSION['logged'] == false) {
         </div>
     </section>
 <?php endif; ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'vourcher'): ?>
+    <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
+
+        <div class="container clearfix">
+            <h1>MON COMPTE</h1>
+            <span>Bienvenue <?= $info_client[0]->prenom_client; ?> <?= $info_client[0]->nom_client; ?></span>
+            <ol class="breadcrumb">
+                <li><a href="index.php?view=index">GAMESHOP</a></li>
+                <li><a href="index.php?view=profil">MON COMPTE</a></li>
+                <li class="active">Mes Bon d'Achat</li>
+            </ol>
+        </div>
+
+    </section><!-- #page-title end -->
+<?php endif; ?>
 
 
 
