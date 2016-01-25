@@ -137,9 +137,30 @@
                         </li>
                     </ul>
                     <div class="tab-content">
-                        <div class="tab-pane active" id="popular1">
-                            <p>Popular</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                        <div class="tab-pane active" id="client">
+                            <table class="table table-bordered table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Identité</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $sql_client = $DB->query("SELECT * FROM client ORDER BY nom_client ASC");
+                                foreach($sql_client as $client){
+                                ?>
+                                    <tr>
+                                        <td><?= $client->idclient; ?></td>
+                                        <td>
+                                            <strong><?= $client->nom_client; ?> <?= $client->prenom_client; ?></strong><br>
+                                            <i><strong>Email:</strong> <?= $client->email; ?></i>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                </tbody>
+                            </table>
                         </div>
                         <div class="tab-pane" id="recent1">
                             <p>Recent</p>
