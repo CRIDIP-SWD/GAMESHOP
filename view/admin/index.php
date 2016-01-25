@@ -322,60 +322,62 @@
     </section>
 <?php endif; ?>
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'client'): ?>
-    <section role="main" class="content-body">
-        <header class="page-header">
-            <h2><i class="fa fa-users"></i> CLIENT</h2>
+    <?php if(!isset($_GET['data'])): ?>
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2><i class="fa fa-users"></i> CLIENT</h2>
 
-            <div class="right-wrapper pull-right">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.php?view=admin_sha">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li><span>Client</span></li>
-                </ol>
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.php?view=admin_sha">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Client</span></li>
+                    </ol>
 
-                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
-        </header>
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
 
-        <!-- start: page -->
-        <div class="row">
-            <div class="col-md-9">
-                <div class="row">
-                    <?php
-                    $sql_client = $DB->query("SELECT * FROM client ORDER BY nom_client ASC");
-                    foreach ($sql_client as $client):
-                    ?>
-                    <div class="col-md-4">
-                        <section class="panel">
-                            <header class="panel-heading bg-primary">
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row">
+                        <?php
+                        $sql_client = $DB->query("SELECT * FROM client ORDER BY nom_client ASC");
+                        foreach ($sql_client as $client):
+                            ?>
+                            <div class="col-md-4">
+                                <section class="panel">
+                                    <header class="panel-heading bg-primary">
 
-                                <div class="widget-profile-info">
-                                    <div class="profile-picture">
-                                        <img src="assets/images/logo.png">
-                                    </div>
-                                    <div class="profile-info">
-                                        <h4 class="name text-weight-semibold"><?= $client->nom_client; ?> <?= $client->prenom_client; ?></h4>
-                                        <h5 class="role"><?= $client->email; ?></h5>
-                                        <div class="profile-footer">
-                                            <a href="index.php?view=admin_sha&sub=client&data=view_client&idclient=<?= $client->idclient; ?>">(Voir le Client)</a>
+                                        <div class="widget-profile-info">
+                                            <div class="profile-picture">
+                                                <img src="assets/images/logo.png">
+                                            </div>
+                                            <div class="profile-info">
+                                                <h4 class="name text-weight-semibold"><?= $client->nom_client; ?> <?= $client->prenom_client; ?></h4>
+                                                <h5 class="role"><?= $client->email; ?></h5>
+                                                <div class="profile-footer">
+                                                    <a href="index.php?view=admin_sha&sub=client&data=view_client&idclient=<?= $client->idclient; ?>">(Voir le Client)</a>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                            </header>
-                            <div class="panel-body text-center">
-                                <h3 class="text-weight-semibold mt-sm text-center">Simple Block Title</h3>
-                                <p class="text-center">Nullam quiris risus eget urna mollis ornare vel eu leo. Soccis natoque penatibus et magnis dis parturient montes. Soccis natoque penatibus et magnis dis parturient montes.</p>
+                                    </header>
+                                    <div class="panel-body text-center">
+                                        <h3 class="text-weight-semibold mt-sm text-center">Simple Block Title</h3>
+                                        <p class="text-center">Nullam quiris risus eget urna mollis ornare vel eu leo. Soccis natoque penatibus et magnis dis parturient montes. Soccis natoque penatibus et magnis dis parturient montes.</p>
+                                    </div>
+                                </section>
                             </div>
-                        </section>
+                        <?php endforeach; ?>
                     </div>
-                    <?php endforeach; ?>
                 </div>
             </div>
-        </div>
-        <!-- end: page -->
-    </section>
+            <!-- end: page -->
+        </section>
+    <?php endif; ?>
 <?php endif; ?>
