@@ -184,6 +184,9 @@
                                     <?php
                                     $sql_produit = $DB->query("SELECT * FROM produits ORDER BY designation ASC LIMIT 5");
                                     foreach($sql_produit as $produit):
+                                        $cat = $DB->query("SELECT * FROM produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND ref_produit = :ref_produit", array(
+                                            "ref_produit" => $produit->ref_produit
+                                        ));
                                     ?>
                                         <tr>
                                             <td><?= $produit->ref_produit; ?></td>
@@ -192,7 +195,10 @@
                                                     <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="80">
                                                 </a>
                                             </td>
-                                            <td><?= html_entity_decode($produit->designation); ?></td>
+                                            <td>
+                                                <?= html_entity_decode($produit->designation); ?><br>
+                                                <i><?= $cat[0]->designation_cat; ?></i>
+                                            </td>
                                             <td><?= $date_format->formatage("d/m/Y", $produit->date_sortie); ?></td>
                                             <td><?= $fonction->number_decimal($produit->prix_vente); ?></td>
                                             <td>
