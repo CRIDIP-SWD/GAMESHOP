@@ -347,9 +347,20 @@
                     <div class="col-md-4">
                         <section class="panel">
                             <header class="panel-heading bg-primary">
-                                <div class="panel-heading-icon">
-                                    <i class="fa fa-globe"></i>
+
+                                <div class="widget-profile-info">
+                                    <div class="profile-picture">
+                                        <img src="assets/images/!logged-user.jpg">
+                                    </div>
+                                    <div class="profile-info">
+                                        <h4 class="name text-weight-semibold">John Doe</h4>
+                                        <h5 class="role">Administrator</h5>
+                                        <div class="profile-footer">
+                                            <a href="#">(edit profile)</a>
+                                        </div>
+                                    </div>
                                 </div>
+
                             </header>
                             <div class="panel-body text-center">
                                 <h3 class="text-weight-semibold mt-sm text-center">Simple Block Title</h3>
