@@ -38,7 +38,7 @@
                                             </div>
                                         </div>
                                         <div class="summary-footer">
-                                            <a class="text-uppercase">(Liste des Clients)</a>
+                                            <a class="text-uppercase" href="index.php?view=admin_sha&sub=client">(Liste des Clients)</a>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +62,7 @@
                                             </div>
                                         </div>
                                         <div class="summary-footer">
-                                            <a class="text-uppercase">(Liste des produits)</a>
+                                            <a class="text-uppercase" href="index.php?view=admin_sha&sub=produits">(Liste des produits)</a>
                                         </div>
                                     </div>
                                 </div>
