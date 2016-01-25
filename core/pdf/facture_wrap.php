@@ -31,7 +31,7 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             </div>
             <div class="adresse_client">
                 <strong><?= $cmd[0]->nom_client; ?> <?= $cmd[0]->prenom_client; ?></strong><br>
-                <?= $cmd[0]->adresse_liv; ?>
+                <?= html_entity_decode($cmd[0]->adresse_liv); ?>
             </div>
         </div>
     </body>
