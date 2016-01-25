@@ -34,8 +34,12 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                     <div class="info_facture">
                         <table style="width: 100%;">
                             <tr>
-                                <td>Date de la facture:</td>
+                                <td style="font-weight: bold;">Date de la facture:</td>
                                 <td><?= $date_format->formatage("d/m/Y", $cmd[0]->date_commande); ?></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Date de livraison:</td>
+                                <td><?= $date_format->formatage("d/m/Y", $cmd[0]->date_livraison); ?> (<?= $cmd[0]->destination; ?>)</td>
                             </tr>
                         </table>
                     </div>
