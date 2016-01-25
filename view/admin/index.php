@@ -357,10 +357,10 @@
                                         <img src="../../assets/images/logo.png">
                                     </div>
                                     <div class="profile-info">
-                                        <h4 class="name text-weight-semibold">John Doe</h4>
-                                        <h5 class="role">Administrator</h5>
+                                        <h4 class="name text-weight-semibold"><?= $client->nom_client; ?> <?= $client->prenom_client; ?></h4>
+                                        <h5 class="role"><?= $client->email; ?></h5>
                                         <div class="profile-footer">
-                                            <a href="#">(edit profile)</a>
+                                            <a href="index.php?view=admin_sha&sub=client&data=view_client&idclient=<?= $client->idclient; ?>">(Voir le Client)</a>
                                         </div>
                                     </div>
                                 </div>
