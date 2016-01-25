@@ -15,6 +15,8 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             <tr>
                 <td>
                     <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="80" />
+                </td>
+                <td>
                     <div class="adresse_societe">
                         <strong>Gameshop</strong><br>
                         20 Avenue Jean Jaures<br>
