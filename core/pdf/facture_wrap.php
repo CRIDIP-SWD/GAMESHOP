@@ -6,7 +6,9 @@
     <body>
         <div id="header">
             <div class="header_left">
-                <div class="logo"></div>
+                <div class="logo">
+                    <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" />
+                </div>
             </div>
             <div class="header_right">
                 FACTURE
