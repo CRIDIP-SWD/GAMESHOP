@@ -30,7 +30,7 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
         </table>
         <table style="width: 100%; padding-top: 2em;">
             <tr>
-                <td style="width: 65%;">
+                <td style="width: 30%;">
                     <div class="info_facture">
                         <table style="width: 100%;">
                             <tr>
@@ -40,7 +40,8 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                         </table>
                     </div>
                 </td>
-                <td style="width: 35%;">
+                <td style="width: 30%;"></td>
+                <td style="width: 40%;">
                     <div class="adresse_client">
                         <strong><?= $cmd[0]->nom_client; ?> <?= $cmd[0]->prenom_client; ?></strong><br>
                         <?= html_entity_decode($cmd[0]->adresse_liv); ?>
