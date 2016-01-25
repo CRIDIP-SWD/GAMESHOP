@@ -122,6 +122,30 @@
                 </section>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="tabs tabs-primary">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#popular1" aria-expanded="true"><i class="fa fa-star"></i> Popular</a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#recent1" aria-expanded="false">Recent</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="popular1">
+                            <p>Popular</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                        </div>
+                        <div class="tab-pane" id="recent1">
+                            <p>Recent</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- end: page -->
     </section>
 <?php endif; ?>
