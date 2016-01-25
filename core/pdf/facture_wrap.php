@@ -79,7 +79,7 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             foreach($sql_article as $article):
             ?>
                 <tr>
-                    <td><?= $article->ref_article; ?></td>
+                    <td><?= $article->ref_produit; ?></td>
                     <td><?= html_entity_decode($article->designation); ?></td>
                     <td><?= $fonction->number_decimal($article->prix_vente); ?></td>
                     <td><?= $article->qte; ?></td>
