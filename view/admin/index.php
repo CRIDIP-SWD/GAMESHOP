@@ -177,6 +177,7 @@
                                             <th>Prix de Vente</th>
                                             <th>Stock</th>
                                             <th>Statut</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -191,6 +192,48 @@
                                                     <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="80">
                                                 </a>
                                             </td>
+                                            <td><?= html_entity_decode($produit->designation); ?></td>
+                                            <td><?= $date_format->formatage("d/m/Y", $produit->date_sortie); ?></td>
+                                            <td><?= $fonction->number_decimal($produit->prix_vente); ?></td>
+                                            <td>
+                                                <?php
+                                                switch($produit->statut_stock)
+                                                {
+                                                    case 0:
+                                                        echo "<span class='text-danger'><i class='fa fa-circle'></i> Rupture</span>";
+                                                        break;
+                                                    case 1:
+                                                        echo "<span class='text-warning'><i class='fa fa-circle'></i> Réassort Prévue le <strong>".$date_format->formatage('d/m/Y', $produit->date_reassort)."</strong></span>";
+                                                        break;
+                                                    case 2:
+                                                        echo "<span class='text-success'><i class='fa fa-check-circle'></i> OK (".$produit->stock.")</span>";
+                                                        break;
+                                                    case 3:
+                                                        echo "<span class='text-primary'><i class='fa fa-arrow-circle-down'></i> En Précommande Uniquement</span>";
+                                                        break;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                switch($produit->statut_global)
+                                                {
+                                                    case 1:
+                                                        echo "<span class='label label-dark'>Courant</span>";
+                                                        break;
+                                                    case 2:
+                                                        echo "<span class='label label-primary'>Précommande</span>";
+                                                        break;
+                                                    case 3:
+                                                        echo "<span class='label label-warning'>Promotion</span>";
+                                                        break;
+                                                    case 4:
+                                                        echo "<span class='label label-danger'>Nouveauté</span>";
+                                                        break;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td></td>
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
