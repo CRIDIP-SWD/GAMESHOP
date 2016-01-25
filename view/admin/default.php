@@ -72,7 +72,10 @@ ini_set("display_errors", 1);
                     <ul class="list-unstyled">
                         <li class="divider"></li>
                         <li>
-                            <a role="menuitem" tabindex="-1" href="core/login.php?action=logout"><i class="fa fa-power-off"></i> Logout</a>
+                            <a role="menuitem" tabindex="-1" href="core/login.php?action=logout"><i class="fa fa-power-off"></i> Déconnexion</a>
+                        </li>
+                        <li>
+                            <a role="menuitem" tabindex="-1" href="index.php?view=index"><i class="fa fa-arrow-left"></i> Retour au Site Web</a>
                         </li>
                     </ul>
                 </div>
