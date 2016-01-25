@@ -261,6 +261,9 @@ ini_set("display_errors", 1);
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.categories.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.resize.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>morris/morris.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>pnotify/pnotify.custom.js"></script>
+
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.charts.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
 </body>
 </html>

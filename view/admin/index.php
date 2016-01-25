@@ -148,7 +148,7 @@
                                 </thead>
                                 <tbody>
                                 <?php
-                                $sql_client = $DB->query("SELECT * FROM client ORDER BY nom_client ASC");
+                                $sql_client = $DB->query("SELECT * FROM client ORDER BY nom_client ASC LIMIT 5");
                                 foreach($sql_client as $client){
                                 ?>
                                     <tr>
@@ -179,6 +179,21 @@
                                             <th>Statut</th>
                                         </tr>
                                     </thead>
+                                    <tbody>
+                                    <?php
+                                    $sql_produit = $DB->query("SELECT * FROM produits ORDER BY designation ASC LIMIT 5");
+                                    foreach($sql_produit as $produit):
+                                    ?>
+                                        <tr>
+                                            <td><?= $produit->ref_produit; ?></td>
+                                            <td>
+                                                <a href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="Caption. Can be aligned it to any side and contain any HTML.">
+                                                    <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="80">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
