@@ -34,5 +34,15 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                 <?= html_entity_decode($cmd[0]->adresse_liv); ?>
             </div>
         </div>
+        <div id="info_facture">
+            <table>
+                <tbody>
+                    <tr>
+                        <td>N° de Commande:</td>
+                        <td><?= $num_commande; ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </body>
 </html>
