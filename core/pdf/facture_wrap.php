@@ -3,7 +3,7 @@ $num_commande = $_GET['num_commande'];
 $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = client.idclient AND num_commande = :num_commande", array(
     "num_commande"  => $num_commande
 ));
-
+$sous_total = $cmd[0]->total_commande - $cmd[0]->prix_envoie;
 ?>
 <!DOCTYPE html>
 <html>
@@ -89,6 +89,12 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                 </tr>
             <?php endforeach; ?>
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">Sous-Total</td>
+                    <td><?= $fonction->number_decimal($sous_total); ?></td>
+                </tr>
+            </tfoot>
         </table>
     </body>
 </html>
