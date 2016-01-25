@@ -69,31 +69,57 @@
                             </div>
                         </section>
                     </div>
-                    <div class="col-md-6">
-                        <section class="panel">
-                            <div class="panel-body bg-primary">
-                                <div class="widget-summary">
-                                    <div class="widget-summary-col widget-summary-col-icon">
-                                        <div class="summary-icon">
-                                            <i class="fa fa-shopping-cart"></i>
-                                        </div>
-                                    </div>
-                                    <div class="widget-summary-col">
-                                        <div class="summary">
-                                            <h4 class="title">Nombre de commandes</h4>
-                                            <div class="info">
-                                                <strong class="amount"><?= $cmd_cls->count_commande(); ?></strong>
-                                            </div>
-                                        </div>
-                                        <div class="summary-footer">
-                                            <a class="text-uppercase" href="index.php?view=admin_sha&sub=commandes">(Liste des Commandes)</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
                 </div>
+            </div>
+            <div class="col-md-6">
+                <section class="panel">
+                    <div class="panel-body">
+                        <div class="chart chart-md" id="morrisLine"></div>
+                        <script type="text/javascript">
+
+                            var morrisLineData = [{
+                                y: '2006',
+                                a: 100,
+                                b: 90
+                            }, {
+                                y: '2007',
+                                a: 75,
+                                b: 65
+                            }, {
+                                y: '2008',
+                                a: 50,
+                                b: 40
+                            }, {
+                                y: '2009',
+                                a: 75,
+                                b: 65
+                            }, {
+                                y: '2010',
+                                a: 50,
+                                b: 40
+                            }, {
+                                y: '2011',
+                                a: 75,
+                                b: 65
+                            }, {
+                                y: '2012',
+                                a: 100,
+                                b: 90
+                            }, {
+                                y: '2013',
+                                a: 75,
+                                b: 65
+                            }, {
+                                y: '2014',
+                                a: 100,
+                                b: 90
+                            }];
+
+                            // See: assets/javascripts/ui-elements/examples.charts.js for more settings.
+
+                        </script>
+                    </div>
+                </section>
             </div>
         </div>
         <!-- end: page -->

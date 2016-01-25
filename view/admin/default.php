@@ -37,6 +37,11 @@ ini_set("display_errors", 1);
 
     <!-- Head Libs -->
     <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>modernizr/modernizr.js"></script>
+
+
+
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>morris/morris.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>chartist/chartist.css" />
 </head>
 <body>
 <section class="body">
@@ -250,5 +255,8 @@ ini_set("display_errors", 1);
 <!-- Theme Initialization Files -->
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>theme.init.js"></script>
 
+
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>morris/morris.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.charts.js"></script>
 </body>
 </html>
