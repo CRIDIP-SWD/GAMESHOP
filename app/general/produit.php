@@ -32,6 +32,11 @@ class produit extends DB
         return $this->count("SELECT COUNT(ref_produit) FROM produits_promotion WHERE ref_produit = '$ref_produit'");
     }
 
+    public function count_produits()
+    {
+        return $this->count("SELECT COUNT(id) FROM produits");
+    }
+
     public function verif_stat_global($ref_produit)
     {
         $data = $this->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));

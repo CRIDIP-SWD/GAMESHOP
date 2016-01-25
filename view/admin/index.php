@@ -45,6 +45,30 @@
                             </div>
                         </section>
                     </div>
+                    <div class="col-md-6">
+                        <section class="panel">
+                            <div class="panel-body bg-secondary">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon">
+                                            <i class="fa fa-users"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Nombre d'articles</h4>
+                                            <div class="info">
+                                                <strong class="amount"><?= $produit_cls->count_produits(); ?></strong>
+                                            </div>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-uppercase">(Liste des produits)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
