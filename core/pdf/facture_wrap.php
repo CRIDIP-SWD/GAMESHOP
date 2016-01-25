@@ -13,8 +13,15 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
     <body>
         <table style="width: 100%;">
             <tr>
-                <td style="display: inline-block;">
-                    <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="80" />TEST<br>fjkhfjkdsh
+                <td>
+                    <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="80" />
+                    <div class="adresse_societe">
+                        <strong>Gameshop</strong><br>
+                        20 Avenue Jean Jaures<br>
+                        85100 Les Sables d'Olonne<br>
+                        Tel: 06 33 13 43 30<br>
+                        Mail: gamedistri@gmail.com
+                    </div>
                 </td>
                 <td style="text-align: right; font-size: 15px; color: #beb7bc; font-weight: bold;">FACTURE</td>
             </tr>
