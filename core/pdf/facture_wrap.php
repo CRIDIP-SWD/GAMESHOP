@@ -28,5 +28,15 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                 <td style="text-align: right; font-size: 15px; color: #beb7bc; font-weight: bold; width: 34%;">FACTURE</td>
             </tr>
         </table>
+        <table style="width: 100%; padding-top: 2em;">
+            <tr>
+                <td style="width: 65%;"></td>
+                <td style="width: 35%;">
+                    <div class="adresse_client">
+                        <?= $cmd[0]->nom_client; ?> <?= $cmd[0]->prenom_client; ?>
+                    </div>
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
