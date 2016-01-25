@@ -1,22 +1,53 @@
-<section role="main" class="content-body">
-    <header class="page-header">
-        <h2>Blank Page</h2>
+<?php if(!isset($_GET['sub'])): ?>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2>Bienvenue</h2>
 
-        <div class="right-wrapper pull-right">
-            <ol class="breadcrumbs">
-                <li>
-                    <a href="index.html">
-                        <i class="fa fa-home"></i>
-                    </a>
-                </li>
-                <li><span>Pages</span></li>
-                <li><span>Blank Page</span></li>
-            </ol>
+            <div class="right-wrapper pull-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="index.php?view=admin_sha">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Bienvenue</span></li>
+                </ol>
 
-            <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+            </div>
+        </header>
+
+        <!-- start: page -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <section class="panel">
+                            <div class="panel-body bg-secondary">
+                                <div class="widget-summary">
+                                    <div class="widget-summary-col widget-summary-col-icon">
+                                        <div class="summary-icon">
+                                            <i class="fa fa-life-ring"></i>
+                                        </div>
+                                    </div>
+                                    <div class="widget-summary-col">
+                                        <div class="summary">
+                                            <h4 class="title">Support Questions</h4>
+                                            <div class="info">
+                                                <strong class="amount">1281</strong>
+                                            </div>
+                                        </div>
+                                        <div class="summary-footer">
+                                            <a class="text-uppercase">(view all)</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </div>
-    </header>
-
-    <!-- start: page -->
-    <!-- end: page -->
-</section>
+        <!-- end: page -->
+    </section>
+<?php endif; ?>
