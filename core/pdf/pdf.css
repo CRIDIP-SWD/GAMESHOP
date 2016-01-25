@@ -20,4 +20,10 @@ body{
 #block_adresse{
     font-size: 9px;
 }
-.adresse_societe
+.adresse_societe{
+
+}
+.adresse_client{
+    float: right;
+    border: 1px solid #0f3e68;
+}
