@@ -66,10 +66,10 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             <thead>
                 <tr>
                     <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c; border-bottom-right-radius: 5px;">Référence</th>
-                    <th style="text-align: center;">Description</th>
-                    <th style="text-align: center;">Prix Unitaire</th>
-                    <th style="text-align: center;">Qte</th>
-                    <th style="text-align: center;">Total</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Description</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Prix Unitaire</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Qte</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c;">Total</th>
                 </tr>
             </thead>
             <tbody>
