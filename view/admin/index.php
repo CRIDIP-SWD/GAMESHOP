@@ -157,14 +157,30 @@
                                             <strong><?= $client->nom_client; ?> <?= $client->prenom_client; ?></strong><br>
                                             <i><strong>Email:</strong> <?= $client->email; ?></i>
                                         </td>
+                                        <td>
+                                            <a class="btn btn-primary btn-xs" href=""><i class="fa fa-eye"></i> Voir le produit</a>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="tab-pane" id="recent1">
-                            <p>Recent</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                        <div class="tab-pane" id="produit">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Réf.</th>
+                                            <th>Images</th>
+                                            <th>Désignation</th>
+                                            <th>Date de Sortie</th>
+                                            <th>Prix de Vente</th>
+                                            <th>Stock</th>
+                                            <th>Statut</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
