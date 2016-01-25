@@ -27,5 +27,11 @@ if($view === 'panier'){require "view/panier.php";}
 if($view === 'checkout'){require "view/checkout.php";}
 if($view === 'error'){require "view/error.php";}
 
+if($view === 'admin_sha'){require "view/admin/index.php";}
+
 $content = ob_get_clean();
-require "view/default.php";
+if($view != "admin_sha") {
+    require "view/default.php";
+}else{
+    require "view/admin/default.php";
+}
