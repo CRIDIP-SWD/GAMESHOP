@@ -47,6 +47,8 @@ if(!isset($_SESSION['logged']))
 
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>morris/morris.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>chartist/chartist.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>select2/select2.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables-bs3/assets/css/datatables.css" />
 </head>
 <body>
 <section class="body">
@@ -272,8 +274,15 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>flot/jquery.flot.resize.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>morris/morris.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>pnotify/pnotify.custom.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>select2/select2.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables/media/js/jquery.dataTables.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables-bs3/assets/js/datatables.js"></script>
 
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.charts.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.default.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.row.with.details.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.tabletools.js"></script>
 </body>
 </html>
