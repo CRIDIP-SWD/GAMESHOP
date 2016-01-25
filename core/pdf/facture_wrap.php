@@ -13,10 +13,10 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
     <body>
         <table style="width: 100%;">
             <tr>
-                <td>
+                <td style="width: 33%;">
                     <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="80" />
                 </td>
-                <td>
+                <td style="width: 33%;">
                     <div class="adresse_societe">
                         <strong>Gameshop</strong><br>
                         20 Avenue Jean Jaures<br>
@@ -25,7 +25,7 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                         Mail: gamedistri@gmail.com
                     </div>
                 </td>
-                <td style="text-align: right; font-size: 15px; color: #beb7bc; font-weight: bold;">FACTURE</td>
+                <td style="text-align: right; font-size: 15px; color: #beb7bc; font-weight: bold; width: 34%;">FACTURE</td>
             </tr>
         </table>
     </body>
