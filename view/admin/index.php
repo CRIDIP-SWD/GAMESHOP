@@ -82,11 +82,11 @@
                                         <div class="summary">
                                             <h4 class="title">Nombre de commandes</h4>
                                             <div class="info">
-                                                <strong class="amount"><?= $produit_cls->count_produits(); ?></strong>
+                                                <strong class="amount"><?= $cmd_cls->count_commande(); ?></strong>
                                             </div>
                                         </div>
                                         <div class="summary-footer">
-                                            <a class="text-uppercase" href="index.php?view=admin_sha&sub=produits">(Liste des produits)</a>
+                                            <a class="text-uppercase" href="index.php?view=admin_sha&sub=commandes">(Liste des Commandes)</a>
                                         </div>
                                     </div>
                                 </div>
