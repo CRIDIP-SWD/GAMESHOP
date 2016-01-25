@@ -80,7 +80,7 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             foreach($sql_article as $article):
             ?>
                 <tr>
-                    <td style="width: 20%; text-align: center;"><?= $article->ref_produit; ?></td>
+                    <td style="width: 20%; text-align: center; border: solid 1px #8c8c8c; padding: 5px 5px 5px 5px;"><?= $article->ref_produit; ?></td>
                     <td style="width: 45%;"><?= html_entity_decode($article->designation); ?></td>
                     <td style="width: 15%; text-align: right;"><?= $fonction->number_decimal($article->prix_vente); ?></td>
                     <td style="width: 5%; text-align: center;"><?= $article->qte; ?></td>
