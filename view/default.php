@@ -99,7 +99,9 @@ ini_set('display_errors', 1);
                 <div class="top-links">
                     <ul>
                         <li><a href="index.php?view=profil"><?= $info_client[0]->nom_client; ?> <?= $info_client[0]->prenom_client; ?></a></li>
+                        <?php if($info_client[0]->groupe == 1){ ?>
                         <li><a href="index.php?view=admin_sha"><i class="icon-dashboard"></i> Panneau d'administration</a></li>
+                        <?php } ?>
                         <li><a href="<?= $constante->getUrl(array('core/'), false, false); ?>login.php?action=logout"><i class="icon-lock"></i></a></li>
                     </ul>
                 </div>
