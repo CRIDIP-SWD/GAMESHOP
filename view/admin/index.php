@@ -248,6 +248,72 @@
                                 </table>
                             </div>
                         </div>
+                        <div class="tab-pane" id="cmd">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>N° Commande</th>
+                                            <th>Date de la Commande</th>
+                                            <th>Client</th>
+                                            <th>Total</th>
+                                            <th>Statut</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $sql_cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = client.idclient ORDER BY date_commande ASC LIMIT 5");
+                                    foreach ($sql_cmd as $cmd):
+                                    ?>
+                                        <tr>
+                                            <td><?= $cmd->num_commande; ?></td>
+                                            <td><?= $date_format->formatage("d/m/Y", $cmd->date_commande); ?></td>
+                                            <td><?= $cmd->nom_client; ?> <?= $cmd->prenom_client; ?></td>
+                                            <td><?= $fonction->number_decimal($cmd->total_commande + $cmd->prix_envoie); ?></td>
+                                            <td>
+                                                <?php
+                                                switch($cmd->statut)
+                                                {
+                                                    case 1:
+                                                        echo "<span class='label label-default'>En Attente de Validation</span>";
+                                                        break;
+
+                                                    case 2:
+                                                        echo "<span class='label label-primary'>En Attente de Paiement</span>";
+                                                        break;
+
+                                                    case 3:
+                                                        echo "<span class='label label-success'>Paiement Valider</span>";
+                                                        break;
+
+                                                    case 4:
+                                                        echo "<span class='label label-warning'>Préparation en cours...</span>";
+                                                        break;
+
+                                                    case 5:
+                                                        echo "<span class='label label-success'>Expédié</span>";
+                                                        break;
+
+                                                    case 6:
+                                                        echo "<span class='label label-danger'>Paiement Refuser</span>";
+                                                        break;
+
+                                                    case 7:
+                                                        echo "<span class='label label-default'>Commande Annulé</span>";
+                                                        break;
+                                                }
+                                                ?>
+                                            </td>
+                                            <td>
+                                                <a class="btn btn-primary btn-xs" href="index.php?view=admin_sha&sub=commande&data=view_commande&num_commande=<?= $cmd->num_commande; ?>"><i class="fa fa-eye"></i> Voir la commande</a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
