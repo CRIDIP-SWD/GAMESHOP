@@ -129,7 +129,7 @@
                         <li class="active">
                             <a data-toggle="tab" href="#client" aria-expanded="true"><i class="fa fa-users"></i> Derniers Clients</a>
                         </li>
-                        <li class="active">
+                        <li>
                             <a data-toggle="tab" href="#produit" aria-expanded="true"><i class="fa fa-cubes"></i> Derniers Produits</a>
                         </li>
                         <li class="">
