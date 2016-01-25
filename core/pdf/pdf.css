@@ -5,9 +5,14 @@ body{
 #header{
     width: 100%;
 }
+.logo{
+    background: url("../../assets/images/logo.png") no-repeat;
+}
 .header_left{
     float: left;
 }
 .header_right{
     float: right;
+    color: #8a7c7c;
+    font-weight: bold;
 }
