@@ -9,9 +9,7 @@ body{
 .logo{
     font-size: 8px;
 }
-.header_left{
-    float: left;
-}
+
 .header_right{
     float: right;
     color: #8a7c7c;
