@@ -91,16 +91,16 @@ $sous_total = $cmd[0]->total_commande - $cmd[0]->prix_envoie;
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right;">Sous-Total</td>
-                    <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($sous_total); ?></td>
+                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right; border-bottom: 1px solid #8c8c8c;">Sous-Total</td>
+                    <td style="text-align: right; padding-right: 5px; border-bottom: 1px solid #8c8c8c;"><?= $fonction->number_decimal($sous_total); ?></td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right;">Livraison</td>
-                    <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
+                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right; border-bottom: 1px solid #8c8c8c;">Livraison</td>
+                    <td style="text-align: right; padding-right: 5px; border-bottom: 1px solid #8c8c8c;"><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
                 </tr>
                 <tr>
-                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right;">Total</td>
-                    <td style="text-align: right; padding-right: 5px;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
+                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right; border-bottom: 1px solid #8c8c8c;">Total</td>
+                    <td style="text-align: right; padding-right: 5px; border-bottom: 1px solid #8c8c8c;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
                 </tr>
             </tfoot>
         </table>
