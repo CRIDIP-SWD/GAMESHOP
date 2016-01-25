@@ -94,6 +94,14 @@ $sous_total = $cmd[0]->total_commande - $cmd[0]->prix_envoie;
                     <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right;">Sous-Total</td>
                     <td style="text-align: right;"><?= $fonction->number_decimal($sous_total); ?></td>
                 </tr>
+                <tr>
+                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right;">Livraison</td>
+                    <td style="text-align: right;"><?= $fonction->number_decimal($cmd[0]->prix_envoie); ?></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="padding: 10px 10px 10px 10px; text-align: right;">Total</td>
+                    <td style="text-align: right;"><?= $fonction->number_decimal($cmd[0]->total_commande); ?></td>
+                </tr>
             </tfoot>
         </table>
     </body>
