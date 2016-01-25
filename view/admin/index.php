@@ -158,7 +158,7 @@
                                             <i><strong>Email:</strong> <?= $client->email; ?></i>
                                         </td>
                                         <td>
-                                            <a class="btn btn-primary btn-xs" href=""><i class="fa fa-eye"></i> Voir le produit</a>
+                                            <a class="btn btn-primary btn-xs" href="index.php?view=admin_sha&sub=client&data=view_client&idclient=<?= $client->idclient; ?>"><i class="fa fa-eye"></i> Voir le produit</a>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -239,7 +239,9 @@
                                                 }
                                                 ?>
                                             </td>
-                                            <td></td>
+                                            <td>
+                                                <a class="btn btn-primary btn-xs" href="index.php?view=admin_sha&sub=produit&data=view_produit&ref_produit=<?= $produit->ref_produit; ?>"><i class="fa fa-eye"></i> Voir le produit</a>
+                                            </td>
                                         </tr>
                                     <?php endforeach; ?>
                                     </tbody>
