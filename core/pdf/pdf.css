@@ -6,7 +6,7 @@ body{
     width: 100%;
 }
 .logo{
-
+    display: inline-block;
 }
 .header_left{
     float: left;
