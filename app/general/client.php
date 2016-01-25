@@ -26,6 +26,10 @@ class client extends DB
         return $this->query("SELECT * FROM client_adresse_fact WHERE idclient = '$idclient' AND `default` = '1'");
     }
 
+    public function count_client()
+    {
+        return $this->count("SELECT COUNT(idclient) FROM client");
+    }
 
 
 }

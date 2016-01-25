@@ -27,14 +27,14 @@
                                 <div class="widget-summary">
                                     <div class="widget-summary-col widget-summary-col-icon">
                                         <div class="summary-icon">
-                                            <i class="fa fa-life-ring"></i>
+                                            <i class="fa fa-users"></i>
                                         </div>
                                     </div>
                                     <div class="widget-summary-col">
                                         <div class="summary">
-                                            <h4 class="title">Support Questions</h4>
+                                            <h4 class="title">Nombre de Client</h4>
                                             <div class="info">
-                                                <strong class="amount">1281</strong>
+                                                <strong class="amount"><?= $client_cls->count_client(); ?></strong>
                                             </div>
                                         </div>
                                         <div class="summary-footer">
