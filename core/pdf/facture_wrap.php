@@ -61,7 +61,8 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                 </td>
             </tr>
         </table>
-        <table style="padding-top: 5em; width: 100%; border: 2px solid #8c8c8c; border-radius: 5px;" cellspacing="0" cellpadding="0">
+        <div style="padding-top: 2em; padding-bottom: 2em;"></div>
+        <table style="width: 100%; border: 2px solid #8c8c8c; border-radius: 5px;" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
                     <th>Référence</th>
