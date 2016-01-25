@@ -344,13 +344,17 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="row">
+                    <?php
+                    $sql_client = $DB->query("SELECT * FROM client ORDER BY nom_client ASC");
+                    foreach ($sql_client as $client):
+                    ?>
                     <div class="col-md-4">
                         <section class="panel">
                             <header class="panel-heading bg-primary">
 
                                 <div class="widget-profile-info">
                                     <div class="profile-picture">
-                                        <img src="assets/images/!logged-user.jpg">
+                                        <img src="../../assets/images/logo.png">
                                     </div>
                                     <div class="profile-info">
                                         <h4 class="name text-weight-semibold">John Doe</h4>
@@ -368,6 +372,7 @@
                             </div>
                         </section>
                     </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
