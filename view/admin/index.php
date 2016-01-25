@@ -38,7 +38,7 @@
                                             </div>
                                         </div>
                                         <div class="summary-footer">
-                                            <a class="text-uppercase">(view all)</a>
+                                            <a class="text-uppercase">(Liste des Clients)</a>
                                         </div>
                                     </div>
                                 </div>

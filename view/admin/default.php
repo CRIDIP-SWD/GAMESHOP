@@ -108,6 +108,12 @@ ini_set("display_errors", 1);
                                     <span>Accueil</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="index.php?view=admin_sha&sub=client">
+                                    <i class="fa fa-user" aria-hidden="true"></i>
+                                    <span>Client</span>
+                                </a>
+                            </li>
                             <li class="nav-parent">
                                 <a>
                                     <i class="fa fa-copy" aria-hidden="true"></i>
@@ -125,6 +131,12 @@ ini_set("display_errors", 1);
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                            <li>
+                                <a href="index.php?view=admin_sha&sub=commande">
+                                    <i class="fa fa-file" aria-hidden="true"></i>
+                                    <span>Commandes</span>
+                                </a>
                             </li>
                         </ul>
                     </nav>
