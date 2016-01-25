@@ -1,5 +1,10 @@
 <?php
 ini_set("display_errors", 1);
+if(!isset($_SESSION['logged']))
+{
+    $error = "Cette Accès vous est Interdit";
+    header("Location: index.php?view=error&data=$error");
+}
 ?>
 <!doctype html>
 <html class="fixed">
