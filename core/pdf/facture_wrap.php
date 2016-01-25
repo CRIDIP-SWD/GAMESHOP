@@ -65,11 +65,11 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
         <table style="width: 100%; border: 2px solid #8c8c8c; border-radius: 5px;" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
-                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Référence</th>
-                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Description</th>
-                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Prix Unitaire</th>
-                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c;">Qte</th>
-                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c;">Total</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px;">Référence</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px;">Description</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px;">Prix Unitaire</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px;">Qte</th>
+                    <th style="text-align: center; border-bottom: 1px solid #8c8c8c; padding: 5px 5px 5px 5px;">Total</th>
                 </tr>
             </thead>
             <tbody>
