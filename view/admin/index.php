@@ -354,7 +354,7 @@
 
                                 <div class="widget-profile-info">
                                     <div class="profile-picture">
-                                        <img src="../../assets/images/logo.png">
+                                        <img src="assets/images/logo.png">
                                     </div>
                                     <div class="profile-info">
                                         <h4 class="name text-weight-semibold"><?= $client->nom_client; ?> <?= $client->prenom_client; ?></h4>
