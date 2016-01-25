@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-6">
                         <section class="panel">
-                            <div class="panel-body bg-secondary">
+                            <div class="panel-body bg-primary">
                                 <div class="widget-summary">
                                     <div class="widget-summary-col widget-summary-col-icon">
                                         <div class="summary-icon">
