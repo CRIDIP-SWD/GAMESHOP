@@ -892,22 +892,22 @@ ini_set("display_errors", 1);
 </section>
 
 <!-- Vendor -->
-<script src="assets/vendor/jquery/jquery.js"></script>
-<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
-<script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
-<script src="assets/vendor/nanoscroller/nanoscroller.js"></script>
-<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
-<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
-<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery/jquery.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap/js/bootstrap.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>nanoscroller/nanoscroller.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>magnific-popup/magnific-popup.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-placeholder/jquery.placeholder.js"></script>
 
 <!-- Theme Base, Components and Settings -->
-<script src="assets/javascripts/theme.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>theme.js"></script>
 
 <!-- Theme Custom -->
-<script src="assets/javascripts/theme.custom.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>theme.custom.js"></script>
 
 <!-- Theme Initialization Files -->
-<script src="assets/javascripts/theme.init.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>theme.init.js"></script>
 
 </body>
 </html>
