@@ -104,5 +104,32 @@ $sous_total = $cmd[0]->total_commande - $cmd[0]->prix_envoie;
                 </tr>
             </tfoot>
         </table>
+        <div style="padding-top: 2em; padding-bottom: 2em;"></div>
+        <h3>LISTING DE VOS PAIEMENTS</h3>
+        <table style="width: 100%; border: 2px solid #8c8c8c; border-radius: 5px;" cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th style="text-align: center; border-bottom: 3px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px; background-color: #00A8FF">Date</th>
+                <th style="text-align: center; border-bottom: 3px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px; background-color: #00A8FF">Mode de réglement</th>
+                <th style="text-align: center; border-bottom: 3px solid #8c8c8c; border-right: 1px solid #8c8c8c; padding: 5px 5px 5px 5px; background-color: #00A8FF">Reférence</th>
+                <th style="text-align: center; border-bottom: 3px solid #8c8c8c; padding: 5px 5px 5px 5px; background-color: #00A8FF">Montant du Règlement</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            $sql_reglement = $DB->query("SELECT * FROM commande_reglement WHERE num_commande = :num_commande", array(
+                "num_commande"  => $num_commande
+            ));
+            foreach($sql_reglement as $reglement):
+                ?>
+                <tr>
+                    <td style="width: 25%; text-align: center; border: solid 1px #8c8c8c; padding: 5px 5px 5px 5px;"><?= $date_format->formatage('d/m/Y', $reglement->date_reglement); ?></td>
+                    <td style="width: 25%; text-align: center; border: solid 1px #8c8c8c; padding: 5px 5px 5px 5px;"><?= html_entity_decode($reglement->mode_reglement); ?></td>
+                    <td style="width: 25%; text-align: center; border: solid 1px #8c8c8c; padding: 5px 5px 5px 5px;"><?= $reglement->ref_reglement; ?></td>
+                    <td style="width: 25%; text-align: right; border: solid 1px #8c8c8c; padding: 5px 5px 5px 5px;"><?= $fonction->number_decimal($reglement->montant_reglement); ?></td>
+                </tr>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
     </body>
 </html>
