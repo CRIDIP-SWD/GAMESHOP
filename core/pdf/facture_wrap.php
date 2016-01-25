@@ -61,7 +61,7 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                 </td>
             </tr>
         </table>
-        <table style="padding-top: 5em; width: 100%;">
+        <table style="padding-top: 5em; width: 100%; border: 2px solid #8c8c8c; border-radius: 5px;" cellspacing="0" cellpadding="0">
             <thead>
                 <tr>
                     <th>Référence</th>
@@ -79,11 +79,11 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             foreach($sql_article as $article):
             ?>
                 <tr>
-                    <td style="width: 20%;"><?= $article->ref_produit; ?></td>
+                    <td style="width: 20%; text-align: center;"><?= $article->ref_produit; ?></td>
                     <td style="width: 45%;"><?= html_entity_decode($article->designation); ?></td>
-                    <td style="width: 15%;"><?= $fonction->number_decimal($article->prix_vente); ?></td>
-                    <td style="width: 5%;"><?= $article->qte; ?></td>
-                    <td style="width: 15%;"><?= $fonction->number_decimal($article->total_article_commande); ?></td>
+                    <td style="width: 15%; text-align: right;"><?= $fonction->number_decimal($article->prix_vente); ?></td>
+                    <td style="width: 5%; text-align: center;"><?= $article->qte; ?></td>
+                    <td style="width: 15%; text-align: right;"><?= $fonction->number_decimal($article->total_article_commande); ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
