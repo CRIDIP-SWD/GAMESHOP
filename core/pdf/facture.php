@@ -12,5 +12,6 @@ $pdf = new Pdf(array(
     'disable-smart-shrinking',
     'user-style-sheet' => 'pdf.css',
 ));
+echo html_entity_decode($content);
 $pdf->addPage($content);
-$pdf->send();
+//$pdf->send();
