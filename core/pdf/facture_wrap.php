@@ -30,7 +30,16 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
         </table>
         <table style="width: 100%; padding-top: 2em;">
             <tr>
-                <td style="width: 65%;"></td>
+                <td style="width: 65%;">
+                    <div class="info_facture">
+                        <table style="width: 100%;">
+                            <tr>
+                                <td>Date de la facture:</td>
+                                <td><?= $date_format->formatage("d/m/Y", $cmd[0]->date_commande); ?></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
                 <td style="width: 35%;">
                     <div class="adresse_client">
                         <strong><?= $cmd[0]->nom_client; ?> <?= $cmd[0]->prenom_client; ?></strong><br>
