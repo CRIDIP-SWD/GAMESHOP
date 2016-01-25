@@ -127,13 +127,13 @@
                 <div class="tabs tabs-primary">
                     <ul class="nav nav-tabs">
                         <li class="active">
-                            <a data-toggle="tab" href="#client" aria-expanded="true"><i class="fa fa-star"></i> Derniers Clients</a>
+                            <a data-toggle="tab" href="#client" aria-expanded="true"><i class="fa fa-users"></i> Derniers Clients</a>
                         </li>
                         <li class="active">
-                            <a data-toggle="tab" href="#produit" aria-expanded="true"><i class="fa fa-star"></i> Derniers Produits</a>
+                            <a data-toggle="tab" href="#produit" aria-expanded="true"><i class="fa fa-cubes"></i> Derniers Produits</a>
                         </li>
                         <li class="">
-                            <a data-toggle="tab" href="#cmd" aria-expanded="false">Dernières Commandes</a>
+                            <a data-toggle="tab" href="#cmd" aria-expanded="false"><i class="fa fa-shopping-cart"></i> Dernières Commandes</a>
                         </li>
                     </ul>
                     <div class="tab-content">
