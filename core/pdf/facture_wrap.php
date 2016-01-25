@@ -41,6 +41,14 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
                                 <td style="font-weight: bold;">Date de livraison:</td>
                                 <td><?= $date_format->formatage("d/m/Y", $cmd[0]->date_livraison); ?> (<?= $cmd[0]->destination; ?>)</td>
                             </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Mode de Livraison:</td>
+                                <td><?= $cmd[0]->methode_livraison; ?></td>
+                            </tr>
+                            <tr>
+                                <td style="font-weight: bold;">Mode de paiement:</td>
+                                <td><?= $cmd[0]->methode_paiement; ?></td>
+                            </tr>
                         </table>
                     </div>
                 </td>
