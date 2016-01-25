@@ -154,6 +154,11 @@ ini_set("display_errors", 1);
                                             Slideshow
                                         </a>
                                     </li>
+                                    <li>
+                                        <a href="index.php?view=admin_sha&sub=config_cron">
+                                            CRON
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
