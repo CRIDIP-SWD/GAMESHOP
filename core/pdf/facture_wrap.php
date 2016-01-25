@@ -13,7 +13,9 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
     <body>
         <table style="width: 100%;">
             <tr>
-                <td></td>
+                <td>
+                    <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" width="80" />
+                </td>
                 <td style="text-align: right">FACTURE</td>
             </tr>
         </table>
