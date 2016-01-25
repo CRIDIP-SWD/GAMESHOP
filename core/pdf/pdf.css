@@ -17,3 +17,9 @@ body{
     color: #8a7c7c;
     font-weight: bold;
 }
+
+#block_adresse{
+    display: inline-block;
+    font-size: 9px;
+}
+.adresse_societe
