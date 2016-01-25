@@ -76,6 +76,8 @@ $cmd = $DB->query("SELECT * FROM commande, client WHERE commande.idclient = clie
             $sql_article = $DB->query("SELECT * FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
                 "num_commande"  => $num_commande
             ));
+            var_dump($sql_article);
+            die();
             foreach($sql_article as $article):
             ?>
                 <tr>
