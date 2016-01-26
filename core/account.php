@@ -14,7 +14,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'create-account')
 
     if($create == 1)
     {
-        $sujet = "Inscription à Gameshop"
+        $sujet = "Inscription à Gameshop";
 
         $envelope["from"]   = "gamedistri@gmail.com";
         $envelope["to"]     = $_POST['email'];
