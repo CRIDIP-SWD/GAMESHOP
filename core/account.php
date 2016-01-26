@@ -310,7 +310,7 @@ Gameshop</span>
         <?php
         $message = ob_get_clean();
         $mail = mail($to, $sujet, $message, $headers);
-        if($mail)
+        if($mail == true)
         {
             header("Location: ../index.php?view=login&sub=create-account-success");
         }else{
