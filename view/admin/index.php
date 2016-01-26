@@ -407,7 +407,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 well">
-                    test
+                    <button type="button" class="btn btn-primary btn-block"><i class="fa fa-user-plus"></i> Ajouter un client</button>
                 </div>
             </div>
             <!-- end: page -->
