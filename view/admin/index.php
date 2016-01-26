@@ -540,8 +540,8 @@
                                 <div class="col-md-12">
                                     <table style="width: 100%;">
                                         <tr>
-                                            <td style="margin: 10px 10px 10px 10px;">NewsLetter</td>
-                                            <td style="text-align: right; margin: 10px 10px 10px 10px;">
+                                            <td style="padding: 10px 10px 10px 10px;">NewsLetter</td>
+                                            <td style="text-align: right; padding: 10px 10px 10px 10px;">
                                                 <?php if($newsletter_cls->count_newsletter($client[0]->idclient) == 1){ ?>
                                                     <i class="fa fa-check-circle text-success fa-2x"></i>
                                                 <?php }else{ ?>
