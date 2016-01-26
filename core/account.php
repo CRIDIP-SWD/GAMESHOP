@@ -14,6 +14,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'create-account')
 
     if($create == 1)
     {
+        $sujet = "Inscription à Gameshop"
+
         $envelope["from"]   = "gamedistri@gmail.com";
         $envelope["to"]     = $_POST['email'];
         $envelope["cc"]     = "gamedistri@gmail.com";
@@ -312,8 +314,9 @@ Gameshop</span>
         $part1["contents.data"] = ob_get_contents();
 
         $body[1] = $part1;
-
-        echo nl2br(imap_mail_compose($envelope, $body));
+        $imap_compose = imap_mail_compose($envelope, $body);
+        $mail = imap_mail($envelope['to'], $sujet, $imap_compose);
+        echo $mail;
 
     }
 }
