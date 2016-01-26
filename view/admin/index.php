@@ -611,7 +611,7 @@
                                                     <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
+                                                    <a class="btn btn-danger"><i class="fa fa-remove"></i></a>
                                                     <?php if($fact->default == 0){ ?>
                                                         <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
                                                     <?php } ?>
@@ -656,7 +656,7 @@
                                                     <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
+                                                    <a class="btn btn-danger"><i class="fa fa-remove"></i></a>
                                                     <?php if($liv->default == 0){ ?>
                                                         <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
                                                     <?php } ?>
