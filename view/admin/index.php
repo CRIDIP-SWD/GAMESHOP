@@ -529,6 +529,7 @@
                                     <div class="h2 text-weight-bold mb-none mt-lg text-center">0</div>
                                     <p class="text-muted mb-none text-center">Points</p>
                                 </div>
+                                <span class="separator"></span>
                                 <div class="col-md-4">
                                     <div class="h2 text-weight-bold mb-none mt-lg text-center">0</div>
                                     <p class="text-muted mb-none text-center">Réservations</p>
