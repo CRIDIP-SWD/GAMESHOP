@@ -572,14 +572,61 @@
                             </li>
                         </ul>
                         <div class="tab-content">
-                            <div class="tab-pane active" id="popular11">
-                                <p>Popular</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                            <div class="tab-pane active" id="adresse">
+                                <div class="well">
+                                    <button type="button" class="mb-xs mt-xs mr-xs modal-basic btn btn-primary" href="#add-adresse"><i class="fa fa-plus-square"></i> Ajouter une Adresse</button>
+                                </div>
                             </div>
                             <div class="tab-pane" id="recent11">
                                 <p>Recent</p>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
                             </div>
+                        </div>
+                        <div id="add-adresse" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                            <section class="panel">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title">Nouveau Client</h2>
+                                </header>
+                                <form id="summary-form" class="form-horizontal" action="core/account.php" method="post">
+                                    <div class="panel-body">
+                                        <div class="modal-wrapper">
+                                            <div class="validation-message">
+                                                <ul></ul>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">Adresse Mail <span class="required">*</span></label>
+                                                <div class="col-md-9">
+                                                    <input id="account" type="email" name="email" class="form-control" required title="Entrez une adresse Mail Valide !">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">Mot de Passe <span class="required">*</span></label>
+                                                <div class="col-md-9">
+                                                    <input type="password" id="account" name="password" class="form-control" required title="Entrez un mot de Passe Valide !">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">Nom <span class="required">*</span></label>
+                                                <div class="col-md-3">
+                                                    <input type="text" id="account" name="nom_client" class="form-control" required title="Entrez un nom de famille Valide">
+                                                </div>
+                                                <label class="col-md-3 control-label" for="account">Prénom <span class="required">*</span></label>
+                                                <div class="col-md-3">
+                                                    <input type="text" id="account" name="prenom_client" class="form-control" required title="Entrez un Prénom Valide">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <footer class="panel-footer">
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <button class="btn btn-primary" type="submit" name="action" value="create-account">Valider</button>
+                                                <button class="btn btn-default modal-dismiss">Annuler</button>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                </form>
+                            </section>
                         </div>
                     </div>
                 </div>
