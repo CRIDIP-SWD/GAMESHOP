@@ -486,7 +486,7 @@
 
             <!-- start: page -->
             <div class="row">
-                <div class="col-md-5">
+                <div class="col-md-4">
                     <section class="panel panel-group">
                         <header class="panel-heading bg-primary">
 
