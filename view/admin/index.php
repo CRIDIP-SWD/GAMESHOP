@@ -618,6 +618,48 @@
                                         </tbody>
                                     </table>
                                 </div>
+                                <h3>ADRESSE DE LIVRAISON</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Alias</th>
+                                            <th>Identité</th>
+                                            <th>Adresse</th>
+                                            <th>Coordonnées</th>
+                                            <th>Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        $sql_adresse_fact = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
+                                            "idclient"      => $client[0]->idclient
+                                        ));
+                                        foreach ($sql_adresse_fact as $fact):
+                                            ?>
+                                            <tr>
+                                                <td><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
+                                                <td><?= html_entity_decode($fact->alias); ?></td>
+                                                <td>
+                                                    <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
+                                                </td>
+                                                <td>
+                                                    <?= html_entity_decode($fact->adresse); ?><br>
+                                                    <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
+                                                    France
+                                                </td>
+                                                <td>
+                                                    <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="tab-pane" id="recent11">
                                 <p>Recent</p>
