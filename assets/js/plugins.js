@@ -1250,3 +1250,30 @@ $(document).ready(function(){
 
 	});
 });
+
+$("#declare_default").click(function(){
+	var idadresse = $('#idadresse').val();
+
+	var data = 'idadresse='+idadresse;
+
+	$.ajax({
+		type: "GET",
+		url: 'assets/data/define_default.php',
+		data: data,
+		success: function(){
+			new PNotify({
+				title: 'Regular Notice',
+				text: 'Check me out! I\'m a notice.',
+				type: 'success'
+			});
+		},
+		error: function()
+		{
+			new PNotify({
+				title: 'Regular Notice',
+				text: 'Check me out! I\'m a notice.',
+				type: 'error'
+			});
+		}
+	})
+});

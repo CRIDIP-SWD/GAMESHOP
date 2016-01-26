@@ -611,7 +611,7 @@
                                                     <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-danger"><i class="fa fa-remove"></i></a>
+                                                    <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=facturation&idclient=<?= $idclient; ?>&idadresse=<?= $fact->idadresse; ?>"><i class="fa fa-remove"></i></a>
                                                     <?php if($fact->default == 0){ ?>
                                                         <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
                                                     <?php } ?>
@@ -656,9 +656,9 @@
                                                     <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-danger"><i class="fa fa-remove"></i></a>
+                                                    <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
                                                     <?php if($liv->default == 0){ ?>
-                                                        <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
+                                                        <button type="button" class="btn btn-success" id="declare_default"><i class="fa fa-star"></i></button>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
