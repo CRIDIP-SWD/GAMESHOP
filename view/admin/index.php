@@ -601,6 +601,8 @@
                                                 <td><?= html_entity_decode($fact->alias); ?></td>
                                                 <td>
                                                     <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
+                                                </td>
+                                                <td>
                                                     <?= html_entity_decode($fact->adresse); ?><br>
                                                     <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
                                                     France
