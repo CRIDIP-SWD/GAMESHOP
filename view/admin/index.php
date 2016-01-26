@@ -576,6 +576,43 @@
                                 <div class="well">
                                     <button type="button" class="mb-xs mt-xs mr-xs modal-basic btn btn-primary" href="#add-adresse"><i class="fa fa-plus-square"></i> Ajouter une Adresse</button>
                                 </div>
+                                <h3>ADRESSE DE FACTURATION</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Alias</th>
+                                                <th>Identité</th>
+                                                <th>Adresse</th>
+                                                <th>Coordonnées</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        <?php
+                                        $sql_adresse_fact = $DB->query("SELECT * FROM client_adresse_fact WHERE idclient = :idclient", array(
+                                            "idclient"      => $client[0]->idclient
+                                        ));
+                                        foreach ($sql_adresse_fact as $fact):
+                                        ?>
+                                            <tr>
+                                                <th><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></th>
+                                                <th><?= html_entity_decode($fact->alias); ?></th>
+                                                <th>
+                                                    <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
+                                                    <?= html_entity_decode($fact->adresse); ?><br>
+                                                    <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
+                                                    France
+                                                </th>
+                                                <th>
+                                                    <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
+                                                </th>
+                                            </tr>
+                                        <?php endforeach; ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                             <div class="tab-pane" id="recent11">
                                 <p>Recent</p>
