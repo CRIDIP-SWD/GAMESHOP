@@ -485,7 +485,31 @@
             </header>
 
             <!-- start: page -->
+            <div class="row">
+                <div class="col-md-5">
+                    <section class="panel panel-group">
+                        <header class="panel-heading bg-primary">
 
+                            <div class="widget-profile-info">
+                                <div class="profile-picture">
+                                    <img src="assets/images/logo.png">
+                                </div>
+                                <div class="profile-info">
+                                    <h4 class="name text-weight-semibold"><?= $client[0]->nom_client; ?> <?= $client[0]->prenom_client; ?></h4>
+                                    <h5 class="role"><?= $client[0]->email; ?></h5>
+                                </div>
+                            </div>
+
+                        </header>
+                        <div class="panel-body">
+
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-7">
+
+                </div>
+            </div>
             <!-- end: page -->
         </section>
     <?php endif; ?>
