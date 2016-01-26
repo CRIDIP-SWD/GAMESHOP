@@ -367,9 +367,19 @@
                                         </div>
 
                                     </header>
-                                    <div class="panel-body text-center">
-                                        <h3 class="text-weight-semibold mt-sm text-center">Simple Block Title</h3>
-                                        <p class="text-center">Nullam quiris risus eget urna mollis ornare vel eu leo. Soccis natoque penatibus et magnis dis parturient montes. Soccis natoque penatibus et magnis dis parturient montes.</p>
+                                    <div class="panel-body">
+                                        <table style="width: 100%;">
+                                            <tr>
+                                                <td>Compte PSN</td>
+                                                <td>
+                                                    <?php if(!empty($client->pseudo_psn)){ ?>
+                                                        <i class="fa fa-check-circle text-success"></i>
+                                                    <?php }else{ ?>
+                                                        <i class="fa fa-times-circle text-danger"></i>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                        </table>
                                     </div>
                                 </section>
                             </div>
