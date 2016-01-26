@@ -447,8 +447,8 @@
                             <footer class="panel-footer">
                                 <div class="row">
                                     <div class="col-md-12 text-right">
-                                        <button class="btn btn-primary modal-confirm">Confirm</button>
-                                        <button class="btn btn-default modal-dismiss">Cancel</button>
+                                        <button class="btn btn-primary modal-confirm" type="submit" name="action" value="create-account-1">Valider</button>
+                                        <button class="btn btn-default modal-dismiss">Annuler</button>
                                     </div>
                                 </div>
                             </footer>
