@@ -612,6 +612,9 @@
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
+                                                    <?php if($fact->default == 0){ ?>
+                                                        <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -654,6 +657,9 @@
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
+                                                    <?php if($liv->default == 0){ ?>
+                                                        <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
+                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
