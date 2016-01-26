@@ -313,6 +313,8 @@ Gameshop</span>
         if($mail)
         {
             header("Location: ../index.php?view=login&sub=create-account-success");
+        }else{
+            echo "ERREUR !";
         }
     }
 }
