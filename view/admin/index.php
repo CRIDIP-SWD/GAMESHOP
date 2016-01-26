@@ -497,16 +497,12 @@
                                 <div class="profile-info">
                                     <h4 class="name text-weight-semibold"><?= $client[0]->nom_client; ?> <?= $client[0]->prenom_client; ?></h4>
                                     <h5 class="role"><?= $client[0]->email; ?></h5>
-                                    <div class="profile-footer" style="display: inline;">
-                                        <?php if($client[0]->pseudo_psn): ?>
+                                    <div class="profile-footer" style="display: inline-flex;">
+                                        <?php if(!empty($client[0]->pseudo_psn)){ ?>
                                             <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" />
-                                        <?php endif; ?>
-                                        <?php if($client[0]->pseudo_xbox): ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" />
-                                        <?php endif; ?>
-                                        <?php if($client[0]->pseudo_steam): ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" />
-                                        <?php endif; ?>
+                                        <?php }else{ ?>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" style="opacity: 0.2"/>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
