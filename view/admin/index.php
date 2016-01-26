@@ -559,10 +559,16 @@
                     <div class="tabs tabs-vertical tabs-left tabs-primary">
                         <ul class="nav nav-tabs col-sm-3 col-xs-5">
                             <li class="active">
-                                <a data-toggle="tab" href="#popular11"><i class="fa fa-star"></i> Popular</a>
+                                <a data-toggle="tab" href="#adresse"><i class="el-icon-address-book"></i> Adresse</a>
                             </li>
                             <li>
-                                <a data-toggle="tab" href="#recent11">Recent</a>
+                                <a data-toggle="tab" href="#achat"><i class="el-icon-shopping-cart"></i> Commandes</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#vourcher"><i class="fa fa-ticket"></i> Bon D'achat</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#reservation"><i class="el-icon-calendar"></i> Réservation </a>
                             </li>
                         </ul>
                         <div class="tab-content">
