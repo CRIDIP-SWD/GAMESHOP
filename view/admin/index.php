@@ -370,8 +370,8 @@
                                     <div class="panel-body">
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td style="width: 40%; border-bottom: 1px solid #ccc; padding-bottom: 4px;">Compte PSN</td>
-                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc; padding-bottom: 4px;">
+                                                <td style="width: 40%; border-bottom: 1px solid #ccc; padding: 4px 4px 4px 4px;">Compte PSN</td>
+                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc; padding: 4px 4px 4px 4px;">
                                                     <?php if(!empty($client->pseudo_psn)){ ?>
                                                         <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
@@ -380,8 +380,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 40%; border-bottom: 1px solid #ccc; padding-bottom: 4px;">Compte Xbox Live</td>
-                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc; padding-bottom: 4px;">
+                                                <td style="width: 40%; border-bottom: 1px solid #ccc; padding: 4px 4px 4px 4px;">Compte Xbox Live</td>
+                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc; padding: 4px 4px 4px 4px;">
                                                     <?php if(!empty($client->pseudo_xbox)){ ?>
                                                         <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
@@ -390,8 +390,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 40%; border-bottom: 1px solid #ccc; padding-bottom: 4px;">Compte Steam</td>
-                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc; padding-bottom: 4px;">
+                                                <td style="width: 40%; border-bottom: 1px solid #ccc; padding: 4px 4px 4px 4px;">Compte Steam</td>
+                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc; padding: 4px 4px 4px 4px;">
                                                     <?php if(!empty($client->pseudo_steam)){ ?>
                                                         <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
