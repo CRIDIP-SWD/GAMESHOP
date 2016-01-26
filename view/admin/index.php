@@ -407,7 +407,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 well">
-                    <button type="button" class="btn btn-primary btn-block"><i class="fa fa-user-plus"></i> Ajouter un client</button>
+                    <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#add-client"><i class="fa fa-user-plus"></i> Ajouter un client</button>
                 </div>
             </div>
             <!-- end: page -->

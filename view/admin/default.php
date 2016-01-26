@@ -49,6 +49,7 @@ if(!isset($_SESSION['logged']))
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>chartist/chartist.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>select2/select2.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables-bs3/assets/css/datatables.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>pnotify/pnotify.custom.css" />
 </head>
 <body>
 <section class="body">
@@ -284,5 +285,6 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.default.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.row.with.details.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.tabletools.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.modals.js"></script>
 </body>
 </html>
