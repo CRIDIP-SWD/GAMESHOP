@@ -370,8 +370,8 @@
                                     <div class="panel-body">
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td>Compte PSN</td>
-                                                <td>
+                                                <td style="width: 40%;">Compte PSN</td>
+                                                <td style="width: 60%; text-align: right;">
                                                     <?php if(!empty($client->pseudo_psn)){ ?>
                                                         <i class="fa fa-check-circle text-success"></i>
                                                     <?php }else{ ?>
