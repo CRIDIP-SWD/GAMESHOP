@@ -459,4 +459,35 @@
             <!-- end: page -->
         </section>
     <?php endif; ?>
+    <?php if(isset($_GET['data']) && $_GET['data'] == 'view_client'): ?>
+        <?php
+        $idclient = $_GET['idclient'];
+        $client = $DB->query("SELECT * FROM client WHERE idclient = :idclient", array(
+            "idclient"      => $idclient
+        ));
+        ?>
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2><i class="fa fa-users"></i> CLIENT</h2>
+
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.php?view=admin_sha">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Client</span></li>
+                        <li><?= $client[0]->nom_client; ?> <?= $client[0]->prenom_client; ?></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+
+            <!-- end: page -->
+        </section>
+    <?php endif; ?>
 <?php endif; ?>
