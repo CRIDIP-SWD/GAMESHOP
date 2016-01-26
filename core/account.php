@@ -14,11 +14,12 @@ if(isset($_POST['action']) && $_POST['action'] == 'create-account')
 
     if($create == 1)
     {
-        $to = $_POST['email'];
-        $sujet = "GAMESHOP - Votre Inscription à notre Boutique !";
-        $headers = 'Mime-Version: 1.0'."\r\n";
-        $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
-        $headers .= "\r\n";
+        $envelope["from"]   = "gamedistri@gmail.com";
+        $envelope["to"]     = $_POST['email'];
+        $envelope["cc"]     = "gamedistri@gmail.com";
+
+        $part1["type"]      = TYPETEXT;
+        $part1["subtype"]   = "plain";
         ob_start();
         ?>
         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -308,14 +309,12 @@ Gameshop</span>
         </body>
         </html>
         <?php
-        $message = ob_get_clean();
-        $mail = mail($to, $sujet, $message, $headers);
-        if($mail == true)
-        {
-            header("Location: ../index.php?view=login&sub=create-account-success");
-        }else{
-            echo "ERREUR !";
-        }
+        $part1["contents.data"] = ob_get_contents();
+
+        $body = $part1;
+
+        echo nl2br(imap_mail_compose($envelope, $body));
+
     }
 }
 if(isset($_POST['action']) && $_POST['action'] == 'add-psn')
