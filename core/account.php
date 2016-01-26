@@ -316,7 +316,7 @@ Gameshop</span>
         $body[1] = $part1;
         $imap_compose = imap_mail_compose($envelope, $body);
         $mail = imap_mail($envelope['to'], $sujet, $imap_compose);
-        echo $mail;
+
 
     }
 }

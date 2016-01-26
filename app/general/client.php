@@ -28,7 +28,7 @@ class client extends DB
 
     public function count_client()
     {
-        return $this->count("SELECT COUNT(idclient) FROM client");
+        return $this->count("SELECT COUNT(idclient) AS nb_client FROM client");
     }
 
 
