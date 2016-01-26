@@ -597,17 +597,20 @@
                                         foreach ($sql_adresse_fact as $fact):
                                         ?>
                                             <tr>
-                                                <th><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></th>
-                                                <th><?= html_entity_decode($fact->alias); ?></th>
-                                                <th>
+                                                <td><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
+                                                <td><?= html_entity_decode($fact->alias); ?></td>
+                                                <td>
                                                     <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
                                                     <?= html_entity_decode($fact->adresse); ?><br>
                                                     <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
                                                     France
-                                                </th>
-                                                <th>
+                                                </td>
+                                                <td>
                                                     <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
-                                                </th>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
