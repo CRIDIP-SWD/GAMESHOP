@@ -535,6 +535,7 @@
                             </div>
                             <div style="margin-top: 10px; margin-bottom: 10px;"></div>
                             <hr class="solid short mt-lg" />
+                            <div style="margin-top: 10px; margin-bottom: 10px;"></div>
                             <div class="row">
                                 <div class="col-md-12">
                                     <table style="width: 100%;">
