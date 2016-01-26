@@ -379,6 +379,26 @@
                                                     <?php } ?>
                                                 </td>
                                             </tr>
+                                            <tr>
+                                                <td style="width: 40%;">Compte Xbox Live</td>
+                                                <td style="width: 60%; text-align: right;">
+                                                    <?php if(!empty($client->pseudo_xbox)){ ?>
+                                                        <i class="fa fa-check-circle fa-lg text-success"></i>
+                                                    <?php }else{ ?>
+                                                        <i class="fa fa-times-circle fa-lg text-danger"></i>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 40%;">Compte Steam</td>
+                                                <td style="width: 60%; text-align: right;">
+                                                    <?php if(!empty($client->pseudo_steam)){ ?>
+                                                        <i class="fa fa-check-circle fa-lg text-success"></i>
+                                                    <?php }else{ ?>
+                                                        <i class="fa fa-times-circle fa-lg text-danger"></i>
+                                                    <?php } ?>
+                                                </td>
+                                            </tr>
                                         </table>
                                     </div>
                                 </section>
