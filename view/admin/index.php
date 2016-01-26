@@ -633,24 +633,24 @@
                                         </thead>
                                         <tbody>
                                         <?php
-                                        $sql_adresse_fact = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
+                                        $sql_adresse_liv = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
                                             "idclient"      => $client[0]->idclient
                                         ));
-                                        foreach ($sql_adresse_fact as $fact):
+                                        foreach ($sql_adresse_liv as $liv):
                                             ?>
                                             <tr>
-                                                <td><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
-                                                <td><?= html_entity_decode($fact->alias); ?></td>
+                                                <td><?php if($liv->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
+                                                <td><?= html_entity_decode($liv->alias); ?></td>
                                                 <td>
-                                                    <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
+                                                    <?php if(!empty($liv->societe)){echo "<strong>".$liv->societe."</strong><br><i>".$liv->nom." ".$liv->prenom."</i>";}else{echo "<strong>".$liv->nom." ".$liv->prenom."</strong>";} ?><br>
                                                 </td>
                                                 <td>
-                                                    <?= html_entity_decode($fact->adresse); ?><br>
-                                                    <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
+                                                    <?= html_entity_decode($liv->adresse); ?><br>
+                                                    <?= $liv->code_postal; ?> <?= html_entity_decode($liv->ville); ?><br>
                                                     France
                                                 </td>
                                                 <td>
-                                                    <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
+                                                    <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-primary"><i class="fa fa-remove"></i></a>
