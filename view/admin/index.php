@@ -541,7 +541,7 @@
                                     <table style="width: 100%;">
                                         <tr>
                                             <td>NewsLetter</td>
-                                            <td>
+                                            <td style="text-align: right;">
                                                 <?php if($newsletter_cls->count_newsletter($client[0]->idclient) == 1){ ?>
                                                     <i class="fa fa-check-circle text-success fa-2x"></i>
                                                 <?php }else{ ?>
