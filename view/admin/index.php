@@ -555,8 +555,27 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-md-7">
-
+                <div class="col-md-8">
+                    <div class="tabs tabs-vertical tabs-left tabs-primary">
+                        <ul class="nav nav-tabs col-sm-3 col-xs-5">
+                            <li class="active">
+                                <a data-toggle="tab" href="#popular11"><i class="fa fa-star"></i> Popular</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#recent11">Recent</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="popular11">
+                                <p>Popular</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                            </div>
+                            <div class="tab-pane" id="recent11">
+                                <p>Recent</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- end: page -->
