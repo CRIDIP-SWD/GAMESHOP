@@ -406,6 +406,9 @@
                         <?php endforeach; ?>
                     </div>
                 </div>
+                <div class="col-md-3 well">
+                    test
+                </div>
             </div>
             <!-- end: page -->
         </section>
