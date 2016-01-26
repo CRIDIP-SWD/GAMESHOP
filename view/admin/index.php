@@ -499,13 +499,13 @@
                                     <h5 class="role"><?= $client[0]->email; ?></h5>
                                     <div class="profile-footer">
                                         <?php if($client[0]->pseudo_psn): ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icon/psn.png" width="20" class="img-responsive" />
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" />
                                         <?php endif; ?>
                                         <?php if($client[0]->pseudo_xbox): ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icon/xbox.png" width="20" class="img-responsive" />
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" />
                                         <?php endif; ?>
                                         <?php if($client[0]->pseudo_steam): ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icon/steam.png" width="20" class="img-responsive" />
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" />
                                         <?php endif; ?>
                                     </div>
                                 </div>
