@@ -370,8 +370,8 @@
                                     <div class="panel-body">
                                         <table style="width: 100%;">
                                             <tr>
-                                                <td style="width: 40%; border-bottom: solid 1px #ccccc;">Compte PSN</td>
-                                                <td style="width: 60%; text-align: right; border-bottom: solid 1px #ccccc;">
+                                                <td style="width: 40%; border-bottom: 1px solid #ccc;">Compte PSN</td>
+                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc;">
                                                     <?php if(!empty($client->pseudo_psn)){ ?>
                                                         <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
@@ -380,8 +380,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 40%; border-bottom: solid 1px #ccccc;">Compte Xbox Live</td>
-                                                <td style="width: 60%; text-align: right; border-bottom: solid 1px #ccccc;">
+                                                <td style="width: 40%; border-bottom: 1px solid #ccc;">Compte Xbox Live</td>
+                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc;">
                                                     <?php if(!empty($client->pseudo_xbox)){ ?>
                                                         <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
@@ -390,8 +390,8 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td style="width: 40%; border-bottom: solid 1px #ccccc;">Compte Steam</td>
-                                                <td style="width: 60%; text-align: right; border-bottom: solid 1px #ccccc;">
+                                                <td style="width: 40%; border-bottom: 1px solid #ccc;">Compte Steam</td>
+                                                <td style="width: 60%; text-align: right; border-bottom: 1px solid #ccc;">
                                                     <?php if(!empty($client->pseudo_steam)){ ?>
                                                         <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
