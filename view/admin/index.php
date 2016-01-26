@@ -519,7 +519,12 @@
 
                         </header>
                         <div class="panel-body">
-
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="h4 text-weight-bold mb-none mt-lg">0</div>
+                                    <p class="text-xs text-muted mb-none">Commandes</p>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
