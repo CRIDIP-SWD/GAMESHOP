@@ -373,9 +373,9 @@
                                                 <td style="width: 40%;">Compte PSN</td>
                                                 <td style="width: 60%; text-align: right;">
                                                     <?php if(!empty($client->pseudo_psn)){ ?>
-                                                        <i class="fa fa-check-circle text-success"></i>
+                                                        <i class="fa fa-check-circle fa-lg text-success"></i>
                                                     <?php }else{ ?>
-                                                        <i class="fa fa-times-circle text-danger"></i>
+                                                        <i class="fa fa-times-circle fa-lg text-danger"></i>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
