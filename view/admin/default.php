@@ -50,6 +50,18 @@ if(!isset($_SESSION['logged']))
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>select2/select2.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables-bs3/assets/css/datatables.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>pnotify/pnotify.custom.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-ui/css/ui-lightness/jquery-ui-1.10.4.custom.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-multiselect/bootstrap-multiselect.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-tagsinput/bootstrap-tagsinput.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-timepicker/css/bootstrap-timepicker.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>dropzone/css/basic.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>dropzone/css/dropzone.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-markdown/css/bootstrap-markdown.min.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>summernote/summernote.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>summernote/summernote-bs3.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/lib/codemirror.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/theme/monokai.css" />
 </head>
 <body>
 <section class="body">
@@ -279,6 +291,29 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables/media/js/jquery.dataTables.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables/extras/TableTools/js/dataTables.tableTools.min.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-datatables-bs3/assets/js/datatables.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-maskedinput/jquery.maskedinput.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>fuelux/js/spinner.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>dropzone/dropzone.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-markdown/js/markdown.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-markdown/js/to-markdown.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-markdown/js/bootstrap-markdown.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/lib/codemirror.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/addon/selection/active-line.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/addon/edit/matchbrackets.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/mode/javascript/javascript.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/mode/xml/xml.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/mode/css/css.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>summernote/summernote.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-maxlength/bootstrap-maxlength.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>ios7-switch/ios7-switch.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-confirmation/bootstrap-confirmation.js"></script>
 
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.charts.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
@@ -286,5 +321,6 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.row.with.details.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.tabletools.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.modals.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.advanced.form.js"></script>
 </body>
 </html>
