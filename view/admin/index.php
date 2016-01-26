@@ -497,21 +497,21 @@
                                 <div class="profile-info">
                                     <h4 class="name text-weight-semibold"><?= $client[0]->nom_client; ?> <?= $client[0]->prenom_client; ?></h4>
                                     <h5 class="role"><?= $client[0]->email; ?></h5>
-                                    <div class="profile-footer" style="display: inline-flex;">
+                                    <div class="profile-footer" style="display: inline-flex; float: right;">
                                         <?php if(!empty($client[0]->pseudo_psn)){ ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" />
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" style="margin-right: 12px;"/>
                                         <?php }else{ ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" style="opacity: 0.2"/>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" style="opacity: 0.2;margin-right: 12px;"/>
                                         <?php } ?>
                                         <?php if(!empty($client[0]->pseudo_xbox)){ ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" />
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" style="margin-right: 12px;"/>
                                         <?php }else{ ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" style="opacity: 0.2"/>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" style="opacity: 0.2;margin-right: 12px;"/>
                                         <?php } ?>
                                         <?php if(!empty($client[0]->pseudo_steam)){ ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" />
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" style="margin-right: 12px;"/>
                                         <?php }else{ ?>
-                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" style="opacity: 0.2"/>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" style="opacity: 0.2;margin-right: 12px;"/>
                                         <?php } ?>
                                     </div>
                                 </div>
