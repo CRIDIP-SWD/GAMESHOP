@@ -14,7 +14,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'create-account')
 
     if($create == 1)
     {
-        $to = $params['email'];
+        $to = $_POST['email'];
         $sujet = "GAMESHOP - Votre Inscription à notre Boutique !";
         $headers = 'Mime-Version: 1.0'."\r\n";
         $headers .= 'Content-type: text/html; charset=utf-8'."\r\n";
