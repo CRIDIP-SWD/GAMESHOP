@@ -418,9 +418,9 @@
                             <div class="panel-body">
                                 <div class="modal-wrapper">
                                     <div class="form-group">
-                                        <label class="col-md-3 control-label">Adresse Mail</label>
+                                        <label class="col-md-3 control-label" for="account">Adresse Mail</label>
                                         <div class="col-md-9">
-                                            <input type="text" name="email" class="form-control">
+                                            <input id="account" type="text" name="email" class="form-control">
                                         </div>
                                     </div>
                                 </div>
