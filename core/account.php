@@ -311,7 +311,7 @@ Gameshop</span>
         <?php
         $part1["contents.data"] = ob_get_contents();
 
-        $body = $part1;
+        $body[1] = $part1;
 
         echo nl2br(imap_mail_compose($envelope, $body));
 
