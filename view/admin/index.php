@@ -503,6 +503,16 @@
                                         <?php }else{ ?>
                                             <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/psn.png" width="20" class="img-responsive" style="opacity: 0.2"/>
                                         <?php } ?>
+                                        <?php if(!empty($client[0]->pseudo_xbox)){ ?>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" />
+                                        <?php }else{ ?>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/xbox.png" width="20" class="img-responsive" style="opacity: 0.2"/>
+                                        <?php } ?>
+                                        <?php if(!empty($client[0]->pseudo_steam)){ ?>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" />
+                                        <?php }else{ ?>
+                                            <img src="<?= $constante->getUrl(array(''), false, true); ?>autre/icone/steam.png" width="20" class="img-responsive" style="opacity: 0.2"/>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
