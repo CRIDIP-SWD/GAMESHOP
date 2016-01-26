@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['action']) && $_POST['action'] == 'create-account-1')
+if(isset($_POST['action']) && $_POST['action'] == 'create-account')
 {
     require "../app/classe.php";
     $params = array(

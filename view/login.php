@@ -75,13 +75,9 @@ if(isset($_SESSION['logged']) && $_SESSION['logged'] == true)
                                 <input type="password" id="register-form-password" name="password" value="" class="form-control" />
                             </div>
 
-                            <div class="col_full">
-                                <label for="register-form-repassword">Confirmation du mot de Passe:</label>
-                                <input type="password" id="register-form-repassword" name="confirm-pass" value="" class="form-control" />
-                            </div>
 
                             <div class="col_full nobottommargin">
-                                <button class="button button-3d button-black nomargin" id="register-form-submit" name="action" value="add-account">Enregistrez-vous !</button>
+                                <button class="button button-3d button-black nomargin" id="register-form-submit" name="action" value="create-account">Enregistrez-vous !</button>
                             </div>
                         </form>
                     </div>
