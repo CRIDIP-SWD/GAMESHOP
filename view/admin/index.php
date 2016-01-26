@@ -465,6 +465,8 @@
         $client = $DB->query("SELECT * FROM client WHERE idclient = :idclient", array(
             "idclient"      => $idclient
         ));
+        var_dump($client);
+        die();
         ?>
         <section role="main" class="content-body">
             <header class="page-header">
