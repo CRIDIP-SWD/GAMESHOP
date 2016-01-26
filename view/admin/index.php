@@ -533,6 +533,22 @@
                                     <p class="text-muted mb-none text-center">Réservations</p>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table style="width: 100%;">
+                                        <tr>
+                                            <td>NewsLetter</td>
+                                            <td>
+                                                <?php if($newsletter_cls->count_newsletter($client[0]->idclient) == 1){ ?>
+                                                    <i class="fa fa-check-circle text-success"></i>
+                                                <?php }else{ ?>
+                                                    <i class="fa fa-times-circle text-danger"></i>
+                                                <?php } ?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
                         </div>
                     </section>
                 </div>
