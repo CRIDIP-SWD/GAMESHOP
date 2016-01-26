@@ -437,6 +437,10 @@
                                         <div class="col-md-3">
                                             <input type="text" id="account" name="nom_client" class="form-control" required title="Entrez un nom de famille Valide">
                                         </div>
+                                        <label class="col-md-3 control-label" for="account">Prénom <span class="required">*</span></label>
+                                        <div class="col-md-3">
+                                            <input type="text" id="account" name="prenom_client" class="form-control" required title="Entrez un Prénom Valide">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
