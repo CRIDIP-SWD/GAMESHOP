@@ -533,7 +533,7 @@
                                     <p class="text-muted mb-none text-center">Réservations</p>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row topmargin">
                                 <div class="col-md-12">
                                     <table style="width: 100%;">
                                         <tr>
