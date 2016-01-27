@@ -686,7 +686,8 @@
                                     <td>
                                         <strong>Adresse:</strong> <?= html_entity_decode($cmd->adresse_liv); ?><br>
                                         <strong>Prix de l'envoie:</strong> <?= $fonction->number_decimal($cmd->prix_envoie); ?><br>
-                                        <strong>Methode:</strong> <?= $cmd->methode_livraison; ?>
+                                        <strong>Methode:</strong> <?= $cmd->methode_livraison; ?><br>
+                                        <strong>Date de Livraison:</strong> <?= $date_format->formatage("d/m/Y", $cmd->date_livraison); ?>
                                     </td>
                                     <td>
                                         <strong>Methode:</strong> <?= $cmd->methode_paiement; ?><br>
