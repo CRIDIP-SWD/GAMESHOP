@@ -333,8 +333,7 @@ if(!isset($_SESSION['logged']))
             new PNotify({
                 title: 'SUCCES',
                 text: "<?= $_GET['text']; ?>",
-                type: 'success',
-                icon: 'fa fa-check'
+                type: 'success'
 		    }); 
         })
     </script>
@@ -345,8 +344,7 @@ if(!isset($_SESSION['logged']))
             new PNotify({
                 title: 'Erreur',
                 text: "<?= $_GET['text']; ?>",
-                type: 'error',
-                icon: 'fa fa-times'
+                type: 'error'
 		    }); 
         })
     </script>
