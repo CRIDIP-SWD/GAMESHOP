@@ -847,7 +847,7 @@
                             <div class="modal-wrapper">
 
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="cmd">Default Datepicker</label>
+                                    <label class="col-md-3 control-label" for="cmd">Date de la Commande</label>
                                     <div class="col-md-6">
                                         <div class="input-group">
                                             <span class="input-group-addon">
