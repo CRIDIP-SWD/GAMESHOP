@@ -669,42 +669,77 @@
                         <div id="add-adresse" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
                             <section class="panel">
                                 <header class="panel-heading">
-                                    <h2 class="panel-title">Nouveau Client</h2>
+                                    <h2 class="panel-title">Nouvelle adresse</h2>
                                 </header>
-                                <form id="summary-form" class="form-horizontal" action="core/account.php" method="post">
+                                <form id="summary-form" class="form-horizontal" action="core/admin/client.php" method="post">
                                     <div class="panel-body">
                                         <div class="modal-wrapper">
-                                            <div class="validation-message">
-                                                <ul></ul>
-                                            </div>
+
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Adresse Mail <span class="required">*</span></label>
+                                                <label class="col-md-3 control-label" for="account">Alias <span class="required">*</span></label>
                                                 <div class="col-md-9">
-                                                    <input id="account" type="email" name="email" class="form-control" required title="Entrez une adresse Mail Valide !">
+                                                    <input id="account" type="text" name="alias" class="form-control" required title="Champs Requis">
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Mot de Passe <span class="required">*</span></label>
+                                                <label class="col-md-3 control-label" for="account">Société</label>
                                                 <div class="col-md-9">
-                                                    <input type="password" id="account" name="password" class="form-control" required title="Entrez un mot de Passe Valide !">
+                                                    <input id="account" type="text" name="societe" class="form-control">
                                                 </div>
                                             </div>
+
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Nom <span class="required">*</span></label>
-                                                <div class="col-md-3">
-                                                    <input type="text" id="account" name="nom_client" class="form-control" required title="Entrez un nom de famille Valide">
+                                                <label class="col-md-2 control-label" for="account">Nom <span class="required">*</span> </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="account" name="nom" class="form-control" required title="Champs Requis">
                                                 </div>
-                                                <label class="col-md-3 control-label" for="account">Prénom <span class="required">*</span></label>
-                                                <div class="col-md-3">
-                                                    <input type="text" id="account" name="prenom_client" class="form-control" required title="Entrez un Prénom Valide">
+                                                <label class="col-md-2 control-label" for="account">Prénom <span class="required">*</span> </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="account" name="prenom" class="form-control" required title="Champs Requis">
                                                 </div>
                                             </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">N° de Téléphone <span class="required">*</span></label>
+                                                <div class="col-md-9">
+                                                    <input id="account" type="text" name="telephone" class="form-control" required title="Champs Requis">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">Adresse <span class="required">*</span></label>
+                                                <div class="col-md-9">
+                                                    <input id="account" type="text" name="adresse" class="form-control" required title="Champs Requis">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-2 control-label" for="account">Code Postal <span class="required">*</span> </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="account" name="code_postal" class="form-control" required title="Champs Requis">
+                                                </div>
+                                                <label class="col-md-2 control-label" for="account">Ville <span class="required">*</span> </label>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="account" name="ville" class="form-control" required title="Champs Requis">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">Adresse par default</label>
+                                                <div class="col-md-9">
+                                                    <div class="switch switch-sm switch-primary">
+                                                        <input type="checkbox" name="default" data-plugin-ios-switch id="account" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </div>
                                     </div>
                                     <footer class="panel-footer">
                                         <div class="row">
                                             <div class="col-md-12 text-right">
-                                                <button class="btn btn-primary" type="submit" name="action" value="create-account">Valider</button>
+                                                <button class="btn btn-primary" type="submit" name="action" value="add-adresse">Valider</button>
                                                 <button class="btn btn-default modal-dismiss">Annuler</button>
                                             </div>
                                         </div>
