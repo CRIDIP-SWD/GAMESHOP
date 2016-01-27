@@ -727,7 +727,7 @@
                                         ?>
                                     </td>
                                     <td>
-                                        <a class="btn btn-danger" href=""><i class="fa fa-remove"></i></a>
+                                        <a class="btn btn-primary" href="index.php?view=admin_sha&sub=commande&data=view_commande&num_commande=<?= $cmd->num_commande; ?>"><i class="fa fa-eye"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
