@@ -652,7 +652,7 @@
                                                 <td>
                                                     <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
                                                 </td>
-                                                <td style="display: inline-flex;">
+                                                <td>
                                                     <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
                                                 </td>
                                             </tr>
