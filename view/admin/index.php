@@ -672,6 +672,7 @@
                                     <h2 class="panel-title">Nouvelle adresse</h2>
                                 </header>
                                 <form id="summary-form" class="form-horizontal" action="core/admin/client.php" method="post">
+                                    <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
                                     <div class="panel-body">
                                         <div class="modal-wrapper">
 

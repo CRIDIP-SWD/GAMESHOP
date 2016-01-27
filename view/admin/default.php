@@ -338,6 +338,19 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-adresse'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'SUCCES',
+                text: "<?= $_GET['text']; ?>",
+                type: 'success',
+                icon: 'fa fa-check'
+		    }); 
+        })
+    </script>
+<?php } ?>
+ 
 <?php if(isset($_GET['error']) && $_GET['error'] == 'supp-adresse'){ ?>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -349,6 +362,19 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-adresse'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'Erreur',
+                text: "<?= $_GET['text']; ?>",
+                type: 'error',
+                icon: 'fa fa-times'
+		    }); 
+        })
+    </script>
+<?php } ?>
+
 
  
 
