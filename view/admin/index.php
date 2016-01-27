@@ -847,6 +847,100 @@
                     </div>
                 </div>
             </div>
+            <section class="panel panel-featured panel-featured-primary">
+                <header class="panel-heading">
+                    <h2 class="panel-title">LISTE DES ADRESSES</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="well">
+                        <button type="button" class="mb-xs mt-xs mr-xs modal-basic btn btn-primary" href="#add-adresse"><i class="fa fa-plus-square"></i> Ajouter une Adresse</button>
+                    </div>
+                    <h3>ADRESSE DE FACTURATION</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Alias</th>
+                                <th>Identité</th>
+                                <th>Adresse</th>
+                                <th>Coordonnées</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $sql_adresse_fact = $DB->query("SELECT * FROM client_adresse_fact WHERE idclient = :idclient", array(
+                                "idclient"      => $client[0]->idclient
+                            ));
+                            foreach ($sql_adresse_fact as $fact):
+                                ?>
+                                <tr>
+                                    <td><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
+                                    <td><?= html_entity_decode($fact->alias); ?></td>
+                                    <td>
+                                        <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
+                                    </td>
+                                    <td>
+                                        <?= html_entity_decode($fact->adresse); ?><br>
+                                        <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
+                                        France
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=facturation&idclient=<?= $idclient; ?>&idadresse=<?= $fact->idadresse; ?>"><i class="fa fa-remove"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    <h3>ADRESSE DE LIVRAISON</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>Alias</th>
+                                <th>Identité</th>
+                                <th>Adresse</th>
+                                <th>Coordonnées</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $sql_adresse_liv = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
+                                "idclient"      => $client[0]->idclient
+                            ));
+                            foreach ($sql_adresse_liv as $liv):
+                                ?>
+                                <tr>
+                                    <td><?php if($liv->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
+                                    <td><?= html_entity_decode($liv->alias); ?></td>
+                                    <td>
+                                        <?php if(!empty($liv->societe)){echo "<strong>".$liv->societe."</strong><br><i>".$liv->nom." ".$liv->prenom."</i>";}else{echo "<strong>".$liv->nom." ".$liv->prenom."</strong>";} ?><br>
+                                    </td>
+                                    <td>
+                                        <?= html_entity_decode($liv->adresse); ?><br>
+                                        <?= $liv->code_postal; ?> <?= html_entity_decode($liv->ville); ?><br>
+                                        France
+                                    </td>
+                                    <td>
+                                        <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
             <!-- end: page -->
         </section>
     <?php endif; ?>
