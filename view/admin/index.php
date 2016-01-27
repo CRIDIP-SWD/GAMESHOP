@@ -656,7 +656,7 @@
                 </header>
                 <div class="panel-body">
                     <div class="well">
-                        <button type="button" class="btn btn-primary" href="#add-commande"><i class="fa fa-plus-circle"></i> Nouvelle Commande</button>
+                        <button type="button" class="mb-xs mt-xs mr-xs modal-basic btn btn-primary" href="#add-commande"><i class="fa fa-plus-circle"></i> Nouvelle Commande</button>
                     </div>
                     <h2>LISTE DES COMMANDES</h2>
                     <div class="">
@@ -829,6 +829,41 @@
                             <div class="row">
                                 <div class="col-md-12 text-right">
                                     <button class="btn btn-primary" type="submit" name="action" value="add-adresse">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
+            <div id="add-commande" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouvelle Commande</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/commande.php" method="post">
+                        <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cmd">Default Datepicker</label>
+                                    <div class="col-md-6">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </span>
+                                            <input id="cmd" type="text" name="date_commande" data-plugin-datepicker class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-commande">Valider</button>
                                     <button class="btn btn-default modal-dismiss">Annuler</button>
                                 </div>
                             </div>
