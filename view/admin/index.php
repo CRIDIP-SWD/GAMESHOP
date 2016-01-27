@@ -716,11 +716,11 @@
 
                                             <div class="form-group">
                                                 <label class="col-md-2 control-label" for="account">Code Postal <span class="required">*</span> </label>
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <input type="text" id="account" name="code_postal" class="form-control" required title="Champs Requis">
                                                 </div>
                                                 <label class="col-md-2 control-label" for="account">Ville <span class="required">*</span> </label>
-                                                <div class="col-md-4">
+                                                <div class="col-md-5">
                                                     <input type="text" id="account" name="ville" class="form-control" required title="Champs Requis">
                                                 </div>
                                             </div>
