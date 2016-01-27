@@ -668,7 +668,7 @@
                                     <button type="button" class="btn btn-primary" href="#add-commande"><i class="fa fa-plus-circle"></i> Nouvelle Commande</button>
                                 </div>
                                 <h2>LISTE DES COMMANDES</h2>
-                                <div class="table-responsive">
+                                <div class="">
                                     <table class="table table-bordered table-striped mb-none" id="datatable-default">
                                         <thead>
                                         <tr>
