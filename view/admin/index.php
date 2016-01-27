@@ -676,6 +676,24 @@
                                         <div class="modal-wrapper">
 
                                             <div class="form-group">
+                                                <label class="col-md-3 control-label" for="account">Type d'adresse</label>
+                                                <div class="col-md-9">
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="type_adresse" id="account" value="1">
+                                                            Facturation
+                                                        </label>
+                                                    </div>
+                                                    <div class="radio">
+                                                        <label>
+                                                            <input type="radio" name="type_adresse" id="account" value="2">
+                                                            Livraison
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
                                                 <label class="col-md-3 control-label" for="account">Alias <span class="required">*</span></label>
                                                 <div class="col-md-9">
                                                     <input id="account" type="text" name="alias" class="form-control" required title="Champs Requis">

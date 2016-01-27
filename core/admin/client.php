@@ -1,4 +1,5 @@
 <?php
+if($)
 if(isset($_GET['action']) && $_GET['action'] == 'supp-adresse')
 {
 
