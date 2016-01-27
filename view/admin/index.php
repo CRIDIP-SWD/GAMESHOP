@@ -874,6 +874,22 @@
                                     </div>
                                 </div>
 
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Adresse de Livraison</label>
+                                    <div class="col-md-9">
+                                        <select data-plugin-selectTwo class="form-control populate" name="adresse_liv">
+                                            <?php
+                                            $sql_addresse_liv = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
+                                                "idclient"      => $idclient
+                                            ));
+                                            foreach($sql_addresse_liv as $adresse):
+                                                ?>
+                                                <option value="<?= $adresse->adresse; ?><br><?= $adresse->code_postal; ?> <?= $adresse->ville; ?>"><?= $adresse->alias; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <footer class="panel-footer">
