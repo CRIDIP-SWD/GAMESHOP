@@ -556,297 +556,6 @@
                     </section>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="tabs tabs-vertical tabs-left tabs-primary">
-                        <ul class="nav nav-tabs col-sm-3 col-xs-5">
-                            <li class="active">
-                                <a data-toggle="tab" href="#adresse"><i class="fa fa-book"></i> Adresse</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#achat"><i class="fa fa-shopping-cart"></i> Commandes</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#vourcher"><i class="fa fa-ticket"></i> Bon D'achat</a>
-                            </li>
-                            <li>
-                                <a data-toggle="tab" href="#reservation"><i class="fa fa-calendar"></i> Réservation </a>
-                            </li>
-                        </ul>
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="adresse">
-                                <div class="well">
-                                    <button type="button" class="mb-xs mt-xs mr-xs modal-basic btn btn-primary" href="#add-adresse"><i class="fa fa-plus-square"></i> Ajouter une Adresse</button>
-                                </div>
-                                <h3>ADRESSE DE FACTURATION</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th></th>
-                                                <th>Alias</th>
-                                                <th>Identité</th>
-                                                <th>Adresse</th>
-                                                <th>Coordonnées</th>
-                                                <th>Action</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        $sql_adresse_fact = $DB->query("SELECT * FROM client_adresse_fact WHERE idclient = :idclient", array(
-                                            "idclient"      => $client[0]->idclient
-                                        ));
-                                        foreach ($sql_adresse_fact as $fact):
-                                        ?>
-                                            <tr>
-                                                <td><?php if($fact->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
-                                                <td><?= html_entity_decode($fact->alias); ?></td>
-                                                <td>
-                                                    <?php if(!empty($fact->societe)){echo "<strong>".$fact->societe."</strong><br><i>".$fact->nom." ".$fact->prenom."</i>";}else{echo "<strong>".$fact->nom." ".$fact->prenom."</strong>";} ?><br>
-                                                </td>
-                                                <td>
-                                                    <?= html_entity_decode($fact->adresse); ?><br>
-                                                    <?= $fact->code_postal; ?> <?= html_entity_decode($fact->ville); ?><br>
-                                                    France
-                                                </td>
-                                                <td>
-                                                    <i class="fa fa-phone"></i> : <?= $fact->telephone; ?>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=facturation&idclient=<?= $idclient; ?>&idadresse=<?= $fact->idadresse; ?>"><i class="fa fa-remove"></i></a>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <h3>ADRESSE DE LIVRAISON</h3>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th></th>
-                                            <th>Alias</th>
-                                            <th>Identité</th>
-                                            <th>Adresse</th>
-                                            <th>Coordonnées</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        $sql_adresse_liv = $DB->query("SELECT * FROM client_adresse_liv WHERE idclient = :idclient", array(
-                                            "idclient"      => $client[0]->idclient
-                                        ));
-                                        foreach ($sql_adresse_liv as $liv):
-                                            ?>
-                                            <tr>
-                                                <td><?php if($liv->default == 1){echo "<i class='fa fa-star fa-2x text-danger'></i>";} ?></td>
-                                                <td><?= html_entity_decode($liv->alias); ?></td>
-                                                <td>
-                                                    <?php if(!empty($liv->societe)){echo "<strong>".$liv->societe."</strong><br><i>".$liv->nom." ".$liv->prenom."</i>";}else{echo "<strong>".$liv->nom." ".$liv->prenom."</strong>";} ?><br>
-                                                </td>
-                                                <td>
-                                                    <?= html_entity_decode($liv->adresse); ?><br>
-                                                    <?= $liv->code_postal; ?> <?= html_entity_decode($liv->ville); ?><br>
-                                                    France
-                                                </td>
-                                                <td>
-                                                    <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="tab-pane" id="achat">
-                                <div class="well">
-                                    <button type="button" class="btn btn-primary" href="#add-commande"><i class="fa fa-plus-circle"></i> Nouvelle Commande</button>
-                                </div>
-                                <h2>LISTE DES COMMANDES</h2>
-                                <div class="">
-                                    <table class="table table-bordered table-striped mb-none" id="datatable-default">
-                                        <thead>
-                                        <tr>
-                                            <th>N° de Commande</th>
-                                            <th>Date de la Commande</th>
-                                            <th>Total</th>
-                                            <th>Livraison</th>
-                                            <th>Paiement</th>
-                                            <th>Etat</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = :idclient", array(
-                                            "idclient"  => $idclient
-                                        ));
-                                        foreach($sql_cmd as $cmd):
-                                        ?>
-                                            <tr>
-                                                <td><?= $cmd->num_commande; ?></td>
-                                                <td><?= $date_format->formatage("d/m/Y", $cmd->date_commande); ?></td>
-                                                <td><?= $fonction->number_decimal($cmd->total_commande); ?></td>
-                                                <td>
-                                                    <strong>Adresse:</strong> <?= html_entity_decode($cmd->adresse_liv); ?><br>
-                                                    <strong>Prix de l'envoie:</strong> <?= $fonction->number_decimal($cmd->prix_envoie); ?><br>
-                                                    <strong>Methode:</strong> <?= $cmd->methode_livraison; ?>
-                                                </td>
-                                                <td>
-                                                    <strong>Methode:</strong> <?= $cmd->methode_paiement; ?><br>
-                                                </td>
-                                                <td>
-                                                    <?php
-                                                    switch($cmd->statut)
-                                                    {
-                                                        case 1:
-                                                            echo "<span class='label label-default'>En Attente de Validation</span>";
-                                                            break;
-
-                                                        case 2:
-                                                            echo "<span class='label label-primary'>En Attente de Paiement</span>";
-                                                            break;
-
-                                                        case 3:
-                                                            echo "<span class='label label-success'>Paiement Valider</span>";
-                                                            break;
-
-                                                        case 4:
-                                                            echo "<span class='label label-warning'>Préparation en cours...</span>";
-                                                            break;
-
-                                                        case 5:
-                                                            echo "<span class='label label-success'>Expédié</span>";
-                                                            break;
-
-                                                        case 6:
-                                                            echo "<span class='label label-danger'>Paiement Refuser</span>";
-                                                            break;
-
-                                                        case 7:
-                                                            echo "<span class='label label-default'>Commande Annulé</span>";
-                                                            break;
-                                                    }
-                                                    ?>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-danger" href=""><i class="fa fa-remove"></i></a>
-                                                </td>
-                                            </tr>
-                                        <?php endforeach; ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="add-adresse" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
-                            <section class="panel">
-                                <header class="panel-heading">
-                                    <h2 class="panel-title">Nouvelle adresse</h2>
-                                </header>
-                                <form id="summary-form" class="form-horizontal" action="core/admin/client.php" method="post">
-                                    <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
-                                    <div class="panel-body">
-                                        <div class="modal-wrapper">
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Type d'adresse</label>
-                                                <div class="col-md-9">
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="type_adresse" id="account" value="1">
-                                                            Facturation
-                                                        </label>
-                                                    </div>
-                                                    <div class="radio">
-                                                        <label>
-                                                            <input type="radio" name="type_adresse" id="account" value="2">
-                                                            Livraison
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Alias <span class="required">*</span></label>
-                                                <div class="col-md-9">
-                                                    <input id="account" type="text" name="alias" class="form-control" required title="Champs Requis">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Société</label>
-                                                <div class="col-md-9">
-                                                    <input id="account" type="text" name="societe" class="form-control">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-2 control-label" for="account">Nom <span class="required">*</span> </label>
-                                                <div class="col-md-4">
-                                                    <input type="text" id="account" name="nom" class="form-control" required title="Champs Requis">
-                                                </div>
-                                                <label class="col-md-2 control-label" for="account">Prénom <span class="required">*</span> </label>
-                                                <div class="col-md-4">
-                                                    <input type="text" id="account" name="prenom" class="form-control" required title="Champs Requis">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">N° de Téléphone <span class="required">*</span></label>
-                                                <div class="col-md-9">
-                                                    <input id="account" type="text" name="telephone" class="form-control" required title="Champs Requis">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Adresse <span class="required">*</span></label>
-                                                <div class="col-md-9">
-                                                    <input id="account" type="text" name="adresse" class="form-control" required title="Champs Requis">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-2 control-label" for="account">Code Postal <span class="required">*</span> </label>
-                                                <div class="col-md-3">
-                                                    <input type="text" id="account" name="code_postal" class="form-control" required title="Champs Requis">
-                                                </div>
-                                                <label class="col-md-2 control-label" for="account">Ville <span class="required">*</span> </label>
-                                                <div class="col-md-5">
-                                                    <input type="text" id="account" name="ville" class="form-control" required title="Champs Requis">
-                                                </div>
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label" for="account">Adresse par default</label>
-                                                <div class="col-md-9">
-                                                    <div class="switch switch-sm switch-primary">
-                                                        <input type="checkbox" name="default" data-plugin-ios-switch id="account" />
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <footer class="panel-footer">
-                                        <div class="row">
-                                            <div class="col-md-12 text-right">
-                                                <button class="btn btn-primary" type="submit" name="action" value="add-adresse">Valider</button>
-                                                <button class="btn btn-default modal-dismiss">Annuler</button>
-                                            </div>
-                                        </div>
-                                    </footer>
-                                </form>
-                            </section>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <section class="panel panel-featured panel-featured-primary">
                 <header class="panel-heading">
                     <h2 class="panel-title">LISTE DES ADRESSES</h2>
@@ -941,6 +650,191 @@
                     </div>
                 </div>
             </section>
+            <section class="panel panel-featured panel-featured-primary">
+                <header class="panel-heading">
+                    <h2 class="panel-title">LISTE DES COMMANDES</h2>
+                </header>
+                <div class="panel-body">
+                    <div class="well">
+                        <button type="button" class="btn btn-primary" href="#add-commande"><i class="fa fa-plus-circle"></i> Nouvelle Commande</button>
+                    </div>
+                    <h2>LISTE DES COMMANDES</h2>
+                    <div class="">
+                        <table class="table table-bordered table-striped mb-none" id="datatable-default">
+                            <thead>
+                            <tr>
+                                <th>N° de Commande</th>
+                                <th>Date de la Commande</th>
+                                <th>Total</th>
+                                <th>Livraison</th>
+                                <th>Paiement</th>
+                                <th>Etat</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php
+                            $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = :idclient", array(
+                                "idclient"  => $idclient
+                            ));
+                            foreach($sql_cmd as $cmd):
+                                ?>
+                                <tr>
+                                    <td><?= $cmd->num_commande; ?></td>
+                                    <td><?= $date_format->formatage("d/m/Y", $cmd->date_commande); ?></td>
+                                    <td><?= $fonction->number_decimal($cmd->total_commande); ?></td>
+                                    <td>
+                                        <strong>Adresse:</strong> <?= html_entity_decode($cmd->adresse_liv); ?><br>
+                                        <strong>Prix de l'envoie:</strong> <?= $fonction->number_decimal($cmd->prix_envoie); ?><br>
+                                        <strong>Methode:</strong> <?= $cmd->methode_livraison; ?>
+                                    </td>
+                                    <td>
+                                        <strong>Methode:</strong> <?= $cmd->methode_paiement; ?><br>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        switch($cmd->statut)
+                                        {
+                                            case 1:
+                                                echo "<span class='label label-default'>En Attente de Validation</span>";
+                                                break;
+
+                                            case 2:
+                                                echo "<span class='label label-primary'>En Attente de Paiement</span>";
+                                                break;
+
+                                            case 3:
+                                                echo "<span class='label label-success'>Paiement Valider</span>";
+                                                break;
+
+                                            case 4:
+                                                echo "<span class='label label-warning'>Préparation en cours...</span>";
+                                                break;
+
+                                            case 5:
+                                                echo "<span class='label label-success'>Expédié</span>";
+                                                break;
+
+                                            case 6:
+                                                echo "<span class='label label-danger'>Paiement Refuser</span>";
+                                                break;
+
+                                            case 7:
+                                                echo "<span class='label label-default'>Commande Annulé</span>";
+                                                break;
+                                        }
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-danger" href=""><i class="fa fa-remove"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+            <div id="add-adresse" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouvelle adresse</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/client.php" method="post">
+                        <input type="hidden" name="idclient" value="<?= $idclient; ?>" />
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Type d'adresse</label>
+                                    <div class="col-md-9">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="type_adresse" id="account" value="1">
+                                                Facturation
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="type_adresse" id="account" value="2">
+                                                Livraison
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Alias <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input id="account" type="text" name="alias" class="form-control" required title="Champs Requis">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Société</label>
+                                    <div class="col-md-9">
+                                        <input id="account" type="text" name="societe" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="account">Nom <span class="required">*</span> </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="account" name="nom" class="form-control" required title="Champs Requis">
+                                    </div>
+                                    <label class="col-md-2 control-label" for="account">Prénom <span class="required">*</span> </label>
+                                    <div class="col-md-4">
+                                        <input type="text" id="account" name="prenom" class="form-control" required title="Champs Requis">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">N° de Téléphone <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input id="account" type="text" name="telephone" class="form-control" required title="Champs Requis">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Adresse <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input id="account" type="text" name="adresse" class="form-control" required title="Champs Requis">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label" for="account">Code Postal <span class="required">*</span> </label>
+                                    <div class="col-md-3">
+                                        <input type="text" id="account" name="code_postal" class="form-control" required title="Champs Requis">
+                                    </div>
+                                    <label class="col-md-2 control-label" for="account">Ville <span class="required">*</span> </label>
+                                    <div class="col-md-5">
+                                        <input type="text" id="account" name="ville" class="form-control" required title="Champs Requis">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Adresse par default</label>
+                                    <div class="col-md-9">
+                                        <div class="switch switch-sm switch-primary">
+                                            <input type="checkbox" name="default" data-plugin-ios-switch id="account" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-adresse">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
             <!-- end: page -->
         </section>
     <?php endif; ?>
