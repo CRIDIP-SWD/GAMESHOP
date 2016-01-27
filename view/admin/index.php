@@ -987,7 +987,20 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label" for="cat">Images de la catégorie</label>
                                     <div class="col-md-9">
-
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    <i class="fa fa-file fileupload-exists"></i>
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Change</span>
+                                                    <span class="fileupload-new">Select file</span>
+                                                    <input type="file" />
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 
