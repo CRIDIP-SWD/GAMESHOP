@@ -932,7 +932,7 @@
                 <section class="panel panel-primary">
                     <header class="panel-heading">
                         <div class="panel-actions">
-                            <a href="#add-categorie" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter une catégorie"><i class="fa fa-arrow-circle-up"></i></a>
+                            <a href="#add-categorie" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter une catégorie"><i class="fa fa-plus-circle fa-lg"></i></a>
                         </div>
                         <h2 class="panel-title">Liste des Catégories</h2>
                     </header>
