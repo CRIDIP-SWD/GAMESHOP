@@ -612,9 +612,6 @@
                                                 </td>
                                                 <td>
                                                     <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=facturation&idclient=<?= $idclient; ?>&idadresse=<?= $fact->idadresse; ?>"><i class="fa fa-remove"></i></a>
-                                                    <?php if($fact->default == 0){ ?>
-                                                        <button type="button" class="btn btn-success"><i class="fa fa-star"></i></button>
-                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
@@ -657,9 +654,6 @@
                                                 </td>
                                                 <td style="display: inline-flex;">
                                                     <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
-                                                    <?php if($liv->default == 0){ ?>
-                                                        <a href="core/admin/client.php?action=define_default&idadresse=<?= $liv->idadresse; ?>&idclient=<?= $idclient; ?>&type=livraison" class="btn btn-success"><i class="fa fa-star fa-2x"></i></a>
-                                                    <?php } ?>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
