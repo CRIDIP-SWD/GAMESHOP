@@ -24,6 +24,7 @@ use App\general\head;
 use App\general\newsletter;
 use App\general\produit;
 use App\networker\xboxLive;
+use App\notificateur;
 use SteamApi\Player;
 use SteamApi\User;
 
@@ -32,6 +33,7 @@ $constante = new constante();
 $date_format = new date_format();
 $fonction = new fonction();
 $DB = new DB();
+$notificateur = new notificateur();
 
 $head = new head();
 $categorie_cls = new categorie();
@@ -45,6 +47,8 @@ $resa_cls = new reservation();
 $panier_cls = new panier();
 $checkout_cls = new checkout();
 $transport_cls = new transporteur();
+
+
 
 
 

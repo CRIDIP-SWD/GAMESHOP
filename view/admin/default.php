@@ -327,5 +327,32 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.validation.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ajax.js"></script>
 
+<?php if(isset($_GET['success']) && $_GET['success'] == 'define_default'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'SUCCES',
+                text: "<?= $_GET['text']; ?>",
+                type: 'success',
+                icon: 'fa fa-check'
+		    }); 
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'define_default'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'Erreur',
+                text: "<?= $_GET['text']; ?>",
+                type: 'error',
+                icon: 'fa fa-times'
+		    }); 
+        })
+    </script>
+<?php } ?>
+
+ 
+
 </body>
 </html>

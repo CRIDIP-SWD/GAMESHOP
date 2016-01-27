@@ -321,3 +321,23 @@ class DB extends app{
 
     }
 }
+
+class notificateur extends app{
+
+    public $define_default = "Une nouvelle adresse par default à été définie";
+
+
+    public function notificateur($stat, $define)
+    {
+        if($stat === 'success')
+        {
+            if($define === 'define_default'){return $this->define_default;}
+
+        }elseif($stat === 'warning')
+        {
+
+        }elseif($stat === 'error'){
+
+        }
+    }
+}

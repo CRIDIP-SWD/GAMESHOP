@@ -655,10 +655,10 @@
                                                 <td>
                                                     <i class="fa fa-phone"></i> : <?= $liv->telephone; ?>
                                                 </td>
-                                                <td>
+                                                <td style="display: inline-flex;">
                                                     <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
                                                     <?php if($liv->default == 0){ ?>
-                                                        <a data-method="default" class="btn btn-success"><i class="fa fa-star fa-2x"></i></a>
+                                                        <a href="core/admin/client.php?action=define_default&idadresse=<?= $liv->idadresse; ?>&idclient=<?= $idclient; ?>&type=livraison" class="btn btn-success"><i class="fa fa-star fa-2x"></i></a>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
