@@ -672,421 +672,73 @@
                                     <table class="table table-bordered table-striped mb-none" id="datatable-default">
                                         <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th class="hidden-phone">Engine version</th>
-                                            <th class="hidden-phone">CSS grade</th>
+                                            <th>N° de Commande</th>
+                                            <th>Date de la Commande</th>
+                                            <th>Total</th>
+                                            <th>Livraison</th>
+                                            <th>Paiement</th>
+                                            <th>Etat</th>
+                                            <th>Action</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr class="gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 4.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td class="center hidden-phone">4</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.0
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td class="center hidden-phone">5</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 5.5
-                                            </td>
-                                            <td>Win 95+</td>
-                                            <td class="center hidden-phone">5.5</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet
-                                                Explorer 6
-                                            </td>
-                                            <td>Win 98+</td>
-                                            <td class="center hidden-phone">6</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 7</td>
-                                            <td>Win XP SP2+</td>
-                                            <td class="center hidden-phone">7</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Trident</td>
-                                            <td>AOL browser (AOL desktop)</td>
-                                            <td>Win XP</td>
-                                            <td class="center hidden-phone">6</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center hidden-phone">1.7</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 1.5</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 2.0</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Firefox 3.0</td>
-                                            <td>Win 2k+ / OSX.3+</td>
-                                            <td class="center hidden-phone">1.9</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Camino 1.0</td>
-                                            <td>OSX.2+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Camino 1.5</td>
-                                            <td>OSX.3+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Netscape 7.2</td>
-                                            <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                            <td class="center hidden-phone">1.7</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Netscape Browser 8</td>
-                                            <td>Win 98SE+</td>
-                                            <td class="center hidden-phone">1.7</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Netscape Navigator 9</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.0</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.1</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.1</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.2</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.2</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.3</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.3</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.4</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.4</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.5</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.5</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.6</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.6</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.7</td>
-                                            <td>Win 98+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.7</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Mozilla 1.8</td>
-                                            <td>Win 98+ / OSX.1+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Seamonkey 1.1</td>
-                                            <td>Win 98+ / OSX.2+</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Gecko</td>
-                                            <td>Epiphany 2.20</td>
-                                            <td>Gnome</td>
-                                            <td class="center hidden-phone">1.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 1.2</td>
-                                            <td>OSX.3</td>
-                                            <td class="center hidden-phone">125.5</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 1.3</td>
-                                            <td>OSX.3</td>
-                                            <td class="center hidden-phone">312.8</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 2.0</td>
-                                            <td>OSX.4+</td>
-                                            <td class="center hidden-phone">419.3</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>Safari 3.0</td>
-                                            <td>OSX.4+</td>
-                                            <td class="center hidden-phone">522.1</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>OmniWeb 5.5</td>
-                                            <td>OSX.4+</td>
-                                            <td class="center hidden-phone">420</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>iPod Touch / iPhone</td>
-                                            <td>iPod</td>
-                                            <td class="center hidden-phone">420.1</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Webkit</td>
-                                            <td>S60</td>
-                                            <td>S60</td>
-                                            <td class="center hidden-phone">413</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 7.0</td>
-                                            <td>Win 95+ / OSX.1+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 7.5</td>
-                                            <td>Win 95+ / OSX.2+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 8.0</td>
-                                            <td>Win 95+ / OSX.2+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 8.5</td>
-                                            <td>Win 95+ / OSX.2+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 9.0</td>
-                                            <td>Win 95+ / OSX.3+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 9.2</td>
-                                            <td>Win 88+ / OSX.3+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera 9.5</td>
-                                            <td>Win 88+ / OSX.3+</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Opera for Wii</td>
-                                            <td>Wii</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Nokia N800</td>
-                                            <td>N800</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Presto</td>
-                                            <td>Nintendo DS browser</td>
-                                            <td>Nintendo DS</td>
-                                            <td class="center hidden-phone">8.5</td>
-                                            <td class="center hidden-phone">C/A<sup>1</sup></td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>KHTML</td>
-                                            <td>Konqureror 3.1</td>
-                                            <td>KDE 3.1</td>
-                                            <td class="center hidden-phone">3.1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>KHTML</td>
-                                            <td>Konqureror 3.3</td>
-                                            <td>KDE 3.3</td>
-                                            <td class="center hidden-phone">3.3</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>KHTML</td>
-                                            <td>Konqureror 3.5</td>
-                                            <td>KDE 3.5</td>
-                                            <td class="center hidden-phone">3.5</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 4.5</td>
-                                            <td>Mac OS 8-9</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.1</td>
-                                            <td>Mac OS 7.6-9</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Tasman</td>
-                                            <td>Internet Explorer 5.2</td>
-                                            <td>Mac OS 8-X</td>
-                                            <td class="center hidden-phone">1</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.1</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeA">
-                                            <td>Misc</td>
-                                            <td>NetFront 3.4</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">A</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Dillo 0.8</td>
-                                            <td>Embedded devices</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Links</td>
-                                            <td>Text only</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
-                                        <tr class="gradeX">
-                                            <td>Misc</td>
-                                            <td>Lynx</td>
-                                            <td>Text only</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">X</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Misc</td>
-                                            <td>IE Mobile</td>
-                                            <td>Windows Mobile 6</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeC">
-                                            <td>Misc</td>
-                                            <td>PSP browser</td>
-                                            <td>PSP</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">C</td>
-                                        </tr>
-                                        <tr class="gradeU">
-                                            <td>Other browsers</td>
-                                            <td>All others</td>
-                                            <td>-</td>
-                                            <td class="center hidden-phone">-</td>
-                                            <td class="center hidden-phone">U</td>
-                                        </tr>
+                                        <?php
+                                        $sql_cmd = $DB->query("SELECT * FROM commande WHERE idclient = :idclient", array(
+                                            "idclient"  => $idclient
+                                        ));
+                                        foreach($sql_cmd as $cmd):
+                                        ?>
+                                            <tr>
+                                                <td><?= $cmd->num_commande; ?></td>
+                                                <td><?= $date_format->formatage("d/m/Y", $cmd->date_commande); ?></td>
+                                                <td><?= $fonction->number_decimal($cmd->total_commande); ?></td>
+                                                <td>
+                                                    <strong>Adresse:</strong> <?= html_entity_decode($cmd->adresse_liv); ?><br>
+                                                    <strong>Prix de l'envoie:</strong> <?= $fonction->number_decimal($cmd->prix_envoie); ?><br>
+                                                    <strong>Methode:</strong> <?= $cmd->methode_livraison; ?>
+                                                </td>
+                                                <td>
+                                                    <strong>Methode:</strong> <?= $cmd->methode_paiement; ?><br>
+                                                </td>
+                                                <td>
+                                                    <?php
+                                                    switch($cmd->statut)
+                                                    {
+                                                        case 1:
+                                                            echo "<span class='label label-default'>En Attente de Validation</span>";
+                                                            break;
+
+                                                        case 2:
+                                                            echo "<span class='label label-primary'>En Attente de Paiement</span>";
+                                                            break;
+
+                                                        case 3:
+                                                            echo "<span class='label label-success'>Paiement Valider</span>";
+                                                            break;
+
+                                                        case 4:
+                                                            echo "<span class='label label-warning'>Préparation en cours...</span>";
+                                                            break;
+
+                                                        case 5:
+                                                            echo "<span class='label label-success'>Expédié</span>";
+                                                            break;
+
+                                                        case 6:
+                                                            echo "<span class='label label-danger'>Paiement Refuser</span>";
+                                                            break;
+
+                                                        case 7:
+                                                            echo "<span class='label label-default'>Commande Annulé</span>";
+                                                            break;
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-danger" href=""><i class="fa fa-remove"></i></a>
+                                                </td>
+                                            </tr>
+                                        <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>
