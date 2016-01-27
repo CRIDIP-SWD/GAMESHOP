@@ -932,10 +932,83 @@
                 <section class="panel panel-primary">
                     <header class="panel-heading">
                         <div class="panel-actions">
-                            <a href="" class="panel-action"><i class="fa fa-arrow-circle-up"></i></a>
+                            <a href="#add-categorie" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter une catégorie"><i class="fa fa-arrow-circle-up"></i></a>
                         </div>
                         <h2 class="panel-title">Liste des Catégories</h2>
                     </header>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Désignation</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $sql_cat = $DB->query("SELECT * FROM categorie ORDER BY id ASC");
+                                foreach($sql_cat as $cat):
+                                ?>
+                                    <tr>
+                                        <td><?= $cat->id; ?></td>
+                                        <td><? html_entity_decode($cat->designation_cat); ?></td>
+                                        <td>
+                                            <a href="core/admin/categorie.php?action=supp-categorie&idactegorie=<?= $cat->id; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouveau Client</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/account.php" method="post">
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+                                <div class="validation-message">
+                                    <ul></ul>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Adresse Mail <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input id="account" type="email" name="email" class="form-control" required title="Entrez une adresse Mail Valide !">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Mot de Passe <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="password" id="account" name="password" class="form-control" required title="Entrez un mot de Passe Valide !">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="account">Nom <span class="required">*</span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" id="account" name="nom_client" class="form-control" required title="Entrez un nom de famille Valide">
+                                    </div>
+                                    <label class="col-md-3 control-label" for="account">Prénom <span class="required">*</span></label>
+                                    <div class="col-md-3">
+                                        <input type="text" id="account" name="prenom_client" class="form-control" required title="Entrez un Prénom Valide">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="create-account">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
                 </section>
             </div>
             <!-- end: page -->
