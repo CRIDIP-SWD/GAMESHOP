@@ -486,7 +486,7 @@
 
             <!-- start: page -->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <section class="panel panel-group">
                         <header class="panel-heading bg-primary">
 
@@ -555,7 +555,9 @@
                         </div>
                     </section>
                 </div>
-                <div class="col-md-8">
+            </div>
+            <div class="row">
+                <div class="col-md-12">
                     <div class="tabs tabs-vertical tabs-left tabs-primary">
                         <ul class="nav nav-tabs col-sm-3 col-xs-5">
                             <li class="active">
