@@ -1251,31 +1251,19 @@ $(document).ready(function(){
 	});
 });
 
-$("#declare_default").click(function(){
-	var idadresse 	= $('#idadresse').val();
-	var type 		= $("#type").val();
-	var idclient 	= $("#idclient").val();
+$('.table').on('click', 'btn-success', function(e){
+	e.preventDefault();
+	var $a = $(this);
+	var url = $a.attr('href');
 
-	var data = 'idadresse=' + idadresse + "&type=" + type + "&idclient=" + idclient;
-
-	$.ajax({
-		type: "GET",
-		url: 'assets/data/define_default.php',
-		data: data,
-		success: function(){
-			new PNotify({
-				title: 'Regular Notice',
-				text: 'Check me out! I\'m a notice.',
-				type: 'success'
-			});
-		},
-		error: function()
-		{
-			new PNotify({
-				title: 'Regular Notice',
-				text: 'Check me out! I\'m a notice.',
-				type: 'error'
-			});
-		}
-	})
-});
+	$.ajax(url)
+		.done(function(data, text, jqxhr){
+			alert(jqxhr.responseText);
+		})
+		.fail(function(jqxhr){
+			alert(jqxhr.responseText);
+		})
+		.always(function(){
+			$.a.text("<i class='fa fa-star fa-2x'></i>");
+		})
+})

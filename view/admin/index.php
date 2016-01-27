@@ -658,7 +658,7 @@
                                                 <td>
                                                     <a class="btn btn-danger" href="core/admin/client.php?action=supp-adresse&type=livraison&idclient=<?= $idclient; ?>&idadresse=<?= $liv->idadresse; ?>"><i class="fa fa-remove"></i></a>
                                                     <?php if($liv->default == 0){ ?>
-                                                        <button type="button" class="btn btn-success" id="declare_default" onclick="window.location.target='idadresse=<?= $liv->idadresse; ?>&type=livraison&idclient=<?= $idclient; ?>'"><i class="fa fa-star"></i></button>
+                                                        <a data-method="default" class="btn btn-success"><i class="fa fa-star fa-2x"></i></a>
                                                     <?php } ?>
                                                 </td>
                                             </tr>
