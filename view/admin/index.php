@@ -934,6 +934,7 @@
                         <div class="panel-actions">
                             <a href="" class="panel-action"><i class="fa fa-arrow-circle-up"></i></a>
                         </div>
+                        <h2 class="panel-title">Liste des Catégories</h2>
                     </header>
                 </section>
             </div>
