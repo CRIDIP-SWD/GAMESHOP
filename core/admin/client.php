@@ -19,11 +19,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
             "alias"             => $_POST['alias'],
             "nom"               => $_POST['nom'],
             "prenom"            => $_POST['prenom'],
-            "societe"           => $_POST['societe'],
+            "societe"           => htmlentities(addslashes($_POST['societe'])),
             "telephone"         => $_POST['telephone'],
-            "adresse"           => $_POST['adresse'],
+            "adresse"           => htmlentities(addslashes($_POST['adresse'])),
             "code_postal"       => $_POST['code_postal'],
-            "ville"             => $_POST['ville'],
+            "ville"             => htmlentities(addslashes($_POST['ville'])),
             "default_adresse"   => $default
         ));
 
@@ -44,11 +44,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-adresse')
             "alias"             => $_POST['alias'],
             "nom"               => $_POST['nom'],
             "prenom"            => $_POST['prenom'],
-            "societe"           => $_POST['societe'],
+            "societe"           => htmlentities(addslashes($_POST['societe'])),
             "telephone"         => $_POST['telephone'],
-            "adresse"           => $_POST['adresse'],
+            "adresse"           => htmlentities(addslashes($_POST['adresse'])),
             "code_postal"       => $_POST['code_postal'],
-            "ville"             => $_POST['ville'],
+            "ville"             => htmlentities(addslashes($_POST['ville'])),
             "default_adresse"   => $default
         ));
 
