@@ -970,7 +970,7 @@
                     <header class="panel-heading">
                         <h2 class="panel-title">Nouveau Client</h2>
                     </header>
-                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post">
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
                         <div class="panel-body">
                             <div class="modal-wrapper">
                                 <div class="validation-message">
@@ -994,11 +994,11 @@
                                                     <span class="fileupload-preview"></span>
                                                 </div>
                                                 <span class="btn btn-default btn-file">
-                                                    <span class="fileupload-exists">Change</span>
-                                                    <span class="fileupload-new">Select file</span>
-                                                    <input type="file" />
+                                                    <span class="fileupload-exists">Changer de Fichier</span>
+                                                    <span class="fileupload-new">Sélectionner un fichier</span>
+                                                    <input type="file" name="images_cat"/>
                                                 </span>
-                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Remove</a>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
                                             </div>
                                         </div>
                                     </div>
@@ -1009,7 +1009,7 @@
                         <footer class="panel-footer">
                             <div class="row">
                                 <div class="col-md-12 text-right">
-                                    <button class="btn btn-primary" type="submit" name="action" value="create-account">Valider</button>
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-categories">Valider</button>
                                     <button class="btn btn-default modal-dismiss">Annuler</button>
                                 </div>
                             </div>
