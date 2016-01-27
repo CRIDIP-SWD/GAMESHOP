@@ -265,6 +265,7 @@ if(!isset($_SESSION['logged']))
 <!-- Vendor -->
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery/jquery.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap/js/bootstrap.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>nanoscroller/nanoscroller.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
