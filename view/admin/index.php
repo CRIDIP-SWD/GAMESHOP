@@ -970,34 +970,27 @@
                     <header class="panel-heading">
                         <h2 class="panel-title">Nouveau Client</h2>
                     </header>
-                    <form id="summary-form" class="form-horizontal" action="core/account.php" method="post">
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post">
                         <div class="panel-body">
                             <div class="modal-wrapper">
                                 <div class="validation-message">
                                     <ul></ul>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="account">Adresse Mail <span class="required">*</span></label>
+                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
                                     <div class="col-md-9">
-                                        <input id="account" type="email" name="email" class="form-control" required title="Entrez une adresse Mail Valide !">
+                                        <input type="text" id="cat" class="form-control" name="designation_cat" required title="Champs Requis" />
                                     </div>
                                 </div>
+
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label" for="account">Mot de Passe <span class="required">*</span></label>
+                                    <label class="col-md-3 control-label" for="cat">Images de la catégorie</label>
                                     <div class="col-md-9">
-                                        <input type="password" id="account" name="password" class="form-control" required title="Entrez un mot de Passe Valide !">
+
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="account">Nom <span class="required">*</span></label>
-                                    <div class="col-md-3">
-                                        <input type="text" id="account" name="nom_client" class="form-control" required title="Entrez un nom de famille Valide">
-                                    </div>
-                                    <label class="col-md-3 control-label" for="account">Prénom <span class="required">*</span></label>
-                                    <div class="col-md-3">
-                                        <input type="text" id="account" name="prenom_client" class="form-control" required title="Entrez un Prénom Valide">
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                         <footer class="panel-footer">
