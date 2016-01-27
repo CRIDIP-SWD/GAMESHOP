@@ -8,5 +8,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-categorie')
         $extension_upload = $infoFichier['extension'];
         var_dump($infoFichier, $extension_upload);
         die();
+    }else{
+        echo "Erreur";
     }
 }
