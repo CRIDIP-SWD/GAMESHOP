@@ -1252,9 +1252,11 @@ $(document).ready(function(){
 });
 
 $("#declare_default").click(function(){
-	var idadresse = $('#idadresse').val();
+	var idadresse 	= $('#idadresse').val();
+	var type 		= $("#type").val();
+	var idclient 	= $("#idclient").val();
 
-	var data = 'idadresse='+idadresse;
+	var data = 'idadresse=' + idadresse + "&type=" + type + "&idclient=" + idclient;
 
 	$.ajax({
 		type: "GET",
