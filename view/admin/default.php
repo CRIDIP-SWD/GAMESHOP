@@ -371,7 +371,7 @@ if(!isset($_SESSION['logged']))
         $(document).ready(function(){
             new PNotify({
                 title: 'ATTENTION',
-                text: "<?= $_GET['text']; ?>",
+                text: "<?= $_GET['text']; ?>"
             });
         })
     </script>
