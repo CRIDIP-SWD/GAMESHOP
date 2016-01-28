@@ -120,3 +120,21 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-subcategorie')
         header("Location: ../../index.php?view=admin_sha&sub=categories&error=add-subcategorie&text=$text");
     }
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-subcategorie')
+{
+    require "../../app/classe.php";
+    $idsubcategorie = $_GET['idsubcategorie'];
+
+    $sql = $DB->execute("DELETE  FROM subcategorie WHERE id = :idsubcategorie", array(
+        "idsubcategorie" => $idsubcategorie
+    ));
+
+    if($sql == 1)
+    {
+        $text = "La sous catégorie à bien été supprimer.";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&success=supp-subcategorie&text=$text");
+    }else{
+        $text = "Une erreur à eu lieu lors de la suppression de la sous catégorie";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&error=supp-subcategorie&text=$text");
+    }
+}
