@@ -29,7 +29,6 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-categories')
         if($_FILES['images_cat']['error'] == 1) {$text = "Votre images est trop volumineuse !";header("Location: ../../index.php?view=admin_sha&sub=categorie&warning=add-categorie&text=$text");}
         if($_FILES['images_cat']['error'] == 2) {$text = "Votre images est trop volumineuse !";header("Location: ../../index.php?view=admin_sha&sub=categorie&warning=add-categorie&text=$text");}
         if($_FILES['images_cat']['error'] == 3) {$text = "Téléchargement incomplet !";header("Location: ../../index.php?view=admin_sha&sub=categorie&warning=add-categorie&text=$text");}
-        if($_FILES['images_cat']['error'] == 4) {$text = "Pas de Fichier !";header("Location: ../../index.php?view=admin_sha&sub=categorie&warning=add-categorie&text=$text");}
         if($_FILES['images_cat']['error'] == 6) {$text = "Fichier Temporaire Manquant !";header("Location: ../../index.php?view=admin_sha&sub=categorie&warning=add-categorie&text=$text");}
         if($_FILES['images_cat']['error'] == 7) {$text = "Impossible d'écrire les droits sur le fichier envoyer !";header("Location: ../../index.php?view=admin_sha&sub=categorie&warning=add-categorie&text=$text");}
         die();
