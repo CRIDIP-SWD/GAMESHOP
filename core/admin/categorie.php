@@ -68,6 +68,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-categorie')
         $ssh2_login = ssh2_auth_password($connect, 'root', 't2X7qaGzM4we');
         if(!$ssh2_login){echo "Connexion refuser !";}
 
+        $def = ssh2_exec($connect, "chmod 777 /var/www/vhosts/icegest.com/".\App\constante::IP_SRC."/sources/gameshop/marque/".$cat[0]->images_cat.".png");
         $supp_img = ssh2_exec($connect, "rm -rf /var/www/vhosts/icegest.com/".\App\constante::IP_SRC."/sources/gameshop/marque/".$cat[0]->images_cat.'.png');
 
         if(!$supp_img)
