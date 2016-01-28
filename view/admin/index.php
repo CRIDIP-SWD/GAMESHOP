@@ -955,7 +955,7 @@
                                         <td><?= $cat->id; ?></td>
                                         <td><?= html_entity_decode($cat->designation_cat); ?></td>
                                         <td>
-                                            <a href="core/admin/categorie.php?action=supp-categorie&idactegorie=<?= $cat->id; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                            <a href="core/admin/categorie.php?action=supp-categorie&idcategorie=<?= $cat->id; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

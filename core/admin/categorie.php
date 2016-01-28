@@ -51,3 +51,51 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-categories')
 
 
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-categorie')
+{
+    require "../../app/classe.php";
+    $idcategorie = $_GET['idcategorie'];
+
+    $cat = $DB->query("SELECT * FROM categorie WHERE id = :idcategorie", array(
+        "idcategorie"   => $idcategorie
+    ));
+
+    if(!empty($cat[0]->images_cat))
+    {
+        $connect = ssh2_connect("icegest.com", 22);
+        if(!$connect){echo "Echec de la connexion au réseau SSH";}
+
+        $ssh2_login = ssh2_auth_password($connect, 'root', 't2X7qaGzM4we');
+        if(!$ssh2_login){echo "Connexion refuser !";}
+
+        $supp_img = ssh2_exec($connect, "rm -rf /var/www/vhosts/icegest.com/".\App\constante::IP_SRC."/sources/gameshop/marque/".$cat[0]->images_cat.'.png');
+
+        if(!$supp_img)
+        {
+            $text = "Impossible de supprimer l'images !";
+            header("Location: ../../index.php?view=admin_sha&sub=categories&warning=supp-categorie&text=$text");
+        }
+
+    }
+
+    $count_sub = $categorie_cls->count_sub($idcategorie);
+    if($count_sub != 0)
+    {
+        $sql = $DB->execute("DELETE FROM subcategorie WHERE idcategorie = :idcategorie", array(
+            "idcategorie" => $idcategorie
+        ));
+    }
+
+    $sql = $DB->execute("DELETE FROM categorie WHERE id = :idcategorie", array(
+        "idcategorie"   => $idcategorie
+    ));
+
+    if($sql == 1)
+    {
+        $text = "La suppression de la catégorie à été un succès.";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&success=supp-categorie&text=$text");
+    }else{
+        $text = "Une erreur à eu lieu lors de la suppression de la catégorie !";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&error=supp-categorie&text=$text");
+    }
+}
