@@ -1034,7 +1034,7 @@
                     </form>
                 </section>
             </div>
-            <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+            <div id="add-subcategorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
                 <section class="panel">
                     <header class="panel-heading">
                         <h2 class="panel-title">Nouveau Client</h2>
