@@ -1034,6 +1034,53 @@
                     </form>
                 </section>
             </div>
+            <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouveau Client</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+                                <div class="validation-message">
+                                    <ul></ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Catégorie <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <select data-plugin-selectTwo class="form-control populate" require name="idcategorie">
+                                            <?php
+                                            $sql_cat = $DB->query("SELECT * FROM categorie");
+                                            foreach($sql_cat as $cat):
+                                            ?>
+                                            <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="cat" class="form-control" name="designation_subcat" required title="Champs Requis" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-subcategorie">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
             <!-- end: page -->
         </section>
     <?php endif; ?>
