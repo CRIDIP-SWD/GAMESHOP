@@ -960,7 +960,7 @@
                                             <table style="width: 100%;">
                                                 <?php
                                                 $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array(
-                                                    "idcategorie"   => $cat->idcategorie
+                                                    "idcategorie"   => $cat->id
                                                 ));
                                                 foreach($sql_sub as $sub):
                                                 ?>
