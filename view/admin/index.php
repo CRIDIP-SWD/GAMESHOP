@@ -933,41 +933,7 @@
                     <header class="panel-heading">
                         <div class="panel-actions">
                             <a href="#add-categorie" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter une catégorie"><i class="fa fa-plus-circle fa-lg"></i></a>
-                        </div>
-                        <h2 class="panel-title">Liste des Catégories</h2>
-                    </header>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Désignation</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $sql_cat = $DB->query("SELECT * FROM categorie ORDER BY id ASC");
-                                foreach($sql_cat as $cat):
-                                ?>
-                                    <tr>
-                                        <td><?= $cat->id; ?></td>
-                                        <td><?= html_entity_decode($cat->designation_cat); ?></td>
-                                        <td>
-                                            <a href="core/admin/categorie.php?action=supp-categorie&idcategorie=<?= $cat->id; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-                <section class="panel panel-primary">
-                    <header class="panel-heading">
-                        <div class="panel-actions">
-                            <a href="#add-categorie" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter une catégorie"><i class="fa fa-plus-circle fa-lg"></i></a>
+                            <a href="#add-subcategorie" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter une sous catégorie"><i class="fa fa-plus-circle fa-lg"></i></a>
                         </div>
                         <h2 class="panel-title">Liste des Catégories</h2>
                     </header>
@@ -992,10 +958,17 @@
                                         <td><?= html_entity_decode($cat->designation_cat); ?></td>
                                         <td>
                                             <table style="width: 100%;">
+                                                <?php
+                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array(
+                                                    "idcategorie"   => $cat->idcategorie
+                                                ));
+                                                foreach($sql_sub as $sub):
+                                                ?>
                                                 <tr>
-                                                    <td>Test</td>
+                                                    <td><?= html_entity_decode($sub->designation_subcat); ?></td>
                                                     <td><a href=""><i class="fa fa-trash text-danger"></i></a></td>
                                                 </tr>
+                                                <?php endforeach; ?>
                                             </table>
                                         </td>
                                         <td>
