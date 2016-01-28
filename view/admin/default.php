@@ -365,6 +365,18 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-categorie'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'ATTENTION',
+                text: "<?= $_GET['text']; ?>",
+                type: "success"
+            });
+        })
+    </script>
+<?php } ?>
+
 
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'add-categorie'){ ?>
     <script type="text/javascript">
@@ -409,6 +421,17 @@ if(!isset($_SESSION['logged']))
                 type: 'error',
                 icon: 'fa fa-times'
 		    });
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-categorie'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'ERREUR',
+                text: "<?= $_GET['text']; ?>",
+                type: "error"
+            });
         })
     </script>
 <?php } ?>
