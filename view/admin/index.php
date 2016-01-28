@@ -943,7 +943,7 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Désignation</th>
-                                        <th>Action</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
