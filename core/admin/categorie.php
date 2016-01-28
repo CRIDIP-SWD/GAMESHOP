@@ -16,8 +16,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-categories')
             $ssh2_login = ssh2_auth_password($connect, 'root', 't2X7qaGzM4we');
             if(!$ssh2_login){echo "Connexion refuser !";}
 
-            $move = ssh2_scp_send($connect, $_FILES['images_cat']['tmp_name'], "/var/www/vhosts/icegest.com/".\App\constante::IP_SRC."/sources/gameshop/marque/".$designation_cat);
-            $images_cat = $designation_cat.".".$extension_upload;
+            $move = ssh2_scp_send($connect, $_FILES['images_cat']['tmp_name'], "/var/www/vhosts/icegest.com/".\App\constante::IP_SRC."/sources/gameshop/marque/".$designation_cat.".".$extension_upload);
+            $images_cat = $designation_cat;
             if(!$move)
             {
                 $text = "Impossible d'effectuer l'envoie de l'images !";
