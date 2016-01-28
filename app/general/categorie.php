@@ -24,4 +24,5 @@ class categorie extends DB
         $res = $this->count("SELECT COUNT(ref_produit) FROM produits_subcategorie WHERE idsubcategorie = '$idsubcategorie'");
         return $res;
     }
+
 }

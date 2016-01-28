@@ -125,9 +125,15 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-subcategorie')
     require "../../app/classe.php";
     $idsubcategorie = $_GET['idsubcategorie'];
 
-    $sql = $DB->execute("DELETE  FROM subcategorie WHERE id = :idsubcategorie", array(
-        "idsubcategorie" => $idsubcategorie
-    ));
+    if($categorie_cls->count_sub($idsubcategorie) == 0)
+    {
+        $sql = $DB->execute("DELETE  FROM subcategorie WHERE id = :idsubcategorie", array(
+            "idsubcategorie" => $idsubcategorie
+        ));
+    }else{
+        $text = "Cette sous catégorie contient certains produits, veuillez les déplacés ou les supprimés !";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&warning=supp-subcategorie&text=$text");
+    }
 
     if($sql == 1)
     {
