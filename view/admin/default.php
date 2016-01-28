@@ -365,7 +365,18 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
- 
+
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'add-categorie'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'ATTENTION',
+                text: "<?= $_GET['text']; ?>",
+            });
+        })
+    </script>
+<?php } ?>
+
 <?php if(isset($_GET['error']) && $_GET['error'] == 'supp-adresse'){ ?>
     <script type="text/javascript">
         $(document).ready(function(){
