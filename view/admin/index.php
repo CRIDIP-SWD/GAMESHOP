@@ -966,7 +966,7 @@
                                                 ?>
                                                 <tr>
                                                     <td><?= html_entity_decode($sub->designation_subcat); ?></td>
-                                                    <td><a href=""><i class="fa fa-trash text-danger"></i></a></td>
+                                                    <td><a href="core/admin/categorie.php?action=supp-subcategorie&idsubcategorie=<?= $sub->id; ?>"><i class="fa fa-trash text-danger"></i></a></td>
                                                 </tr>
                                                 <?php endforeach; ?>
                                             </table>
@@ -985,7 +985,7 @@
             <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
                 <section class="panel">
                     <header class="panel-heading">
-                        <h2 class="panel-title">Nouveau Client</h2>
+                        <h2 class="panel-title">Nouvelle Catégorie</h2>
                     </header>
                     <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
                         <div class="panel-body">
@@ -1037,7 +1037,7 @@
             <div id="add-subcategorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
                 <section class="panel">
                     <header class="panel-heading">
-                        <h2 class="panel-title">Nouveau Client</h2>
+                        <h2 class="panel-title">Nouvelle Sous Catégorie</h2>
                     </header>
                     <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
                         <div class="panel-body">

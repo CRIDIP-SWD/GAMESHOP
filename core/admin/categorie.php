@@ -100,3 +100,23 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-categorie')
         header("Location: ../../index.php?view=admin_sha&sub=categories&error=supp-categorie&text=$text");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-subcategorie')
+{
+    require "../../app/classe.php";
+    $idcategorie = $_POST['idcategorie'];
+    $designation_subcat = htmlentities(addslashes($_POST['designation_subcat']));
+
+    $sql = $DB->execute("INSERT INTO subcategorie(id, idcategorie, designation_subcat) VALUES (NULL, :idcategorie, :designation_subcat)", array(
+        "idcategorie"           => $idcategorie,
+        "designation_subcat"    => $designation_subcat
+    ));
+
+    if($sql == 1)
+    {
+        $text = "La sous catégorie <strong>".$designation_subcat."</strong> à bien été créer.";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&success=add-subcategorie&text=$text");
+    }else{
+        $text = "Une Erreur à eu lieu lors de la création de la sous catégorie";
+        header("Location: ../../index.php?view=admin_sha&sub=categories&error=add-subcategorie&text=$text");
+    }
+}

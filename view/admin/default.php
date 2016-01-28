@@ -387,6 +387,17 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-subcategorie'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'SUCCES',
+                text: "<?= $_GET['text']; ?>",
+                type: "success"
+            });
+        })
+    </script>
+<?php } ?>
 
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'add-categorie'){ ?>
     <script type="text/javascript">
@@ -466,6 +477,18 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['error']) && $_GET['error'] == 'add-subcategorie'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'ERREUR',
+                text: "<?= $_GET['text']; ?>",
+                type: "error"
+            });
+        })
+    </script>
+<?php } ?>
+
 
 </body>
 </html>
