@@ -79,7 +79,9 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-categorie')
 
     }
 
-    $count_sub = $categorie_cls->count_sub($idcategorie);
+    $count_sub = $DB->count("SELECT COUNT(id) FROM subcategorie WHERE idcategorie = :idcategorie", array(
+        "idcategorie"   => $idcategorie
+    ));
     if($count_sub != 0)
     {
         $sql = $DB->execute("DELETE FROM subcategorie WHERE idcategorie = :idcategorie", array(
