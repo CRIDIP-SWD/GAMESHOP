@@ -38,6 +38,7 @@ class constante extends app{
     const SOURCES           = "http://ns342142.ip-5-196-76.eu/sources/gameshop/";
     const MAINTENANCE       = 0;
     const IP_MAIN           = "109.190.224.161";
+    const IP_SRC            = "ns342142.ip-5-196-76.eu";
     /*
      * ADRESSE BUREAU = 109.190.224.161
      * ADRESSE MAISON = 109.190.65.252

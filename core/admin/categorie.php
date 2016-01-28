@@ -2,6 +2,7 @@
 if(isset($_POST['action']) && $_POST['action'] == 'add-categories')
 {
     require "../../app/classe.php";
+    $designation_cat = htmlentities(addslashes($_POST['designation_cat']));
     if(isset($_FILES['images_cat']) && $_FILES['images_cat']['error'] == 0)
     {
         $infoFichier = pathinfo($_FILES['images_cat']['name']);
@@ -14,6 +15,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-categories')
 
             $ssh2_login = ssh2_auth_password($connect, 'root', 't2X7qaGzM4we');
             if(!$ssh2_login){echo "Connexion refuser !";}
+
+            $move = ssh2_scp_send($connect, $_FILES['images_cat']['tmp_name'], "/var/www/vhosts/icegest.com/".\App\constante::IP_SRC."/sources/gameshop/marque/".$designation_cat.".".$extension_upload);
+
+            if($move)
+            {
+                var_dump($move);
+            }else{
+                echo "Erreur lors de l'envoie !";
+            }
 
         }
         var_dump($infoFichier, $extension_upload);
