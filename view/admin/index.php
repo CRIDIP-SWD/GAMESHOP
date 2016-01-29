@@ -1126,7 +1126,7 @@
                                         <a class="thumb-image" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.jpg">
                                             <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.jpg" class="img-responsive" alt="Project">
                                         </a>
-                                        <div class="mg-thumb-options">
+                                       <!-- <div class="mg-thumb-options">
                                             <div class="mg-zoom"><i class="fa fa-search"></i></div>
                                             <div class="mg-toolbar">
                                                 <div class="mg-option">
@@ -1143,7 +1143,7 @@
                                                     </ul>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <h5 class="mg-title text-weight-semibold">SEO<small>.png</small></h5>
                                     <div class="mg-description">
