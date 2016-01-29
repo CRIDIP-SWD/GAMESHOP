@@ -1138,7 +1138,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <a class="btn btn-primary btn-lg">EDITER L'ARTICLE</a>
+                                            <a class="btn btn-primary btn-lg btn-block">EDITER L'ARTICLE</a>
                                         </div>
                                     </div>
                                 </div>
