@@ -1116,11 +1116,15 @@
                     </header>
                     <div class="panel-body">
                         <div class="row">
+                            <?php
+                            $sql_produit = $DB->query("SELECT * FROM produits");
+                            foreach($sql_produit as $produit):
+                            ?>
                             <div class="col-md-3">
                                 <div id="product_box">
                                     <div class="thumbnail">
-                                        <a href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/PS4B.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="PS4 - BATTLEBORN">
-                                            <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/PS4B.jpg" width="250">
+                                        <a href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="PS4 - <?= $produit->designation; ?>">
+                                            <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="250">
                                         </a>
                                     </div>
                                     <div class="row">
@@ -1143,6 +1147,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </section>
