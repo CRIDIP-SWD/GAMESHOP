@@ -1085,3 +1085,8 @@
         </section>
     <?php endif; ?>
 <?php endif; ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'produits'): ?>
+    <?php if(!isset($_GET['data'])): ?>
+
+    <?php endif; ?>
+<?php endif; ?>
