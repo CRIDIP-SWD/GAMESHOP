@@ -1132,9 +1132,21 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                        <?php
+                                        $sql_product = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id
+                                                                  AND produits_categorie.ref_produit = produits.ref_produit");
+                                        foreach($sql_product as $produit):
+                                        ?>
                                             <tr class="gradeX">
-
+                                                <td><?= $produit->ref_produit; ?></td>
+                                                <td class="text-center">
+                                                    <a class="image-popup-no-margins" href="<?= $constante->getUrl(array(), false, true); ?>produit/cars/<?= $produit->ref_produit; ?>.jpg">
+                                                        <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cars/<?= $produit->ref_produit; ?>.jpg" width="75">
+                                                    </a>
+                                                    <p class="pt-lg">No gaps, zoom animation, close icon in top-right corner.</p>
+                                                </td>
                                             </tr>
+                                        <?php endforeach; ?>
                                         </tbody>
                                     </table>
                                 </div>
