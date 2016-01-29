@@ -8,5 +8,7 @@
     margin: 10px 10px 10px 10px;
 }
 .product_info_title{
-
+    font-size: 17px;
+    font-weight: bold;
+    text-shadow: #00a3f5;
 }
