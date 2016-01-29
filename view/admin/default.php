@@ -63,6 +63,7 @@ if(!isset($_SESSION['logged']))
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/lib/codemirror.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>codemirror/theme/monokai.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-fileupload/bootstrap-fileupload.min.css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>isotope/jquery.isotope.css" />
 </head>
 <body>
 <section class="body">
@@ -319,6 +320,7 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-validation/jquery.validate.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-autosize/jquery.autosize.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>isotope/jquery.isotope.js"></script>
 
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.charts.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
@@ -328,6 +330,7 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.modals.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.advanced.form.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.validation.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>pages/examples.mediagallery.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ajax.js"></script>
 
 <?php if(isset($_GET['success']) && $_GET['success'] == 'supp-adresse'){ ?>

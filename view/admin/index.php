@@ -1112,49 +1112,274 @@
                         <div class="panel-actions">
                             <a href="index.php?view=admin_sha&sub=add-produit" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
                         </div>
-                        <h2 class="panel-title">Liste des Catégories</h2>
+                        <h2 class="panel-title">Liste des produits</h2>
                     </header>
                     <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Désignation</th>
-                                    <th>Sous catégories</th>
-                                    <th>Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <?php
-                                $sql_cat = $DB->query("SELECT * FROM categorie ORDER BY id ASC");
-                                foreach($sql_cat as $cat):
-                                    ?>
-                                    <tr>
-                                        <td><?= $cat->id; ?></td>
-                                        <td><?= html_entity_decode($cat->designation_cat); ?></td>
-                                        <td>
-                                            <table style="width: 100%;">
-                                                <?php
-                                                $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array(
-                                                    "idcategorie"   => $cat->id
-                                                ));
-                                                foreach($sql_sub as $sub):
-                                                    ?>
-                                                    <tr>
-                                                        <td><?= html_entity_decode($sub->designation_subcat); ?></td>
-                                                        <td><a href="core/admin/categorie.php?action=supp-subcategorie&idsubcategorie=<?= $sub->id; ?>"><i class="fa fa-trash text-danger"></i></a></td>
-                                                    </tr>
-                                                <?php endforeach; ?>
-                                            </table>
-                                        </td>
-                                        <td>
-                                            <a href="core/admin/categorie.php?action=supp-categorie&idcategorie=<?= $cat->id; ?>" class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                        </td>
-                                    </tr>
-                                <?php endforeach; ?>
-                                </tbody>
-                            </table>
+                        <div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
+                            <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-1.jpg">
+                                            <img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_1" value="1">
+                                                    <label for="file_1">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">SEO<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Design, Websites</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-2.jpg">
+                                            <img src="assets/images/projects/project-2.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_2" value="1">
+                                                    <label for="file_2">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Blog<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">PSDs, Projects</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item video col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-5.jpg">
+                                            <img src="assets/images/projects/project-5.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_3" value="1">
+                                                    <label for="file_3">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Friends<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Projects, Vacation</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item image col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-4.jpg">
+                                            <img src="assets/images/projects/project-4.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_4" value="1">
+                                                    <label for="file_4">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Life<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Images, Photos</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item video col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-5.jpg">
+                                            <img src="assets/images/projects/project-5.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_5" value="1">
+                                                    <label for="file_5">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Poetry<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Websites</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-6.jpg">
+                                            <img src="assets/images/projects/project-6.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_6" value="1">
+                                                    <label for="file_6">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Fun<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Documentation, Projects</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-7.jpg">
+                                            <img src="assets/images/projects/project-7.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_7" value="1">
+                                                    <label for="file_7">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Family<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Documentation</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="isotope-item image col-sm-6 col-md-4 col-lg-3">
+                                <div class="thumbnail">
+                                    <div class="thumb-preview">
+                                        <a class="thumb-image" href="assets/images/projects/project-1.jpg">
+                                            <img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
+                                        </a>
+                                        <div class="mg-thumb-options">
+                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
+                                            <div class="mg-toolbar">
+                                                <div class="mg-option checkbox-custom checkbox-inline">
+                                                    <input type="checkbox" id="file_8" value="1">
+                                                    <label for="file_8">SELECT</label>
+                                                </div>
+                                                <div class="mg-group pull-right">
+                                                    <a href="#">EDIT</a>
+                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
+                                                        <i class="fa fa-caret-up"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu mg-menu" role="menu">
+                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
+                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h5 class="mg-title text-weight-semibold">Hapiness<small>.png</small></h5>
+                                    <div class="mg-description">
+                                        <small class="pull-left text-muted">Websites</small>
+                                        <small class="pull-right text-muted">07/10/2014</small>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
