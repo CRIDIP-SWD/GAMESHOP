@@ -1115,44 +1115,10 @@
                         <h2 class="panel-title">Liste des produits</h2>
                     </header>
                     <div class="panel-body">
-                        <div class="row mg-files" data-sort-destination data-sort-id="media-gallery">
-                            <?php
-                            $sql_product = $DB->query("SELECT * FROM produits");
-                            foreach($sql_product as $product):
-                            ?>
-                            <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
-                                <div class="thumbnail">
-                                    <div class="thumb-preview">
-                                        <a class="thumb-image" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.jpg">
-                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.jpg" class="img-responsive" alt="Project">
-                                        </a>
-                                       <!-- <div class="mg-thumb-options">
-                                            <div class="mg-zoom"><i class="fa fa-search"></i></div>
-                                            <div class="mg-toolbar">
-                                                <div class="mg-option">
-                                                    12,00 €
-                                                </div>
-                                                <div class="mg-group pull-right">
-                                                    <a href="#">EDIT</a>
-                                                    <button class="dropdown-toggle mg-toggle" type="button" data-toggle="dropdown">
-                                                        <i class="fa fa-caret-up"></i>
-                                                    </button>
-                                                    <ul class="dropdown-menu mg-menu" role="menu">
-                                                        <li><a href="#"><i class="fa fa-download"></i> Download</a></li>
-                                                        <li><a href="#"><i class="fa fa-trash-o"></i> Delete</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>-->
-                                    </div>
-                                    <h5 class="mg-title text-weight-semibold">SEO<small>.png</small></h5>
-                                    <div class="mg-description">
-                                        <small class="pull-left text-muted">Design, Websites</small>
-                                        <small class="pull-right text-muted">07/10/2014</small>
-                                    </div>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-3">
+
                             </div>
-                            <?php endforeach; ?>
                         </div>
                     </div>
                 </section>
