@@ -1133,13 +1133,13 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="product_info">
-                                                <div class="product_info_title">BATTLEBORN</div>
-                                                <div class="product_info_categorie">PS4 - <small>Jeux</small></div>
+                                                <div class="product_info_title"><?= $produit->designation; ?></div>
+                                                <div class="product_info_categorie"><?= $produit->designation_cat; ?> - <small><?= $produit->designation_subcat; ?></small></div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="product_info_price">
-                                                69,90 €
+                                                <?= $fonction->number_decimal($produit->prix_vente); ?>
                                             </div>
                                         </div>
                                     </div>
