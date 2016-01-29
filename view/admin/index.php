@@ -1089,7 +1089,7 @@
     <?php if(!isset($_GET['data'])): ?>
         <section role="main" class="content-body">
             <header class="page-header">
-                <h2><i class="fa fa-search"></i> PRODUITS</h2>
+                <h2><i class="fa fa-cubes"></i> PRODUITS</h2>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
@@ -1123,15 +1123,14 @@
                             <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail">
                                     <div class="thumb-preview">
-                                        <a class="thumb-image" href="assets/images/projects/project-1.jpg">
-                                            <img src="assets/images/projects/project-1.jpg" class="img-responsive" alt="Project">
+                                        <a class="thumb-image" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.png">
+                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.png" class="img-responsive" alt="Project">
                                         </a>
                                         <div class="mg-thumb-options">
                                             <div class="mg-zoom"><i class="fa fa-search"></i></div>
                                             <div class="mg-toolbar">
-                                                <div class="mg-option checkbox-custom checkbox-inline">
-                                                    <input type="checkbox" id="file_1" value="1">
-                                                    <label for="file_1">SELECT</label>
+                                                <div class="mg-option">
+                                                    12,00 €
                                                 </div>
                                                 <div class="mg-group pull-right">
                                                     <a href="#">EDIT</a>
