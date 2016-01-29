@@ -1127,6 +1127,9 @@
                                         <div class="product_info_title">BATTLEBORN</div>
                                         <div class="product_info_categorie">PS4 - <small>Jeux</small></div>
                                     </div>
+                                    <div class="product_info_price">
+                                        69,90 €
+                                    </div>
                                 </div>
                             </div>
                         </div>
