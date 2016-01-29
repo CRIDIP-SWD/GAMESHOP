@@ -17,6 +17,7 @@
     font-style: italic;
 }
 .product_info_price{
+    margin: 10px 10px 10px 10px;
     font-size: 28px;
     font-weight: bold;
 }
