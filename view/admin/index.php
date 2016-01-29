@@ -1123,6 +1123,10 @@
                                             <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/PS4B.jpg" width="250">
                                         </a>
                                     </div>
+                                    <div class="product_info">
+                                        <div class="product_info_title">BATTLEBORN</div>
+                                        <div class="product_info_categorie">PS4 - <small>Jeux</small></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
