@@ -1123,8 +1123,8 @@
                             <div class="isotope-item document col-sm-6 col-md-4 col-lg-3">
                                 <div class="thumbnail">
                                     <div class="thumb-preview">
-                                        <a class="thumb-image" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.png">
-                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.png" class="img-responsive" alt="Project">
+                                        <a class="thumb-image" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.jpg">
+                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $product->ref_produit; ?>.jpg" class="img-responsive" alt="Project">
                                         </a>
                                         <div class="mg-thumb-options">
                                             <div class="mg-zoom"><i class="fa fa-search"></i></div>
