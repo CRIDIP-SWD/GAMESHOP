@@ -1117,7 +1117,13 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-3">
-
+                                <div id="product_box">
+                                    <div class="thumbnail">
+                                        <a href="assets/images/projects/project.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="Caption. Can be aligned it to any side and contain any HTML.">
+                                            <img class="img-responsive" src="assets/images/projects/project.jpg" width="145">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
