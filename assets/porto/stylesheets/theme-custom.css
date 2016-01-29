@@ -6,6 +6,7 @@
 }
 .product_info{
     margin: 10px 10px 10px 10px;
+    float: left;
 }
 .product_info_title{
     font-size: 17px;
@@ -15,4 +16,9 @@
 .product_info_categorie{
     font-size: 14px;
     font-style: italic;
+}
+.product_info_price{
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
