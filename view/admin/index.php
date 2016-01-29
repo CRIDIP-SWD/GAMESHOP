@@ -1117,7 +1117,10 @@
                     <div class="panel-body">
                         <div class="row">
                             <?php
-                            $sql_produit = $DB->query("SELECT * FROM produits");
+                            $sql_produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, produits_subcategorie, subcategorie WHERE produits_categorie.idcategorie = categorie.id
+                                                      AND produits_subcategorie.idsubcategorie = subcategorie.id
+                                                      AND produits_categorie.ref_produit = produits.ref_produit
+                                                      AND produits_subcategorie.ref_produit = produits.ref_produit");
                             foreach($sql_produit as $produit):
                             ?>
                             <div class="col-md-3">
