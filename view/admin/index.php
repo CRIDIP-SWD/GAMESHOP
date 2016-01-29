@@ -1137,7 +1137,9 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <a href="" class="col-md-12 bg-primary">TEST</a>
+                                        <div class="col-md-12">
+                                            <a class="btn btn-primary btn-lg">EDITER L'ARTICLE</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
