@@ -9,6 +9,7 @@
     float: left;
 }
 .product_info_title{
+    display: inline-flex;
     font-size: 17px;
     font-weight: bold;
     text-shadow: #00a3f5;
@@ -18,7 +19,6 @@
     font-style: italic;
 }
 .product_info_price{
-    float: right;
     font-size: 28px;
     font-weight: bold;
 }
