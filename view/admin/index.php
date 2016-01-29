@@ -1134,8 +1134,10 @@
                                             <div class="product_info_price">
                                                 69,90 €
                                             </div>
-                                            <a href="index.php?view=admin_sha&sub=edit-produit&ref_produit=454646">Editer</a>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        <a href="" class="col-md-12 bg-primary">TEST</a>
                                     </div>
                                 </div>
                             </div>
