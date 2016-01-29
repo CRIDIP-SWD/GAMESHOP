@@ -1127,7 +1127,7 @@
                                 <div id="product_box">
                                     <div class="thumbnail">
                                         <a href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="<?= $produit->designation_cat; ?> - <?= $produit->designation; ?>">
-                                            <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="250">
+                                            <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="145">
                                         </a>
                                     </div>
                                     <div class="row">
