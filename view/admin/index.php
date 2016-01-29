@@ -1110,7 +1110,7 @@
                 <section class="panel panel-primary">
                     <header class="panel-heading">
                         <div class="panel-actions">
-                            <a href="index.php?view=admin_sha&sub=add-produit" class="mb-xs mt-xs mr-xs modal-basic panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
+                            <a href="index.php?view=admin_sha&sub=add-produit" class="panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
                         </div>
                         <h2 class="panel-title">Liste des produits</h2>
                     </header>
