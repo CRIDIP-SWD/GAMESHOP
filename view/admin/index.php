@@ -1119,8 +1119,8 @@
                             <div class="col-md-3">
                                 <div id="product_box">
                                     <div class="thumbnail">
-                                        <a href="assets/images/projects/project.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="Caption. Can be aligned it to any side and contain any HTML.">
-                                            <img class="img-responsive" src="assets/images/projects/project.jpg" width="145">
+                                        <a href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/PS4B.jpg" data-plugin-lightbox data-plugin-options='{ "type":"image" }' title="PS4 - BATTLEBORN">
+                                            <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/PS4B.jpg" width="250">
                                         </a>
                                     </div>
                                 </div>
