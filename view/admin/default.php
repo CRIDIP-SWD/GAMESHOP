@@ -322,7 +322,9 @@ if(!isset($_SESSION['logged']))
 
 
 <!-- UNDER SCRIPT -->
-
+<script type="text/javascript">
+    CKEDITOR.replace('long_description');
+</script>
 <!-- FINNALY SCRIPT-->
 
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
