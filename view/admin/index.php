@@ -1363,11 +1363,14 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value="" checked>
-                                                    Option one is this and that—be sure to include why it's great
-                                                </label>
+                                            <div class="col-md-3"></div>
+                                            <div class="col-md-9">
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="" checked onclick="afficherPromotion()">
+                                                        Option one is this and that—be sure to include why it's great
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
 
