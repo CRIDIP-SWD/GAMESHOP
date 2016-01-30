@@ -22,12 +22,10 @@ $("#date_sortie").datepicker({
 
 //FONCTION D'AFFICHARGE
 function affichePromotion(){
-    var promotionCheck = document.getElementById("Produit").elements['promotionCheck'].checked;
-
-    if(promotionCheck.checked == true)
+    if(document.getElementById('promotionCheck').checked == true)
     {
-        document.getElementById("Produit").elements['promotion'].style = "display: block;";
+        alert("OK");
     }else{
-        document.getElementById("Produit").elements['promotion'].style = "display: none;";
+        alert("None");
     }
 }
