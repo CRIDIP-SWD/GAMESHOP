@@ -1572,7 +1572,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2" style="background-color:#CCCCCC;">CARACTERISTIQUE AUTRE (Vourcher, etc...)</td>
+                                                        <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE AUTRE (Vourcher, etc...)</strong></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Compatibilité</td>
