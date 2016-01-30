@@ -1298,6 +1298,7 @@
                                     <li><a href="#images" data-toggle="tab">Images</a></li>
                                     <li><a href="#video" data-toggle="tab">Vidéo</a></li>
                                     <li><a href="#caracteristique" data-toggle="tab">Caractéristique</a></li>
+                                    <li><a href="#promotionTab" data-toggle="tab" id="promotion">Promotion</a></li>
                                 </ul>
                                 <div class="tab-content">
                                     <div id="information" class="tab-pane active">
@@ -1362,10 +1363,10 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="produit">Article en promotion</label>
+                                            <label class="col-md-3 control-label" for="checkboxExample3 promotionCheck">Article en promotion</label>
                                             <div class="col-md-9">
                                                 <div class="checkbox-custom checkbox-success">
-                                                    <input type="checkbox" checked="" id="checkboxExample3">
+                                                    <input type="checkbox" name="promotion" id="checkboxExample3 promotionCheck" onclick="affichePromotion()">
                                                     <label for="checkboxExample3">Checkbox Success</label>
                                                 </div>
                                             </div>

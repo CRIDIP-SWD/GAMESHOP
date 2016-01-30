@@ -17,3 +17,17 @@ $("#date_sortie").datepicker({
     format: "dd-mm-yyyy",
     language: "fr"
 });
+
+
+
+//FONCTION D'AFFICHARGE
+function affichePromotion(){
+    var promotionCheck = document.getElementById("Produit").elements['promotionCheck'].checked;
+
+    if(promotionCheck.checked)
+    {
+        document.getElementById("Produit").elements['promotion'].style = "display: block;";
+    }else{
+        document.getElementById("Produit").elements['promotion'].style = "display: none;";
+    }
+}
