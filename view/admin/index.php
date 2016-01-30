@@ -1533,7 +1533,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2"><strong>CARACTERISTIQUE DE CONSOLE</strong></td>
+                                                        <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE DE CONSOLE</strong></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Couleur</td>
@@ -1572,7 +1572,7 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td colspan="2">CARACTERISTIQUE AUTRE (Vourcher, etc...)</td>
+                                                        <td colspan="2" style="background-color:#CCCCCC;">CARACTERISTIQUE AUTRE (Vourcher, etc...)</td>
                                                     </tr>
                                                     <tr>
                                                         <td>Compatibilité</td>
