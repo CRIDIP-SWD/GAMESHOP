@@ -1361,6 +1361,30 @@
                                             </div>
                                         </div>
 
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3">Small</label>
+                                            <div class="col-md-9">
+                                                <div class="switch switch-sm switch-primary">
+                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                </div>
+                                                <div class="switch switch-sm switch-success">
+                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                </div>
+                                                <div class="switch switch-sm switch-warning">
+                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                </div>
+                                                <div class="switch switch-sm switch-danger">
+                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                </div>
+                                                <div class="switch switch-sm switch-info">
+                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                </div>
+                                                <div class="switch switch-sm switch-dark">
+                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <div id="assoc" class="tab-pane">
                                         <h1 class="title">ASSOCIATION DE CATEGORIE</h1>
