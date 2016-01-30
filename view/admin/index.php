@@ -1503,12 +1503,6 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Editeur</td>
-                                                        <td>
-                                                            <input type="text" class="form-control" name="editeur" />
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
                                                         <td>Multijoueur</td>
                                                         <td>
                                                             <div class="checkbox-custom checkbox-primary">
