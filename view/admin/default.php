@@ -326,15 +326,11 @@ if(!isset($_SESSION['logged']))
 <script type="text/javascript">
     function calcul(){
         var prix_vente = parseFloat(document.getElementById("Produit").elements['prix_vente'].value);
-        var revenue_point = parseFloat(document.getElementById("Produit").elements['revenue_point']);
-        var cout_point = parseFloat(document.getElementById("Produit").elements['cout_point']);
+        var revenue = parseFloat(document.getElementById("Produit").elements['revenue_point'].value);
+        var cout = parseFloat(document.getElementById("Produit").elements['cout_point'].value);
 
-        var nbPoint = revenue_point / 10;
-        var bLimit = 150;
-        var coef = 1.8;
-
-        revenue_point.value = parseFloat(bLimit * nbPoint);
-        cout_point.value = parseFloat((prix_vente * coef)*100);
+        revenue.value(prix_vente + 10);
+        cout.value(prix_vente + 20);
 
     }
 </script>
