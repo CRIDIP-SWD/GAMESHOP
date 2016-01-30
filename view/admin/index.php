@@ -1283,11 +1283,27 @@
                     <form id="Produit" class="form-horizontal" action="core/admin/produit.php" method="post" enctype="multipart/form-data">
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <div id="data-validation-error-msg-container"></div>
-                                        <ul></ul>
+                                <?php if(isset($_GET['data_valid']) && $_GET['data_valid'] == 'error'): ?>
+                                <section class="panel panel-danger">
+                                    <header class="panel-heading">
+                                        <div class="panel-actions">
+                                            <a data-panel-toggle="" class="panel-action panel-action-toggle" href="#"></a>
+                                            <a data-panel-dismiss="" class="panel-action panel-action-dismiss" href="#"></a>
+                                        </div>
+
+                                        <h2 class="panel-title"><i class="fa fa-warning"></i> Erreur dans le Formulaire</h2>
+                                    </header>
+                                    <div class="panel-body">
+                                        <?php foreach($_GET['array'] as $errors): ?>
+                                            <ul class="list-unstyled">
+                                                <li><i class="fa fa-warning"></i> <?= $errors[0]; ?></li>
+                                                <li><i class="fa fa-warning"></i> <?= $errors[1]; ?></li>
+                                                <li><i class="fa fa-warning"></i> <?= $errors[2]; ?></li>
+                                            </ul>
+                                        <?php endforeach; ?>
                                     </div>
-                                </div>
+                                </section>
+                                <?php endif; ?>
                             </div>
                             <div class="tabs tabs-vertical tabs-left tabs-success">
                                 <ul class="nav nav-tabs col-sm-3 col-xs-5">
