@@ -1293,7 +1293,6 @@
                                 <ul class="nav nav-tabs col-sm-3 col-xs-5">
                                     <li class="active"><a href="#information" data-toggle="tab">Information</a></li>
                                     <li><a href="#prix" data-toggle="tab">Prix</a></li>
-                                    <li><a href="#promotionTab" data-toggle="tab" id="promotion">Promotion</a></li>
                                     <li><a href="#assoc" data-toggle="tab">Association</a></li>
                                     <li><a href="#stock" data-toggle="tab">Gestion de Stock</a></li>
                                     <li><a href="#images" data-toggle="tab">Images</a></li>
@@ -1483,15 +1482,102 @@
 
                                     </div>
                                     <div id="caracteristique" class="tab-pane">
-                                        <h1 class="title">Définition des Caractéristique</h1>
+                                        <h1 class="title">Définition des Caractéristiques</h1>
 
                                         <div class="table-responsive">
                                             <table class="table table-bordered">
                                                 <tbody>
                                                     <tr>
+                                                        <td colspan="2"><strong>CARACTERISTIQUE DE JEUX</strong></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td>Editeur</td>
                                                         <td>
                                                             <input type="text" class="form-control" name="editeur" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Genre</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="genre" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Editeur</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="editeur" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Multijoueur</td>
+                                                        <td>
+                                                            <div class="checkbox-custom checkbox-primary">
+                                                                <input type="checkbox" checked="" name="multijoueur" id="checkboxExample2">
+                                                                <label for="checkboxExample2">Jeux en Multijoueur</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Internet</td>
+                                                        <td>
+                                                            <div class="checkbox-custom checkbox-primary">
+                                                                <input type="checkbox" checked="" name="internet" id="checkboxExample2">
+                                                                <label for="checkboxExample2">Connexion Internet Requis</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Option</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="option" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2"><strong>CARACTERISTIQUE DE CONSOLE</strong></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Couleur</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="couleur" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Capacité Disque Dur</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="cap_hdd" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Ethernet</td>
+                                                        <td>
+                                                            <div class="checkbox-custom checkbox-primary">
+                                                                <input type="checkbox" checked="" name="eth" id="checkboxExample2">
+                                                                <label for="checkboxExample2">Connexion Internet par cable</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Wifi</td>
+                                                        <td>
+                                                            <div class="checkbox-custom checkbox-primary">
+                                                                <input type="checkbox" checked="" name="internet" id="checkboxExample2">
+                                                                <label for="checkboxExample2">Connexion Internet par Réseau Sans Fil</label>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Nombre de Prise USB</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="nb_usb" />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td colspan="2">CARACTERISTIQUE AUTRE (Vourcher, etc...)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Compatibilité</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="compatibilite" />
                                                         </td>
                                                     </tr>
                                                 </tbody>
