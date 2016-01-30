@@ -334,6 +334,8 @@ if(!isset($_SESSION['logged']))
             var nbpoint = prix_vente / 10;
             revenue_point = (150 * nbpoint);
 
+        }else{
+            alert('Nombre Valide requis')
         }
 
     }
