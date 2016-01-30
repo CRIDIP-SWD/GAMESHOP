@@ -1452,11 +1452,11 @@
 																<span class="fileupload-new">Selectionner Fichier</span>
                                                                 <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
 																<input type="file" name="images_produit" accept="image/*"/>
-                                                                <p>Maximum 3Mo</p>
 															</span>
                                                         <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
                                                     </div>
                                                 </div>
+                                                <span>Maximum 3Mo</span>
                                             </div>
                                         </div>
                                     </div>
