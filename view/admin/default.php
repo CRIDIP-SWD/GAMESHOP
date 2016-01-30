@@ -333,8 +333,8 @@ if(!isset($_SESSION['logged']))
         var bLimit = 150;
         var coef = 1.8;
 
-        revenue_point.value = bLimit * nbPoint;
-        cout_point.value = (prix_vente * coef)*100;
+        revenue_point.value = parseFloat(bLimit * nbPoint);
+        cout_point.value = parseFloat((prix_vente * coef)*100);
 
     }
 </script>
