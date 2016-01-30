@@ -1133,8 +1133,10 @@
                                         </thead>
                                         <tbody>
                                         <?php
-                                        $sql_product = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id
-                                                                  AND produits_categorie.ref_produit = produits.ref_produit");
+                                        $sql_product = $DB->query("SELECT * FROM produits, produits_categorie, categorie, produits_subcategorie, subcategorie WHERE produits_categorie.idcategorie = categorie.id
+                                                                  AND produits_categorie.ref_produit = produits.ref_produit
+                                                                  AND produits_subcategorie.idsubcategorie = subcategorie.id
+                                                                  AND produits_subcategorie.ref_produit = produits.ref_produit");
                                         foreach($sql_product as $produit):
                                         ?>
                                             <tr class="gradeX">
@@ -1144,6 +1146,53 @@
                                                         <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cars/<?= $produit->ref_produit; ?>.jpg" width="75">
                                                     </a>
                                                     <p class="pt-lg">No gaps, zoom animation, close icon in top-right corner.</p>
+                                                </td>
+                                                <td>
+                                                    <span style=""><?= html_entity_decode($produit->designation); ?></span><br>
+                                                    <span style=""><?= $produit->designation_cat; ?> - <?= $produit->designation_subcat; ?></span>
+                                                </td>
+                                                <td><?= $date_format->formatage("d/m/Y", $produit->date_sortie); ?></td>
+                                                <td><?= $fonction->number_decimal($produit->prix_vente); ?></td>
+                                                <td>
+                                                    <?php
+                                                    switch($produit->statut_stock)
+                                                    {
+                                                        case 0:
+                                                            echo "<span class='text-danger'><i class='fa fa-circle'></i> Rupture</span>";
+                                                            break;
+                                                        case 1:
+                                                            echo "<span class='text-warning'><i class='fa fa-circle'></i> Réassort Prévue le <strong>".$date_format->formatage('d/m/Y', $produit->date_reassort)."</strong></span>";
+                                                            break;
+                                                        case 2:
+                                                            echo "<span class='text-success'><i class='fa fa-check-circle'></i> OK (".$produit->stock.")</span>";
+                                                            break;
+                                                        case 3:
+                                                            echo "<span class='text-primary'><i class='fa fa-arrow-circle-down'></i> En Précommande Uniquement</span>";
+                                                            break;
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <?php
+                                                    switch($produit->statut_global)
+                                                    {
+                                                        case 1:
+                                                            echo "<span class='label label-dark'>Courant</span>";
+                                                            break;
+                                                        case 2:
+                                                            echo "<span class='label label-primary'>Précommande</span>";
+                                                            break;
+                                                        case 3:
+                                                            echo "<span class='label label-warning'>Promotion</span>";
+                                                            break;
+                                                        case 4:
+                                                            echo "<span class='label label-danger'>Nouveauté</span>";
+                                                            break;
+                                                    }
+                                                    ?>
+                                                </td>
+                                                <td>
+                                                    <a class="btn btn-primary btn-xs" href="index.php?view=admin_sha&sub=produit&data=view_produit&ref_produit=<?= $produit->ref_produit; ?>"><i class="fa fa-eye"></i> Voir le produit</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
