@@ -327,7 +327,7 @@ if(!isset($_SESSION['logged']))
     function calcul(){
         var prix_vente = parseFloat(document.getElementById("Produit").elements['prix_vente'].value);
 
-        var revenue = document.getElementById("Produit").elements['prix_vente'].value * 10;
+        var revenue = (document.getElementById("Produit").elements['prix_vente'].value / 10) * 150;
         document.getElementById("Produit").elements['revenue_point'].value = revenue;
 
     }
