@@ -1368,7 +1368,7 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="produit">Catégorie</label>
                                             <div class="col-md-6">
-                                                <select data-plugin-selectTwo id="produit" class="form-control populate">
+                                                <select data-plugin-selectTwo id="produit" name="idcategorie" class="form-control populate">
                                                     <?php
                                                     $sql_cat = $DB->query("SELECT * FROM categorie");
                                                     foreach($sql_cat as $cat):
@@ -1382,11 +1382,22 @@
                                         <div class="form-group">
                                             <label class="control-label col-md-3" for="produit">Sous Catégorie</label>
                                             <div class="col-md-6">
-                                                <select data-plugin-selectTwo id="produit" class="form-control populate">
-                                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                <select data-plugin-selectTwo id="produit" name="idsubcategorie" class="form-control populate">
+                                                    <?php
+                                                    $sql_cat = $DB->query("SELECT * FROM categorie");
+                                                    foreach($sql_cat as $cat):
+                                                    ?>
+                                                    <optgroup label="<?= html_entity_decode($cat->designation_cat); ?>">
+                                                        <?php
+                                                        $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array(
+                                                            "idcategorie"   => $cat->id
+                                                        ));
+                                                        foreach($sql_sub as $sub):
+                                                        ?>
                                                         <option value="AK">Alaska</option>
-                                                        <option value="HI">Hawaii</option>
+                                                        <?php endforeach; ?>
                                                     </optgroup>
+                                                    <?php endforeach; ?>
                                                 </select>
                                             </div>
                                         </div>
