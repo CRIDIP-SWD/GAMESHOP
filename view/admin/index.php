@@ -1402,6 +1402,21 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="stock" class="tab-pane">
+                                        <h1 class="title">GESTION DE STOCK</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="date_sortie">Date de Sortie</label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</span>
+                                                    <input type="text" id="date_sortie" name="date_sortie" data-plugin-datepicker class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

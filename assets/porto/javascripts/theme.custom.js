@@ -10,3 +10,10 @@ function calcul(){
     var cout = parseInt((document.getElementById("Produit").elements['prix_vente'].value * 1.8) * 100);
     document.getElementById("Produit").elements['cout_point'].value = cout;
 }
+
+
+// DATEPICKERS PERSO
+$.("#date_sortie").datepicker({
+    format: "dd-mm-yyyy",
+    language: "fr"
+});
