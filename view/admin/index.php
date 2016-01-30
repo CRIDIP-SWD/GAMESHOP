@@ -1485,7 +1485,7 @@
                                         <h1 class="title">Définition des Caractéristiques</h1>
 
                                         <div class="table-responsive">
-                                            <table class="table table-bordered">
+                                            <table class="table table-bordered" style="border-radius: 5px;">
                                                 <tbody>
                                                     <tr>
                                                         <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE DE JEUX</strong></td>
