@@ -13,7 +13,7 @@ function calcul(){
 
 
 // DATEPICKERS PERSO
-$.("#date_sortie").datepicker({
+$("#date_sortie").datepicker({
     format: "dd-mm-yyyy",
     language: "fr"
 });
