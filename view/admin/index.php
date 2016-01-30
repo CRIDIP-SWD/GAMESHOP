@@ -1416,6 +1416,20 @@
                                                 </div>
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label for="produit" class="col-md-3 control-label">Stock Actuel</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="produit" class="form-control" name="stock" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Poids</label>
+                                            <div class="col-md-4">
+                                                <input type="text" id="produit" class="form-control" name="poids">
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
