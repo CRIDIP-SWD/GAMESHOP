@@ -318,10 +318,15 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>isotope/jquery.isotope.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>ckeditor/ckeditor.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>form-validator/jquery.form-validator.min.js"></script>
+
 
 <!-- UNDER SCRIPT -->
 <script type="text/javascript">
     CKEDITOR.replace('long_description');
+</script>
+<script type="text/javascript">
+
 </script>
 <script type="text/javascript">
     function calcul(){

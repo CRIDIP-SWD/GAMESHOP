@@ -1284,7 +1284,7 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="validation-message">
+                                    <div id="data-validation-error-msg-container"></div>
                                         <ul></ul>
                                     </div>
                                 </div>
@@ -1306,7 +1306,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Référence Produit <span class="required">*</span></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="ref_produit" required title="Veuillez entrez une référence" />
+                                                <input type="text" class="form-control" name="ref_produit" data-validation="alphanumeric length" data-validation-length="min2" data-validation-error-msg="Veuillez rentrer une Référence valide"/>
                                             </div>
                                         </div>
 
@@ -1341,7 +1341,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Prix de Vente <span class="required">*</span> </label>
                                             <div class="col-md-3">
-                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="0" required title="Veuillez saisir un prix de vente TTC">
+                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="0" data-validation="number" data-validation-allowing="float" data-validation-error-msg="Veuillez rentrer un chiffre Valide">
                                                 <p>Prix de Vente TTC + Marge Brut</p>
                                                 <p>Tarif en séparateur de (.)</p>
                                             </div>
