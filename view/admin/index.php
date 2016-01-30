@@ -1362,6 +1362,9 @@
                                         </div>
 
                                     </div>
+                                    <div id="assoc" class="tab-pane">
+                                        <h1 class="title">ASSOCIATION DE CATEGORIE</h1>
+                                    </div>
                                 </div>
                             </div>
                         </div>
