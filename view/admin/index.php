@@ -1297,7 +1297,6 @@
                                     <li><a href="#assoc" data-toggle="tab">Association</a></li>
                                     <li><a href="#stock" data-toggle="tab">Gestion de Stock</a></li>
                                     <li><a href="#images" data-toggle="tab">Images</a></li>
-                                    <li><a href="#video" data-toggle="tab">Vidéo</a></li>
                                     <li><a href="#caracteristique" data-toggle="tab">Caractéristique</a></li>
 
                                 </ul>
@@ -1458,6 +1457,45 @@
                                                 </div>
                                                 <span>Maximum 3Mo</span>
                                             </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Bannière</label>
+                                            <div class="col-md-6">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-append">
+                                                        <div class="uneditable-input">
+                                                            <i class="fa fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+															<span class="btn btn-default btn-file">
+																<span class="fileupload-exists">Modifier</span>
+																<span class="fileupload-new">Selectionner Fichier</span>
+                                                                <input type="hidden" name="MAX_FILE_SIZE" value="8388608" />
+																<input type="file" name="images_banner" accept="image/*"/>
+															</span>
+                                                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                                    </div>
+                                                </div>
+                                                <span>Maximum 3Mo</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="caracteristique" class="tab-pane">
+                                        <h1 class="title">Définition des Caractéristique</h1>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Editeur</td>
+                                                        <td>
+                                                            <input type="text" class="form-control" name="editeur" />
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

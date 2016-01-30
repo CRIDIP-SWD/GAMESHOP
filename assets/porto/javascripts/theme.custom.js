@@ -20,6 +20,7 @@ $("#date_sortie").datepicker({
 
 
 
+
 //FONCTION D'AFFICHARGE
 
 function afficherPromotion()
