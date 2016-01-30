@@ -1142,10 +1142,9 @@
                                             <tr class="gradeX">
                                                 <td><?= $produit->ref_produit; ?></td>
                                                 <td class="text-center">
-                                                    <a class="image-popup-no-margins" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg">
+                                                    <a class="image-popup-no-margins center" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg">
                                                         <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" width="75">
                                                     </a>
-                                                    <p class="pt-lg">No gaps, zoom animation, close icon in top-right corner.</p>
                                                 </td>
                                                 <td>
                                                     <span style=""><?= html_entity_decode($produit->designation); ?></span><br>
