@@ -33,7 +33,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     $array_errors = array();
     if(empty($ref_produit)){array_push($array_errors, $array_errors[0] = "Veuillez entréer une référence de Produit");}
     if(empty($designation)){array_push($array_errors, $array_errors[1] = "Veuillez Entréer une désignation au produit");}
-    if(empty($prix_vente)){array_push($array_errors, $array_errors[1] = "Veuillez entrer un prix de Vente au Produit");}
+    if(empty($prix_vente)){array_push($array_errors, $array_errors[2] = "Veuillez entrer un prix de Vente au Produit");}
 
     var_dump($array_errors);
     die();
