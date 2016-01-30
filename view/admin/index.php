@@ -1280,8 +1280,15 @@
                     <header class="panel-heading">
                         <h2 class="panel-title"><i class="fa fa-plus-circle"></i> Ajout d'un nouveau produit</h2>
                     </header>
-                    <form class="form-horizontal" action="core/admin/produit.php" method="post">
+                    <form id="Produit" class="form-horizontal" action="core/admin/produit.php" method="post">
                         <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="validation-message">
+                                        <ul></ul>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="tabs tabs-vertical tabs-left tabs-success">
                                 <ul class="nav nav-tabs col-sm-3 col-xs-5">
                                     <li class="active"><a href="#information" data-toggle="tab">Information</a></li>
@@ -1295,13 +1302,7 @@
                                 <div class="tab-content">
                                     <div id="information" class="tab-pane active">
                                         <h1 class="title">INFORMATION</h1>
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="validation-message">
-                                                    <ul></ul>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Référence Produit <span class="required">*</span></label>
                                             <div class="col-md-4">
@@ -1311,14 +1312,14 @@
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Désignation <span class="required">*</span></label>
-                                            <div class="col-md-4">
+                                            <div class="col-md-9">
                                                 <input type="text" class="form-control" name="designation" required title="Veuillez entrez une Désignation (nom du produit)" />
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="textareaDefault">Courte description</label>
-                                            <div class="col-md-6">
+                                            <div class="col-md-9">
                                                 <textarea class="form-control" name="short_description" rows="3" data-plugin-maxlength maxlength="200"></textarea>
                                                 <p>
                                                     200 caractère maximum
@@ -1328,15 +1329,38 @@
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="long_description">Longue description</label>
-                                            <div class="col-md-6">
+                                            <div class="col-md-9">
                                                 <textarea class="form-control" name="long_description" rows="5" id="long_description"></textarea>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div id="recent11" class="tab-pane">
-                                        <p>Recent</p>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                                    <div id="prix" class="tab-pane">
+                                        <h1 class="title">Tarif</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Prix de Vente</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="Calculprix();" value="0" required title="Veuillez saisir un prix de vente TTC">
+                                                <p>Prix de Vente TTC + Marge Brut</p>
+                                                <p>Tarif en séparateur de (.)</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="revenue_point">Point pour le client</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="revenue_point" class="form-control" name="revenue_point" value="0">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="count_point">Cout en point</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="count_point" class="form-control" name="count_point" value="0">
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -1448,5 +1472,15 @@
             </div>
             <!-- end: page -->
         </section>
+        <script type="text/javascript">
+            function calculrevenue(){
+                var prix_vente = document.getElementById('prix_vente');
+                var revenue_point = document.getElementById('revenue_point');
+                var nbPoint = revenue_point / 10;
+                var bLimit = 150;
+
+                revenue_point.value = bLimit * nbPoint;
+            }
+        </script>
     <?php endif; ?>
 <?php endif; ?>
