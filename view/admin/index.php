@@ -1339,7 +1339,7 @@
                                         <h1 class="title">Tarif</h1>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="produit">Prix de Vente</label>
+                                            <label class="col-md-3 control-label" for="produit">Prix de Vente <span class="required">*</span> </label>
                                             <div class="col-md-3">
                                                 <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="0" required title="Veuillez saisir un prix de vente TTC">
                                                 <p>Prix de Vente TTC + Marge Brut</p>
