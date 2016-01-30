@@ -1,7 +1,5 @@
 /* Add here all your JS customizations */
 
-CKEDITOR.replace('long_description');
-
 function calcul(){
     var prix_vente = parseFloat(document.getElementById("Produit").elements['prix_vente'].value);
     var revenue = parseInt((document.getElementById("Produit").elements['prix_vente'].value / 10) * 150);
