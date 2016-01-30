@@ -24,7 +24,7 @@ $("#date_sortie").datepicker({
 function affichePromotion(){
     var promotionCheck = document.getElementById("Produit").elements['promotionCheck'].checked;
 
-    if(promotionCheck.checked)
+    if(promotionCheck.checked == true)
     {
         document.getElementById("Produit").elements['promotion'].style = "display: block;";
     }else{
