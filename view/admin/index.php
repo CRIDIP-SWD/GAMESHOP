@@ -1327,9 +1327,12 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Longue description</label>
-                                            <div class="col-md-9">
-                                                <div class="summernote" data-plugin-summernote data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>Start typing...</div>
+                                            <label class="col-md-3 control-label" for="textareaDefault">Longue description</label>
+                                            <div class="col-md-6">
+                                                <textarea class="form-control" name="long_description" rows="3" id="long_description"></textarea>
+                                                <p>
+                                                    200 caractère maximum
+                                                </p>
                                             </div>
                                         </div>
 

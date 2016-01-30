@@ -317,6 +317,14 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>isotope/jquery.isotope.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>ckeditor/ckeditor.js"></script>
+
+<!-- UNDER SCRIPT -->
+<script type="text/javascript">
+    CKEDITOR.replace('long_description');
+</script>
+
+<!-- FINNALY SCRIPT-->
 
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.default.js"></script>
