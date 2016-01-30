@@ -1355,9 +1355,9 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="count_point">Cout en point</label>
+                                            <label class="col-md-3 control-label" for="cout_point">Cout en point</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="count_point" class="form-control" name="count_point" value="0">
+                                                <input type="text" id="cout_point" class="form-control" name="cout_point" value="0">
                                             </div>
                                         </div>
 
