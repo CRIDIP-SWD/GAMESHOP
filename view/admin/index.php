@@ -1363,10 +1363,10 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="checkboxExample3 promotionCheck">Article en promotion</label>
+                                            <label class="col-md-3 control-label" for="promotionCheck">Article en promotion</label>
                                             <div class="col-md-9">
                                                 <div class="checkbox-custom checkbox-success">
-                                                    <input type="checkbox" name="promotion" checked="checked" id="promotionCheck">
+                                                    <input type="checkbox" name="promotion" checked="checked" id="promotionCheck" onclick="afficherPromotion()">
                                                     <label for="checkboxExample3">Checkbox Success</label>
                                                 </div>
                                             </div>
