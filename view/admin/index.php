@@ -1362,25 +1362,25 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="control-label col-md-3">Small</label>
+                                            <label class="control-label col-md-3">Large</label>
                                             <div class="col-md-9">
-                                                <div class="switch switch-sm switch-primary">
-                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                <div class="switch switch-lg switch-primary">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
                                                 </div>
-                                                <div class="switch switch-sm switch-success">
-                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                <div class="switch switch-lg switch-success">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
                                                 </div>
-                                                <div class="switch switch-sm switch-warning">
-                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                <div class="switch switch-lg switch-warning">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
                                                 </div>
-                                                <div class="switch switch-sm switch-danger">
-                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                <div class="switch switch-lg switch-danger">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
                                                 </div>
-                                                <div class="switch switch-sm switch-info">
-                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                <div class="switch switch-lg switch-info">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
                                                 </div>
-                                                <div class="switch switch-sm switch-dark">
-                                                    <div class="ios-switch on"><div class="on-background background-fill"></div><div class="state-background background-fill"></div><div class="handle"></div></div><input type="checkbox" checked="checked" data-plugin-ios-switch="" name="switch" style="display: none;">
+                                                <div class="switch switch-lg switch-dark">
+                                                    <input type="checkbox" name="switch" data-plugin-ios-switch checked="checked" />
                                                 </div>
                                             </div>
                                         </div>
