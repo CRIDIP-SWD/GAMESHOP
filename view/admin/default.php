@@ -326,8 +326,8 @@ if(!isset($_SESSION['logged']))
 <script type="text/javascript">
     function calcul(){
         var prix_vente = parseFloat(document.getElementById("Produit").elements['prix_vente'].value);
-        var revenue_point = parseFloat(document.getElementById("Produit").elements['revenue_point'].value);
-        var cout_point = parseFloat(document.getElementById("Produit").elements['cout_point'].value);
+        var revenue_point = parseFloat(document.getElementById("Produit").elements['revenue_point']);
+        var cout_point = parseFloat(document.getElementById("Produit").elements['cout_point']);
 
         var nbPoint = revenue_point / 10;
         var bLimit = 150;
