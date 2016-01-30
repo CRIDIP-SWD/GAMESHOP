@@ -1512,8 +1512,8 @@
                                                         <td>Multijoueur</td>
                                                         <td>
                                                             <div class="checkbox-custom checkbox-primary">
-                                                                <input type="checkbox" checked="" name="multijoueur" id="checkboxExample2">
-                                                                <label for="checkboxExample2">Jeux en Multijoueur</label>
+                                                                <input type="checkbox" checked="" name="multijoueur" id="multijoueur">
+                                                                <label for="multijoueur">Jeux en Multijoueur</label>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -1521,8 +1521,8 @@
                                                         <td>Internet</td>
                                                         <td>
                                                             <div class="checkbox-custom checkbox-primary">
-                                                                <input type="checkbox" checked="" name="internet" id="checkboxExample2">
-                                                                <label for="checkboxExample2">Connexion Internet Requis</label>
+                                                                <input type="checkbox" checked="" name="internet" id="internet">
+                                                                <label for="internet">Connexion Internet Requis</label>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -1551,8 +1551,8 @@
                                                         <td>Ethernet</td>
                                                         <td>
                                                             <div class="checkbox-custom checkbox-primary">
-                                                                <input type="checkbox" checked="" name="eth" id="checkboxExample2">
-                                                                <label for="checkboxExample2">Connexion Internet par cable</label>
+                                                                <input type="checkbox" checked="" name="eth" id="eth">
+                                                                <label for="eth">Connexion Internet par cable</label>
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -1560,8 +1560,8 @@
                                                         <td>Wifi</td>
                                                         <td>
                                                             <div class="checkbox-custom checkbox-primary">
-                                                                <input type="checkbox" checked="" name="internet" id="checkboxExample2">
-                                                                <label for="checkboxExample2">Connexion Internet par Réseau Sans Fil</label>
+                                                                <input type="checkbox" checked="" name="wifi" id="wifi">
+                                                                <label for="wifi">Connexion Internet par Réseau Sans Fil</label>
                                                             </div>
                                                         </td>
                                                     </tr>
