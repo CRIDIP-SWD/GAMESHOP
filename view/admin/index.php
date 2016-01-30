@@ -1363,12 +1363,11 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label" for="promotionCheck">Article en promotion</label>
-                                            <div class="col-md-9">
-                                                <div class="checkbox-custom checkbox-success">
-                                                    <input type="checkbox" name="promotion" checked="checked" id="promotionCheck" onclick="afficherPromotion()">
-                                                    <label for="checkboxExample3">Checkbox Success</label>
-                                                </div>
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" value="" checked>
+                                                    Option one is this and that—be sure to include why it's great
+                                                </label>
                                             </div>
                                         </div>
 
