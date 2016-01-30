@@ -1341,7 +1341,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Prix de Vente</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="Calculprix();" value="0" required title="Veuillez saisir un prix de vente TTC">
+                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="Calcul();" value="0" required title="Veuillez saisir un prix de vente TTC">
                                                 <p>Prix de Vente TTC + Marge Brut</p>
                                                 <p>Tarif en séparateur de (.)</p>
                                             </div>
@@ -1473,13 +1473,18 @@
             <!-- end: page -->
         </section>
         <script type="text/javascript">
-            function calculrevenue(){
+            function calcul(){
                 var prix_vente = document.getElementById('prix_vente');
                 var revenue_point = document.getElementById('revenue_point');
+                var cout_point = document.getElementById('cout_point');
+
                 var nbPoint = revenue_point / 10;
                 var bLimit = 150;
+                var coef = 1.8;
 
                 revenue_point.value = bLimit * nbPoint;
+                cout_point.value = (prix_vente * coef)*100;
+
             }
         </script>
     <?php endif; ?>
