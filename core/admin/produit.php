@@ -31,8 +31,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
 
     //Verification des Information entrées
     $array_errors = array();
-    if(empty($ref_produit)){array_push($array_errors, $array_errors[] = "TEST");}
-    if(empty($designation)){array_push($array_errors, $array_errors[] = "TEST 2");}
+    if(empty($ref_produit)){array_push($array_errors, $array_errors = "TEST");}
+    if(empty($designation)){array_push($array_errors, $array_errors = "TEST 2");}
 
     var_dump($array_errors);
     die();
