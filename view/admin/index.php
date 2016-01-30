@@ -1488,7 +1488,7 @@
                                             <table class="table table-bordered">
                                                 <tbody>
                                                     <tr>
-                                                        <td colspan="2"><strong>CARACTERISTIQUE DE JEUX</strong></td>
+                                                        <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE DE JEUX</strong></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Editeur</td>
