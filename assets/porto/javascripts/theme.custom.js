@@ -25,7 +25,7 @@ $("#date_sortie").datepicker({
 function afficherPromotion()
 {
     var checkbox = $("#promotionCheck").attr('checked');
-    if(checkbox == TRUE)
+    if(checkbox == true)
     {
         alert("OK !");
     }else{
