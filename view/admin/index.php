@@ -1366,7 +1366,29 @@
                                         <h1 class="title">ASSOCIATION DE CATEGORIE</h1>
 
                                         <div class="form-group">
-                                            l
+                                            <label class="control-label col-md-3" for="produit">Catégorie</label>
+                                            <div class="col-md-6">
+                                                <select data-plugin-selectTwo id="produit" class="form-control populate">
+                                                    <?php
+                                                    $sql_cat = $DB->query("SELECT * FROM categorie");
+                                                    foreach($sql_cat as $cat):
+                                                    ?>
+                                                    <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3" for="produit">Sous Catégorie</label>
+                                            <div class="col-md-6">
+                                                <select data-plugin-selectTwo id="produit" class="form-control populate">
+                                                    <optgroup label="Alaskan/Hawaiian Time Zone">
+                                                        <option value="AK">Alaska</option>
+                                                        <option value="HI">Hawaii</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
