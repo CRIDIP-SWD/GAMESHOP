@@ -1350,14 +1350,14 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="revenue_point">Point pour le client</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="revenue_point" class="form-control" name="revenue_point" value="0">
+                                                <input type="text" id="revenue_point" readonly="readonly" class="form-control" name="revenue_point" value="0">
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="cout_point">Cout en point</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="cout_point" class="form-control" name="cout_point" value="0">
+                                                <input type="text" id="cout_point" readonly="readonly" class="form-control" name="cout_point" value="0">
                                             </div>
                                         </div>
 
