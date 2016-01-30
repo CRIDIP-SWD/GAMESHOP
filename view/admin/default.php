@@ -323,7 +323,21 @@ if(!isset($_SESSION['logged']))
 <script type="text/javascript">
     CKEDITOR.replace('long_description');
 </script>
+<script type="text/javascript">
+    function calcul(){
+        var prix_vente = document.getElementById('prix_vente');
+        var revenue_point = document.getElementById('revenue_point');
+        var cout_point = document.getElementById('cout_point');
 
+        var nbPoint = revenue_point / 10;
+        var bLimit = 150;
+        var coef = 1.8;
+
+        revenue_point.value = bLimit * nbPoint;
+        cout_point.value = (prix_vente * coef)*100;
+
+    }
+</script>
 
 <!-- FINNALY SCRIPT-->
 
