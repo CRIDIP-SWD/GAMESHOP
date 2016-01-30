@@ -65,7 +65,7 @@ if(!isset($_SESSION['logged']))
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-fileupload/bootstrap-fileupload.min.css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>isotope/jquery.isotope.css" />
 </head>
-<body>
+<body >
 <section class="body">
 
     <!-- start: header -->

@@ -1341,7 +1341,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Prix de Vente</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="Calcul();" value="0" required title="Veuillez saisir un prix de vente TTC">
+                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="0" required title="Veuillez saisir un prix de vente TTC">
                                                 <p>Prix de Vente TTC + Marge Brut</p>
                                                 <p>Tarif en séparateur de (.)</p>
                                             </div>
