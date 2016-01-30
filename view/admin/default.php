@@ -325,7 +325,7 @@ if(!isset($_SESSION['logged']))
 </script>
 <script type="text/javascript">
     function calcul(){
-        var prix_vente = document.getElementById('prix_vente').value();
+        var prix_vente = parseFloat(document.getElementById("Produit").elements['prix_vente'].value);
         var revenue_point = document.getElementById('revenue_point').value();
         var cout_point = document.getElementById('cout_point').value();
 
