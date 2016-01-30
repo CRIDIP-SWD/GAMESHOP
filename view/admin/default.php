@@ -325,18 +325,16 @@ if(!isset($_SESSION['logged']))
 </script>
 <script type="text/javascript">
     function calcul(){
-        var prix_vente = parseFloat(document.getElementById('prix_vente'));
-        var revenue_point = parseFloat(document.getElementById('revenue_point'));
-        var cout_point = parseFloat(document.getElementById('cout_point'));
+        var prix_vente = document.getElementById('prix_vente').value();
+        var revenue_point = document.getElementById('revenue_point').value();
+        var cout_point = document.getElementById('cout_point').value();
 
-        if(!isNaN(prix_vente))
-        {
-            var nbpoint = prix_vente / 10;
-            revenue_point = (150 * nbpoint);
+        var nbPoint = revenue_point / 10;
+        var bLimit = 150;
+        var coef = 1.8;
 
-        }else{
-            alert('Nombre Valide requis')
-        }
+        revenue_point.value = parseFloat(bLimit * nbPoint);
+        cout_point.value = parseFloat((prix_vente * coef)*100);
 
     }
 </script>
