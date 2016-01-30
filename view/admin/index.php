@@ -19,7 +19,7 @@
 
         <!-- start: page -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="row">
                     <div class="col-md-6">
                         <section class="panel">
@@ -70,56 +70,6 @@
                         </section>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <section class="panel">
-                    <div class="panel-body">
-                        <div class="chart chart-md" id="morrisLine"></div>
-                        <script type="text/javascript">
-
-                            var morrisLineData = [{
-                                y: '2006',
-                                a: 100,
-                                b: 90
-                            }, {
-                                y: '2007',
-                                a: 75,
-                                b: 65
-                            }, {
-                                y: '2008',
-                                a: 50,
-                                b: 40
-                            }, {
-                                y: '2009',
-                                a: 75,
-                                b: 65
-                            }, {
-                                y: '2010',
-                                a: 50,
-                                b: 40
-                            }, {
-                                y: '2011',
-                                a: 75,
-                                b: 65
-                            }, {
-                                y: '2012',
-                                a: 100,
-                                b: 90
-                            }, {
-                                y: '2013',
-                                a: 75,
-                                b: 65
-                            }, {
-                                y: '2014',
-                                a: 100,
-                                b: 90
-                            }];
-
-                            // See: assets/javascripts/ui-elements/examples.charts.js for more settings.
-
-                        </script>
-                    </div>
-                </section>
             </div>
         </div>
         <div class="row">
@@ -1110,7 +1060,7 @@
                 <section class="panel panel-primary">
                     <header class="panel-heading">
                         <div class="panel-actions">
-                            <a href="index.php?view=admin_sha&sub=add-produit" class="panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
+                            <a href="index.php?view=admin_sha&sub=produit&data=add-produit" class="panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
                         </div>
                         <h2 class="panel-title">Liste des produits</h2>
                     </header>
@@ -1201,6 +1151,200 @@
                             </div>
                         </div>
                     </div>
+                </section>
+            </div>
+            <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouvelle Catégorie</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+                                <div class="validation-message">
+                                    <ul></ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="cat" class="form-control" name="designation_cat" required title="Champs Requis" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Images de la catégorie</label>
+                                    <div class="col-md-9">
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    <i class="fa fa-file fileupload-exists"></i>
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Changer de Fichier</span>
+                                                    <span class="fileupload-new">Sélectionner un fichier</span>
+                                                    <input type="file" name="images_cat"/>
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-categories">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
+            <div id="add-subcategorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouvelle Sous Catégorie</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+                                <div class="validation-message">
+                                    <ul></ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Catégorie <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <select data-plugin-selectTwo class="form-control populate" require name="idcategorie">
+                                            <?php
+                                            $sql_cat = $DB->query("SELECT * FROM categorie");
+                                            foreach($sql_cat as $cat):
+                                                ?>
+                                                <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="cat" class="form-control" name="designation_subcat" required title="Champs Requis" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-subcategorie">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
+            <!-- end: page -->
+        </section>
+    <?php endif; ?>
+    <?php if(isset($_GET['data']) && $_GET['data'] == 'add-produit'): ?>
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2><i class="fa fa-cubes"></i> PRODUITS</h2>
+
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.php?view=admin_sha">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Ajout d'un Nouveau produit</span></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+            <div class="row">
+                <section class="panel panel-success">
+                    <header class="panel-heading">
+                        <h2 class="panel-title"><i class="fa fa-plus-circle"></i> Ajout d'un nouveau produit</h2>
+                    </header>
+                    <form class="form-horizontal" action="core/admin/produit.php" method="post">
+                        <div class="panel-body">
+                            <div class="tabs tabs-vertical tabs-left">
+                                <ul class="nav nav-tabs col-sm-3 col-xs-5">
+                                    <li class="active"><a href="#information" data-toggle="tab">Information</a></li>
+                                    <li><a href="#prix" data-toggle="tab">Prix</a></li>
+                                    <li><a href="#assoc" data-toggle="tab">Association</a></li>
+                                    <li><a href="#stock" data-toggle="tab">Gestion de Stock</a></li>
+                                    <li><a href="#images" data-toggle="tab">Images</a></li>
+                                    <li><a href="#video" data-toggle="tab">Vidéo</a></li>
+                                    <li><a href="#caracteristique" data-toggle="tab">Caractéristique</a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="information" class="tab-pane active">
+                                        <h1 class="title">INFORMATION</h1>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="validation-message">
+                                                    <ul></ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Référence Produit <span class="required">*</span></label>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" name="ref_produit" required title="Veuillez entrez une référence" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Désignation <span class="required">*</span></label>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" name="designation" required title="Veuillez entrez une Désignation (nom du produit)" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="textareaDefault">Courte description</label>
+                                            <div class="col-md-6">
+                                                <textarea class="form-control" name="short_description" rows="3" data-plugin-maxlength maxlength="200"></textarea>
+                                                <p>
+                                                    200 caractère maximum
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Longue description</label>
+                                            <div class="col-md-9">
+                                                <div class="summernote" data-plugin-summernote data-plugin-options='{ "height": 180, "codemirror": { "theme": "ambiance" } }'>Start typing...</div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="recent11" class="tab-pane">
+                                        <p>Recent</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+
+                        </footer>
+                    </form>
                 </section>
             </div>
             <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">

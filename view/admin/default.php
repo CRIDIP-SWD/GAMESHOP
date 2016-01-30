@@ -316,6 +316,7 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>jquery-autosize/jquery.autosize.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
 <script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>isotope/jquery.isotope.js"></script>
+<script src="<?= $constante->getUrl(array('porto/vendor/'), true, false); ?>bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
 
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ui-elements/examples.lightbox.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>tables/examples.datatables.default.js"></script>
@@ -325,6 +326,7 @@ if(!isset($_SESSION['logged']))
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.advanced.form.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.validation.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>pages/examples.mediagallery.js"></script>
+<script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>forms/examples.wizard.js"></script>
 <script src="<?= $constante->getUrl(array('porto/javascripts/'), true, false); ?>ajax.js"></script>
 
 <?php if(isset($_GET['success']) && $_GET['success'] == 'supp-adresse'){ ?>
