@@ -1282,7 +1282,7 @@
                     </header>
                     <form class="form-horizontal" action="core/admin/produit.php" method="post">
                         <div class="panel-body">
-                            <div class="tabs tabs-vertical tabs-left">
+                            <div class="tabs tabs-vertical tabs-left tabs-success">
                                 <ul class="nav nav-tabs col-sm-3 col-xs-5">
                                     <li class="active"><a href="#information" data-toggle="tab">Information</a></li>
                                     <li><a href="#prix" data-toggle="tab">Prix</a></li>
