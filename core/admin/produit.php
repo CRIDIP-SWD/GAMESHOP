@@ -30,9 +30,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
 
 
     //Verification des Information entrées
-    $array_errors['errors'] = array();
-    if(empty($ref_produit)){array_push($array_errors, $array_errors['errors']['errors_ref'] = "TEST");}
-    if(empty($designation)){array_push($array_errors, $array_errors['errors']['errors_designation'] = "TEST 2");}
+    $array_errors = array();
+    if(empty($ref_produit)){array_push($array_errors, $array_errors['errors_ref'] = "TEST");}
+    if(empty($designation)){array_push($array_errors, $array_errors['errors_designation'] = "TEST 2");}
 
     var_dump($array_errors);
     die();
