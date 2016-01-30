@@ -1588,7 +1588,7 @@
                             </div>
                         </div>
                         <footer class="panel-footer">
-                            <button type="submit" class="btn btn-success" name="action" value="add-produit"><i class="fa fa-check"></i> Valider</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block" name="action" value="add-produit"><i class="fa fa-check"></i> Valider</button>
                         </footer>
                     </form>
                 </section>
