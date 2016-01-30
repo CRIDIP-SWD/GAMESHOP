@@ -1,5 +1,8 @@
 /* Add here all your JS customizations */
 
+
+
+// FONCTION DE CALCUL DE POINT DE FIDELITE
 function calcul(){
     var prix_vente = parseFloat(document.getElementById("Produit").elements['prix_vente'].value);
     var revenue = parseInt((document.getElementById("Produit").elements['prix_vente'].value / 10) * 150);

@@ -1060,7 +1060,7 @@
                 <section class="panel panel-primary">
                     <header class="panel-heading">
                         <div class="panel-actions">
-                            <a href="index.php?view=admin_sha&sub=produit&data=add-produit" class="panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
+                            <a href="index.php?view=admin_sha&sub=produits&data=add-produit" class="panel-action" data-toggle="tooltip" data-original-title="Ajouter un Produit"><i class="fa fa-plus-circle fa-lg"></i></a>
                         </div>
                         <h2 class="panel-title">Liste des produits</h2>
                     </header>
@@ -1364,6 +1364,10 @@
                                     </div>
                                     <div id="assoc" class="tab-pane">
                                         <h1 class="title">ASSOCIATION DE CATEGORIE</h1>
+
+                                        <div class="form-group">
+                                            l
+                                        </div>
                                     </div>
                                 </div>
                             </div>
