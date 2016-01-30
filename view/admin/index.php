@@ -1280,7 +1280,7 @@
                     <header class="panel-heading">
                         <h2 class="panel-title"><i class="fa fa-plus-circle"></i> Ajout d'un nouveau produit</h2>
                     </header>
-                    <form id="Produit" class="form-horizontal" action="core/admin/produit.php" method="post">
+                    <form id="Produit" class="form-horizontal" action="core/admin/produit.php" method="post" enctype="multipart/form-data">
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
@@ -1293,12 +1293,13 @@
                                 <ul class="nav nav-tabs col-sm-3 col-xs-5">
                                     <li class="active"><a href="#information" data-toggle="tab">Information</a></li>
                                     <li><a href="#prix" data-toggle="tab">Prix</a></li>
+                                    <li><a href="#promotionTab" data-toggle="tab" id="promotion">Promotion</a></li>
                                     <li><a href="#assoc" data-toggle="tab">Association</a></li>
                                     <li><a href="#stock" data-toggle="tab">Gestion de Stock</a></li>
                                     <li><a href="#images" data-toggle="tab">Images</a></li>
                                     <li><a href="#video" data-toggle="tab">Vidéo</a></li>
                                     <li><a href="#caracteristique" data-toggle="tab">Caractéristique</a></li>
-                                    <li><a href="#promotionTab" data-toggle="tab" id="promotion">Promotion</a></li>
+
                                 </ul>
                                 <div class="tab-content">
                                     <div id="information" class="tab-pane active">
@@ -1362,17 +1363,6 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-group">
-                                            <div class="col-md-3"></div>
-                                            <div class="col-md-9">
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="" checked onclick="afficherPromotion()">
-                                                        Option one is this and that—be sure to include why it's great
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
 
                                     </div>
                                     <div id="assoc" class="tab-pane">
@@ -1441,6 +1431,32 @@
                                             <label class="col-md-3 control-label" for="produit">Poids</label>
                                             <div class="col-md-4">
                                                 <input type="text" id="produit" class="form-control" name="poids">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="images" class="tab-pane">
+                                        <h1 class="title">IMAGES</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Images Produits</label>
+                                            <div class="col-md-6">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-append">
+                                                        <div class="uneditable-input">
+                                                            <i class="fa fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+															<span class="btn btn-default btn-file">
+																<span class="fileupload-exists">Modifier</span>
+																<span class="fileupload-new">Selectionner Fichier</span>
+                                                                <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
+																<input type="file" name="images_produit" accept="image/*"/>
+                                                                <p>Maximum 3Mo</p>
+															</span>
+                                                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
