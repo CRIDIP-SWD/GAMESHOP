@@ -1366,7 +1366,7 @@
                                             <label class="col-md-3 control-label" for="checkboxExample3 promotionCheck">Article en promotion</label>
                                             <div class="col-md-9">
                                                 <div class="checkbox-custom checkbox-success">
-                                                    <input type="checkbox" name="promotion" checked="" id="promotionCheck" onclick="affichePromotion()">
+                                                    <input type="checkbox" name="promotion" checked="" id="promotionCheck">
                                                     <label for="checkboxExample3">Checkbox Success</label>
                                                 </div>
                                             </div>

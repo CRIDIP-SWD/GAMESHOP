@@ -21,11 +21,10 @@ $("#date_sortie").datepicker({
 
 
 //FONCTION D'AFFICHARGE
-function affichePromotion(){
-    if($('input [id=promotionCheck]').is(':checked'))
-    {
-        alert("OK !");
-    }else{
-        alert("NONE !");
-    }
+
+if($('input [id=promotionCheck]').is(':checked'))
+{
+    alert("OK !");
+}else{
+    alert("NONE !");
 }
