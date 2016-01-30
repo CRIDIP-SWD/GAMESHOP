@@ -1394,7 +1394,7 @@
                                                         ));
                                                         foreach($sql_sub as $sub):
                                                         ?>
-                                                        <option value="AK">Alaska</option>
+                                                        <option value="<?= $sub->id; ?>"><?= html_entity_decode($sub->designation_subcat); ?></option>
                                                         <?php endforeach; ?>
                                                     </optgroup>
                                                     <?php endforeach; ?>
