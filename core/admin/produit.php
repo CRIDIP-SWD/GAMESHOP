@@ -406,7 +406,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-produit')
     $sql_video = $DB->execute("DELETE FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
     $sql_produit = $DB->execute("DELETE FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
 
-    if($sql_caracteristique && $sql_categorie && $sql_images && $sql_subcategorie && $sql_bonus && $sql_promotion && $sql_video && $sql_produit)
+    if($sql_produit == 1)
     {
         $text = "L'article de référence <strong></strong> à bien été supprimer !";
         header("Location: ../../index.php?view=admin_sha&sub=produits&success=supp-produit&text=$text");
