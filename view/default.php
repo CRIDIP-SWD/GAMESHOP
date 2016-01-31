@@ -21,6 +21,7 @@ ini_set('display_errors', 1);
     <link rel="stylesheet" href="<?= $constante->getUrl(array('js/')); ?>jplayer/css/jplayer.pink.flag.css" type="text/css" />
 
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>responsive.css" type="text/css" />
+    <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!--[if lt IE 9]>
     <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
