@@ -25,9 +25,7 @@ ini_set('display_errors', 1);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- VIDEO PLUGIN -->
-    <link rel="stylesheet" type="text/css" href="<?= $constante->getUrl(array('js/videoPlayer/css/'), true, false); ?>jquery.jscrollpane.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="<?= $constante->getUrl(array('js/videoPlayer/css/'), true, false); ?>jquery.selectbox.css" />
-    <link rel="stylesheet" type="text/css" href="<?= $constante->getUrl(array('js/videoPlayer/css/'), true, false); ?>videoGallery_buttons2.css" />
+    <link rel="stylesheet" href="//releases.flowplayer.org/6.0.5/skin/functional.css">
     <!-- END VIDEO PLUGIN -->
 
     <!--[if lt IE 9]>
@@ -685,23 +683,10 @@ ini_set('display_errors', 1);
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
 
-<!-- DRCIPT VIDEO -->
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>swfobject.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.dotdotdot-1.5.1.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.address.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.mousewheel.min.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.jscrollpane.min.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.selectbox-0.2.js"></script>
-<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.apPlaylistManager.min.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.apYoutubePlayer.min.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.vg.settings_buttons2.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.func.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.vg.func.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.videoGallery.min.js"></script>
 
+<!-- DRCIPT VIDEO -->
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//releases.flowplayer.org/6.0.5/flowplayer.min.js"></script>
 <!-- END SCRIPT VIDEO -->
 
 </body>
