@@ -221,12 +221,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
 {
     require "../../app/classe.php";
 
-    $params = array(
-        "ref_produit" => $_POST['ref_produit']
-    );
     $ref_produit = $_POST['ref_produit'];
 
-    $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", $params);
+    $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array(
+        "ref_produit"   => $ref_produit
+    ));
 
     if($_POST['augdim'] == 0)
     {
