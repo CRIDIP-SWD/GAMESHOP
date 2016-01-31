@@ -370,20 +370,18 @@ class ssh2 extends app
 
     protected $error_connect = "Système de Connexion SSH2 inopérant !<br>Impossible de ce connecter au serveur distant.";
 
-    public function __construct($server = null, $port = null, $user = null, $pass = null)
+    public function __construct($server = null, $port = null, $user = null, $pass = null, $external = false)
     {
-        if(empty($serveur)){$server = $this->server;}
-        if(empty($port)){$port = $this->port;}
-        if(empty($user)){$user = $this->user;}
-        if(empty($pass)){$pass = $this->pass;}
+        if($external = false)
+        {
+            $connect = ssh2_connect($this->server, $this->port);
+            $login = ssh2_auth_password($connect, $this->user, $this->pass);
 
-        $connect = ssh2_connect($server, $port);
-        ssh2_auth_password($connect, $user, $pass);
-
-        if(!$connect){
-            return $this->error_connect;
-        }else{
-            return $connect = $this->connect;
+            if(!$login)
+            {
+                $text = "Erreur SSH2: Connexion echoué, veuillez vérifier les paramêtre de l'application app/app.php <i>(CLASS)</i>.";
+                header("Location: ../index.php?view=admin_sha&sub=error&text=$text");
+            }
         }
     }
 
