@@ -382,8 +382,13 @@ if($verif_global === 3)
                                 <div class="tab-content clearfix" id="videos">
                                     <div class="flowplayer">
                                         <video>
-                                            <source type="video/mp4"  src="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4">
+                                            <source type="video/mp4" src="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4">
                                         </video>
+                                        <div class="fp-playlist">
+                                            <!-- playlist entries or "trigger" elements -->
+                                            <a href="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4"></a>
+                                            <a href="http://video2.cedemo.com/vdo/b237190d1b9fe951984fa5c8858180a2/56ae9d6a/51313/51313_1500.mp4"></a>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php endif; ?>
