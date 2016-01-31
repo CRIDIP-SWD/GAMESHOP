@@ -1790,7 +1790,26 @@
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Stock</td>
-                                        <td style="text-align: right;"><?= $produit[0]->stock; ?></td>
+                                        <td style="text-align: right;">
+                                            Quantité Actuel: <?= $produit[0]->stock; ?><br>
+
+                                            <?php
+                                            switch($produit[0]->statut_stock)
+                                            {
+                                                case 0:
+                                                    echo "<span class='text-danger'><i class='fa fa-circle'></i> Rupture</span>";
+                                                    break;
+                                                case 1:
+                                                    echo "<span class='text-warning'><i class='fa fa-circle'></i> Réassort Prévue le <strong>".$date_format->formatage('d/m/Y', $produit[0]->date_reassort)."</strong></span>";
+                                                    break;
+                                                case 2:
+                                                    echo "<span class='text-success'><i class='fa fa-check-circle'></i> OK (".$produit[0]->stock.")</span>";
+                                                    break;
+                                                case 3:
+                                                    echo "<span class='text-primary'><i class='fa fa-arrow-circle-down'></i> En Précommande Uniquement</span>";
+                                                    break;
+                                            }
+                                            ?>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Date de Sortie</td>
