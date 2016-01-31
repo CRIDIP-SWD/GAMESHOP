@@ -193,7 +193,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
 
 
 }
-if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
+if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
 {
     require "../../app/classe.php";
 
@@ -331,7 +331,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     }
 
     //Insertion dans les Bases de données
-    $sql_produit = $DB->execute("UPDATE produits SET designation = :designation, short_description = :short_description", array(
+    $sql_produit = $DB->execute("UPDATE produits SET designation = :designation, short_description = :short_description, long_description = :long_description, tag_produit = :tag_produit, date_sortie = :date_sortie, prix_vente = :prix_vente, revenue_point = :revenue_point, cout_point = :cout_point, banner = :banner, stock = :stock, statut_global = :statut_global, statut_stock = :statut_stock, poids = :poids WHERE ref_produit = :ref_produit", array(
         "ref_produit"           => $ref_produit,
         "designation"           => $designation,
         "short_description"     => $short_description,
@@ -348,8 +348,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
         "poids"                 => $poids
     ));
 
-    $sql_caracteristique = $DB->execute("INSERT INTO produits_caracteristique(id, ref_produit, editeur, genre, multijoueur, internet, `option`, couleur, cap_hdd, eth, wifi, nb_usb, compatibilite) VALUES
-                                        (NULL, :ref_produit, :editeur, :genre, :multijoueur, :internet, :option, :couleur, :cap_hdd, :eth, :wifi, :nb_usb, :compatibilite)", array(
+    $sql_caracteristique = $DB->execute("UPDATE produits_caracteristique SET editeur = :editeur, genre = :genre, multijoueur = :multijoueur, internet = :internet, option = :option, couleur = :couleur, cap_hdd = :cap_hdd, eth = :eth, wifi = :wifi, nb_usb = :nb_usb, compatibilite = :compatibilite WHERE ref_produit = :ref_produit", array(
         "ref_produit"           => $ref_produit,
         "editeur"               => $editeur,
         "genre"                 => $genre,
@@ -364,23 +363,23 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
         "compatibilite"         => $compatibilite
     ));
 
-    $sql_categorie = $DB->execute("INSERT INTO produits_categorie(id, ref_produit, idcategorie) VALUES (NULL, :ref_produit, :idcategorie)", array(
+    $sql_categorie = $DB->execute("UPDATE produits_categorie SET idcategorie = :idcategorie WHERE ref_produit = :ref_produit", array(
         "ref_produit"           => $ref_produit,
         "idcategorie"           => $idcategorie
     ));
 
-    $sql_subcategorie = $DB->execute("INSERT INTO produits_subcategorie(id, ref_produit, idsubcategorie) VALUES (NULL, :ref_produit, :idsubcategorie)", array(
+    $sql_subcategorie = $DB->execute("UPDATE produits_subcategorie SET idsubcategorie = :idsubcategorie WHERE ref_produit = :ref_produit", array(
         "ref_produit"           => $ref_produit,
         "idsubcategorie"        => $idsubcategorie
     ));
 
     if($sql_produit == 1 AND $sql_caracteristique == 1 AND $sql_categorie == 1 AND $sql_subcategorie == 1)
     {
-        $text = "L'article <strong>".$designation."</strong> à été ajouté avec succès à la base de données.";
-        header("Location: ../../index.php?view=admin_sha&sub=produits&success=add-produit&text=$text");
+        $text = "L'article <strong>".$designation."</strong> à été modifier avec succès à la base de données.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&success=edit-produit&text=$text");
     }else{
-        $text = "Une erreur à été rencontrée lors de l'insertion de l'article <strong>".$designation."</strong> dans la base de données.<br>Veuillez contacter l'administrateur.";
-        header("Location: ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+        $text = "Une erreur à été rencontrée lors de la modification de l'article <strong>".$designation."</strong> dans la base de données.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=edit-produit&error=add-produit&text=$text");
     }
 
 

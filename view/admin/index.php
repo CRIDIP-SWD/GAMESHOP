@@ -1961,7 +1961,7 @@
             <div class="row">
                 <section class="panel panel-success">
                     <header class="panel-heading">
-                        <h2 class="panel-title"><i class="fa fa-plus-circle"></i> Ajout d'un nouveau produit</h2>
+                        <h2 class="panel-title"><i class="fa fa-edit"></i> Modification d'un Produit</h2>
                     </header>
                     <form id="Produit" class="form-horizontal" action="core/admin/produit.php" method="post" enctype="multipart/form-data">
                         <div class="panel-body">
@@ -2281,7 +2281,7 @@
                             </div>
                         </div>
                         <footer class="panel-footer">
-                            <button type="submit" class="btn btn-success btn-lg btn-block" name="action" value="add-produit"><i class="fa fa-check"></i> Valider</button>
+                            <button type="submit" class="btn btn-success btn-lg btn-block" name="action" value="edit-produit"><i class="fa fa-check"></i> Valider</button>
                         </footer>
                     </form>
                 </section>
