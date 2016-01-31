@@ -17,6 +17,10 @@ class xboxConfig
     protected $apiKey = "51f9c61a6752f9fd533c59773ca669caddf1629a";
     protected $resort = "json";
 
+    /**
+     * xboxConfig constructor.
+     * @param $gamerTag // Le Gamertag correspond au nom afficher sur le Xbox Live en tant que pseudo, il est ensuite automatiquement convertie au format numérique afin de fonctionner avec l'API
+     */
     public function __construct($gamerTag)
     {
         $this->gamerTag = $gamerTag;

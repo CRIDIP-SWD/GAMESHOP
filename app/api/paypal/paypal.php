@@ -34,6 +34,11 @@ class paypal
 
     }
 
+    /**
+     * @param $method //Les Methodes envoyer doivent être: SetExpressCheckout, GetExpressCheckoutDetails ou DoExpressCheckoutPayment
+     * @param $params // Les Paramètre reprène les informations à envoyer au serveur de paypal suivant la méthode utiliser
+     * @return array|bool // Retourne l'éxécution ou non de la Methode demander
+     */
     public function request($method, $params)
     {
         $params = array_merge($params, array(

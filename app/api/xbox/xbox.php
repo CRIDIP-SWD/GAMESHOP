@@ -9,6 +9,10 @@ namespace App\api\xbox;
 class xbox extends xboxConfig
 {
 
+    /**
+     * @param $method // Les Méthodes à employer sont ceux de l'API en règle général.
+     * @return mixed // Retourne le résultat de la méthode ou non suivant la règle du si=
+     */
     public function call($method)
     {
         $curl = curl_init();

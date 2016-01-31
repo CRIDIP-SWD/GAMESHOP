@@ -33,6 +33,10 @@ class checkout extends DB
         }
     }
 
+    /**
+     * @param $num_commande // Le Numéro de la Commande
+     * @return array // Retourne un tableau OBJECT retournant le résulat de la fonction de calcul de point de fidélité à payer afin de finaliser la commande
+     */
     public function calc_total_point_cmd($num_commande)
     {
         $point = $this->query("SELECT SUM(cout_point) as cout_point FROM commande_article, produits WHERE commande_article.ref_produit = produits.ref_produit AND num_commande = :num_commande", array(
