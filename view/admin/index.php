@@ -2037,7 +2037,7 @@
                 <header class="panel-heading">
                     <h2 class="panel-title">Nouvelle Image de Gallerie</h2>
                 </header>
-                <form id="summary-form" class="form-horizontal" action="core/admin/produit.php" method="post">
+                <form id="summary-form" class="form-horizontal" action="core/admin/produit.php" method="post" enctype="multipart/form-data">
                     <input type="hidden" name="ref_produit" value="<?= $ref_produit; ?>">
                     <div class="panel-body">
                         <div class="modal-wrapper">
