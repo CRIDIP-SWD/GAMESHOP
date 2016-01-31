@@ -379,7 +379,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
         header("Location: ../../index.php?view=admin_sha&sub=produits&success=edit-produit&text=$text");
     }else{
         $text = "Une erreur à été rencontrée lors de la modification de l'article <strong>".$designation."</strong> dans la base de données.<br>Veuillez contacter l'administrateur.";
-        header("Location: ../../index.php?view=admin_sha&sub=produits&data=edit_produit&error=add-produit&text=$text");
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=edit_produit&error=edit-produit&text=$text");
     }
 
 
