@@ -2046,7 +2046,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="produit">Numéro de l'images</label>
-                                <span><strong>Dernière Images:</strong> <?php if(empty($der_images)){echo "Pas d'images";}else{echo $der_images->images;} ?></span>
+                                <span><strong>Dernière Images:</strong> <?php if(empty($der_images)){echo "Pas d'images";}else{echo $der_images[0]->images;} ?></span>
                                 <div class="col-md-9">
                                     <input type="text" id="produit" class="form-control" name="name_images" />
                                 </div>
