@@ -22,7 +22,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     $genre = $_POST['genre'];
     if(isset($_POST['multijoueur'])) {$multijoueur = 1;}else{$multijoueur = 0;}
     if(isset($_POST['internet'])){$internet = 1;}else{$internet = 0;}
-    $option = $_POST['option'];
+    $options = $_POST['option'];
     $couleur = $_POST['couleur'];
     $cap_hdd = $_POST['cap_hdd'];
     if(isset($_POST['eth'])){$eth = 1;}else{$eth = 0;}
@@ -155,14 +155,14 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
         "poids"                 => $poids
     ));
 
-    $sql_caracteristique = $DB->execute("INSERT INTO produits_caracteristique(id, ref_produit, editeur, genre, multijoueur, internet, `option`, couleur, cap_hdd, eth, wifi, nb_usb, compatibilite) VALUES
+    $sql_caracteristique = $DB->execute("INSERT INTO produits_caracteristique(id, ref_produit, editeur, genre, multijoueur, internet, `options`, couleur, cap_hdd, eth, wifi, nb_usb, compatibilite) VALUES
                                         (NULL, :ref_produit, :editeur, :genre, :multijoueur, :internet, :option, :couleur, :cap_hdd, :eth, :wifi, :nb_usb, :compatibilite)", array(
         "ref_produit"           => $ref_produit,
         "editeur"               => $editeur,
         "genre"                 => $genre,
         "multijoueur"           => $multijoueur,
         "internet"              => $internet,
-        "option"                => $option,
+        "option"                => $options,
         "couleur"               => $couleur,
         "cap_hdd"               => $cap_hdd,
         "eth"                   => $eth,
@@ -216,7 +216,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
     $genre = $_POST['genre'];
     if(isset($_POST['multijoueur'])) {$multijoueur = 1;}else{$multijoueur = 0;}
     if(isset($_POST['internet'])){$internet = 1;}else{$internet = 0;}
-    $option = $_POST['option'];
+    $options = $_POST['option'];
     $couleur = $_POST['couleur'];
     $cap_hdd = $_POST['cap_hdd'];
     if(isset($_POST['eth'])){$eth = 1;}else{$eth = 0;}
@@ -348,13 +348,13 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
         "poids"                 => $poids
     ));
 
-    $sql_caracteristique = $DB->execute("UPDATE produits_caracteristique SET editeur = :editeur, genre = :genre, multijoueur = :multijoueur, internet = :internet, option = :option, couleur = :couleur, cap_hdd = :cap_hdd, eth = :eth, wifi = :wifi, nb_usb = :nb_usb, compatibilite = :compatibilite WHERE ref_produit = :ref_produit", array(
+    $sql_caracteristique = $DB->execute("UPDATE produits_caracteristique SET editeur = :editeur, genre = :genre, multijoueur = :multijoueur, internet = :internet, options = :options, couleur = :couleur, cap_hdd = :cap_hdd, eth = :eth, wifi = :wifi, nb_usb = :nb_usb, compatibilite = :compatibilite WHERE ref_produit = :ref_produit", array(
         "ref_produit"           => $ref_produit,
         "editeur"               => $editeur,
         "genre"                 => $genre,
         "multijoueur"           => $multijoueur,
         "internet"              => $internet,
-        "option"                => $option,
+        "option"                => $options,
         "couleur"               => $couleur,
         "cap_hdd"               => $cap_hdd,
         "eth"                   => $eth,
