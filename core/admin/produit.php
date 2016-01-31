@@ -486,7 +486,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
 if(isset($_POST['action']) && $_POST['action'] == 'add-images')
 {
     require "../../app/classe.php";
-    var_dump($_POST && $_FILES);
+    var_dump($_POST);
     die();
     $ref_produit = $_POST['ref_produit'];
     $name_image = $_POST['name_images'];
