@@ -229,9 +229,9 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
 
     if($_POST['augdim'] == 0)
     {
-        $stock = $produit[0]->stock + $_POST['new_stock'];
-    }else{
         $stock = $produit[0]->stock - $_POST['new_stock'];
+    }else{
+        $stock = $produit[0]->stock + $_POST['new_stock'];
     }
 
     if($stock >= 1)
