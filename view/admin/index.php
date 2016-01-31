@@ -1921,7 +1921,7 @@
                                                 </a>
                                             </td>
                                             <td>
-                                                <a href="core/admin/produit.php?action=supp-image&id=<?= $image->id; ?>&ref_produit=<?= $ref_produit; ?>" data-toggle="tooltip" data-original-title="Supprimer l'image"><i class="fa fa-trash text-danger"></i></a>
+                                                <a href="core/admin/produit.php?action=supp-images&id=<?= $image->id; ?>&ref_produit=<?= $ref_produit; ?>" data-toggle="tooltip" data-original-title="Supprimer l'image"><i class="fa fa-trash text-danger"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
