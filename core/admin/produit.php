@@ -505,7 +505,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
                     $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DE L'IMAGE !</strong>.<br>Veuillez contacter un administrateur.";
                     header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&warning=add-images&text=$text");
                 }
-                $envoie = ssh2_scp_send($connect, $_FILES['images']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/gallery/".$ref_produit."/".$ref_produit.".".$extensionUpload, 0777);
+                $envoie = ssh2_scp_send($connect, $_FILES['images']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/gallery/".$ref_produit."/".$ref_produit."_".$name_image.".".$extensionUpload, 0777);
                 $sql = $DB->execute("INSERT INTO produits_images(id, ref_produit, images) VALUES (NULL, :ref_produit, :images)", array(
                     "ref_produit"   => $ref_produit,
                     "images"        => $ref_produit."_".$name_image
