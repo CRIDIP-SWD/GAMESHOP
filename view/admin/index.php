@@ -1759,7 +1759,11 @@
                                 <tbody>
                                     <tr>
                                         <td>Catégorie:</td>
-                                        <td><?= $cat</td>
+                                        <td><?= $cat[0]->designation_cat; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sous Catégorie:</td>
+                                        <td><?= $cat[0]->designation_subcat; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
