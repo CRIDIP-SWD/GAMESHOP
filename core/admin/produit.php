@@ -248,8 +248,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
         "stock"             => $stock,
         "statut_stock"      => $statut
     ));
-    var_dump($sql);
-    die();
+
 
     if($sql == 1)
     {
