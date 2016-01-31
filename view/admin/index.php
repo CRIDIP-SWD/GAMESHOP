@@ -1759,27 +1759,27 @@
                                 <tbody>
                                     <tr>
                                         <td style="font-weight: bold;">Catégorie:</td>
-                                        <td><?= $cat[0]->designation_cat; ?></td>
+                                        <td style="text-align: right;"><?= $cat[0]->designation_cat; ?></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Sous Catégorie:</td>
-                                        <td><?= $sub[0]->designation_subcat; ?></td>
+                                        <td style="text-align: right;"><?= $sub[0]->designation_subcat; ?></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Statut</td>
-                                        <td></td>
+                                        <td style="text-align: right;"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Stock</td>
-                                        <td></td>
+                                        <td style="text-align: right;"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Date de Sortie</td>
-                                        <td></td>
+                                        <td style="text-align: right;"></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Poids</td>
-                                        <td></td>
+                                        <td style="text-align: right;"></td>
                                     </tr>
                                 </tbody>
                             </table>
