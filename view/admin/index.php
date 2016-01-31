@@ -2034,7 +2034,7 @@
         <div id="add-images" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
             <section class="panel">
                 <header class="panel-heading">
-                    <h2 class="panel-title">Nouvelle demande de Réassortt</h2>
+                    <h2 class="panel-title">Nouvelle Image de Gallerie</h2>
                 </header>
                 <form id="summary-form" class="form-horizontal" action="core/admin/produit.php" method="post">
                     <input type="hidden" name="ref_produit" value="<?= $ref_produit; ?>">
@@ -2044,14 +2044,28 @@
                                 <ul></ul>
                             </div>
                             <div class="form-group">
-                                <label class="col-md-3 control-label" for="date_sortie">Date de Réassort Souhaiter</label>
+                                <label class="control-label col-md-3" for="produit">Numéro de l'images</label>
+                                <span><strong>Dernière Images:</strong> <?= $produit_cls->last_images($ref_produit); ?></span>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Images</label>
                                 <div class="col-md-6">
-                                    <div class="input-group">
-                                        <span class="input-group-addon">
-                                            <i class="fa fa-calendar"></i>
-                                        </span>
-                                        <input type="text" id="date_reassort" name="date_reassort" data-plugin-datepicker class="form-control">
+                                    <div class="fileupload fileupload-new" data-provides="fileupload">
+                                        <div class="input-append">
+                                            <div class="uneditable-input">
+                                                <i class="fa fa-file fileupload-exists"></i>
+                                                <span class="fileupload-preview"></span>
+                                            </div>
+                                            <span class="btn btn-default btn-file">
+                                                <span class="fileupload-exists">Modifier</span>
+                                                <span class="fileupload-new">Selectionner Fichier</span>
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="8388608" />
+                                                <input type="file" name="images" accept="image/*"/>
+                                            </span>
+                                            <a href="#" class="btn btn-danger fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                        </div>
                                     </div>
+                                    <span>Maximum 8Mo</span>
                                 </div>
                             </div>
                         </div>
@@ -2059,7 +2073,7 @@
                     <footer class="panel-footer">
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <button class="btn btn-primary" type="submit" name="action" value="add-reassort">Valider</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="add-image">Valider</button>
                                 <button class="btn btn-default modal-dismiss">Annuler</button>
                             </div>
                         </div>

@@ -483,4 +483,39 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
         header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-stock&text=$text");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-images')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_POST['ref_produit'];
+
+    if(isset($_FILES['images']) AND $_FILES['images']['error'] == 0)
+    {
+        if($_FILES['images']['size'] <= 8388608)
+        {
+            $infoFichier = pathinfo($_FILES['images']['name']);
+            $extensionUpload = $infoFichier['extension'];
+            $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
+            if(in_array($extensionUpload, $extensionAuthorized))
+            {
+                $connect = ssh2_connect("icegest.com", 22);
+                if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                {
+                    $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DE L'IMAGE !</strong>.<br>Veuillez contacter un administrateur.";
+                    header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&warning=add-images&text=$text");
+                }
+                $envoie = ssh2_scp_send($connect, $_FILES['images']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/gallery/".$ref_produit."/".$ref_produit.".".$extensionUpload, 0777);
+                $sql = $DB->execute("INSERT INTO produits_images(id, ref_produit, images) VALUES (NULL, :ref_produit, :images)", array(
+                    "ref_produit"   => $ref_produit,
+                    "images"        =>
+                ))
+                if(!$envoie)
+                {
+                    $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                }
+            }
+        }
+    }
+
+}
 

@@ -138,5 +138,10 @@ class produit extends DB
         ));
     }
 
+    public function last_images($ref_produit)
+    {
+        return $this->query("SELECT * FROM produits_images WHERE ref_produit = :ref_produit ORDER BY images DESC", array("ref_produit" => $ref_produit));
+    }
+
 
 }
