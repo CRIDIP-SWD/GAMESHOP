@@ -382,8 +382,7 @@ if($verif_global === 3)
                                 <div class="tab-content clearfix" id="videos">
                                     <div class="flowplayer">
                                         <video>
-                                            <source type="video/webm" src="//mydomain.com/video.webm">
-                                            <source type="video/mp4"  src="//mydomain.com/video.mp4">
+                                            <source type="video/mp4"  src="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4">
                                         </video>
                                     </div>
                                 </div>
