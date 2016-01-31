@@ -1930,9 +1930,14 @@
     <?php if(isset($_GET['data']) && $_GET['data'] == 'edit_produit'): ?>
         <?php
         $ref_produit = $_GET['ref_produit'];
-        $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array(
+        $produit = $DB->query("SELECT * FROM produits, produits_categorie, produits_subcategorie WHERE produits_categorie.ref_produit = produits.ref_produit
+                        AND produits_subcategorie.ref_produit = produits.ref_produit
+                        AND produits.ref_produit = :ref_produit",
+            array(
             "ref_produit"       => $ref_produit
-        ));
+            )
+        );
+        $caract = $DB->query("SELECT * FROM produits_caracteristique WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
         ?>
         <section role="main" class="content-body">
             <header class="page-header">
@@ -2000,21 +2005,21 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Référence Produit <span class="required">*</span></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="ref_produit"/>
+                                                <input type="text" class="form-control" name="ref_produit" value="<?= $produit[0]->ref_produit; ?>"/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Désignation <span class="required">*</span></label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" name="designation" />
+                                                <input type="text" class="form-control" name="designation" value="<?= $produit[0]->designation; ?>"/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="textareaDefault">Courte description</label>
                                             <div class="col-md-9">
-                                                <textarea class="form-control" name="short_description" rows="3" data-plugin-maxlength maxlength="200"></textarea>
+                                                <textarea class="form-control" name="short_description" rows="3" data-plugin-maxlength maxlength="200" ><?= html_entity_decode($produit[0]->short_description); ?></textarea>
                                                 <p>
                                                     200 caractère maximum
                                                 </p>
@@ -2024,7 +2029,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="long_description">Longue description</label>
                                             <div class="col-md-9">
-                                                <textarea class="form-control" name="long_description" rows="5" id="long_description"></textarea>
+                                                <textarea class="form-control" name="long_description" rows="5" id="long_description"><?= html_entity_decode($produit[0]->long_description); ?></textarea>
                                             </div>
                                         </div>
 
@@ -2035,7 +2040,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Prix de Vente <span class="required">*</span> </label>
                                             <div class="col-md-3">
-                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="0">
+                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="<?= $produit[0]->prix_vente; ?>">
                                                 <p>Prix de Vente TTC + Marge Brut</p>
                                                 <p>Tarif en séparateur de (.)</p>
                                             </div>
@@ -2065,7 +2070,7 @@
                                             <div class="col-md-6">
                                                 <select data-plugin-selectTwo id="produit" name="idcategorie" class="form-control populate">
                                                     <?php
-                                                    $sql_cat = $DB->query("SELECT * FROM categorie");
+                                                    $sql_cat = $DB->query("SELECT * FROM categorie WHERE id = :idcategorie", array("idcategorie" => $produit[0]->idcategorie));
                                                     foreach($sql_cat as $cat):
                                                         ?>
                                                         <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
@@ -2079,7 +2084,7 @@
                                             <div class="col-md-6">
                                                 <select data-plugin-selectTwo id="produit" name="idsubcategorie" class="form-control populate">
                                                     <?php
-                                                    $sql_cat = $DB->query("SELECT * FROM categorie");
+                                                    $sql_cat = $DB->query("SELECT * FROM categorie WHERE id = :idcategorie", array("idcategorie" => $produit[0]->idcategorie));
                                                     foreach($sql_cat as $cat):
                                                         ?>
                                                         <optgroup label="<?= html_entity_decode($cat->designation_cat); ?>">
@@ -2107,7 +2112,7 @@
 														<span class="input-group-addon">
 															<i class="fa fa-calendar"></i>
 														</span>
-                                                    <input type="text" id="date_sortie" name="date_sortie" data-plugin-datepicker class="form-control">
+                                                    <input type="text" id="date_sortie" name="date_sortie" data-plugin-datepicker class="form-control" value="<?= $date_format->formatage('d-m-Y', $produit[0]->date_sortie); ?>">
                                                 </div>
                                             </div>
                                         </div>
@@ -2115,14 +2120,14 @@
                                         <div class="form-group">
                                             <label for="produit" class="col-md-3 control-label">Stock Actuel</label>
                                             <div class="col-md-3">
-                                                <input type="text" id="produit" class="form-control" name="stock" />
+                                                <input type="text" id="produit" class="form-control" name="stock" value="<?= $produit[0]->stock; ?>"/>
                                             </div>
                                         </div>
 
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Poids</label>
                                             <div class="col-md-4">
-                                                <input type="text" id="produit" class="form-control" name="poids">
+                                                <input type="text" id="produit" class="form-control" name="poids" value="<?= $produit[0]->poids; ?>">
                                             </div>
                                         </div>
 
@@ -2187,13 +2192,13 @@
                                                 <tr>
                                                     <td>Editeur</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="editeur" />
+                                                        <input type="text" class="form-control" name="editeur" value="<?= $caract[0]->editeur; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Genre</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="genre" />
+                                                        <input type="text" class="form-control" name="genre" value="<?= $caract[0]->genre; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -2217,7 +2222,7 @@
                                                 <tr>
                                                     <td>Option</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="option" />
+                                                        <input type="text" class="form-control" name="option" value="<?= $caract[0]->option; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -2226,13 +2231,13 @@
                                                 <tr>
                                                     <td>Couleur</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="couleur" />
+                                                        <input type="text" class="form-control" name="couleur" value="<?= $caract[0]->couleur; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
                                                     <td>Capacité Disque Dur</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="cap_hdd" />
+                                                        <input type="text" class="form-control" name="cap_hdd" value="<?= $caract[0]->cap_hdd; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -2256,7 +2261,7 @@
                                                 <tr>
                                                     <td>Nombre de Prise USB</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="nb_usb" />
+                                                        <input type="text" class="form-control" name="nb_usb" value="<?= $caract[0]->nb_usb; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -2265,7 +2270,7 @@
                                                 <tr>
                                                     <td>Compatibilité</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="compatibilite" />
+                                                        <input type="text" class="form-control" name="compatibilite" value="<?= $caract[0]->compatibilite; ?>"/>
                                                     </td>
                                                 </tr>
                                                 </tbody>
