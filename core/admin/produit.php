@@ -354,7 +354,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
         "genre"                 => $genre,
         "multijoueur"           => $multijoueur,
         "internet"              => $internet,
-        "option"                => $options,
+        "options"                => $options,
         "couleur"               => $couleur,
         "cap_hdd"               => $cap_hdd,
         "eth"                   => $eth,
