@@ -383,6 +383,7 @@ if($verif_global === 3)
                                     <div class="flowplayer is-splash" data-logo="<?= $constante->getUrl(array('images/')); ?>logo.png">
                                         <video>
                                             <source type="video/mp4" src="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4">
+                                            <img src="assets/images/logo.png" alt="">
                                         </video>
                                         <a class="fp-prev">prev</a>
                                         <a class="fp-next">next</a>
