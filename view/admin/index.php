@@ -1721,6 +1721,7 @@
 
         // AUTRE
         $caracteristique = $DB->query("SELECT * FROM produits_caracteristique WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+        $der_images = $produit_cls->last_images($ref_produit);
         ?>
         <section role="main" class="content-body">
             <header class="page-header">
@@ -2045,7 +2046,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="produit">Numéro de l'images</label>
-                                <span><strong>Dernière Images:</strong> <?= $produit_cls->last_images($ref_produit); ?></span>
+                                <span><strong>Dernière Images:</strong> <?= $der_images[0]->images ?></span>
                             </div>
                             <div class="form-group">
                                 <label class="col-md-3 control-label">Images</label>
