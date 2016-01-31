@@ -487,6 +487,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
 {
     require "../../app/classe.php";
     $ref_produit = $_POST['ref_produit'];
+    $name_image = $_POST['name_image'];
 
     if(isset($_FILES['images']) AND $_FILES['images']['error'] == 0)
     {
@@ -506,12 +507,16 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
                 $envoie = ssh2_scp_send($connect, $_FILES['images']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/gallery/".$ref_produit."/".$ref_produit.".".$extensionUpload, 0777);
                 $sql = $DB->execute("INSERT INTO produits_images(id, ref_produit, images) VALUES (NULL, :ref_produit, :images)", array(
                     "ref_produit"   => $ref_produit,
-                    "images"        =>
-                ))
-                if(!$envoie)
+                    "images"        => $ref_produit."_".$name_image
+                ));
+
+                if($sql == 1 && $envoie)
                 {
-                    $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
-                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    $text = "Image importer avec succès.";
+                    header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=add-images&text=$text");
+                }else{
+                    $text = "Une erreur à eu lors de l'insertion de l'image dans la gallerie !<br>Veuillez contacter l'administrateur.";
+                    header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-images&text=$text");
                 }
             }
         }
