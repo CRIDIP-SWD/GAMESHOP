@@ -1755,6 +1755,14 @@
                                 </a>
                             </div>
                             <hr>
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Catégorie:</td>
+                                        <td><?= $cat</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </section>
                 </div>
