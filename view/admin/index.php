@@ -1920,7 +1920,7 @@
                     <footer class="panel-footer">
                         <div class="row">
                             <div class="col-md-12 text-right">
-                                <button class="btn btn-primary" type="submit" name="action" value="add-reassort">Valider</button>
+                                <button class="btn btn-primary" type="submit" name="action" value="add-stock">Valider</button>
                                 <button class="btn btn-default modal-dismiss">Annuler</button>
                             </div>
                         </div>
