@@ -1718,6 +1718,9 @@
         $sub = $DB->query("SELECT * FROM produits_subcategorie, subcategorie WHERE produits_subcategorie.idsubcategorie = subcategorie.id AND ref_produit = :ref_produit", array(
             "ref_produit"   => $ref_produit
         ));
+
+        // AUTRE
+        $caracteristique = $DB->query("SELECT * FROM produits_caracteristique WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
         ?>
         <section role="main" class="content-body">
             <header class="page-header">
@@ -1833,13 +1836,72 @@
                             <li><a href="#promotion" data-toggle="tab" class="text-center"><i class="fa fa-eur"></i> Promotion</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div id="popular10" class="tab-pane active">
-                                <p>Popular <code>.nav-tabs.nav-justified</code></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
-                            </div>
-                            <div id="recent10" class="tab-pane">
-                                <p>Recent <code>.nav-tabs.nav-justified</code></p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.</p>
+                            <div id="caracteristique" class="tab-pane active">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2" style="background-color:#cccccc;">Caractéristique de Jeux</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Editeur</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->editeur; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Genre</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->genre; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Multijoueur</td>
+                                            <td style="text-align: right">
+                                                <?php if($caracteristique[0]->multijoueur == 0){echo "<i class='fa fa-remove text-danger'></i>";}else{echo "<i class='fa fa-check text-success'></i>";} ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Connexion Internet</td>
+                                            <td style="text-align: right">
+                                                <?php if($caracteristique[0]->internet == 0){echo "<i class='fa fa-remove text-danger'></i>";}else{echo "<i class='fa fa-check text-success'></i>";} ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Option</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->options; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="background-color:#cccccc;">Caractéristique de Console</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Couleur</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->couleur; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Capacité Disque Dur</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->cap_hdd; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Connexion filaire</td>
+                                            <td style="text-align: right">
+                                                <?php if($caracteristique[0]->eth == 0){echo "<i class='fa fa-remove text-danger'></i>";}else{echo "<i class='fa fa-check text-success'></i>";} ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Connexion Sans Fil</td>
+                                            <td style="text-align: right">
+                                                <?php if($caracteristique[0]->wifi == 0){echo "<i class='fa fa-remove text-danger'></i>";}else{echo "<i class='fa fa-check text-success'></i>";} ?>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Nombre de Port USB</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->nb_usb; ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2" style="background-color:#cccccc;">Compatibilité des systèmes</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="font-weight: bold;">Compatibilité</td>
+                                            <td style="text-align: right"><?= $caracteristique[0]->compatibilite; ?></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
