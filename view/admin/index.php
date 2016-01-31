@@ -1724,7 +1724,7 @@
                 <h2><i class="fa fa-gamepad"></i> <?= html_entity_decode($produit[0]->designation); ?></h2>
 
                 <div class="right-wrapper pull-right">
-                    <a class="btn btn-primary btn-lg" href=""><i class="fa fa-arrow-left"></i> Retour à la liste des Articles</a>
+
                     <ol class="breadcrumbs">
                         <li>
                             <a href="index.php?view=admin_sha">
@@ -1740,7 +1740,7 @@
 
             <!-- start: page -->
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <section class="panel panel-primary">
                         <header class="panel-heading">
                             <div class="panel-actions">
@@ -1802,6 +1802,24 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                    </section>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-3">
+                    <section class="panel panel-primary">
+                        <header class="panel-heading">
+                            <h2 class="panel-title">Action</h2>
+                        </header>
+                        <div class="panel-body">
+                            <a class="btn btn-primary btn-lg btn-block" href=""><i class="fa fa-arrow-left"></i> Retour à la liste des Articles</a>
+                            <a href="" class="btn btn-primary btn-block btn-lg"><i class="fa fa-edit"></i> Editer le Produit</a>
+                            <a href="" class="btn btn-danger btn-block btn-lg"><i class="fa fa-trash"></i> Supprimer le Produit</a>
+                            <hr>
+                            <?php if($produit[0]->stock == 0 AND $produit[0]->statut_stock != 1){ ?>
+                            <a class="btn btn-lg btn-block btn-primary" href="#add-reassort"><i class="fa fa-calendar"></i> Demander un Réassort</a>
+                            <?php } ?>
+
                         </div>
                     </section>
                 </div>
