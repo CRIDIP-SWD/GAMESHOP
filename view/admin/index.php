@@ -1819,6 +1819,9 @@
                             <?php if($produit[0]->stock == 0 AND $produit[0]->statut_stock != 1){ ?>
                             <a class="btn btn-lg btn-block btn-primary" href="#add-reassort"><i class="fa fa-calendar"></i> Demander un Réassort</a>
                             <?php } ?>
+                            <?php if($produit[0]->stock == 0 AND $produit[0]->statut_global != 2){ ?>
+                            <a class="btn btn-lg btn-block btn-primary" href="#add-stock"><i class="fa fa-cart-plus"></i> Ajouter des Quantités</a>
+                            <?php } ?>
 
                         </div>
                     </section>
