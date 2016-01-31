@@ -1722,6 +1722,7 @@
         <section role="main" class="content-body">
             <header class="page-header">
                 <h2><i class="fa fa-gamepad"></i> <?= html_entity_decode($produit[0]->designation); ?></h2>
+                <a class="btn btn-primary btn-lg" href=""><i class="fa fa-arrow-left"></i> Retour à la liste des Articles</a>
 
                 <div class="right-wrapper pull-right">
                     <ol class="breadcrumbs">
