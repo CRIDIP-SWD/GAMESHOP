@@ -2222,7 +2222,7 @@
                                                 <tr>
                                                     <td>Option</td>
                                                     <td>
-                                                        <input type="text" class="form-control" name="option" value="<?= $caract[0]->option; ?>"/>
+                                                        <input type="text" class="form-control" name="option" value="<?= $caract[0]->options; ?>"/>
                                                     </td>
                                                 </tr>
                                                 <tr>
