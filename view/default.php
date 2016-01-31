@@ -684,34 +684,25 @@ ini_set('display_errors', 1);
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jquery.jplayer.js"></script>
-<script type="text/javascript" src="<?= $constante->getUrl(array('js', 'jplayer/'), true, false); ?>js/jplayer.plugins.js"></script>
-<script type="text/javascript">
-    var videos = [
-        <?php
-        $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
-        foreach($sql_video as $videos):
-        ?>
-        {
-            src: '<?= $videos->video; ?>',
-            poster: '<?= $constante->getUrl(array(), false, true); ?>videos/poster/<?= $videos->images_video; ?>.jpg',
-            title: '<?= $videos->title_video; ?>'
-        },
-        <?php endforeach; ?>
-    ];
-    var player = videojs('video');
-    player.playList(videos, {
-        getVideoSource: function(vid, cb) {
-            cb(vid.src, vid.poster);
-        }
-    });
-    $('[data-action=prev]').on('click', function(e) {
-        player.prev();
-    });
-    $('[data-action=next]').on('click', function(e) {
-        player.next();
-    });
-</script>
+
+<!-- DRCIPT VIDEO -->
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>swfobject.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.dotdotdot-1.5.1.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.address.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.mousewheel.min.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.jscrollpane.min.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.selectbox-0.2.js"></script>
+<script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.apPlaylistManager.min.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.apYoutubePlayer.min.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.vg.settings_buttons2.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.func.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.vg.func.js"></script>
+<script type="text/javascript" src="<?= $constante->getUrl(array('js/videoPlayer/js/')); ?>jquery.videoGallery.min.js"></script>
+
+<!-- END SCRIPT VIDEO -->
 
 </body>
 </html>
