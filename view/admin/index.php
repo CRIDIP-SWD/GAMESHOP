@@ -1927,4 +1927,460 @@
             </section>
         </div>
     <?php endif; ?>
+    <?php if(isset($_GET['data']) && $_GET['data'] == 'edit_produit'): ?>
+        <?php
+        $ref_produit = $_GET['ref_produit'];
+        $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", array(
+            "ref_produit"       => $ref_produit
+        ));
+        ?>
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2><i class="fa fa-cubes"></i> PRODUITS</h2>
+
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.php?view=admin_sha">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Ajout d'un Nouveau produit</span></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+            <div class="row">
+                <section class="panel panel-success">
+                    <header class="panel-heading">
+                        <h2 class="panel-title"><i class="fa fa-plus-circle"></i> Ajout d'un nouveau produit</h2>
+                    </header>
+                    <form id="Produit" class="form-horizontal" action="core/admin/produit.php" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <div class="row">
+                                <?php if(isset($_GET['data_valid']) && $_GET['data_valid'] == 'error'): ?>
+                                    <section class="panel panel-danger">
+                                        <header class="panel-heading">
+                                            <div class="panel-actions">
+                                                <a data-panel-toggle="" class="panel-action panel-action-toggle" href="#"></a>
+                                                <a data-panel-dismiss="" class="panel-action panel-action-dismiss" href="#"></a>
+                                            </div>
+
+                                            <h2 class="panel-title"><i class="fa fa-warning"></i> Erreur dans le Formulaire</h2>
+                                        </header>
+                                        <div class="panel-body">
+                                            <?php foreach($_GET['array'] as $errors): ?>
+                                                <ul class="list-unstyled">
+                                                    <li><i class="fa fa-warning"></i> <?= $errors[0]; ?></li>
+                                                    <li><i class="fa fa-warning"></i> <?= $errors[1]; ?></li>
+                                                    <li><i class="fa fa-warning"></i> <?= $errors[2]; ?></li>
+                                                </ul>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </section>
+                                <?php endif; ?>
+                            </div>
+                            <div class="tabs tabs-vertical tabs-left tabs-success">
+                                <ul class="nav nav-tabs col-sm-3 col-xs-5">
+                                    <li class="active"><a href="#information" data-toggle="tab">Information</a></li>
+                                    <li><a href="#prix" data-toggle="tab">Prix</a></li>
+                                    <li><a href="#assoc" data-toggle="tab">Association</a></li>
+                                    <li><a href="#stock" data-toggle="tab">Gestion de Stock</a></li>
+                                    <li><a href="#images" data-toggle="tab">Images</a></li>
+                                    <li><a href="#caracteristique" data-toggle="tab">Caractéristique</a></li>
+
+                                </ul>
+                                <div class="tab-content">
+                                    <div id="information" class="tab-pane active">
+                                        <h1 class="title">INFORMATION</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Référence Produit <span class="required">*</span></label>
+                                            <div class="col-md-4">
+                                                <input type="text" class="form-control" name="ref_produit"/>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Désignation <span class="required">*</span></label>
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="designation" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="textareaDefault">Courte description</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" name="short_description" rows="3" data-plugin-maxlength maxlength="200"></textarea>
+                                                <p>
+                                                    200 caractère maximum
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="long_description">Longue description</label>
+                                            <div class="col-md-9">
+                                                <textarea class="form-control" name="long_description" rows="5" id="long_description"></textarea>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="prix" class="tab-pane">
+                                        <h1 class="title">Tarif</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Prix de Vente <span class="required">*</span> </label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="prix_vente" class="form-control" name="prix_vente" onkeyup="calcul();" value="0">
+                                                <p>Prix de Vente TTC + Marge Brut</p>
+                                                <p>Tarif en séparateur de (.)</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="revenue_point">Point pour le client</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="revenue_point" readonly="readonly" class="form-control" name="revenue_point" value="0">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="cout_point">Cout en point</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="cout_point" readonly="readonly" class="form-control" name="cout_point" value="0">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                    <div id="assoc" class="tab-pane">
+                                        <h1 class="title">ASSOCIATION DE CATEGORIE</h1>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3" for="produit">Catégorie</label>
+                                            <div class="col-md-6">
+                                                <select data-plugin-selectTwo id="produit" name="idcategorie" class="form-control populate">
+                                                    <?php
+                                                    $sql_cat = $DB->query("SELECT * FROM categorie");
+                                                    foreach($sql_cat as $cat):
+                                                        ?>
+                                                        <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3" for="produit">Sous Catégorie</label>
+                                            <div class="col-md-6">
+                                                <select data-plugin-selectTwo id="produit" name="idsubcategorie" class="form-control populate">
+                                                    <?php
+                                                    $sql_cat = $DB->query("SELECT * FROM categorie");
+                                                    foreach($sql_cat as $cat):
+                                                        ?>
+                                                        <optgroup label="<?= html_entity_decode($cat->designation_cat); ?>">
+                                                            <?php
+                                                            $sql_sub = $DB->query("SELECT * FROM subcategorie WHERE idcategorie = :idcategorie", array(
+                                                                "idcategorie"   => $cat->id
+                                                            ));
+                                                            foreach($sql_sub as $sub):
+                                                                ?>
+                                                                <option value="<?= $sub->id; ?>"><?= html_entity_decode($sub->designation_subcat); ?></option>
+                                                            <?php endforeach; ?>
+                                                        </optgroup>
+                                                    <?php endforeach; ?>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="stock" class="tab-pane">
+                                        <h1 class="title">GESTION DE STOCK</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="date_sortie">Date de Sortie</label>
+                                            <div class="col-md-6">
+                                                <div class="input-group">
+														<span class="input-group-addon">
+															<i class="fa fa-calendar"></i>
+														</span>
+                                                    <input type="text" id="date_sortie" name="date_sortie" data-plugin-datepicker class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="produit" class="col-md-3 control-label">Stock Actuel</label>
+                                            <div class="col-md-3">
+                                                <input type="text" id="produit" class="form-control" name="stock" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="produit">Poids</label>
+                                            <div class="col-md-4">
+                                                <input type="text" id="produit" class="form-control" name="poids">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="images" class="tab-pane">
+                                        <h1 class="title">IMAGES</h1>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Images Produits</label>
+                                            <div class="col-md-6">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-append">
+                                                        <div class="uneditable-input">
+                                                            <i class="fa fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+															<span class="btn btn-default btn-file">
+																<span class="fileupload-exists">Modifier</span>
+																<span class="fileupload-new">Selectionner Fichier</span>
+                                                                <input type="hidden" name="MAX_FILE_SIZE" value="3145728" />
+																<input type="file" name="images_produit" accept="image/*"/>
+															</span>
+                                                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                                    </div>
+                                                </div>
+                                                <span>Maximum 3Mo</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Bannière</label>
+                                            <div class="col-md-6">
+                                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                                    <div class="input-append">
+                                                        <div class="uneditable-input">
+                                                            <i class="fa fa-file fileupload-exists"></i>
+                                                            <span class="fileupload-preview"></span>
+                                                        </div>
+															<span class="btn btn-default btn-file">
+																<span class="fileupload-exists">Modifier</span>
+																<span class="fileupload-new">Selectionner Fichier</span>
+                                                                <input type="hidden" name="MAX_FILE_SIZE" value="8388608" />
+																<input type="file" name="images_banner" accept="image/*"/>
+															</span>
+                                                        <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                                    </div>
+                                                </div>
+                                                <span>Maximum 8Mo</span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div id="caracteristique" class="tab-pane">
+                                        <h1 class="title">Définition des Caractéristiques</h1>
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" style="border-radius: 5px;">
+                                                <tbody>
+                                                <tr>
+                                                    <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE DE JEUX</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Editeur</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="editeur" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Genre</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="genre" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Multijoueur</td>
+                                                    <td>
+                                                        <div class="checkbox-custom checkbox-primary">
+                                                            <input type="checkbox" checked="" name="multijoueur" id="multijoueur">
+                                                            <label for="multijoueur">Jeux en Multijoueur</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Internet</td>
+                                                    <td>
+                                                        <div class="checkbox-custom checkbox-primary">
+                                                            <input type="checkbox" checked="" name="internet" id="internet">
+                                                            <label for="internet">Connexion Internet Requis</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Option</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="option" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE DE CONSOLE</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Couleur</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="couleur" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Capacité Disque Dur</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="cap_hdd" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Ethernet</td>
+                                                    <td>
+                                                        <div class="checkbox-custom checkbox-primary">
+                                                            <input type="checkbox" checked="" name="eth" id="eth">
+                                                            <label for="eth">Connexion Internet par cable</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Wifi</td>
+                                                    <td>
+                                                        <div class="checkbox-custom checkbox-primary">
+                                                            <input type="checkbox" checked="" name="wifi" id="wifi">
+                                                            <label for="wifi">Connexion Internet par Réseau Sans Fil</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Nombre de Prise USB</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="nb_usb" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="background-color:#CCCCCC;"><strong>CARACTERISTIQUE AUTRE (Vourcher, etc...)</strong></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Compatibilité</td>
+                                                    <td>
+                                                        <input type="text" class="form-control" name="compatibilite" />
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <button type="submit" class="btn btn-success btn-lg btn-block" name="action" value="add-produit"><i class="fa fa-check"></i> Valider</button>
+                        </footer>
+                    </form>
+                </section>
+            </div>
+            <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouvelle Catégorie</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+                                <div class="validation-message">
+                                    <ul></ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="cat" class="form-control" name="designation_cat" required title="Champs Requis" />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Images de la catégorie</label>
+                                    <div class="col-md-9">
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <div class="input-append">
+                                                <div class="uneditable-input">
+                                                    <i class="fa fa-file fileupload-exists"></i>
+                                                    <span class="fileupload-preview"></span>
+                                                </div>
+                                                <span class="btn btn-default btn-file">
+                                                    <span class="fileupload-exists">Changer de Fichier</span>
+                                                    <span class="fileupload-new">Sélectionner un fichier</span>
+                                                    <input type="file" name="images_cat"/>
+                                                </span>
+                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-categories">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
+            <div id="add-subcategorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+                <section class="panel">
+                    <header class="panel-heading">
+                        <h2 class="panel-title">Nouvelle Sous Catégorie</h2>
+                    </header>
+                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+                            <div class="modal-wrapper">
+                                <div class="validation-message">
+                                    <ul></ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Catégorie <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <select data-plugin-selectTwo class="form-control populate" require name="idcategorie">
+                                            <?php
+                                            $sql_cat = $DB->query("SELECT * FROM categorie");
+                                            foreach($sql_cat as $cat):
+                                                ?>
+                                                <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="cat" class="form-control" name="designation_subcat" required title="Champs Requis" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <footer class="panel-footer">
+                            <div class="row">
+                                <div class="col-md-12 text-right">
+                                    <button class="btn btn-primary" type="submit" name="action" value="add-subcategorie">Valider</button>
+                                    <button class="btn btn-default modal-dismiss">Annuler</button>
+                                </div>
+                            </div>
+                        </footer>
+                    </form>
+                </section>
+            </div>
+            <!-- end: page -->
+        </section>
+    <?php endif; ?>
 <?php endif; ?>
