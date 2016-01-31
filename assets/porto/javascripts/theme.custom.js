@@ -17,6 +17,11 @@ $("#date_sortie").datepicker({
     format: "dd-mm-yyyy",
     language: "fr"
 });
+// DATEPICKERS PERSO
+$("#date_reassort").datepicker({
+    format: "dd-mm-yyyy",
+    language: "fr"
+});
 
 
 

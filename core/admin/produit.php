@@ -193,3 +193,28 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
 
 
 }
+
+
+
+if(isset($_POST['action']) && $_POST['action'] == 'add-reassort')
+{
+    require "../../app/classe.php";
+    $params = array(
+        "ref_produit"       => $_POST['ref_produit'],
+        "date_reassort"     => $date_format->format_strt($_POST['date_reassort']),
+        "statut_stock"      => 1
+    );
+    $ref_produit = $_POST['ref_produit'];
+
+    $sql = $DB->execute("UPDATE produits SET date_reassort = :date_reassort, statut_stock = :statut_stock WHERE ref_produit = :ref_produit", $params);
+
+    if($sql == 1)
+    {
+        $text = "Votre demande de réassort pour la date du <strong>".$date_format->formatage('d-m-Y', $params['date_reassort'])."</strong> à été enregistré.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=add-reassort&text=$text");
+    }else{
+        $text = "Une Erreur à eu lieu lors de l'enregistrement de votre demande de réassort !<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-reassort&text=$text");
+    }
+}
+

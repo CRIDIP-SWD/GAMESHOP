@@ -1817,10 +1817,10 @@
                             <a href="" class="btn btn-danger btn-block btn-lg"><i class="fa fa-trash"></i> Supprimer le Produit</a>
                             <hr>
                             <?php if($produit[0]->stock == 0 AND $produit[0]->statut_stock != 1){ ?>
-                            <a class="btn btn-lg btn-block btn-primary" href="#add-reassort"><i class="fa fa-calendar"></i> Demander un Réassort</a>
+                            <a class="mb-xs mt-xs mr-xs modal-basic btn btn-lg btn-block btn-primary" href="#add-reassort"><i class="fa fa-calendar"></i> Demander un Réassort</a>
                             <?php } ?>
                             <?php if($produit[0]->stock == 0 AND $produit[0]->statut_global != 2){ ?>
-                            <a class="btn btn-lg btn-block btn-primary" href="#add-stock"><i class="fa fa-cart-plus"></i> Ajouter des Quantités</a>
+                            <a class="mb-xs mt-xs mr-xs modal-basic btn btn-lg btn-block btn-primary" href="#add-stock"><i class="fa fa-cart-plus"></i> Ajouter des Quantités</a>
                             <?php } ?>
 
                         </div>
@@ -1829,5 +1829,41 @@
             </div>
             <!-- end: page -->
         </section>
+        <div id="add-reassort" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Nouvelle demande de Réassortt</h2>
+                </header>
+                <form id="summary-form" class="form-horizontal" action="core/admin/produit.php" method="post">
+                    <input type="hidden" name="ref_produit" value="<?= $ref_produit; ?>">
+                    <div class="panel-body">
+                        <div class="modal-wrapper">
+                            <div class="validation-message">
+                                <ul></ul>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="date_sortie">Date de Réassort Souhaiter</label>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                        <input type="text" id="date_reassort" name="date_reassort" data-plugin-datepicker class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button class="btn btn-primary" type="submit" name="action" value="add-reassort">Valider</button>
+                                <button class="btn btn-default modal-dismiss">Annuler</button>
+                            </div>
+                        </div>
+                    </footer>
+                </form>
+            </section>
+        </div>
     <?php endif; ?>
 <?php endif; ?>
