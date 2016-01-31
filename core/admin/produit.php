@@ -16,6 +16,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     $date_sortie = $date_format->format_strt($_POST['date_sortie']);
     $stock = $_POST['stock'];
     $poids = $_POST['poids'];
+    $tag_produit = "";
     $banner = $ref_produit;
     $editeur = htmlentities(addslashes($_POST['editeur']));
     $genre = $_POST['genre'];
