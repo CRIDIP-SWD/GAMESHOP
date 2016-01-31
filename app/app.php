@@ -398,26 +398,4 @@ class ssh2 extends app
         }
     }
 
-
-    public function add_images($nom_fichier, $link_envoie, $taille_max, $connect)
-    {
-        if(isset($_FILES["'$nom_fichier'"]) AND $_FILES["'$nom_fichier'"]['error'] == 0)
-        {
-            if($_FILES["'$nom_fichier'"]['size'] <= 3145728)
-            {
-                $infoFichier = pathinfo($_FILES["'$nom_fichier'"]['name']);
-                $extensionUpload = $infoFichier['extension'];
-                $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
-                if(in_array($extensionUpload, $extensionAuthorized))
-                {
-                    $envoie = ssh2_scp_send($connect, $_FILES["'$nom_fichier'"]['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/cards/".$ref_produit.".".$extensionUpload, 0777);
-                    if(!$envoie)
-                    {
-                        $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
-                        header("Location ../../index.php?view=admin_sha&sub=error&text=$text");
-                    }
-                }
-            }
-        }
-    }
 }
