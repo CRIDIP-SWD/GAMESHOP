@@ -520,6 +520,8 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
                 }
             }
         }
+    }else{
+        echo "ERROR!!!";
     }
 
 }
