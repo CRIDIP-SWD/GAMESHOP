@@ -243,7 +243,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
 
 
 
-    $sql = $DB->execute("UPDATE produits SET stock = :stock, statut_stock = :statut_stock WHERE ref_produit = : ref_produit", array(
+    $sql = $DB->execute("UPDATE produits SET stock = :stock, statut_stock = :statut_stock WHERE ref_produit = :ref_produit", array(
         "ref_produit"       => $ref_produit,
         "stock"             => $stock,
         "statut_stock"      => $statut
