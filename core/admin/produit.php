@@ -50,7 +50,50 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
         if($_FILES['images_produit']['size'] <= 3145728)
         {
             $infoFichier = pathinfo($_FILES['images_produit']['name']);
+            $extensionUpload = $infoFichier['extension'];
+            $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
+            if(in_array($extensionUpload, $extensionAuthorized))
+            {
+                $connect = ssh2_connect("icegest.com", 22);
+                if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                {
+                    $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                }
+                $envoie = ssh2_scp_send($connect, $_FILES['images_produit']['tmp_name'], \App\constante::SOURCES."/produit/cards/".$ref_produit.$extensionUpload);
+                if(!$envoie)
+                {
+                    $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                }
             }
+        }
+    }
+
+    //Image de la Bannière
+    if(isset($_FILES['images_banner']) AND $_FILES['images_banner']['error'] == 0)
+    {
+        if($_FILES['images_banner']['size'] <= 8388608)
+        {
+            $infoFichier = pathinfo($_FILES['images_banner']['name']);
+            $extensionUpload = $infoFichier['extension'];
+            $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
+            if(in_array($extensionUpload, $extensionAuthorized))
+            {
+                $connect = ssh2_connect("icegest.com", 22);
+                if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                {
+                    $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                }
+                $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], \App\constante::SOURCES."/produit/banner/banner_".$ref_produit.$extensionUpload);
+                if(!$envoie)
+                {
+                    $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                }
+            }
+        }
     }
 
 

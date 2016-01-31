@@ -1492,7 +1492,7 @@
                                                         <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
                                                     </div>
                                                 </div>
-                                                <span>Maximum 3Mo</span>
+                                                <span>Maximum 8Mo</span>
                                             </div>
                                         </div>
 
