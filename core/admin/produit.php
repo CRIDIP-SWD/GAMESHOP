@@ -552,7 +552,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
                 break;
 
             default:
-                echo "Error Not Found !!!!";
+                echo "Fichier non Envoyée";
                 break;
         }
     }
