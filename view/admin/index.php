@@ -1828,7 +1828,7 @@
                     <div class="tabs">
                         <ul class="nav nav-tabs nav-justified">
                             <li class="active">
-                                <a href="#popular10" data-toggle="tab" class="text-center"><i class="fa fa-star"></i> Popular</a>
+                                <a href="#popular10" data-toggle="tab" class="text-center"><i class="fa fa-cog"></i> Caractéristique</a>
                             </li>
                             <li>
                                 <a href="#recent10" data-toggle="tab" class="text-center">Recent</a>
