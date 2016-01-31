@@ -1827,12 +1827,10 @@
                 <div class="col-md-6">
                     <div class="tabs">
                         <ul class="nav nav-tabs nav-justified">
-                            <li class="active">
-                                <a href="#popular10" data-toggle="tab" class="text-center"><i class="fa fa-cog"></i> Caractéristique</a>
-                            </li>
-                            <li>
-                                <a href="#recent10" data-toggle="tab" class="text-center">Recent</a>
-                            </li>
+                            <li class="active"><a href="#caracteristique" data-toggle="tab" class="text-center"><i class="fa fa-cog"></i> Caractéristique</a></li>
+                            <li><a href="#gallery" data-toggle="tab" class="text-center"><i class="fa fa-picture-o"></i> Images</a></li>
+                            <li><a href="#video" data-toggle="tab" class="text-center"><i class="fa fa-youtube"></i> Vidéo</a></li>
+                            <li><a href="#promotion" data-toggle="tab" class="text-center"><i class="fa fa-eur"></i> Promotion</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="popular10" class="tab-pane active">
