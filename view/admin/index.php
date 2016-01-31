@@ -2205,7 +2205,7 @@
                                                     <td>Multijoueur</td>
                                                     <td>
                                                         <div class="checkbox-custom checkbox-primary">
-                                                            <input type="checkbox" checked="" name="multijoueur" id="multijoueur">
+                                                            <input type="checkbox" <?php if($caract[0]->multijoueur == 1){echo 'checked';} ?> name="multijoueur" id="multijoueur">
                                                             <label for="multijoueur">Jeux en Multijoueur</label>
                                                         </div>
                                                     </td>
@@ -2214,7 +2214,7 @@
                                                     <td>Internet</td>
                                                     <td>
                                                         <div class="checkbox-custom checkbox-primary">
-                                                            <input type="checkbox" checked="" name="internet" id="internet">
+                                                            <input type="checkbox" <?php if($caract[0]->internet == 1){echo 'checked';} ?> name="internet" id="internet">
                                                             <label for="internet">Connexion Internet Requis</label>
                                                         </div>
                                                     </td>
@@ -2244,7 +2244,7 @@
                                                     <td>Ethernet</td>
                                                     <td>
                                                         <div class="checkbox-custom checkbox-primary">
-                                                            <input type="checkbox" checked="" name="eth" id="eth">
+                                                            <input type="checkbox" <?php if($caract[0]->eth == 1){echo 'checked';} ?> name="eth" id="eth">
                                                             <label for="eth">Connexion Internet par cable</label>
                                                         </div>
                                                     </td>
@@ -2253,7 +2253,7 @@
                                                     <td>Wifi</td>
                                                     <td>
                                                         <div class="checkbox-custom checkbox-primary">
-                                                            <input type="checkbox" checked="" name="wifi" id="wifi">
+                                                            <input type="checkbox" <?php if($caract[0]->wifi == 1){echo 'checked';} ?> name="wifi" id="wifi">
                                                             <label for="wifi">Connexion Internet par Réseau Sans Fil</label>
                                                         </div>
                                                     </td>
