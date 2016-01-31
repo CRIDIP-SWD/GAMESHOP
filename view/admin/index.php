@@ -1904,6 +1904,9 @@
                                 </table>
                             </div>
                             <div id="gallery" class="tab-pane">
+                                <div class="pull-right">
+                                    <button type="button" class="btn btn-success" data-target="#add-images"><i class="fa fa-plus-circle"></i> Ajouter une images</button>
+                                </div>
                                 <table class="table">
                                     <tbody>
                                     <?php
@@ -1915,6 +1918,9 @@
                                                 <a class="image-popup-no-margins center" href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $image->ref_produit; ?>/<?= $image->images; ?>.jpg">
                                                     <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $image->ref_produit; ?>/<?= $image->images; ?>.jpg" width="300">
                                                 </a>
+                                            </td>
+                                            <td>
+                                                <a href="" data-toggle="tooltip" data-original-title="Supprimer l'image"><i class="fa fa-trash text-danger"></i></a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>
