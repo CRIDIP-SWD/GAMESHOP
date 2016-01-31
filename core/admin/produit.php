@@ -217,4 +217,46 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-reassort')
         header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-reassort&text=$text");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-stock')
+{
+    require "../../app/classe.php";
+
+    $params = array(
+        "ref_produit" => $_POST['ref_produit']
+    );
+    $ref_produit = $_POST['ref_produit'];
+
+    $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit", $params);
+
+    if($_POST['augdim'] == 0)
+    {
+        $stock = $produit[0]->stock + $_POST['new_stock'];
+    }else{
+        $stock = $produit[0]->stock - $_POST['new_stock'];
+    }
+
+    if($stock >= 1)
+    {
+        $statut = 2;
+    }else{
+        $statut = 0;
+    }
+
+
+
+    $sql = $DB->execute("UPDATE produits SET stock = :stock, statut_stock = :statut_stock WHERE ref_produit = : ref_produit", array(
+        "ref_produit"       => $params['ref_produit'],
+        "stock"             => $stock,
+        "statut_stock"      => $statut
+    ));
+
+    if($sql == 1)
+    {
+        $text = "Votre Stock est maintenant de <strong>".$stock."</strong>.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=add-stock&text=$text");
+    }else{
+        $text = "Une Erreur à eu lieu lors de l'enregistrement de votre mise à jour de Stock !<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-stock&text=$text");
+    }
+}
 
