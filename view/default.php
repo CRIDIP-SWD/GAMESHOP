@@ -23,6 +23,13 @@ ini_set('display_errors', 1);
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>responsive.css" type="text/css" />
     <link rel="stylesheet" href="<?= $constante->getUrl(array('css/')); ?>styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- VIDEO PLUGIN -->
+    <link rel="stylesheet" type="text/css" href="<?= $constante->getUrl(array('js/videoPlayer/css/'), true, false); ?>jquery.jscrollpane.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="<?= $constante->getUrl(array('js/videoPlayer/css/'), true, false); ?>jquery.selectbox.css" />
+    <link rel="stylesheet" type="text/css" href="<?= $constante->getUrl(array('js/videoPlayer/css/'), true, false); ?>videoGallery_buttons2.css" />
+    <!-- END VIDEO PLUGIN -->
+
     <!--[if lt IE 9]>
     <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
     <![endif]-->
