@@ -402,6 +402,30 @@ if($verif_global === 3)
                                             <video id="video" class="video-js vjs-default-skin" controls preload="auto" width="1100" height="570" poster="<?= $constante->getUrl(array(''), false, true); ?>autre/background/back_psn_title.png" data-setup="{}"></video>
 
                                         </div>
+                                        <figure id="video_player">
+                                            <div id="video_container">
+                                                <video controls poster="http://demosthenes.info/assets/images/vid-glacier.jpg">
+                                                    <source src="http://demosthenes.info/assets/videos/glacier.mp4" type="video/mp4">
+                                                    <source src="http://demosthenes.info/assets/videos/glacier.webm" type="video/webm">
+                                                </video>
+                                                <div class="logo-video" style="position: absolute; left:80%; top: 5%;">
+                                                    <img src="<?= $constante->getUrl(array('images/'), true, false); ?>logo.png" />
+                                                </div>
+                                            </div>
+                                            <figcaption>
+                                                <a href="http://demosthenes.info/assets/videos/glacier.mp4" class="currentvid">
+                                                    <img src="http://demosthenes.info/assets/images/vid-glacier.jpg" alt="Athabasca Glacier">
+                                                </a>
+                                                <a href="http://demosthenes.info/assets/videos/lake.mp4">
+                                                    <img src="http://demosthenes.info/assets/images/vid-lake.jpg" alt="Athabasca Lake">
+                                                </a>
+                                                <a href="http://demosthenes.info/assets/videos/mountain.mp4">
+                                                    <img src="http://demosthenes.info/assets/images/vid-mountain.jpg" alt="Mountain">
+                                                </a>
+                                            </figcaption>
+
+                                        </figure>
+
                                     <?php endforeach; ?>
 
                                 </div>
