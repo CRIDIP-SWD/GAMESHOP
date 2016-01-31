@@ -380,7 +380,7 @@ if($verif_global === 3)
                                 <?php endif; ?>
                                 <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
-                                    <div class="flowplayer is-splash" data-key="$130763224349944" data-logo="//flowplayer.org/media/img/mylogo.png" data-ratio="0.4167">
+                                    <div class="flowplayer is-splash" data-key="$130763224349944" data-logo="<?= $constante->getUrl(array('images/')); ?>logo.png" data-ratio="0.4167">
                                         <video>
                                             <source type="video/mp4" src="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4">
                                         </video>
