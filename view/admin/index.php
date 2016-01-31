@@ -1903,6 +1903,24 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div id="gallery" class="tab-pane">
+                                <table class="table">
+                                    <tbody>
+                                    <?php
+                                    $sql_image = $DB->query("SELECT * FROM produits_images WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                    foreach($sql_image as $image):
+                                    ?>
+                                        <tr>
+                                            <td>
+                                                <a class="image-popup-no-margins center" href="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $image->ref_produit; ?>/<?= $image->images; ?>.jpg">
+                                                    <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/gallery/<?= $image->ref_produit; ?>/<?= $image->images; ?>.jpg" width="300">
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
