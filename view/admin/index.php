@@ -1749,9 +1749,9 @@
                             <h2 class="panel-title">Information Général</h2>
                         </header>
                         <div class="panel-body">
-                            <div class="text-center">
+                            <div class="center">
                                 <a class="image-popup-no-margins" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg">
-                                    <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" width="320">
+                                    <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" width="400">
                                 </a>
                             </div>
                         </div>
