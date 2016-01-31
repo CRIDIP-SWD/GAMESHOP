@@ -1750,7 +1750,7 @@
                         </header>
                         <div class="panel-body">
                             <a class="image-popup-no-margins center" href="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg">
-                                <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" width="530">
+                                <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" width="320">
                             </a>
                         </div>
                     </section>
