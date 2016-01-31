@@ -1898,12 +1898,12 @@
                                 <label class="control-label col-md-3">Augmentation / Diminution</label>
                                 <div class="col-md-9">
                                     <div class="radio-custom radio-primary">
-                                        <input type="radio" id="augdim" name="augdim" value="1">
-                                        <label for="augdim">Augmentation</label>
+                                        <input type="radio" id="augdim1" name="augdim1" value="1">
+                                        <label for="augdim1">Augmentation</label>
                                     </div>
                                     <div class="radio-custom radio-primary">
-                                        <input type="radio" id="augdim" name="augdim" value="0">
-                                        <label for="augdim">Diminution</label>
+                                        <input type="radio" id="augdim2" name="augdim2" value="0">
+                                        <label for="augdim2">Diminution</label>
                                     </div>
                                 </div>
                             </div>
