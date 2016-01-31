@@ -2005,7 +2005,7 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="produit">Référence Produit <span class="required">*</span></label>
                                             <div class="col-md-4">
-                                                <input type="text" class="form-control" name="ref_produit" value="<?= $produit[0]->ref_produit; ?>"/>
+                                                <input type="text" class="form-control" name="ref_produit" readonly value="<?= $produit[0]->ref_produit; ?>"/>
                                             </div>
                                         </div>
 
