@@ -1754,6 +1754,7 @@
                                     <img class="img-responsive" src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit[0]->ref_produit; ?>.jpg" width="400">
                                 </a>
                             </div>
+                            <hr>
                         </div>
                     </section>
                 </div>
