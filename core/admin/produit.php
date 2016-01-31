@@ -171,7 +171,17 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
         "compatibilite"         => $compatibilite
     ));
 
-    if($sql_produit == 1 AND $sql_caracteristique == 1)
+    $sql_categorie = $DB->execute("INSERT INTO produits_categorie(id, ref_produit, idcategorie) VALUES (NULL, :ref_produit, :idcategorie)", array(
+        "ref_produit"           => $ref_produit,
+        "idcategorie"           => $idcategorie
+    ));
+
+    $sql_subcategorie = $DB->execute("INSERT INTO produits_subcategorie(id, ref_produit, idsubcategorie) VALUES (NULL, :ref_produit, :idsubcategorie)", array(
+        "ref_produit"           => $ref_produit,
+        "idsubcategorie"        => $idsubcategorie
+    ));
+
+    if($sql_produit == 1 AND $sql_caracteristique == 1 AND $sql_categorie == 1 AND $sql_subcategorie == 1)
     {
         $text = "L'article <strong>".$designation."</strong> à été ajouté avec succès à la base de données.";
         header("Location: ../../index.php?view=admin_sha&sub=produits&success=add-produit&text=$text");
