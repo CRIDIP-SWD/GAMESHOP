@@ -521,7 +521,40 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
             }
         }
     }else{
-        echo "ERROR!!!";
+        switch($_FILES['images']['error'])
+        {
+            case 1:
+                echo "Taille du fichier dépasser par rapport au fichier php.ini ( upload_max_filesize ).";
+                break;
+
+            case 2:
+                echo "Taille du fichier dépasser par rapport à la configuration initial !";
+                break;
+
+            case 3:
+                echo "Fichier uploader partiellement !";
+                break;
+
+            case 4:
+                echo "Fichier non uploader";
+                break;
+
+            case 6:
+                echo "Fichier temporaire manquant !";
+                break;
+
+            case 7:
+                echo "Echec de l'écriture du fichier !";
+                break;
+
+            case 8:
+                echo "Extension Bloquante !";
+                break;
+
+            default:
+                echo "Error Not Found !!!!";
+                break;
+        }
     }
 
 }
