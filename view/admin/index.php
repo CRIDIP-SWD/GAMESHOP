@@ -1945,7 +1945,7 @@
                                 <i class="fa fa-home"></i>
                             </a>
                         </li>
-                        <li><span>Ajout d'un Nouveau produit</span></li>
+                        <li><span>Modification du Produit: <strong><?= $produit[0]->designation; ?></strong></span></li>
                     </ol>
 
                     <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
