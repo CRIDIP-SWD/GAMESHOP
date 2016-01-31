@@ -25,6 +25,7 @@ use App\general\newsletter;
 use App\general\produit;
 use App\networker\xboxLive;
 use App\notificateur;
+use App\ssh2;
 use SteamApi\Player;
 use SteamApi\User;
 
@@ -33,7 +34,7 @@ $constante = new constante();
 $date_format = new date_format();
 $fonction = new fonction();
 $DB = new DB();
-$notificateur = new notificateur();
+$ssh2 = new ssh2("icegest.com", "22", "root", "1992maxime");
 
 $head = new head();
 $categorie_cls = new categorie();

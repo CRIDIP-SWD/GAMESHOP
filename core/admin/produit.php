@@ -126,7 +126,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
                         $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
                         header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
                     }
-                    $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop//produit/banner/banner_".$ref_produit.".".$extensionUpload, 0777);
+                    $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/banner/banner_".$ref_produit.".".$extensionUpload, 0777);
                     if(!$envoie)
                     {
                         $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
@@ -556,6 +556,28 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
                 echo "Fichier non Envoyée";
                 break;
         }
+    }
+
+}
+if(isset($_GET['action']) && $_GET['action'] == 'supp-images')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_GET['ref_produit'];
+    $id = $_GET['id'];
+
+    $images = $DB->query("SELECT * FROM produits_images WHERE id = :id", array("id" => $id));
+
+    //Suppression du fichier serveur
+    $connect = $ssh2->connect;
+    $command = ssh2_exec($connect, "rm -rf /var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/cards/".$ref_produit.".jpg");
+    $sql = $DB->execute("DELETE FROM produits_images WHERE id = :id", array("id" => $id));
+
+    if($command AND $sql == 1){
+        $text = "L'image à bien été supprimé.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=supp-images&text=$text");
+    }else{
+        $text = "Une Erreur c'est produite lors de la suppression lors de la suppression de l'images.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=supp-images&text=$text");
     }
 
 }
