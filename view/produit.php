@@ -380,25 +380,12 @@ if($verif_global === 3)
                                 <?php endif; ?>
                                 <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
-                                    <figure id="video_player">
-                                        <div id="video_container">
-                                            <video controls poster="http://demosthenes.info/assets/images/vid-glacier.jpg">
-                                                <source src="http://demosthenes.info/assets/videos/glacier.mp4" type="video/mp4">
-                                                <source src="http://demosthenes.info/assets/videos/glacier.webm" type="video/webm">
-                                            </video>
-                                        </div>
-                                        <figcaption>
-                                            <a href="http://demosthenes.info/assets/videos/glacier.mp4" class="currentvid">
-                                                <img src="http://demosthenes.info/assets/images/vid-glacier.jpg" alt="Athabasca Glacier">
-                                            </a>
-                                            <a href="http://demosthenes.info/assets/videos/lake.mp4">
-                                                <img src="http://demosthenes.info/assets/images/vid-lake.jpg" alt="Athabasca Lake">
-                                            </a>
-                                            <a href="http://demosthenes.info/assets/videos/mountain.mp4">
-                                                <img src="http://demosthenes.info/assets/images/vid-mountain.jpg" alt="Mountain">
-                                            </a>
-                                        </figcaption>
-                                    </figure>
+                                    <div class="flowplayer">
+                                        <video>
+                                            <source type="video/webm" src="//mydomain.com/video.webm">
+                                            <source type="video/mp4"  src="//mydomain.com/video.mp4">
+                                        </video>
+                                    </div>
                                 </div>
                                 <?php endif; ?>
 
