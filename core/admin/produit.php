@@ -99,7 +99,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
                         $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
                         header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
                     }
-                    $envoie = ssh2_scp_send($connect, $_FILES['images_produit']['tmp_name'], \App\constante::SOURCES."/produit/cards/".$ref_produit.$extensionUpload);
+                    $envoie = ssh2_scp_send($connect, $_FILES['images_produit']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/cards/".$ref_produit.$extensionUpload);
                     if(!$envoie)
                     {
                         $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
@@ -125,7 +125,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
                         $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
                         header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
                     }
-                    $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], \App\constante::SOURCES."/produit/banner/banner_".$ref_produit.$extensionUpload);
+                    $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], "/var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop//produit/banner/banner_".$ref_produit.$extensionUpload);
                     if(!$envoie)
                     {
                         $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
