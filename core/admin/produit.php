@@ -393,7 +393,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-produit')
     //Vérification commande produit
     if($produit_cls->count_nbArticle_cmd($ref_produit) != 0)
     {
-        $text = "L'article <strong>".$ref_produit."</strong> ne peut pas être supprimer car il est commander ou réserver dans une commande effectuer.<br>Veuillez Supprimer la commande ou la réservation avant de supprimer le produit."
+        $text = "L'article <strong>".$ref_produit."</strong> ne peut pas être supprimer car il est commander ou réserver dans une commande effectuer.<br>Veuillez Supprimer la commande ou la réservation avant de supprimer le produit.";
         header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&warning=supp-produit&text=$text");
     }
 
