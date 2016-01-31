@@ -39,10 +39,10 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
          * 4: Nouveauté
          */
 
-    if($date_sortie <= $date_format->date_jour_strt())
+    if($date_sortie >= $date_format->date_jour_strt())
     {
         $statut_global = 2;
-    }elseif($date_sortie > $date_format->date_jour_strt())
+    }elseif($date_sortie < $date_format->date_jour_strt())
     {
         $statut_global = 4;
     }else{
