@@ -131,5 +131,12 @@ class produit extends DB
         return $revenue;
     }
 
+    public function count_nbArticle_cmd($ref_produit)
+    {
+        return $this->count("SELECT COUNT(ref_produit) FROM commande_article WHERE ref_produit = :ref_produit", array(
+            "ref_produit"   => $ref_produit
+        ));
+    }
+
 
 }

@@ -385,6 +385,38 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
 
 
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-produit')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_GET['ref_produit'];
+
+    //Vérification commande produit
+    if($produit_cls->count_nbArticle_cmd($ref_produit) != 0)
+    {
+        $text = "L'article <strong>".$ref_produit."</strong> ne peut pas être supprimer car il est commander ou réserver dans une commande effectuer.<br>Veuillez Supprimer la commande ou la réservation avant de supprimer le produit."
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&warning=supp-produit&text=$text");
+    }
+
+    $sql_caracteristique = $DB->execute("DELETE FROM produits_caracteristique WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+    $sql_categorie = $DB->execute("DELETE FROM produits_categorie WHERE ref_produit = :ref_produit", array("ref_produit"  => $ref_produit));
+    $sql_images = $DB->execute("DELETE FROM produits_images WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+    $sql_subcategorie = $DB->execute("DELETE FROM produits_subcategorie WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+    $sql_bonus = $DB->execute("DELETE FROM produits_bonus WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+    $sql_promotion = $DB->execute("DELETE FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+    $sql_video = $DB->execute("DELETE FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+    $sql_produit = $DB->execute("DELETE FROM produits WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+
+    if($sql_caracteristique && $sql_categorie && $sql_images && $sql_subcategorie && $sql_bonus && $sql_promotion && $sql_video && $sql_produit)
+    {
+        $text = "L'article de référence <strong></strong> à bien été supprimer !";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&success=supp-produit&text=$text");
+    }else{
+        $text = "Une Erreur s'est produite lors de la suppression de l'article de référence <strong>".$ref_produit."</strong>.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=supp-produit&text=$text");
+    }
+
+
+}
 
 
 
