@@ -1758,12 +1758,28 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Catégorie:</td>
+                                        <td style="font-weight: bold;">Catégorie:</td>
                                         <td><?= $cat[0]->designation_cat; ?></td>
                                     </tr>
                                     <tr>
-                                        <td>Sous Catégorie:</td>
+                                        <td style="font-weight: bold;">Sous Catégorie:</td>
                                         <td><?= $sub[0]->designation_subcat; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Statut</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Stock</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Date de Sortie</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight: bold;">Poids</td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
