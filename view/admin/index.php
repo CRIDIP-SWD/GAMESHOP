@@ -1769,7 +1769,7 @@
                                         <td style="font-weight: bold;">Statut</td>
                                         <td style="text-align: right;">
                                             <?php
-                                            switch($produit->statut_global)
+                                            switch($produit[0]->statut_global)
                                             {
                                                 case 1:
                                                     echo "<span class='label label-dark'>Courant</span>";
@@ -1789,15 +1789,15 @@
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Stock</td>
-                                        <td style="text-align: right;"></td>
+                                        <td style="text-align: right;"><?= $produit[0]->stock; ?></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Date de Sortie</td>
-                                        <td style="text-align: right;"></td>
+                                        <td style="text-align: right;"><?= $date_format->formatage("d-m-Y", $produit[0]->date_sortie); ?></td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Poids</td>
-                                        <td style="text-align: right;"></td>
+                                        <td style="text-align: right;"><?= $produit[0]->poids; ?> Kg</td>
                                     </tr>
                                 </tbody>
                             </table>
