@@ -1739,7 +1739,20 @@
 
             <!-- start: page -->
             <div class="row">
+                <div class="col-md-5">
+                    <section class="panel panel-primary">
+                        <header class="panel-heading">
+                            <div class="panel-actions">
+                                <a href="index.php?view=admin_sha&sub=produits&data=edit_produits&ref_produit=<?= $ref_produit; ?>" class="panel-action" data-toggle="tooltip" data-original-title="Editer le Produit"><i class="fa fa-edit fa-lg"></i></a>
+                                <a href="core/admin/produit.php?action=supp-produit&ref_produit=<?= $ref_produit; ?>" class="panel-action" data-toggle="tooltip" data-original-title="Supprimer le Produit"><i class="fa fa-trash"></i></a>
+                            </div>
+                            <h2 class="panel-title">Information Général</h2>
+                        </header>
+                        <div class="panel-body">
 
+                        </div>
+                    </section>
+                </div>
             </div>
             <!-- end: page -->
         </section>
