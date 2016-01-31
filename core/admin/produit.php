@@ -44,15 +44,15 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     }
 
     //Envoie des Images
-        //Image du Produit
-        if(isset($_FILES['images_produit']) AND $_FILES['images_produit']['error'] == 0)
+    //Image du Produit
+    if(isset($_FILES['images_produit']) AND $_FILES['images_produit']['error'] == 0)
+    {
+        if($_FILES['images_produit']['size'] <= 3145728)
         {
-            if($_FILES['images_produit']['size'] <= 3145728)
-            {
-                $infoFichier = pathinfo($_FILES['images_produit']['name'])
+            $infoFichier = pathinfo($_FILES['images_produit']['name']);
             }
-        }
+    }
 
-    
+
 
 }
