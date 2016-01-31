@@ -487,7 +487,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
 {
     require "../../app/classe.php";
     $ref_produit = $_POST['ref_produit'];
-    $name_image = $_POST['name_image'];
+    $name_image = $_POST['name_images'];
 
     if(isset($_FILES['images']) AND $_FILES['images']['error'] == 0)
     {
