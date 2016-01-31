@@ -1763,7 +1763,7 @@
                                     </tr>
                                     <tr>
                                         <td>Sous Catégorie:</td>
-                                        <td><?= $cat[0]->designation_subcat; ?></td>
+                                        <td><?= $sub[0]->designation_subcat; ?></td>
                                     </tr>
                                 </tbody>
                             </table>
