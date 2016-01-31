@@ -30,15 +30,29 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
 
 
     //Verification des Information entrées
-    $array_errors = array();
-    if(empty($ref_produit)){array_push($array_errors, $array_errors[0] = "Veuillez entréer une référence de Produit");}
-    if(empty($designation)){array_push($array_errors, $array_errors[1] = "Veuillez Entréer une désignation au produit");}
-    if(empty($prix_vente)){array_push($array_errors, $array_errors[2] = "Veuillez entrer un prix de Vente au Produit");}
-
-    if(!empty($array_errors))
-    {
-        header("Location: ../../index.php?view=admin_sha&sub=produits&data=add-produit&data_valid=error&array=$array_errors");
+    if(empty($ref_produit)){
+        $text = "Le champs <strong>Référence du produit</strong> est Vide";
+        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&warning=add-produit&text=$text");
     }
+    if(empty($designation)){
+        $text = "Le champs <strong>Désignation du produit</strong> est Vide";
+        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&warning=add-produit&text=$text");
+    }
+    if(empty($prix_vente)){
+        $text = "Le champs <strong>Prix de Vente</strong> est Vide";
+        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&warning=add-produit&text=$text");
+    }
+
+    //Envoie des Images
+        //Image du Produit
+        if(isset($_FILES['images_produit']) AND $_FILES['images_produit']['error'] == 0)
+        {
+            if($_FILES['images_produit']['size'] <= 3145728)
+            {
+                $infoFichier = pathinfo($_FILES['images_produit']['name'])
+            }
+        }
+
     
 
 }
