@@ -1905,7 +1905,7 @@
                             </div>
                             <div id="gallery" class="tab-pane">
                                 <div class="pull-right">
-                                    <button type="button" class="mb-xs mt-xs mr-xs modal-basic btn btn-success" data-href="#add-images"><i class="fa fa-plus-circle"></i> Ajouter une images</button>
+                                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-success" href="#add-images"><i class="fa fa-plus-circle"></i> Ajouter une images</a>
                                 </div>
                                 <table class="table">
                                     <tbody>
