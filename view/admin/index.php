@@ -1706,4 +1706,42 @@
         </section>
 
     <?php endif; ?>
+    <?php if(isset($_GET['data']) && $_GET['data'] == 'view_produit'): ?>
+        <?php
+        $ref_produit = $_GET['ref_produit'];
+        $produit = $DB->query("SELECT * FROM produits WHERE ref_produit = :ref_produit",array(
+            "ref_produit"   => $ref_produit
+        ));
+        $cat = $DB->query("SELECT * FROM produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND ref_produit = :ref_produit", array(
+            "ref_produit"   => $ref_produit
+        ));
+        $sub = $DB->query("SELECT * FROM produits_subcategorie, subcategorie WHERE produits_subcategorie.idsubcategorie = subcategorie.id AND ref_produit = :ref_produit", array(
+            "ref_produit"   => $ref_produit
+        ));
+        ?>
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2><i class="fa fa-gamepad"></i> <?= html_entity_decode($produit[0]->designation); ?></h2>
+
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.php?view=admin_sha">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Produits</span></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+            <div class="row">
+
+            </div>
+            <!-- end: page -->
+        </section>
+    <?php endif; ?>
 <?php endif; ?>
