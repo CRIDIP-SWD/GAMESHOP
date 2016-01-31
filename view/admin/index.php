@@ -1812,9 +1812,9 @@
                             <h2 class="panel-title">Action</h2>
                         </header>
                         <div class="panel-body">
-                            <a class="btn btn-primary btn-lg btn-block" href=""><i class="fa fa-arrow-left"></i> Retour à la liste des Articles</a>
-                            <a href="" class="btn btn-primary btn-block btn-lg"><i class="fa fa-edit"></i> Editer le Produit</a>
-                            <a href="" class="btn btn-danger btn-block btn-lg"><i class="fa fa-trash"></i> Supprimer le Produit</a>
+                            <a class="btn btn-primary btn-lg btn-block" href="index.php?view=admin_sha&sub=produits"><i class="fa fa-arrow-left"></i> Retour à la liste des Articles</a>
+                            <a href="index.php?view=admin_sha&sub=produits&data=edit_produit&ref_produit=<?= $ref_produit; ?>" class="btn btn-primary btn-block btn-lg"><i class="fa fa-edit"></i> Editer le Produit</a>
+                            <a href="core/admin/produit.php?action=supp-produit&ref_produit=<?= $ref_produit; ?>" class="btn btn-danger btn-block btn-lg"><i class="fa fa-trash"></i> Supprimer le Produit</a>
                             <hr>
                             <?php if($produit[0]->stock == 0 AND $produit[0]->statut_stock != 1){ ?>
                             <a class="mb-xs mt-xs mr-xs modal-basic btn btn-lg btn-block btn-primary" href="#add-reassort"><i class="fa fa-calendar"></i> Demander un Réassort</a>
