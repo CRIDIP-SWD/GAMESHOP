@@ -1141,7 +1141,7 @@
                                                     ?>
                                                 </td>
                                                 <td>
-                                                    <a class="btn btn-primary btn-xs" href="index.php?view=admin_sha&sub=produit&data=view_produit&ref_produit=<?= $produit->ref_produit; ?>"><i class="fa fa-eye"></i> Voir le produit</a>
+                                                    <a class="btn btn-primary btn-xs" href="index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=<?= $produit->ref_produit; ?>"><i class="fa fa-eye"></i> Voir le produit</a>
                                                 </td>
                                             </tr>
                                         <?php endforeach; ?>
