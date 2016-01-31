@@ -568,7 +568,7 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-images')
     $images = $DB->query("SELECT * FROM produits_images WHERE id = :id", array("id" => $id));
 
     //Suppression du fichier serveur
-    $connect = $ssh2->connect;
+    $connect = $ssh2->connexion("icegest.com", "22", "root", "1992maxime", true);
     $command = ssh2_exec($connect, "rm -rf /var/www/vhosts/icegest.com/ns342142.ip-5-196-76.eu/sources/gameshop/produit/cards/".$ref_produit.".jpg");
     $sql = $DB->execute("DELETE FROM produits_images WHERE id = :id", array("id" => $id));
 

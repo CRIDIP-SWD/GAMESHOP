@@ -370,9 +370,9 @@ class ssh2 extends app
 
     protected $error_connect = "Système de Connexion SSH2 inopérant !<br>Impossible de ce connecter au serveur distant.";
 
-    public function __construct($server = null, $port = null, $user = null, $pass = null, $external = false)
+    public function connexion($server = null, $port = null, $user = null, $pass = null, $external = false)
     {
-        if($external = false)
+        if($external == false)
         {
             $connect = ssh2_connect($this->server, $this->port);
             $login = ssh2_auth_password($connect, $this->user, $this->pass);

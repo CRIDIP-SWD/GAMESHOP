@@ -34,7 +34,7 @@ $constante = new constante();
 $date_format = new date_format();
 $fonction = new fonction();
 $DB = new DB();
-$ssh2 = new ssh2("icegest.com", "22", "root", "1992maxime", true);
+$ssh2 = new ssh2();
 
 $head = new head();
 $categorie_cls = new categorie();
