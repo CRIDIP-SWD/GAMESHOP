@@ -1884,5 +1884,49 @@
                 </form>
             </section>
         </div>
+        <div id="add-stock" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Nouvelle demande de Réassortt</h2>
+                </header>
+                <form id="summary-form" class="form-horizontal" action="core/admin/produit.php" method="post">
+                    <input type="hidden" name="ref_produit" value="<?= $ref_produit; ?>">
+                    <div class="panel-body">
+                        <div class="modal-wrapper">
+                            <div class="validation-message">
+                                <ul></ul>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3">Augmentation / Diminution</label>
+                                <div class="col-md-9">
+                                    <div class="radio-custom radio-primary">
+                                        <input type="radio" id="augdim" name="augdim" value="1">
+                                        <label for="augdim">Augmentation</label>
+                                    </div>
+                                    <div class="radio-custom radio-primary">
+                                        <input type="radio" id="augdim" name="augdim" value="0">
+                                        <label for="augdim">Diminution</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="qte">Date de Réassort Souhaiter</label>
+                                <div class="col-md-2">
+                                    <input type="text" class="form-control" id="qte" name="new_stock" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <footer class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button class="btn btn-primary" type="submit" name="action" value="add-reassort">Valider</button>
+                                <button class="btn btn-default modal-dismiss">Annuler</button>
+                            </div>
+                        </div>
+                    </footer>
+                </form>
+            </section>
+        </div>
     <?php endif; ?>
 <?php endif; ?>
