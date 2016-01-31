@@ -1767,7 +1767,25 @@
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Statut</td>
-                                        <td style="text-align: right;"></td>
+                                        <td style="text-align: right;">
+                                            <?php
+                                            switch($produit->statut_global)
+                                            {
+                                                case 1:
+                                                    echo "<span class='label label-dark'>Courant</span>";
+                                                    break;
+                                                case 2:
+                                                    echo "<span class='label label-primary'>Précommande</span>";
+                                                    break;
+                                                case 3:
+                                                    echo "<span class='label label-warning'>Promotion</span>";
+                                                    break;
+                                                case 4:
+                                                    echo "<span class='label label-danger'>Nouveauté</span>";
+                                                    break;
+                                            }
+                                            ?>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Stock</td>
