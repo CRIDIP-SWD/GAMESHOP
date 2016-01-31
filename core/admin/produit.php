@@ -508,7 +508,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-images')
                 $sql = $DB->execute("INSERT INTO produits_images(id, ref_produit, images) VALUES (NULL, :ref_produit, :images)", array(
                     "ref_produit"   => $ref_produit,
                     "images"        => $ref_produit."_".$name_image
-                ));d
+                ));
 
                 if($sql == 1 && $envoie)
                 {
