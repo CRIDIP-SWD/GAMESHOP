@@ -229,6 +229,11 @@ class date_format extends app
         return $retour;
     }
 
+    public function date_jour_strt()
+    {
+        return strtotime(date("d-m-Y"));
+    }
+
 
 }
 

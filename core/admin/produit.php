@@ -16,6 +16,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     $date_sortie = $date_format->format_strt($_POST['date_sortie']);
     $stock = $_POST['stock'];
     $poids = $_POST['poids'];
+    $banner = $ref_produit;
     $editeur = htmlentities(addslashes($_POST['editeur']));
     $genre = $_POST['genre'];
     if(isset($_POST['multijoueur'])) {$multijoueur = 1;}else{$multijoueur = 0;}
@@ -28,6 +29,44 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     $nb_usb = $_POST['nb_usb'];
     $compatibilite = $_POST['compatibilite'];
 
+    //Verif INTERNE
+        /*
+         * STATUT GLOBAL
+         * 1: Courant
+         * 2: Précommande
+         * 3: Promotion
+         * 4: Nouveauté
+         */
+
+    if($date_sortie <= $date_format->date_jour_strt())
+    {
+        $statut_global = 2;
+    }elseif($date_sortie > $date_format->date_jour_strt())
+    {
+        $statut_global = 4;
+    }else{
+        $statut_global = 1;
+    }
+
+        /*
+         * STATUT STOCK
+         * 0: Rupture
+         * 1: Réassort
+         * 2: OK
+         * 3: Précommande
+         */
+    if($statut_global == 2)
+    {
+        $statut_stock = 3;
+    }
+    elseif($stock == 0)
+    {
+        $statut_stock = 0;
+    }else{
+        $statut_stock = 2;
+    }
+
+    //FIN DES VERIF INTERNE
 
     //Verification des Information entrées
     if(empty($ref_produit)){
@@ -44,56 +83,100 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     }
 
     //Envoie des Images
-    //Image du Produit
-    if(isset($_FILES['images_produit']) AND $_FILES['images_produit']['error'] == 0)
-    {
-        if($_FILES['images_produit']['size'] <= 3145728)
+        //Image du Produit
+        if(isset($_FILES['images_produit']) AND $_FILES['images_produit']['error'] == 0)
         {
-            $infoFichier = pathinfo($_FILES['images_produit']['name']);
-            $extensionUpload = $infoFichier['extension'];
-            $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
-            if(in_array($extensionUpload, $extensionAuthorized))
+            if($_FILES['images_produit']['size'] <= 3145728)
             {
-                $connect = ssh2_connect("icegest.com", 22);
-                if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                $infoFichier = pathinfo($_FILES['images_produit']['name']);
+                $extensionUpload = $infoFichier['extension'];
+                $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
+                if(in_array($extensionUpload, $extensionAuthorized))
                 {
-                    $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
-                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
-                }
-                $envoie = ssh2_scp_send($connect, $_FILES['images_produit']['tmp_name'], \App\constante::SOURCES."/produit/cards/".$ref_produit.$extensionUpload);
-                if(!$envoie)
-                {
-                    $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
-                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    $connect = ssh2_connect("icegest.com", 22);
+                    if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                    {
+                        $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    }
+                    $envoie = ssh2_scp_send($connect, $_FILES['images_produit']['tmp_name'], \App\constante::SOURCES."/produit/cards/".$ref_produit.$extensionUpload);
+                    if(!$envoie)
+                    {
+                        $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    }
                 }
             }
         }
-    }
 
-    //Image de la Bannière
-    if(isset($_FILES['images_banner']) AND $_FILES['images_banner']['error'] == 0)
-    {
-        if($_FILES['images_banner']['size'] <= 8388608)
+        //Image de la Bannière
+        if(isset($_FILES['images_banner']) AND $_FILES['images_banner']['error'] == 0)
         {
-            $infoFichier = pathinfo($_FILES['images_banner']['name']);
-            $extensionUpload = $infoFichier['extension'];
-            $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
-            if(in_array($extensionUpload, $extensionAuthorized))
+            if($_FILES['images_banner']['size'] <= 8388608)
             {
-                $connect = ssh2_connect("icegest.com", 22);
-                if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                $infoFichier = pathinfo($_FILES['images_banner']['name']);
+                $extensionUpload = $infoFichier['extension'];
+                $extensionAuthorized = array('jpg', 'jpeg', 'png', 'gif');
+                if(in_array($extensionUpload, $extensionAuthorized))
                 {
-                    $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
-                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
-                }
-                $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], \App\constante::SOURCES."/produit/banner/banner_".$ref_produit.$extensionUpload);
-                if(!$envoie)
-                {
-                    $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
-                    header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    $connect = ssh2_connect("icegest.com", 22);
+                    if(!ssh2_auth_password($connect, "root", "1992maxime"))
+                    {
+                        $text = "Impossible de ce Connecter à la session pour le transfert d'images.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    }
+                    $envoie = ssh2_scp_send($connect, $_FILES['images_banner']['tmp_name'], \App\constante::SOURCES."/produit/banner/banner_".$ref_produit.$extensionUpload);
+                    if(!$envoie)
+                    {
+                        $text = "Erreur lors de l'envoie du fichier d'image au serveur.<br><strong>ARRET DE L'INSERTION DU PRODUIT !</strong>.<br>Veuillez contacter un administrateur.";
+                        header("Location ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
+                    }
                 }
             }
         }
+
+    //Insertion dans les Bases de données
+    $sql_produit = $DB->execute("INSERT INTO produits(id, ref_produit, designation, short_description, long_description, tag_produit, date_sortie, prix_vente, revenue_point, cout_point, banner, stock, statut_global, statut_stock, date_reassort, poids) VALUES
+                                (NULL, :ref_produit, :designation, :short_description, :long_description, :tag_produit, :date_sortie, :prix_vente, :revenue_point, :cout_point, :banner, :stock, :statut_global, :statut_stock, '', :poids)", array(
+        "ref_produit"           => $ref_produit,
+        "designation"           => $designation,
+        "short_description"     => $short_description,
+        "long_description"      => $long_description,
+        "tag_produit"           => $tag_produit,
+        "date_sortie"           => $date_sortie,
+        "prix_vente"            => $prix_vente,
+        "revenue_point"         => $revenue_point,
+        "cout_point"            => $cout_point,
+        "banner"                => $banner,
+        "stock"                 => $stock,
+        "statut_global"         => $statut_global,
+        "statut_stock"          => $statut_stock,
+        "poids"                 => $poids
+    ));
+
+    $sql_caracteristique = $DB->execute("INSERT INTO produits_caracteristique(id, ref_produit, editeur, genre, multijoueur, internet, `option`, couleur, cap_hdd, eth, wifi, nb_usb, compatibilite) VALUES
+                                        (NULL, :ref_produit, :editeur, :genre, :multijoueur, :internet, :option, :couleur, :cap_hdd, :eth, :wifi, :nb_usb, :compatibilite)", array(
+        "ref_produit"           => $ref_produit,
+        "editeur"               => $editeur,
+        "genre"                 => $genre,
+        "multijoueur"           => $multijoueur,
+        "internet"              => $internet,
+        "option"                => $option,
+        "couleur"               => $couleur,
+        "cap_hdd"               => $cap_hdd,
+        "eth"                   => $eth,
+        "wifi"                  => $wifi,
+        "nb_usb"                => $nb_usb,
+        "compatibilite"         => $compatibilite
+    ));
+
+    if($sql_produit == 1 AND $sql_caracteristique == 1)
+    {
+        $text = "L'article <strong>".$designation."</strong> à été ajouté avec succès à la base de données.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&success=add-produit&text=$text");
+    }else{
+        $text = "Une erreur à été rencontrée lors de l'insertion de l'article <strong>".$designation."</strong> dans la base de données.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=add-produit&error=add-produit&text=$text");
     }
 
 

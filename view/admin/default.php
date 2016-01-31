@@ -417,6 +417,17 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['success']) && $_GET['success'] == 'add-produit'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'SUCCES',
+                text: "<?= $_GET['text']; ?>",
+                type: "success"
+            });
+        })
+    </script>
+<?php } ?>
 
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'add-categorie'){ ?>
     <script type="text/javascript">
@@ -439,6 +450,16 @@ if(!isset($_SESSION['logged']))
     </script>
 <?php } ?>
 <?php if(isset($_GET['warning']) && $_GET['warning'] == 'supp-subcategorie'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'ATTENTION',
+                text: "<?= $_GET['text']; ?>"
+            });
+        })
+    </script>
+<?php } ?>
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'add-produit'){ ?>
     <script type="text/javascript">
         $(document).ready(function(){
             new PNotify({
@@ -528,6 +549,17 @@ if(!isset($_SESSION['logged']))
         })
     </script>
 <?php } ?>
+<?php if(isset($_GET['warning']) && $_GET['warning'] == 'add-produit'){ ?>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            new PNotify({
+                title: 'ATTENTION',
+                text: "<?= $_GET['text']; ?>"
+            });
+        })
+    </script>
+<?php } ?>
+
 
 </body>
 </html>
