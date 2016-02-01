@@ -43,7 +43,7 @@
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.ref_produit = produits.ref_produit
                                            AND produits_categorie.idcategorie = categorie.id
-                                           AND produits_categorie.idcategorie = :idcategorie", array(
+                                           AND produits_categorie.idcategorie = :idcategorie ORDER BY statut_global ASC", array(
                                 "idcategorie" => $idcategorie
                             ));
                             foreach($sql_produit as $produit):
