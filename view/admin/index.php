@@ -1762,6 +1762,10 @@
                             <hr>
                             <table class="table">
                                 <tbody>
+                                <tr>
+                                    <td style="font-weight: bold;">Tarif:</td>
+                                    <td style="text-align: right;"><?= $fonction->number_decimal($produit[0]->prix_vente); ?></td>
+                                </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Catégorie:</td>
                                         <td style="text-align: right;"><?= $cat[0]->designation_cat; ?></td>
