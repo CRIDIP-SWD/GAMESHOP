@@ -241,15 +241,6 @@ ini_set('display_errors', 1);
                                                         <div class="product clearfix">
                                                             <div class="product-image">
                                                                 <a href="#">
-                                                                    <?php if($verif_global === 2): ?>
-                                                                        <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
-                                                                    <?php endif; ?>
-                                                                    <?php if($verif_global === 3): ?>
-                                                                        <div class="sale-flash promotion">EN PROMOTION!</div>
-                                                                    <?php endif; ?>
-                                                                    <?php if($verif_global === 4): ?>
-                                                                        <div class="sale-flash nouveaute">NOUVEAUTE !</div>
-                                                                    <?php endif; ?>
                                                                     <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $promo->ref_produit; ?>.jpg" alt="<?= $promo->designation; ?>">
                                                                 </a>
                                                                 <div class="product-overlay">
