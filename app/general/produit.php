@@ -143,5 +143,18 @@ class produit extends DB
         return $this->query("SELECT * FROM produits_images WHERE ref_produit = :ref_produit ORDER BY images DESC", array("ref_produit" => $ref_produit));
     }
 
+    public function nb_produit_new()
+    {
+        return $this->count("SELECT COUNT(ref_produit) FROM produits WHERE statut_global = :statut", array("statut" => 4));
+    }
+    public function nb_produit_promo()
+    {
+        return $this->count("SELECT COUNT(ref_produit) FROM produits WHERE statut_global = :statut", array("statut" => 3));
+    }
+    public function nb_produit_preco()
+    {
+        return $this->count("SELECT COUNT(ref_produit) FROM produits WHERE statut_global = :statut", array("statut" => 2));
+    }
+
 
 }
