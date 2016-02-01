@@ -622,4 +622,44 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-video')
         header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=supp-video&text=$text");
     }
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-promo')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_POST['ref_produit'];
+    $new_price = $_POST['new_price'];
+    $date_debut = strtotime($_POST['date_debut']);
+    $date_fin = strtotime($_POST['date_fin']);
 
+    $sql = $DB->execute("INSERT INTO produits_promotion(id, ref_produit, new_price, date_debut, date_fin) VALUES (NULL, :ref_produit, :new_price, :date_debut, :date_fin)", array(
+        "ref_produit"   => $ref_produit,
+        "new_price"     => $new_price,
+        "date_debut"    => $date_debut,
+        "date_fin"      => $date_fin
+    ));
+
+    if($sql == 1)
+    {
+        $text = "La Promotion pour l'article de référence <strong></strong> à été ajouter avec succès.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=add-promo&text=$text");
+    }else{
+        $text = "Une erreur à eu lors de l'insertion de la promotion.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-promo&text=$text");
+    }
+
+}
+if(isset($_GET['action']) && $_GET['action'] == 'supp-promo')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_GET['ref_produit'];
+    $id = $_GET['id'];
+
+    $sql = $DB->execute("DELETE FROM produits_promotion WHERE id = :id", array("id" => $id));
+
+    if($sql == 1){
+        $text = "La Promotion à bien été supprimé.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=supp-promo&text=$text");
+    }else{
+        $text = "Une Erreur c'est produite lors de la suppression lors de la suppression de la Promotion.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=supp-promo&text=$text");
+    }
+}
