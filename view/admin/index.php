@@ -1965,6 +1965,9 @@
                                     ?>
                                     <tr>
                                         <td>Nouveau Prix: <strong><?= $fonction->number_decimal($promo->new_price); ?></strong></td>
+                                        <td>
+                                            <a href="core/admin/produit?php?action=supp-promo&ref_produit=<?= $ref_produit; ?>&id=<?= $promo->id; ?>"></a>
+                                        </td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </table>
@@ -2163,6 +2166,38 @@
                         <div class="row">
                             <div class="col-md-12 text-right">
                                 <button class="btn btn-primary" type="submit" name="action" value="add-video">Valider</button>
+                                <button class="btn btn-default modal-dismiss">Annuler</button>
+                            </div>
+                        </div>
+                    </footer>
+                </form>
+            </section>
+        </div>
+        <div id="add-promo" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+            <section class="panel">
+                <header class="panel-heading">
+                    <h2 class="panel-title">Nouvelle Promotion</h2>
+                </header>
+                <form id="summary-form" class="form-horizontal" action="core/admin/produit.php" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="ref_produit" value="<?= $ref_produit; ?>">
+                    <div class="panel-body">
+                        <div class="modal-wrapper">
+                            <div class="validation-message">
+                                <ul></ul>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3" for="produit">Nouveau Prix</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="produit" class="form-control" name="new_price" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <footer class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button class="btn btn-primary" type="submit" name="action" value="add-promo">Valider</button>
                                 <button class="btn btn-default modal-dismiss">Annuler</button>
                             </div>
                         </div>
