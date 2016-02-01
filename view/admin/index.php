@@ -1978,7 +1978,7 @@
                                     <tr>
                                         <td>Nouveau Prix: <strong><?= $fonction->number_decimal($promo->new_price); ?></strong></td>
                                         <td>
-                                            <a href="core/admin/produit?php?action=supp-promo&ref_produit=<?= $ref_produit; ?>&id=<?= $promo->id; ?>"><i class="fa fa-trash text-danger"></i></a>
+                                            <a href="core/admin/produit.php?action=supp-promo&ref_produit=<?= $ref_produit; ?>&id=<?= $promo->id; ?>"><i class="fa fa-trash text-danger"></i></a>
                                         </td>
                                     </tr>
                                     <?php endforeach; ?>
