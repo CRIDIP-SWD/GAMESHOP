@@ -179,7 +179,7 @@ ini_set('display_errors', 1);
                                                     <?php
                                                     $nbProduit = $produit_cls->nb_produit_new();
                                                     $rand = rand(1, $nbProduit);
-                                                    $sql_nouv = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = :idcategorie AND produits.statut_global = :statut AND RAND() > :rand ORDER BY RAND() LIMIT 1", array(
+                                                    $sql_nouv = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = :idcategorie AND produits.statut_global = :statut AND RAND() *100 > :rand ORDER BY RAND() LIMIT 1", array(
                                                         "idcategorie"   => $idcategorie,
                                                         "statut"        => 4,
                                                         "rand"          => $rand
