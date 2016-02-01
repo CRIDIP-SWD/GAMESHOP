@@ -1956,7 +1956,7 @@
                             </div>
                             <div id="promotion" class="tab-pane">
                                 <div class="pull-right">
-                                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-success" href="#add-promotion"><i class="fa fa-plus-circle"></i> Ajouter une Promotion</a>
+                                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-success" href="#add-promo"><i class="fa fa-plus-circle"></i> Ajouter une Promotion</a>
                                 </div>
                                 <table class="table table-bordered">
                                     <?php
