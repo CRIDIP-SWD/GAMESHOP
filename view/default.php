@@ -1,8 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-$nbProduit = $produit_cls->nb_produit_new();
-var_dump($nbProduit);
-die();
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -179,10 +177,12 @@ die();
                                             <li class="mega-menu-title"><a href="#"><div>Nouveauté</div></a>
                                                 <ul>
                                                     <?php
-
-                                                    $sql_nouv = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = :idcategorie AND produits.statut_global = :statut", array(
+                                                    $nbProduit = $produit_cls->nb_produit_new();
+                                                    $rand = rand(1, $nbProduit);
+                                                    $sql_nouv = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = :idcategorie AND produits.statut_global = :statut LIMIT :rand", array(
                                                         "idcategorie"   => $idcategorie,
-                                                        "statut"        => 4
+                                                        "statut"        => 4,
+                                                        "rand"          => $rand
                                                     ));
                                                     foreach($sql_nouv as $new):
                                                         $verif_global = $produit_cls->verif_stat_global($new->ref_produit);
