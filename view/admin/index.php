@@ -1943,6 +1943,7 @@
                                                 <a class="image-popup-no-margins center" href="<?= $video->images_video; ?>">
                                                     <img class="img-responsive" src="<?= $video->images_video; ?>" width="300">
                                                 </a>
+                                                <div class="pull-left"><?= $video->title_video; ?></div>
                                             </td>
                                             <td>
                                                 <a href="core/admin/produit.php?action=supp-video&id=<?= $video->id; ?>&ref_produit=<?= $ref_produit; ?>" data-toggle="tooltip" data-original-title="Supprimer la vidéo"><i class="fa fa-trash text-danger"></i></a>
