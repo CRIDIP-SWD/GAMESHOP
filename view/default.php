@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
-
+var_dump($nbPromo = $produit_cls->nb_produit_promo());
+die();
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -186,10 +187,6 @@ ini_set('display_errors', 1);
                                                     ));
                                                     foreach($sql_nouv as $new):
                                                         $verif_global = $produit_cls->verif_stat_global($new->ref_produit);
-                                                        if($new->statut_global == 3)
-                                                        {
-                                                            $promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $new->ref_produit));
-                                                        }
                                                     ?>
                                                     <li>
                                                         <div class="product clearfix">
@@ -219,15 +216,9 @@ ini_set('display_errors', 1);
                                             <li class="mega-menu-title"><a href="#"><div>Promotion</div></a>
                                                 <ul>
                                                 <?php
-                                                $sql_promo = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.idcategorie = '$idcategorie' AND produits.statut_global = :stat LIMIT 1", array("stat" => '3'));
-                                                foreach($sql_promo as $promo):
-                                                    $ref_produit = $promo->ref_produit;
-                                                    $verif_global = $produit_cls->verif_stat_global($ref_produit);
-                                                    $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
-                                                    if($verif_global === 3)
-                                                    {
-                                                        $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
-                                                    }
+                                                $nbPromo = $produit_cls->nb_produit_promo();
+
+
                                                     ?>
                                                     <li>
                                                         <div class="product clearfix">
