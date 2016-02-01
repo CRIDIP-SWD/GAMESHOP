@@ -606,4 +606,20 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-video')
         header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-video&text=$text");
     }
 }
+if(isset($_GET['action']) && $_GET['action'] == 'supp-video')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_GET['ref_produit'];
+    $id = $_GET['id'];
+
+    $sql = $DB->execute("DELETE FROM produits_videos WHERE id = :id", array("id" => $id));
+
+    if($sql == 1){
+        $text = "La vidéo à bien été supprimé.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=supp-video&text=$text");
+    }else{
+        $text = "Une Erreur c'est produite lors de la suppression lors de la suppression de la vidéo.<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=supp-video&text=$text");
+    }
+}
 
