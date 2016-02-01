@@ -18,4 +18,14 @@ class head extends DB
         return $sql = $this->count("SELECT COUNT(id) FROM subcategorie WHERE subcategorie.idcategorie = '$idcategorie'");
     }
 
+    public function countdown_formatage($datestrt)
+    {
+        $annee = date("Y", $datestrt);
+        $mois = date("m", $datestrt);
+        $jour = date("d", $datestrt);
+
+        $formatage = $annee.",".$mois.",".$jour;
+        return $formatage;
+    }
+
 }
