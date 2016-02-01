@@ -202,20 +202,7 @@ ini_set('display_errors', 1);
                                                             <div class="product-desc">
                                                                 <div class="product-title"><h3><a href="#"><?= html_entity_decode($new->designation); ?></a></h3></div>
                                                                 <div class="product-price">
-                                                                    <?php if($verif_global === 3){ ?>
-                                                                        <del><?= number_format($new->prix_vente, 2, ',', ' ')." €" ?></del>
-                                                                        <ins><?= number_format($promo->new_price, 2, ',', ' ')." €" ?></ins>
-                                                                        <h6>Reste:</h6>
-                                                                        <div id="countdown-ex1" class="countdown"></div>
-                                                                        <script type="text/javascript">
-                                                                            jQuery(document).ready( function($){
-                                                                                var newDate = new Date(<?= $head->countdown_formatage($promo->date_fin); ?>);
-                                                                                $('#countdown-ex1').countdown({until: newDate});
-                                                                            });
-                                                                        </script>
-                                                                    <?php }else{ ?>
-                                                                        <ins><?= number_format($new->prix_vente, 2, ',', ' ')." €" ?></ins>
-                                                                    <?php } ?>
+                                                                    <ins><?= number_format($new->prix_vente, 2, ',', ' ')." €" ?></ins>
                                                                 </div>
                                                             </div>
                                                         </div>
