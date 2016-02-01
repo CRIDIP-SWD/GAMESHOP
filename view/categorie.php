@@ -39,7 +39,7 @@
 
                         <!-- Shop
                         ============================================= -->
-                        <div id="shop" class="product-3 clearfix">
+                        <div id="shop" class="product-1 clearfix">
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.ref_produit = produits.ref_produit
                                            AND produits_categorie.idcategorie = categorie.id
