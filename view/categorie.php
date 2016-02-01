@@ -72,7 +72,7 @@
                                     <div class="product-desc">
                                         <div class="product-title"><h3><a href="#"><?= $produit->ref_produit; ?></a></h3></div>
                                         <div class="product-price">
-                                            <del>$24.99</del>
+                                            <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
                                             <ins>$12.49</ins>
                                         </div>
 
