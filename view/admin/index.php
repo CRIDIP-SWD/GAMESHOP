@@ -1835,6 +1835,7 @@
                             <li><a href="#gallery" data-toggle="tab" class="text-center"><i class="fa fa-picture-o"></i> Images</a></li>
                             <li><a href="#video" data-toggle="tab" class="text-center"><i class="fa fa-youtube"></i> Vidéo</a></li>
                             <li><a href="#promotion" data-toggle="tab" class="text-center"><i class="fa fa-eur"></i> Promotion</a></li>
+                            <li><a href="#bonus" data-toggle="tab" class="text-center"><i class="fa fa-star"></i> Bonus</a></li>
                         </ul>
                         <div class="tab-content">
                             <div id="caracteristique" class="tab-pane active">
