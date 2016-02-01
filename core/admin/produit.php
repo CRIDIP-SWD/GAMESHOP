@@ -637,6 +637,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-promo')
         "date_fin"      => $date_fin
     ));
 
+    $sql = $DB->execute("UPDATE produits SET statut_global = :statut WHERE ref_produit = :ref_produit", array(
+        "ref_produit"   => $ref_produit,
+        "statut"        => 3
+    ));
+
     if($sql == 1)
     {
         $text = "La Promotion pour l'article de référence <strong></strong> à été ajouter avec succès.";
