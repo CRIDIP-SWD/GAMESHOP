@@ -2621,3 +2621,6 @@
         </section>
     <?php endif; ?>
 <?php endif; ?>
+<?php if(isset($_GET['sub']) && $_GET['sub'] == 'e_concept'): ?>
+    <?php var_dump($app->curl_econcept()); ?>
+<?php endif; ?>

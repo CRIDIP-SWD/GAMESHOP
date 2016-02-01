@@ -19,7 +19,17 @@ use PDOException;
  */
 class app
 {
-
+    public function curl_econcept($url)
+    {
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => 1
+        ));
+        $response = curl_exec($curl);
+        $json = json_decode($response);
+        return $json;
+    }
 }
 
 /**
