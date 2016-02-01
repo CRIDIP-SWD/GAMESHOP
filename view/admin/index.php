@@ -2622,5 +2622,35 @@
     <?php endif; ?>
 <?php endif; ?>
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'e_concept'): ?>
-    <?php var_dump($app->curl_econcept("http://www.ecdist.com/preorders?options[]=YXR0cmlidXRlPWNhdGVnb3J5X2lkJmZpbHRlcj0yOTUmY29tcGFyZT1lcQ==")); ?>
+    <section role="main" class="content-body">
+        <header class="page-header">
+            <h2><i class="fa fa-cubes"></i> PRODUITS</h2>
+
+            <div class="right-wrapper pull-right">
+                <ol class="breadcrumbs">
+                    <li>
+                        <a href="index.php?view=admin_sha">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li><span>Modification du Produit: <strong><?= $produit[0]->designation; ?></strong></span></li>
+                </ol>
+
+                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+            </div>
+        </header>
+
+        <!-- start: page -->
+        <div class="row">
+            <section class="panel panel-success">
+                <header class="panel-heading">
+                    <h2 class="panel-title"><i class="fa fa-edit"></i> Appel JSN ECONCEPT</h2>
+                </header>
+                <div class="panel-body">
+                    <?php var_dump($app->curl_econcept("http://www.ecdist.com/preorders?options[]=YXR0cmlidXRlPWNhdGVnb3J5X2lkJmZpbHRlcj0yOTUmY29tcGFyZT1lcQ==")); ?>
+                </div>
+            </section>
+        </div>
+        <!-- end: page -->
+    </section>
 <?php endif; ?>
