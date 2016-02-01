@@ -239,7 +239,7 @@ ini_set('display_errors', 1);
                                                                     <?php if($verif_global === 2){ ?>
                                                                         <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $promo->prix_vente; ?>" class="Précommander l'article"><i class="icon-shopping-cart"></i><span> Précommander</span></a>
                                                                     <?php }elseif($verif_global === 3){ ?>
-                                                                        <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $c_promo->new_price; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $c_promo[0]->new_price; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <?php }else{ ?>
                                                                         <a href="core/panier.php?action=ajout&l=<?= $promo->ref_produit; ?>&q=1&p=<?= $promo->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
                                                                     <?php } ?>
@@ -251,7 +251,7 @@ ini_set('display_errors', 1);
                                                                 <div class="product-price">
                                                                     <?php if($verif_global === 3){ ?>
                                                                         <del><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></del>
-                                                                        <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
+                                                                        <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
                                                                     <?php }else{ ?>
                                                                         <ins><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></ins>
                                                                     <?php } ?>
