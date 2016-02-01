@@ -582,4 +582,28 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-images')
     }
 
 }
+if(isset($_POST['action']) && $_POST['action'] == 'add-video')
+{
+    require "../../app/classe.php";
+    $ref_produit = $_POST['ref_produit'];
+    $video = $_POST['video'];
+    $images_video = $_POST['images_video'];
+    $titre_video = $_POST['titre_video'];
+
+    $sql = $DB->execute("INSERT INTO produits_videos(id, ref_produit, video, images_video, title_video) VALUES (NULL, :ref_produit, :video, :images_video, :titre_video)", array(
+        "ref_produit"   => $ref_produit,
+        "video"         => $video,
+        "images_video"  => $images_video,
+        "titre_video"   => $titre_video
+    ));
+
+    if($sql == 1)
+    {
+        $text = "La Vidéo <strong>".$titre_video."</strong> à été ajouter à la Gallerie des vidéos.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&success=add-video&text=$text");
+    }else{
+        $text = "Une erreur à eu lors de l'insertion de la vidéo dans la gallerie des vidéos !<br>Veuillez contacter l'administrateur.";
+        header("Location: ../../index.php?view=admin_sha&sub=produits&data=view_produit&ref_produit=$ref_produit&error=add-video&text=$text");
+    }
+}
 
