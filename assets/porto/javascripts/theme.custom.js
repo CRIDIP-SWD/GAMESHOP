@@ -22,6 +22,15 @@ $("#date_reassort").datepicker({
     format: "dd-mm-yyyy",
     language: "fr"
 });
+$("#date_debut").datepicker({
+    format: "dd-mm-yyyy",
+    language: "fr"
+});
+$("#date_fin").datepicker({
+    format: "dd-mm-yyyy",
+    language: "fr"
+});
+
 
 
 

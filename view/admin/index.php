@@ -2185,10 +2185,25 @@
                             <div class="validation-message">
                                 <ul></ul>
                             </div>
+
                             <div class="form-group">
                                 <label class="control-label col-md-3" for="produit">Nouveau Prix</label>
                                 <div class="col-md-9">
                                     <input type="text" id="produit" class="form-control" name="new_price" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-3 control-label">Date début / Fin</label>
+                                <div class="col-md-6">
+                                    <div class="input-daterange input-group" data-plugin-datepicker>
+                                        <span class="input-group-addon">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                        <input type="text" id="date_debut" class="form-control" name="date_debut">
+                                        <span class="input-group-addon">au</span>
+                                        <input type="text" id="date_fin" class="form-control" name="date_fin">
+                                    </div>
                                 </div>
                             </div>
 
