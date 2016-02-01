@@ -1722,6 +1722,7 @@
         // AUTRE
         $caracteristique = $DB->query("SELECT * FROM produits_caracteristique WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
         $der_images = $produit_cls->last_images($ref_produit);
+        $promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
         ?>
         <section role="main" class="content-body">
             <header class="page-header">
@@ -1764,7 +1765,14 @@
                                 <tbody>
                                 <tr>
                                     <td style="font-weight: bold;">Tarif:</td>
-                                    <td style="text-align: right;"><?= $fonction->number_decimal($produit[0]->prix_vente); ?></td>
+                                    <td style="text-align: right;">
+                                        <?php if($produit_cls->count_promo($ref_produit) != 0){
+                                            echo $fonction->number_decimal($produit[0]->prix_vente);
+                                        }else{
+                                            echo $fonction->number_decimal($promo[0]->new_price);
+                                        }
+                                        ?>
+                                    </td>
                                 </tr>
                                     <tr>
                                         <td style="font-weight: bold;">Catégorie:</td>
