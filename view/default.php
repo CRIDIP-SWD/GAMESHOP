@@ -252,6 +252,13 @@ ini_set('display_errors', 1);
                                                                     <?php if($verif_global === 3){ ?>
                                                                         <del><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></del>
                                                                         <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
+                                                                        <div id="countdown-ex1" class="countdown"></div>
+                                                                        <script type="text/javascript">
+                                                                            jQuery(document).ready( function($){
+                                                                                var newDate = new Date(<?= $head->countdown_formatage($c_promo[0]->date_fin); ?>);
+                                                                                $('#countdown-ex1').countdown({until: newDate});
+                                                                            });
+                                                                        </script>
                                                                     <?php }else{ ?>
                                                                         <ins><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></ins>
                                                                     <?php } ?>
