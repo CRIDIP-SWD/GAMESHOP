@@ -1,7 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-var_dump($nbPromo = $produit_cls->nb_produit_promo());
-die();
+
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -217,8 +216,18 @@ die();
                                                 <ul>
                                                 <?php
                                                 $nbPromo = $produit_cls->nb_produit_promo();
-
-
+                                                $rand = rand(1, $nbProduit);
+                                                $sql_promo = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = :idcategorie AND produits.statut_global = :statut AND RAND() *100 > :rand ORDER BY RAND() LIMIT 1", array(
+                                                    "idcategorie"   => $idcategorie,
+                                                    "statut"        => 3,
+                                                    "rand"          => $rand
+                                                ));
+                                                foreach($sql_promo as $promo):
+                                                    $verif_global = $produit_cls->verif_stat_global($promo->ref_produit);
+                                                    if($verif_global == 3)
+                                                    {
+                                                        $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $promo->ref_produit));
+                                                    }
                                                     ?>
                                                     <li>
                                                         <div class="product clearfix">
