@@ -2110,7 +2110,7 @@
                 </form>
             </section>
         </div>
-        <div id="add-images" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
+        <div id="add-video" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
             <section class="panel">
                 <header class="panel-heading">
                     <h2 class="panel-title">Nouvelle Vidéo</h2>
