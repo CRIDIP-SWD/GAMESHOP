@@ -1953,6 +1953,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div id="promotion" class="tab-pane">
+
+                            </div>
                         </div>
                     </div>
                 </div>
