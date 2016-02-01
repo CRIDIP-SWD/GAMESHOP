@@ -181,6 +181,7 @@ ini_set('display_errors', 1);
                                                         "statut"        => 4
                                                     ));
                                                     foreach($sql_nouv as $new):
+                                                        $verif_global = $produit_cls->verif_stat_global($new->ref_produit);
                                                         if($new->statut_global == 3)
                                                         {
                                                             $promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $new->ref_produit));
