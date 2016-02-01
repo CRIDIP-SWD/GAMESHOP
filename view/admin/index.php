@@ -1928,6 +1928,30 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div id="video" class="tab-pane">
+                                <div class="pull-right">
+                                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-success" href="#add-video"><i class="fa fa-plus-circle"></i> Ajouter une Vidéo</a>
+                                </div>
+                                <table class="table">
+                                    <tbody>
+                                    <?php
+                                    $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                    foreach($sql_video as $video):
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <a class="image-popup-no-margins center" href="<?= $video->images_video; ?>">
+                                                    <img class="img-responsive" src="<?= $video->images_video; ?>" width="300">
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="core/admin/produit.php?action=supp-video&id=<?= $video->id; ?>&ref_produit=<?= $ref_produit; ?>" data-toggle="tooltip" data-original-title="Supprimer la vidéo"><i class="fa fa-trash text-danger"></i></a>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
