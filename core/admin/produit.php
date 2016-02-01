@@ -659,6 +659,10 @@ if(isset($_GET['action']) && $_GET['action'] == 'supp-promo')
     $id = $_GET['id'];
 
     $sql = $DB->execute("DELETE FROM produits_promotion WHERE id = :id", array("id" => $id));
+    $sql = $DB->execute("UPDATE produits SET statut_global = :statut WHERE ref_produit = :ref_produit", array(
+        "ref_produit"   => $ref_produit,
+        "statut"        => $statut
+    ));
 
     if($sql == 1){
         $text = "La Promotion à bien été supprimé.";
