@@ -11,7 +11,11 @@
         <section id="page-title">
 
             <div class="container clearfix">
+                <?php if($categorie[0]->images_cat){ ?>
                 <img src="<?= $constante->getUrl(array(), false, true); ?>marque/<?= $categorie[0]->images_cat; ?>.png" width="240" class="img-responsive" />
+                <?php }else{ ?>
+                <img src="assets/images/logo.png" alt="Canvas Logo">
+                <?php } ?>
                 <!--<span>Start Buying your Favourite Theme</span>-->
                 <ol class="breadcrumb">
                     <li><a href="#">GAMESHOP</a></li>
@@ -56,38 +60,24 @@
                                     <div class="sb-msg"><i class="icon-info-sign"></i> Aucun Produit disponible pour cette catégorie</div>
                                 </div>
                                 <?php }else{ ?>
-                            <div class="product clearfix">
-                                <div class="product-image">
-                                    <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>">
-                                        <?php if($verif_global === 2): ?>
-                                            <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
-                                        <?php endif; ?>
-                                        <?php if($verif_global === 3): ?>
-                                            <div class="sale-flash promotion">EN PROMOTION!</div>
-                                        <?php endif; ?>
-                                        <?php if($verif_global === 4): ?>
-                                            <div class="sale-flash nouveaute">NOUVEAUTE !</div>
-                                        <?php endif; ?>
-                                        <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>">
-                                    </a>
-                                    <!--<div class="sale-flash">50% Off*</div>-->
-                                    <div class="product-overlay">
-                                        <a href="core/panier.php?action=ajout&l=<?= $produit->ref_produit; ?>&q=1&p=<?= $produit->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                        <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                <div class="product clearfix">
+                                    <div class="product-image">
+                                        <div class="sale-flash precommande">50% Off*</div>
+                                        <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>"></a>
+                                        <div class="product-overlay">
+                                            <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
+                                            <a href="include/ajax/shop-item.php" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="product-desc">
+                                        <div class="product-title"><h3><a href="#"><?= $produit->ref_produit; ?></a></h3></div>
+                                        <div class="product-price">
+                                            <del>$24.99</del>
+                                            <ins>$12.49</ins>
+                                        </div>
+
                                     </div>
                                 </div>
-                                <div class="product-desc center">
-                                    <div class="product-title"><h3><a href="#"><?= $produit->designation; ?></a></h3></div>
-                                    <div class="product-price">
-                                        <?php if($verif_global === 3){ ?>
-                                            <del><?= number_format($produit->prix_vente, 2, ',', ' ')." €" ?></del>
-                                            <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
-                                        <?php }else{ ?>
-                                            <ins><?= number_format($produit->prix_vente, 2, ',', ' ')." €" ?></ins>
-                                        <?php } ?>
-                                    </div>
-                                </div>
-                            </div>
                                 <?php } ?>
                             <?php endforeach; ?>
                         </div><!-- #shop end -->
