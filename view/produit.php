@@ -380,17 +380,22 @@ if($verif_global === 3)
                                 <?php endif; ?>
                                 <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
-                                    <div class="flowplayer is-splash" data-logo="<?= $constante->getUrl(array('images/')); ?>logo.png">
-                                        <video>
-                                            <source type="video/mp4" src="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4">
-                                            <img src="assets/images/logo.png" alt="">
+                                    <?php
+                                    $video_one = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit ORDER BY id ASC LIMIT 1");
+                                    ?>
+                                    <div class="flowplayer is-splash" >
+                                        <video poster="<?= $video_one[0]->images_video; ?>">
+                                            <source type="video/mp4" src="<?= $video_one[0]->video; ?>">
                                         </video>
                                         <a class="fp-prev">prev</a>
                                         <a class="fp-next">next</a>
                                         <div class="fp-playlist">
-                                            <!-- playlist entries or "trigger" elements -->
-                                            <a href="http://video2.cedemo.com/vdo/a656799d87f7a264789a21674f05ef40/56ae9c8d/51586/51586_1500.mp4"></a>
-                                            <a href="http://video2.cedemo.com/vdo/b237190d1b9fe951984fa5c8858180a2/56ae9d6a/51313/51313_1500.mp4"></a>
+                                            <?php
+                                            $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                            foreach($sql_video as $video):
+                                            ?>
+                                            <a href="<?= $video->video; ?>"></a>
+                                            <?php endforeach; ?>
                                         </div>
                                     </div>
                                 </div>
