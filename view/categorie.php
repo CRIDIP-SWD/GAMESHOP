@@ -80,7 +80,7 @@
                                     <div class="product-desc">
                                         <div class="product-title">
                                             <h3><a href="#"><?= $produit->designation; ?></a></h3>
-                                            <h6><strong>Tag:</strong> <?= $produit->tag_produit; ?></h6>
+                                            <small><strong>Tag:</strong> <?= $produit->tag_produit; ?></small>
                                         </div>
                                         <div class="product-price">
                                             <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
