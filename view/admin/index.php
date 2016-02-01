@@ -1766,7 +1766,7 @@
                                 <tr>
                                     <td style="font-weight: bold;">Tarif:</td>
                                     <td style="text-align: right;">
-                                        <?php if($produit_cls->count_promo($ref_produit) != 0){
+                                        <?php if($produit_cls->count_promo($ref_produit) == 0){
                                             echo $fonction->number_decimal($produit[0]->prix_vente);
                                         }else{
                                             echo $fonction->number_decimal($promo[0]->new_price);
