@@ -1955,7 +1955,19 @@
                                 </table>
                             </div>
                             <div id="promotion" class="tab-pane">
-
+                                <div class="pull-right">
+                                    <a class="mb-xs mt-xs mr-xs modal-basic btn btn-success" href="#add-promotion"><i class="fa fa-plus-circle"></i> Ajouter une Promotion</a>
+                                </div>
+                                <table class="table table-bordered">
+                                    <?php
+                                    $sql_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+                                    foreach($sql_promo as $promo):
+                                    ?>
+                                    <tr>
+                                        <td>Nouveau Prix: <strong><?= $fonction->number_decimal($promo->new_price); ?></strong></td>
+                                    </tr>
+                                    <?php endforeach; ?>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -2620,37 +2632,4 @@
             <!-- end: page -->
         </section>
     <?php endif; ?>
-<?php endif; ?>
-<?php if(isset($_GET['sub']) && $_GET['sub'] == 'e_concept'): ?>
-    <section role="main" class="content-body">
-        <header class="page-header">
-            <h2><i class="fa fa-cubes"></i> PRODUITS</h2>
-
-            <div class="right-wrapper pull-right">
-                <ol class="breadcrumbs">
-                    <li>
-                        <a href="index.php?view=admin_sha">
-                            <i class="fa fa-home"></i>
-                        </a>
-                    </li>
-                    <li><span></strong></span></li>
-                </ol>
-
-                <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
-            </div>
-        </header>
-
-        <!-- start: page -->
-        <div class="row">
-            <section class="panel panel-success">
-                <header class="panel-heading">
-                    <h2 class="panel-title"><i class="fa fa-edit"></i> Appel JSN ECONCEPT</h2>
-                </header>
-                <div class="panel-body">
-                    <?php var_dump($app->curl_econcept("http://www.ecdist.com/preorders?options[]=YXR0cmlidXRlPWNhdGVnb3J5X2lkJmZpbHRlcj0yOTUmY29tcGFyZT1lcQ==")); ?>
-                </div>
-            </section>
-        </div>
-        <!-- end: page -->
-    </section>
 <?php endif; ?>
