@@ -252,8 +252,6 @@ ini_set('display_errors', 1);
                                                                     <?php if($verif_global === 3){ ?>
                                                                         <del><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></del>
                                                                         <ins><?= number_format($c_promo[0]->new_price, 2, ',', ' ')." €" ?></ins>
-                                                                    <?php }else{ ?>
-                                                                        <ins><?= number_format($promo->prix_vente, 2, ',', ' ')." €" ?></ins>
                                                                     <?php } ?>
                                                                 </div>
                                                             </div>
@@ -266,55 +264,33 @@ ini_set('display_errors', 1);
                                         <ul>
                                             <li class="mega-menu-title"><a href="#"><div>Précommande</div></a>
                                                 <ul>
-                                                    <?php
-                                                    $date = $date_format->format_strt(date("d-m-Y"));
-                                                    $date_moin = strtotime($date ."+ 30 days");
-                                                    $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.idcategorie = '$idcategorie' AND statut_global = :stat LIMIT 1", array("stat" => '2'));
-                                                    foreach($sql_preco as $preco):
-                                                        $ref_produit = $preco->ref_produit;
-                                                        $verif_global = $produit_cls->verif_stat_global($ref_produit);
-                                                        $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
-                                                        if($verif_global === 3)
-                                                        {
-                                                            $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
-                                                        }
+                                                        <?php
+                                                        $nbPreco = $produit_cls->nb_produit_preco();
+                                                        $rand = rand(1, $nbPreco);
+                                                        $sql_preco = $DB->query("SELECT * FROM produits, produits_categorie WHERE produits_categorie.ref_produit = produits.ref_produit AND produits_categorie.idcategorie = :idcategorie AND produits.statut_global = :statut AND RAND() *100 > :rand ORDER BY RAND() LIMIT 1", array(
+                                                            "idcategorie"   => $idcategorie,
+                                                            "statut"        => 2,
+                                                            "rand"          => $rand
+                                                        ));
+                                                        foreach($sql_preco as $preco):
                                                         ?>
                                                         <li>
                                                             <div class="product clearfix">
                                                                 <div class="product-image">
                                                                     <a href="#">
-                                                                        <?php if($verif_global === 2): ?>
-                                                                            <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
-                                                                        <?php endif; ?>
-                                                                        <?php if($verif_global === 3): ?>
-                                                                            <div class="sale-flash promotion">EN PROMOTION!</div>
-                                                                        <?php endif; ?>
-                                                                        <?php if($verif_global === 4): ?>
-                                                                            <div class="sale-flash nouveaute">NOUVEAUTE !</div>
-                                                                        <?php endif; ?>
+
                                                                         <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="<?= $preco->designation; ?>">
                                                                     </a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->
                                                                     <div class="product-overlay">
-                                                                        <?php if($verif_global === 2){ ?>
-                                                                            <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="Précommander l'article"><i class="icon-shopping-cart"></i><span> Précommander</span></a>
-                                                                        <?php }elseif($verif_global === 3){ ?>
-                                                                            <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $c_promo->new_price; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                                                        <?php }else{ ?>
-                                                                            <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="Ajouter au panier"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
-                                                                        <?php } ?>
+                                                                        <a href="core/panier.php?action=ajout&l=<?= $preco->ref_produit; ?>&q=1&p=<?= $preco->prix_vente; ?>" class="Précommander l'article"><i class="icon-shopping-cart"></i><span> Précommander</span></a>
                                                                         <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $preco->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                                                     </div>
                                                                 </div>
                                                                 <div class="product-desc">
                                                                     <div class="product-title"><h3><a href="index.php?view=produit&ref_produit=<?= $preco->ref_produit; ?>"><?= html_entity_decode($preco->designation); ?></a></h3></div>
                                                                     <div class="product-price">
-                                                                        <?php if($verif_global === 3){ ?>
-                                                                            <del><?= number_format($preco->prix_vente, 2, ',', ' ')." €" ?></del>
-                                                                            <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
-                                                                        <?php }else{ ?>
-                                                                            <ins><?= number_format($preco->prix_vente, 2, ',', ' ')." €" ?></ins>
-                                                                        <?php } ?>
+                                                                        <ins><?= number_format($preco->prix_vente, 2, ',', ' ')." €" ?></ins>
                                                                     </div>
                                                                 </div>
                                                             </div>
