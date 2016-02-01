@@ -62,7 +62,15 @@
                                 <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
-                                        <div class="sale-flash precommande">50% Off*</div>
+                                        <?php if($verif_global === 2): ?>
+                                            <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                        <?php endif; ?>
+                                        <?php if($verif_global === 3): ?>
+                                            <div class="sale-flash promotion">EN PROMOTION!</div>
+                                        <?php endif; ?>
+                                        <?php if($verif_global === 4): ?>
+                                            <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                                        <?php endif; ?>
                                         <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>"></a>
                                         <div class="product-overlay">
                                             <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
@@ -75,6 +83,7 @@
                                             <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
                                             <ins>$12.49</ins>
                                         </div>
+
 
                                     </div>
                                 </div>
