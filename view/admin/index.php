@@ -2622,5 +2622,5 @@
     <?php endif; ?>
 <?php endif; ?>
 <?php if(isset($_GET['sub']) && $_GET['sub'] == 'e_concept'): ?>
-    <?php var_dump($app->curl_econcept()); ?>
+    <?php var_dump($app->curl_econcept("http://www.ecdist.com/preorders?options[]=YXR0cmlidXRlPWNhdGVnb3J5X2lkJmZpbHRlcj0yOTUmY29tcGFyZT1lcQ==")); ?>
 <?php endif; ?>
