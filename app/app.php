@@ -27,8 +27,7 @@ class app
             CURLOPT_RETURNTRANSFER => 1
         ));
         $response = curl_exec($curl);
-        $json = json_decode($response);
-        return $json;
+        return $response;
     }
 }
 
