@@ -381,7 +381,7 @@ if($verif_global === 3)
                                 <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
                                     <?php
-                                    $video_one = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit ORDER BY id ASC LIMIT 1");
+                                    $video_one = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit ORDER BY id ASC LIMIT 1", array("ref_produit" => $ref_produit));
                                     ?>
                                     <div class="flowplayer is-splash" >
                                         <video poster="<?= $video_one[0]->images_video; ?>">
