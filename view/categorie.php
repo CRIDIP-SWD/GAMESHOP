@@ -86,7 +86,7 @@
                                             <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
                                             <ins>$12.49</ins>
                                         </div>
-
+                                        <p><?= html_entity_decode($produit->short_desc); ?></p>
 
                                     </div>
                                 </div>
