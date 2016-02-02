@@ -50,7 +50,7 @@
                                 $ref_produit = $produit->ref_produit;
                                 $verif_global = $produit_cls->verif_stat_global($ref_produit);
                                 $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
-                                if($verif_global === 3)
+                                if($verif_global == 3)
                                 {
                                     $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
                                 }
