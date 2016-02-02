@@ -62,13 +62,13 @@
                                 <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
-                                        <?php if($verif_global === 2): ?>
+                                        <?php if($verif_global == 2): ?>
                                             <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                                         <?php endif; ?>
-                                        <?php if($verif_global === 3): ?>
+                                        <?php if($verif_global == 3): ?>
                                             <div class="sale-flash promotion">EN PROMOTION!</div>
                                         <?php endif; ?>
-                                        <?php if($verif_global === 4): ?>
+                                        <?php if($verif_global == 4): ?>
                                             <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                         <?php endif; ?>
                                         <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>"></a>
@@ -83,8 +83,13 @@
                                             <small><strong>Tag:</strong> <?= $produit->tag_produit; ?></small>
                                         </div>
                                         <div class="product-price">
-                                            <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
-                                            <ins>$12.49</ins>
+                                            <?php if($verif_global == 3){ ?>
+                                                <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
+                                                <ins><?= $fonction->number_decimal($c_promo[0]->new_price); ?></ins>
+                                                <div id="countdown-ex1" class="countdown"></div>
+                                            <?php }else{ ?>
+
+                                            <?php } ?>
                                         </div>
                                         <p><?= html_entity_decode($produit->short_description); ?></p>
 
