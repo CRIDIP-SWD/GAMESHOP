@@ -85,7 +85,7 @@
                                         <div class="product-price">
                                             <?php if($verif_global == 3){ ?>
                                                 <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
-                                                <ins><?= $fonction->number_decimal($c_promo[0]->new_price); ?></ins>
+                                                <ins class="text-danger"><?= $fonction->number_decimal($c_promo[0]->new_price); ?></ins>
                                                 <div id="countdown-ex1" class="countdown"></div>
                                                 <script type="text/javascript">
                                                     jQuery(document).ready(function($){
