@@ -89,7 +89,7 @@
                                                 <div id="countdown-ex1" class="countdown"></div>
                                                 <script type="text/javascript">
                                                     jQuery(document).ready(function($){
-                                                        var newDate = new Date(2016, 3, 20);
+                                                        var newDate = new Date(<?= date('Y', $c_promo[0]->date_fin); ?>, 3, 20);
                                                         $("#countdown-ex1").countdown({until: newDate});
                                                     });
                                                 </script>
