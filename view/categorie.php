@@ -44,9 +44,20 @@
                                 <div class="col-md-12 well">
                                     <h3>Filtre</h3>
                                     <form class="form-horizontal" action="index.php?view=categorie&idcategorie=1" method="post">
-                                        <div class="col-md-3">
+                                        <div class="col-md-6">
                                             <select class="sm-form-control" name="statut_global">
-                                                <option value="test">Test</option>
+                                                <option value="">Statut</option>
+                                                <option value="1">Courant</option>
+                                                <option value="2">Précommande</option>
+                                                <option Value="3">Promotion</option>
+                                                <option Value="4">Nouveauté</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <select class="sm-form-control" name="orderby">
+                                                <option value="">Ordre</option>
+                                                <option value="1">Prix</option>
+                                                <option value="2">Date de Sortie</option>
                                             </select>
                                         </div>
                                     </form>
