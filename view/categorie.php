@@ -40,6 +40,11 @@
                         <!-- Shop
                         ============================================= -->
                         <div id="shop" class="product-1 clearfix">
+                            <div class="row">
+                                <div class="col-md-12 well">
+                                    <h3>Filtre</h3>
+                                </div>
+                            </div>
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie WHERE produits_categorie.ref_produit = produits.ref_produit
                                            AND produits_categorie.idcategorie = categorie.id
@@ -176,7 +181,7 @@
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
                                                         AND produits_subcategorie.idsubcategorie = subcategorie.id
-                                                        AND produits_subcategorie.idsubcategorie = :idsubcategorie", array("idsubcategorie" => $idsubcategorie));
+                                                        AND produits_subcategorie.idsubcategorie = :idsubcategorie ORDER BY statut_global ASC", array("idsubcategorie" => $idsubcategorie));
                             foreach($sql_produit as $produit):
                                 $ref_produit = $produit->ref_produit;
                                 $verif_global = $produit_cls->verif_stat_global($ref_produit);
