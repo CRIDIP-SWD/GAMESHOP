@@ -43,6 +43,13 @@
                             <div class="row">
                                 <div class="col-md-12 well">
                                     <h3>Filtre</h3>
+                                    <form class="form-horizontal" action="index.php?view=categorie&idcategorie=1" method="post">
+                                        <div class="col-md-3">
+                                            <select class="select2 select2-arrow" name="statut_global">
+                                                <option value="test">Test</option>
+                                            </select>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <?php
