@@ -642,12 +642,7 @@ ini_set('display_errors', 1);
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
 
-<script type="text/javascript">
-    jQuery(document).ready(function($){
-       var newDate = new Date(2016, 3, 20);
-        $("#countdown-ex1").countdown({until: newDate});
-    });
-</script>
+
 
 <!-- DRCIPT VIDEO -->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>

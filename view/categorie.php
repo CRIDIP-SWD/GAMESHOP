@@ -87,6 +87,12 @@
                                                 <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
                                                 <ins><?= $fonction->number_decimal($c_promo[0]->new_price); ?></ins>
                                                 <div id="countdown-ex1" class="countdown"></div>
+                                                <script type="text/javascript">
+                                                    jQuery(document).ready(function($){
+                                                        var newDate = new Date(2016, 3, 20);
+                                                        $("#countdown-ex1").countdown({until: newDate});
+                                                    });
+                                                </script>
                                             <?php }else{ ?>
 
                                             <?php } ?>
