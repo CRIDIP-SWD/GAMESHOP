@@ -94,7 +94,7 @@
                                                     });
                                                 </script>
                                             <?php }else{ ?>
-
+                                                <ins><?= $fonction->number_decimal($produit->prix_vente); ?></ins>
                                             <?php } ?>
                                         </div>
                                         <p><?= html_entity_decode($produit->short_description); ?></p>
