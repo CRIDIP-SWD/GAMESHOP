@@ -50,7 +50,7 @@
                                 $ref_produit = $produit->ref_produit;
                                 $verif_global = $produit_cls->verif_stat_global($ref_produit);
                                 $verif_stock = $produit_cls->verif_stat_stock($ref_produit);
-                                if($verif_global === 3)
+                                if($verif_global == 3)
                                 {
                                     $c_promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
                                 }
@@ -62,13 +62,13 @@
                                 <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
-                                        <?php if($verif_global === 2): ?>
+                                        <?php if($verif_global == 2): ?>
                                             <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
                                         <?php endif; ?>
-                                        <?php if($verif_global === 3): ?>
+                                        <?php if($verif_global == 3): ?>
                                             <div class="sale-flash promotion">EN PROMOTION!</div>
                                         <?php endif; ?>
-                                        <?php if($verif_global === 4): ?>
+                                        <?php if($verif_global == 4): ?>
                                             <div class="sale-flash nouveaute">NOUVEAUTE !</div>
                                         <?php endif; ?>
                                         <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>"></a>
@@ -83,10 +83,21 @@
                                             <small><strong>Tag:</strong> <?= $produit->tag_produit; ?></small>
                                         </div>
                                         <div class="product-price">
-                                            <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
-                                            <ins>$12.49</ins>
+                                            <?php if($verif_global == 3){ ?>
+                                                <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
+                                                <ins class="text-danger"><?= $fonction->number_decimal($c_promo[0]->new_price); ?></ins>
+                                                <div id="countdown-ex1" class="countdown"></div>
+                                                <script type="text/javascript">
+                                                    jQuery(document).ready(function($){
+                                                        var newDate = new Date(<?= date('Y', $c_promo[0]->date_fin); ?>, <?= date('n', $c_promo[0]->date_fin); ?>, <?= date('d', $c_promo[0]->date_fin); ?>);
+                                                        $("#countdown-ex1").countdown({until: newDate});
+                                                    });
+                                                </script>
+                                            <?php }else{ ?>
+                                                <ins><?= $fonction->number_decimal($produit->prix_vente); ?></ins>
+                                            <?php } ?>
                                         </div>
-
+                                        <p><?= html_entity_decode($produit->short_description); ?></p>
 
                                     </div>
                                 </div>
@@ -161,11 +172,11 @@
 
                         <!-- Shop
                         ============================================= -->
-                        <div id="shop" class="product-3 clearfix">
+                        <div id="shop" class="product-1 clearfix">
                             <?php
                             $sql_produit = $DB->query("SELECT * FROM produits, produits_subcategorie, subcategorie WHERE produits_subcategorie.ref_produit = produits.ref_produit
                                                         AND produits_subcategorie.idsubcategorie = subcategorie.id
-                                                        AND produits_subcategorie.idsubcategorie = :idsubcategorie", array("idsubcategorie" => $idsubcategorie));
+                                                        AND produits_subcategorie.idsubcategorie = :idsubcategorie ORDER BY statut_global ASC", array("idsubcategorie" => $idsubcategorie));
                             foreach($sql_produit as $produit):
                                 $ref_produit = $produit->ref_produit;
                                 $verif_global = $produit_cls->verif_stat_global($ref_produit);
@@ -183,34 +194,43 @@
                                 <?php }else{ ?>
                                 <div class="product clearfix">
                                     <div class="product-image">
-                                        <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>">
-                                            <?php if($verif_global === 2): ?>
-                                                <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
-                                            <?php endif; ?>
-                                            <?php if($verif_global === 3): ?>
-                                                <div class="sale-flash promotion">EN PROMOTION!</div>
-                                            <?php endif; ?>
-                                            <?php if($verif_global === 4): ?>
-                                                <div class="sale-flash nouveaute">NOUVEAUTE !</div>
-                                            <?php endif; ?>
-                                            <img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>">
-                                        </a>
-                                        <!--<div class="sale-flash">50% Off*</div>-->
+                                        <?php if($verif_global == 2): ?>
+                                            <div class="sale-flash precommande">PRECOMMANDEZ MAINTENANT!</div>
+                                        <?php endif; ?>
+                                        <?php if($verif_global == 3): ?>
+                                            <div class="sale-flash promotion">EN PROMOTION!</div>
+                                        <?php endif; ?>
+                                        <?php if($verif_global == 4): ?>
+                                            <div class="sale-flash nouveaute">NOUVEAUTE !</div>
+                                        <?php endif; ?>
+                                        <a href="index.php?view=produit&ref_produit=<?= $produit->ref_produit; ?>"><img src="<?= $constante->getUrl(array(), false, true); ?>produit/cards/<?= $produit->ref_produit; ?>.jpg" alt="<?= $produit->designation; ?>"></a>
                                         <div class="product-overlay">
-                                            <a href="core/panier.php?action=ajout&l=<?= $produit->ref_produit; ?>&q=1&p=<?= $produit->prix_vente; ?>" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au panier</span></a>
+                                            <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Ajouter au Panier</span></a>
                                             <a href="assets/include/ajax/shop-item.php?ref_produit=<?= $produit->ref_produit; ?>" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Voir</span></a>
                                         </div>
                                     </div>
-                                    <div class="product-desc center">
-                                        <div class="product-title"><h3><a href="#"><?= $produit->designation; ?></a></h3></div>
+                                    <div class="product-desc">
+                                        <div class="product-title">
+                                            <h3><a href="#"><?= $produit->designation; ?></a></h3>
+                                            <small><strong>Tag:</strong> <?= $produit->tag_produit; ?></small>
+                                        </div>
                                         <div class="product-price">
-                                            <?php if($verif_global === 3){ ?>
-                                                <del><?= number_format($produit->prix_vente, 2, ',', ' ')." €" ?></del>
-                                                <ins><?= number_format($c_promo->new_price, 2, ',', ' ')." €" ?></ins>
+                                            <?php if($verif_global == 3){ ?>
+                                                <del><?= $fonction->number_decimal($produit->prix_vente); ?></del>
+                                                <ins class="text-danger"><?= $fonction->number_decimal($c_promo[0]->new_price); ?></ins>
+                                                <div id="countdown-ex1" class="countdown"></div>
+                                                <script type="text/javascript">
+                                                    jQuery(document).ready(function($){
+                                                        var newDate = new Date(<?= date('Y', $c_promo[0]->date_fin); ?>, <?= date('n', $c_promo[0]->date_fin); ?>, <?= date('d', $c_promo[0]->date_fin); ?>);
+                                                        $("#countdown-ex1").countdown({until: newDate});
+                                                    });
+                                                </script>
                                             <?php }else{ ?>
-                                                <ins><?= number_format($produit->prix_vente, 2, ',', ' ')." €" ?></ins>
+                                                <ins><?= $fonction->number_decimal($produit->prix_vente); ?></ins>
                                             <?php } ?>
                                         </div>
+                                        <p><?= html_entity_decode($produit->short_description); ?></p>
+
                                     </div>
                                 </div>
                                 <?php } ?>

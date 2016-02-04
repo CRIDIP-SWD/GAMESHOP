@@ -31,6 +31,8 @@ ini_set('display_errors', 1);
 
     <!--[if lt IE 9]>
     <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <![endif]-->
 
     <!-- External JavaScripts
@@ -640,6 +642,7 @@ ini_set('display_errors', 1);
 <!-- Footer Scripts
 ============================================= -->
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>functions.js"></script>
+
 
 
 <!-- DRCIPT VIDEO -->
