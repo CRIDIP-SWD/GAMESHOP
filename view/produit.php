@@ -74,6 +74,9 @@ if($verif_global === 3)
                         <!-- Product Single - Quantity & Cart Button
                         ============================================= -->
                         <form class="cart nobottommargin clearfix" method="post" enctype='multipart/form-data'>
+                            <div class="quantity clearfix">
+                                <input type="text" class="qty" name="q" />
+                            </div>
                             <?php if($verif_global === 2){ ?>
                                 <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">PRECOMMANDER</a>
                             <?php }elseif($verif_global === 3){ ?>
