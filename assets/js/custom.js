@@ -216,7 +216,7 @@ TOUCHSPIN DATA SHEET
                     prev.append(downhtml);
                 }
                 else {
-                    downhtml = '<span class="input-group-btn"><button class="' + settings.buttondown_class + ' bootstrap-touchspin-down" type="button">' + settings.buttondown_txt + '</button></span>';
+                    downhtml = '<span class="input-group-btn"><button class="' + settings.buttondown_class + ' bootstrap-touchspin-down minus" type="button">' + settings.buttondown_txt + '</button></span>';
                     $(downhtml).insertBefore(originalinput);
                 }
 
@@ -225,7 +225,7 @@ TOUCHSPIN DATA SHEET
                     next.prepend(uphtml);
                 }
                 else {
-                    uphtml = '<span class="input-group-btn"><button class="' + settings.buttonup_class + ' bootstrap-touchspin-up" type="button">' + settings.buttonup_txt + '</button></span>';
+                    uphtml = '<span class="input-group-btn"><button class="' + settings.buttonup_class + ' bootstrap-touchspin-up plus" type="button">' + settings.buttonup_txt + '</button></span>';
                     $(uphtml).insertAfter(originalinput);
                 }
 
