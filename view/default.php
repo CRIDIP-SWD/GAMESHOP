@@ -645,7 +645,6 @@ ini_set('display_errors', 1);
 
 
 <!-- DRCIPT VIDEO -->
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="//releases.flowplayer.org/6.0.5/flowplayer.min.js"></script>
 <!-- END SCRIPT VIDEO -->
 
