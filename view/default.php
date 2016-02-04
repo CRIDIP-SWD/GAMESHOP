@@ -644,7 +644,7 @@ ini_set('display_errors', 1);
 <script type="text/javascript" src="<?= $constante->getUrl(array('js/')); ?>custom.js"></script>
 <script>
     $("input[name='q']").TouchSpin({
-        initval: 40
+        initval: 1
     });
 </script>
 <script type="text/javascript">
