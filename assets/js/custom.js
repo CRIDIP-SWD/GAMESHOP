@@ -239,10 +239,10 @@ TOUCHSPIN DATA SHEET
                 var html;
 
                 if (settings.verticalbuttons) {
-                    html = '<div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix">' + settings.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + settings.postfix + '</span><span class="input-group-btn-vertical"><button class="' + settings.buttondown_class + ' bootstrap-touchspin-up" type="button"><i class="' + settings.verticalupclass + '"></i></button><button class="' + settings.buttonup_class + ' bootstrap-touchspin-down" type="button"><i class="' + settings.verticaldownclass + '"></i></button></span></div>';
+                    html = '<div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix">' + settings.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + settings.postfix + '</span><span class="input-group-btn-vertical"><button class="' + settings.buttondown_class + ' bootstrap-touchspin-up plus" type="button"><i class="' + settings.verticalupclass + '"></i></button><button class="' + settings.buttonup_class + ' bootstrap-touchspin- minus" type="button"><i class="' + settings.verticaldownclass + '"></i></button></span></div>';
                 }
                 else {
-                    html = '<div class="input-group bootstrap-touchspin"><span class="input-group-btn"><button class="' + settings.buttondown_class + ' bootstrap-touchspin-down" type="button">' + settings.buttondown_txt + '</button></span><span class="input-group-addon bootstrap-touchspin-prefix">' + settings.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + settings.postfix + '</span><span class="input-group-btn"><button class="' + settings.buttonup_class + ' bootstrap-touchspin-up" type="button">' + settings.buttonup_txt + '</button></span></div>';
+                    html = '<div class="input-group bootstrap-touchspin"><span class="input-group-btn"><button class="' + settings.buttondown_class + ' bootstrap-touchspin-down minus" type="button">' + settings.buttondown_txt + '</button></span><span class="input-group-addon bootstrap-touchspin-prefix">' + settings.prefix + '</span><span class="input-group-addon bootstrap-touchspin-postfix">' + settings.postfix + '</span><span class="input-group-btn"><button class="' + settings.buttonup_class + ' bootstrap-touchspin-up plus" type="button">' + settings.buttonup_txt + '</button></span></div>';
                 }
 
                 container = $(html).insertBefore(originalinput);
@@ -259,8 +259,8 @@ TOUCHSPIN DATA SHEET
 
             function _initElements() {
                 elements = {
-                    down: $('.bootstrap-touchspin-down', container),
-                    up: $('.bootstrap-touchspin-up', container),
+                    down: $('.bootstrap-touchspin-down minus', container),
+                    up: $('.bootstrap-touchspin-up plus', container),
                     input: $('input', container),
                     prefix: $('.bootstrap-touchspin-prefix', container).addClass(settings.prefix_extraclass),
                     postfix: $('.bootstrap-touchspin-postfix', container).addClass(settings.postfix_extraclass)
