@@ -647,18 +647,7 @@ ini_set('display_errors', 1);
         step: 1
     });
 </script>
-<script type="text/javascript">
-    $("input[name='quantity']").TouchSpin({
-        initval: 1,
-        min: 0,
-        max: 10
-    });
-    $("input[name='q']").TouchSpin({
-        initval: 1,
-        min: 0,
-        max: 10
-    });
-</script>
+
 
 
 <!-- DRCIPT VIDEO -->
