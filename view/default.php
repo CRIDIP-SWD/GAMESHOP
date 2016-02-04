@@ -648,6 +648,11 @@ ini_set('display_errors', 1);
         min: 0,
         max: 10
     });
+    $("input[name='q']").TouchSpin({
+        initval: 1,
+        min: 0,
+        max: 10
+    });
 </script>
 
 
