@@ -1,4 +1,3 @@
-<?php var_dump($_SESSION['panier']); die(); ?>
 <section id="page-title" class="page-title-parallax page-title-dark" style="background-image: url('<?= $constante->getUrl(array(), false, true) ?>autre/background/empty.jpg');" data-stellar-background-ratio="0.3">
 
     <div class="container clearfix">
