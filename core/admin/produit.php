@@ -156,7 +156,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     ));
 
     $sql_caracteristique = $DB->execute("INSERT INTO produits_caracteristique(id, ref_produit, editeur, genre, multijoueur, internet, `options`, couleur, cap_hdd, eth, wifi, nb_usb, compatibilite) VALUES
-                                        (NULL, :ref_produit, :editeur, :genre, :multijoueur, :internet, :option, :couleur, :cap_hdd, :eth, :wifi, :nb_usb, :compatibilite)", array(
+                                        (NULL, :ref_produit, :editeur, :genre, :multijoueur, :internet, :options, :couleur, :cap_hdd, :eth, :wifi, :nb_usb, :compatibilite)", array(
         "ref_produit"           => $ref_produit,
         "editeur"               => $editeur,
         "genre"                 => $genre,
