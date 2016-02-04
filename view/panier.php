@@ -76,7 +76,7 @@
                             </td>
 
                             <td class="cart-product-price">
-                                <span class="amount"><?= number_format($article[0]->prix_vente, 2, ',', ' ')." €"; ?></span>
+                                <span class="amount"><?= number_format($_SESSION['panier']['qteProduit'][$i], 2, ',', ' ')." €"; ?></span>
                             </td>
 
                             <td class="cart-product-quantity">
