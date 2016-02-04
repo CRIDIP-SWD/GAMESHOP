@@ -381,23 +381,10 @@ if($verif_global === 3)
                                 <?php if($produit_cls->count_videos($ref_produit) != 0): ?>
                                 <div class="tab-content clearfix" id="videos">
                                     <?php
-                                    $video_one = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit ORDER BY id ASC LIMIT 1", array("ref_produit" => $ref_produit));
+                                    $video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
                                     ?>
-                                    <div class="flowplayer is-splash" >
-                                        <video poster="<?= $video_one[0]->images_video; ?>">
-                                            <source type="video/mp4" src="<?= $video_one[0]->video; ?>">
-                                        </video>
-                                        <a class="fp-prev">prev</a>
-                                        <a class="fp-next">next</a>
-                                        <div class="fp-playlist">
-                                            <?php
-                                            $sql_video = $DB->query("SELECT * FROM produits_videos WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
-                                            foreach($sql_video as $video):
-                                            ?>
-                                            <a href="<?= $video->video; ?>"></a>
-                                            <?php endforeach; ?>
-                                        </div>
-                                    </div>
+                                    <h2 class="title"><?= $video[0]->title_video; ?></h2>
+                                    <?= $video[0]->video; ?>
                                 </div>
                                 <?php endif; ?>
 
