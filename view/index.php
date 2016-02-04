@@ -147,7 +147,7 @@
                             $('#header-wrap').removeClass('not-dark');
                         }
                     }
-                    SEMICOLON.header.darkLogo();
+                    /*SEMICOLON.header.darkLogo();*/
                 }
             });
 
