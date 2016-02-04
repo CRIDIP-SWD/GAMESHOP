@@ -236,7 +236,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
     if($date_sortie >= $date_format->date_jour_strt())
     {
         $statut_global = 2;
-    }elseif($date_sortie < $date_format->date_jour_strt())
+    }elseif($date_sortie < $date_format->date_jour_strt()-2505600)
     {
         $statut_global = 4;
     }else{
