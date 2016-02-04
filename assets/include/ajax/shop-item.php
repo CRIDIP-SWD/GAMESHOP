@@ -5,6 +5,10 @@ $produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, pr
                             AND produits_categorie.idcategorie = categorie.id
                             AND produits_caracteristique.ref_produit = produits.ref_produit
                             AND produits.ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+
+if($produit[0]->statut_global == 3){
+    $promo = $DB->query("SELECT * FROM produits_promotion WHERE ref_produit = :ref_produit", array("ref_produit" => $ref_produit));
+}
 ?>
                 <div class="single-product shop-quick-view-ajax clearfix">
 
@@ -24,7 +28,15 @@ $produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, pr
                             </div>
                         </div>
                         <div class="col_half nobottommargin col_last product-desc">
-                            <div class="product-price"><ins><?= number_format($produit[0]->prix_vente, 2, ',', ' ')." €"; ?></ins></div>
+                            <div class="product-price">
+                                <?php if($produit[0]->statut_global == 3): ?>
+                                    <del><?= $fonction->number_decimal($produit[0]->prix_vente); ?></del>
+                                    <ins><?= $fonction->number_decimal($promo[0]->new_price); ?></ins>
+                                <?php else: ?>
+                                    <ins><?= $fonction->number_decimal($produit[0]->prix_vente); ?></ins>
+                                <?php endif; ?>
+
+                            </div>
                             <div class="clear"></div>
                             <div class="line"></div>
 
@@ -37,6 +49,11 @@ $produit = $DB->query("SELECT * FROM produits, produits_categorie, categorie, pr
                                     <input type="button" value="+" class="plus">
                                 </div>
                                 <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">Ajouter au Panier</a>
+                                <?php if($produit[0]->statut_global == 3): ?>
+                                    <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $promo[0]->new_price; ?>">Ajouter au Panier</a>
+                                <?php else: ?>
+                                    <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">Ajouter au Panier</a>
+                                <?php endif; ?>
                             </form><!-- Product Single - Quantity & Cart Button End -->
                             <button type="button" class="button button-3d button-desc button-yellow" onclick="window.location.href='index.php?view=produit&ref_produit=<?= $produit[0]->ref_produit; ?>'">
                                 Voir la fiche complete
