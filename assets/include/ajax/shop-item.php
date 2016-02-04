@@ -48,7 +48,6 @@ if($produit[0]->statut_global == 3){
                                     <input type="text" step="1" min="1"  name="quantity" value="1" title="Qty" class="qty" size="4" />
                                     <input type="button" value="+" class="plus">
                                 </div>
-                                <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $produit[0]->prix_vente; ?>">Ajouter au Panier</a>
                                 <?php if($produit[0]->statut_global == 3): ?>
                                     <a class="add-to-cart button nomargin" href="core/panier.php?action=ajout&l=<?= $produit[0]->ref_produit; ?>&q=1&p=<?= $promo[0]->new_price; ?>">Ajouter au Panier</a>
                                 <?php else: ?>
