@@ -192,7 +192,7 @@ ini_set('display_errors', 1);
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
-                                                                <a href="#">
+                                                                <a href="index.php?view=produit&ref_produit=<?= $new->ref_produit; ?>">
                                                                     <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $new->ref_produit; ?>.jpg" alt="<?= html_entity_decode($new->designation); ?>">
                                                                 </a>
                                                                 <!--<div class="sale-flash">Sale!</div>-->
@@ -234,7 +234,7 @@ ini_set('display_errors', 1);
                                                     <li>
                                                         <div class="product clearfix">
                                                             <div class="product-image">
-                                                                <a href="#">
+                                                                <a href="index.php?view=produit&ref_produit=<?= $promo->ref_produit; ?>">
                                                                     <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $promo->ref_produit; ?>.jpg" alt="<?= $promo->designation; ?>">
                                                                 </a>
                                                                 <div class="product-overlay">
@@ -279,8 +279,7 @@ ini_set('display_errors', 1);
                                                         <li>
                                                             <div class="product clearfix">
                                                                 <div class="product-image">
-                                                                    <a href="#">
-
+                                                                    <a href="index.php?view=produit&ref_produit=<?= $preco->ref_produit; ?>">
                                                                         <img src="<?= $constante->getUrl('', false,true); ?>produit/cards/<?= $preco->ref_produit; ?>.jpg" alt="<?= $preco->designation; ?>">
                                                                     </a>
                                                                     <!--<div class="sale-flash">Sale!</div>-->

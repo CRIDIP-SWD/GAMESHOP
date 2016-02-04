@@ -26,7 +26,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'add-produit')
     $couleur = $_POST['couleur'];
     $cap_hdd = $_POST['cap_hdd'];
     if(isset($_POST['eth'])){$eth = 1;}else{$eth = 0;}
-    if(isset($_POST['wifi'])){$wifi = 1;}else{$eth = 1;}
+    if(isset($_POST['wifi'])){$wifi = 1;}else{$wifi = 1;}
     $nb_usb = $_POST['nb_usb'];
     $compatibilite = $_POST['compatibilite'];
 
@@ -220,7 +220,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'edit-produit')
     $couleur = $_POST['couleur'];
     $cap_hdd = $_POST['cap_hdd'];
     if(isset($_POST['eth'])){$eth = 1;}else{$eth = 0;}
-    if(isset($_POST['wifi'])){$wifi = 1;}else{$eth = 1;}
+    if(isset($_POST['wifi'])){$wifi = 1;}else{$wifi = 1;}
     $nb_usb = $_POST['nb_usb'];
     $compatibilite = $_POST['compatibilite'];
 
