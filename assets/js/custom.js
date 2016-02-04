@@ -212,7 +212,7 @@ TOUCHSPIN DATA SHEET
                     postfixhtml = '<span class="input-group-addon bootstrap-touchspin-postfix">' + settings.postfix + '</span>';
 
                 if (prev.hasClass('input-group-btn')) {
-                    downhtml = '<button class="' + settings.buttondown_class + ' bootstrap-touchspin-down" type="button">' + settings.buttondown_txt + '</button>';
+                    downhtml = '<button class="' + settings.buttondown_class + ' bootstrap-touchspin-down minus" type="button">' + settings.buttondown_txt + '</button>';
                     prev.append(downhtml);
                 }
                 else {
@@ -221,7 +221,7 @@ TOUCHSPIN DATA SHEET
                 }
 
                 if (next.hasClass('input-group-btn')) {
-                    uphtml = '<button class="' + settings.buttonup_class + ' bootstrap-touchspin-up" type="button">' + settings.buttonup_txt + '</button>';
+                    uphtml = '<button class="' + settings.buttonup_class + ' bootstrap-touchspin-up plus" type="button">' + settings.buttonup_txt + '</button>';
                     next.prepend(uphtml);
                 }
                 else {

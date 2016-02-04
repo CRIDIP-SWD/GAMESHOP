@@ -84,12 +84,12 @@
     position: relative;
 }
 
-.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up .plus{
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-up {
     border-radius: 0;
     border-top-right-radius: 4px;
 }
 
-.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down .minus{
+.bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down {
     margin-top: -2px;
     border-radius: 0;
     border-bottom-right-radius: 4px;
@@ -102,3 +102,4 @@
     font-size: 9px;
     font-weight: normal;
 }
+
