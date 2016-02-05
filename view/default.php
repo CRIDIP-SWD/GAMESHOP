@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', 1);
-echo $date_format->formatage("Y-m-d"."'T'"."H:i:s"."'Z'", 1454716392);
+echo gmdate("M d Y H:i:s", mktime(0, 0, 0, 1, 1, 1998));
 die();
 ?>
 <!DOCTYPE html>
