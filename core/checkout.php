@@ -470,4 +470,35 @@ if(isset($_POST['action']) && $_POST['action'] == 'process-paiement')
 
         }
     }
+
+    if($type_paiement == 4){
+        $paypal = new paypal();
+        $params = array(
+            "RETURNURL" => constante::HTTP.constante::URL."core/checkout_paypal_recurrency.php",
+            "CANCELURL" => constante::HTTP.constante::URL."index.php?view=checkout&sub=paiement&error=critical&data=$error",
+
+            "PAYMENTREQUEST_0_AMT"      => $cmd[0]->total_commande + $cmd[0]->prix_envoie, // 445.40
+            "PAYMENTREQUEST_0_CURRENCYCODE" => "EUR",
+            "PAYMENTREQUEST_0_SHIPPINGAMT" => $cmd[0]->prix_envoie, // 26.50
+            "PAYMENTREQUEST_0_ITEMAMT" => $cmd[0]->total_commande, // 445.40
+            "PAYMENTREQUEST_0_CUSTOM"     => $num_commande
+        );
+        foreach($sql_article as $k => $article){
+            $params["L_PAYMENTREQUEST_0_NAME$k"] = $article->designation;
+            $params["L_PAYMENTREQUEST_0_DESC$k"] = $article->ref_produit;
+            $params["L_PAYMENTREQUEST_0_AMT$k"] = $article->prix_vente; //389 + 29.90
+            $params["L_PAYMENTREQUEST_0_QTY$k"] = $article->qte;
+            $params["L_PAYMENTREQUEST_0_ITEMURL$k"] = constante::HTTP.constante::URL."index.php?view=produit&ref_produit=".$article->ref_produit;
+        }
+        //var_dump($params);
+        $response = $paypal->request('SetExpressCheckout', $params);
+        if($response)
+        {
+            $_SESSION['payment'] = $response['PAYMENTREQUEST_0_CUSTOM'];
+            header("Location: https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&useraction=commit&token=".$response['TOKEN']);
+        }else{
+            var_dump($paypal->errors);
+            die();
+        }
+    }
 }
