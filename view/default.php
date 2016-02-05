@@ -1,6 +1,7 @@
 <?php
 ini_set('display_errors', 1);
-
+echo $date_format->formatage("Y-m-d"."'T'"."H:i:s"."'Z'", 1454716392);
+die();
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
