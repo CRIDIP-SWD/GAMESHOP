@@ -560,6 +560,26 @@
                                 <div class="radio-gameshop">
                                     <div class="row">
                                         <div class="col-md-2">
+                                            <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paypal_recurrency.png" class="img-responsive" width="80" />
+                                        </div>
+                                        <div class="col-md-9">
+                                            <label for="paypal" class="radio-gameshop">
+                                                PAYPAL (Paiement 3 Fois)<br>
+                                                Paiement Sécurisé par carte Bancaire
+                                                <h6><i>Préparation Immédiate</i></h6>
+                                            </label>
+                                        </div>
+                                        <div class="col-md-1">
+                                            <input id="paypal" class="radio-gameshop" type="radio" name="paiement" value="4"/>
+                                            <span class="round"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="well bounceInRight animated" data-animation="bounceInRight">
+                                <div class="radio-gameshop">
+                                    <div class="row">
+                                        <div class="col-md-2">
                                             <img src="http://www.les-douceurs-du-bain.fr/Files/110407/Img/22/mi-ima-9a26b68e21.jpg" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
