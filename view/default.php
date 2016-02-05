@@ -1,6 +1,8 @@
 <?php
 ini_set('display_errors', 1);
-echo gmdate("Y-m-dH:i:s", mktime(0, 0, 0, 1, 1, 1998));
+$T = "T";
+$Z = "Z";
+echo gmdate("Y-m-d".$T."H:i:s".$Z, mktime(0, 0, 0, 1, 1, 1998));
 die();
 ?>
 <!DOCTYPE html>
