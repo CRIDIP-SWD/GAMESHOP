@@ -132,7 +132,7 @@
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $sql_produit = $DB->query("SELECT * FROM produits ORDER BY id DESC LIMIT 5");
+                                    $sql_produit = $DB->query("SELECT * FROM produits WHERE statut_global = :statut ORDER BY date_sortie ASC LIMIT 5", array("statut" => 2));
                                     foreach($sql_produit as $produit):
                                         $cat = $DB->query("SELECT * FROM produits_categorie, categorie WHERE produits_categorie.idcategorie = categorie.id AND ref_produit = :ref_produit", array(
                                             "ref_produit" => $produit->ref_produit
