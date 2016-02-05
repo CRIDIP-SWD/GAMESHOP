@@ -563,14 +563,14 @@
                                             <img src="<?= $constante->getUrl(array(), false, true); ?>autre/misc/paypal_recurrency.png" class="img-responsive" width="80" />
                                         </div>
                                         <div class="col-md-9">
-                                            <label for="paypal" class="radio-gameshop">
+                                            <label for="paypal-nfois" class="radio-gameshop">
                                                 PAYPAL (Paiement 3 Fois)<br>
                                                 Paiement Sécurisé par carte Bancaire
                                                 <h6><i>Préparation Immédiate</i></h6>
                                             </label>
                                         </div>
                                         <div class="col-md-1">
-                                            <input id="paypal" class="radio-gameshop" type="radio" name="paiement" value="4"/>
+                                            <input id="paypal-nfois" class="radio-gameshop" type="radio" name="paiement" value="4"/>
                                             <span class="round"></span>
                                         </div>
                                     </div>
