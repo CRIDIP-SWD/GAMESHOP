@@ -2831,11 +2831,11 @@
             <!-- start: page -->
             <div class="row">
                 <div class="col-md-3">
-                    <section class="panel panel-featured-left panel-featured-primary">
+                    <section class="panel panel-featured-left panel-featured-warning">
                         <div class="panel-body">
                             <div class="widget-summary widget-summary-sm">
                                 <div class="widget-summary-col widget-summary-col-icon">
-                                    <div class="summary-icon bg-primary">
+                                    <div class="summary-icon bg-warning">
                                         <i class="fa fa-calendar"></i>
                                     </div>
                                 </div>
