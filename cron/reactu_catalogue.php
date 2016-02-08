@@ -39,9 +39,7 @@ foreach($sql_catalogue as $catalogue):
             "ref_produit" => $ref_produit
         ));
     }
-    $mail = mail("gamedistri@gmail.com", "TACHE JOURNALIERE", "Tache Effectuer");
-    var_dump($sql_preco, $sql_new, $sql_promo, $mail);
-
-
 
 endforeach;
+$mail = mail("gamedistri@gmail.com", "TACHE JOURNALIERE", "Tache Effectuer");
+var_dump($sql_preco, $sql_new, $sql_promo, $mail);
