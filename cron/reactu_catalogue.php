@@ -15,6 +15,10 @@ foreach($sql_catalogue as $catalogue):
         $sql_preco = $DB->execute("UPDATE produits SET statut_global = 4 WHERE ref_produit = :ref_produit", array(
             "ref_produit" => $ref_produit
         ));
+        $sql_preco = $DB->execute("UPDATE produits SET statut_stock = 0 WHERE ref_produit = :ref_produit", array(
+            "ref_produit" => $ref_produit
+        ));
+
     }
 
     //Verification de la nouveaute
