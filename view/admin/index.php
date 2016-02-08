@@ -2919,7 +2919,7 @@
             <div class="row">
                 <div class="col-md-7">
                     <section class="panel">
-                        <div class="panel-heading panel-primary">
+                        <div class="panel-heading">
                             <h2 class="panel-title">Commande <strong><?= $num_commande; ?></strong> N°<?= $commande[0]->idcommande; ?></h2>
                         </div>
                     </section>
