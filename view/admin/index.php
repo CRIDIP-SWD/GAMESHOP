@@ -2755,7 +2755,38 @@
                                                 <td><?= $fonction->number_decimal($commande->total_commande); ?></td>
                                                 <td><?= $commande->methode_paiement; ?></td>
                                                 <td>
+                                                    <?php
+                                                    switch($commande->statut)
+                                                    {
+                                                        case 1:
+                                                            echo "<span class='label label-default'>En Attente de Validation</span>";
+                                                            break;
 
+                                                        case 2:
+                                                            echo "<span class='label label-primary'>En Attente de Paiement</span>";
+                                                            break;
+
+                                                        case 3:
+                                                            echo "<span class='label label-success'>Paiement Valider</span>";
+                                                            break;
+
+                                                        case 4:
+                                                            echo "<span class='label label-warning'>Préparation en cours...</span>";
+                                                            break;
+
+                                                        case 5:
+                                                            echo "<span class='label label-success'>Expédié</span>";
+                                                            break;
+
+                                                        case 6:
+                                                            echo "<span class='label label-danger'>Paiement Refuser</span>";
+                                                            break;
+
+                                                        case 7:
+                                                            echo "<span class='label label-default'>Commande Annulé</span>";
+                                                            break;
+                                                    }
+                                                    ?>
                                                 </td>
                                                 <td><?= $date_format->formatage("d-m-Y H:i", $commande->date_commande); ?></td>
                                                 <td>
