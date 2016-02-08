@@ -2748,7 +2748,7 @@
                                             ?>
                                             <tr class="gradeX">
                                                 <td><?= $commande->idcommande; ?></td>
-                                                <td><?= $commande->ref_commande; ?></td>
+                                                <td><?= $commande->num_commande; ?></td>
                                                 <td>
                                                     <?= $commande->nom_client; ?> <?= $commande->prenom_client; ?>
                                                 </td>
