@@ -2915,6 +2915,16 @@
                     </section>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-md-7">
+                    <section class="panel">
+                        <div class="panel-heading panel-primary">
+                            <h2 class="panel-title">Commande <strong><?= $num_commande; ?></strong> N°<?= $commande[0]->idcommande; ?></h2>
+                        </div>
+                    </section>
+                </div>
+            </div>
             <!-- end: page -->
         </section>
     <?php endif; ?>
