@@ -2802,104 +2802,55 @@
                     </div>
                 </section>
             </div>
-            <div id="add-categorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
-                <section class="panel">
-                    <header class="panel-heading">
-                        <h2 class="panel-title">Nouvelle Catégorie</h2>
-                    </header>
-                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
-                        <div class="panel-body">
-                            <div class="modal-wrapper">
-                                <div class="validation-message">
-                                    <ul></ul>
-                                </div>
+            <!-- end: page -->
+        </section>
+    <?php endif; ?>
+    <?php if(isset($_GET['data']) && $_GET['data'] == 'view_commande'): ?>
+        <?php
+        $num_commande = $_GET['num_commande'];
+        $commande = $DB->query("SELECT * FROM commande WHERE num_commande = :num_commande", array("num_commande" => $num_commande));
+        ?>
+        <section role="main" class="content-body">
+            <header class="page-header">
+                <h2><i class="fa fa-file"></i> COMMANDES N° <?= $commande[0]->num_commande; ?></h2>
 
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="cat" class="form-control" name="designation_cat" required title="Champs Requis" />
+                <div class="right-wrapper pull-right">
+                    <ol class="breadcrumbs">
+                        <li>
+                            <a href="index.php?view=admin_sha">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li><span>Commandes</span></li>
+                    </ol>
+
+                    <a class="sidebar-right-toggle" data-open="sidebar-right"><i class="fa fa-chevron-left"></i></a>
+                </div>
+            </header>
+
+            <!-- start: page -->
+            <div class="row">
+                <div class="col-md-3">
+                    <section class="panel panel-featured-left panel-featured-primary">
+                        <div class="panel-body">
+                            <div class="widget-summary widget-summary-sm">
+                                <div class="widget-summary-col widget-summary-col-icon">
+                                    <div class="summary-icon bg-primary">
+                                        <i class="fa fa-calendar"></i>
                                     </div>
                                 </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="cat">Images de la catégorie</label>
-                                    <div class="col-md-9">
-                                        <div class="fileupload fileupload-new" data-provides="fileupload">
-                                            <div class="input-append">
-                                                <div class="uneditable-input">
-                                                    <i class="fa fa-file fileupload-exists"></i>
-                                                    <span class="fileupload-preview"></span>
-                                                </div>
-                                                <span class="btn btn-default btn-file">
-                                                    <span class="fileupload-exists">Changer de Fichier</span>
-                                                    <span class="fileupload-new">Sélectionner un fichier</span>
-                                                    <input type="file" name="images_cat"/>
-                                                </span>
-                                                <a href="#" class="btn btn-default fileupload-exists" data-dismiss="fileupload">Supprimer</a>
-                                            </div>
+                                <div class="widget-summary-col">
+                                    <div class="summary">
+                                        <h4 class="title">Date</h4>
+                                        <div class="info">
+                                            <strong class="amount">21/07/2015</strong>
                                         </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
-                        <footer class="panel-footer">
-                            <div class="row">
-                                <div class="col-md-12 text-right">
-                                    <button class="btn btn-primary" type="submit" name="action" value="add-categories">Valider</button>
-                                    <button class="btn btn-default modal-dismiss">Annuler</button>
-                                </div>
-                            </div>
-                        </footer>
-                    </form>
-                </section>
-            </div>
-            <div id="add-subcategorie" class="modal-block modal-block-lg modal-header-color modal-block-primary mfp-hide">
-                <section class="panel">
-                    <header class="panel-heading">
-                        <h2 class="panel-title">Nouvelle Sous Catégorie</h2>
-                    </header>
-                    <form id="summary-form" class="form-horizontal" action="core/admin/categorie.php" method="post" enctype="multipart/form-data">
-                        <div class="panel-body">
-                            <div class="modal-wrapper">
-                                <div class="validation-message">
-                                    <ul></ul>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Catégorie <span class="required">*</span></label>
-                                    <div class="col-md-9">
-                                        <select data-plugin-selectTwo class="form-control populate" require name="idcategorie">
-                                            <?php
-                                            $sql_cat = $DB->query("SELECT * FROM categorie");
-                                            foreach($sql_cat as $cat):
-                                                ?>
-                                                <option value="<?= $cat->id; ?>"><?= html_entity_decode($cat->designation_cat); ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label" for="cat">Désignation <span class="required">*</span></label>
-                                    <div class="col-md-9">
-                                        <input type="text" id="cat" class="form-control" name="designation_subcat" required title="Champs Requis" />
-                                    </div>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <footer class="panel-footer">
-                            <div class="row">
-                                <div class="col-md-12 text-right">
-                                    <button class="btn btn-primary" type="submit" name="action" value="add-subcategorie">Valider</button>
-                                    <button class="btn btn-default modal-dismiss">Annuler</button>
-                                </div>
-                            </div>
-                        </footer>
-                    </form>
-                </section>
+                    </section>
+                </div>
             </div>
             <!-- end: page -->
         </section>
