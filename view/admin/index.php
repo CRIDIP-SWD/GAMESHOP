@@ -2758,7 +2758,9 @@
 
                                                 </td>
                                                 <td><?= $date_format->formatage("d-m-Y H:i", $commande->date_commande); ?></td>
-                                                <td></td>
+                                                <td>
+                                                    <a class="btn btn-primary" href="index.php?view=admin_sha&sub=commande&data=view_commande&num_commande=<?= $commande->num_commande; ?>"><i class="fa fa-search"></i> Voir la commande</a>
+                                                </td>
                                             </tr>
                                         <?php endforeach; ?>
                                         </tbody>
