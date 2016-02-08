@@ -2906,7 +2906,7 @@
                                     <div class="summary">
                                         <h4 class="title">Produits</h4>
                                         <div class="info">
-                                            <strong class="amount">1/strong>
+                                            <strong class="amount">1</strong>
                                         </div>
                                     </div>
                                 </div>
