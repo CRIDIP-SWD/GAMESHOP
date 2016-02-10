@@ -2922,6 +2922,7 @@
                         <div class="panel-heading">
                             <h2 class="panel-title">Commande <strong><?= $num_commande; ?></strong> N°<?= $commande[0]->idcommande; ?></h2>
                         </div>
+
                     </section>
                 </div>
             </div>
