@@ -2843,7 +2843,7 @@
                                     <div class="summary">
                                         <h4 class="title">Date</h4>
                                         <div class="info">
-                                            <strong class="amount">21/07/2015</strong>
+                                            <strong class="amount"><?= $date_format->formatage('d/m/Y', $commande[0]->date_commande); ?> </strong>
                                         </div>
                                     </div>
                                 </div>
