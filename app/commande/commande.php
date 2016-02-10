@@ -54,7 +54,7 @@ class commande extends DB
      */
     public function count_article($num_commande)
     {
-        return $this->count("SELECT COUNT(ref_produit) FROM commande_article WHERE num_commande = '$num_commande'");
+        return $this->count("SELECT COUNT(ref_produit) FROM commande_article WHERE num_commande = :num_commande", array("num_commande" => $num_commande));
     }
 
     /**
