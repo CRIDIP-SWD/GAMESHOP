@@ -2864,7 +2864,7 @@
                                     <div class="summary">
                                         <h4 class="title">Total</h4>
                                         <div class="info">
-                                            <strong class="amount">144,00 €</strong>
+                                            <strong class="amount"><?= $fonction->number_decimal($commande[0]->total_commande); ?></strong>
                                         </div>
                                     </div>
                                 </div>
@@ -2906,7 +2906,7 @@
                                     <div class="summary">
                                         <h4 class="title">Produits</h4>
                                         <div class="info">
-                                            <strong class="amount">1</strong>
+                                            <strong class="amount"><?= $cmd_cls->count_article($commande[0]->num_commande); ?></strong>
                                         </div>
                                     </div>
                                 </div>
