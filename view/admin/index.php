@@ -2924,7 +2924,9 @@
                         </div>
                         <div class="panel-body">
                             <div class="well">
-                                <a class="btn btn"
+                                <a class="btn btn-default" href="pdf/commande.php?num_commande=<?= $num_commande; ?>"><i class="fa fa-print"></i> Imprimer la commande</a>
+                                <a class="btn btn-default" href="pdf/facture.php?num_commande=<?= $num_commande; ?>"><i class="fa fa-file"></i> Voir la facture</a>
+                                <a class="btn btn-default" href="pdf/shipping.php?num_commande=<?= $num_commande; ?>"><i class="fa fa-truck"></i> Voir le bon de livraison</a>
                             </div>
                         </div>
 
