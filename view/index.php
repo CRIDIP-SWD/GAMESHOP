@@ -43,8 +43,8 @@
                 </li>-->
                 <li data-transition="3dcurtain-horizontal" data-link="">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/quantum/fond.jpg" alt="Préco quantum">
-                    <div class="caption sft" data-x="-300" data-y="0" data-speed="700" data-start="1000" data-easing="easeOutBack">
-                        <h1 class="big_black">PRECOMMANDER MAINTENANT !</h1>
+                    <div class="caption sft" data-x="center" data-y="center" data-speed="700" data-start="1000" data-easing="easeOutBack">
+                        <div class="big_black">PRECOMMANDER MAINTENANT !</div>
                     </div>
                 </li>
             </ul>
