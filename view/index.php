@@ -8,7 +8,7 @@
     <div class="tp-banner-container fullscreen-container">
         <div class="tp-banner" >
             <ul>    <!-- SLIDE  -->
-                <li data-transition="boxslide" data-slotamout="7" data-link="#">
+                <!--<li data-transition="boxslide" data-slotamout="7" data-link="#">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/sky.png">
                     <div class="caption sft" data-x="-300" data-y="0" data-speed="700" data-start="2500" data-easing="easeOutLeft">
                         <img src="<?= $constante->getUrl('', false, true); ?>slides/annee/naruto.png" />
@@ -40,7 +40,7 @@
                             <button class="btn btn-primary btn-lg" onclick="window.location.href='index.php?view=produit&ref_produit=XBOXONUNS4'">Précommander Maintenant sur Xbox One</button>
                         </div>
                     </div>
-                </li>
+                </li>-->
                 <li data-transition="3dcurtain-horizontal" data-link="">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/quantum/fond.jpg" alt="Préco quantum">
                     <div class="caption sft" data-x="100" data-y="100" data-speed="700" data-start="1000" data-easing="easeOutBack">
