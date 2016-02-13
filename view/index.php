@@ -44,7 +44,7 @@
                 <li data-transition="3dcurtain-horizontal" data-link="">
                     <img src="<?= $constante->getUrl('', false, true); ?>slides/quantum/fond.jpg" alt="Préco quantum">
                     <div class="caption sft" data-x="center" data-y="center" data-speed="700" data-start="1000" data-easing="easeOutBack">
-                        <div class="big_black">PRECOMMANDER MAINTENANT !</div>
+                        <div class="big_black" style="font-size: 49px;">PRECOMMANDER MAINTENANT !</div>
                     </div>
                 </li>
             </ul>
