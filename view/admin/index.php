@@ -2906,7 +2906,7 @@
                                     <div class="summary">
                                         <h4 class="title">Produits</h4>
                                         <div class="info">
-                                            <strong class="amount"><?= $cmd_cls->count_article($commande[0]->num_commande); ?></strong>
+                                            <strong class="amount"></strong>
                                         </div>
                                     </div>
                                 </div>
