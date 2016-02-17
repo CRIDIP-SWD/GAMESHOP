@@ -101,7 +101,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
         "adresse_liv"       => $adresse_liv[0]->adresse."<br>".$adresse_liv[0]->code_postal." ".$adresse_liv[0]->ville,
         "adresse_fact"      => $adresse_liv[0]->adresse."<br>".$adresse_liv[0]->code_postal." ".$adresse_liv[0]->ville,
     ));
-
+//YE
 
     $error = "Impossible de continuer.<br>Veuillez contactez un administrateur";
     if($cmd == 1)
