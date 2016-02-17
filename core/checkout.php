@@ -109,7 +109,7 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
     }else{
         header("Location: ../index.php?view=checkout&sub=adresse&num_commande=$num_commande&error=critical&data=$error");
     }
-
+//
 
 
 }
