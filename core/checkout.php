@@ -96,12 +96,11 @@ if(isset($_POST['action']) && $_POST['action'] == 'livraison')
     ));
 
 
-    $cmd = $DB->execute("UPDATE commande SET adresse_liv = :adresse_liv AND adresse_fact = :adresse_fact WHERE num_commande = :num_commande", array(
+    $cmd = $DB->execute("UPDATE commande SET adresse_liv = :adresse_liv, adresse_fact = :adresse_fact WHERE num_commande = :num_commande", array(
         "num_commande"      => $num_commande,
         "adresse_liv"       => $adresse_liv[0]->adresse."<br>".$adresse_liv[0]->code_postal." ".$adresse_liv[0]->ville,
-        "adresse_fact"      => $adresse_liv[0]->adresse."<br>".$adresse_liv[0]->code_postal." ".$adresse_liv[0]->ville,
+        "adresse_fact"      => $adresse_liv[0]->adresse."<br>".$adresse_liv[0]->code_postal." ".$adresse_liv[0]->ville
     ));
-//YE
 
     $error = "Impossible de continuer.<br>Veuillez contactez un administrateur";
     if($cmd == 1)
