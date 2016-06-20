@@ -104,8 +104,8 @@ CREATE TABLE IF NOT EXISTS `client_adresse_fact` (
 --
 
 INSERT INTO `client_adresse_fact` (`idadresse`, `idclient`, `alias`, `nom`, `prenom`, `societe`, `telephone`, `adresse`, `code_postal`, `ville`, `pays`, `default`) VALUES
-(1, 1, 'Ma Maison', 'MOCKELYN', 'Maxime', '', '0633134330', '20 Avenue Jean Jaures', '85100', 'Les Sables d\\''Olonne', 1, 1),
-(2, 1, 'Travail', 'MOCKELYN', 'Maxime', 'SAS CRIDIP', '0972450239', '8 Rue Octave Voyer', '85100', 'Les Sables d\\''Olonne', 1, 0);
+(1, 1, 'Ma Maison', 'MOCKELYN', 'Maxime', '', '0633134330', '20 Avenue Jean Jaures', '85100', 'Les Sables d Olonne', 1, 1),
+(2, 1, 'Travail', 'MOCKELYN', 'Maxime', 'SAS CRIDIP', '0972450239', '8 Rue Octave Voyer', '85100', 'Les Sables d Olonne', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -134,8 +134,8 @@ CREATE TABLE IF NOT EXISTS `client_adresse_liv` (
 --
 
 INSERT INTO `client_adresse_liv` (`idadresse`, `idclient`, `alias`, `nom`, `prenom`, `societe`, `telephone`, `adresse`, `code_postal`, `ville`, `pays`, `default`) VALUES
-(1, 1, 'Ma Maison', 'MOCKELYN', 'Maxime', '', '0633134330', '20 Avenue Jean Jaures', '85100', 'Les Sables d\\''Olonne', 1, 1),
-(4, 1, 'Travail', 'MOCKELYN', 'Maxime', 'SAS CRIDIP', '0972450239', '8 Rue Octave Voyer', '85100', 'Les Sables d\\''Olonne', 1, 0);
+(1, 1, 'Ma Maison', 'MOCKELYN', 'Maxime', '', '0633134330', '20 Avenue Jean Jaures', '85100', 'Les Sables d Olonne', 1, 1),
+(4, 1, 'Travail', 'MOCKELYN', 'Maxime', 'SAS CRIDIP', '0972450239', '8 Rue Octave Voyer', '85100', 'Les Sables d Olonne', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `commande` (
 --
 
 INSERT INTO `commande` (`idcommande`, `num_commande`, `date_commande`, `idclient`, `total_commande`, `date_livraison`, `destination`, `statut`, `adresse_fact`, `adresse_liv`, `methode_livraison`, `methode_paiement`, `prix_envoie`) VALUES
-(23, 'CMD5827244', '1453604700', 1, '99.8', '1453950300', 'France', 3, '', '20 Avenue Jean Jaures,<br> 85100 Les Sables d\\''Olonne', 'LA POSTE', 'VIREMENT BANCAIRE', '8.5');
+(23, 'CMD5827244', '1453604700', 1, '99.8', '1453950300', 'France', 3, '', '20 Avenue Jean Jaures,<br> 85100 Les Sables d Olonne', 'LA POSTE', 'VIREMENT BANCAIRE', '8.5');
 
 -- --------------------------------------------------------
 

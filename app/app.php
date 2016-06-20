@@ -278,8 +278,8 @@ class fonction extends app
 class DB extends app{
 
     private $host = "localhost";
-    private $username = "root";
-    private $password = "1992maxime";
+    private $username = "gameshop";
+    private $password = "1992_Maxime";
     private $database = "gameshop";
     private $db;
 
