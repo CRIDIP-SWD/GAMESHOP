@@ -6,8 +6,4 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Illuminate\\Support' => array($vendorDir . '/illuminate/support'),
-    'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
-    'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
-    'Gumer' => array($vendorDir . '/gumer/gumer-psn-php/src'),
 );
