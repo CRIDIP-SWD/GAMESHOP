@@ -12,10 +12,10 @@ namespace App\general;
 class constante
 {
     public $HTTP              = "https://";
-    public $URL               = "portail.cridip.com/";
+    public $URL               = "gameshop.ovh/";
     public $ASSETS            = "view/assets/";
     public $SOURCES           = "https://ns342142.ip-5-196-76.eu/gc/";
-    public $NOM_SITE          = "PORTAIL CRIDIP";
+    public $NOM_SITE          = "GAMESHOP";
 }
 class redirect extends constante
 {
@@ -58,6 +58,10 @@ class redirect extends constante
 
         header("Location: ".$this->getUrl(array(), false).$redirect);
 
+    }
+
+    public function racine(){
+        return $this->HTTP.$this->URL;
     }
 
 }
